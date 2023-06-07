@@ -1,9 +1,8 @@
 module.exports = {
   stories: ["../src/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
-  addons: ["@storybook/addon-essentials", "storybook-addon-next"],
-  framework: "@storybook/react",
-  core: {
-    builder: "@storybook/builder-webpack5",
+  addons: ["@storybook/addon-essentials"],
+  framework: {
+    name: "@storybook/nextjs",
+    options: {}
   },
-  staticDirs: ["./public"],
 };
