@@ -1,0 +1,29 @@
+import { Canvas, Meta, ArgTypes } from "@storybook/blocks";
+
+import * as HeadingStories from "./Heading.stories";
+
+<Meta of={HeadingStories} />
+
+# Heading
+
+<Canvas of={HeadingStories.Default} />
+
+<br />
+
+### Children
+
+Text is supplied as a child to the `Heading` component.
+
+### Tag
+
+Select a semantic heading tag using best practices to keep the page accessible. Read this article from [The A11y Project]('https://www.a11yproject.com/posts/how-to-accessible-heading-structure/#best-practices-summarized') for more information on best practices.
+
+If no tag is selected, the `Heading` atom will default to using `h2`.
+
+### Size
+
+Select a size for the `Heading` atom. If no size is selected, it will default to `md`.
+
+## Props
+
+<ArgTypes />

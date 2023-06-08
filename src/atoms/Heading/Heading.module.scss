@@ -1,0 +1,58 @@
+@import "../../styles/fonts";
+@import "../../styles/mixins";
+
+.heading {
+    text-transform: uppercase;
+}
+
+.xs,
+.sm,
+.lg {
+    @include font-rubik-regular;
+}
+
+.md,
+.xl {
+    @include font-recharge-bold;
+}
+
+.xs {
+    @include font(20, 28);
+    @include tablet {
+        @include font(26, 36);
+    }
+}
+
+.sm {
+    @include font(24, 34);
+    @include tablet {
+        @include font(32, 38);
+    }
+}
+
+.md {
+    @include font(22, 26);
+    @include tablet {
+        @include font(38, 55);
+    }
+}
+
+.lg {
+    @include font(28, 36);
+    @include tablet {
+        @include font(44, 54);
+    }
+    @include desktop {
+        @include font(50, 60);
+    }
+}
+
+.xl {
+    @include font(26, 32);
+    @include tablet {
+        @include font(44, 54);
+    }
+    @include desktop {
+        @include font(60, 72);
+    }
+}

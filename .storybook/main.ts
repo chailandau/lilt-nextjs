@@ -1,8 +1,29 @@
-module.exports = {
-  stories: ["../src/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
-  addons: ["@storybook/addon-essentials"],
-  framework: {
-    name: "@storybook/nextjs",
-    options: {}
-  },
+import type { StorybookConfig } from '@storybook/nextjs';
+
+const config: StorybookConfig = {
+  framework: '@storybook/nextjs',
+  stories: ["../src/**/storybook/*.stories.@(js|jsx|ts|tsx)", "../src/**/storybook/*.mdx"],
+  addons: [
+    "@storybook/addon-essentials",
+    "@storybook/addon-styling",
+    {
+      name: "@storybook/addon-styling",
+      options: {
+        cssBuildRule: {
+          test: /\.css$/,
+          use: [
+            'style-loader',
+            {
+              loader: 'css-loader',
+            },
+          ]
+        },
+      },
+    },],
+  docs: {
+    autodocs: 'tag',
+    defaultName: 'Docs',
+  }
 };
+
+export default config;
