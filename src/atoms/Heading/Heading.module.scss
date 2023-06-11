@@ -1,8 +1,17 @@
 @import "../../styles/fonts";
 @import "../../styles/mixins";
+@import "../../styles/variables";
 
 .heading {
     text-transform: uppercase;
+}
+
+.green {
+    color: map-get($colors, neon, green);
+}
+
+.blue {
+    color: map-get($colors, neon, blue);
 }
 
 .xs,
@@ -14,6 +23,7 @@
 .md,
 .xl {
     @include font-recharge-bold;
+    text-shadow: map-get($shadows, fuchsia);
 }
 
 .xs {
@@ -31,9 +41,9 @@
 }
 
 .md {
-    @include font(22, 26);
+    @include font(22, 26, 0.4);
     @include tablet {
-        @include font(38, 55);
+        @include font(38, 55, 0.75);
     }
 }
 
@@ -48,11 +58,11 @@
 }
 
 .xl {
-    @include font(26, 32);
+    @include font(26, 32, 0.5);
     @include tablet {
-        @include font(44, 54);
+        @include font(44, 54, 0.85);
     }
     @include desktop {
-        @include font(60, 72);
+        @include font(60, 72, 1.2);
     }
 }

@@ -6,8 +6,8 @@ $base-font-size: 16;
 
 @mixin font($font-size, $leading, $tracking: 0) {
     font-size: calc($font-size / $base-font-size) + rem;
-    letter-spacing: $tracking + px;
     line-height: calc($leading / $base-font-size) + rem;
+    letter-spacing: $tracking + px;
 }
 
 @mixin tablet {

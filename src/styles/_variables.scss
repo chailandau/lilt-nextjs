@@ -1,4 +1,4 @@
-$color: (
+$colors: (
     neutral: (
         white: #f5f5f5,
         black: #000000,
@@ -16,4 +16,8 @@ $color: (
         purple: #9f32f4,
         red: #b60e11,
     ),
+);
+
+$shadows: (
+    fuchsia: 0px 0px rem(20) rgba(map-get($colors, neon, fuchsia), 0.3),
 );
