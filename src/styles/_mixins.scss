@@ -1,4 +1,29 @@
-$base-font-size: 16;
+@mixin font-recharge-bold {
+    font-family: "Recharge", sans-serif;
+    font-weight: 700;
+}
+
+@mixin font-rubik-regular {
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+}
+
+@mixin font-rubik-italic {
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+@mixin font-rubik-bold {
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+}
+
+@mixin font-rubik-bold-italic {
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
 
 @function rem($val) {
     @return calc($val/$base-font-size) + rem;
@@ -8,6 +33,20 @@ $base-font-size: 16;
     font-size: calc($font-size / $base-font-size) + rem;
     line-height: calc($leading / $base-font-size) + rem;
     letter-spacing: $tracking + px;
+}
+
+@function color($group, $color) {
+    @return map-get(map-get($colors, $group), $color);
+}
+
+@function shadow($color) {
+    @return map-get($shadows, $color);
+}
+
+@mixin mobile-lg {
+    @media screen and (min-width: 600px) {
+        @content;
+    }
 }
 
 @mixin tablet {

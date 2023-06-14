@@ -5,9 +5,8 @@ const config: StorybookConfig = {
   stories: ["../src/**/storybook/*.stories.@(js|jsx|ts|tsx)", "../src/**/storybook/*.mdx"],
   addons: [
     "@storybook/addon-essentials",
-    "@storybook/addon-styling",
     {
-      name: "@storybook/addon-styling",
+      name: '@storybook/addon-styling',
       options: {
         cssBuildRule: {
           test: /\.css$/,
@@ -18,13 +17,19 @@ const config: StorybookConfig = {
             },
           ]
         },
+        sass: {
+          // Require your Sass preprocessor here
+          implementation: require('sass'),
+        },
+        additionalData: `@import '../src/styles/main.scss';`,
       },
-    },],
+    },
+  ],
   docs: {
     autodocs: 'tag',
     defaultName: 'Docs',
   },
-  staticDirs: [{ from: '../public/fonts', to: '/fonts' }],
+  staticDirs: ['../public'],
 };
 
 export default config;

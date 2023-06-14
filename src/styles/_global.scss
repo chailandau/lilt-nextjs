@@ -1,9 +1,9 @@
-@import "./variables";
-
 html {
-    background-color: map-get($colors, dark, blue);
+    @include font-rubik-regular;
+    background-color: color(dark, blue);
+    color: color(neutral, white);
 }
 
 .docs-story {
-    background-color: map-get($colors, dark, blue);
+    background-color: color(dark, blue);
 }

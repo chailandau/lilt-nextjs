@@ -1,10 +1,6 @@
-@import "../../styles/fonts";
-@import "../../styles/mixins";
-@import "../../styles/variables";
+@import "../../styles/main.scss";
 
 .text {
-    color: map-get($colors, neutral, white);
-    @include font-rubik-regular;
     @include font(18, 24, 0.35);
     @include tablet {
         @include font(20, 28, 0.4);

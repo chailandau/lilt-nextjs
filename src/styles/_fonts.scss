@@ -1,7 +1,7 @@
 @font-face {
     font-family: "Recharge";
-    src: url("/fonts/Recharge-Bold.woff2") format("woff2"),
-        url("/fonts/Recharge-Bold.woff") format("woff");
+    src: url("/public/fonts/Recharge-Bold.woff2") format("woff2"),
+        url("/public/fonts/Recharge-Bold.woff") format("woff");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -9,8 +9,8 @@
 
 @font-face {
     font-family: "Rubik";
-    src: url("/fonts/Rubik-Regular.woff2") format("woff2"),
-        url("/fonts/Rubik-Regular.woff") format("woff");
+    src: url("/public/fonts/Rubik-Regular.woff2") format("woff2"),
+        url("/public/fonts/Rubik-Regular.woff") format("woff");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -18,8 +18,8 @@
 
 @font-face {
     font-family: "Rubik";
-    src: url("/fonts/Rubik-Italic.woff2") format("woff2"),
-        url("/fonts/Rubik-Italic.woff") format("woff");
+    src: url("/public/fonts/Rubik-Italic.woff2") format("woff2"),
+        url("/public/fonts/Rubik-Italic.woff") format("woff");
     font-weight: 400;
     font-style: italic;
     font-display: swap;
@@ -27,8 +27,8 @@
 
 @font-face {
     font-family: "Rubik";
-    src: url("/fonts/Rubik-Bold.woff2") format("woff2"),
-        url("/fonts/Rubik-Bold.woff") format("woff");
+    src: url("/public/fonts/Rubik-Bold.woff2") format("woff2"),
+        url("/public/fonts/Rubik-Bold.woff") format("woff");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -36,36 +36,9 @@
 
 @font-face {
     font-family: "Rubik";
-    src: url("/fonts/Rubik-BoldItalic.woff2") format("woff2"),
-        url("/fonts/Rubik-BoldItalic.woff") format("woff");
+    src: url("/public/fonts/Rubik-BoldItalic.woff2") format("woff2"),
+        url("/public/fonts/Rubik-BoldItalic.woff") format("woff");
     font-weight: 700;
     font-style: italic;
     font-display: swap;
-}
-
-@mixin font-recharge-bold {
-    font-family: "Recharge", sans-serif;
-    font-weight: 700;
-}
-
-@mixin font-rubik-regular {
-    font-family: "Rubik", sans-serif;
-    font-weight: 400;
-}
-
-@mixin font-rubik-italic {
-    font-family: "Rubik", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-}
-
-@mixin font-rubik-bold {
-    font-family: "Rubik", sans-serif;
-    font-weight: 700;
-}
-
-@mixin font-rubik-bold-italic {
-    font-family: "Rubik", sans-serif;
-    font-weight: 700;
-    font-style: italic;
 }

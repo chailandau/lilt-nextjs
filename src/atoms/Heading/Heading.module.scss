@@ -1,68 +1,59 @@
-@import "../../styles/fonts";
-@import "../../styles/mixins";
-@import "../../styles/variables";
+@import "../../styles/main.scss";
 
 .heading {
     text-transform: uppercase;
-}
-
-.green {
-    color: map-get($colors, neon, green);
-}
-
-.blue {
-    color: map-get($colors, neon, blue);
-}
-
-.xs,
-.sm,
-.lg {
-    @include font-rubik-regular;
-}
-
-.md,
-.xl {
-    @include font-recharge-bold;
-    text-shadow: map-get($shadows, fuchsia);
-}
-
-.xs {
-    @include font(20, 28);
-    @include tablet {
-        @include font(26, 36);
+    &.green {
+        color: color(neon, green);
     }
-}
 
-.sm {
-    @include font(24, 34);
-    @include tablet {
-        @include font(32, 38);
+    &.blue {
+        color: color(neon, blue);
     }
-}
 
-.md {
-    @include font(22, 26, 0.4);
-    @include tablet {
-        @include font(38, 55, 0.75);
+    &.md,
+    &.xl {
+        @include font-recharge-bold;
+        text-shadow: shadow(fuchsia);
     }
-}
 
-.lg {
-    @include font(28, 36);
-    @include tablet {
-        @include font(44, 54);
+    &.xs {
+        @include font(20, 28);
+        @include tablet {
+            @include font(26, 36);
+        }
     }
-    @include desktop {
-        @include font(50, 60);
-    }
-}
 
-.xl {
-    @include font(26, 32, 0.5);
-    @include tablet {
-        @include font(44, 54, 0.85);
+    &.sm {
+        @include font(24, 34);
+        @include tablet {
+            @include font(32, 38);
+        }
     }
-    @include desktop {
-        @include font(60, 72, 1.2);
+
+    &.md {
+        @include font(22, 26, 0.4);
+        @include tablet {
+            @include font(38, 55, 0.75);
+        }
+    }
+
+    &.lg {
+        @include font(28, 36);
+        @include tablet {
+            @include font(44, 54);
+        }
+        @include desktop {
+            @include font(50, 60);
+        }
+    }
+
+    &.xl {
+        @include font(26, 32, 0.5);
+        @include tablet {
+            @include font(44, 54, 0.85);
+        }
+        @include desktop {
+            @include font(60, 72, 1.2);
+        }
     }
 }
