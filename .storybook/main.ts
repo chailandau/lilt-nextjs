@@ -5,6 +5,7 @@ const config: StorybookConfig = {
   stories: ["../src/**/storybook/*.stories.@(js|jsx|ts|tsx)", "../src/**/storybook/*.mdx"],
   addons: [
     "@storybook/addon-essentials",
+    "@storybook/addon-next",
     {
       name: '@storybook/addon-styling',
       options: {

@@ -12,6 +12,12 @@ const meta: Meta<typeof Button> = {
             table: { defaultValue: { summary: 'blue' } }
         }
     },
+    parameters: {
+        controls: {
+            include: ['color', 'children', 'link'],
+        }
+    },
+
     decorators: [
         (Story) => (
             <Section>

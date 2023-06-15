@@ -15,7 +15,8 @@
     "next": "13.4.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "storybook": "^7.0.18"
+    "storybook": "^7.0.18",
+    "storybook-addon-next": "^1.8.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.18",
