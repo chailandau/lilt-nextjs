@@ -8,7 +8,7 @@ export const buttonColors = ['blue', 'green', 'white'] as const;
 
 interface ButtonProps {
     /** Button color */
-    color: typeof buttonColors[number];
+    color?: typeof buttonColors[number];
     /** Button content */
     children: string;
     /** `Button` renders as an `a` tag if supplied */
