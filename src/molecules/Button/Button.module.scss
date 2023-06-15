@@ -14,12 +14,12 @@
         flex-grow: 0;
     }
     &.blue {
-        background-color: color(neon, blue);
+        @include bgSlideHover(color(neon, blue), color(neutral, white));
     }
     &.green {
-        background-color: color(neon, green);
+        @include bgSlideHover(color(neon, green), color(neutral, white));
     }
     &.white {
-        background-color: color(neutral, white);
+        @include bgSlideHover(color(neutral, white), color(neon, blue));
     }
 }
