@@ -1,0 +1,6 @@
+.text {
+    @include font(18, 24, 0.35);
+    @include tablet {
+        @include font(20, 28, 0.4);
+    }
+}

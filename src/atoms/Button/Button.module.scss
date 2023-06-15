@@ -1,0 +1,25 @@
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: rem(20);
+    padding: rem(12) rem(20);
+    @include font(14, 16);
+    @include font-rubik-bold;
+    color: color(neutral, black);
+    text-transform: uppercase;
+    flex-grow: 1;
+    transition: flex-grow 0.3s ease-in-out;
+    @include mobile-lg {
+        flex-grow: 0;
+    }
+    &.blue {
+        @include bgSlideHover(color(neon, blue), color(neutral, white));
+    }
+    &.green {
+        @include bgSlideHover(color(neon, green), color(neutral, white));
+    }
+    &.white {
+        @include bgSlideHover(color(neutral, white), color(neon, blue));
+    }
+}

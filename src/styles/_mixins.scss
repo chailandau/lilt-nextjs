@@ -1,4 +1,31 @@
-$base-font-size: 16;
+// typography
+
+@mixin font-recharge-bold {
+    font-family: "Recharge", sans-serif;
+    font-weight: 700;
+}
+
+@mixin font-rubik-regular {
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+}
+
+@mixin font-rubik-italic {
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+@mixin font-rubik-bold {
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+}
+
+@mixin font-rubik-bold-italic {
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
 
 @function rem($val) {
     @return calc($val/$base-font-size) + rem;
@@ -6,8 +33,38 @@ $base-font-size: 16;
 
 @mixin font($font-size, $leading, $tracking: 0) {
     font-size: calc($font-size / $base-font-size) + rem;
-    letter-spacing: $tracking + px;
     line-height: calc($leading / $base-font-size) + rem;
+    letter-spacing: $tracking + px;
+}
+
+// visual
+
+@function color($group, $color) {
+    @return map-get(map-get($colors, $group), $color);
+}
+
+@function shadow($color) {
+    @return map-get($shadows, $color);
+}
+
+@mixin bgSlideHover($color1, $color2) {
+    background: $color2;
+    background: linear-gradient(to right, $color2 50%, $color1 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0%;
+    transition: background-position 0.5s ease-in-out;
+
+    &:hover {
+        background-position: 0% 0%;
+    }
+}
+
+// media queries
+
+@mixin mobile-lg {
+    @media screen and (min-width: 600px) {
+        @content;
+    }
 }
 
 @mixin tablet {

@@ -18,17 +18,13 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
   },
   "include": [
     "next-env.d.ts",
     "next.config.js",
     "**/*.ts",
     "**/*.tsx",
+    "declarations.d.ts"
   ],
   "exclude": [
     "node_modules"

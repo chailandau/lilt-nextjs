@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Heading from '../Heading';
+import Heading, { headingColors } from '../Heading';
 
 const meta: Meta<typeof Heading> = {
     title: 'atoms/Heading',
@@ -12,6 +12,10 @@ const meta: Meta<typeof Heading> = {
         },
         tag: {
             table: { defaultValue: { summary: 'h2' } },
+        },
+        color: {
+            options: headingColors,
+            table: { defaultValue: { summary: 'green' } },
         }
     },
 };
@@ -24,6 +28,7 @@ export const Default: Story = {
     args: {
         tag: 'h2',
         size: 'md',
-        children: 'This is a heading'
+        children: 'This is a heading',
+        color: 'green',
     },
 };

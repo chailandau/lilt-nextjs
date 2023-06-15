@@ -1,0 +1,9 @@
+html {
+    @include font-rubik-regular;
+    background-color: color(dark, blue);
+    color: color(neutral, white);
+}
+
+.docs-story {
+    background-color: color(dark, blue);
+}
