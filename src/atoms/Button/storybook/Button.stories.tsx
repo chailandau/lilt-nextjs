@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Section from '../../../molecules/Section/Section';
+import Section from '../../Section/Section';
 import Button, { buttonColors } from '../Button';
 
 const meta: Meta<typeof Button> = {
-    title: 'molecules/Button',
+    title: 'atoms/Button',
     component: Button,
     argTypes: {
         color: {
