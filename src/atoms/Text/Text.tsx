@@ -6,7 +6,7 @@ export const textTags = ['p', 'span'] as const;
 
 interface TextProps {
     /** Semantic tag text is wrapped in */
-    tag: typeof textTags[number];
+    tag?: typeof textTags[number];
     /** Text content */
     children: string;
 }

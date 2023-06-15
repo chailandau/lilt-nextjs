@@ -1,36 +1,24 @@
 import type { StorybookConfig } from '@storybook/nextjs';
+import * as path from 'path';
 
 const config: StorybookConfig = {
-  framework: '@storybook/nextjs',
+  framework: {
+    name: '@storybook/nextjs',
+    options: {
+      nextConfigPath: path.resolve(__dirname, '../next.config.js'),
+    },
+  },
   stories: ["../src/**/storybook/*.stories.@(js|jsx|ts|tsx)", "../src/**/storybook/*.mdx"],
   addons: [
     "@storybook/addon-essentials",
-    "@storybook/addon-next",
-    {
-      name: '@storybook/addon-styling',
-      options: {
-        cssBuildRule: {
-          test: /\.css$/,
-          use: [
-            'style-loader',
-            {
-              loader: 'css-loader',
-            },
-          ]
-        },
-        sass: {
-          // Require your Sass preprocessor here
-          implementation: require('sass'),
-        },
-        additionalData: `@import '../src/styles/main.scss';`,
-      },
-    },
+    "storybook-css-modules-preset",
+    '@storybook/addon-styling',
   ],
   docs: {
     autodocs: 'tag',
     defaultName: 'Docs',
   },
-  staticDirs: ['../public'],
+
 };
 
 export default config;
