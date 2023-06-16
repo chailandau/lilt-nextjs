@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Text from '../../Text/Text';
 import Section from '../Section';
+
+import Text from '@/atoms/Text/Text';
 
 const textAtom = <Text>This text is in a section</Text>;
 

@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import parseUrl from '../../utils/parseUrl';
-
 import styles from './Button.module.scss';
+
+import parseUrl from '@/utils/parseUrl';
 
 export const buttonColors = ['blue', 'green', 'white'] as const;
 
