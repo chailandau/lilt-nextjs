@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { FC } from 'react';
 
 import styles from './Button.module.scss';
@@ -23,7 +24,8 @@ const Button: FC<ButtonProps> = ({
     onClick,
     children
 }) => {
-    const classNames = `${styles['button']} ${styles[color]}`;
+
+    const classes = classNames(styles['button'], styles[color]);
 
     const isLink = link && link.trim() !== '';
 
@@ -40,7 +42,7 @@ const Button: FC<ButtonProps> = ({
             href={isLink ? href : undefined}
             rel={rel}
             target={target}
-            className={classNames}
+            className={classes}
             onClick={onClick}
         >
             {children}

@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { FC } from 'react';
 
 import styles from './Heading.module.scss';
@@ -10,25 +11,26 @@ export const headingColors = ['blue', 'green'] as const;
 
 interface HeadingProps {
     /** Semantic tag heading is wrapped in */
-    tag: typeof headingTags[number];
+    as?: typeof headingTags[number];
     /** Heading size */
-    size: typeof headingSizes[number];
+    size?: typeof headingSizes[number];
     /** Heading color */
-    color: typeof headingColors[number];
+    color?: typeof headingColors[number];
     /** Heading content */
     children: string;
 }
 
 const Heading: FC<HeadingProps> = ({
-    tag: HeadingTag = 'h2',
+    as: HeadingTag = 'h2',
     size = 'md',
     color = 'green',
     children,
 }) => {
-    const classNames = `${styles['heading']} ${styles[size]} ${styles[color]}`;
+
+    const classes = classNames(styles['heading'], styles[size], styles[color]);
 
     return (
-        <HeadingTag className={classNames}>
+        <HeadingTag className={classes}>
             {children}
         </HeadingTag>
     );

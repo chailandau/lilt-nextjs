@@ -1,32 +1,24 @@
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
 
-import type { CSSProperties, FC } from 'react';
+import type { FC } from 'react';
+
+import Container from '../Container/Container';
 
 interface ImageProps {
     src: NextImageProps;
     alt: string;
-    objectFit?: CSSProperties['objectFit'];
 }
 
 const Image: FC<ImageProps> = ({
     src: nextImage,
-    alt,
-    objectFit = 'contain'
+    alt
 }) => {
     const { height, src, width } = nextImage;
 
     return (
-        <div
-            style={{ width: 'fit-content', height: 'fit-content' }}
-        >
-            <NextImage
-                src={src}
-                width={width}
-                height={height}
-                alt={alt}
-                style={{ objectFit }}
-            />
-        </div>
+        <Container className='image'>
+            <NextImage src={src} width={width} height={height} alt={alt} />
+        </Container >
     );
 };
 

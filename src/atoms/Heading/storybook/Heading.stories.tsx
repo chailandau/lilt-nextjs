@@ -10,7 +10,7 @@ const meta: Meta<typeof Heading> = {
             control: 'select',
             table: { defaultValue: { summary: 'md' } },
         },
-        tag: {
+        as: {
             table: { defaultValue: { summary: 'h2' } },
         },
         color: {
@@ -26,7 +26,7 @@ type Story = StoryObj<typeof Heading>;
 
 export const Default: Story = {
     args: {
-        tag: 'h2',
+        as: 'h2',
         size: 'md',
         children: 'This is a heading',
         color: 'green',

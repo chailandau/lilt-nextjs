@@ -1,0 +1,27 @@
+import { Canvas, Meta, ArgTypes } from "@storybook/blocks";
+
+import * as ContainerStories from "./Container.stories";
+
+<Meta of={ContainerStories} />
+
+# Container
+
+The `Container` atom is a semantic HTML element that accepts children.
+
+<Canvas of={ContainerStories.Default} />
+
+<br />
+
+### Children
+
+Content is supplied as children to the `Container` atom.
+
+### As
+
+Select a semantic element tag using best practices to keep the page accessible. Read this article from [W3 Schools]('https://www.w3schools.com/html/html5_semantic_elements.asp') for more information on which tag to use when.
+
+If the `as` prop is not specified, the tag will default to `div`.
+
+## Props
+
+<ArgTypes />
