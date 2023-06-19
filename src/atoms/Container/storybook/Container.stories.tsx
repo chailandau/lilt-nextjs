@@ -9,6 +9,11 @@ const textAtom = <Text>This text is in a container.</Text>;
 const meta: Meta<typeof Container> = {
     title: 'atoms/Container',
     component: Container,
+    argTypes: {
+        as: {
+            table: { defaultValue: { summary: 'div' } },
+        }
+    },
     parameters: {
         controls: {
             exclude: ['children']

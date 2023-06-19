@@ -9,6 +9,11 @@ const textAtom = <Text>This text is in a flex container</Text>;
 const meta: Meta<typeof Flex> = {
     title: 'atoms/Flex',
     component: Flex,
+    argTypes: {
+        as: {
+            table: { defaultValue: { summary: 'div' } },
+        }
+    },
     parameters: {
         controls: {
             exclude: ['children']
