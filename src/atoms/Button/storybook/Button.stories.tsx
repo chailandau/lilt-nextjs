@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Section from '../../Section/Section';
 import Button, { buttonColors } from '../Button';
+
+import Flex from '@/atoms/Flex/Flex';
 
 const meta: Meta<typeof Button> = {
     title: 'atoms/Button',
@@ -20,9 +21,9 @@ const meta: Meta<typeof Button> = {
 
     decorators: [
         (Story) => (
-            <Section>
+            <Flex>
                 <Story />
-            </Section>
+            </Flex>
         ),
     ],
 };

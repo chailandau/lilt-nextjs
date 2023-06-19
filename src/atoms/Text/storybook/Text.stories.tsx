@@ -6,7 +6,7 @@ const meta: Meta<typeof Text> = {
     title: 'atoms/Text',
     component: Text,
     argTypes: {
-        tag: {
+        as: {
             options: textTags,
             table: { defaultValue: { summary: 'p' } }
         }
@@ -19,7 +19,7 @@ type Story = StoryObj<typeof Text>;
 
 export const Default: Story = {
     args: {
-        tag: 'p',
+        as: 'p',
         children: 'This is text.'
     },
 };

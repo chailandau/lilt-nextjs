@@ -6,12 +6,12 @@ export const textTags = ['p', 'span'] as const;
 
 interface TextProps {
     /** Semantic tag text is wrapped in */
-    tag?: typeof textTags[number];
+    as?: typeof textTags[number];
     /** Text content */
     children: string;
 }
 
-const Text: FC<TextProps> = ({ tag: TextTag = 'p', children }) => (
+const Text: FC<TextProps> = ({ as: TextTag = 'p', children }) => (
     <TextTag className={styles.text}>
         {children}
     </TextTag>

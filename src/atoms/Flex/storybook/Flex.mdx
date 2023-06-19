@@ -1,0 +1,27 @@
+import { Canvas, Meta, ArgTypes } from "@storybook/blocks";
+
+import * as FlexStories from "./Flex.stories";
+
+<Meta of={FlexStories} />
+
+# Flex Atom
+
+The `Flex` atom is a semantic HTML element with flex that accepts children.
+
+<Canvas of={FlexStories.Default} />
+
+<br />
+
+### `children`
+
+Content is supplied as children to the `Flex` atom.
+
+### `as`
+
+Select a semantic element tag using best practices to keep the page accessible. Read this article from [W3 Schools]('https://www.w3schools.com/html/html5_semantic_elements.asp') for more information on which tag to use when.
+
+If the `as` prop is not specified, the tag will default to `div`.
+
+## Props
+
+<ArgTypes />

@@ -1,8 +1,9 @@
+import classNames from 'classnames';
 import { FC } from 'react';
 
-import parseUrl from '../../utils/parseUrl';
-
 import styles from './Button.module.scss';
+
+import parseUrl from '@/utils/parseUrl';
 
 export const buttonColors = ['blue', 'green', 'white'] as const;
 
@@ -23,7 +24,8 @@ const Button: FC<ButtonProps> = ({
     onClick,
     children
 }) => {
-    const classNames = `${styles['button']} ${styles[color]}`;
+
+    const classes = classNames(styles['button'], styles[color]);
 
     const isLink = link && link.trim() !== '';
 
@@ -40,7 +42,7 @@ const Button: FC<ButtonProps> = ({
             href={isLink ? href : undefined}
             rel={rel}
             target={target}
-            className={classNames}
+            className={classes}
             onClick={onClick}
         >
             {children}

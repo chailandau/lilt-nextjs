@@ -1,0 +1,23 @@
+import { Canvas, Meta, ArgTypes } from "@storybook/blocks";
+
+import * as ImageStories from "./Image.stories";
+
+<Meta of={ImageStories} />
+
+# Image Atom
+
+<Canvas of={ImageStories.Default} />
+
+### `src`
+
+Supply a path to an image compatible with the Next.js built-in `Image` component. Read more about it [here](https://nextjs.org/docs/pages/api-reference/components/image).
+
+### `alt`
+
+Supply alt text for the image. This is required, as alt text is important for accessibility. Read more about alt text best practices on [WebAIM](https://webaim.org/techniques/alttext/).
+
+<br />
+
+## Props
+
+<ArgTypes />
