@@ -3,7 +3,7 @@ import NextImage, { ImageProps as NextImageProps } from 'next/image';
 
 import type { FC } from 'react';
 
-import Container from '../Container/Container';
+import Flex from '../Flex/Flex';
 
 import styles from './Image.module.scss';
 
@@ -29,14 +29,14 @@ const Image: FC<ImageProps> = ({
     const classList = classNames(styles['container'], hasBorder && styles['border']);
 
     return (
-        <Container className={classList}>
+        <Flex className={classList}>
             <NextImage
                 src={src}
                 alt={alt}
                 priority={priority}
                 fill
             />
-        </Container >
+        </Flex >
     );
 };
 

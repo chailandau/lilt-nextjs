@@ -1,23 +1,24 @@
-import { FC, ReactNode } from 'react';
+import classNames from 'classnames';
+import { FC } from 'react';
 
 import styles from './Flex.module.scss';
 
-import { semanticTags } from '@/atoms/Container/Container';
+import { ContainerProps } from '@/atoms/Container/Container';
 
-interface FlexProps {
-    /** Section content */
-    children: ReactNode;
-    /** Semantic tag */
-    as?: typeof semanticTags[number];
-}
+type FlexProps = ContainerProps
 
 const Flex: FC<FlexProps> = ({
     children,
     as: FlexTag = 'div',
-}) => (
-    <FlexTag className={styles.flex}>
-        {children}
-    </FlexTag>
-);
+    className
+}) => {
+    const classList = classNames(styles.flex, className && className);
+
+    return (
+        <FlexTag className={classList}>
+            {children}
+        </FlexTag>
+    );
+};
 
 export default Flex;

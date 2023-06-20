@@ -1,20 +1,21 @@
 .container {
     width: 100%;
     height: auto;
-    &.border,
-    img {
-        border-radius: rem(20);
-    }
     img {
         position: relative !important;
         object-fit: contain;
     }
+    &.border,
+    &.border > img {
+        border-radius: rem(20);
+    }
     &.border {
         position: relative;
         border: 2px solid color(neon, blue);
-        width: calc(100vw - rem(40));
-        @include tablet {
-            width: calc(100vw - rem(46));
+        margin-right: rem(12);
+        @include transition(margin-right);
+        @include mobile-lg {
+            margin-right: rem(20);
         }
         &:after {
             display: block;
@@ -28,7 +29,7 @@
             border-radius: rem(26);
             border: 2px solid color(neon, green);
             @include transition(top, left);
-            @include tablet {
+            @include mobile-lg {
                 top: rem(20);
                 left: rem(20);
             }

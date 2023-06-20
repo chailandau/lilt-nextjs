@@ -70,12 +70,18 @@
 // media queries
 
 @mixin mobile-lg {
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 480px) {
         @content;
     }
 }
 
 @mixin tablet {
+    @media screen and (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin tablet-lg {
     @media screen and (min-width: 768px) {
         @content;
     }

@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 
 export const semanticTags = ['div', 'footer', 'header', 'nav', 'section'] as const;
 
-interface ContainerProps {
+export interface ContainerProps {
     /** Section content */
     children: ReactNode;
     /** Semantic tag */
