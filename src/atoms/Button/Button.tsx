@@ -25,7 +25,7 @@ const Button: FC<ButtonProps> = ({
     children
 }) => {
 
-    const classes = classNames(styles['button'], styles[color]);
+    const classList = classNames(styles['button'], styles[color]);
 
     const isLink = link && link.trim() !== '';
 
@@ -42,7 +42,7 @@ const Button: FC<ButtonProps> = ({
             href={isLink ? href : undefined}
             rel={rel}
             target={target}
-            className={classes}
+            className={classList}
             onClick={onClick}
         >
             {children}

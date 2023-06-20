@@ -27,10 +27,10 @@ const Heading: FC<HeadingProps> = ({
     children,
 }) => {
 
-    const classes = classNames(styles['heading'], styles[size], styles[color]);
+    const classList = classNames(styles['heading'], styles[size], styles[color]);
 
     return (
-        <HeadingTag className={classes}>
+        <HeadingTag className={classList}>
             {children}
         </HeadingTag>
     );
