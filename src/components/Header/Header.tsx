@@ -4,7 +4,7 @@ import Image from '@/atoms/Image/Image';
 
 const Header = () => (
     <Flex as='header'>
-        <Image src={Logo} alt='Long Island Laser Tag' />
+        <Image src={Logo} alt='Long Island Laser Tag' priority />
     </Flex>
 );
 

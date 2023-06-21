@@ -9,7 +9,7 @@ import styles from './Image.module.scss';
 
 interface ImageProps {
     /** `next/image` object  */
-    src: NextImageProps;
+    src: Omit<NextImageProps, 'alt'>;
     /** Image alt text */
     alt: string;
     /** If true, image will be rounded and have a double border */
@@ -24,17 +24,16 @@ const Image: FC<ImageProps> = ({
     hasBorder,
     priority
 }) => {
-    const { src } = nextImage;
 
     const classList = classNames(styles['container'], hasBorder && styles['border']);
 
     return (
         <Flex className={classList}>
             <NextImage
-                src={src}
+                {...nextImage}
                 alt={alt}
                 priority={priority}
-                fill
+                placeholder='blur'
             />
         </Flex >
     );
