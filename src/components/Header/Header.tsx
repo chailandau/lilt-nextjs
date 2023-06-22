@@ -1,11 +1,24 @@
+import classNames from 'classnames';
+
+import styles from './Header.module.scss';
+
 import Logo from '@/assets/svg/Logo.svg';
 import Flex from '@/atoms/Flex/Flex';
 import Image from '@/atoms/Image/Image';
 
-const Header = () => (
-    <Flex as='header'>
-        <Image src={Logo} alt='Long Island Laser Tag' priority />
-    </Flex>
-);
+const Header = () => {
+    const classList = classNames(styles.header);
+
+    return (
+        <Flex as='header' className={classList}>
+            <Image
+                className={styles.logo}
+                src={Logo}
+                alt='Long Island Laser Tag'
+                priority
+            />
+        </Flex>
+    );
+};
 
 export default Header;

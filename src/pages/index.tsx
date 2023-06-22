@@ -14,8 +14,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div style={{ width: '590px' }}>
-        <Image src={OutdoorTents} alt="Outdoor Tents" hasBorder priority />
+      <div style={{ maxWidth: '590px' }}>
+        <Image
+          src={OutdoorTents}
+          alt="Outdoor Tents"
+          hasBorder
+          priority
+        />
       </div>
     </>
   );

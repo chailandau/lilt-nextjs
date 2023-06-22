@@ -25,7 +25,7 @@ const Button: FC<ButtonProps> = ({
     children
 }) => {
 
-    const classList = classNames(styles['button'], styles[color]);
+    const classList = classNames(styles.button, styles[color]);
 
     const isLink = link && link.trim() !== '';
 
