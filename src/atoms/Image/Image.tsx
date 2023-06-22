@@ -7,6 +7,8 @@ import Flex from '../Flex/Flex';
 
 import styles from './Image.module.scss';
 
+import { isSvg } from '@/utils/functions';
+
 interface ImageProps {
     /** `next/image` object  */
     src: Omit<NextImageProps, 'alt'>;
@@ -24,16 +26,22 @@ const Image: FC<ImageProps> = ({
     hasBorder,
     priority
 }) => {
+    const { src, width, height, blurDataURL } = nextImage;
 
     const classList = classNames(styles['container'], hasBorder && styles['border']);
+
+    const svgImg = isSvg(nextImage.src.toString());
 
     return (
         <Flex className={classList}>
             <NextImage
-                {...nextImage}
+                src={src}
                 alt={alt}
+                width={width}
+                height={height}
                 priority={priority}
-                placeholder='blur'
+                placeholder={svgImg ? undefined : 'blur'}
+                blurDataURL={svgImg ? undefined : blurDataURL}
             />
         </Flex >
     );
