@@ -31,7 +31,7 @@ const Image: FC<ImageProps> = ({
 }) => {
     const { src, width, height, blurDataURL } = nextImage;
 
-    const classList = classNames(styles.container, hasBorder && styles.border, className && className);
+    const classList = classNames(styles['container'], hasBorder && styles['border'], className && className);
 
     const svgImg = isSvg(nextImage.src.toString());
 

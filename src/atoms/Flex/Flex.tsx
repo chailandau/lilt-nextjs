@@ -3,21 +3,24 @@ import { FC } from 'react';
 
 import styles from './Flex.module.scss';
 
-import { ContainerProps } from '@/atoms/Container/Container';
+import Container, { ContainerProps } from '@/atoms/Container/Container';
 
-type FlexProps = ContainerProps
-
-const Flex: FC<FlexProps> = ({
+const Flex: FC<ContainerProps> = ({
     children,
     as: FlexTag = 'div',
-    className
+    className,
+    onClick
 }) => {
-    const classList = classNames(styles.flex, className && className);
+    const classList = classNames(styles['flex'], className && className);
 
     return (
-        <FlexTag className={classList}>
+        <Container
+            as={FlexTag}
+            className={classList}
+            onClick={onClick}
+        >
             {children}
-        </FlexTag>
+        </Container>
     );
 };
 

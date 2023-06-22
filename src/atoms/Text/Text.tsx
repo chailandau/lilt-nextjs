@@ -12,7 +12,7 @@ interface TextProps {
 }
 
 const Text: FC<TextProps> = ({ as: TextTag = 'p', children }) => (
-    <TextTag className={styles.text}>
+    <TextTag className={styles['text']}>
         {children}
     </TextTag>
 );
