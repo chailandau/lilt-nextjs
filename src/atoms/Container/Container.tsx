@@ -9,14 +9,17 @@ export interface ContainerProps {
     as?: typeof semanticTags[number];
     /** CSS class */
     className?: string | undefined;
+    /** `onClick` event */
+    onClick?: () => void;
 }
 
 const Container: FC<ContainerProps> = ({
     children,
     as: ContainerTag = 'div',
-    className
+    className,
+    onClick
 }) => (
-    <ContainerTag className={className}>
+    <ContainerTag className={className} onClick={onClick}>
         {children}
     </ContainerTag>
 );

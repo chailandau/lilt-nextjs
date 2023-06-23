@@ -5,12 +5,14 @@
     z-index: 100;
     width: 100%;
     height: 100%;
+    align-items: flex-start;
     background-color: color(dark, blue);
     ul {
         display: flex;
+        height: 100vh;
+        padding-top: rem(144);
         flex-direction: column;
-        justify-content: center;
-        gap: rem(40);
+        gap: rem(64);
         list-style-type: none;
         margin-block-start: 0;
         margin-block-end: 0;
