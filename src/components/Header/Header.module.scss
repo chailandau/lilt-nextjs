@@ -1,5 +1,5 @@
 .header {
-    padding: rem(24);
+    @include paddingY(24);
     justify-content: space-between;
     gap: rem(40);
     .logo {

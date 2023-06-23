@@ -26,9 +26,9 @@ const Link: FC<LinkProps> = ({
     const classList = classNames(underline && styles['underline'], className && className);
 
     const {
-        rel = undefined,
+        href = '',
         target = undefined,
-        href = ''
+        rel = undefined
     } = parseUrl(destination) || {};
 
     return (

@@ -8,8 +8,7 @@ import Container, { ContainerProps } from '@/atoms/Container/Container';
 const Flex: FC<ContainerProps> = ({
     children,
     as: FlexTag = 'div',
-    className,
-    onClick
+    className
 }) => {
     const classList = classNames(styles['flex'], className && className);
 
@@ -17,7 +16,6 @@ const Flex: FC<ContainerProps> = ({
         <Container
             as={FlexTag}
             className={classList}
-            onClick={onClick}
         >
             {children}
         </Container>

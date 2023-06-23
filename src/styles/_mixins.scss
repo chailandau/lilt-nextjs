@@ -1,7 +1,6 @@
 @use "sass:math";
 
 // typography
-
 @mixin font-recharge-bold {
     font-family: "Recharge", sans-serif;
     font-weight: 700;
@@ -40,7 +39,6 @@
 }
 
 // visual
-
 @function color($group, $color) {
     @return map-get(map-get($colors, $group), $color);
 }
@@ -49,18 +47,34 @@
     @return map-get($shadows, $color);
 }
 
+// spacing
+@mixin paddingX($padding) {
+    padding-left: rem($padding);
+    padding-right: rem($padding);
+}
+
+@mixin paddingY($padding) {
+    padding-top: rem($padding);
+    padding-bottom: rem($padding);
+}
+
+@mixin marginX($margin) {
+    margin-left: rem($margin);
+    margin-right: rem($margin);
+}
+
+@mixin marginY($margin) {
+    margin-top: rem($margin);
+    margin-bottom: rem($margin);
+}
+
+// animation
 @mixin transition($properties...) {
     $transition: ();
     @each $property in $properties {
         $transition: append($transition, ($property 0.5s ease-in-out), comma);
     }
     transition: $transition;
-}
-
-@mixin addTargetArea($amount: 14) {
-    display: block;
-    padding: rem($amount);
-    margin: rem(-$amount);
 }
 
 @mixin bgSlideHover($color1, $color2) {
@@ -99,8 +113,14 @@
     }
 }
 
-// media queries
+// accessibility
+@mixin addTargetArea($amount: 14) {
+    display: block;
+    padding: rem($amount);
+    margin: rem(-$amount);
+}
 
+// media queries
 @mixin mobile-lg {
     @media screen and (min-width: 480px) {
         @content;

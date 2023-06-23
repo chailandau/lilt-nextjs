@@ -3,7 +3,7 @@ import NextImage, { ImageProps as NextImageProps } from 'next/image';
 
 import type { FC } from 'react';
 
-import Flex from '../Flex/Flex';
+import Flex from '../../molecules/Flex/Flex';
 
 import styles from './Image.module.scss';
 

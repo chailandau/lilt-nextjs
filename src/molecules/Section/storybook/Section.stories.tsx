@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Flex from '../Flex';
+import Section from '../Section';
 
 import Text from '@/atoms/Text/Text';
 
-const textAtom = <Text>This text is in a flex container</Text>;
+const textAtom = <Text>This text is in a section</Text>;
 
-const meta: Meta<typeof Flex> = {
-    title: 'atoms/Flex',
-    component: Flex,
+const meta: Meta<typeof Section> = {
+    title: 'molecules/Section',
+    component: Section,
     argTypes: {
         as: {
-            table: { defaultValue: { summary: 'div' } },
+            table: { defaultValue: { summary: 'section' } },
         }
     },
     parameters: {
@@ -23,7 +23,7 @@ const meta: Meta<typeof Flex> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Flex>;
+type Story = StoryObj<typeof Section>;
 
 export const Default: Story = {
     args: {
