@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 import styles from './Button.module.scss';
 
-import parseUrl from '@/utils/parseUrl';
+import Link from '@/atoms/Link/Link';
 
 export const buttonColors = ['blue', 'green', 'white'] as const;
 
@@ -29,24 +29,15 @@ const Button: FC<ButtonProps> = ({
 
     const isLink = link && link.trim() !== '';
 
-    const {
-        rel = undefined,
-        target = undefined,
-        href = undefined
-    } = (isLink && parseUrl(link)) || {};
-
-    const ButtonTag = isLink ? 'a' : 'button';
-
     return (
-        <ButtonTag
-            href={isLink ? href : undefined}
-            rel={rel}
-            target={target}
-            className={classList}
-            onClick={onClick}
-        >
-            {children}
-        </ButtonTag>
+        isLink ? (
+            <Link href={link} className={classList} underline={false}>
+                {children}
+            </Link>
+        ) :
+            <button className={classList} onClick={onClick}>
+                {children}
+            </button>
     );
 };
 

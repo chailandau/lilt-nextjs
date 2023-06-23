@@ -5,7 +5,7 @@ import Button, { buttonColors } from '../Button';
 import Flex from '@/atoms/Flex/Flex';
 
 const meta: Meta<typeof Button> = {
-    title: 'atoms/Button',
+    title: 'molecules/Button',
     component: Button,
     argTypes: {
         color: {

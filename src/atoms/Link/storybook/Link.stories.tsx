@@ -7,7 +7,13 @@ import Flex from '@/atoms/Flex/Flex';
 const meta: Meta<typeof Link> = {
     title: 'atoms/Link',
     component: Link,
+    argTypes: {
+        underline: {
+            control: 'boolean',
+            table: { defaultValue: { summary: true } }
+        }
 
+    },
     decorators: [
         (Story) => (
             <Flex>
@@ -25,5 +31,6 @@ export const Default: Story = {
     args: {
         children: 'This is a link',
         href: 'http://localhost:6006/',
+        underline: true
     },
 };

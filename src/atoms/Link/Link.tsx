@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import NextLink from 'next/link';
 import { FC } from 'react';
 
 import styles from './Link.module.scss';
@@ -10,30 +11,35 @@ interface LinkProps {
     children: string;
     /** Link href */
     href: string;
+    /** CSS class name */
+    className?: string;
+    /** Enables underline on hover */
+    underline?: boolean;
 }
 
 const Link: FC<LinkProps> = ({
     href: destination,
-    children
+    children,
+    className,
+    underline = true
 }) => {
-
-    const classList = classNames(styles['link']);
+    const classList = classNames(underline && styles['underline'], className && className);
 
     const {
         rel = undefined,
         target = undefined,
-        href = undefined
+        href = ''
     } = parseUrl(destination) || {};
 
     return (
-        <a
+        <NextLink
+            className={classList}
             href={href}
             rel={rel}
             target={target}
-            className={classList}
         >
             {children}
-        </a>
+        </NextLink>
     );
 };
 
