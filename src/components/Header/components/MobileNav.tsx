@@ -1,26 +1,17 @@
-import classNames from 'classnames';
-import { useState } from 'react';
-
 import styles from './MobileNav.module.scss';
 
 import Container from '@/atoms/Container/Container';
+import Link from '@/atoms/Link/Link';
 
-const MobileNav = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
+const MobileNav = () => (
+    <Container as='nav' className={styles['mobile-nav']}>
+        <ul>
+            <li><Link href='http://localhost:6006/'>Booking</Link></li>
+            <li><Link href='http://localhost:6006/'>Schools & Camps</Link></li>
+            <li><Link href='http://localhost:6006/'>Covid-19 Guidelines</Link></li>
+        </ul>
+    </Container>
 
-    const toggleClassList = classNames(styles['menu-toggle'], menuOpen && styles['open']);
-
-    return (
-        <Container
-            as='button'
-            className={toggleClassList}
-            onClick={() => setMenuOpen(!menuOpen)}
-        >
-            <Container className={styles['menu-toggle-container']}>
-                <Container className={styles['menu-toggle-inner']}></Container>
-            </Container>
-        </Container>
-    );
-};
+);
 
 export default MobileNav;

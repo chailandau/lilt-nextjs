@@ -1,0 +1,6 @@
+.link {
+    display: block;
+    padding: rem(14);
+    margin: rem(-14);
+    @include underlineSlideHover;
+}

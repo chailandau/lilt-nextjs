@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 
+import MenuToggle from './components/MenuToggle';
 import MobileNav from './components/MobileNav';
 import styles from './Header.module.scss';
 
@@ -11,15 +12,18 @@ const Header = () => {
     const classList = classNames(styles['header']);
 
     return (
-        <Flex as='header' className={classList}>
-            <Image
-                className={styles['logo']}
-                src={Logo}
-                alt='Long Island Laser Tag'
-                priority
-            />
+        <>
+            <Flex as='header' className={classList}>
+                <Image
+                    className={styles['logo']}
+                    src={Logo}
+                    alt='Long Island Laser Tag'
+                    priority
+                />
+                <MenuToggle />
+            </Flex>
             <MobileNav />
-        </Flex>
+        </>
     );
 };
 

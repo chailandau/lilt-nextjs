@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 
-export const semanticTags = ['button', 'div', 'footer', 'header', 'nav', 'section'] as const;
+export const semanticTags = ['button', 'div', 'footer', 'header', 'nav', 'section', 'span'] as const;
 
 export interface ContainerProps {
     /** Section content */

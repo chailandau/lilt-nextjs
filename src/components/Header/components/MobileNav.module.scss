@@ -1,60 +1,23 @@
-.menu-toggle {
-    padding: rem(15);
-    display: inline-block;
-    @include transition(opacity);
-    &:hover {
-        opacity: 0.85;
-    }
-    &-container {
-        width: rem(36);
-        height: rem(24);
-        position: relative;
-    }
-    &-inner {
-        top: 50%;
-        transition: all 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-        transition-duration: 0.075s;
-        &,
-        &:before,
-        &:after {
-            width: rem(36);
-            height: rem(3);
-            background-color: color(neutral, white);
-            border-radius: rem(1);
-            position: absolute;
-        }
-        &:before,
-        &:after {
-            content: "";
-            display: block;
-        }
-        &:before {
-            top: rem(-10);
-            transition: top 0.075s 0.12s ease, opacity 0.075s ease;
-        }
-        &:after {
-            bottom: rem(-10);
-            transition: bottom 0.075s 0.12s ease,
-                transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-        }
-    }
-    &.open {
-        .menu-toggle-inner {
-            transform: rotate(45deg);
-            transition-delay: 0.12s;
-            transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-
-            &:before {
-                top: 0;
-                opacity: 0;
-                transition: top 0.075s ease, opacity 0.075s 0.12s ease;
-            }
-
-            &:after {
-                bottom: 0;
-                transform: rotate(-90deg);
-                transition: bottom 0.075s ease,
-                    transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+.mobile-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: rem(20);
+        list-style-type: none;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding-inline-start: 0;
+        li {
+            display: flex;
+            a {
+                @include font(24, 28);
             }
         }
     }
