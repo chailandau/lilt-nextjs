@@ -35,6 +35,7 @@
     "next.config.js",
     "**/*.ts",
     "**/*.tsx",
+    "loki.config.js",
   ],
   "exclude": [
     "node_modules"
