@@ -26,7 +26,12 @@ const customJestConfig = {
   moduleNameMapper: {
       '^@/(.*)$': '<rootDir>/src/$1'
   },
-  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect', 'jest-axe/extend-expect'],
+  setupFiles: ['<rootDir>/jest.setup.js'],
+  setupFilesAfterEnv: [
+    '@testing-library/jest-dom/extend-expect', 
+    'jest-axe/extend-expect',
+    'react-intersection-observer/test-utils',
+  ],
   testEnvironment: 'jest-environment-jsdom',
   testRegex: '(/test/.*|\\.(test|spec))\\.(ts|tsx)$',
   testPathIgnorePatterns: ['<rootDir>/src/test-utils/*']

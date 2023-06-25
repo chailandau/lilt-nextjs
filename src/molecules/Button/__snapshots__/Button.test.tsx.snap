@@ -31,6 +31,9 @@ exports[`Link button matches snapshot 1`] = `
   <a
     className="button blue"
     href="https://google.com"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onTouchStart={[Function]}
     rel="noreferrer noopener"
     target="_blank"
   >
