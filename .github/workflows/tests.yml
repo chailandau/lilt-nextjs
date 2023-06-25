@@ -10,6 +10,16 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
+
+            - name: Tests start
+              if: github.event_name != 'push'
+              uses: mshick/add-pr-comment@v2
+              continue-on-error: true
+              with:
+                  message-id: jest-tests
+                  message: |
+                      ### <span aria-hidden="true">🚧</span> Running tests...
+
             - name: Test using Node.js
               uses: actions/setup-node@v3
               with:
@@ -34,10 +44,6 @@ jobs:
                     "description": "Tests passed",
                     "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
                   }'
-            - uses: mshick/add-pr-comment@v2
-              with:
-                  message: |
-                      Tests Passed ✅
 
             - name: Tests Failed ❌
               if: ${{ failure() }}
@@ -52,7 +58,26 @@ jobs:
                     "description": "Tests failed",
                     "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
                   }'
-            - uses: mshick/add-pr-comment@v2
+
+            - name: Add PR Comment
+              uses: mshick/add-pr-comment@v2
               with:
-                  message: |
-                      Tests Failed ❌
+                  message-id: jest-tests
+                  message-success: |
+                      ### <span aria-hidden="true">✅</span> Jest Tests Successful!
+
+                      |  Name | Link |
+                      |---------------------------------|------------------------|
+                      |<span aria-hidden="true">🔨</span> Latest commit | ${{ github.sha }} |
+                      |<span aria-hidden="true">🔍</span> Latest test logs | ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} |
+                      ---
+                  message-failure: |
+                      ### <span aria-hidden="true">❌</span> Jest Tests Failed
+
+                      |  Name | Link |
+                      |---------------------------------|------------------------|
+                      |<span aria-hidden="true">🔨</span> Latest commit | ${{ github.sha }} |
+                      |<span aria-hidden="true">🔍</span> Latest test logs | ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} |
+                      ---
+                  message-cancelled: |
+                      ⚠ Jest Tests Cancelled
