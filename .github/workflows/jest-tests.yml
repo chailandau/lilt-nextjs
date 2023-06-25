@@ -14,8 +14,8 @@ jobs:
         steps:
             - uses: actions/checkout@v3
 
-            - name: Tests start
-              if: github.event_name != 'push'
+            - name: Tests loading
+              if: github.event.action == 'opened'
               uses: mshick/add-pr-comment@v2
               continue-on-error: true
               with:
@@ -31,7 +31,7 @@ jobs:
             - name: Get number of CPU cores
               id: cpu-cores
               uses: SimenB/github-actions-cpu-cores@v1
-            - name: run tests
+            - name: Run tests
               run: yarn test:ci --max-workers ${{ steps.cpu-cores.outputs.count }}
 
             - name: Tests Passed ✅
