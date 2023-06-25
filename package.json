@@ -8,9 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --watch",
-    "test:ci": "jest --ci",
     "coverage": "jest --coverage",
-    "coverage:ci": "jest --coverage --ci --coverageReporters='json-summary'",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "update-types": "graphql-codegen"
