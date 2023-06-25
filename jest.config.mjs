@@ -28,6 +28,7 @@ coverageReporters: [
   },
   setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect', 'jest-axe/extend-expect'],
   testEnvironment: 'jest-environment-jsdom',
+  preset: 'ts-jest',
   testRegex: '(/test/.*|\\.(test|spec))\\.(ts|tsx)$',
   testPathIgnorePatterns: ['<rootDir>/src/test-utils/*']
 };
