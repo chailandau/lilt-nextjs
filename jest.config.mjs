@@ -24,7 +24,7 @@ coverageReporters: [
   'text-summary'
 ],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/$1',
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
   setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect', 'jest-axe/extend-expect'],
   testEnvironment: 'jest-environment-jsdom',
