@@ -33,7 +33,7 @@
     "declarations.d.ts",
     "next-env.d.ts",
     "next.config.js",
-    "jest.config.mjs",
+    "jest.config.ts",
     "jest.setup.js",
     "**/*.ts",
     "**/*.tsx",
