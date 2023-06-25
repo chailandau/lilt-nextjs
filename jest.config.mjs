@@ -14,13 +14,15 @@ const customJestConfig = {
     'codegen.ts',
     '<rootDir>/.storybook/*',
     '<rootDir>/src/pages/*',
+    '<rootDir>/src/test-utils/*',
 ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
   },
-  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect', 'jest-axe/extend-expect'],
   testEnvironment: 'jest-environment-jsdom',
   testRegex: '(/test/.*|\\.(test|spec))\\.(ts|tsx)$',
+  testPathIgnorePatterns: ['<rootDir>/src/test-utils/*']
 };
 
 export default createJestConfig(customJestConfig);
