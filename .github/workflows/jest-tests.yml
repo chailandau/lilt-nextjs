@@ -1,86 +1,26 @@
-name: Jest Tests
-
+name: Jest Coverage Report
 on:
     pull_request:
-        branches:
-            - main
+        branches: "main"
 
 permissions:
     pull-requests: write
 
 jobs:
-    test:
+    coverage_report:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
 
-            - name: Tests loading
-              if: github.event.action == 'opened'
-              uses: mshick/add-pr-comment@v2
-              continue-on-error: true
-              with:
-                  message-id: jest-tests
-                  message: |
-                      ### <span aria-hidden="true">🚧</span> Running tests...
+            - name: Install dependencies
+              run: yarn install
 
-            - name: Test using Node.js
-              uses: actions/setup-node@v3
-              with:
-                  node-version: "16"
-            - run: yarn install
-            - name: Get number of CPU cores
-              id: cpu-cores
-              uses: SimenB/github-actions-cpu-cores@v1
-            - name: Run tests
-              run: yarn test:ci --max-workers ${{ steps.cpu-cores.outputs.count }}
-
-            - name: Tests Passed ✅
-              if: ${{ success() }}
+            - name: Run tests and generate reports
               run: |
-                  curl --request POST \
-                  --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
-                  --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-                  --header 'content-type: application/json' \
-                  --data '{
-                    "context": "tests",
-                    "state": "success",
-                    "description": "Tests passed",
-                    "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-                  }'
+                  yarn jest --coverage --ci | tee ./coverage.txt && exit ${PIPESTATUS[0]}
 
-            - name: Tests Failed ❌
-              if: ${{ failure() }}
-              run: |
-                  curl --request POST \
-                  --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
-                  --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-                  --header 'content-type: application/json' \
-                  --data '{
-                    "context": "tests",
-                    "state": "failure",
-                    "description": "Tests failed",
-                    "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-                  }'
-
-            - name: Add PR Comment
-              uses: mshick/add-pr-comment@v2
+            - name: Comment results on PR
+              uses: MishaKav/jest-coverage-comment@main
               with:
-                  message-id: jest-tests
-                  message-success: |
-                      ### <span aria-hidden="true">✅</span> Jest Tests Successful!
-
-                      |  Name | Link |
-                      |---------------------------------|------------------------|
-                      |<span aria-hidden="true">🔨</span> Latest commit | ${{ github.sha }} |
-                      |<span aria-hidden="true">🔍</span> Latest test logs | ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} |
-                      ---
-                  message-failure: |
-                      ### <span aria-hidden="true">❌</span> Jest Tests Failed
-
-                      |  Name | Link |
-                      |---------------------------------|------------------------|
-                      |<span aria-hidden="true">🔨</span> Latest commit | ${{ github.sha }} |
-                      |<span aria-hidden="true">🔍</span> Latest test logs | ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} |
-                      ---
-                  message-cancelled: |
-                      ⚠ Jest Tests Cancelled
+                  coverage-path: ./coverage.txt
+                  coverage-path-prefix: src/

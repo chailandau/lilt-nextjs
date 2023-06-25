@@ -15,9 +15,16 @@ const customJestConfig = {
     '<rootDir>/.storybook/*',
     '<rootDir>/src/pages/*',
     '<rootDir>/src/test-utils/*',
-],
+  ],
+  coverageReporters: [
+    'html',
+    'json',
+    'json-summary',
+    'text',
+    'text-summary'
+  ],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/$1',
+      '^@/(.*)$': '<rootDir>/src/$1'
   },
   setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect', 'jest-axe/extend-expect'],
   testEnvironment: 'jest-environment-jsdom',
