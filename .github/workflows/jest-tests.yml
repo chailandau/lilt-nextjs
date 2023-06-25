@@ -20,7 +20,7 @@ jobs:
 
             - name: Run tests
               run: |
-                  yarn jest --coverage --ci --coverageReporters='json-summary' | tee ./coverage.txt && exit ${PIPESTATUS[0]}
+                  yarn jest --coverage --ci | tee ./coverage.txt && exit ${PIPESTATUS[0]}
 
             - name: Jest Coverage Comment
               uses: MishaKav/jest-coverage-comment@main

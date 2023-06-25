@@ -16,6 +16,7 @@ const customJestConfig = {
     '<rootDir>/src/pages/*',
     '<rootDir>/src/test-utils/*',
 ],
+coverageReporters: ['json-summary', 'text'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
   },
