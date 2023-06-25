@@ -35,6 +35,29 @@ type Story = StoryObj<typeof Button>;
 export const Default: Story = {
     args: {
         color: 'blue',
-        children: 'This is a button'
+        children: 'Default button'
     },
 };
+
+export const Green: Story = {
+    args: {
+        color: 'green',
+        children: 'Green button'
+    },
+};
+
+export const White: Story = {
+    args: {
+        color: 'white',
+        children: 'White button'
+    },
+};
+
+export const WithLink: Story = {
+    args: {
+        color: 'blue',
+        link: 'https://google.com',
+        children: 'Link button'
+    },
+};
+

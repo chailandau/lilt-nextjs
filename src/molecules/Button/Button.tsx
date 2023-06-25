@@ -7,7 +7,7 @@ import Link from '@/atoms/Link/Link';
 
 export const buttonColors = ['blue', 'green', 'white'] as const;
 
-interface ButtonProps {
+export interface ButtonProps {
     /** Button color */
     color?: typeof buttonColors[number];
     /** Button content */
