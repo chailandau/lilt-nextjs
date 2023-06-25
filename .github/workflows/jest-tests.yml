@@ -1,18 +1,21 @@
-name: "coverage"
+name: Jest Coverage Report
 on:
     pull_request:
-        branches:
-            - main
+        branches: "main"
 jobs:
-    coverage:
+    build:
         runs-on: ubuntu-latest
-        permissions:
-            checks: write
-            pull-requests: write
-            contents: write
         steps:
             - uses: actions/checkout@v3
-            - uses: ArtiomTr/jest-coverage-report-action@v2
-              with:
-                  github-token: ${{ secrets.GITHUB_TOKEN }}
-                  package-manager: yarn
+
+            - name: Install yarn
+              run: npm i -g yarn
+
+            - name: Install dependencies
+              run: yarn install
+
+            - name: Run tests
+              run: yarn test:ci
+
+            - name: Jest Coverage Comment
+              uses: MishaKav/jest-coverage-comment@main
