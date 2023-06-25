@@ -38,7 +38,7 @@ buttonVariants.forEach(({ variant: Button, text, color, role }) => {
             render(<Button />);
             expect(screen.getByRole(role)).toHaveClass(color);
         });
-        it('passes basic accessibility test', async () => {
+        it('should have no axe violations', async () => {
             const { container } = render(<Button />);
             expect(await axe(container)).toHaveNoViolations();
         });
