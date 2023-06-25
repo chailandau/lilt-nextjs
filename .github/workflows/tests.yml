@@ -1,20 +1,27 @@
-name: Tests CI
+name: Jest Tests
 
-on: [push, pull_request]
+on:
+    pull_request:
+        branches:
+            - main
 
 jobs:
     test:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v3
             - name: Test using Node.js
-              uses: actions/setup-node@v1
+              uses: actions/setup-node@v3
               with:
                   node-version: "16"
             - run: yarn install
-            - run: yarn test:ci
+            - name: Get number of CPU cores
+              id: cpu-cores
+              uses: SimenB/github-actions-cpu-cores@v1
+            - name: run tests
+              run: yarn test:ci --max-workers ${{ steps.cpu-cores.outputs.count }}
 
-            - name: Tests ✅
+            - name: Tests Passed ✅
               if: ${{ success() }}
               run: |
                   curl --request POST \
@@ -27,8 +34,12 @@ jobs:
                     "description": "Tests passed",
                     "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
                   }'
+            - uses: mshick/add-pr-comment@v2
+              with:
+                  message: |
+                      Tests Passed ✅
 
-            - name: Tests 🚨
+            - name: Tests Failed ❌
               if: ${{ failure() }}
               run: |
                   curl --request POST \
@@ -41,3 +52,7 @@ jobs:
                     "description": "Tests failed",
                     "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
                   }'
+            - uses: mshick/add-pr-comment@v2
+              with:
+                  message: |
+                      Tests Failed ❌
