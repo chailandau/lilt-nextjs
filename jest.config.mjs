@@ -1,15 +1,13 @@
 import nextJest from 'next/jest.js';
 import { pathsToModuleNameMapper } from 'ts-jest';
 
-import type { JestConfigWithTsJest } from 'ts-jest';
-
 import { compilerOptions } from './tsconfig.json';
 
 const createJestConfig = nextJest({
   dir: './',
 });
 
-const customJestConfig: JestConfigWithTsJest = {
+const customJestConfig = {
   collectCoverageFrom: [
     '**/*.{ts,tsx}'
   ],
