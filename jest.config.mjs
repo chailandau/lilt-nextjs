@@ -1,4 +1,7 @@
 import nextJest from 'next/jest.js';
+import { pathsToModuleNameMapper } from 'ts-jest';
+
+import { compilerOptions } from './tsconfig.json';
 
 const createJestConfig = nextJest({
   dir: './',
@@ -23,9 +26,9 @@ coverageReporters: [
   'text',
   'text-summary'
 ],
-  moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
-  },
+roots: ['<rootDir>'],
+modulePaths: [compilerOptions.baseUrl],
+moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths),
   setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect', 'jest-axe/extend-expect'],
   testEnvironment: 'jest-environment-jsdom',
   preset: 'ts-jest',
