@@ -51,6 +51,7 @@
     "eslint-plugin-storybook": "^0.6.12",
     "graphql": "^16.6.0",
     "jest-axe": "^7.0.1",
+    "loki": "^0.32.0",
     "react-test-renderer": "^18.2.0",
     "sass": "^1.63.4",
     "storybook-css-modules-preset": "^1.1.1",
