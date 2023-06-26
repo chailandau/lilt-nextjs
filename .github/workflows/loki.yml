@@ -1,0 +1,27 @@
+name: Loki Visual Regression Testing
+on:
+    pull_request:
+        branches: "main"
+
+permissions:
+    pull-requests: write
+
+jobs:
+    loki:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Setup node from node version file
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "16"
+
+            - name: Install yarn if needed
+              run: npm i -g yarn
+
+            - name: Install dependencies
+              run: yarn install --frozen-lockfile
+
+            - name: Run Loki
+              run: yarn build-storybook && yarn loki --requireReference --reactUri file:./storybook-static
