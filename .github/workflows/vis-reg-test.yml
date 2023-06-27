@@ -42,5 +42,5 @@ jobs:
               if: always()
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./report
+                  publish_dir: report
                   publish_branch: vrt-report
