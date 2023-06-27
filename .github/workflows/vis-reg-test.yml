@@ -29,6 +29,7 @@ jobs:
               run: yarn loki:ci
 
             - name: Create report folder
+              if: always()
               run: |
                   mkdir report
                   cp .loki/index.html report
