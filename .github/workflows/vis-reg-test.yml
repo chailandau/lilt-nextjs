@@ -33,10 +33,10 @@ jobs:
               run: |
                   mkdir report
                   cp .loki/index.html report
-                  cp .loki/current report
-                  cp .loki/diff report
-                  cp .loki/difference report
-                  cp .loki/reference report
+                  cp --recursive .loki/current report
+                  cp --recursive .loki/diff report
+                  cp --recursive .loki/difference report
+                  cp --recursive .loki/reference report
 
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
