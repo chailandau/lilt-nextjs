@@ -34,7 +34,7 @@ type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
     args: {
-        color: 'blue',
+        color: 'green',
         children: 'Default button'
     },
 };
