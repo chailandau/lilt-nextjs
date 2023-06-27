@@ -30,7 +30,7 @@ jobs:
 
             - name: Create report folder
               run: |
-                  mkdir report
+                  mkdir ./report
                   mv .loki/index.html report
                   mv .loki/current report
                   mv .loki/diff report
