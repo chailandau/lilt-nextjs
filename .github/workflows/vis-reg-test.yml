@@ -17,8 +17,8 @@ jobs:
               with:
                   node-version: "16"
 
-            - name: Install yarn if needed
-              run: npm i -g yarn
+            - name: Install reg-cli
+              run: yarn global add reg-cli
 
             - name: Install dependencies
               run: yarn install --frozen-lockfile
