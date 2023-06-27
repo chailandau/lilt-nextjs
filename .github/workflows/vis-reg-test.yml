@@ -28,14 +28,19 @@ jobs:
             - name: Generate report with Loki and reg-cli
               run: yarn loki:ci
 
-            - name: Change owner
+            - name: Create report folder
               run: |
-                  sudo chown -R runner: ./.loki
+                  mkdir vrt-report
+                  mv ./index.html ./.loki ./report
+                  mv /current ./.loki ./report
+                  mv /diff ./.loki ./report
+                  mv /difference ./.loki ./report
+                  mv /reference ./.loki ./report
 
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
               if: always()
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./.loki
+                  publish_dir: ./report
                   publish_branch: vrt-report
