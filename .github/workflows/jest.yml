@@ -1,4 +1,4 @@
-name: Jest Coverage Report
+name: Jest Tests and Coverage
 on:
     pull_request:
         branches: "main"
@@ -19,7 +19,7 @@ jobs:
               continue-on-error: true
               run: yarn jest --json --outputFile=jest-results.json
 
-            - name: Process test results
+            - name: Process test results and comment on PR
               if: success() || failure()
               uses: im-open/process-jest-test-results@v2
               with:
@@ -31,7 +31,7 @@ jobs:
               run: |
                   yarn jest --coverage --ci | tee ./coverage.txt && exit ${PIPESTATUS[0]}
 
-            - name: Comment results on PR
+            - name: Comment coverage report results on PR
               uses: MishaKav/jest-coverage-comment@main
               with:
                   coverage-path: ./coverage.txt
