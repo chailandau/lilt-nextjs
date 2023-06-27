@@ -4,6 +4,7 @@ on:
         branches: "main"
 
 permissions:
+    pages: write
     pull-requests: write
 
 jobs:
