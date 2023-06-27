@@ -16,10 +16,10 @@ jobs:
               run: yarn install
 
             - name: Run tests and generate report
-              continue-on-error: true
               run: yarn jest --json --outputFile=jest-results.json
 
             - name: Process test results and comment on PR
+              if: success() || failure()
               uses: im-open/process-jest-test-results@v2
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }}
