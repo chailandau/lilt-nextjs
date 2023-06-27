@@ -42,6 +42,7 @@ jobs:
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
               if: success() || failure()
+              id: deploy
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   publish_dir: report
@@ -52,13 +53,19 @@ jobs:
               if: ${{ failure() && steps.loki.conclusion == 'failure' }}
               with:
                   message: |
-                      ## Visual regressions detected
-                      View report here: https://chailandau.github.io/lilt-nextjs/
+                      ## ❌ Visual regressions detected
+                      | View report | https://chailandau.github.io/lilt-nextjs/ |
+                      |---|---|
 
             - name: VRT with errors - Deploy Success Comment
               uses: mshick/add-pr-comment@v2
-              if: ${{ success() && steps.loki.conclusion == 'success' }}
+              if: steps.loki.conclusion == 'success'
               with:
                   message: |
-                      ## No visual regressions detected
-                      View report here: https://chailandau.github.io/lilt-nextjs/
+                      ## ✅ No visual regressions detected!
+                      | View report | https://chailandau.github.io/lilt-nextjs/ |
+                      |---|---|
+
+            - name: Set correct status
+              if: steps.deploy.conclusion == 'success'
+              run: exit 0
