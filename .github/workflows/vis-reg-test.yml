@@ -30,12 +30,12 @@ jobs:
 
             - name: Create report folder
               run: |
-                  mkdir ./report
-                  cp .loki/index.html ./report
-                  cp .loki/current ./report
-                  cp .loki/diff ./report
-                  cp .loki/difference ./report
-                  cp .loki/reference ./report
+                  mkdir report
+                  cp .loki/index.html report
+                  cp .loki/current report
+                  cp .loki/diff report
+                  cp .loki/difference report
+                  cp .loki/reference report
 
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
