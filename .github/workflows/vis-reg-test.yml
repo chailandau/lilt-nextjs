@@ -34,5 +34,7 @@ jobs:
               with:
                   target_branch: vrt-report
                   build_dir: .loki/report
+                  keep_history: true
+                  follow_symlinks: true
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
