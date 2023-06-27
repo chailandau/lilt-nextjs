@@ -28,11 +28,11 @@ jobs:
 
             - name: Generate coverage report
               if: success() || failure()
-              continue-on-error: true
               run: |
                   yarn jest --coverage --ci | tee ./coverage.txt && exit ${PIPESTATUS[0]}
 
             - name: Comment coverage report results on PR
+              if: success() || failure()
               uses: MishaKav/jest-coverage-comment@main
               with:
                   coverage-path: ./coverage.txt
