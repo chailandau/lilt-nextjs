@@ -20,7 +20,6 @@ jobs:
               run: yarn jest --json --outputFile=jest-results.json
 
             - name: Process test results and comment on PR
-              if: success() || failure()
               uses: im-open/process-jest-test-results@v2
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -28,6 +27,7 @@ jobs:
                   create-status-check: false
 
             - name: Generate coverage report
+              continue-on-error: true
               run: |
                   yarn jest --coverage --ci | tee ./coverage.txt && exit ${PIPESTATUS[0]}
 

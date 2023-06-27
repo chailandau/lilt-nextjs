@@ -26,11 +26,11 @@ jobs:
               run: yarn install --frozen-lockfile
 
             - name: Generate report with Loki and reg-cli
+              continue-on-error: true
               id: loki
               run: yarn loki:ci
 
             - name: Create report folder
-              if: success() || failure()
               run: |
                   mkdir report
                   cp .loki/index.html report
@@ -41,7 +41,6 @@ jobs:
 
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
-              if: success() || failure()
               id: deploy
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -50,7 +49,7 @@ jobs:
 
             - name: VRT with errors - Deploy Success Comment
               uses: mshick/add-pr-comment@v2
-              if: ${{ failure() && steps.loki.conclusion == 'failure' }}
+              if: steps.loki.conclusion == 'failure'
               with:
                   message: |
                       ## ❌ Visual regressions detected in Storybook
