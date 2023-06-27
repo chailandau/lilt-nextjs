@@ -7,7 +7,7 @@ permissions:
     pull-requests: write
 
 jobs:
-    loki:
+    vis_reg_test:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
@@ -25,3 +25,11 @@ jobs:
 
             - name: Generate report with Loki and reg-cli
               run: yarn loki:ci
+
+            - name: Deploy to GitHub Pages
+              if: success()
+              uses: crazy-max/ghaction-github-pages@v3
+              with:
+                  build_dir: .loki/report
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
