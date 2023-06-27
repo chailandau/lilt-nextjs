@@ -27,7 +27,7 @@ jobs:
                   create-status-check: false
 
             - name: Generate coverage report
-              if: success() || failure()
+              continue-on-error: true
               run: |
                   yarn jest --coverage --ci | tee ./coverage.txt && exit ${PIPESTATUS[0]}
 
