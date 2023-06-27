@@ -31,11 +31,11 @@ jobs:
             - name: Create report folder
               run: |
                   mkdir report
-                  mv ./index.html ./.loki ./report
-                  mv /current ./.loki ./report
-                  mv /diff ./.loki ./report
-                  mv /difference ./.loki ./report
-                  mv /reference ./.loki ./report
+                  mv .loki/index.html report
+                  mv .loki/current report
+                  mv .loki/diff report
+                  mv .loki/difference report
+                  mv .loki/reference report
 
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
