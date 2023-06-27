@@ -33,8 +33,7 @@ jobs:
               uses: crazy-max/ghaction-github-pages@v3
               with:
                   target_branch: vrt-report
-                  build_dir: .loki/report
-                  keep_history: true
+                  build_dir: .loki
                   follow_symlinks: true
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
