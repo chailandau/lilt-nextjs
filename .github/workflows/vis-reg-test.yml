@@ -26,10 +26,11 @@ jobs:
               run: yarn install --frozen-lockfile
 
             - name: Generate report with Loki and reg-cli
+              id: loki
               run: yarn loki:ci
 
             - name: Create report folder
-              if: always()
+              if: ${{ failure() && steps.loki.conclusion == 'failure' }}
               run: |
                   mkdir report
                   cp .loki/index.html report
@@ -40,8 +41,24 @@ jobs:
 
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
-              if: always()
+              if: success() || failure()
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   publish_dir: report
                   publish_branch: vrt-report
+
+            - name: VRT with errors - Deploy Success Comment
+              uses: mshick/add-pr-comment@v2
+              if: ${{ failure() && steps.loki.conclusion == 'failure' }}
+              with:
+                  message: |
+                      ## Visual regressions detected
+                      View report here: https://chailandau.github.io/lilt-nextjs/
+
+            - name: VRT with errors - Deploy Success Comment
+              uses: mshick/add-pr-comment@v2
+              if: ${{ success() && steps.loki.conclusion == 'success' }}
+              with:
+                  message: |
+                      ## No visual regressions detected
+                      View report here: https://chailandau.github.io/lilt-nextjs/
