@@ -18,7 +18,7 @@ jobs:
             - name: Run tests
               continue-on-error: true
               working-directory: "src"
-              run: jest --json --outputFile=jest-results.json
+              run: yarn jest --json --outputFile=jest-results.json
 
             - name: Process jest results with default
               if: always()
