@@ -53,8 +53,6 @@
     "jest-axe": "^7.0.1",
     "loki": "^0.32.0",
     "react-test-renderer": "^18.2.0",
-    "reg-keygen-git-hash-plugin": "^0.12.1",
-    "reg-notify-github-plugin": "^0.12.1",
     "sass": "^1.63.4",
     "storybook-css-modules-preset": "^1.1.1",
     "typescript": "^5.1.3"
