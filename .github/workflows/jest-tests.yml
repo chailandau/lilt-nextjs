@@ -4,6 +4,7 @@ on:
         branches: "main"
 
 permissions:
+    contents: write
     pull-requests: write
 
 jobs:
@@ -15,26 +16,18 @@ jobs:
             - name: Install dependencies
               run: yarn install
 
-            - name: Run tests
+            - name: Run tests and generate report
               continue-on-error: true
               run: yarn jest --json --outputFile=jest-results.json
 
-            - name: Process jest results with default
-              if: always()
+            - name: Process test results
+              if: success() || failure()
               uses: im-open/process-jest-test-results@v2
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }}
                   results-file: "jest-results.json"
 
-    coverage_report:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-
-            - name: Install dependencies
-              run: yarn install
-
-            - name: Run tests and generate reports
+            - name: Generate coverage report
               run: |
                   yarn jest --coverage --ci | tee ./coverage.txt && exit ${PIPESTATUS[0]}
 
