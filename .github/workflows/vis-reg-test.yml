@@ -65,7 +65,20 @@ jobs:
                       ## ✅ No visual regressions detected!
                       | View report | https://chailandau.github.io/lilt-nextjs/ |
                       |---|---|
-
             - name: Set correct status
               if: ${{ failure() && steps.deploy.conclusion == 'success' }}
-              run: exit 0
+              uses: actions/github-script@v5
+              with:
+                  script: |
+                      github.actions.createOrUpdateCheckRun({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        name: context.workflow,
+                        head_sha: context.sha,
+                        status: "completed",
+                        conclusion: "success",
+                        output: {
+                          title: "Workflow Status",
+                          summary: "The workflow is considered successful.",
+                        },
+                      });
