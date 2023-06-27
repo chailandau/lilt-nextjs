@@ -28,6 +28,10 @@ jobs:
             - name: Generate report with Loki and reg-cli
               run: yarn loki:ci
 
+            - name: Change owner
+              run: |
+                  sudo chown -R runner: ./.loki
+
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
               if: always()
