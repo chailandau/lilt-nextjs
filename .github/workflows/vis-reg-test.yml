@@ -30,7 +30,7 @@ jobs:
               run: yarn loki:ci
 
             - name: Create report folder
-              if: ${{ failure() && steps.loki.conclusion == 'failure' }}
+              if: success() || failure()
               run: |
                   mkdir report
                   cp .loki/index.html report
@@ -57,7 +57,7 @@ jobs:
                       | View report | https://chailandau.github.io/lilt-nextjs/ |
                       |---|---|
 
-            - name: VRT with errors - Deploy Success Comment
+            - name: VRT no errors - Deploy Success Comment
               uses: mshick/add-pr-comment@v2
               if: steps.loki.conclusion == 'success'
               with:
