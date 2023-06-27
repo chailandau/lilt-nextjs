@@ -7,6 +7,26 @@ permissions:
     pull-requests: write
 
 jobs:
+    run_tests:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Install dependencies
+              run: yarn install
+
+            - name: Run tests
+              continue-on-error: true
+              working-directory: "src"
+              run: jest --json --outputFile=jest-results.json
+
+            - name: Process jest results with default
+              if: always()
+              uses: im-open/process-jest-test-results@v2
+              with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  results-file: "src/jest-results.json"
+
     coverage_report:
         runs-on: ubuntu-latest
         steps:
