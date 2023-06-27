@@ -41,14 +41,14 @@ export const Default: Story = {
 
 export const Green: Story = {
     args: {
-        color: 'blue',
+        color: 'green',
         children: 'Green button'
     },
 };
 
 export const White: Story = {
     args: {
-        color: 'blue',
+        color: 'white',
         children: 'White button'
     },
 };
