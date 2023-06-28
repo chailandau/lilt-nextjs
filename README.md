@@ -17,8 +17,6 @@ This is the frontend for Long Island Laser Tag, a company that specializes in mo
     -   Uses [jest-axe](https://www.npmjs.com/package/jest-axe) as an additional A11y safety net (on top of extensive manual testing)
 -   [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
     -   Adds APIs on top of DOM Testing Library for easier React component testing
--   [ESLint](https://eslint.org/)
-    -   Enforces code standards as well as catches potential syntax errors
 -   [Loki](https://loki.js.org/)
     -   Generates screenshots of Storybook stories to use with reg-cli
 -   [reg-cli](https://github.com/reg-viz/reg-cli)
