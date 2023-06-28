@@ -35,6 +35,7 @@
     "next.config.js",
     "jest.config.mjs",
     "jest.setup.js",
+    "loki.config.js",
     "**/*.ts",
     "**/*.tsx",
   ],

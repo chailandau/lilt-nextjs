@@ -1,0 +1,66 @@
+name: Storybook Visual Regression Testing
+on:
+    pull_request:
+        branches: "main"
+
+permissions:
+    pages: write
+    contents: write
+    pull-requests: write
+
+jobs:
+    vis_reg_test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Setup node from node version file
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "16"
+
+            - name: Install reg-cli
+              run: yarn global add reg-cli
+
+            - name: Install dependencies
+              run: yarn install --frozen-lockfile
+
+            - name: Generate report with Loki and reg-cli
+              id: loki
+              run: yarn loki:ci
+
+            - name: Create report folder
+              if: success() || failure()
+              run: |
+                  mkdir report
+                  cp .loki/index.html report
+                  cp --recursive .loki/current report
+                  cp --recursive .loki/diff report
+                  cp --recursive .loki/difference report
+                  cp --recursive .loki/reference report
+
+            - name: Deploy to GitHub Pages
+              uses: peaceiris/actions-gh-pages@v3
+              if: success() || failure()
+              id: deploy
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: report
+                  publish_branch: vrt-report
+
+            - name: VRT with errors - Deploy Success Comment
+              uses: mshick/add-pr-comment@v2
+              if: ${{ failure() && steps.loki.conclusion == 'failure' }}
+              with:
+                  message: |
+                      ## ❌ Visual regressions detected in Storybook
+                      | View report | https://chailandau.github.io/lilt-nextjs/ |
+                      |---|---|
+
+            - name: VRT no errors - Deploy Success Comment
+              uses: mshick/add-pr-comment@v2
+              with:
+                  message: |
+                      ## ✅ No visual regressions detected in Storybook!
+                      | View report | https://chailandau.github.io/lilt-nextjs/ |
+                      |---|---|
