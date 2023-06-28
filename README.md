@@ -2,7 +2,7 @@
 
 This is the frontend for Long Island Laser Tag, a company that specializes in mobile laser tag events all over New York. The live site can be viewed [here](https://longislandlasertag.com/).
 
-<hr />
+
 
 ## Tech stack
 
