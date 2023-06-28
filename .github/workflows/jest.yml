@@ -1,0 +1,39 @@
+name: Jest Tests and Coverage
+on:
+    pull_request:
+        branches: "main"
+
+permissions:
+    pull-requests: write
+
+jobs:
+    run_tests:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Install dependencies
+              run: yarn install
+
+            - name: Run tests and generate report
+              run: yarn jest --json --outputFile=jest-results.json
+
+            - name: Process test results and comment on PR
+              if: success() || failure()
+              uses: im-open/process-jest-test-results@v2
+              with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  results-file: "jest-results.json"
+                  create-status-check: false
+
+            - name: Generate coverage report
+              if: success() || failure()
+              run: |
+                  yarn jest --coverage --ci | tee ./coverage.txt && exit ${PIPESTATUS[0]}
+
+            - name: Comment coverage report results on PR
+              if: success() || failure()
+              uses: MishaKav/jest-coverage-comment@main
+              with:
+                  coverage-path: ./coverage.txt
+                  coverage-path-prefix: src/
