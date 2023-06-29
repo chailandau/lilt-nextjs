@@ -1,10 +1,10 @@
 import { composeStory } from '@storybook/react';
 import { render, screen } from '@testing-library/react';
 
-import { headingColors, headingTags } from './Heading';
+import { headingColors, headingSizes, headingTags } from './Heading';
 import Meta, { Default, ExtraLarge, ExtraSmall, Large, Small } from './storybook/Heading.stories';
 
-import { testAxeViolations, testColors, testMatchesSnapshot, testTags } from '@/utils/testHelpers';
+import { testAxeViolations, testColors, testMatchesSnapshot, testSizes, testTags } from '@/utils/testHelpers';
 
 const getHeadingInfo = (Variant: typeof Default) => ({
     variant: composeStory(Variant, Meta),
@@ -19,6 +19,11 @@ const headingVariants = [
     getHeadingInfo(Large),
     getHeadingInfo(ExtraLarge)
 ];
+
+describe('Heading', () => {
+    const Heading = composeStory(Default, Meta);
+    testSizes(<Heading />, headingSizes);
+});
 
 headingVariants.forEach(({ variant: Heading, text }) => {
     describe(text, () => {

@@ -216,6 +216,46 @@ exports[`Extra small heading matches snapshot 1`] = `
 </h2>
 `;
 
+exports[`Heading has 'lg' class 1`] = `
+<h2
+  className="heading lg green"
+>
+  Default heading
+</h2>
+`;
+
+exports[`Heading has 'md' class 1`] = `
+<h2
+  className="heading md green"
+>
+  Default heading
+</h2>
+`;
+
+exports[`Heading has 'sm' class 1`] = `
+<h2
+  className="heading sm green"
+>
+  Default heading
+</h2>
+`;
+
+exports[`Heading has 'xl' class 1`] = `
+<h2
+  className="heading xl green"
+>
+  Default heading
+</h2>
+`;
+
+exports[`Heading has 'xs' class 1`] = `
+<h2
+  className="heading xs green"
+>
+  Default heading
+</h2>
+`;
+
 exports[`Large heading has 'blue' class 1`] = `
 <h2
   className="heading lg blue"
