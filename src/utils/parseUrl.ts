@@ -1,5 +1,5 @@
-interface ParsedUrl {
-    /** Indicates if URL is internal */
+export interface ParsedUrl {
+    /** Indicates if the URL is internal */
     isInternal: boolean;
     /** Link's `rel` attribute */
     rel: string;
