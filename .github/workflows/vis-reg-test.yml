@@ -57,6 +57,8 @@ jobs:
                       | View report | https://chailandau.github.io/lilt-nextjs/ |
                       |---|---|
 
+                      <em>If visual regressions are as expected, run <code>yarn loki:update</code> on local and push up.</em>
+
             - name: VRT no errors - Deploy Success Comment
               uses: mshick/add-pr-comment@v2
               with:
