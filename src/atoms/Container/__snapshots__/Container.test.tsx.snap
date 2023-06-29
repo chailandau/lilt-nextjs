@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container matches 'div' snapshot 1`] = `
+<div>
+  <p
+    className="text"
+  >
+    This text is in a container.
+  </p>
+</div>
+`;
+
+exports[`Container matches 'footer' snapshot 1`] = `
+<footer>
+  <p
+    className="text"
+  >
+    This text is in a container.
+  </p>
+</footer>
+`;
+
+exports[`Container matches 'header' snapshot 1`] = `
+<header>
+  <p
+    className="text"
+  >
+    This text is in a container.
+  </p>
+</header>
+`;
+
+exports[`Container matches 'nav' snapshot 1`] = `
+<nav>
+  <p
+    className="text"
+  >
+    This text is in a container.
+  </p>
+</nav>
+`;
+
+exports[`Container matches 'section' snapshot 1`] = `
+<section>
+  <p
+    className="text"
+  >
+    This text is in a container.
+  </p>
+</section>
+`;
+
+exports[`Container matches snapshot 1`] = `
+<div>
+  <p
+    className="text"
+  >
+    This text is in a container.
+  </p>
+</div>
+`;

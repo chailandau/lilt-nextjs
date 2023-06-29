@@ -28,7 +28,43 @@ export const Default: Story = {
     args: {
         as: 'h2',
         size: 'md',
-        children: 'This is a heading',
+        children: 'Default heading',
+        color: 'green',
+    },
+};
+
+export const ExtraSmall: Story = {
+    args: {
+        as: 'h2',
+        size: 'xs',
+        children: 'Extra small heading',
+        color: 'green',
+    },
+};
+
+export const Small: Story = {
+    args: {
+        as: 'h2',
+        size: 'sm',
+        children: 'Small heading',
+        color: 'green',
+    },
+};
+
+export const Large: Story = {
+    args: {
+        as: 'h2',
+        size: 'lg',
+        children: 'Large heading',
+        color: 'green',
+    },
+};
+
+export const ExtraLarge: Story = {
+    args: {
+        as: 'h2',
+        size: 'xl',
+        children: 'Extra large heading',
         color: 'green',
     },
 };
