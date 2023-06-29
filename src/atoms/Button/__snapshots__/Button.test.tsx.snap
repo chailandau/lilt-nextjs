@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Default button matches snapshot 1`] = `
+exports[`Button has 'blue' class 1`] = `
 <div
   className="flex"
 >
@@ -12,41 +12,38 @@ exports[`Default button matches snapshot 1`] = `
 </div>
 `;
 
-exports[`Green button matches snapshot 1`] = `
+exports[`Button has 'green' class 1`] = `
 <div
   className="flex"
 >
   <button
     className="button green"
   >
-    Green button
+    Default button
   </button>
 </div>
 `;
 
-exports[`Link button matches snapshot 1`] = `
-<div
-  className="flex"
->
-  <a
-    className="button blue"
-    href="https://google.com"
-    rel="noreferrer noopener"
-    target="_blank"
-  >
-    Link button
-  </a>
-</div>
-`;
-
-exports[`White button matches snapshot 1`] = `
+exports[`Button has 'white' class 1`] = `
 <div
   className="flex"
 >
   <button
     className="button white"
   >
-    White button
+    Default button
+  </button>
+</div>
+`;
+
+exports[`Button matches snapshot 1`] = `
+<div
+  className="flex"
+>
+  <button
+    className="button blue"
+  >
+    Default button
   </button>
 </div>
 `;
