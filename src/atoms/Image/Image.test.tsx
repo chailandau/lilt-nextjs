@@ -6,8 +6,6 @@ import { testAxeViolations, testHasClass, testMatchesSnapshot } from '@/utils/te
 
 const Image = composeStory(Default, Meta);
 
-// ... in your test
-
 describe('Image', () => {
     testHasClass(<Image />, 'test');
     testAxeViolations(<Image />);

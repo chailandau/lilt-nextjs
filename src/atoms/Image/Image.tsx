@@ -7,7 +7,7 @@ import Flex from '../../molecules/Flex/Flex';
 
 import styles from './Image.module.scss';
 
-import { isSvg } from '@/utils/functions';
+import { getPlaceholder, isSvg } from '@/utils/functions';
 
 interface ImageProps {
     /** `next/image` object  */
@@ -43,8 +43,8 @@ const Image: FC<ImageProps> = ({
                 width={width}
                 height={height}
                 priority={priority}
-                placeholder={svgImg ? undefined : 'blur'}
-                blurDataURL={svgImg ? undefined : blurDataURL}
+                placeholder={getPlaceholder(svgImg)}
+                blurDataURL={blurDataURL}
             />
         </Flex >
     );
