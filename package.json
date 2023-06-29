@@ -7,7 +7,7 @@
     "dev": "next dev",
     "lint": "next lint",
     "loki:ci": "yarn run storybook:build; yarn run loki:test",
-    "loki:test": "loki test --requireReference --chromeTolerance 10 --reactUri file:./storybook-static; yarn run loki:report",
+    "loki:test": " rm ./.loki/diff/* ./.loki/difference/* ./.loki/current/*; loki test --requireReference --chromeTolerance 10 --reactUri file:./storybook-static; yarn run loki:report",
     "loki:report": "reg-cli ./.loki/current ./.loki/reference ./.loki/diff --extendedErrors --enableAntialias --matchingThreshold .2 --report ./.loki/index.html --json ./.loki/report.json",
     "start": "next start",
     "storybook": "storybook dev -p 6006",
