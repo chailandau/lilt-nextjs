@@ -7,7 +7,6 @@
 
 # testing
 /coverage
-reg.json
 
 # next.js
 /.next/
