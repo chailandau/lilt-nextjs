@@ -23,7 +23,7 @@ const Link: FC<LinkProps> = ({
     className,
     underline = true
 }) => {
-    const classList = classNames(underline && styles['underline'], className && className);
+    const classList = classNames(styles['link'], underline && styles['underline'], className && className);
 
     const {
         href = '',

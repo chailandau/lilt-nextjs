@@ -1,5 +1,8 @@
-.underline {
-    padding: rem(14);
-    margin: rem(-14);
-    @include underlineSlideHover;
+.link {
+    text-transform: uppercase;
+    &.underline {
+        padding: rem(14);
+        margin: rem(-14);
+        @include underlineSlideHover;
+    }
 }
