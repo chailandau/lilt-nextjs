@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`menuAnimations should match the snapshot 1`] = `
+{
+  "closed": {
+    "opacity": 0,
+    "transition": {
+      "delay": 0.15,
+      "length": 1,
+    },
+    "y": "-100%",
+  },
+  "open": {
+    "opacity": 1,
+    "transition": {
+      "duration": 0.4,
+      "type": "spring",
+    },
+    "y": 0,
+  },
+}
+`;

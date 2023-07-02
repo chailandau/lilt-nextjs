@@ -10,7 +10,7 @@ import { menuAnimations } from '@/utils/framer/animations';
 import LazyAnimatePresence from '@/utils/framer/LazyAnimatePresence';
 
 const MobileNav = () => {
-    const menuOpen = useStore((state) => state.menuOpen);
+    const { menuOpen } = useStore();
 
     return (
         <LazyAnimatePresence>

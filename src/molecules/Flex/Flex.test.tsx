@@ -7,7 +7,7 @@ import { testAxeViolations, testHasClass, testMatchesSnapshot } from '@/utils/te
 const Flex = composeStory(Default, Meta);
 
 describe('Flex', () => {
-    testHasClass(<Flex className='test' />, 'test');
+    testHasClass(<Flex />, 'test');
     testAxeViolations(<Flex />);
     testMatchesSnapshot(<Flex />);
 });

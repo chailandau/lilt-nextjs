@@ -6,8 +6,7 @@ import Container from '@/atoms/Container/Container';
 import useStore from '@/store/useStore';
 
 const MenuToggle = () => {
-    const menuOpen = useStore((state) => state.menuOpen);
-    const setMenuOpen = useStore((state) => state.setMenuOpen);
+    const { menuOpen, setMenuOpen } = useStore();
 
     const classList = classNames(styles['menu-toggle'], menuOpen && styles['open']);
 

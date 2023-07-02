@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button matches snapshot 1`] = `
+<div
+  className="flex"
+>
+  <a
+    className="link underline"
+    href="/"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onTouchStart={[Function]}
+    rel=""
+    target=""
+  >
+    This is a link
+  </a>
+</div>
+`;

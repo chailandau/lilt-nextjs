@@ -27,6 +27,7 @@ type Story = StoryObj<typeof Section>;
 
 export const Default: Story = {
     args: {
-        children: textAtom
+        children: textAtom,
+        className: 'section'
     }
 };
