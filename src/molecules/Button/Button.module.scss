@@ -10,7 +10,8 @@
     text-transform: uppercase;
     flex-grow: 1;
     transition: flex-grow 0.3s ease-in-out;
-    &:hover {
+    &:hover,
+    &:focus-visible {
         color: color(neutral, black);
     }
     @include tablet {

@@ -84,7 +84,8 @@
     background-position: 100% 0%;
     @include transition(background-position);
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
         background-position: 0% 0%;
     }
 }

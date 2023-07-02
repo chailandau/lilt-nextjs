@@ -12,6 +12,9 @@
     .right-content {
         align-items: center;
         gap: rem(24);
+        @include laptop {
+            gap: rem(44);
+        }
         .tablet-btn {
             display: none;
             @include tablet {

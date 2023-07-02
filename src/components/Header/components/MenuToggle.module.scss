@@ -4,7 +4,11 @@
     display: flex;
     align-items: center;
     @include transition(opacity);
-    &:hover {
+    @include laptop {
+        display: none;
+    }
+    &:hover,
+    &:focus-visible {
         opacity: 0.85;
     }
     &-container {

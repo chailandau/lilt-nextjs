@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 
+import DesktopNav from './components/DesktopNav';
 import MenuToggle from './components/MenuToggle';
 import MobileNav from './components/MobileNav';
 import styles from './Header.module.scss';
@@ -23,6 +24,7 @@ const Header = () => {
                     priority
                 />
                 <Flex className={styles['right-content']}>
+                    <DesktopNav />
                     <Button link='http://localhost:6006/' className={styles['tablet-btn']}>
                         Get in touch
                     </Button>
