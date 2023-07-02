@@ -1,12 +1,13 @@
 import classNames from 'classnames';
-import { useState } from 'react';
 
 import styles from './MenuToggle.module.scss';
 
 import Container from '@/atoms/Container/Container';
+import useStore from '@/store/useStore';
 
 const MenuToggle = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
+    const menuOpen = useStore((state) => state.menuOpen);
+    const setMenuOpen = useStore((state) => state.setMenuOpen);
 
     const classList = classNames(styles['menu-toggle'], menuOpen && styles['open']);
 

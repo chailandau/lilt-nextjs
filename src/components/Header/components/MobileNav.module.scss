@@ -1,4 +1,5 @@
 .mobile-nav {
+    @include paddingX(24);
     position: absolute;
     top: 0;
     left: 0;

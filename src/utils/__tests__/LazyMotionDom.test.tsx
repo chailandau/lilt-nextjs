@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import LazyMotionDom from '../LazyMotionDom';
+import LazyMotionDom from '../framer/LazyMotionDom';
 import { testAxeViolations, testMatchesSnapshot } from '../testHelpers';
 
 const LazyMotionHOC = () => (
