@@ -16,16 +16,19 @@ export interface ButtonProps {
     link?: string;
     /** `onClick` event */
     onClick?: () => void;
+    /** CSS `className` */
+    className?: string;
 }
 
 const Button: FC<ButtonProps> = ({
     color = 'blue',
     link,
     onClick,
-    children
+    children,
+    className
 }) => {
 
-    const classList = classNames(styles['button'], styles[color]);
+    const classList = classNames(styles['button'], styles[color], className && className);
 
     const isLink = link && link.trim() !== '';
 

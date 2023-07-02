@@ -6,6 +6,8 @@ import styles from './Header.module.scss';
 
 import Logo from '@/assets/svg/Logo.svg';
 import Image from '@/atoms/Image/Image';
+import Button from '@/molecules/Button/Button';
+import Flex from '@/molecules/Flex/Flex';
 import Section from '@/molecules/Section/Section';
 
 const Header = () => {
@@ -20,7 +22,12 @@ const Header = () => {
                     alt='Long Island Laser Tag'
                     priority
                 />
-                <MenuToggle />
+                <Flex className={styles['right-content']}>
+                    <Button link='http://localhost:6006/' className={styles['tablet-btn']}>
+                        Get in touch
+                    </Button>
+                    <MenuToggle />
+                </Flex>
             </Section>
             <MobileNav />
         </>

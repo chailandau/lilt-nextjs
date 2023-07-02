@@ -27,7 +27,7 @@ const MobileNav = () => {
                         <li><Link className={styles['link']} href='http://localhost:6006/'>Schools & Camps</Link></li>
                         <li><Link className={styles['link']} href='http://localhost:6006/'>Covid-19 Guidelines</Link></li>
                     </ul>
-                    <Flex className={styles['button-wrapper']}>
+                    <Flex className={styles['mobile-btn']}>
                         <Button link='http://localhost:6006/'>Get in touch</Button>
                     </Flex>
                 </m.nav>

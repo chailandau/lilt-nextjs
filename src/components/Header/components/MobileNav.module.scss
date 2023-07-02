@@ -52,8 +52,11 @@
             }
         }
     }
-    .button-wrapper {
+    .mobile-btn {
         display: flex;
         width: 100%;
+        @include tablet {
+            display: none;
+        }
     }
 }
