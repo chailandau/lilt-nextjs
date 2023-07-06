@@ -1,10 +1,29 @@
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import { FC } from 'react';
 
+import { PAGES_QUERY } from '@/api/graphqlQueries';
+import { Page } from '@/api/graphqlTypes';
 import OutdoorTents from '@/assets/outdoor_tents.jpg';
 import Image from '@/atoms/Image/Image';
 import Header from '@/components/Header/Header';
+import { getData } from '@/utils/getData';
 
-export default function Home() {
+interface HomeProps {
+  pages: Page[] | null;
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const data = await getData(PAGES_QUERY);
+
+  const { Pages } = data || {};
+
+  return { props: { pages: Pages?.docs || null } };
+};
+
+const Home: FC<HomeProps> = ({ pages }) => {
+  console.log(pages);
+
   return (
     <>
       <Head>
@@ -22,6 +41,12 @@ export default function Home() {
           priority
         />
       </div>
+      {pages?.map((page) => (
+        <p key={page?.id}>{page?.title}</p>
+      ))}
     </>
   );
-}
+};
+
+export default Home;
+
