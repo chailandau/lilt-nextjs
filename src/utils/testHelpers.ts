@@ -56,6 +56,13 @@ export const testRenderText = (component: ReactElement, role: string, text: stri
     });
 };
 
+export const testRenderChildren = (component: ReactElement): void => {
+    it('renders children inside HOC component', () => {
+        const renderResult = render(component);
+        expect(renderResult.getByText('Test')).toBeInTheDocument();
+    });
+};
+
 export const testAxeViolations = (component: ReactElement): void => {
     it('does not have axe violations', async () => {
         const { container } = render(component);
