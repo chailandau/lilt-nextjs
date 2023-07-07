@@ -43,7 +43,7 @@
                     display: none;
                 }
             }
-            a.link {
+            a {
                 @include font(24, 28);
                 width: 100%;
                 &:before {
