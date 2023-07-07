@@ -1,6 +1,4 @@
-import { render, screen } from '@testing-library/react';
-
-import { testAxeViolations, testMatchesSnapshot } from '../../testHelpers';
+import { testAxeViolations, testMatchesSnapshot, testRenderChildren } from '../../testHelpers';
 import LazyMotionDom from '../LazyMotionDom';
 
 const LazyMotionHOC = () => (
@@ -10,10 +8,7 @@ const LazyMotionHOC = () => (
 );
 
 describe('LazyMotionDom', () => {
-    it('renders children inside LazyMotion component', () => {
-        render(LazyMotionHOC());
-        expect(screen.getByText('Test')).toBeInTheDocument();
-    });
+    testRenderChildren(<LazyMotionHOC />);
     testAxeViolations(<LazyMotionHOC />);
     testMatchesSnapshot(<LazyMotionHOC />);
 });
