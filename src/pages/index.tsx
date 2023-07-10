@@ -2,27 +2,29 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { FC } from 'react';
 
-import { PAGES_QUERY } from '@/api/graphqlQueries';
-import { Page } from '@/api/graphqlTypes';
+import { HEADER_QUERY } from '@/api/graphqlQueries';
+import { Header_MenuItems } from '@/api/graphqlTypes';
 import OutdoorTents from '@/assets/outdoor_tents.jpg';
 import Image from '@/atoms/Image/Image';
 import Header from '@/components/Header/Header';
 import { getData } from '@/utils/getData';
 
 interface HomeProps {
-  pages: Page[] | null;
+  menuItems: Header_MenuItems[] | null;
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await getData(PAGES_QUERY);
+  const data = await getData(HEADER_QUERY);
 
-  const { Pages } = data || {};
+  const { Header: HeaderData } = data || {};
 
-  return { props: { pages: Pages?.docs || null } };
+  console.log('data', data);
+
+  return { props: { menuItems: HeaderData?.menuItems || null } };
 };
 
-const Home: FC<HomeProps> = ({ pages }) => {
-  console.log(pages);
+const Home: FC<HomeProps> = ({ menuItems }) => {
+  console.log(menuItems);
 
   return (
     <>
@@ -32,7 +34,7 @@ const Home: FC<HomeProps> = ({ pages }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <Header menuItems={menuItems} />
       <div style={{ maxWidth: '590px' }}>
         <Image
           src={OutdoorTents}
@@ -41,9 +43,9 @@ const Home: FC<HomeProps> = ({ pages }) => {
           priority
         />
       </div>
-      {pages?.map((page) => (
+      {/* {menuItems?.map((menuItem) => (
         <p key={page?.id}>{page?.title}</p>
-      ))}
+      ))} */}
     </>
   );
 };
