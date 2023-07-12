@@ -72,36 +72,36 @@ export type Accordion_AccordionItems__Content_Operator = {
 };
 
 export type Accordion_AccordionItems__HeadingTag_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Accordion_AccordionItems__Heading_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Accordion_AccordionItems__Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Accordion_CreatedAt_Operator = {
@@ -116,34 +116,34 @@ export type Accordion_CreatedAt_Operator = {
 };
 
 export type Accordion_HeadingTag_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Accordion_Heading_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Accordion_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Accordion_UpdatedAt_Operator = {
@@ -824,12 +824,12 @@ export type Button_Color_Input =
   | '%future added value';
 
 export type Button_Color_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Button_Color_Input>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Button_Color_Input>>>;
   equals?: InputMaybe<Button_Color_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Button_Color_Input>>>;
   not_equals?: InputMaybe<Button_Color_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Button_Color_Input>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Button_Color_Input>>>;
 };
 
 export type Button_CreatedAt_Operator = {
@@ -844,56 +844,55 @@ export type Button_CreatedAt_Operator = {
 };
 
 export type Button_ExternalLink_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Button_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Button_InternalLink_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['String']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['String']['input']>;
-  less_than?: InputMaybe<Scalars['String']['input']>;
-  less_than_equal?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Button_InternalName_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Button_Label_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Button_LinkType =
@@ -907,12 +906,12 @@ export type Button_LinkType_Input =
   | '%future added value';
 
 export type Button_LinkType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Button_LinkType_Input>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Button_LinkType_Input>>>;
   equals?: InputMaybe<Button_LinkType_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Button_LinkType_Input>>>;
   not_equals?: InputMaybe<Button_LinkType_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Button_LinkType_Input>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Button_LinkType_Input>>>;
 };
 
 export type Button_UpdatedAt_Operator = {
@@ -1515,12 +1514,11 @@ export type ConversionPanelContentArgs = {
 };
 
 export type ConversionPanel_CallToAction_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  greater_than?: InputMaybe<Scalars['String']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['String']['input']>;
-  less_than?: InputMaybe<Scalars['String']['input']>;
-  less_than_equal?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type ConversionPanel_Content_Operator = {
@@ -1543,34 +1541,34 @@ export type ConversionPanel_CreatedAt_Operator = {
 };
 
 export type ConversionPanel_HeadingTag_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type ConversionPanel_Heading_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type ConversionPanel_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type ConversionPanel_UpdatedAt_Operator = {
@@ -2053,13 +2051,13 @@ export type CtaTileIconArgs = {
 };
 
 export type CtaTile_Icon_Alt_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type CtaTile_Icon_CreatedAt_Operator = {
@@ -2074,119 +2072,119 @@ export type CtaTile_Icon_CreatedAt_Operator = {
 };
 
 export type CtaTile_Icon_Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type CtaTile_Icon_Filesize_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type CtaTile_Icon_Height_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type CtaTile_Icon_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type CtaTile_Icon_MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type CtaTile_Icon_Sizes__Thumbnail__Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type CtaTile_Icon_Sizes__Thumbnail__Filesize_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type CtaTile_Icon_Sizes__Thumbnail__Height_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type CtaTile_Icon_Sizes__Thumbnail__MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type CtaTile_Icon_Sizes__Thumbnail__Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type CtaTile_Icon_Sizes__Thumbnail__Width_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type CtaTile_Icon_UpdatedAt_Operator = {
@@ -2201,14 +2199,14 @@ export type CtaTile_Icon_UpdatedAt_Operator = {
 };
 
 export type CtaTile_Icon_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type CtaTile_Icon_Where = {
@@ -2271,13 +2269,13 @@ export type CtaTile_Icon_Where_Or = {
 };
 
 export type CtaTile_Icon_Width_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type CtaTile_CreatedAt_Operator = {
@@ -2292,13 +2290,13 @@ export type CtaTile_CreatedAt_Operator = {
 };
 
 export type CtaTile_ExternalLink_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type CtaTile_Icon_Operator = {
@@ -2307,43 +2305,42 @@ export type CtaTile_Icon_Operator = {
 };
 
 export type CtaTile_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type CtaTile_InternalLink_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  greater_than?: InputMaybe<Scalars['String']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['String']['input']>;
-  less_than?: InputMaybe<Scalars['String']['input']>;
-  less_than_equal?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type CtaTile_InternalName_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type CtaTile_Label_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type CtaTile_LinkType =
@@ -2357,11 +2354,11 @@ export type CtaTile_LinkType_Input =
   | '%future added value';
 
 export type CtaTile_LinkType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<CtaTile_LinkType_Input>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<CtaTile_LinkType_Input>>>;
   equals?: InputMaybe<CtaTile_LinkType_Input>;
   in?: InputMaybe<Array<InputMaybe<CtaTile_LinkType_Input>>>;
   not_equals?: InputMaybe<CtaTile_LinkType_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<CtaTile_LinkType_Input>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<CtaTile_LinkType_Input>>>;
 };
 
 export type CtaTile_UpdatedAt_Operator = {
@@ -2975,44 +2972,43 @@ export type FeatureGrid_CreatedAt_Operator = {
 };
 
 export type FeatureGrid_FeatureTiles__FeatureTile_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  greater_than?: InputMaybe<Scalars['String']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['String']['input']>;
-  less_than?: InputMaybe<Scalars['String']['input']>;
-  less_than_equal?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeatureGrid_FeatureTiles__Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeatureGrid_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeatureGrid_InternalName_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeatureGrid_UpdatedAt_Operator = {
@@ -3504,13 +3500,13 @@ export type FeatureTileImageArgs = {
 };
 
 export type FeatureTile_Image_Alt_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeatureTile_Image_CreatedAt_Operator = {
@@ -3525,119 +3521,119 @@ export type FeatureTile_Image_CreatedAt_Operator = {
 };
 
 export type FeatureTile_Image_Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeatureTile_Image_Filesize_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type FeatureTile_Image_Height_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type FeatureTile_Image_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeatureTile_Image_MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeatureTile_Image_Sizes__Thumbnail__Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeatureTile_Image_Sizes__Thumbnail__Filesize_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type FeatureTile_Image_Sizes__Thumbnail__Height_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type FeatureTile_Image_Sizes__Thumbnail__MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeatureTile_Image_Sizes__Thumbnail__Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeatureTile_Image_Sizes__Thumbnail__Width_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type FeatureTile_Image_UpdatedAt_Operator = {
@@ -3652,14 +3648,14 @@ export type FeatureTile_Image_UpdatedAt_Operator = {
 };
 
 export type FeatureTile_Image_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeatureTile_Image_Where = {
@@ -3722,13 +3718,13 @@ export type FeatureTile_Image_Where_Or = {
 };
 
 export type FeatureTile_Image_Width_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type FeatureTile_Content_Operator = {
@@ -3751,34 +3747,34 @@ export type FeatureTile_CreatedAt_Operator = {
 };
 
 export type FeatureTile_HeadingTag_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeatureTile_Heading_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeatureTile_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeatureTile_Image_Operator = {
@@ -4849,13 +4845,13 @@ export type FeaturedMediaUpdateDocAccess = {
 };
 
 export type FeaturedMedia_Image_Alt_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeaturedMedia_Image_CreatedAt_Operator = {
@@ -4870,119 +4866,119 @@ export type FeaturedMedia_Image_CreatedAt_Operator = {
 };
 
 export type FeaturedMedia_Image_Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeaturedMedia_Image_Filesize_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type FeaturedMedia_Image_Height_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type FeaturedMedia_Image_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeaturedMedia_Image_MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeaturedMedia_Image_Sizes__Thumbnail__Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeaturedMedia_Image_Sizes__Thumbnail__Filesize_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type FeaturedMedia_Image_Sizes__Thumbnail__Height_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type FeaturedMedia_Image_Sizes__Thumbnail__MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeaturedMedia_Image_Sizes__Thumbnail__Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeaturedMedia_Image_Sizes__Thumbnail__Width_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type FeaturedMedia_Image_UpdatedAt_Operator = {
@@ -4997,14 +4993,14 @@ export type FeaturedMedia_Image_UpdatedAt_Operator = {
 };
 
 export type FeaturedMedia_Image_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeaturedMedia_Image_Where = {
@@ -5067,13 +5063,13 @@ export type FeaturedMedia_Image_Where_Or = {
 };
 
 export type FeaturedMedia_Image_Width_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type FeaturedMedia_AssetType =
@@ -5087,22 +5083,21 @@ export type FeaturedMedia_AssetType_Input =
   | '%future added value';
 
 export type FeaturedMedia_AssetType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<FeaturedMedia_AssetType_Input>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<FeaturedMedia_AssetType_Input>>>;
   equals?: InputMaybe<FeaturedMedia_AssetType_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<FeaturedMedia_AssetType_Input>>>;
   not_equals?: InputMaybe<FeaturedMedia_AssetType_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<FeaturedMedia_AssetType_Input>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<FeaturedMedia_AssetType_Input>>>;
 };
 
 export type FeaturedMedia_CallToAction_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['String']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['String']['input']>;
-  less_than?: InputMaybe<Scalars['String']['input']>;
-  less_than_equal?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeaturedMedia_Content_Operator = {
@@ -5125,34 +5120,34 @@ export type FeaturedMedia_CreatedAt_Operator = {
 };
 
 export type FeaturedMedia_HeadingTag_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeaturedMedia_Heading_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeaturedMedia_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeaturedMedia_Image_Operator = {
@@ -5173,13 +5168,12 @@ export type FeaturedMedia_UpdatedAt_Operator = {
 };
 
 export type FeaturedMedia_Video_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['String']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['String']['input']>;
-  less_than?: InputMaybe<Scalars['String']['input']>;
-  less_than_equal?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeaturedMedia_Where = {
@@ -5241,15 +5235,19 @@ export type FeaturedMedias = {
 export type Footer = {
   __typename?: 'Footer';
   copyrightText?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
   menuItems?: Maybe<Array<Footer_MenuItems>>;
   socialLinks?: Maybe<Array<Footer_SocialLinks>>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
 export type FooterDocAccessFields = {
   __typename?: 'FooterDocAccessFields';
   copyrightText?: Maybe<FooterDocAccessFields_CopyrightText>;
+  createdAt?: Maybe<FooterDocAccessFields_CreatedAt>;
   menuItems?: Maybe<FooterDocAccessFields_MenuItems>;
   socialLinks?: Maybe<FooterDocAccessFields_SocialLinks>;
+  updatedAt?: Maybe<FooterDocAccessFields_UpdatedAt>;
 };
 
 export type FooterDocAccessFields_CopyrightText = {
@@ -5280,6 +5278,34 @@ export type FooterDocAccessFields_CopyrightText_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
+export type FooterDocAccessFields_CreatedAt = {
+  __typename?: 'FooterDocAccessFields_createdAt';
+  create?: Maybe<FooterDocAccessFields_CreatedAt_Create>;
+  delete?: Maybe<FooterDocAccessFields_CreatedAt_Delete>;
+  read?: Maybe<FooterDocAccessFields_CreatedAt_Read>;
+  update?: Maybe<FooterDocAccessFields_CreatedAt_Update>;
+};
+
+export type FooterDocAccessFields_CreatedAt_Create = {
+  __typename?: 'FooterDocAccessFields_createdAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_CreatedAt_Delete = {
+  __typename?: 'FooterDocAccessFields_createdAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_CreatedAt_Read = {
+  __typename?: 'FooterDocAccessFields_createdAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_CreatedAt_Update = {
+  __typename?: 'FooterDocAccessFields_createdAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
 export type FooterDocAccessFields_MenuItems = {
   __typename?: 'FooterDocAccessFields_menuItems';
   create?: Maybe<FooterDocAccessFields_MenuItems_Create>;
@@ -5306,6 +5332,7 @@ export type FooterDocAccessFields_MenuItems_Fields = {
   internalLink?: Maybe<FooterDocAccessFields_MenuItems_InternalLink>;
   label?: Maybe<FooterDocAccessFields_MenuItems_Label>;
   linkType?: Maybe<FooterDocAccessFields_MenuItems_LinkType>;
+  submenuItems?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems>;
 };
 
 export type FooterDocAccessFields_MenuItems_Read = {
@@ -5458,6 +5485,184 @@ export type FooterDocAccessFields_MenuItems_LinkType_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
+export type FooterDocAccessFields_MenuItems_SubmenuItems = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems';
+  create?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_Create>;
+  delete?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_Delete>;
+  fields?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_Fields>;
+  read?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_Read>;
+  update?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_Update>;
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_Create = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_Delete = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_Fields = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_Fields';
+  externalLink?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_ExternalLink>;
+  id?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_Id>;
+  internalLink?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_InternalLink>;
+  label?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_Label>;
+  linkType?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_LinkType>;
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_Read = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_Update = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_ExternalLink = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_externalLink';
+  create?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_ExternalLink_Create>;
+  delete?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_ExternalLink_Delete>;
+  read?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_ExternalLink_Read>;
+  update?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_ExternalLink_Update>;
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_ExternalLink_Create = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_externalLink_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_ExternalLink_Delete = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_externalLink_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_ExternalLink_Read = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_externalLink_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_ExternalLink_Update = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_externalLink_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_Id = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_id';
+  create?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_Id_Create>;
+  delete?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_Id_Delete>;
+  read?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_Id_Read>;
+  update?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_Id_Update>;
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_Id_Create = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_id_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_Id_Delete = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_id_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_Id_Read = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_id_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_Id_Update = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_id_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_InternalLink = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_internalLink';
+  create?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_InternalLink_Create>;
+  delete?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_InternalLink_Delete>;
+  read?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_InternalLink_Read>;
+  update?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_InternalLink_Update>;
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_InternalLink_Create = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_internalLink_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_InternalLink_Delete = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_internalLink_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_InternalLink_Read = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_internalLink_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_InternalLink_Update = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_internalLink_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_Label = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_label';
+  create?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_Label_Create>;
+  delete?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_Label_Delete>;
+  read?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_Label_Read>;
+  update?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_Label_Update>;
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_Label_Create = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_label_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_Label_Delete = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_label_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_Label_Read = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_label_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_Label_Update = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_label_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_LinkType = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_linkType';
+  create?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_LinkType_Create>;
+  delete?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_LinkType_Delete>;
+  read?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_LinkType_Read>;
+  update?: Maybe<FooterDocAccessFields_MenuItems_SubmenuItems_LinkType_Update>;
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_LinkType_Create = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_linkType_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_LinkType_Delete = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_linkType_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_LinkType_Read = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_linkType_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_MenuItems_SubmenuItems_LinkType_Update = {
+  __typename?: 'FooterDocAccessFields_menuItems_submenuItems_linkType_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
 export type FooterDocAccessFields_SocialLinks = {
   __typename?: 'FooterDocAccessFields_socialLinks';
   create?: Maybe<FooterDocAccessFields_SocialLinks_Create>;
@@ -5578,11 +5783,41 @@ export type FooterDocAccessFields_SocialLinks_Url_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
+export type FooterDocAccessFields_UpdatedAt = {
+  __typename?: 'FooterDocAccessFields_updatedAt';
+  create?: Maybe<FooterDocAccessFields_UpdatedAt_Create>;
+  delete?: Maybe<FooterDocAccessFields_UpdatedAt_Delete>;
+  read?: Maybe<FooterDocAccessFields_UpdatedAt_Read>;
+  update?: Maybe<FooterDocAccessFields_UpdatedAt_Update>;
+};
+
+export type FooterDocAccessFields_UpdatedAt_Create = {
+  __typename?: 'FooterDocAccessFields_updatedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_UpdatedAt_Delete = {
+  __typename?: 'FooterDocAccessFields_updatedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_UpdatedAt_Read = {
+  __typename?: 'FooterDocAccessFields_updatedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterDocAccessFields_UpdatedAt_Update = {
+  __typename?: 'FooterDocAccessFields_updatedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
 export type FooterFields = {
   __typename?: 'FooterFields';
   copyrightText?: Maybe<FooterFields_CopyrightText>;
+  createdAt?: Maybe<FooterFields_CreatedAt>;
   menuItems?: Maybe<FooterFields_MenuItems>;
   socialLinks?: Maybe<FooterFields_SocialLinks>;
+  updatedAt?: Maybe<FooterFields_UpdatedAt>;
 };
 
 export type FooterFields_CopyrightText = {
@@ -5613,6 +5848,34 @@ export type FooterFields_CopyrightText_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
+export type FooterFields_CreatedAt = {
+  __typename?: 'FooterFields_createdAt';
+  create?: Maybe<FooterFields_CreatedAt_Create>;
+  delete?: Maybe<FooterFields_CreatedAt_Delete>;
+  read?: Maybe<FooterFields_CreatedAt_Read>;
+  update?: Maybe<FooterFields_CreatedAt_Update>;
+};
+
+export type FooterFields_CreatedAt_Create = {
+  __typename?: 'FooterFields_createdAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_CreatedAt_Delete = {
+  __typename?: 'FooterFields_createdAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_CreatedAt_Read = {
+  __typename?: 'FooterFields_createdAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_CreatedAt_Update = {
+  __typename?: 'FooterFields_createdAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
 export type FooterFields_MenuItems = {
   __typename?: 'FooterFields_menuItems';
   create?: Maybe<FooterFields_MenuItems_Create>;
@@ -5639,6 +5902,7 @@ export type FooterFields_MenuItems_Fields = {
   internalLink?: Maybe<FooterFields_MenuItems_InternalLink>;
   label?: Maybe<FooterFields_MenuItems_Label>;
   linkType?: Maybe<FooterFields_MenuItems_LinkType>;
+  submenuItems?: Maybe<FooterFields_MenuItems_SubmenuItems>;
 };
 
 export type FooterFields_MenuItems_Read = {
@@ -5791,6 +6055,184 @@ export type FooterFields_MenuItems_LinkType_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
+export type FooterFields_MenuItems_SubmenuItems = {
+  __typename?: 'FooterFields_menuItems_submenuItems';
+  create?: Maybe<FooterFields_MenuItems_SubmenuItems_Create>;
+  delete?: Maybe<FooterFields_MenuItems_SubmenuItems_Delete>;
+  fields?: Maybe<FooterFields_MenuItems_SubmenuItems_Fields>;
+  read?: Maybe<FooterFields_MenuItems_SubmenuItems_Read>;
+  update?: Maybe<FooterFields_MenuItems_SubmenuItems_Update>;
+};
+
+export type FooterFields_MenuItems_SubmenuItems_Create = {
+  __typename?: 'FooterFields_menuItems_submenuItems_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_Delete = {
+  __typename?: 'FooterFields_menuItems_submenuItems_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_Fields = {
+  __typename?: 'FooterFields_menuItems_submenuItems_Fields';
+  externalLink?: Maybe<FooterFields_MenuItems_SubmenuItems_ExternalLink>;
+  id?: Maybe<FooterFields_MenuItems_SubmenuItems_Id>;
+  internalLink?: Maybe<FooterFields_MenuItems_SubmenuItems_InternalLink>;
+  label?: Maybe<FooterFields_MenuItems_SubmenuItems_Label>;
+  linkType?: Maybe<FooterFields_MenuItems_SubmenuItems_LinkType>;
+};
+
+export type FooterFields_MenuItems_SubmenuItems_Read = {
+  __typename?: 'FooterFields_menuItems_submenuItems_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_Update = {
+  __typename?: 'FooterFields_menuItems_submenuItems_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_ExternalLink = {
+  __typename?: 'FooterFields_menuItems_submenuItems_externalLink';
+  create?: Maybe<FooterFields_MenuItems_SubmenuItems_ExternalLink_Create>;
+  delete?: Maybe<FooterFields_MenuItems_SubmenuItems_ExternalLink_Delete>;
+  read?: Maybe<FooterFields_MenuItems_SubmenuItems_ExternalLink_Read>;
+  update?: Maybe<FooterFields_MenuItems_SubmenuItems_ExternalLink_Update>;
+};
+
+export type FooterFields_MenuItems_SubmenuItems_ExternalLink_Create = {
+  __typename?: 'FooterFields_menuItems_submenuItems_externalLink_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_ExternalLink_Delete = {
+  __typename?: 'FooterFields_menuItems_submenuItems_externalLink_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_ExternalLink_Read = {
+  __typename?: 'FooterFields_menuItems_submenuItems_externalLink_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_ExternalLink_Update = {
+  __typename?: 'FooterFields_menuItems_submenuItems_externalLink_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_Id = {
+  __typename?: 'FooterFields_menuItems_submenuItems_id';
+  create?: Maybe<FooterFields_MenuItems_SubmenuItems_Id_Create>;
+  delete?: Maybe<FooterFields_MenuItems_SubmenuItems_Id_Delete>;
+  read?: Maybe<FooterFields_MenuItems_SubmenuItems_Id_Read>;
+  update?: Maybe<FooterFields_MenuItems_SubmenuItems_Id_Update>;
+};
+
+export type FooterFields_MenuItems_SubmenuItems_Id_Create = {
+  __typename?: 'FooterFields_menuItems_submenuItems_id_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_Id_Delete = {
+  __typename?: 'FooterFields_menuItems_submenuItems_id_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_Id_Read = {
+  __typename?: 'FooterFields_menuItems_submenuItems_id_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_Id_Update = {
+  __typename?: 'FooterFields_menuItems_submenuItems_id_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_InternalLink = {
+  __typename?: 'FooterFields_menuItems_submenuItems_internalLink';
+  create?: Maybe<FooterFields_MenuItems_SubmenuItems_InternalLink_Create>;
+  delete?: Maybe<FooterFields_MenuItems_SubmenuItems_InternalLink_Delete>;
+  read?: Maybe<FooterFields_MenuItems_SubmenuItems_InternalLink_Read>;
+  update?: Maybe<FooterFields_MenuItems_SubmenuItems_InternalLink_Update>;
+};
+
+export type FooterFields_MenuItems_SubmenuItems_InternalLink_Create = {
+  __typename?: 'FooterFields_menuItems_submenuItems_internalLink_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_InternalLink_Delete = {
+  __typename?: 'FooterFields_menuItems_submenuItems_internalLink_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_InternalLink_Read = {
+  __typename?: 'FooterFields_menuItems_submenuItems_internalLink_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_InternalLink_Update = {
+  __typename?: 'FooterFields_menuItems_submenuItems_internalLink_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_Label = {
+  __typename?: 'FooterFields_menuItems_submenuItems_label';
+  create?: Maybe<FooterFields_MenuItems_SubmenuItems_Label_Create>;
+  delete?: Maybe<FooterFields_MenuItems_SubmenuItems_Label_Delete>;
+  read?: Maybe<FooterFields_MenuItems_SubmenuItems_Label_Read>;
+  update?: Maybe<FooterFields_MenuItems_SubmenuItems_Label_Update>;
+};
+
+export type FooterFields_MenuItems_SubmenuItems_Label_Create = {
+  __typename?: 'FooterFields_menuItems_submenuItems_label_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_Label_Delete = {
+  __typename?: 'FooterFields_menuItems_submenuItems_label_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_Label_Read = {
+  __typename?: 'FooterFields_menuItems_submenuItems_label_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_Label_Update = {
+  __typename?: 'FooterFields_menuItems_submenuItems_label_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_LinkType = {
+  __typename?: 'FooterFields_menuItems_submenuItems_linkType';
+  create?: Maybe<FooterFields_MenuItems_SubmenuItems_LinkType_Create>;
+  delete?: Maybe<FooterFields_MenuItems_SubmenuItems_LinkType_Delete>;
+  read?: Maybe<FooterFields_MenuItems_SubmenuItems_LinkType_Read>;
+  update?: Maybe<FooterFields_MenuItems_SubmenuItems_LinkType_Update>;
+};
+
+export type FooterFields_MenuItems_SubmenuItems_LinkType_Create = {
+  __typename?: 'FooterFields_menuItems_submenuItems_linkType_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_LinkType_Delete = {
+  __typename?: 'FooterFields_menuItems_submenuItems_linkType_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_LinkType_Read = {
+  __typename?: 'FooterFields_menuItems_submenuItems_linkType_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_MenuItems_SubmenuItems_LinkType_Update = {
+  __typename?: 'FooterFields_menuItems_submenuItems_linkType_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
 export type FooterFields_SocialLinks = {
   __typename?: 'FooterFields_socialLinks';
   create?: Maybe<FooterFields_SocialLinks_Create>;
@@ -5911,6 +6353,34 @@ export type FooterFields_SocialLinks_Url_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
+export type FooterFields_UpdatedAt = {
+  __typename?: 'FooterFields_updatedAt';
+  create?: Maybe<FooterFields_UpdatedAt_Create>;
+  delete?: Maybe<FooterFields_UpdatedAt_Delete>;
+  read?: Maybe<FooterFields_UpdatedAt_Read>;
+  update?: Maybe<FooterFields_UpdatedAt_Update>;
+};
+
+export type FooterFields_UpdatedAt_Create = {
+  __typename?: 'FooterFields_updatedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_UpdatedAt_Delete = {
+  __typename?: 'FooterFields_updatedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_UpdatedAt_Read = {
+  __typename?: 'FooterFields_updatedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type FooterFields_UpdatedAt_Update = {
+  __typename?: 'FooterFields_updatedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
 export type FooterReadAccess = {
   __typename?: 'FooterReadAccess';
   permission: Scalars['Boolean']['output'];
@@ -5942,7 +6412,22 @@ export type Footer_MenuItems = {
   internalLink?: Maybe<Page>;
   label?: Maybe<Scalars['String']['output']>;
   linkType?: Maybe<Footer_MenuItems_LinkType>;
+  submenuItems?: Maybe<Array<Footer_MenuItems_SubmenuItems>>;
 };
+
+export type Footer_MenuItems_SubmenuItems = {
+  __typename?: 'Footer_MenuItems_SubmenuItems';
+  externalLink?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  internalLink?: Maybe<Page>;
+  label?: Maybe<Scalars['String']['output']>;
+  linkType?: Maybe<Footer_MenuItems_SubmenuItems_LinkType>;
+};
+
+export type Footer_MenuItems_SubmenuItems_LinkType =
+  | 'external'
+  | 'internal'
+  | '%future added value';
 
 export type Footer_MenuItems_LinkType =
   | 'external'
@@ -5961,13 +6446,13 @@ export type Footer_SocialLinksIconArgs = {
 };
 
 export type Footer_SocialLinks_Icon_Alt_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Footer_SocialLinks_Icon_CreatedAt_Operator = {
@@ -5982,119 +6467,119 @@ export type Footer_SocialLinks_Icon_CreatedAt_Operator = {
 };
 
 export type Footer_SocialLinks_Icon_Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Footer_SocialLinks_Icon_Filesize_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Footer_SocialLinks_Icon_Height_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Footer_SocialLinks_Icon_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Footer_SocialLinks_Icon_MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Footer_SocialLinks_Icon_Sizes__Thumbnail__Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Footer_SocialLinks_Icon_Sizes__Thumbnail__Filesize_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Footer_SocialLinks_Icon_Sizes__Thumbnail__Height_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Footer_SocialLinks_Icon_Sizes__Thumbnail__MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Footer_SocialLinks_Icon_Sizes__Thumbnail__Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Footer_SocialLinks_Icon_Sizes__Thumbnail__Width_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Footer_SocialLinks_Icon_UpdatedAt_Operator = {
@@ -6109,14 +6594,14 @@ export type Footer_SocialLinks_Icon_UpdatedAt_Operator = {
 };
 
 export type Footer_SocialLinks_Icon_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Footer_SocialLinks_Icon_Where = {
@@ -6179,25 +6664,29 @@ export type Footer_SocialLinks_Icon_Where_Or = {
 };
 
 export type Footer_SocialLinks_Icon_Width_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Header = {
   __typename?: 'Header';
   callToAction?: Maybe<Button>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
   menuItems?: Maybe<Array<Header_MenuItems>>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
 export type HeaderDocAccessFields = {
   __typename?: 'HeaderDocAccessFields';
   callToAction?: Maybe<HeaderDocAccessFields_CallToAction>;
+  createdAt?: Maybe<HeaderDocAccessFields_CreatedAt>;
   menuItems?: Maybe<HeaderDocAccessFields_MenuItems>;
+  updatedAt?: Maybe<HeaderDocAccessFields_UpdatedAt>;
 };
 
 export type HeaderDocAccessFields_CallToAction = {
@@ -6228,6 +6717,34 @@ export type HeaderDocAccessFields_CallToAction_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
+export type HeaderDocAccessFields_CreatedAt = {
+  __typename?: 'HeaderDocAccessFields_createdAt';
+  create?: Maybe<HeaderDocAccessFields_CreatedAt_Create>;
+  delete?: Maybe<HeaderDocAccessFields_CreatedAt_Delete>;
+  read?: Maybe<HeaderDocAccessFields_CreatedAt_Read>;
+  update?: Maybe<HeaderDocAccessFields_CreatedAt_Update>;
+};
+
+export type HeaderDocAccessFields_CreatedAt_Create = {
+  __typename?: 'HeaderDocAccessFields_createdAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_CreatedAt_Delete = {
+  __typename?: 'HeaderDocAccessFields_createdAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_CreatedAt_Read = {
+  __typename?: 'HeaderDocAccessFields_createdAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_CreatedAt_Update = {
+  __typename?: 'HeaderDocAccessFields_createdAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
 export type HeaderDocAccessFields_MenuItems = {
   __typename?: 'HeaderDocAccessFields_menuItems';
   create?: Maybe<HeaderDocAccessFields_MenuItems_Create>;
@@ -6254,6 +6771,7 @@ export type HeaderDocAccessFields_MenuItems_Fields = {
   internalLink?: Maybe<HeaderDocAccessFields_MenuItems_InternalLink>;
   label?: Maybe<HeaderDocAccessFields_MenuItems_Label>;
   linkType?: Maybe<HeaderDocAccessFields_MenuItems_LinkType>;
+  submenuItems?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems>;
 };
 
 export type HeaderDocAccessFields_MenuItems_Read = {
@@ -6406,10 +6924,218 @@ export type HeaderDocAccessFields_MenuItems_LinkType_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
+export type HeaderDocAccessFields_MenuItems_SubmenuItems = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems';
+  create?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_Create>;
+  delete?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_Delete>;
+  fields?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_Fields>;
+  read?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_Read>;
+  update?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_Update>;
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_Create = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_Delete = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_Fields = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_Fields';
+  externalLink?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_ExternalLink>;
+  id?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_Id>;
+  internalLink?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_InternalLink>;
+  label?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_Label>;
+  linkType?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_LinkType>;
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_Read = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_Update = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_ExternalLink = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_externalLink';
+  create?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_ExternalLink_Create>;
+  delete?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_ExternalLink_Delete>;
+  read?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_ExternalLink_Read>;
+  update?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_ExternalLink_Update>;
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_ExternalLink_Create = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_externalLink_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_ExternalLink_Delete = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_externalLink_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_ExternalLink_Read = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_externalLink_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_ExternalLink_Update = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_externalLink_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_Id = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_id';
+  create?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_Id_Create>;
+  delete?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_Id_Delete>;
+  read?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_Id_Read>;
+  update?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_Id_Update>;
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_Id_Create = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_id_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_Id_Delete = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_id_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_Id_Read = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_id_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_Id_Update = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_id_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_InternalLink = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_internalLink';
+  create?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_InternalLink_Create>;
+  delete?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_InternalLink_Delete>;
+  read?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_InternalLink_Read>;
+  update?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_InternalLink_Update>;
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_InternalLink_Create = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_internalLink_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_InternalLink_Delete = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_internalLink_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_InternalLink_Read = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_internalLink_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_InternalLink_Update = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_internalLink_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_Label = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_label';
+  create?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_Label_Create>;
+  delete?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_Label_Delete>;
+  read?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_Label_Read>;
+  update?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_Label_Update>;
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_Label_Create = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_label_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_Label_Delete = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_label_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_Label_Read = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_label_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_Label_Update = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_label_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_LinkType = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_linkType';
+  create?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_LinkType_Create>;
+  delete?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_LinkType_Delete>;
+  read?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_LinkType_Read>;
+  update?: Maybe<HeaderDocAccessFields_MenuItems_SubmenuItems_LinkType_Update>;
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_LinkType_Create = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_linkType_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_LinkType_Delete = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_linkType_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_LinkType_Read = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_linkType_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_MenuItems_SubmenuItems_LinkType_Update = {
+  __typename?: 'HeaderDocAccessFields_menuItems_submenuItems_linkType_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_UpdatedAt = {
+  __typename?: 'HeaderDocAccessFields_updatedAt';
+  create?: Maybe<HeaderDocAccessFields_UpdatedAt_Create>;
+  delete?: Maybe<HeaderDocAccessFields_UpdatedAt_Delete>;
+  read?: Maybe<HeaderDocAccessFields_UpdatedAt_Read>;
+  update?: Maybe<HeaderDocAccessFields_UpdatedAt_Update>;
+};
+
+export type HeaderDocAccessFields_UpdatedAt_Create = {
+  __typename?: 'HeaderDocAccessFields_updatedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_UpdatedAt_Delete = {
+  __typename?: 'HeaderDocAccessFields_updatedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_UpdatedAt_Read = {
+  __typename?: 'HeaderDocAccessFields_updatedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderDocAccessFields_UpdatedAt_Update = {
+  __typename?: 'HeaderDocAccessFields_updatedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
 export type HeaderFields = {
   __typename?: 'HeaderFields';
   callToAction?: Maybe<HeaderFields_CallToAction>;
+  createdAt?: Maybe<HeaderFields_CreatedAt>;
   menuItems?: Maybe<HeaderFields_MenuItems>;
+  updatedAt?: Maybe<HeaderFields_UpdatedAt>;
 };
 
 export type HeaderFields_CallToAction = {
@@ -6440,6 +7166,34 @@ export type HeaderFields_CallToAction_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
+export type HeaderFields_CreatedAt = {
+  __typename?: 'HeaderFields_createdAt';
+  create?: Maybe<HeaderFields_CreatedAt_Create>;
+  delete?: Maybe<HeaderFields_CreatedAt_Delete>;
+  read?: Maybe<HeaderFields_CreatedAt_Read>;
+  update?: Maybe<HeaderFields_CreatedAt_Update>;
+};
+
+export type HeaderFields_CreatedAt_Create = {
+  __typename?: 'HeaderFields_createdAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_CreatedAt_Delete = {
+  __typename?: 'HeaderFields_createdAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_CreatedAt_Read = {
+  __typename?: 'HeaderFields_createdAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_CreatedAt_Update = {
+  __typename?: 'HeaderFields_createdAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
 export type HeaderFields_MenuItems = {
   __typename?: 'HeaderFields_menuItems';
   create?: Maybe<HeaderFields_MenuItems_Create>;
@@ -6466,6 +7220,7 @@ export type HeaderFields_MenuItems_Fields = {
   internalLink?: Maybe<HeaderFields_MenuItems_InternalLink>;
   label?: Maybe<HeaderFields_MenuItems_Label>;
   linkType?: Maybe<HeaderFields_MenuItems_LinkType>;
+  submenuItems?: Maybe<HeaderFields_MenuItems_SubmenuItems>;
 };
 
 export type HeaderFields_MenuItems_Read = {
@@ -6618,6 +7373,212 @@ export type HeaderFields_MenuItems_LinkType_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
+export type HeaderFields_MenuItems_SubmenuItems = {
+  __typename?: 'HeaderFields_menuItems_submenuItems';
+  create?: Maybe<HeaderFields_MenuItems_SubmenuItems_Create>;
+  delete?: Maybe<HeaderFields_MenuItems_SubmenuItems_Delete>;
+  fields?: Maybe<HeaderFields_MenuItems_SubmenuItems_Fields>;
+  read?: Maybe<HeaderFields_MenuItems_SubmenuItems_Read>;
+  update?: Maybe<HeaderFields_MenuItems_SubmenuItems_Update>;
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_Create = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_Delete = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_Fields = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_Fields';
+  externalLink?: Maybe<HeaderFields_MenuItems_SubmenuItems_ExternalLink>;
+  id?: Maybe<HeaderFields_MenuItems_SubmenuItems_Id>;
+  internalLink?: Maybe<HeaderFields_MenuItems_SubmenuItems_InternalLink>;
+  label?: Maybe<HeaderFields_MenuItems_SubmenuItems_Label>;
+  linkType?: Maybe<HeaderFields_MenuItems_SubmenuItems_LinkType>;
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_Read = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_Update = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_ExternalLink = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_externalLink';
+  create?: Maybe<HeaderFields_MenuItems_SubmenuItems_ExternalLink_Create>;
+  delete?: Maybe<HeaderFields_MenuItems_SubmenuItems_ExternalLink_Delete>;
+  read?: Maybe<HeaderFields_MenuItems_SubmenuItems_ExternalLink_Read>;
+  update?: Maybe<HeaderFields_MenuItems_SubmenuItems_ExternalLink_Update>;
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_ExternalLink_Create = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_externalLink_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_ExternalLink_Delete = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_externalLink_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_ExternalLink_Read = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_externalLink_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_ExternalLink_Update = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_externalLink_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_Id = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_id';
+  create?: Maybe<HeaderFields_MenuItems_SubmenuItems_Id_Create>;
+  delete?: Maybe<HeaderFields_MenuItems_SubmenuItems_Id_Delete>;
+  read?: Maybe<HeaderFields_MenuItems_SubmenuItems_Id_Read>;
+  update?: Maybe<HeaderFields_MenuItems_SubmenuItems_Id_Update>;
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_Id_Create = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_id_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_Id_Delete = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_id_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_Id_Read = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_id_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_Id_Update = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_id_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_InternalLink = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_internalLink';
+  create?: Maybe<HeaderFields_MenuItems_SubmenuItems_InternalLink_Create>;
+  delete?: Maybe<HeaderFields_MenuItems_SubmenuItems_InternalLink_Delete>;
+  read?: Maybe<HeaderFields_MenuItems_SubmenuItems_InternalLink_Read>;
+  update?: Maybe<HeaderFields_MenuItems_SubmenuItems_InternalLink_Update>;
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_InternalLink_Create = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_internalLink_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_InternalLink_Delete = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_internalLink_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_InternalLink_Read = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_internalLink_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_InternalLink_Update = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_internalLink_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_Label = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_label';
+  create?: Maybe<HeaderFields_MenuItems_SubmenuItems_Label_Create>;
+  delete?: Maybe<HeaderFields_MenuItems_SubmenuItems_Label_Delete>;
+  read?: Maybe<HeaderFields_MenuItems_SubmenuItems_Label_Read>;
+  update?: Maybe<HeaderFields_MenuItems_SubmenuItems_Label_Update>;
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_Label_Create = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_label_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_Label_Delete = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_label_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_Label_Read = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_label_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_Label_Update = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_label_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_LinkType = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_linkType';
+  create?: Maybe<HeaderFields_MenuItems_SubmenuItems_LinkType_Create>;
+  delete?: Maybe<HeaderFields_MenuItems_SubmenuItems_LinkType_Delete>;
+  read?: Maybe<HeaderFields_MenuItems_SubmenuItems_LinkType_Read>;
+  update?: Maybe<HeaderFields_MenuItems_SubmenuItems_LinkType_Update>;
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_LinkType_Create = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_linkType_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_LinkType_Delete = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_linkType_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_LinkType_Read = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_linkType_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_MenuItems_SubmenuItems_LinkType_Update = {
+  __typename?: 'HeaderFields_menuItems_submenuItems_linkType_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_UpdatedAt = {
+  __typename?: 'HeaderFields_updatedAt';
+  create?: Maybe<HeaderFields_UpdatedAt_Create>;
+  delete?: Maybe<HeaderFields_UpdatedAt_Delete>;
+  read?: Maybe<HeaderFields_UpdatedAt_Read>;
+  update?: Maybe<HeaderFields_UpdatedAt_Update>;
+};
+
+export type HeaderFields_UpdatedAt_Create = {
+  __typename?: 'HeaderFields_updatedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_UpdatedAt_Delete = {
+  __typename?: 'HeaderFields_updatedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_UpdatedAt_Read = {
+  __typename?: 'HeaderFields_updatedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type HeaderFields_UpdatedAt_Update = {
+  __typename?: 'HeaderFields_updatedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
 export type HeaderReadAccess = {
   __typename?: 'HeaderReadAccess';
   permission: Scalars['Boolean']['output'];
@@ -6649,7 +7610,22 @@ export type Header_MenuItems = {
   internalLink?: Maybe<Page>;
   label?: Maybe<Scalars['String']['output']>;
   linkType?: Maybe<Header_MenuItems_LinkType>;
+  submenuItems?: Maybe<Array<Header_MenuItems_SubmenuItems>>;
 };
+
+export type Header_MenuItems_SubmenuItems = {
+  __typename?: 'Header_MenuItems_SubmenuItems';
+  externalLink?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['String']['output']>;
+  internalLink?: Maybe<Page>;
+  label?: Maybe<Scalars['String']['output']>;
+  linkType?: Maybe<Header_MenuItems_SubmenuItems_LinkType>;
+};
+
+export type Header_MenuItems_SubmenuItems_LinkType =
+  | 'external'
+  | 'internal'
+  | '%future added value';
 
 export type Header_MenuItems_LinkType =
   | 'external'
@@ -6716,45 +7692,43 @@ export type Hero_CreatedAt_Operator = {
 };
 
 export type Hero_Cta__CtaButtons__CallToAction_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['String']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['String']['input']>;
-  less_than?: InputMaybe<Scalars['String']['input']>;
-  less_than_equal?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Hero_Cta__CtaButtons__Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Hero_Cta__CtaTiles__CallToActionTile_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['String']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['String']['input']>;
-  less_than?: InputMaybe<Scalars['String']['input']>;
-  less_than_equal?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Hero_Cta__CtaTiles__Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Hero_Cta__Type_Input =
@@ -6763,54 +7737,54 @@ export type Hero_Cta__Type_Input =
   | '%future added value';
 
 export type Hero_Cta__Type_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Hero_Cta__Type_Input>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Hero_Cta__Type_Input>>>;
   equals?: InputMaybe<Hero_Cta__Type_Input>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Hero_Cta__Type_Input>>>;
   not_equals?: InputMaybe<Hero_Cta__Type_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Hero_Cta__Type_Input>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Hero_Cta__Type_Input>>>;
 };
 
 export type Hero_HeadingTag_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Hero_Heading_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Hero_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Hero_Subheading_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Hero_UpdatedAt_Operator = {
@@ -7813,13 +8787,13 @@ export type IconTileIconArgs = {
 };
 
 export type IconTile_Icon_Alt_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type IconTile_Icon_CreatedAt_Operator = {
@@ -7834,119 +8808,119 @@ export type IconTile_Icon_CreatedAt_Operator = {
 };
 
 export type IconTile_Icon_Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type IconTile_Icon_Filesize_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type IconTile_Icon_Height_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type IconTile_Icon_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type IconTile_Icon_MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type IconTile_Icon_Sizes__Thumbnail__Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type IconTile_Icon_Sizes__Thumbnail__Filesize_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type IconTile_Icon_Sizes__Thumbnail__Height_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type IconTile_Icon_Sizes__Thumbnail__MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type IconTile_Icon_Sizes__Thumbnail__Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type IconTile_Icon_Sizes__Thumbnail__Width_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type IconTile_Icon_UpdatedAt_Operator = {
@@ -7961,14 +8935,14 @@ export type IconTile_Icon_UpdatedAt_Operator = {
 };
 
 export type IconTile_Icon_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type IconTile_Icon_Where = {
@@ -8031,13 +9005,13 @@ export type IconTile_Icon_Where_Or = {
 };
 
 export type IconTile_Icon_Width_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type IconTile_CreatedAt_Operator = {
@@ -8057,24 +9031,24 @@ export type IconTile_Icon_Operator = {
 };
 
 export type IconTile_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type IconTile_Label_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type IconTile_UpdatedAt_Operator = {
@@ -8433,13 +9407,13 @@ export type Icon_Sizes_Thumbnail = {
 };
 
 export type Icon_Alt_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Icon_CreatedAt_Operator = {
@@ -8454,119 +9428,119 @@ export type Icon_CreatedAt_Operator = {
 };
 
 export type Icon_Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Icon_Filesize_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Icon_Height_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Icon_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Icon_MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Icon_Sizes__Thumbnail__Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Icon_Sizes__Thumbnail__Filesize_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Icon_Sizes__Thumbnail__Height_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Icon_Sizes__Thumbnail__MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Icon_Sizes__Thumbnail__Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Icon_Sizes__Thumbnail__Width_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Icon_UpdatedAt_Operator = {
@@ -8581,14 +9555,14 @@ export type Icon_UpdatedAt_Operator = {
 };
 
 export type Icon_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Icon_Where = {
@@ -8651,13 +9625,13 @@ export type Icon_Where_Or = {
 };
 
 export type Icon_Width_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Icons = {
@@ -9768,13 +10742,13 @@ export type Image_Sizes_Thumbnail = {
 };
 
 export type Image_Alt_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Image_CreatedAt_Operator = {
@@ -9789,119 +10763,119 @@ export type Image_CreatedAt_Operator = {
 };
 
 export type Image_Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Image_Filesize_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Image_Height_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Image_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Image_MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Image_Sizes__Thumbnail__Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Image_Sizes__Thumbnail__Filesize_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Image_Sizes__Thumbnail__Height_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Image_Sizes__Thumbnail__MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Image_Sizes__Thumbnail__Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Image_Sizes__Thumbnail__Width_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Image_UpdatedAt_Operator = {
@@ -9916,14 +10890,14 @@ export type Image_UpdatedAt_Operator = {
 };
 
 export type Image_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Image_Where = {
@@ -9986,13 +10960,13 @@ export type Image_Where_Or = {
 };
 
 export type Image_Width_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Images = {
@@ -11459,36 +12433,36 @@ export type Page_CreatedAt_Operator = {
 };
 
 export type Page_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Page_Slug_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Page_Title_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Page_UpdatedAt_Operator = {
@@ -12205,13 +13179,13 @@ export type SwitchbackImageArgs = {
 };
 
 export type Switchback_Image_Alt_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Switchback_Image_CreatedAt_Operator = {
@@ -12226,119 +13200,119 @@ export type Switchback_Image_CreatedAt_Operator = {
 };
 
 export type Switchback_Image_Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Switchback_Image_Filesize_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Switchback_Image_Height_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Switchback_Image_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Switchback_Image_MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Switchback_Image_Sizes__Thumbnail__Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Switchback_Image_Sizes__Thumbnail__Filesize_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Switchback_Image_Sizes__Thumbnail__Height_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Switchback_Image_Sizes__Thumbnail__MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Switchback_Image_Sizes__Thumbnail__Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Switchback_Image_Sizes__Thumbnail__Width_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Switchback_Image_UpdatedAt_Operator = {
@@ -12353,14 +13327,14 @@ export type Switchback_Image_UpdatedAt_Operator = {
 };
 
 export type Switchback_Image_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Switchback_Image_Where = {
@@ -12423,13 +13397,13 @@ export type Switchback_Image_Where_Or = {
 };
 
 export type Switchback_Image_Width_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Switchback_Content_Operator = {
@@ -12452,36 +13426,36 @@ export type Switchback_CreatedAt_Operator = {
 };
 
 export type Switchback_HeadingTag_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Switchback_Heading_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Switchback_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Switchback_ImageSide =
@@ -12495,11 +13469,11 @@ export type Switchback_ImageSide_Input =
   | '%future added value';
 
 export type Switchback_ImageSide_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Switchback_ImageSide_Input>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Switchback_ImageSide_Input>>>;
   equals?: InputMaybe<Switchback_ImageSide_Input>;
   in?: InputMaybe<Array<InputMaybe<Switchback_ImageSide_Input>>>;
   not_equals?: InputMaybe<Switchback_ImageSide_Input>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Switchback_ImageSide_Input>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Switchback_ImageSide_Input>>>;
 };
 
 export type Switchback_Image_Operator = {
@@ -12508,13 +13482,13 @@ export type Switchback_Image_Operator = {
 };
 
 export type Switchback_InternalName_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Switchback_UpdatedAt_Operator = {
@@ -13124,12 +14098,11 @@ export type TileGrid_IconTiles = {
 };
 
 export type TileGrid_CallToAction_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  greater_than?: InputMaybe<Scalars['String']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['String']['input']>;
-  less_than?: InputMaybe<Scalars['String']['input']>;
-  less_than_equal?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type TileGrid_Content_Operator = {
@@ -13152,54 +14125,53 @@ export type TileGrid_CreatedAt_Operator = {
 };
 
 export type TileGrid_HeadingTag_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type TileGrid_Heading_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type TileGrid_IconTiles__IconTile_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   equals?: InputMaybe<Scalars['String']['input']>;
-  greater_than?: InputMaybe<Scalars['String']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['String']['input']>;
-  less_than?: InputMaybe<Scalars['String']['input']>;
-  less_than_equal?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type TileGrid_IconTiles__Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type TileGrid_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type TileGrid_UpdatedAt_Operator = {
@@ -13856,15 +14828,31 @@ export type TileGridsUpdateDocAccess = {
 
 export type User = {
   __typename?: 'User';
+  apiKey?: Maybe<Scalars['String']['output']>;
+  apiKeyIndex?: Maybe<Scalars['String']['output']>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
-  email?: Maybe<Scalars['EmailAddress']['output']>;
+  email: Scalars['EmailAddress']['output'];
+  enableAPIKey?: Maybe<Scalars['Boolean']['output']>;
+  hash?: Maybe<Scalars['String']['output']>;
   id?: Maybe<Scalars['String']['output']>;
   lockUntil?: Maybe<Scalars['DateTime']['output']>;
   loginAttempts?: Maybe<Scalars['Float']['output']>;
   password: Scalars['String']['output'];
   resetPasswordExpiration?: Maybe<Scalars['DateTime']['output']>;
   resetPasswordToken?: Maybe<Scalars['String']['output']>;
+  salt?: Maybe<Scalars['String']['output']>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type User_ApiKey_Operator = {
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains?: InputMaybe<Scalars['String']['input']>;
+  equals?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  not_equals?: InputMaybe<Scalars['String']['input']>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type User_CreatedAt_Operator = {
@@ -13879,25 +14867,30 @@ export type User_CreatedAt_Operator = {
 };
 
 export type User_Email_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['EmailAddress']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['EmailAddress']['input']>>>;
   contains?: InputMaybe<Scalars['EmailAddress']['input']>;
   equals?: InputMaybe<Scalars['EmailAddress']['input']>;
-  exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['EmailAddress']['input']>>>;
   like?: InputMaybe<Scalars['EmailAddress']['input']>;
   not_equals?: InputMaybe<Scalars['EmailAddress']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['EmailAddress']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['EmailAddress']['input']>>>;
+};
+
+export type User_EnableApiKey_Operator = {
+  equals?: InputMaybe<Scalars['Boolean']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  not_equals?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 export type User_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type User_UpdatedAt_Operator = {
@@ -13914,22 +14907,28 @@ export type User_UpdatedAt_Operator = {
 export type User_Where = {
   AND?: InputMaybe<Array<InputMaybe<User_Where_And>>>;
   OR?: InputMaybe<Array<InputMaybe<User_Where_Or>>>;
+  apiKey?: InputMaybe<User_ApiKey_Operator>;
   createdAt?: InputMaybe<User_CreatedAt_Operator>;
   email?: InputMaybe<User_Email_Operator>;
+  enableAPIKey?: InputMaybe<User_EnableApiKey_Operator>;
   id?: InputMaybe<User_Id_Operator>;
   updatedAt?: InputMaybe<User_UpdatedAt_Operator>;
 };
 
 export type User_Where_And = {
+  apiKey?: InputMaybe<User_ApiKey_Operator>;
   createdAt?: InputMaybe<User_CreatedAt_Operator>;
   email?: InputMaybe<User_Email_Operator>;
+  enableAPIKey?: InputMaybe<User_EnableApiKey_Operator>;
   id?: InputMaybe<User_Id_Operator>;
   updatedAt?: InputMaybe<User_UpdatedAt_Operator>;
 };
 
 export type User_Where_Or = {
+  apiKey?: InputMaybe<User_ApiKey_Operator>;
   createdAt?: InputMaybe<User_CreatedAt_Operator>;
   email?: InputMaybe<User_Email_Operator>;
+  enableAPIKey?: InputMaybe<User_EnableApiKey_Operator>;
   id?: InputMaybe<User_Id_Operator>;
   updatedAt?: InputMaybe<User_UpdatedAt_Operator>;
 };
@@ -13975,10 +14974,40 @@ export type UsersDeleteDocAccess = {
 
 export type UsersDocAccessFields = {
   __typename?: 'UsersDocAccessFields';
+  apiKey?: Maybe<UsersDocAccessFields_ApiKey>;
   createdAt?: Maybe<UsersDocAccessFields_CreatedAt>;
   email?: Maybe<UsersDocAccessFields_Email>;
+  enableAPIKey?: Maybe<UsersDocAccessFields_EnableApiKey>;
   password?: Maybe<UsersDocAccessFields_Password>;
   updatedAt?: Maybe<UsersDocAccessFields_UpdatedAt>;
+};
+
+export type UsersDocAccessFields_ApiKey = {
+  __typename?: 'UsersDocAccessFields_apiKey';
+  create?: Maybe<UsersDocAccessFields_ApiKey_Create>;
+  delete?: Maybe<UsersDocAccessFields_ApiKey_Delete>;
+  read?: Maybe<UsersDocAccessFields_ApiKey_Read>;
+  update?: Maybe<UsersDocAccessFields_ApiKey_Update>;
+};
+
+export type UsersDocAccessFields_ApiKey_Create = {
+  __typename?: 'UsersDocAccessFields_apiKey_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type UsersDocAccessFields_ApiKey_Delete = {
+  __typename?: 'UsersDocAccessFields_apiKey_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type UsersDocAccessFields_ApiKey_Read = {
+  __typename?: 'UsersDocAccessFields_apiKey_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type UsersDocAccessFields_ApiKey_Update = {
+  __typename?: 'UsersDocAccessFields_apiKey_Update';
+  permission: Scalars['Boolean']['output'];
 };
 
 export type UsersDocAccessFields_CreatedAt = {
@@ -14034,6 +15063,34 @@ export type UsersDocAccessFields_Email_Read = {
 
 export type UsersDocAccessFields_Email_Update = {
   __typename?: 'UsersDocAccessFields_email_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type UsersDocAccessFields_EnableApiKey = {
+  __typename?: 'UsersDocAccessFields_enableAPIKey';
+  create?: Maybe<UsersDocAccessFields_EnableApiKey_Create>;
+  delete?: Maybe<UsersDocAccessFields_EnableApiKey_Delete>;
+  read?: Maybe<UsersDocAccessFields_EnableApiKey_Read>;
+  update?: Maybe<UsersDocAccessFields_EnableApiKey_Update>;
+};
+
+export type UsersDocAccessFields_EnableApiKey_Create = {
+  __typename?: 'UsersDocAccessFields_enableAPIKey_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type UsersDocAccessFields_EnableApiKey_Delete = {
+  __typename?: 'UsersDocAccessFields_enableAPIKey_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type UsersDocAccessFields_EnableApiKey_Read = {
+  __typename?: 'UsersDocAccessFields_enableAPIKey_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type UsersDocAccessFields_EnableApiKey_Update = {
+  __typename?: 'UsersDocAccessFields_enableAPIKey_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -14095,10 +15152,40 @@ export type UsersDocAccessFields_UpdatedAt_Update = {
 
 export type UsersFields = {
   __typename?: 'UsersFields';
+  apiKey?: Maybe<UsersFields_ApiKey>;
   createdAt?: Maybe<UsersFields_CreatedAt>;
   email?: Maybe<UsersFields_Email>;
+  enableAPIKey?: Maybe<UsersFields_EnableApiKey>;
   password?: Maybe<UsersFields_Password>;
   updatedAt?: Maybe<UsersFields_UpdatedAt>;
+};
+
+export type UsersFields_ApiKey = {
+  __typename?: 'UsersFields_apiKey';
+  create?: Maybe<UsersFields_ApiKey_Create>;
+  delete?: Maybe<UsersFields_ApiKey_Delete>;
+  read?: Maybe<UsersFields_ApiKey_Read>;
+  update?: Maybe<UsersFields_ApiKey_Update>;
+};
+
+export type UsersFields_ApiKey_Create = {
+  __typename?: 'UsersFields_apiKey_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type UsersFields_ApiKey_Delete = {
+  __typename?: 'UsersFields_apiKey_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type UsersFields_ApiKey_Read = {
+  __typename?: 'UsersFields_apiKey_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type UsersFields_ApiKey_Update = {
+  __typename?: 'UsersFields_apiKey_Update';
+  permission: Scalars['Boolean']['output'];
 };
 
 export type UsersFields_CreatedAt = {
@@ -14154,6 +15241,34 @@ export type UsersFields_Email_Read = {
 
 export type UsersFields_Email_Update = {
   __typename?: 'UsersFields_email_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type UsersFields_EnableApiKey = {
+  __typename?: 'UsersFields_enableAPIKey';
+  create?: Maybe<UsersFields_EnableApiKey_Create>;
+  delete?: Maybe<UsersFields_EnableApiKey_Delete>;
+  read?: Maybe<UsersFields_EnableApiKey_Read>;
+  update?: Maybe<UsersFields_EnableApiKey_Update>;
+};
+
+export type UsersFields_EnableApiKey_Create = {
+  __typename?: 'UsersFields_enableAPIKey_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type UsersFields_EnableApiKey_Delete = {
+  __typename?: 'UsersFields_enableAPIKey_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type UsersFields_EnableApiKey_Read = {
+  __typename?: 'UsersFields_enableAPIKey_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type UsersFields_EnableApiKey_Update = {
+  __typename?: 'UsersFields_enableAPIKey_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -14264,13 +15379,13 @@ export type VideoPlaceholderImageArgs = {
 };
 
 export type Video_PlaceholderImage_Alt_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Video_PlaceholderImage_CreatedAt_Operator = {
@@ -14285,119 +15400,119 @@ export type Video_PlaceholderImage_CreatedAt_Operator = {
 };
 
 export type Video_PlaceholderImage_Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Video_PlaceholderImage_Filesize_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Video_PlaceholderImage_Height_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Video_PlaceholderImage_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Video_PlaceholderImage_MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Video_PlaceholderImage_Sizes__Thumbnail__Filename_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Video_PlaceholderImage_Sizes__Thumbnail__Filesize_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Video_PlaceholderImage_Sizes__Thumbnail__Height_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Video_PlaceholderImage_Sizes__Thumbnail__MimeType_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Video_PlaceholderImage_Sizes__Thumbnail__Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Video_PlaceholderImage_Sizes__Thumbnail__Width_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Video_PlaceholderImage_UpdatedAt_Operator = {
@@ -14412,14 +15527,14 @@ export type Video_PlaceholderImage_UpdatedAt_Operator = {
 };
 
 export type Video_PlaceholderImage_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Video_PlaceholderImage_Where = {
@@ -14482,13 +15597,13 @@ export type Video_PlaceholderImage_Where_Or = {
 };
 
 export type Video_PlaceholderImage_Width_Operator = {
-  equals?: InputMaybe<Scalars['Float']['input']>;
+  equals?: InputMaybe<Scalars['Int']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than?: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  less_than?: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal?: InputMaybe<Scalars['Float']['input']>;
-  not_equals?: InputMaybe<Scalars['Float']['input']>;
+  greater_than?: InputMaybe<Scalars['Int']['input']>;
+  greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  less_than?: InputMaybe<Scalars['Int']['input']>;
+  less_than_equal?: InputMaybe<Scalars['Int']['input']>;
+  not_equals?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Video_CreatedAt_Operator = {
@@ -14503,24 +15618,24 @@ export type Video_CreatedAt_Operator = {
 };
 
 export type Video_Id_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   exists?: InputMaybe<Scalars['Boolean']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Video_InternalName_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Video_PlaceholderImage_Operator = {
@@ -14540,13 +15655,13 @@ export type Video_UpdatedAt_Operator = {
 };
 
 export type Video_Url_Operator = {
-  all?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>>>;
+  all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains?: InputMaybe<Scalars['String']['input']>;
   equals?: InputMaybe<Scalars['String']['input']>;
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   like?: InputMaybe<Scalars['String']['input']>;
   not_equals?: InputMaybe<Scalars['String']['input']>;
-  not_in?: InputMaybe<Array<InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>>>;
+  not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Video_Where = {
@@ -15325,11 +16440,22 @@ export type MutationFeaturedMediaUpdateInput = {
 
 export type MutationFooterInput = {
   copyrightText?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['String']['input']>;
   menuItems?: InputMaybe<Array<InputMaybe<MutationFooter_MenuItemsInput>>>;
   socialLinks?: InputMaybe<Array<InputMaybe<MutationFooter_SocialLinksInput>>>;
+  updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationFooter_MenuItemsInput = {
+  externalLink?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  internalLink?: InputMaybe<Scalars['String']['input']>;
+  label?: InputMaybe<Scalars['String']['input']>;
+  linkType?: InputMaybe<Scalars['String']['input']>;
+  submenuItems?: InputMaybe<Array<InputMaybe<MutationFooter_MenuItems_SubmenuItemsInput>>>;
+};
+
+export type MutationFooter_MenuItems_SubmenuItemsInput = {
   externalLink?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
   internalLink?: InputMaybe<Scalars['String']['input']>;
@@ -15345,10 +16471,21 @@ export type MutationFooter_SocialLinksInput = {
 
 export type MutationHeaderInput = {
   callToAction?: InputMaybe<Scalars['String']['input']>;
+  createdAt?: InputMaybe<Scalars['String']['input']>;
   menuItems?: InputMaybe<Array<InputMaybe<MutationHeader_MenuItemsInput>>>;
+  updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationHeader_MenuItemsInput = {
+  externalLink?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  internalLink?: InputMaybe<Scalars['String']['input']>;
+  label?: InputMaybe<Scalars['String']['input']>;
+  linkType?: InputMaybe<Scalars['String']['input']>;
+  submenuItems?: InputMaybe<Array<InputMaybe<MutationHeader_MenuItems_SubmenuItemsInput>>>;
+};
+
+export type MutationHeader_MenuItems_SubmenuItemsInput = {
   externalLink?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['String']['input']>;
   internalLink?: InputMaybe<Scalars['String']['input']>;
@@ -15593,24 +16730,34 @@ export type MutationTileGrid_IconTilesInput = {
 };
 
 export type MutationUserInput = {
+  apiKey?: InputMaybe<Scalars['String']['input']>;
+  apiKeyIndex?: InputMaybe<Scalars['String']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
-  email?: InputMaybe<Scalars['String']['input']>;
+  email: Scalars['String']['input'];
+  enableAPIKey?: InputMaybe<Scalars['Boolean']['input']>;
+  hash?: InputMaybe<Scalars['String']['input']>;
   lockUntil?: InputMaybe<Scalars['String']['input']>;
   loginAttempts?: InputMaybe<Scalars['Float']['input']>;
   password: Scalars['String']['input'];
   resetPasswordExpiration?: InputMaybe<Scalars['String']['input']>;
   resetPasswordToken?: InputMaybe<Scalars['String']['input']>;
+  salt?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationUserUpdateInput = {
+  apiKey?: InputMaybe<Scalars['String']['input']>;
+  apiKeyIndex?: InputMaybe<Scalars['String']['input']>;
   createdAt?: InputMaybe<Scalars['String']['input']>;
   email?: InputMaybe<Scalars['String']['input']>;
+  enableAPIKey?: InputMaybe<Scalars['Boolean']['input']>;
+  hash?: InputMaybe<Scalars['String']['input']>;
   lockUntil?: InputMaybe<Scalars['String']['input']>;
   loginAttempts?: InputMaybe<Scalars['Float']['input']>;
   password?: InputMaybe<Scalars['String']['input']>;
   resetPasswordExpiration?: InputMaybe<Scalars['String']['input']>;
   resetPasswordToken?: InputMaybe<Scalars['String']['input']>;
+  salt?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 

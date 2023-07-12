@@ -2,21 +2,37 @@ import { FC } from 'react';
 
 import { HeaderProps } from '../Header';
 
+import { Header_MenuItems } from '@/api/graphqlTypes';
 import Link from '@/atoms/Link/Link';
 
-const Menu: FC<HeaderProps> = ({ menuItems }) => {
-    console.log('pages menu', menuItems,);
+interface MenuProps extends HeaderProps {
+    className?: string;
+}
 
-    return (
-        <ul>
-            {menuItems?.map((menuItem) => (
-                menuItem?.label && (menuItem?.internalLink || menuItem?.externalLink) &&
-                <li key={menuItem?.id}>
-                    <Link href={menuItem?.internalLink as string || menuItem?.externalLink || ''}>{menuItem.label}</Link>
-                </li>
-            ))}
-        </ul>
-    );
-};
+const Menu: FC<MenuProps> = ({ menuItems, className }) => (
+    <ul className={className}>
+        {menuItems?.map((menuItem) => {
+            const menuItemLink =
+                `${process.env.NEXT_PUBLIC_BASE_URL}/${menuItem?.internalLink?.slug}` ||
+                menuItem?.externalLink ||
+                '';
+
+            return (
+                menuItem?.label && (
+                    <li key={menuItem?.id}>
+                        <Link href={menuItemLink}>{menuItem.label}</Link>
+                        {menuItem?.submenuItems && (
+                            <Menu
+                                menuItems={
+                                    menuItem.submenuItems as Header_MenuItems[]
+                                }
+                            />
+                        )}
+                    </li>
+                )
+            );
+        })}
+    </ul>
+);
 
 export default Menu;

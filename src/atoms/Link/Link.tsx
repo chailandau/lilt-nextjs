@@ -23,7 +23,11 @@ const Link: FC<LinkProps> = ({
     className,
     underline = true
 }) => {
-    const classList = classNames(styles['link'], underline && styles['underline'], className && className);
+    const classList = classNames(
+        styles['link'],
+        underline && styles['underline'],
+        className && className
+    );
 
     const {
         href = '',
@@ -32,12 +36,7 @@ const Link: FC<LinkProps> = ({
     } = parseUrl(destination) || {};
 
     return (
-        <NextLink
-            className={classList}
-            href={href}
-            rel={rel}
-            target={target}
-        >
+        <NextLink className={classList} href={href} rel={rel} target={target}>
             {children}
         </NextLink>
     );

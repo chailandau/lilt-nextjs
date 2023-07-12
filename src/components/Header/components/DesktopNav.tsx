@@ -8,10 +8,7 @@ import Menu from './Menu';
 import Flex from '@/molecules/Flex/Flex';
 
 const DesktopNav: FC<HeaderProps> = ({ menuItems }) => (
-    <Flex
-        as='nav'
-        className={styles['desktop-nav']}
-    >
+    <Flex as='nav' className={styles['desktop-nav']}>
         <Menu menuItems={menuItems} />
     </Flex>
 );

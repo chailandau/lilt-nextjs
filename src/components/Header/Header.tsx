@@ -31,7 +31,10 @@ const Header: FC<HeaderProps> = ({ menuItems }) => {
                 />
                 <Flex className={styles['right-content']}>
                     <DesktopNav menuItems={menuItems} />
-                    <Button link='http://localhost:6006/' className={styles['tablet-btn']}>
+                    <Button
+                        link='http://localhost:6006/'
+                        className={styles['tablet-btn']}
+                    >
                         Get in touch
                     </Button>
                     <MenuToggle />
