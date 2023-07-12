@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Container matches 'button' snapshot 1`] = `
+<button>
+  <p
+    className="text"
+  >
+    This text is in a container.
+  </p>
+</button>
+`;
+
 exports[`Container matches 'div' snapshot 1`] = `
 <div>
   <p
@@ -48,6 +58,16 @@ exports[`Container matches 'section' snapshot 1`] = `
     This text is in a container.
   </p>
 </section>
+`;
+
+exports[`Container matches 'span' snapshot 1`] = `
+<span>
+  <p
+    className="text"
+  >
+    This text is in a container.
+  </p>
+</span>
 `;
 
 exports[`Container matches snapshot 1`] = `

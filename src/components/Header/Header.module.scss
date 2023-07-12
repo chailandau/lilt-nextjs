@@ -1,0 +1,25 @@
+.header {
+    @include paddingY(24);
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(40);
+    position: relative;
+    z-index: 101;
+    background-color: color(dark, blue);
+    .logo {
+        width: rem(250);
+    }
+    .right-content {
+        align-items: center;
+        gap: rem(24);
+        @include laptop {
+            gap: rem(44);
+        }
+        .tablet-btn {
+            display: none;
+            @include tablet {
+                display: block;
+            }
+        }
+    }
+}

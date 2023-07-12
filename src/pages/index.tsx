@@ -1,10 +1,31 @@
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import { FC } from 'react';
 
+import { HEADER_QUERY } from '@/api/graphqlQueries';
+import { Header_MenuItems } from '@/api/graphqlTypes';
 import OutdoorTents from '@/assets/outdoor_tents.jpg';
 import Image from '@/atoms/Image/Image';
 import Header from '@/components/Header/Header';
+import { getData } from '@/utils/getData';
 
-export default function Home() {
+interface HomeProps {
+  menuItems: Header_MenuItems[] | null;
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const data = await getData(HEADER_QUERY);
+
+  const { Header: HeaderData } = data || {};
+
+  console.log('data', data);
+
+  return { props: { menuItems: HeaderData?.menuItems || null } };
+};
+
+const Home: FC<HomeProps> = ({ menuItems }) => {
+  console.log(menuItems);
+
   return (
     <>
       <Head>
@@ -13,10 +34,21 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
-      <div style={{ width: '590px' }}>
-        <Image src={OutdoorTents} alt="Outdoor Tents" hasBorder priority />
+      <Header menuItems={menuItems} />
+      <div style={{ maxWidth: '590px' }}>
+        <Image
+          src={OutdoorTents}
+          alt="Outdoor Tents"
+          hasBorder
+          priority
+        />
       </div>
+      {/* {menuItems?.map((menuItem) => (
+        <p key={page?.id}>{page?.title}</p>
+      ))} */}
     </>
   );
-}
+};
+
+export default Home;
+

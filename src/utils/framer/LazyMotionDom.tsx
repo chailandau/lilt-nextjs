@@ -6,7 +6,7 @@ interface LazyMotionDomProps {
 }
 
 const LazyMotionDom: FC<LazyMotionDomProps> = ({ children }) => (
-    <LazyMotion features={domAnimation}>
+    <LazyMotion features={domAnimation} strict>
         {children}
     </LazyMotion>
 );

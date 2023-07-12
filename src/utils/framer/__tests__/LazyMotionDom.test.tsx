@@ -1,5 +1,5 @@
+import { testAxeViolations, testMatchesSnapshot, testRenderChildren } from '../../testHelpers';
 import LazyMotionDom from '../LazyMotionDom';
-import { testAxeViolations, testMatchesSnapshot, testRenderChildren } from '../testHelpers';
 
 const LazyMotionHOC = () => (
     <LazyMotionDom>

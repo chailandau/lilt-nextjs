@@ -5,15 +5,15 @@ export interface ParsedUrl {
     rel: string;
     /** Link's `target` attribute */
     target: string;
-    /** Link's href attribute */
+    /** Link's `href` attribute */
     href: string;
 }
 
 /**
- * Parses a URL and returns an object with information about the URL.
+ * Parses URL and returns object with information.
  *
- * @param {string} href - the URL to parse.
- * @return {ParsedUrl | undefined} - an object with information about the URL, or undefined if the URL is invalid.
+ * @param {string} href - URL to parse.
+ * @return {ParsedUrl | undefined} - object with information about URL, or undefined if URL is invalid.
  */
 const parseUrl = (href: string): ParsedUrl | undefined => {
     if (!href) {

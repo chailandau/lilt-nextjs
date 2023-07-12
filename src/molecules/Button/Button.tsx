@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 import styles from './Button.module.scss';
 
-import parseUrl from '@/utils/parseUrl';
+import Link from '@/atoms/Link/Link';
 
 export const buttonColors = ['blue', 'green', 'white'] as const;
 
@@ -16,37 +16,31 @@ export interface ButtonProps {
     link?: string;
     /** `onClick` event */
     onClick?: () => void;
+    /** CSS `className` */
+    className?: string;
 }
 
 const Button: FC<ButtonProps> = ({
     color = 'blue',
     link,
     onClick,
-    children
+    children,
+    className
 }) => {
 
-    const classList = classNames(styles['button'], styles[color]);
+    const classList = classNames(styles['button'], styles[color], className && className);
 
     const isLink = link && link.trim() !== '';
 
-    const {
-        rel = undefined,
-        target = undefined,
-        href = undefined
-    } = (isLink && parseUrl(link)) || {};
-
-    const ButtonTag = isLink ? 'a' : 'button';
-
     return (
-        <ButtonTag
-            href={isLink ? href : undefined}
-            rel={rel}
-            target={target}
-            className={classList}
-            onClick={onClick}
-        >
-            {children}
-        </ButtonTag>
+        isLink ? (
+            <Link href={link} className={classList} underline={false}>
+                {children}
+            </Link>
+        ) :
+            <button className={classList} onClick={onClick}>
+                {children}
+            </button>
     );
 };
 

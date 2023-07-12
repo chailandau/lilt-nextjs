@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section matches snapshot 1`] = `
+<section
+  className="flex section section"
+>
+  <p
+    className="text"
+  >
+    This text is in a section
+  </p>
+</section>
+`;

@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Button, { buttonColors } from '../Button';
 
-import Flex from '@/atoms/Flex/Flex';
+import Flex from '@/molecules/Flex/Flex';
 
 const meta: Meta<typeof Button> = {
-    title: 'atoms/Button',
+    title: 'molecules/Button',
     component: Button,
     argTypes: {
         color: {

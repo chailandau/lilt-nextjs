@@ -7,7 +7,7 @@ import Text from '@/atoms/Text/Text';
 const textAtom = <Text>This text is in a flex container</Text>;
 
 const meta: Meta<typeof Flex> = {
-    title: 'atoms/Flex',
+    title: 'molecules/Flex',
     component: Flex,
     argTypes: {
         as: {

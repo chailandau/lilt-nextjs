@@ -67,8 +67,9 @@ a {
     text-decoration: none;
     cursor: pointer;
 
-    &:hover {
-        color: #000;
+    &:hover,
+    &:focus-visible {
+        color: unset;
         text-decoration: none;
     }
 }
