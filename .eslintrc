@@ -14,6 +14,7 @@
     "plugin:prettier/recommended"
   ],
   "rules": {
+    "prettier/prettier": "warn",
     "curly": "error",
     "eqeqeq": [
       "error",

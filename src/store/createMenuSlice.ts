@@ -5,9 +5,11 @@ export interface MenuSlice {
     setMenuOpen: (arg: boolean) => void;
 }
 
-const createMenuSlice: ZuSlice<MenuSlice> = (set) => ({
+const createMenuSlice: ZuSlice<MenuSlice> = (
+    set: (arg: () => { menuOpen: boolean }) => void
+) => ({
     menuOpen: false,
-    setMenuOpen: (arg) => set(() => ({ menuOpen: arg })),
+    setMenuOpen: (arg: boolean) => set(() => ({ menuOpen: arg }))
 });
 
 export default createMenuSlice;

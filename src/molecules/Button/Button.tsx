@@ -3,6 +3,8 @@ import { FC } from 'react';
 
 import styles from './Button.module.scss';
 
+import Icon from '@/atoms/Icon/Icon';
+import { iconIds } from '@/atoms/Icon/Icon.types';
 import Link from '@/atoms/Link/Link';
 
 export const buttonVariants = ['blue', 'green', 'white', 'link'] as const;
@@ -15,7 +17,7 @@ export interface ButtonProps {
     /** `Button` renders as an `a` tag if supplied */
     link?: string;
     /** Icon to display on the right */
-    endIcon?: React.ReactNode;
+    endIcon?: iconIds;
     /** `onClick` event */
     onClick?: () => void;
     /** `onMouseEnter` event */
@@ -56,6 +58,7 @@ const Button: FC<ButtonProps> = ({
             onMouseLeave={onMouseLeave}
         >
             {children}
+            {endIcon && <Icon id={endIcon} />}
         </button>
     );
 };

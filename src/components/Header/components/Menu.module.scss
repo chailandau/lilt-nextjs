@@ -15,6 +15,7 @@
         display: flex;
         position: relative;
         width: 100%;
+        flex-direction: column;
         @include laptop {
             display: block;
             width: auto;
@@ -39,14 +40,16 @@
                 display: none;
             }
         }
-        a,
+        .menu-link,
         .submenu-btn {
             @include font(24, 28);
-            justify-content: start;
+            justify-content: space-between;
             width: 100%;
+            @include paddingX(20);
             @include laptop {
                 @include font(16, 20);
                 width: auto;
+                justify-content: start;
             }
             &:before {
                 display: none;
@@ -55,11 +58,15 @@
                 }
             }
             ~ .submenu {
-                position: absolute;
-                padding: rem(20);
-                margin-top: rem(12);
-                width: 200%;
-                left: -50%;
+                margin-top: rem(24);
+                padding: rem(24);
+                @include laptop {
+                    position: absolute;
+                    padding: rem(20);
+                    margin-top: rem(12);
+                    width: 200%;
+                    left: -50%;
+                }
                 &:before {
                     display: block;
                     content: '';
@@ -71,7 +78,10 @@
                     z-index: -1;
                     background: color(dark, blue);
                     border: 1px solid color(neon, blue);
-                    border-radius: rem(10);
+                    border-radius: rem(20);
+                    @include laptop {
+                        border-radius: rem(10);
+                    }
                 }
                 &:after {
                     display: block;
@@ -79,19 +89,27 @@
                     position: absolute;
                     width: 100%;
                     height: 100%;
-                    top: rem(6);
-                    left: rem(6);
+                    top: rem(8);
+                    left: rem(8);
                     z-index: -2;
                     border: 1px solid color(neon, green);
-                    border-radius: rem(14);
+                    border-radius: rem(24);
+                    @include laptop {
+                        border-radius: rem(14);
+                        top: rem(6);
+                        left: rem(6);
+                    }
                 }
                 ul {
                     display: block;
                 }
                 li {
                     text-align: center;
+                    &:before {
+                        bottom: rem(-20);
+                    }
                     & + li {
-                        margin-top: rem(20);
+                        margin-top: rem(42);
                     }
                 }
             }

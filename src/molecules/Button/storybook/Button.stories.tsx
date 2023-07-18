@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Button, { buttonColors } from '../Button';
+import Button, { buttonVariants } from '../Button';
 
 import Flex from '@/molecules/Flex/Flex';
 
@@ -8,14 +8,14 @@ const meta: Meta<typeof Button> = {
     title: 'molecules/Button',
     component: Button,
     argTypes: {
-        color: {
-            options: buttonColors,
+        variant: {
+            options: buttonVariants,
             table: { defaultValue: { summary: 'blue' } }
         }
     },
     parameters: {
         controls: {
-            include: ['color', 'children', 'link'],
+            include: ['color', 'children', 'link']
         }
     },
 
@@ -24,8 +24,8 @@ const meta: Meta<typeof Button> = {
             <Flex>
                 <Story />
             </Flex>
-        ),
-    ],
+        )
+    ]
 };
 
 export default meta;
@@ -34,7 +34,7 @@ type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
     args: {
-        color: 'blue',
+        variant: 'blue',
         children: 'Default button'
-    },
+    }
 };

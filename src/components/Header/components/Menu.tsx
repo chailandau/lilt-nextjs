@@ -1,5 +1,5 @@
 import { m } from 'framer-motion';
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 
 import { HeaderProps } from '../Header';
 
@@ -8,24 +8,28 @@ import styles from './Menu.module.scss';
 import { Header_MenuItems } from '@/api/graphqlTypes';
 import Link from '@/atoms/Link/Link';
 import Button from '@/molecules/Button/Button';
-import { dropdownAnimations, menuAnimations } from '@/utils/framer/animations';
+import { dropdownAnimations } from '@/utils/framer/animations';
 import LazyAnimatePresence from '@/utils/framer/LazyAnimatePresence';
+import { useMediaQuery } from '@/utils/hooks/useMediaQuery';
 
 interface MenuProps extends HeaderProps {
     className?: string;
 }
 
 const Menu: FC<MenuProps> = ({ menuItems, className = styles['menu'] }) => {
-    console.log(menuItems);
     const [submenuOpen, setSubmenuOpen] = useState(false);
 
-    // const handleSubmenu = () => {
-    //     setSubmenuOpen(!submenuOpen);
-    // };
+    const isLaptop = useMediaQuery('screen and (min-width: 991px)');
 
-    useEffect(() => {
-        console.log('submenuOpen', submenuOpen);
-    }, [submenuOpen]);
+    const handleMobileClick = () => {
+        !isLaptop && setSubmenuOpen(!submenuOpen);
+    };
+    const handleDesktopMouseEnter = () => {
+        isLaptop && setSubmenuOpen(true);
+    };
+    const handleDesktopMouseLeave = () => {
+        isLaptop && setSubmenuOpen(false);
+    };
 
     const menuContent = menuItems?.map((menuItem) => {
         switch (menuItem?.linkType) {
@@ -36,6 +40,7 @@ const Menu: FC<MenuProps> = ({ menuItems, className = styles['menu'] }) => {
                         <li key={menuItem?.id}>
                             <Link
                                 href={`${process.env.NEXT_PUBLIC_BASE_URL}/${menuItem.internalLink.slug}`}
+                                className={styles['menu-link']}
                             >
                                 {menuItem.internalLink.title}
                             </Link>
@@ -47,7 +52,10 @@ const Menu: FC<MenuProps> = ({ menuItems, className = styles['menu'] }) => {
                     menuItem?.label &&
                     menuItem?.externalLink && (
                         <li key={menuItem?.id}>
-                            <Link href={menuItem.externalLink}>
+                            <Link
+                                href={menuItem.externalLink}
+                                className={styles['menu-link']}
+                            >
                                 {menuItem.label}
                             </Link>
                         </li>
@@ -60,12 +68,14 @@ const Menu: FC<MenuProps> = ({ menuItems, className = styles['menu'] }) => {
                     menuItem.submenuItems.length > 0 && (
                         <li
                             key={menuItem?.id}
-                            onMouseEnter={() => setSubmenuOpen(true)}
-                            onMouseLeave={() => setSubmenuOpen(false)}
+                            onMouseEnter={handleDesktopMouseEnter}
+                            onMouseLeave={handleDesktopMouseLeave}
                         >
                             <Button
                                 variant='link'
                                 className={styles['submenu-btn']}
+                                endIcon='caret'
+                                onClick={handleMobileClick}
                             >
                                 {menuItem.label}
                             </Button>
