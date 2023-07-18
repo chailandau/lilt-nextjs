@@ -3,12 +3,4 @@
     @include laptop {
         display: block;
     }
-    ul {
-        display: flex;
-        gap: rem(44);
-        list-style-type: none;
-        margin-block-start: 0;
-        margin-block-end: 0;
-        padding-inline-start: 0;
-    }
 }

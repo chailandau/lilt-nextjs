@@ -17,21 +17,22 @@ const MobileNav: FC<HeaderProps> = ({ menuItems }) => {
 
     return (
         <LazyAnimatePresence>
-            {menuOpen &&
+            {menuOpen && (
                 <m.nav
                     className={styles['mobile-nav']}
                     variants={menuAnimations}
                     animate={menuOpen ? 'open' : 'closed'}
-                    initial="closed"
-                    exit="closed"
+                    initial='closed'
+                    exit='closed'
                 >
                     <Menu menuItems={menuItems} />
                     <Flex className={styles['mobile-btn']}>
-                        <Button link='http://localhost:6006/'>Get in touch</Button>
+                        <Button link='http://localhost:6006/'>
+                            Get in touch
+                        </Button>
                     </Flex>
                 </m.nav>
-            }
-
+            )}
         </LazyAnimatePresence>
     );
 };

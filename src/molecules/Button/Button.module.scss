@@ -26,4 +26,13 @@
     &.white {
         @include bgSlideHover(color(neutral, white), color(neon, blue));
     }
+    &.link {
+        @include font-rubik-regular;
+        @include font(16, 20);
+        color: color(neutral, white);
+        text-transform: uppercase;
+        padding: rem(14);
+        margin: rem(-14);
+        @include underlineSlideHover;
+    }
 }

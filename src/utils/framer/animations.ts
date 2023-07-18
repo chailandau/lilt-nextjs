@@ -5,7 +5,7 @@ export const menuAnimations = {
         transition: {
             delay: 0.15,
             length: 1
-        },
+        }
     },
     open: {
         y: 0,
@@ -13,6 +13,6 @@ export const menuAnimations = {
         transition: {
             type: 'spring',
             duration: 0.4
-        },
-    },
+        }
+    }
 };
