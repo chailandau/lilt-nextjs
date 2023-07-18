@@ -8,7 +8,7 @@ import styles from './Menu.module.scss';
 import { Header_MenuItems } from '@/api/graphqlTypes';
 import Link from '@/atoms/Link/Link';
 import Button from '@/molecules/Button/Button';
-import { menuAnimations } from '@/utils/framer/animations';
+import { dropdownAnimations, menuAnimations } from '@/utils/framer/animations';
 import LazyAnimatePresence from '@/utils/framer/LazyAnimatePresence';
 
 interface MenuProps extends HeaderProps {
@@ -63,12 +63,17 @@ const Menu: FC<MenuProps> = ({ menuItems, className = styles['menu'] }) => {
                             onMouseEnter={() => setSubmenuOpen(true)}
                             onMouseLeave={() => setSubmenuOpen(false)}
                         >
-                            <Button variant='link'>{menuItem.label}</Button>
+                            <Button
+                                variant='link'
+                                className={styles['submenu-btn']}
+                            >
+                                {menuItem.label}
+                            </Button>
                             <LazyAnimatePresence>
                                 {submenuOpen && (
                                     <m.div
                                         className={styles['submenu']}
-                                        variants={menuAnimations}
+                                        variants={dropdownAnimations}
                                         animate={
                                             submenuOpen ? 'open' : 'closed'
                                         }

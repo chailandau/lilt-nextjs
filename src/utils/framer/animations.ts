@@ -16,3 +16,22 @@ export const menuAnimations = {
         }
     }
 };
+
+export const dropdownAnimations = {
+    closed: {
+        y: '15%',
+        opacity: 0,
+        transition: {
+            delay: 0.15,
+            length: 0.25
+        }
+    },
+    open: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            type: 'spring',
+            duration: 0.25
+        }
+    }
+};

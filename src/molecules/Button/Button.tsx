@@ -14,6 +14,8 @@ export interface ButtonProps {
     children: string;
     /** `Button` renders as an `a` tag if supplied */
     link?: string;
+    /** Icon to display on the right */
+    endIcon?: React.ReactNode;
     /** `onClick` event */
     onClick?: () => void;
     /** `onMouseEnter` event */
@@ -26,6 +28,7 @@ export interface ButtonProps {
 
 const Button: FC<ButtonProps> = ({
     variant = 'blue',
+    endIcon,
     link,
     onClick,
     onMouseEnter,
