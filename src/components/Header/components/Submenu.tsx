@@ -22,8 +22,6 @@ const Submenu: FC<SubmenuProps> = ({ menuItem }) => {
 
     const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
 
-    const isMobile = useMediaQuery('(max-width: 991px)');
-
     const isLaptop = useMediaQuery('screen and (min-width: 992px)');
 
     useEffect(() => {
@@ -31,11 +29,11 @@ const Submenu: FC<SubmenuProps> = ({ menuItem }) => {
     }, [openSubmenu]);
 
     useEffect(() => {
-        if (!isMobile) {
+        if (isLaptop) {
             setIsSubmenuOpen(false);
             setOpenSubmenu(null);
         }
-    }, [isMobile]);
+    }, [isLaptop]);
 
     const handleMobileClick = () => {
         if (!isLaptop && openSubmenu !== menuItem?.id) {
