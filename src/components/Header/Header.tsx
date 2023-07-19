@@ -14,6 +14,7 @@ import Flex from '@/molecules/Flex/Flex';
 import Section from '@/molecules/Section/Section';
 
 export interface HeaderProps {
+    /* Menu items to display */
     menuItems: Header_MenuItems[] | null;
 }
 

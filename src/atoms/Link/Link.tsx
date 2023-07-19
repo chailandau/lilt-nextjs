@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import NextLink from 'next/link';
-import { FC, ReactNode } from 'react';
+import { FC, KeyboardEvent, ReactNode } from 'react';
 
 import styles from './Link.module.scss';
 
@@ -15,13 +15,16 @@ interface LinkProps {
     className?: string;
     /** Enables underline on hover */
     underline?: boolean;
+    /** `onKeyDown` event */
+    onKeyDown?: (e: KeyboardEvent<HTMLAnchorElement>) => void;
 }
 
 const Link: FC<LinkProps> = ({
     href: destination,
     children,
     className,
-    underline = true
+    underline = true,
+    onKeyDown
 }) => {
     const classList = classNames(
         styles['link'],
@@ -36,7 +39,13 @@ const Link: FC<LinkProps> = ({
     } = parseUrl(destination) || {};
 
     return (
-        <NextLink className={classList} href={href} rel={rel} target={target}>
+        <NextLink
+            className={classList}
+            href={href}
+            rel={rel}
+            target={target}
+            onKeyDown={(e) => onKeyDown && onKeyDown(e)}
+        >
             {children}
         </NextLink>
     );

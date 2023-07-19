@@ -1,12 +1,11 @@
 import classNames from 'classnames';
-import { FC, ReactNode } from 'react';
+import { FC, KeyboardEvent, ReactNode } from 'react';
 
 import styles from './Button.module.scss';
 
 import Link from '@/atoms/Link/Link';
 
 export const buttonVariants = ['blue', 'green', 'white', 'link'] as const;
-
 export interface ButtonProps {
     /** Button variant */
     variant?: (typeof buttonVariants)[number];
@@ -16,10 +15,8 @@ export interface ButtonProps {
     link?: string;
     /** `onClick` event */
     onClick?: () => void;
-    /** `onMouseEnter` event */
-    onMouseEnter?: () => void;
-    /** `onMouseLeave` event */
-    onMouseLeave?: () => void;
+    /** `onKeyDown` event */
+    onKeyDown?: (e: KeyboardEvent<HTMLButtonElement>) => void;
     /** CSS `className` */
     className?: string;
 }
@@ -28,8 +25,7 @@ const Button: FC<ButtonProps> = ({
     variant = 'blue',
     link,
     onClick,
-    onMouseEnter,
-    onMouseLeave,
+    onKeyDown,
     children,
     className
 }) => {
@@ -49,8 +45,7 @@ const Button: FC<ButtonProps> = ({
         <button
             className={classList}
             onClick={onClick}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
+            onKeyDown={(e) => onKeyDown && onKeyDown(e)}
         >
             {children}
         </button>

@@ -1,5 +1,5 @@
 import { m } from 'framer-motion';
-import { FC, useEffect, useState } from 'react';
+import { FC, KeyboardEvent, useEffect, useState } from 'react';
 
 import Menu from './Menu';
 import styles from './Menu.module.scss';
@@ -30,31 +30,44 @@ const Submenu: FC<SubmenuProps> = ({ menuItem }) => {
 
     useEffect(() => {
         if (isLaptop) {
-            setIsSubmenuOpen(false);
             setOpenSubmenu(null);
         }
     }, [isLaptop]);
 
-    const handleMobileClick = () => {
-        if (!isLaptop && openSubmenu !== menuItem?.id) {
+    const handleSubmenu = () => {
+        if (openSubmenu !== menuItem?.id) {
             setOpenSubmenu(menuItem?.id);
-            setIsSubmenuOpen(true);
         } else {
             setOpenSubmenu(null);
-            setIsSubmenuOpen(false);
+        }
+    };
+
+    const handleKeyDown = (
+        e: KeyboardEvent<HTMLAnchorElement | HTMLButtonElement>
+    ) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            handleSubmenu();
+        } else if (e.key === 'Tab' && e.shiftKey) {
+            setOpenSubmenu(null);
+        } else {
+            return;
+        }
+    };
+    const handleMobileClick = () => {
+        if (!isLaptop) {
+            handleSubmenu();
         }
     };
 
     const handleDesktopMouseEnter = () => {
         if (isLaptop) {
             setOpenSubmenu(menuItem?.id);
-            setIsSubmenuOpen(true);
         }
     };
 
     const handleDesktopMouseLeave = () => {
         if (isLaptop) {
-            setIsSubmenuOpen(false);
             setOpenSubmenu(null);
         }
     };
@@ -68,6 +81,7 @@ const Submenu: FC<SubmenuProps> = ({ menuItem }) => {
                 variant='link'
                 className={styles['submenu-btn']}
                 onClick={handleMobileClick}
+                onKeyDown={(e) => handleKeyDown(e)}
             >
                 {menuItem.label}
                 <MotionIcon
