@@ -6,11 +6,14 @@ import styles from './DesktopNav.module.scss';
 import Menu from './Menu';
 
 import Flex from '@/molecules/Flex/Flex';
+import LazyMotionDom from '@/utils/framer/LazyMotionDom';
 
 const DesktopNav: FC<HeaderProps> = ({ menuItems }) => (
-    <Flex as='nav' className={styles['desktop-nav']}>
-        <Menu menuItems={menuItems} />
-    </Flex>
+    <LazyMotionDom>
+        <Flex as='nav' className={styles['desktop-nav']}>
+            <Menu menuItems={menuItems} />
+        </Flex>
+    </LazyMotionDom>
 );
 
 export default DesktopNav;

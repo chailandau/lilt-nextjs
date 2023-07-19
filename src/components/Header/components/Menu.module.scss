@@ -42,13 +42,13 @@
         }
         .menu-link,
         .submenu-btn {
+            display: flex;
             @include font(24, 28);
             justify-content: space-between;
-            width: 100%;
+            width: auto;
             @include paddingX(20);
             @include laptop {
                 @include font(16, 20);
-                width: auto;
                 justify-content: start;
             }
             &:before {

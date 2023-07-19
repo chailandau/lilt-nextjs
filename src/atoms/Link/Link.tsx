@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import NextLink from 'next/link';
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 
 import styles from './Link.module.scss';
 
@@ -8,7 +8,7 @@ import parseUrl from '@/utils/parseUrl';
 
 interface LinkProps {
     /** Link text */
-    children: string;
+    children: ReactNode;
     /** Link href */
     href: string;
     /** CSS class name */
