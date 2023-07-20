@@ -13,10 +13,7 @@ const Flex: FC<ContainerProps> = ({
     const classList = classNames(styles['flex'], className && className);
 
     return (
-        <Container
-            as={FlexTag}
-            className={classList}
-        >
+        <Container as={FlexTag} className={classList}>
             {children}
         </Container>
     );

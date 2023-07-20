@@ -14,10 +14,7 @@ const Section: FC<ContainerProps> = ({
     const classList = classNames(styles['section'], className && className);
 
     return (
-        <Flex
-            as={SectionTag}
-            className={classList}
-        >
+        <Flex as={SectionTag} className={classList}>
             {children}
         </Flex>
     );

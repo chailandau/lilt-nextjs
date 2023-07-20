@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, Ref } from 'react';
 
 export const semanticTags = [
     'button',
@@ -19,6 +19,8 @@ export interface ContainerProps {
     className?: string | undefined;
     /** `onClick` event */
     onClick?: () => void;
+    /** `ref */
+    ref?: Ref<HTMLElement>;
 }
 
 const Container: FC<ContainerProps> = ({
