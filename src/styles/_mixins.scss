@@ -1,29 +1,29 @@
-@use "sass:math";
+@use 'sass:math';
 
 // typography
 @mixin font-recharge-bold {
-    font-family: "Recharge", sans-serif;
+    font-family: 'Recharge', sans-serif;
     font-weight: 700;
 }
 
 @mixin font-rubik-regular {
-    font-family: "Rubik", sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-weight: 400;
 }
 
 @mixin font-rubik-italic {
-    font-family: "Rubik", sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-weight: 400;
     font-style: italic;
 }
 
 @mixin font-rubik-bold {
-    font-family: "Rubik", sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-weight: 700;
 }
 
 @mixin font-rubik-bold-italic {
-    font-family: "Rubik", sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-weight: 700;
     font-style: italic;
 }
@@ -59,13 +59,23 @@
 }
 
 @mixin marginX($margin) {
-    margin-left: rem($margin);
-    margin-right: rem($margin);
+    @if $margin == 'auto' {
+        margin-left: auto;
+        margin-right: auto;
+    } @else {
+        margin-left: rem($margin);
+        margin-right: rem($margin);
+    }
 }
 
 @mixin marginY($margin) {
-    margin-top: rem($margin);
-    margin-bottom: rem($margin);
+    @if $margin == 'auto' {
+        margin-top: auto;
+        margin-bottom: auto;
+    } @else {
+        margin-top: rem($margin);
+        margin-bottom: rem($margin);
+    }
 }
 
 // animation
@@ -84,8 +94,7 @@
     background-position: 100% 0%;
     @include transition(background-position);
 
-    &:hover,
-    &:focus-visible {
+    @include hover {
         background-position: 0% 0%;
     }
 }
@@ -93,7 +102,7 @@
 @mixin underlineSlideHover($color: color(neutral, white), $padding: 14) {
     position: relative;
     &:before {
-        content: "";
+        content: '';
         position: absolute;
         width: calc(100% - rem($padding * 2));
         height: rem(1);
@@ -105,8 +114,7 @@
         transform: scaleX(0);
         transition: transform 0.3s ease-in-out;
     }
-    &:hover,
-    &:focus-visible {
+    @include hover {
         &:before {
             transform-origin: left;
             transform: scaleX(1);
@@ -119,6 +127,13 @@
     display: block;
     padding: rem($amount);
     margin: rem(-$amount);
+}
+
+@mixin hover {
+    &:hover,
+    &:focus-visible {
+        @content;
+    }
 }
 
 // media queries
