@@ -9,7 +9,7 @@ import MobileNav from './components/MobileNav';
 import styles from './Header.module.scss';
 
 import { Button, Header_MenuItems } from '@/api/graphqlTypes';
-import Logo from '@/assets/svg/logo.svg';
+import Logo from '@/assets/svg/Logo.svg';
 import Image from '@/atoms/Image/Image';
 import Link from '@/atoms/Link/Link';
 import Flex from '@/molecules/Flex/Flex';
