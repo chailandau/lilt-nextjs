@@ -19,9 +19,10 @@ export const menuAnimations = {
     }
 };
 
-export const dropdownAnimations = {
+export const dropdownAnimations = (isLaptop: boolean | null) => ({
     closed: {
         y: '15%',
+        x: isLaptop ? 'calc(-50% - 6px)' : 0,
         opacity: 0,
         transition: {
             duration: 0.25
@@ -29,13 +30,14 @@ export const dropdownAnimations = {
     },
     open: {
         y: 0,
+        x: isLaptop ? 'calc(-50% - 6px)' : 0,
         opacity: 1,
         transition: {
             type: 'spring',
             duration: 0.25
         }
     }
-};
+});
 
 export const iconFlip = {
     closed: { rotate: 0, transition: { type: 'spring', duration: 0.25 } },

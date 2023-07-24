@@ -6,9 +6,12 @@ import styles from './Button.module.scss';
 import Link from '@/atoms/Link/Link';
 
 export const buttonVariants = ['blue', 'green', 'white', 'link'] as const;
+
+export type ButtonVariant = (typeof buttonVariants)[number];
+
 export interface ButtonProps {
     /** Button variant */
-    variant?: (typeof buttonVariants)[number];
+    variant?: ButtonVariant;
     /** Button content */
     children: ReactNode;
     /** `Button` renders as an `a` tag if supplied */

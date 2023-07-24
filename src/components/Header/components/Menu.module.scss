@@ -46,13 +46,16 @@
             @include font(24, 28);
             justify-content: space-between;
             width: auto;
-            @include paddingX(20);
             @include laptop {
                 @include font(16, 20);
-                justify-content: start;
+                justify-content: center;
+                text-align: center;
+                @include paddingX(20);
             }
             &:before {
                 display: none;
+                width: calc(100% - rem(40));
+                left: rem(20);
                 @include laptop {
                     display: block;
                 }
@@ -64,8 +67,9 @@
                     position: absolute;
                     padding: rem(20);
                     margin-top: rem(12);
-                    width: 200%;
-                    left: -50%;
+                    width: rem(160);
+                    left: calc(50% - 6px);
+                    transform: translateX(calc(-50% - 6px));
                 }
                 &:before {
                     display: block;
@@ -110,11 +114,43 @@
                     }
                     & + li {
                         margin-top: rem(42);
+                        @include laptop {
+                            margin-top: rem(20);
+                        }
+                    }
+                    @include laptop {
+                        &:before {
+                            display: block;
+                            bottom: rem(-4);
+                        }
+                        &:last-child {
+                            &:before {
+                                display: none;
+                            }
+                        }
+                    }
+                    .menu-link {
+                        @include laptop {
+                            @include marginX('auto');
+                            transition: color 0.25s ease-in-out;
+                        }
+                        @include hover {
+                            @include laptop {
+                                color: color(neon, green);
+                                &:before {
+                                    display: none;
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
         .submenu-btn {
+            border-radius: unset;
+            svg {
+                margin-left: rem(8);
+            }
             &:hover:before {
                 display: none;
             }

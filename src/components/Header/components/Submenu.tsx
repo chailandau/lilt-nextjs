@@ -96,7 +96,7 @@ const Submenu: FC<SubmenuProps> = ({ menuItem }) => {
                 {isSubmenuOpen && (
                     <m.div
                         className={styles['submenu']}
-                        variants={dropdownAnimations}
+                        variants={dropdownAnimations(isLaptop)}
                         animate={isSubmenuOpen ? 'open' : 'closed'}
                         initial='closed'
                         exit='closed'
