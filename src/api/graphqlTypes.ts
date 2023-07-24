@@ -818,9 +818,9 @@ export type Button = {
     color?: Maybe<Button_Color>;
     createdAt?: Maybe<Scalars['DateTime']['output']>;
     externalLink?: Maybe<Scalars['String']['output']>;
+    fullTitle?: Maybe<Scalars['String']['output']>;
     id?: Maybe<Scalars['String']['output']>;
     internalLink?: Maybe<Page>;
-    internalName: Scalars['String']['output'];
     label?: Maybe<Scalars['String']['output']>;
     linkType?: Maybe<Button_LinkType>;
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -865,6 +865,17 @@ export type Button_ExternalLink_Operator = {
     not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export type Button_FullTitle_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
 export type Button_Id_Operator = {
     all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     contains?: InputMaybe<Scalars['String']['input']>;
@@ -881,16 +892,6 @@ export type Button_InternalLink_Operator = {
     equals?: InputMaybe<Scalars['String']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
     in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    not_equals?: InputMaybe<Scalars['String']['input']>;
-    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type Button_InternalName_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    contains?: InputMaybe<Scalars['String']['input']>;
-    equals?: InputMaybe<Scalars['String']['input']>;
-    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    like?: InputMaybe<Scalars['String']['input']>;
     not_equals?: InputMaybe<Scalars['String']['input']>;
     not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
@@ -939,9 +940,9 @@ export type Button_Where = {
     color?: InputMaybe<Button_Color_Operator>;
     createdAt?: InputMaybe<Button_CreatedAt_Operator>;
     externalLink?: InputMaybe<Button_ExternalLink_Operator>;
+    fullTitle?: InputMaybe<Button_FullTitle_Operator>;
     id?: InputMaybe<Button_Id_Operator>;
     internalLink?: InputMaybe<Button_InternalLink_Operator>;
-    internalName?: InputMaybe<Button_InternalName_Operator>;
     label?: InputMaybe<Button_Label_Operator>;
     linkType?: InputMaybe<Button_LinkType_Operator>;
     updatedAt?: InputMaybe<Button_UpdatedAt_Operator>;
@@ -951,9 +952,9 @@ export type Button_Where_And = {
     color?: InputMaybe<Button_Color_Operator>;
     createdAt?: InputMaybe<Button_CreatedAt_Operator>;
     externalLink?: InputMaybe<Button_ExternalLink_Operator>;
+    fullTitle?: InputMaybe<Button_FullTitle_Operator>;
     id?: InputMaybe<Button_Id_Operator>;
     internalLink?: InputMaybe<Button_InternalLink_Operator>;
-    internalName?: InputMaybe<Button_InternalName_Operator>;
     label?: InputMaybe<Button_Label_Operator>;
     linkType?: InputMaybe<Button_LinkType_Operator>;
     updatedAt?: InputMaybe<Button_UpdatedAt_Operator>;
@@ -963,9 +964,9 @@ export type Button_Where_Or = {
     color?: InputMaybe<Button_Color_Operator>;
     createdAt?: InputMaybe<Button_CreatedAt_Operator>;
     externalLink?: InputMaybe<Button_ExternalLink_Operator>;
+    fullTitle?: InputMaybe<Button_FullTitle_Operator>;
     id?: InputMaybe<Button_Id_Operator>;
     internalLink?: InputMaybe<Button_InternalLink_Operator>;
-    internalName?: InputMaybe<Button_InternalName_Operator>;
     label?: InputMaybe<Button_Label_Operator>;
     linkType?: InputMaybe<Button_LinkType_Operator>;
     updatedAt?: InputMaybe<Button_UpdatedAt_Operator>;
@@ -1015,10 +1016,11 @@ export type ButtonsDocAccessFields = {
     color?: Maybe<ButtonsDocAccessFields_Color>;
     createdAt?: Maybe<ButtonsDocAccessFields_CreatedAt>;
     externalLink?: Maybe<ButtonsDocAccessFields_ExternalLink>;
+    fullTitle?: Maybe<ButtonsDocAccessFields_FullTitle>;
     internalLink?: Maybe<ButtonsDocAccessFields_InternalLink>;
-    internalName?: Maybe<ButtonsDocAccessFields_InternalName>;
     label?: Maybe<ButtonsDocAccessFields_Label>;
     linkType?: Maybe<ButtonsDocAccessFields_LinkType>;
+    linksTo?: Maybe<ButtonsDocAccessFields_LinksTo>;
     updatedAt?: Maybe<ButtonsDocAccessFields_UpdatedAt>;
 };
 
@@ -1106,6 +1108,34 @@ export type ButtonsDocAccessFields_ExternalLink_Update = {
     permission: Scalars['Boolean']['output'];
 };
 
+export type ButtonsDocAccessFields_FullTitle = {
+    __typename?: 'ButtonsDocAccessFields_fullTitle';
+    create?: Maybe<ButtonsDocAccessFields_FullTitle_Create>;
+    delete?: Maybe<ButtonsDocAccessFields_FullTitle_Delete>;
+    read?: Maybe<ButtonsDocAccessFields_FullTitle_Read>;
+    update?: Maybe<ButtonsDocAccessFields_FullTitle_Update>;
+};
+
+export type ButtonsDocAccessFields_FullTitle_Create = {
+    __typename?: 'ButtonsDocAccessFields_fullTitle_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ButtonsDocAccessFields_FullTitle_Delete = {
+    __typename?: 'ButtonsDocAccessFields_fullTitle_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ButtonsDocAccessFields_FullTitle_Read = {
+    __typename?: 'ButtonsDocAccessFields_fullTitle_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ButtonsDocAccessFields_FullTitle_Update = {
+    __typename?: 'ButtonsDocAccessFields_fullTitle_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
 export type ButtonsDocAccessFields_InternalLink = {
     __typename?: 'ButtonsDocAccessFields_internalLink';
     create?: Maybe<ButtonsDocAccessFields_InternalLink_Create>;
@@ -1131,34 +1161,6 @@ export type ButtonsDocAccessFields_InternalLink_Read = {
 
 export type ButtonsDocAccessFields_InternalLink_Update = {
     __typename?: 'ButtonsDocAccessFields_internalLink_Update';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ButtonsDocAccessFields_InternalName = {
-    __typename?: 'ButtonsDocAccessFields_internalName';
-    create?: Maybe<ButtonsDocAccessFields_InternalName_Create>;
-    delete?: Maybe<ButtonsDocAccessFields_InternalName_Delete>;
-    read?: Maybe<ButtonsDocAccessFields_InternalName_Read>;
-    update?: Maybe<ButtonsDocAccessFields_InternalName_Update>;
-};
-
-export type ButtonsDocAccessFields_InternalName_Create = {
-    __typename?: 'ButtonsDocAccessFields_internalName_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ButtonsDocAccessFields_InternalName_Delete = {
-    __typename?: 'ButtonsDocAccessFields_internalName_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ButtonsDocAccessFields_InternalName_Read = {
-    __typename?: 'ButtonsDocAccessFields_internalName_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ButtonsDocAccessFields_InternalName_Update = {
-    __typename?: 'ButtonsDocAccessFields_internalName_Update';
     permission: Scalars['Boolean']['output'];
 };
 
@@ -1218,6 +1220,34 @@ export type ButtonsDocAccessFields_LinkType_Update = {
     permission: Scalars['Boolean']['output'];
 };
 
+export type ButtonsDocAccessFields_LinksTo = {
+    __typename?: 'ButtonsDocAccessFields_linksTo';
+    create?: Maybe<ButtonsDocAccessFields_LinksTo_Create>;
+    delete?: Maybe<ButtonsDocAccessFields_LinksTo_Delete>;
+    read?: Maybe<ButtonsDocAccessFields_LinksTo_Read>;
+    update?: Maybe<ButtonsDocAccessFields_LinksTo_Update>;
+};
+
+export type ButtonsDocAccessFields_LinksTo_Create = {
+    __typename?: 'ButtonsDocAccessFields_linksTo_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ButtonsDocAccessFields_LinksTo_Delete = {
+    __typename?: 'ButtonsDocAccessFields_linksTo_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ButtonsDocAccessFields_LinksTo_Read = {
+    __typename?: 'ButtonsDocAccessFields_linksTo_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ButtonsDocAccessFields_LinksTo_Update = {
+    __typename?: 'ButtonsDocAccessFields_linksTo_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
 export type ButtonsDocAccessFields_UpdatedAt = {
     __typename?: 'ButtonsDocAccessFields_updatedAt';
     create?: Maybe<ButtonsDocAccessFields_UpdatedAt_Create>;
@@ -1251,10 +1281,11 @@ export type ButtonsFields = {
     color?: Maybe<ButtonsFields_Color>;
     createdAt?: Maybe<ButtonsFields_CreatedAt>;
     externalLink?: Maybe<ButtonsFields_ExternalLink>;
+    fullTitle?: Maybe<ButtonsFields_FullTitle>;
     internalLink?: Maybe<ButtonsFields_InternalLink>;
-    internalName?: Maybe<ButtonsFields_InternalName>;
     label?: Maybe<ButtonsFields_Label>;
     linkType?: Maybe<ButtonsFields_LinkType>;
+    linksTo?: Maybe<ButtonsFields_LinksTo>;
     updatedAt?: Maybe<ButtonsFields_UpdatedAt>;
 };
 
@@ -1342,6 +1373,34 @@ export type ButtonsFields_ExternalLink_Update = {
     permission: Scalars['Boolean']['output'];
 };
 
+export type ButtonsFields_FullTitle = {
+    __typename?: 'ButtonsFields_fullTitle';
+    create?: Maybe<ButtonsFields_FullTitle_Create>;
+    delete?: Maybe<ButtonsFields_FullTitle_Delete>;
+    read?: Maybe<ButtonsFields_FullTitle_Read>;
+    update?: Maybe<ButtonsFields_FullTitle_Update>;
+};
+
+export type ButtonsFields_FullTitle_Create = {
+    __typename?: 'ButtonsFields_fullTitle_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ButtonsFields_FullTitle_Delete = {
+    __typename?: 'ButtonsFields_fullTitle_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ButtonsFields_FullTitle_Read = {
+    __typename?: 'ButtonsFields_fullTitle_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ButtonsFields_FullTitle_Update = {
+    __typename?: 'ButtonsFields_fullTitle_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
 export type ButtonsFields_InternalLink = {
     __typename?: 'ButtonsFields_internalLink';
     create?: Maybe<ButtonsFields_InternalLink_Create>;
@@ -1367,34 +1426,6 @@ export type ButtonsFields_InternalLink_Read = {
 
 export type ButtonsFields_InternalLink_Update = {
     __typename?: 'ButtonsFields_internalLink_Update';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ButtonsFields_InternalName = {
-    __typename?: 'ButtonsFields_internalName';
-    create?: Maybe<ButtonsFields_InternalName_Create>;
-    delete?: Maybe<ButtonsFields_InternalName_Delete>;
-    read?: Maybe<ButtonsFields_InternalName_Read>;
-    update?: Maybe<ButtonsFields_InternalName_Update>;
-};
-
-export type ButtonsFields_InternalName_Create = {
-    __typename?: 'ButtonsFields_internalName_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ButtonsFields_InternalName_Delete = {
-    __typename?: 'ButtonsFields_internalName_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ButtonsFields_InternalName_Read = {
-    __typename?: 'ButtonsFields_internalName_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ButtonsFields_InternalName_Update = {
-    __typename?: 'ButtonsFields_internalName_Update';
     permission: Scalars['Boolean']['output'];
 };
 
@@ -1451,6 +1482,34 @@ export type ButtonsFields_LinkType_Read = {
 
 export type ButtonsFields_LinkType_Update = {
     __typename?: 'ButtonsFields_linkType_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ButtonsFields_LinksTo = {
+    __typename?: 'ButtonsFields_linksTo';
+    create?: Maybe<ButtonsFields_LinksTo_Create>;
+    delete?: Maybe<ButtonsFields_LinksTo_Delete>;
+    read?: Maybe<ButtonsFields_LinksTo_Read>;
+    update?: Maybe<ButtonsFields_LinksTo_Update>;
+};
+
+export type ButtonsFields_LinksTo_Create = {
+    __typename?: 'ButtonsFields_linksTo_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ButtonsFields_LinksTo_Delete = {
+    __typename?: 'ButtonsFields_linksTo_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ButtonsFields_LinksTo_Read = {
+    __typename?: 'ButtonsFields_linksTo_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ButtonsFields_LinksTo_Update = {
+    __typename?: 'ButtonsFields_linksTo_Update';
     permission: Scalars['Boolean']['output'];
 };
 
@@ -16801,8 +16860,8 @@ export type MutationButtonInput = {
     color?: InputMaybe<Scalars['String']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     externalLink?: InputMaybe<Scalars['String']['input']>;
+    fullTitle?: InputMaybe<Scalars['String']['input']>;
     internalLink?: InputMaybe<Scalars['String']['input']>;
-    internalName: Scalars['String']['input'];
     label?: InputMaybe<Scalars['String']['input']>;
     linkType?: InputMaybe<Scalars['String']['input']>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
@@ -16812,8 +16871,8 @@ export type MutationButtonUpdateInput = {
     color?: InputMaybe<Scalars['String']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     externalLink?: InputMaybe<Scalars['String']['input']>;
+    fullTitle?: InputMaybe<Scalars['String']['input']>;
     internalLink?: InputMaybe<Scalars['String']['input']>;
-    internalName?: InputMaybe<Scalars['String']['input']>;
     label?: InputMaybe<Scalars['String']['input']>;
     linkType?: InputMaybe<Scalars['String']['input']>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
