@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon has 'lg' class 1`] = `
+<svg
+  className="gray lg"
+>
+  <use
+    href="/icons/icon-sprites.svg#caret"
+  />
+</svg>
+`;
+
+exports[`Icon has 'md' class 1`] = `
+<svg
+  className="gray md"
+>
+  <use
+    href="/icons/icon-sprites.svg#caret"
+  />
+</svg>
+`;
+
+exports[`Icon has 'sm' class 1`] = `
+<svg
+  className="gray sm"
+>
+  <use
+    href="/icons/icon-sprites.svg#caret"
+  />
+</svg>
+`;
+
+exports[`lg has 'blue' class 1`] = `
+<svg
+  className="blue lg"
+>
+  <use
+    href="/icons/icon-sprites.svg#caret"
+  />
+</svg>
+`;
+
+exports[`lg has 'gray' class 1`] = `
+<svg
+  className="gray lg"
+>
+  <use
+    href="/icons/icon-sprites.svg#caret"
+  />
+</svg>
+`;
+
+exports[`lg has 'green' class 1`] = `
+<svg
+  className="green lg"
+>
+  <use
+    href="/icons/icon-sprites.svg#caret"
+  />
+</svg>
+`;
+
+exports[`lg matches snapshot 1`] = `
+<svg
+  className="gray lg"
+>
+  <use
+    href="/icons/icon-sprites.svg#caret"
+  />
+</svg>
+`;
+
+exports[`md has 'blue' class 1`] = `
+<svg
+  className="blue md"
+>
+  <use
+    href="/icons/icon-sprites.svg#caret"
+  />
+</svg>
+`;
+
+exports[`md has 'gray' class 1`] = `
+<svg
+  className="gray md"
+>
+  <use
+    href="/icons/icon-sprites.svg#caret"
+  />
+</svg>
+`;
+
+exports[`md has 'green' class 1`] = `
+<svg
+  className="green md"
+>
+  <use
+    href="/icons/icon-sprites.svg#caret"
+  />
+</svg>
+`;
+
+exports[`md matches snapshot 1`] = `
+<svg
+  className="gray md"
+>
+  <use
+    href="/icons/icon-sprites.svg#caret"
+  />
+</svg>
+`;
+
+exports[`sm has 'blue' class 1`] = `
+<svg
+  className="blue sm"
+>
+  <use
+    href="/icons/icon-sprites.svg#caret"
+  />
+</svg>
+`;
+
+exports[`sm has 'gray' class 1`] = `
+<svg
+  className="gray sm"
+>
+  <use
+    href="/icons/icon-sprites.svg#caret"
+  />
+</svg>
+`;
+
+exports[`sm has 'green' class 1`] = `
+<svg
+  className="green sm"
+>
+  <use
+    href="/icons/icon-sprites.svg#caret"
+  />
+</svg>
+`;
+
+exports[`sm matches snapshot 1`] = `
+<svg
+  className="gray sm"
+>
+  <use
+    href="/icons/icon-sprites.svg#caret"
+  />
+</svg>
+`;

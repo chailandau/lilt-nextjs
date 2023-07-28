@@ -18,6 +18,7 @@ const config: StorybookConfig = {
     autodocs: 'tag',
     defaultName: 'Docs',
   },
+  staticDirs: ['../public'],
 
 };
 

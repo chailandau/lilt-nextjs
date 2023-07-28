@@ -8,6 +8,7 @@ exports[`Button matches snapshot 1`] = `
     className="link underline"
     href="/"
     onClick={[Function]}
+    onKeyDown={[Function]}
     onMouseEnter={[Function]}
     onTouchStart={[Function]}
     rel=""

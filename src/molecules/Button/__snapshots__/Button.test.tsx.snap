@@ -6,6 +6,7 @@ exports[`Button has 'blue' class 1`] = `
 >
   <button
     className="button blue"
+    onKeyDown={[Function]}
   >
     Default button
   </button>
@@ -17,7 +18,21 @@ exports[`Button has 'green' class 1`] = `
   className="flex"
 >
   <button
-    className="button green"
+    className="button blue"
+    onKeyDown={[Function]}
+  >
+    Default button
+  </button>
+</div>
+`;
+
+exports[`Button has 'link' class 1`] = `
+<div
+  className="flex"
+>
+  <button
+    className="button blue"
+    onKeyDown={[Function]}
   >
     Default button
   </button>
@@ -29,7 +44,8 @@ exports[`Button has 'white' class 1`] = `
   className="flex"
 >
   <button
-    className="button white"
+    className="button blue"
+    onKeyDown={[Function]}
   >
     Default button
   </button>
@@ -42,6 +58,7 @@ exports[`Button matches snapshot 1`] = `
 >
   <button
     className="button blue"
+    onKeyDown={[Function]}
   >
     Default button
   </button>
