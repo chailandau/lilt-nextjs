@@ -6,28 +6,42 @@ import Meta, { Default } from './storybook/Button.stories';
 
 import {
     testAxeViolations,
-    testColors,
     testMatchesSnapshot,
+    testPropOptions,
     testRenderText
 } from '@/utils/testHelpers';
 
 const Button = composeStory(Default, Meta);
 
 describe('Button', () => {
-    testRenderText(<Button />, 'button', Button.args.children || '');
+    const buttonComponent = {
+        component: <Button />
+    };
+    testRenderText({
+        ...buttonComponent,
+        role: 'button',
+        text: Button.args.children as string
+    });
     it('has default color', () => {
         render(<Button variant={undefined} />);
         expect(screen.getByRole('button')).toHaveClass('blue');
     });
-    testColors(<Button />, buttonVariants);
+    testPropOptions({
+        component: <Button />,
+        propName: 'variant',
+        propOptions: buttonVariants,
+        htmlTag: 'button'
+    });
     it("renders 'link' correctly", () => {
         render(<Button link='https://google.com' />);
-        expect(screen.getByRole('link'));
+        expect(screen.getByRole('link').getAttribute('href')).toBe(
+            'https://google.com'
+        );
     });
     it("renders 'button' correctly", () => {
         render(<Button />);
-        expect(screen.getByRole('button'));
+        expect(screen.getByRole('button')).toBeDefined();
     });
-    testAxeViolations(<Button />);
-    testMatchesSnapshot(<Button />);
+    testAxeViolations(buttonComponent);
+    testMatchesSnapshot(buttonComponent);
 });

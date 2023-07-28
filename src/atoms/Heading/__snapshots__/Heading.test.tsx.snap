@@ -1,401 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Default heading has 'blue' class 1`] = `
-<h2
-  className="heading md blue"
->
-  Default heading
-</h2>
-`;
-
-exports[`Default heading has 'green' class 1`] = `
-<h2
-  className="heading md green"
->
-  Default heading
-</h2>
-`;
-
-exports[`Default heading matches 'h1' snapshot 1`] = `
-<h1
-  className="heading md green"
->
-  Default heading
-</h1>
-`;
-
-exports[`Default heading matches 'h2' snapshot 1`] = `
-<h2
-  className="heading md green"
->
-  Default heading
-</h2>
-`;
-
-exports[`Default heading matches 'h3' snapshot 1`] = `
-<h3
-  className="heading md green"
->
-  Default heading
-</h3>
-`;
-
-exports[`Default heading matches 'h4' snapshot 1`] = `
-<h4
-  className="heading md green"
->
-  Default heading
-</h4>
-`;
-
-exports[`Default heading matches 'h5' snapshot 1`] = `
-<h5
-  className="heading md green"
->
-  Default heading
-</h5>
-`;
-
-exports[`Default heading matches 'h6' snapshot 1`] = `
-<h6
-  className="heading md green"
->
-  Default heading
-</h6>
-`;
-
 exports[`Default heading matches snapshot 1`] = `
-<h2
-  className="heading md green"
->
-  Default heading
-</h2>
-`;
-
-exports[`Extra large heading has 'blue' class 1`] = `
-<h2
-  className="heading xl blue"
->
-  Extra large heading
-</h2>
-`;
-
-exports[`Extra large heading has 'green' class 1`] = `
-<h2
-  className="heading xl green"
->
-  Extra large heading
-</h2>
-`;
-
-exports[`Extra large heading matches 'h1' snapshot 1`] = `
-<h1
-  className="heading xl green"
->
-  Extra large heading
-</h1>
-`;
-
-exports[`Extra large heading matches 'h2' snapshot 1`] = `
-<h2
-  className="heading xl green"
->
-  Extra large heading
-</h2>
-`;
-
-exports[`Extra large heading matches 'h3' snapshot 1`] = `
-<h3
-  className="heading xl green"
->
-  Extra large heading
-</h3>
-`;
-
-exports[`Extra large heading matches 'h4' snapshot 1`] = `
-<h4
-  className="heading xl green"
->
-  Extra large heading
-</h4>
-`;
-
-exports[`Extra large heading matches 'h5' snapshot 1`] = `
-<h5
-  className="heading xl green"
->
-  Extra large heading
-</h5>
-`;
-
-exports[`Extra large heading matches 'h6' snapshot 1`] = `
-<h6
-  className="heading xl green"
->
-  Extra large heading
-</h6>
+<DocumentFragment>
+  <h2
+    class="heading md green"
+  >
+    Default heading
+  </h2>
+</DocumentFragment>
 `;
 
 exports[`Extra large heading matches snapshot 1`] = `
-<h2
-  className="heading xl green"
->
-  Extra large heading
-</h2>
-`;
-
-exports[`Extra small heading has 'blue' class 1`] = `
-<h2
-  className="heading xs blue"
->
-  Extra small heading
-</h2>
-`;
-
-exports[`Extra small heading has 'green' class 1`] = `
-<h2
-  className="heading xs green"
->
-  Extra small heading
-</h2>
-`;
-
-exports[`Extra small heading matches 'h1' snapshot 1`] = `
-<h1
-  className="heading xs green"
->
-  Extra small heading
-</h1>
-`;
-
-exports[`Extra small heading matches 'h2' snapshot 1`] = `
-<h2
-  className="heading xs green"
->
-  Extra small heading
-</h2>
-`;
-
-exports[`Extra small heading matches 'h3' snapshot 1`] = `
-<h3
-  className="heading xs green"
->
-  Extra small heading
-</h3>
-`;
-
-exports[`Extra small heading matches 'h4' snapshot 1`] = `
-<h4
-  className="heading xs green"
->
-  Extra small heading
-</h4>
-`;
-
-exports[`Extra small heading matches 'h5' snapshot 1`] = `
-<h5
-  className="heading xs green"
->
-  Extra small heading
-</h5>
-`;
-
-exports[`Extra small heading matches 'h6' snapshot 1`] = `
-<h6
-  className="heading xs green"
->
-  Extra small heading
-</h6>
+<DocumentFragment>
+  <h2
+    class="heading xl green"
+  >
+    Extra large heading
+  </h2>
+</DocumentFragment>
 `;
 
 exports[`Extra small heading matches snapshot 1`] = `
-<h2
-  className="heading xs green"
->
-  Extra small heading
-</h2>
-`;
-
-exports[`Heading has 'lg' class 1`] = `
-<h2
-  className="heading lg green"
->
-  Default heading
-</h2>
-`;
-
-exports[`Heading has 'md' class 1`] = `
-<h2
-  className="heading md green"
->
-  Default heading
-</h2>
-`;
-
-exports[`Heading has 'sm' class 1`] = `
-<h2
-  className="heading sm green"
->
-  Default heading
-</h2>
-`;
-
-exports[`Heading has 'xl' class 1`] = `
-<h2
-  className="heading xl green"
->
-  Default heading
-</h2>
-`;
-
-exports[`Heading has 'xs' class 1`] = `
-<h2
-  className="heading xs green"
->
-  Default heading
-</h2>
-`;
-
-exports[`Large heading has 'blue' class 1`] = `
-<h2
-  className="heading lg blue"
->
-  Large heading
-</h2>
-`;
-
-exports[`Large heading has 'green' class 1`] = `
-<h2
-  className="heading lg green"
->
-  Large heading
-</h2>
-`;
-
-exports[`Large heading matches 'h1' snapshot 1`] = `
-<h1
-  className="heading lg green"
->
-  Large heading
-</h1>
-`;
-
-exports[`Large heading matches 'h2' snapshot 1`] = `
-<h2
-  className="heading lg green"
->
-  Large heading
-</h2>
-`;
-
-exports[`Large heading matches 'h3' snapshot 1`] = `
-<h3
-  className="heading lg green"
->
-  Large heading
-</h3>
-`;
-
-exports[`Large heading matches 'h4' snapshot 1`] = `
-<h4
-  className="heading lg green"
->
-  Large heading
-</h4>
-`;
-
-exports[`Large heading matches 'h5' snapshot 1`] = `
-<h5
-  className="heading lg green"
->
-  Large heading
-</h5>
-`;
-
-exports[`Large heading matches 'h6' snapshot 1`] = `
-<h6
-  className="heading lg green"
->
-  Large heading
-</h6>
+<DocumentFragment>
+  <h2
+    class="heading xs green"
+  >
+    Extra small heading
+  </h2>
+</DocumentFragment>
 `;
 
 exports[`Large heading matches snapshot 1`] = `
-<h2
-  className="heading lg green"
->
-  Large heading
-</h2>
-`;
-
-exports[`Small heading has 'blue' class 1`] = `
-<h2
-  className="heading sm blue"
->
-  Small heading
-</h2>
-`;
-
-exports[`Small heading has 'green' class 1`] = `
-<h2
-  className="heading sm green"
->
-  Small heading
-</h2>
-`;
-
-exports[`Small heading matches 'h1' snapshot 1`] = `
-<h1
-  className="heading sm green"
->
-  Small heading
-</h1>
-`;
-
-exports[`Small heading matches 'h2' snapshot 1`] = `
-<h2
-  className="heading sm green"
->
-  Small heading
-</h2>
-`;
-
-exports[`Small heading matches 'h3' snapshot 1`] = `
-<h3
-  className="heading sm green"
->
-  Small heading
-</h3>
-`;
-
-exports[`Small heading matches 'h4' snapshot 1`] = `
-<h4
-  className="heading sm green"
->
-  Small heading
-</h4>
-`;
-
-exports[`Small heading matches 'h5' snapshot 1`] = `
-<h5
-  className="heading sm green"
->
-  Small heading
-</h5>
-`;
-
-exports[`Small heading matches 'h6' snapshot 1`] = `
-<h6
-  className="heading sm green"
->
-  Small heading
-</h6>
+<DocumentFragment>
+  <h2
+    class="heading lg green"
+  >
+    Large heading
+  </h2>
+</DocumentFragment>
 `;
 
 exports[`Small heading matches snapshot 1`] = `
-<h2
-  className="heading sm green"
->
-  Small heading
-</h2>
+<DocumentFragment>
+  <h2
+    class="heading sm green"
+  >
+    Small heading
+  </h2>
+</DocumentFragment>
 `;

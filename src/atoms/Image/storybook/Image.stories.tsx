@@ -9,10 +9,10 @@ const meta: Meta<typeof Image> = {
     component: Image,
     argTypes: {
         hasBorder: {
-            table: { defaultValue: { summary: false } },
+            table: { defaultValue: { summary: false } }
         },
         priority: {
-            table: { defaultValue: { summary: false } },
+            table: { defaultValue: { summary: false } }
         }
     },
     decorators: [
@@ -20,8 +20,8 @@ const meta: Meta<typeof Image> = {
             <div style={{ display: 'flex', maxWidth: '590px' }}>
                 <Story />
             </div>
-        ),
-    ],
+        )
+    ]
 };
 
 export default meta;
@@ -33,6 +33,6 @@ export const Default: Story = {
         src: OutdoorTents,
         alt: 'Camo tents outdoors next to table with laser tag equipment',
         hasBorder: true,
-        priority: true,
+        priority: true
     }
 };

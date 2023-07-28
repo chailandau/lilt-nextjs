@@ -6,14 +6,13 @@ import Meta, { Default, Large, Medium } from './storybook/Icon.stories';
 
 import {
     testAxeViolations,
-    testColors,
     testMatchesSnapshot,
-    testSizes
+    testPropOptions
 } from '@/utils/testHelpers';
 
 const getIconInfo = (Variant: typeof Default) => ({
     variant: composeStory(Variant, Meta),
-    size: Variant.args?.size || ''
+    size: Variant.args?.size as string
 });
 
 const iconVariants = [
@@ -24,10 +23,18 @@ const iconVariants = [
 
 describe('Icon', () => {
     const Icon = composeStory(Default, Meta);
-    testSizes(<Icon />, iconSizes);
+    testPropOptions({
+        component: <Icon />,
+        propName: 'size',
+        propOptions: iconSizes,
+        htmlTag: 'svg'
+    });
 });
 
 iconVariants.forEach(({ variant: Icon, size }) => {
+    const iconComponent = {
+        component: <Icon />
+    };
     describe(size, () => {
         it("doesn't render if `id` is not valid", () => {
             const { container } = render(
@@ -43,8 +50,13 @@ iconVariants.forEach(({ variant: Icon, size }) => {
             const svg = container.querySelector('svg');
             expect(svg).toBeDefined();
         });
-        testColors(<Icon />, iconColors);
-        testAxeViolations(<Icon />);
-        testMatchesSnapshot(<Icon />);
+        testPropOptions({
+            ...iconComponent,
+            propName: 'color',
+            propOptions: iconColors,
+            htmlTag: 'svg'
+        });
+        testAxeViolations(iconComponent);
+        testMatchesSnapshot(iconComponent);
     });
 });

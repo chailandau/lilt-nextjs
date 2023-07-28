@@ -11,8 +11,12 @@ import {
 
 const Container = composeStory(Default, Meta);
 
+const ContainerComponent = {
+    component: <Container />
+};
+
 describe('Container', () => {
-    testTags(<Container />, semanticTags);
-    testAxeViolations(<Container />);
-    testMatchesSnapshot(<Container />);
+    testTags({ ...ContainerComponent, tags: semanticTags });
+    testAxeViolations(ContainerComponent);
+    testMatchesSnapshot(ContainerComponent);
 });

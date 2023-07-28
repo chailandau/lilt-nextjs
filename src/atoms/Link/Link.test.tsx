@@ -3,17 +3,30 @@ import { render, screen } from '@testing-library/react';
 
 import Meta, { Default } from './storybook/Link.stories';
 
-import { testAxeViolations, testMatchesSnapshot, testRenderText } from '@/utils/testHelpers';
+import {
+    testAxeViolations,
+    testKeyDown,
+    testMatchesSnapshot,
+    testRenderText
+} from '@/utils/testHelpers';
 
 const Link = composeStory(Default, Meta);
+const linkComponent = {
+    component: <Link />
+};
 
-describe('Button', () => {
-    testRenderText(<Link />, 'link', Link.args.children || '');
+describe('Link', () => {
+    testRenderText({
+        ...linkComponent,
+        text: Link.args?.children as string,
+        role: 'link'
+    });
     it('defaults correctly', () => {
         render(<Link underline={undefined} href={''} />);
         expect(screen.getByRole('link')).toHaveClass('underline');
         expect(screen.getByRole('link')).toHaveAttribute('href', '');
     });
-    testAxeViolations(<Link />);
-    testMatchesSnapshot(<Link />);
+    testKeyDown({ ...linkComponent, role: 'link' });
+    testAxeViolations(linkComponent);
+    testMatchesSnapshot(linkComponent);
 });

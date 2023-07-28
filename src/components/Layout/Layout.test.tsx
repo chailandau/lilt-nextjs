@@ -1,4 +1,8 @@
-import { testAxeViolations, testMatchesSnapshot, testRenderChildren } from '../../utils/testHelpers';
+import {
+    testAxeViolations,
+    testMatchesSnapshot,
+    testRenderChildren
+} from '../../utils/testHelpers';
 
 import Layout from './Layout';
 
@@ -8,8 +12,12 @@ const LayoutHOC = () => (
     </Layout>
 );
 
+const layoutComponent = {
+    component: <LayoutHOC />
+};
+
 describe('Layout', () => {
-    testRenderChildren(<LayoutHOC />);
-    testAxeViolations(<LayoutHOC />);
-    testMatchesSnapshot(<LayoutHOC />);
+    testRenderChildren(layoutComponent);
+    testAxeViolations(layoutComponent);
+    testMatchesSnapshot(layoutComponent);
 });

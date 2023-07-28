@@ -1,66 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button has 'blue' class 1`] = `
-<div
-  className="flex"
->
-  <button
-    className="button blue"
-    onKeyDown={[Function]}
-  >
-    Default button
-  </button>
-</div>
-`;
-
-exports[`Button has 'green' class 1`] = `
-<div
-  className="flex"
->
-  <button
-    className="button blue"
-    onKeyDown={[Function]}
-  >
-    Default button
-  </button>
-</div>
-`;
-
-exports[`Button has 'link' class 1`] = `
-<div
-  className="flex"
->
-  <button
-    className="button blue"
-    onKeyDown={[Function]}
-  >
-    Default button
-  </button>
-</div>
-`;
-
-exports[`Button has 'white' class 1`] = `
-<div
-  className="flex"
->
-  <button
-    className="button blue"
-    onKeyDown={[Function]}
-  >
-    Default button
-  </button>
-</div>
-`;
-
 exports[`Button matches snapshot 1`] = `
-<div
-  className="flex"
->
-  <button
-    className="button blue"
-    onKeyDown={[Function]}
+<DocumentFragment>
+  <div
+    class="flex"
   >
-    Default button
-  </button>
-</div>
+    <button
+      class="button blue"
+    >
+      Default button
+    </button>
+  </div>
+</DocumentFragment>
 `;

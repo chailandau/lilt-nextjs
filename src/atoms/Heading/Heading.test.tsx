@@ -12,9 +12,8 @@ import Meta, {
 
 import {
     testAxeViolations,
-    testColors,
     testMatchesSnapshot,
-    testSizes,
+    testPropOptions,
     testTags
 } from '@/utils/testHelpers';
 
@@ -34,10 +33,18 @@ const headingVariants = [
 
 describe('Heading', () => {
     const Heading = composeStory(Default, Meta);
-    testSizes(<Heading />, headingSizes);
+    testPropOptions({
+        component: <Heading />,
+        propName: 'size',
+        propOptions: headingSizes,
+        htmlTag: 'h2'
+    });
 });
 
 headingVariants.forEach(({ variant: Heading, text }) => {
+    const headingComponent = {
+        component: <Heading />
+    };
     describe(text, () => {
         it('has defaults', () => {
             render(
@@ -46,9 +53,14 @@ headingVariants.forEach(({ variant: Heading, text }) => {
             expect(screen.getByRole('heading')).toHaveClass('green', 'md');
             expect(screen.getByRole('heading', { level: 2 })).toBeDefined;
         });
-        testTags(<Heading />, headingTags);
-        testColors(<Heading />, headingColors);
-        testAxeViolations(<Heading />);
-        testMatchesSnapshot(<Heading />);
+        testTags({ ...headingComponent, tags: headingTags });
+        testPropOptions({
+            ...headingComponent,
+            propName: 'color',
+            propOptions: headingColors,
+            htmlTag: 'h2'
+        });
+        testAxeViolations(headingComponent);
+        testMatchesSnapshot(headingComponent);
     });
 });

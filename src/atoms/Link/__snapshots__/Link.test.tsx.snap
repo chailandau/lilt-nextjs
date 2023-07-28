@@ -1,20 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button matches snapshot 1`] = `
-<div
-  className="flex"
->
-  <a
-    className="link underline"
-    href="/"
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    onMouseEnter={[Function]}
-    onTouchStart={[Function]}
-    rel=""
-    target=""
+exports[`Link matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex"
   >
-    This is a link
-  </a>
-</div>
+    <a
+      class="link underline"
+      href="/"
+      rel=""
+      target=""
+    >
+      This is a link
+    </a>
+  </div>
+</DocumentFragment>
 `;
