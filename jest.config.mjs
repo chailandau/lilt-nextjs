@@ -22,7 +22,8 @@ const customJestConfig = {
     setupFilesAfterEnv: [
         '@testing-library/jest-dom/extend-expect',
         'jest-axe/extend-expect',
-        'react-intersection-observer/test-utils'
+        'react-intersection-observer/test-utils',
+        '<rootDir>/setupTests.js'
     ],
     testEnvironment: 'jest-environment-jsdom',
     testRegex: '(/test/.*|\\.(test|spec))\\.(ts|tsx)$',

@@ -38,6 +38,7 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.gql",
+    "setupTests.js",
   ],
   "exclude": [
     "node_modules"
