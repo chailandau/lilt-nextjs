@@ -5,7 +5,9 @@ import { buttonVariants } from './Button';
 import Meta, { Default } from './storybook/Button.stories';
 
 import {
+    testAppliesClass,
     testAxeViolations,
+    testKeyDown,
     testMatchesSnapshot,
     testPropOptions,
     testRenderText
@@ -42,6 +44,8 @@ describe('Button', () => {
         render(<Button />);
         expect(screen.getByRole('button')).toBeDefined();
     });
+    testKeyDown({ ...buttonComponent, role: 'button' });
+    testAppliesClass({ ...buttonComponent, htmlTag: 'button' });
     testAxeViolations(buttonComponent);
     testMatchesSnapshot(buttonComponent);
 });

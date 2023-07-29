@@ -54,6 +54,21 @@ export const testPropOptions = ({
 };
 
 /**
+ * Tests that `className` is applied to component if it exists.
+ *
+ * @param component - Component to test.
+ * @param htmlTag - HTML tag of the component.
+ */
+export const testAppliesClass = ({ component, htmlTag }: TestTag): void => {
+    it('applies class if it exists', () => {
+        const { container } = render(
+            cloneElement(component, { className: 'test' })
+        );
+        expect(container.querySelector(htmlTag)).toHaveClass('test');
+    });
+};
+
+/**
  * Maps through a list of tags from a provided array, testing that each rendered component
  * contains the specified tag.
  *
@@ -70,7 +85,7 @@ export const testTags = ({ component, tags }: TestTags): void => {
 };
 
 /**
- * Test that component renders with correct text.
+ * Tests that component renders with correct text.
  *
  * @param component - Component to render.
  * @param text - Text to render.
@@ -83,7 +98,7 @@ export const testRenderText = ({ component, text }: TestRenderText): void => {
 };
 
 /**
- * Test that children render correctly inside a Higher Order Component (HOC) component.
+ * Tests that children render correctly inside a Higher Order Component (HOC) component.
  *
  * @param component - Component to test.
  */
@@ -94,7 +109,7 @@ export const testRenderChildren = ({ component }: TestComponent): void => {
     });
 };
 /**
- * Test component to ensure it does not contain any axe violations.
+ * Tests component to ensure it does not contain any axe violations.
  *
  * @param component - Component to test.
  */
@@ -105,7 +120,7 @@ export const testAxeViolations = ({ component }: TestComponent): void => {
     });
 };
 /**
- * Test that component matches its snapshot.
+ * Tests that component matches snapshot.
  *
  * @param component - Component to test.
  */
@@ -116,7 +131,7 @@ export const testMatchesSnapshot = ({ component }: TestComponent): void => {
     });
 };
 /**
- * Test that keydown event is fired when a key is pressed.
+ * Tests that keydown event is fired when key is pressed.
  *
  * @param component - Component to test.
  * @param role - Component's ARIA role.

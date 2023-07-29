@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getData calls graphQLClient.request with the correct arguments 1`] = `
+[MockFunction] {
+  "calls": [
+    [
+      "
+    query HeaderQuery  {
+            Header {
+                menuItems {
+                    
+    id
+    label
+    linkType
+    internalLink {
+        
+    id
+    title
+    slug
+
+    }
+    externalLink
+
+                    submenuItems {
+                        
+    id
+    label
+    linkType
+    internalLink {
+        
+    id
+    title
+    slug
+
+    }
+    externalLink
+
+                    }
+                }
+                callToAction {
+                    
+    id
+    label
+    linkType
+    internalLink {
+        
+    id
+    title
+    slug
+
+    }
+    externalLink
+    color
+
+            }
+        }
+    }
+",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
