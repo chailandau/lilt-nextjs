@@ -11,7 +11,7 @@ const meta: Meta<typeof Container> = {
     component: Container,
     argTypes: {
         as: {
-            table: { defaultValue: { summary: 'div' } },
+            table: { defaultValue: { summary: 'div' } }
         }
     },
     parameters: {

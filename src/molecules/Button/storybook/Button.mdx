@@ -1,6 +1,6 @@
-import { Canvas, Meta, ArgTypes } from "@storybook/blocks";
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
 
-import * as ButtonStories from "./Button.stories";
+import * as ButtonStories from './Button.stories';
 
 <Meta of={ButtonStories} />
 
@@ -10,25 +10,19 @@ import * as ButtonStories from "./Button.stories";
 
 <br />
 
-### children
+## children
 
 Text is supplied as a child to the `Button` molecule.
 
-<hr />
-
-### color
+## color
 
 Controls the color of the `Button` molecule.
 
-<hr />
+## link
 
-### link
+If the link prop is not empty, the `Button` will render as an `a` tag. Otherwise, it will default to a `button` tag.
 
-If the link prop is not empty, the `Button` will render as an `a` tag. Otherwise it will default to a `button` tag.
-
-<hr />
-
-### onClick
+## onClick
 
 If there is no link and the `onClick` prop is supplied, it will be called when the `Button` is clicked.
 
@@ -36,6 +30,6 @@ If there is no link and the `onClick` prop is supplied, it will be called when t
 <br />
 <br />
 
-## Props
+## Props Table
 
 <ArgTypes />
