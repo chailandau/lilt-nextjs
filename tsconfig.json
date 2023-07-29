@@ -37,6 +37,7 @@
     "jest.setup.js",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.gql",
   ],
   "exclude": [
     "node_modules"

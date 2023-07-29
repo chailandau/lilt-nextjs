@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fragments "BUTTON_FRAGMENT" matches snapshot: BUTTON_FRAGMENT 1`] = `
+"
+    id
+    label
+    linkType
+    internalLink {
+        
+    id
+    title
+    slug
+
+    }
+    externalLink
+    color
+"
+`;
+
+exports[`Fragments "INTERNAL_LINK_FRAGMENT" matches snapshot: INTERNAL_LINK_FRAGMENT 1`] = `
+"
+    id
+    title
+    slug
+"
+`;
+
+exports[`Fragments "MENU_ITEMS_FRAGMENT" matches snapshot: MENU_ITEMS_FRAGMENT 1`] = `
+"
+    id
+    label
+    linkType
+    internalLink {
+        
+    id
+    title
+    slug
+
+    }
+    externalLink
+"
+`;

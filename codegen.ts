@@ -14,12 +14,18 @@ const config: CodegenConfig = {
             config: {
                 enumsAsTypes: true,
                 futureProofEnums: true
+            },
+            hooks: {
+                afterOneFileWrite: 'eslint --fix'
             }
         },
-    },
-    hooks: {
-        afterAllFileWrite: 'eslint --fix',
-    },
+        './src/api/graphqlSchema.gql': {
+            plugins: ['schema-ast'],
+            config: {
+                includeDirectives: true
+            }
+        }
+    }
 };
 
 export default config;
