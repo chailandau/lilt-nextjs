@@ -73,3 +73,50 @@ export const menuItems = [
         ]
     }
 ] as Header_MenuItems[];
+
+export const menuItemNoLinktype = [
+    {
+        id: '64b5de126f8aff5a95a3e971',
+        label: null,
+        linkType: '',
+        internalLink: {
+            id: '64a62599d9cb5a4115cd2325',
+            title: 'Booking',
+            slug: 'booking'
+        },
+        externalLink: null,
+        submenuItems: []
+    }
+];
+
+export const menuItemNoLabel = [
+    {
+        id: '64b5de126f8aff5a95a3e971',
+        label: null,
+        linkType: 'external',
+        externalLink: 'https://www.google.com',
+        submenuItems: []
+    }
+] as Header_MenuItems[];
+
+export const menuItemsInternalAndExternal = [
+    {
+        id: '64b5de126f8aff5a95a3e971',
+        label: 'Test',
+        linkType: 'external',
+        externalLink: 'https://www.google.com',
+        submenuItems: []
+    },
+    {
+        id: '64b5de126f8aff5a95a3e972',
+        label: null,
+        linkType: 'internal',
+        internalLink: {
+            id: '64a62599d9cb5a4115cd2325',
+            title: 'Booking',
+            slug: 'booking'
+        },
+        externalLink: null,
+        submenuItems: []
+    }
+] as Header_MenuItems[];

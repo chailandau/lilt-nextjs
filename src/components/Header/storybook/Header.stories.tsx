@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Header from '../Header';
 
-import { buttonData } from '@/components/__mocks__/Button.mock';
+import { buttonDataInternal } from '@/components/__mocks__/Button.mock';
 import { menuItems } from '@/components/__mocks__/Header.mock';
 
 const meta: Meta<typeof Header> = {
@@ -17,6 +17,6 @@ type Story = StoryObj<typeof Header>;
 export const Default: Story = {
     args: {
         menuItems,
-        callToAction: buttonData
+        callToAction: buttonDataInternal
     }
 };

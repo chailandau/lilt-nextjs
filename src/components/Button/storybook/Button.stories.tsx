@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { buttonData } from '../../__mocks__/Button.mock';
+import { buttonDataInternal } from '../../__mocks__/Button.mock';
 import Button from '../Button';
 
 import Flex from '@/molecules/Flex/Flex';
@@ -28,6 +28,6 @@ type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
     args: {
-        buttonData
+        buttonData: buttonDataInternal
     }
 };

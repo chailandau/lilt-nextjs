@@ -4,6 +4,7 @@ import { Button as ButtonType } from '@/api/graphqlTypes';
 import ButtonMolecule, {
     ButtonMoleculeVariant
 } from '@/molecules/ButtonMolecule/ButtonMolecule';
+import { getLink } from '@/utils/getLink';
 
 export interface ButtonProps {
     /** Optional classname */
@@ -16,17 +17,11 @@ const Button: FC<ButtonProps> = ({ buttonData, className }) => {
     const { linkType, color, label, externalLink, internalLink } =
         buttonData || {};
 
-    const isExternal = linkType === 'external';
-
-    const getLink = () => {
-        if (isExternal && externalLink) {
-            return `${externalLink}`;
-        } else if (internalLink?.slug) {
-            return `${process.env.NEXT_PUBLIC_BASE_URL}/${internalLink.slug}`;
-        } else {
-            return '';
-        }
-    };
+    const buttonLink = getLink({
+        linkType,
+        externalLink,
+        internalLink
+    });
 
     const buttonProps = {
         variant: color as ButtonMoleculeVariant,
@@ -35,7 +30,7 @@ const Button: FC<ButtonProps> = ({ buttonData, className }) => {
 
     return (
         label && (
-            <ButtonMolecule link={getLink()} {...buttonProps}>
+            <ButtonMolecule link={buttonLink} {...buttonProps}>
                 {label}
             </ButtonMolecule>
         )
