@@ -7,7 +7,7 @@ import Text from '@/atoms/Text/Text';
 const textAtom = <Text>This text is in a container.</Text>;
 
 const meta: Meta<typeof Container> = {
-    title: 'atoms/Container',
+    title: 'Atoms/Container',
     component: Container,
     argTypes: {
         as: {
@@ -16,7 +16,7 @@ const meta: Meta<typeof Container> = {
     },
     parameters: {
         controls: {
-            exclude: ['children']
+            include: ['as', 'className']
         }
     }
 };

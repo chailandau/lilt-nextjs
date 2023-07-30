@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import CallToAction from '../CallToAction';
+import { buttonData } from '../../__mocks__/Button.mock';
+import Button from '../Button';
 
 import Flex from '@/molecules/Flex/Flex';
 
-const meta: Meta<typeof CallToAction> = {
-    title: 'components/CallToAction',
-    component: CallToAction,
+const meta: Meta<typeof Button> = {
+    title: 'Components/Button',
+    component: Button,
     argTypes: {
-        cta: {
+        buttonData: {
             control: 'object'
         }
     },
-
     decorators: [
         (Story) => (
             <Flex>
@@ -24,14 +24,10 @@ const meta: Meta<typeof CallToAction> = {
 
 export default meta;
 
-type Story = StoryObj<typeof CallToAction>;
+type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
     args: {
-        cta: {
-            linkType: 'external',
-            label: 'Call to action',
-            externalLink: 'https://google.com'
-        }
+        buttonData
     }
 };

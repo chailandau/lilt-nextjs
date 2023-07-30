@@ -8,7 +8,10 @@ import useStore from '@/store/useStore';
 const MenuToggle = () => {
     const { menuOpen, setMenuOpen } = useStore();
 
-    const classList = classNames(styles['menu-toggle'], menuOpen && styles['open']);
+    const classList = classNames(
+        styles['menu-toggle'],
+        menuOpen && styles['open']
+    );
 
     return (
         <Container

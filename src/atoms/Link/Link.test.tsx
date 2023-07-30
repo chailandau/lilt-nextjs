@@ -22,8 +22,8 @@ describe('Link', () => {
         role: 'link'
     });
     it('defaults correctly', () => {
-        render(<Link underline={undefined} href={''} />);
-        expect(screen.getByRole('link')).toHaveClass('underline');
+        render(<Link underlineHover={undefined} href={''} />);
+        expect(screen.getByRole('link')).toHaveClass('underline-hover');
         expect(screen.getByRole('link')).toHaveAttribute('href', '');
     });
     testKeyDown({ ...linkComponent, role: 'link' });

@@ -4,7 +4,7 @@ import Icon from '../Icon';
 import { iconValues } from '../Icon.types';
 
 const meta: Meta<typeof Icon> = {
-    title: 'atoms/Icon',
+    title: 'Atoms/Icon',
     component: Icon,
     argTypes: {
         id: {

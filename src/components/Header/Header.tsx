@@ -1,14 +1,14 @@
 import FocusTrap from 'focus-trap-react';
 import { FC, useEffect, useState } from 'react';
 
-import CallToAction from '../CallToAction/CallToAction';
+import Button from '../Button/Button';
 
 import DesktopNav from './components/DesktopNav';
 import MenuToggle from './components/MenuToggle';
 import MobileNav from './components/MobileNav';
 import styles from './Header.module.scss';
 
-import { Button, Header_MenuItems } from '@/api/graphqlTypes';
+import { Button as ButtonType, Header_MenuItems } from '@/api/graphqlTypes';
 import Logo from '@/assets/svg/Logo.svg';
 import Image from '@/atoms/Image/Image';
 import Link from '@/atoms/Link/Link';
@@ -20,7 +20,7 @@ export interface HeaderProps {
     /* Menu items to display */
     menuItems: Header_MenuItems[] | null;
     /* CTA object */
-    callToAction?: Button | null;
+    callToAction?: ButtonType | null;
 }
 const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
     const { menuOpen } = useStore();
@@ -52,8 +52,8 @@ const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
                         callToAction={callToAction}
                     />
                     {callToAction && (
-                        <CallToAction
-                            cta={callToAction}
+                        <Button
+                            buttonData={callToAction}
                             className={styles['tablet-btn']}
                         />
                     )}

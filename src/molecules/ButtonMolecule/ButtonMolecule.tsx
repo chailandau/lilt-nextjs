@@ -1,17 +1,22 @@
 import classNames from 'classnames';
 import { FC, KeyboardEvent, ReactNode } from 'react';
 
-import styles from './Button.module.scss';
+import styles from './ButtonMolecule.module.scss';
 
 import Link from '@/atoms/Link/Link';
 
-export const buttonVariants = ['blue', 'green', 'white', 'link'] as const;
+export const buttonMoleculeVariants = [
+    'blue',
+    'green',
+    'white',
+    'link'
+] as const;
 
-export type ButtonVariant = (typeof buttonVariants)[number];
+export type ButtonMoleculeVariant = (typeof buttonMoleculeVariants)[number];
 
-export interface ButtonProps {
+export interface ButtonMoleculeProps {
     /** Button variant */
-    variant?: ButtonVariant;
+    variant?: ButtonMoleculeVariant;
     /** Button content */
     children: ReactNode;
     /** `Button` renders as an `a` tag if supplied */
@@ -24,7 +29,7 @@ export interface ButtonProps {
     className?: string;
 }
 
-const Button: FC<ButtonProps> = ({
+const ButtonMolecule: FC<ButtonMoleculeProps> = ({
     variant = 'blue',
     link,
     onClick,
@@ -41,7 +46,7 @@ const Button: FC<ButtonProps> = ({
     const isLink = link && link.trim() !== '';
 
     return isLink ? (
-        <Link href={link} className={classList} underline={false}>
+        <Link href={link} className={classList} underlineHover={false}>
             {children}
         </Link>
     ) : (
@@ -55,4 +60,4 @@ const Button: FC<ButtonProps> = ({
     );
 };
 
-export default Button;
+export default ButtonMolecule;

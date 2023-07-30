@@ -1,0 +1,54 @@
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+
+import * as HeaderStories from './Header.stories';
+
+<Meta of={HeaderStories} />
+
+# Header Component
+
+<Canvas of={HeaderStories.Default} />
+
+The `Header` component accepts a `menuItems` array and a `callToAction` object.
+
+## PayloadCMS
+
+From dashboard, navigate to `Global` > `Header`.
+
+### menuItems
+
+Menu items contain the following fields (these vary depending on which `Menu Item Type` is selected):
+
+-   `Menu Item Type` - select whether menu item is an internal/external
+    link or a submenu
+-   `Internal Link` - select site page to link to
+    -   `Override Page Name` - override site page name with custom label
+    -   `Custom Label` - input internal menu item's custom label
+-   `External Link` - input a valid external URL - `Label` - menu item's label
+-   `Submenu` - create nested menu item.
+    -   Contains same options as regular menu item, except for submenu option (one level of submenu is currently supported).
+
+<img
+    src='docs/header/menu-items.gif'
+    alt='walkthrough of how to set header menu items in PayloadCMS'
+/>
+
+<hr />
+
+### callToAction
+
+    - `Call To Action` - select the header's call to action button via the dropdown
+        - Content editors can select an existing CTA or create a new one by clicking the `+` sign to the right of the dropdown.
+        - See `Button` component [docs](?path=/docs/components-button--docs#buttondata) for a walkthrough on creating a Button in PayloadCMS.
+
+<hr />
+
+<img
+    src='docs/header/cta.gif'
+    alt='walkthrough of how to set header call to action in PayloadCMS'
+/>
+
+<br />
+
+### Props Table
+
+<ArgTypes />

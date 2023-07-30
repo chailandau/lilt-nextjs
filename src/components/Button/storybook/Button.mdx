@@ -1,0 +1,44 @@
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+
+import * as ButtonStories from './Button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button Component
+
+The `Button` component takes a `buttonData` object and renders it via the [Button Molecule](?path=/docs/molecules-button--docs).
+
+<Canvas of={ButtonStories.Default} />
+
+<br />
+
+## className
+
+Add an optional CSS class name.
+
+## buttonData
+
+### PayloadCMS
+
+From dashboard, navigate to `Content` > `Buttons`.
+
+Buttons contain the following fields (these vary depending on which `Link Type` is selected):
+
+-   `Label` - input button's label
+-   `Link Type` - select whether button link is internal or external
+-   `Internal Link` - select site page to link to
+-   `External Link` - input valid external URL
+-   `Color` - select button's color
+
+<img
+    src='docs/button/walkthrough.gif'
+    alt='walkthrough of creating and editing button in PayloadCMS'
+/>
+
+<br />
+<br />
+<br />
+
+### Props Table
+
+<ArgTypes />

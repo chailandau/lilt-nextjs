@@ -6,7 +6,7 @@ import { HeaderProps } from '../Header';
 import Menu from './Menu';
 import styles from './MobileNav.module.scss';
 
-import CallToAction from '@/components/CallToAction/CallToAction';
+import Button from '@/components/Button/Button';
 import Flex from '@/molecules/Flex/Flex';
 import useStore from '@/store/useStore';
 import { menuAnimations } from '@/utils/framer/animations';
@@ -38,7 +38,7 @@ const MobileNav: FC<HeaderProps> = ({ menuItems, callToAction }) => {
                         <Menu menuItems={menuItems} />
                         {callToAction && (
                             <Flex className={styles['mobile-btn']}>
-                                <CallToAction cta={callToAction} />
+                                <Button buttonData={callToAction} />
                             </Flex>
                         )}
                     </m.nav>

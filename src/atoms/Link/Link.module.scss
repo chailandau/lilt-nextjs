@@ -1,6 +1,6 @@
 .link {
     text-transform: uppercase;
-    &.underline {
+    &.underline-hover {
         padding: rem(14);
         margin: rem(-14);
         @include underlineSlideHover;

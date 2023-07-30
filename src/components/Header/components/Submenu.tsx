@@ -6,7 +6,7 @@ import styles from './Menu.module.scss';
 
 import { Header_MenuItems } from '@/api/graphqlTypes';
 import { MotionIcon } from '@/atoms/Icon/Icon';
-import Button from '@/molecules/Button/Button';
+import Button from '@/molecules/ButtonMolecule/ButtonMolecule';
 import useStore from '@/store/useStore';
 import { dropdownAnimations, iconFlip } from '@/utils/framer/animations';
 import LazyAnimatePresence from '@/utils/framer/LazyAnimatePresence';

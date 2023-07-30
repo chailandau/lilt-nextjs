@@ -1,8 +1,8 @@
 import { composeStory } from '@storybook/react';
 import { render, screen } from '@testing-library/react';
 
-import { buttonVariants } from './Button';
-import Meta, { Default } from './storybook/Button.stories';
+import { buttonMoleculeVariants } from './ButtonMolecule';
+import Meta, { Default } from './storybook/ButtonMolecule.stories';
 
 import {
     testAppliesClass,
@@ -13,39 +13,39 @@ import {
     testRenderText
 } from '@/utils/testHelpers';
 
-const Button = composeStory(Default, Meta);
+const ButtonMolecule = composeStory(Default, Meta);
 
-describe('Button', () => {
-    const buttonComponent = {
-        component: <Button />
+describe('Button Molecule', () => {
+    const buttonMolecule = {
+        component: <ButtonMolecule />
     };
     testRenderText({
-        ...buttonComponent,
+        ...buttonMolecule,
         role: 'button',
-        text: Button.args.children as string
+        text: ButtonMolecule.args.children as string
     });
     it('has default color', () => {
-        render(<Button variant={undefined} />);
+        render(<ButtonMolecule variant={undefined} />);
         expect(screen.getByRole('button')).toHaveClass('blue');
     });
     testPropOptions({
-        component: <Button />,
+        component: <ButtonMolecule />,
         propName: 'variant',
-        propOptions: buttonVariants,
+        propOptions: buttonMoleculeVariants,
         htmlTag: 'button'
     });
     it("renders 'link' correctly", () => {
-        render(<Button link='https://google.com' />);
+        render(<ButtonMolecule link='https://google.com' />);
         expect(screen.getByRole('link').getAttribute('href')).toBe(
             'https://google.com'
         );
     });
     it("renders 'button' correctly", () => {
-        render(<Button />);
+        render(<ButtonMolecule />);
         expect(screen.getByRole('button')).toBeDefined();
     });
-    testKeyDown({ ...buttonComponent, role: 'button' });
-    testAppliesClass({ ...buttonComponent, htmlTag: 'button' });
-    testAxeViolations(buttonComponent);
-    testMatchesSnapshot(buttonComponent);
+    testKeyDown({ ...buttonMolecule, role: 'button' });
+    testAppliesClass({ ...buttonMolecule, htmlTag: 'button' });
+    testAxeViolations(buttonMolecule);
+    testMatchesSnapshot(buttonMolecule);
 });

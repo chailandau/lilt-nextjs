@@ -34,6 +34,7 @@ const Menu: FC<MenuProps> = ({ menuItems, className = styles['menu'] }) => {
                     menuItem?.internalLink?.slug && (
                         <li key={menuItem?.id}>
                             <Link
+                                key={menuItem?.id}
                                 href={`${process.env.NEXT_PUBLIC_BASE_URL}/${menuItem.internalLink.slug}`}
                                 className={styles['menu-link']}
                                 onKeyDown={(e) => handleKeyDown(e)}
@@ -49,6 +50,7 @@ const Menu: FC<MenuProps> = ({ menuItems, className = styles['menu'] }) => {
                     menuItem?.externalLink && (
                         <li key={menuItem?.id}>
                             <Link
+                                key={menuItem?.id}
                                 href={menuItem.externalLink}
                                 className={styles['menu-link']}
                                 onKeyDown={(e) => handleKeyDown(e)}

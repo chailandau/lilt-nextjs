@@ -7,16 +7,16 @@ import Text from '@/atoms/Text/Text';
 const textAtom = <Text>This text is in a flex container</Text>;
 
 const meta: Meta<typeof Flex> = {
-    title: 'molecules/Flex',
+    title: 'Molecules/Flex',
     component: Flex,
     argTypes: {
         as: {
-            table: { defaultValue: { summary: 'div' } },
+            table: { defaultValue: { summary: 'div' } }
         }
     },
     parameters: {
         controls: {
-            exclude: ['children']
+            include: ['as', 'className']
         }
     }
 };

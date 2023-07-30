@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Heading, { headingColors } from '../Heading';
 
 const meta: Meta<typeof Heading> = {
-    title: 'atoms/Heading',
+    title: 'Atoms/Heading',
     component: Heading,
     argTypes: {
         size: {
@@ -14,6 +14,7 @@ const meta: Meta<typeof Heading> = {
             table: { defaultValue: { summary: 'h2' } }
         },
         color: {
+            control: 'select',
             options: headingColors,
             table: { defaultValue: { summary: 'green' } }
         }

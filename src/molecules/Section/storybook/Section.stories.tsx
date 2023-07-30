@@ -7,16 +7,16 @@ import Text from '@/atoms/Text/Text';
 const textAtom = <Text>This text is in a section</Text>;
 
 const meta: Meta<typeof Section> = {
-    title: 'molecules/Section',
+    title: 'Molecules/Section',
     component: Section,
     argTypes: {
         as: {
-            table: { defaultValue: { summary: 'section' } },
+            table: { defaultValue: { summary: 'section' } }
         }
     },
     parameters: {
         controls: {
-            exclude: ['children']
+            include: ['as', 'className']
         }
     }
 };
