@@ -1,38 +1,27 @@
 /** @jest-environment jsdom */
 
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, renderHook } from '@testing-library/react';
 
 import Header from '../../Header';
 import MenuToggle from '../MenuToggle';
 
 import { menuItems } from '@/__mocks__/Header.mock';
 import { mockUseMediaQuery } from '@/__mocks__/useMediaQuery.mock';
-import * as useStoreModule from '@/store/useStore';
+import useStore from '@/store/useStore';
 import { testAxeAndSnapshot } from '@/utils/testHelpers';
-
-jest.mock('@/store/useStore', () => ({
-    __esModule: true,
-    ...jest.requireActual('@/store/useStore')
-}));
 
 mockUseMediaQuery(false);
 
 describe('Menu Toggle', () => {
     it('opens navigation on click', async () => {
-        const setMenuOpen = jest.fn();
-
-        jest.spyOn(useStoreModule, 'default').mockReturnValue({
-            menuOpen: false,
-            setMenuOpen
-        });
+        renderHook(() => useStore());
 
         const { findByRole } = render(<Header menuItems={menuItems} />);
 
         const button = await findByRole('button');
 
-        fireEvent(button, new MouseEvent('click', { bubbles: true }));
+        fireEvent.click(button);
 
-        expect(setMenuOpen).toHaveBeenCalledWith(true);
         expect(button).toHaveClass('open');
     });
 
