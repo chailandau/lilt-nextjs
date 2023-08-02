@@ -3,11 +3,7 @@ import { composeStory } from '@storybook/react';
 import { semanticTags } from './Container';
 import Meta, { Default } from './storybook/Container.stories';
 
-import {
-    testAxeViolations,
-    testMatchesSnapshot,
-    testTags
-} from '@/utils/testHelpers';
+import { testAxeAndSnapshot, testTags } from '@/utils/testHelpers';
 
 const Container = composeStory(Default, Meta);
 
@@ -17,6 +13,5 @@ const ContainerComponent = {
 
 describe('Container', () => {
     testTags({ ...ContainerComponent, tags: semanticTags });
-    testAxeViolations(ContainerComponent);
-    testMatchesSnapshot(ContainerComponent);
+    testAxeAndSnapshot(ContainerComponent);
 });

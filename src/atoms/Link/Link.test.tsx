@@ -4,9 +4,8 @@ import { render, screen } from '@testing-library/react';
 import Meta, { Default } from './storybook/Link.stories';
 
 import {
-    testAxeViolations,
+    testAxeAndSnapshot,
     testKeyDown,
-    testMatchesSnapshot,
     testRenderText
 } from '@/utils/testHelpers';
 
@@ -27,6 +26,5 @@ describe('Link', () => {
         expect(screen.getByRole('link')).toHaveAttribute('href', '');
     });
     testKeyDown({ ...linkComponent, role: 'link' });
-    testAxeViolations(linkComponent);
-    testMatchesSnapshot(linkComponent);
+    testAxeAndSnapshot(linkComponent);
 });

@@ -6,9 +6,8 @@ import Meta, { Default } from './storybook/ButtonMolecule.stories';
 
 import {
     testAppliesClass,
-    testAxeViolations,
+    testAxeAndSnapshot,
     testKeyDown,
-    testMatchesSnapshot,
     testPropOptions,
     testRenderText
 } from '@/utils/testHelpers';
@@ -46,6 +45,5 @@ describe('Button Molecule', () => {
     });
     testKeyDown({ ...buttonMolecule, role: 'button' });
     testAppliesClass({ ...buttonMolecule, htmlTag: 'button' });
-    testAxeViolations(buttonMolecule);
-    testMatchesSnapshot(buttonMolecule);
+    testAxeAndSnapshot(buttonMolecule);
 });

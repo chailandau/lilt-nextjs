@@ -18,6 +18,7 @@ const MenuToggle = () => {
             as='button'
             className={classList}
             onClick={() => setMenuOpen(!menuOpen)}
+            ariaLabel={'menu toggle'}
         >
             <Container className={styles['menu-toggle-container']}>
                 <Container className={styles['menu-toggle-inner']}></Container>

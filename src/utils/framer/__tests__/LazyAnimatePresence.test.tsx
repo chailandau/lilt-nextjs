@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react';
 
-import { testAxeViolations, testMatchesSnapshot } from '../../testHelpers';
 import LazyAnimatePresence from '../LazyAnimatePresence';
+
+import { testAxeAndSnapshot } from '@/utils/testHelpers';
 
 const LazyAnimatePresenceHOC = () => (
     <LazyAnimatePresence>
@@ -9,15 +10,12 @@ const LazyAnimatePresenceHOC = () => (
     </LazyAnimatePresence>
 );
 
-const lazyAnimateComponent = {
-    component: <LazyAnimatePresenceHOC />
-};
+<LazyAnimatePresenceHOC />;
 
 describe('LazyAnimatePresence', () => {
     it('renders children inside LazyAnimatePresence component', () => {
         render(LazyAnimatePresenceHOC());
         expect(screen.getByText('Test')).toBeInTheDocument();
     });
-    testAxeViolations(lazyAnimateComponent);
-    testMatchesSnapshot(lazyAnimateComponent);
+    testAxeAndSnapshot({ component: <LazyAnimatePresenceHOC /> });
 });

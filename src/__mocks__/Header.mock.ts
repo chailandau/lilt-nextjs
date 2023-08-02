@@ -120,3 +120,38 @@ export const menuItemsInternalAndExternal = [
         submenuItems: []
     }
 ] as Header_MenuItems[];
+export const submenuItem = {
+    id: '64bde5496fa52aae7dedab65',
+    label: 'About',
+    linkType: 'submenu',
+    internalLink: {
+        id: '64a62399d9cb5a4115cd2265',
+        title: 'About Us',
+        slug: 'about-us'
+    },
+    externalLink: null,
+    submenuItems: [
+        {
+            id: '64bde5576fa52aae7dedab66',
+            label: null,
+            linkType: 'internal',
+            internalLink: {
+                id: '64a62399d9cb5a4115cd2265',
+                title: 'About Us',
+                slug: 'about-us'
+            },
+            externalLink: null
+        },
+        {
+            id: '64bde55e6fa52aae7dedab67',
+            label: null,
+            linkType: 'internal',
+            internalLink: {
+                id: '64a62383d9cb5a4115cd2255',
+                title: 'Our Tech',
+                slug: 'our-tech'
+            },
+            externalLink: null
+        }
+    ]
+} as Header_MenuItems;

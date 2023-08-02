@@ -11,8 +11,7 @@ import Meta, {
 } from './storybook/Heading.stories';
 
 import {
-    testAxeViolations,
-    testMatchesSnapshot,
+    testAxeAndSnapshot,
     testPropOptions,
     testTags
 } from '@/utils/testHelpers';
@@ -60,7 +59,6 @@ headingVariants.forEach(({ variant: Heading, text }) => {
             propOptions: headingColors,
             htmlTag: 'h2'
         });
-        testAxeViolations(headingComponent);
-        testMatchesSnapshot(headingComponent);
+        testAxeAndSnapshot(headingComponent);
     });
 });

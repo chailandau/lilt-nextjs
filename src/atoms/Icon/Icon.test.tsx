@@ -4,11 +4,7 @@ import { render } from '@testing-library/react';
 import { MotionIcon, iconColors, iconSizes } from './Icon';
 import Meta, { Default, Large, Medium } from './storybook/Icon.stories';
 
-import {
-    testAxeViolations,
-    testMatchesSnapshot,
-    testPropOptions
-} from '@/utils/testHelpers';
+import { testAxeAndSnapshot, testPropOptions } from '@/utils/testHelpers';
 
 const getIconInfo = (Variant: typeof Default) => ({
     variant: composeStory(Variant, Meta),
@@ -56,7 +52,6 @@ iconVariants.forEach(({ variant: Icon, size }) => {
             propOptions: iconColors,
             htmlTag: 'svg'
         });
-        testAxeViolations(iconComponent);
-        testMatchesSnapshot(iconComponent);
+        testAxeAndSnapshot(iconComponent);
     });
 });

@@ -21,15 +21,22 @@ export interface ContainerProps {
     onClick?: () => void;
     /** `ref */
     ref?: Ref<HTMLElement>;
+    /** Aria label */
+    ariaLabel?: string;
 }
 
 const Container: FC<ContainerProps> = ({
     children,
     as: ContainerTag = 'div',
     className,
-    onClick
+    onClick,
+    ariaLabel
 }) => (
-    <ContainerTag className={className} onClick={onClick}>
+    <ContainerTag
+        className={className}
+        onClick={onClick}
+        aria-label={ariaLabel}
+    >
         {children}
     </ContainerTag>
 );

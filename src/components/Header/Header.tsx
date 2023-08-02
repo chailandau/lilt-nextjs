@@ -15,6 +15,7 @@ import Link from '@/atoms/Link/Link';
 import Flex from '@/molecules/Flex/Flex';
 import Section from '@/molecules/Section/Section';
 import useStore from '@/store/useStore';
+import { useMediaQuery } from '@/utils/hooks/useMediaQuery';
 
 export interface HeaderProps {
     /* Menu items to display */
@@ -25,6 +26,8 @@ export interface HeaderProps {
 const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
     const { menuOpen } = useStore();
     const [headerEl, setHeaderEl] = useState<HTMLElement | null>(null);
+
+    const isLaptop = useMediaQuery('(min-width: 992px)');
 
     useEffect(() => {
         setHeaderEl(
@@ -47,10 +50,12 @@ const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
                 </Link>
 
                 <Flex className={styles['right-content']}>
-                    <DesktopNav
-                        menuItems={menuItems}
-                        callToAction={callToAction}
-                    />
+                    {isLaptop && (
+                        <DesktopNav
+                            menuItems={menuItems}
+                            callToAction={callToAction}
+                        />
+                    )}
                     {callToAction && (
                         <Button
                             buttonData={callToAction}
@@ -59,8 +64,12 @@ const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
                     )}
                     <MenuToggle />
                 </Flex>
-
-                <MobileNav menuItems={menuItems} callToAction={callToAction} />
+                {!isLaptop && (
+                    <MobileNav
+                        menuItems={menuItems}
+                        callToAction={callToAction}
+                    />
+                )}
             </Section>
         </>
     );

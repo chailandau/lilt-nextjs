@@ -3,12 +3,9 @@ import { render, screen } from '@testing-library/react';
 
 import Meta, { Default } from './storybook/Section.stories';
 
-import { testAxeViolations, testMatchesSnapshot } from '@/utils/testHelpers';
+import { testAxeAndSnapshot } from '@/utils/testHelpers';
 
 const Section = composeStory(Default, Meta);
-const sectionComponent = {
-    component: <Section />
-};
 
 describe('Section', () => {
     it('defaults to section tag', () => {
@@ -23,6 +20,5 @@ describe('Section', () => {
             screen.getByText('This text is in a section').closest('section')
         ).toHaveClass('section');
     });
-    testAxeViolations(sectionComponent);
-    testMatchesSnapshot(sectionComponent);
+    testAxeAndSnapshot({ component: <Section /> });
 });

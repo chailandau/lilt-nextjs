@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react';
+import { act, fireEvent, renderHook } from '@testing-library/react';
 
 import { useMediaQuery } from '../useMediaQuery';
 
@@ -33,15 +33,16 @@ describe('useMediaQuery with window', () => {
     it('updates when window is resized', () => {
         mockMatchMedia(true);
 
-        const { result, rerender } = renderHook(() => mediaQuery());
+        const { result } = renderHook(() => mediaQuery());
 
         expect(result.current).toBe(true);
 
-        mockMatchMedia(false);
+        act(() => {
+            mockMatchMedia(false);
+            fireEvent(window, new Event('resize'));
+        });
 
-        rerender();
-
-        expect(result.current).toBe(true);
+        expect(result.current).toBe(false);
     });
 });
 

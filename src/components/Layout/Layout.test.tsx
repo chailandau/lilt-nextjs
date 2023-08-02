@@ -1,6 +1,5 @@
 import {
-    testAxeViolations,
-    testMatchesSnapshot,
+    testAxeAndSnapshot,
     testRenderChildren
 } from '../../utils/testHelpers';
 
@@ -18,6 +17,5 @@ const layoutComponent = {
 
 describe('Layout', () => {
     testRenderChildren(layoutComponent);
-    testAxeViolations(layoutComponent);
-    testMatchesSnapshot(layoutComponent);
+    testAxeAndSnapshot(layoutComponent);
 });

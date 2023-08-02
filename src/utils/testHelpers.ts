@@ -154,3 +154,13 @@ export const testKeyDown = ({ component, role }: TestRole): void => {
         expect(eventObject.key).toBe('Enter');
     });
 };
+
+/**
+ * Executes both `testAxeViolations` and `testMatchesSnapshot` at once
+ *
+ * @param component - Component to test.
+ */
+export const testAxeAndSnapshot = ({ component }: TestComponent) => {
+    testAxeViolations({ component });
+    testMatchesSnapshot({ component });
+};

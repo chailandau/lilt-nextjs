@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu Toggle matches snapshot 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="menu toggle"
+    class="menu-toggle"
+  >
+    <div
+      class="menu-toggle-container"
+    >
+      <div
+        class="menu-toggle-inner"
+      />
+    </div>
+  </button>
+</DocumentFragment>
+`;

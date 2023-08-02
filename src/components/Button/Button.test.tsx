@@ -5,7 +5,7 @@ import {
     buttonDataInternal,
     buttonDataNoLabel,
     buttonDataNoLink
-} from '../__mocks__/Button.mock';
+} from '../../__mocks__/Button.mock';
 
 import Button from './Button';
 
