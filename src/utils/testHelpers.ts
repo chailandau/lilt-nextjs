@@ -108,28 +108,7 @@ export const testRenderChildren = ({ component }: TestComponent): void => {
         expect(getByText('Test')).toBeDefined();
     });
 };
-/**
- * Tests component to ensure it does not contain any axe violations.
- *
- * @param component - Component to test.
- */
-export const testAxeViolations = ({ component }: TestComponent): void => {
-    it('does not have axe violations', async () => {
-        const { container } = render(component);
-        expect(await axe(container)).toHaveNoViolations();
-    });
-};
-/**
- * Tests that component matches snapshot.
- *
- * @param component - Component to test.
- */
-export const testMatchesSnapshot = ({ component }: TestComponent): void => {
-    it('matches snapshot', () => {
-        const { asFragment } = render(component);
-        expect(asFragment()).toMatchSnapshot();
-    });
-};
+
 /**
  * Tests that keydown event is fired when key is pressed.
  *
@@ -145,8 +124,8 @@ export const testKeyDown = ({ component, role }: TestRole): void => {
                 onKeyDown: onKeyDownMock
             })
         );
-        const linkElement = getByRole(role);
-        fireEvent.keyDown(linkElement, { key: 'Enter', code: 13 });
+        const element = getByRole(role);
+        fireEvent.keyDown(element, { key: 'Enter', code: 13 });
         expect(onKeyDownMock).toHaveBeenCalledTimes(1);
 
         const eventObject = onKeyDownMock.mock.calls[0][0];
@@ -156,11 +135,17 @@ export const testKeyDown = ({ component, role }: TestRole): void => {
 };
 
 /**
- * Executes both `testAxeViolations` and `testMatchesSnapshot` at once
+ * Tests that component matches snapshot and does not have axe violations.
  *
  * @param component - Component to test.
  */
 export const testAxeAndSnapshot = ({ component }: TestComponent) => {
-    testAxeViolations({ component });
-    testMatchesSnapshot({ component });
+    it('matches snapshot', () => {
+        const { asFragment } = render(component);
+        expect(asFragment()).toMatchSnapshot();
+    });
+    it('does not have axe violations', async () => {
+        const { container } = render(component);
+        expect(await axe(container)).toHaveNoViolations();
+    });
 };

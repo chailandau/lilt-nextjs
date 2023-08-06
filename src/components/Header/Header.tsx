@@ -15,7 +15,7 @@ import Link from '@/atoms/Link/Link';
 import Flex from '@/molecules/Flex/Flex';
 import Section from '@/molecules/Section/Section';
 import useStore from '@/store/useStore';
-import { useMediaQuery } from '@/utils/hooks/useMediaQuery';
+import { laptopQuery, useMediaQuery } from '@/utils/hooks/useMediaQuery';
 
 export interface HeaderProps {
     /* Menu items to display */
@@ -24,16 +24,21 @@ export interface HeaderProps {
     callToAction?: ButtonType | null;
 }
 const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
-    const { menuOpen } = useStore();
+    const isLaptop = useMediaQuery(laptopQuery);
+
+    const { menuOpen, setMenuOpen } = useStore();
     const [headerEl, setHeaderEl] = useState<HTMLElement | null>(null);
-
-    const isLaptop = useMediaQuery('(min-width: 992px)');
-
     useEffect(() => {
         setHeaderEl(
             document.querySelector(`.${styles['header']}`) as HTMLElement
         );
     }, []);
+
+    useEffect(() => {
+        if (isLaptop) {
+            setMenuOpen(false);
+        }
+    }, [isLaptop]);
 
     return (
         <>
@@ -64,7 +69,7 @@ const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
                     )}
                     <MenuToggle />
                 </Flex>
-                {!isLaptop && (
+                {!isLaptop && menuOpen && (
                     <MobileNav
                         menuItems={menuItems}
                         callToAction={callToAction}

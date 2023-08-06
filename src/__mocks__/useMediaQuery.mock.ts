@@ -1,5 +1,13 @@
-export const mockUseMediaQuery = (bool: boolean) => {
-    jest.mock('@/utils/hooks/useMediaQuery', () => ({
-        useMediaQuery: jest.fn(() => bool)
+export const mockIsLaptop = (bool: boolean) => {
+    window.matchMedia = jest.fn().mockImplementation(() => ({
+        matches: bool,
+        media: 'screen and (min-width: 992px)',
+        onchange: null,
+        addListener: jest.fn(),
+        removeListener: jest.fn(),
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+        dispatchEvent: jest.fn()
     }));
+    window.dispatchEvent(new Event('resize'));
 };

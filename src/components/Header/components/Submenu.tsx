@@ -10,7 +10,7 @@ import Button from '@/molecules/ButtonMolecule/ButtonMolecule';
 import useStore from '@/store/useStore';
 import { dropdownAnimations, iconFlip } from '@/utils/framer/animations';
 import LazyAnimatePresence from '@/utils/framer/LazyAnimatePresence';
-import { useMediaQuery } from '@/utils/hooks/useMediaQuery';
+import { laptopQuery, useMediaQuery } from '@/utils/hooks/useMediaQuery';
 
 interface SubmenuProps {
     /* Menu item containing submenu */
@@ -18,16 +18,14 @@ interface SubmenuProps {
 }
 
 const Submenu: FC<SubmenuProps> = ({ menuItem }) => {
+    const isLaptop = useMediaQuery(laptopQuery);
+
     const { openSubmenu, setOpenSubmenu } = useStore();
 
     const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
-
-    const isLaptop = useMediaQuery('screen and (min-width: 992px)');
-
     useEffect(() => {
         setIsSubmenuOpen(openSubmenu === menuItem?.id);
     }, [openSubmenu]);
-
     useEffect(() => {
         if (isLaptop) {
             setOpenSubmenu(null);
@@ -50,9 +48,9 @@ const Submenu: FC<SubmenuProps> = ({ menuItem }) => {
             handleSubmenu();
         } else if (e.key === 'Tab' && e.shiftKey) {
             setOpenSubmenu(null);
-        } else {
-            return;
         }
+
+        return;
     };
     const handleMobileClick = () => {
         if (!isLaptop) {

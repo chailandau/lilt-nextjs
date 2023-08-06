@@ -2,7 +2,7 @@ import { addMocksToSchema } from '@graphql-tools/mock';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 import { graphql } from 'graphql';
 
-import { mockDefaults } from '../../__mocks__/graphqlQueries.mocks';
+import { mockDefaults } from '../../__mocks__/graphqlQueries.mock';
 import * as graphqlQueries from '../graphqlQueries';
 import * as graphqlSchema from '../graphqlSchema.gql';
 

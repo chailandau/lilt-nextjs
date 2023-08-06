@@ -32,3 +32,4 @@ export const useMediaQuery = (mediaQueryString: string): MediaQueryMatches => {
 
     return matches;
 };
+export const laptopQuery = 'screen and (min-width: 992px)';
