@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`graphqlQueries mocks HEADER_QUERY successfully 1`] = `
+{
+  "data": {
+    "Header": {
+      "callToAction": {
+        "color": "blue",
+        "externalLink": "Hello World",
+        "id": "Hello World",
+        "internalLink": {
+          "id": "Hello World",
+          "slug": "Hello World",
+          "title": "Hello World",
+        },
+        "label": "Hello World",
+        "linkType": "external",
+      },
+      "menuItems": [
+        {
+          "externalLink": "Hello World",
+          "id": "Hello World",
+          "internalLink": {
+            "id": "Hello World",
+            "slug": "Hello World",
+            "title": "Hello World",
+          },
+          "label": "Hello World",
+          "linkType": "external",
+          "submenuItems": [
+            {
+              "externalLink": "Hello World",
+              "id": "Hello World",
+              "internalLink": {
+                "id": "Hello World",
+                "slug": "Hello World",
+                "title": "Hello World",
+              },
+              "label": "Hello World",
+              "linkType": "external",
+            },
+            {
+              "externalLink": "Hello World",
+              "id": "Hello World",
+              "internalLink": {
+                "id": "Hello World",
+                "slug": "Hello World",
+                "title": "Hello World",
+              },
+              "label": "Hello World",
+              "linkType": "external",
+            },
+          ],
+        },
+        {
+          "externalLink": "Hello World",
+          "id": "Hello World",
+          "internalLink": {
+            "id": "Hello World",
+            "slug": "Hello World",
+            "title": "Hello World",
+          },
+          "label": "Hello World",
+          "linkType": "external",
+          "submenuItems": [
+            {
+              "externalLink": "Hello World",
+              "id": "Hello World",
+              "internalLink": {
+                "id": "Hello World",
+                "slug": "Hello World",
+                "title": "Hello World",
+              },
+              "label": "Hello World",
+              "linkType": "external",
+            },
+            {
+              "externalLink": "Hello World",
+              "id": "Hello World",
+              "internalLink": {
+                "id": "Hello World",
+                "slug": "Hello World",
+                "title": "Hello World",
+              },
+              "label": "Hello World",
+              "linkType": "external",
+            },
+          ],
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`graphqlQueries mocks PAGES_QUERY successfully 1`] = `
+{
+  "data": {
+    "Pages": {
+      "docs": [
+        {
+          "id": "Hello World",
+          "slug": "Hello World",
+          "title": "Hello World",
+        },
+        {
+          "id": "Hello World",
+          "slug": "Hello World",
+          "title": "Hello World",
+        },
+      ],
+    },
+  },
+}
+`;

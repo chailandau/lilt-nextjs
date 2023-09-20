@@ -1,0 +1,21 @@
+.sm {
+    width: rem(16);
+    height: rem(16);
+}
+.md {
+    width: rem(24);
+    height: rem(24);
+}
+.lg {
+    width: rem(32);
+    height: rem(32);
+}
+.gray {
+    fill: color(neutral, mdGray);
+}
+.green {
+    fill: color(neon, green);
+}
+.blue {
+    fill: color(neon, blue);
+}

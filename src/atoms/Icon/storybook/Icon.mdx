@@ -1,0 +1,35 @@
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+
+import * as IconStories from './Icon.stories';
+
+<Meta of={IconStories} />
+
+# Icon Atom
+
+<Canvas of={IconStories.Default} />
+
+<br />
+
+## id
+
+The icon `id` is used to select which icon to display.
+
+## size
+
+Select a size for the `Icon` atom. If no size is selected, size will default to `sm`.
+
+## color
+
+Select a color for the `Icon` atom's fill. If no color is selected, color will default to `gray`.
+
+## ref
+
+An optional ref that is forwarded to the underlying SVG element.
+
+<br />
+<br />
+<br />
+
+## Props Table
+
+<ArgTypes />

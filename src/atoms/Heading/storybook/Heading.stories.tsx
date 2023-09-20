@@ -3,21 +3,22 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Heading, { headingColors } from '../Heading';
 
 const meta: Meta<typeof Heading> = {
-    title: 'atoms/Heading',
+    title: 'Atoms/Heading',
     component: Heading,
     argTypes: {
         size: {
             control: 'select',
-            table: { defaultValue: { summary: 'md' } },
+            table: { defaultValue: { summary: 'md' } }
         },
         as: {
-            table: { defaultValue: { summary: 'h2' } },
+            table: { defaultValue: { summary: 'h2' } }
         },
         color: {
+            control: 'select',
             options: headingColors,
-            table: { defaultValue: { summary: 'green' } },
+            table: { defaultValue: { summary: 'green' } }
         }
-    },
+    }
 };
 
 export default meta;
@@ -29,8 +30,8 @@ export const Default: Story = {
         as: 'h2',
         size: 'md',
         children: 'Default heading',
-        color: 'green',
-    },
+        color: 'green'
+    }
 };
 
 export const ExtraSmall: Story = {
@@ -38,8 +39,8 @@ export const ExtraSmall: Story = {
         as: 'h2',
         size: 'xs',
         children: 'Extra small heading',
-        color: 'green',
-    },
+        color: 'green'
+    }
 };
 
 export const Small: Story = {
@@ -47,8 +48,8 @@ export const Small: Story = {
         as: 'h2',
         size: 'sm',
         children: 'Small heading',
-        color: 'green',
-    },
+        color: 'green'
+    }
 };
 
 export const Large: Story = {
@@ -56,8 +57,8 @@ export const Large: Story = {
         as: 'h2',
         size: 'lg',
         children: 'Large heading',
-        color: 'green',
-    },
+        color: 'green'
+    }
 };
 
 export const ExtraLarge: Story = {
@@ -65,6 +66,6 @@ export const ExtraLarge: Story = {
         as: 'h2',
         size: 'xl',
         children: 'Extra large heading',
-        color: 'green',
-    },
+        color: 'green'
+    }
 };

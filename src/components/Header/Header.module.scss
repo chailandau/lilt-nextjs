@@ -1,0 +1,44 @@
+.header {
+    @include paddingY(24);
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(40);
+    position: relative;
+    background-color: color(dark, blue);
+    &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 101;
+        background: color(dark, blue);
+    }
+    .logo,
+    .right-content {
+        z-index: 101;
+    }
+    .logo {
+        width: rem(250);
+        padding: unset;
+        &:before {
+            display: none;
+        }
+    }
+    .right-content {
+        align-items: center;
+        gap: rem(24);
+        @include laptop {
+            gap: rem(44);
+        }
+        .tablet-btn {
+            display: none;
+            text-align: center;
+            @include tablet {
+                display: block;
+            }
+        }
+    }
+}

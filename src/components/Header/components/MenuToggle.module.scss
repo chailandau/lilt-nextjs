@@ -1,0 +1,73 @@
+.menu-toggle {
+    padding: rem(14);
+    margin: rem(-4) rem(-14) 0 rem(-14);
+    display: flex;
+    align-items: center;
+    @include transition(opacity);
+    @include laptop {
+        display: none;
+    }
+    @include hover {
+        opacity: 0.85;
+    }
+    &-container {
+        width: rem(36);
+        height: rem(24);
+        position: relative;
+    }
+    &-inner {
+        top: 50%;
+        transition: all 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        transition-duration: 0.075s;
+        &,
+        &:before,
+        &:after {
+            width: rem(36);
+            height: rem(2);
+            background-color: color(neutral, white);
+            border-radius: rem(1);
+            position: absolute;
+        }
+        &:before,
+        &:after {
+            content: '';
+            display: block;
+        }
+        &:before {
+            top: rem(-10);
+            transition:
+                top 0.075s 0.12s ease,
+                opacity 0.075s ease;
+        }
+        &:after {
+            bottom: rem(-10);
+            transition:
+                bottom 0.075s 0.12s ease,
+                transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+    }
+
+    &.open {
+        .menu-toggle-inner {
+            transform: rotate(45deg);
+            transition-delay: 0.12s;
+            transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+            &:before {
+                top: 0;
+                opacity: 0;
+                transition:
+                    top 0.075s ease,
+                    opacity 0.075s 0.12s ease;
+            }
+
+            &:after {
+                bottom: 0;
+                transform: rotate(-90deg);
+                transition:
+                    bottom 0.075s ease,
+                    transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+        }
+    }
+}

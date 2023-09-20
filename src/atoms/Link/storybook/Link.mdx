@@ -1,0 +1,37 @@
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+
+import * as LinkStories from './Link.stories';
+
+<Meta of={LinkStories} />
+
+# Link Atom
+
+The `Link` atom wraps the `next/link` component. There are lots of goodies built in, like prefetching. Read more about it [here](https://nextjs.org/docs/pages/api-reference/components/link).
+
+<Canvas of={LinkStories.Default} />
+
+<br />
+
+## children
+
+Text is supplied as a child to the `Link` atom.
+
+## href
+
+The link destination.
+
+## className
+
+Add an optional CSS class name.
+
+## underlineHover
+
+Adds an underline effect on hover. Defaults to `true`.
+
+<br />
+<br />
+<br />
+
+## Props Table
+
+<ArgTypes />

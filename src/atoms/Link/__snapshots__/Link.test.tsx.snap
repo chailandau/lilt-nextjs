@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex"
+  >
+    <a
+      class="link underline-hover"
+      href="/"
+      rel=""
+      target=""
+    >
+      This is a link
+    </a>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Flex matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex"
+  >
+    <p
+      class="text"
+    >
+      This text is in a flex container
+    </p>
+  </div>
+</DocumentFragment>
+`;

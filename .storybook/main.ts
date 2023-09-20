@@ -12,12 +12,13 @@ const config: StorybookConfig = {
   addons: [
     "@storybook/addon-essentials",
     "storybook-css-modules-preset",
-    '@storybook/addon-styling',
+    '@storybook/addon-styling'
   ],
   docs: {
     autodocs: 'tag',
     defaultName: 'Docs',
   },
+  staticDirs: ['../public', './public'],
 
 };
 

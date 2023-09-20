@@ -1,0 +1,35 @@
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+
+import * as ButtonMoleculeStories from './ButtonMolecule.stories';
+
+<Meta of={ButtonMoleculeStories} />
+
+# Button Molecule
+
+<Canvas of={ButtonMoleculeStories.Default} />
+
+<br />
+
+## children
+
+Text is supplied as a child to the `Button` molecule.
+
+## color
+
+Controls the color of the `Button` molecule.
+
+## link
+
+If the link prop is not empty, the `Button` will render as an `a` tag. Otherwise, it will default to a `button` tag.
+
+## onClick
+
+If there is no link and the `onClick` prop is supplied, it will be called when the `Button` is clicked.
+
+<br />
+<br />
+<br />
+
+## Props Table
+
+<ArgTypes />

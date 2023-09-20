@@ -1,38 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Flex matches snapshot 1`] = `
-<div
-  style={
-    {
-      "display": "flex",
-      "maxWidth": "590px",
-    }
-  }
->
+exports[`Image matches snapshot 1`] = `
+<DocumentFragment>
   <div
-    className="flex container border"
+    style="display: flex; max-width: 590px;"
   >
-    <img
-      alt="Camo tents outdoors next to table with laser tag equipment"
-      data-nimg="1"
-      decoding="async"
-      fetchpriority="high"
-      height={40}
-      onError={[Function]}
-      onLoad={[Function]}
-      src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
-      srcSet="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
-      style={
-        {
-          "backgroundImage": "url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http%3A//www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cfilter id='b' color-interpolation-filters='sRGB'%3E%3CfeGaussianBlur stdDeviation='20'/%3E%3C/filter%3E%3Cimage preserveAspectRatio='none' filter='url(%23b)' x='0' y='0' height='100%25' width='100%25' href='data:image/png;base64,imagedata'/%3E%3C/svg%3E")",
-          "backgroundPosition": "50% 50%",
-          "backgroundRepeat": "no-repeat",
-          "backgroundSize": "cover",
-          "color": "transparent",
-        }
-      }
-      width={40}
-    />
+    <div
+      class="flex container border"
+    >
+      <img
+        alt="Camo tents outdoors next to table with laser tag equipment"
+        data-nimg="1"
+        decoding="async"
+        fetchpriority="high"
+        height="40"
+        src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+        srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+        style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+        width="40"
+      />
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;

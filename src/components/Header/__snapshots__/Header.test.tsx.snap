@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header DesktopNav matches snapshot 1`] = `
+<DocumentFragment>
+  <nav
+    class="flex desktop-nav"
+  >
+    <ul
+      class="menu"
+    >
+      <li>
+        <a
+          class="link underline-hover menu-link"
+          href="/booking"
+          rel=""
+          target=""
+        >
+          Booking
+        </a>
+      </li>
+      <li>
+        <a
+          class="link underline-hover menu-link"
+          href="/events"
+          rel=""
+          target=""
+        >
+          Events
+        </a>
+      </li>
+      <li>
+        <a
+          class="link underline-hover menu-link"
+          href="/schools-camps"
+          rel=""
+          target=""
+        >
+          Schools & Camps
+        </a>
+      </li>
+      <li>
+        <button
+          class="button link submenu-btn"
+        >
+          About
+          <svg
+            class="gray sm"
+            style="transform: none;"
+          >
+            <use
+              href="/icons/icon-sprites.svg#caret"
+            />
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`Header Menu Toggle matches snapshot 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="menu toggle"
+    class="menu-toggle open"
+  >
+    <div
+      class="menu-toggle-container"
+    >
+      <div
+        class="menu-toggle-inner"
+      />
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Header Menu matches snapshot 1`] = `
+<DocumentFragment>
+  <ul
+    class="menu"
+  >
+    <li>
+      <a
+        class="link underline-hover menu-link"
+        href="/booking"
+        rel=""
+        target=""
+      >
+        Booking
+      </a>
+    </li>
+    <li>
+      <a
+        class="link underline-hover menu-link"
+        href="/events"
+        rel=""
+        target=""
+      >
+        Events
+      </a>
+    </li>
+    <li>
+      <a
+        class="link underline-hover menu-link"
+        href="/schools-camps"
+        rel=""
+        target=""
+      >
+        Schools & Camps
+      </a>
+    </li>
+    <li>
+      <button
+        class="button link submenu-btn"
+      >
+        About
+        <svg
+          class="gray sm"
+        >
+          <use
+            href="/icons/icon-sprites.svg#caret"
+          />
+        </svg>
+      </button>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`Header Mobile Nav matches snapshot 1`] = `
+<DocumentFragment>
+  <nav
+    class="mobile-nav"
+    style="opacity: 0; height: 0px; transform: translateY(-100%) translateZ(0);"
+  >
+    <ul
+      class="menu"
+    >
+      <li>
+        <a
+          class="link underline-hover menu-link"
+          href="/booking"
+          rel=""
+          target=""
+        >
+          Booking
+        </a>
+      </li>
+      <li>
+        <a
+          class="link underline-hover menu-link"
+          href="/events"
+          rel=""
+          target=""
+        >
+          Events
+        </a>
+      </li>
+      <li>
+        <a
+          class="link underline-hover menu-link"
+          href="/schools-camps"
+          rel=""
+          target=""
+        >
+          Schools & Camps
+        </a>
+      </li>
+      <li>
+        <button
+          class="button link submenu-btn"
+        >
+          About
+          <svg
+            class="gray sm"
+            style="transform: none;"
+          >
+            <use
+              href="/icons/icon-sprites.svg#caret"
+            />
+          </svg>
+        </button>
+        <div
+          class="submenu"
+          style="opacity: 0; transform: translateX(0px) translateY(15%) translateZ(0);"
+        >
+          <ul
+            class="menu"
+          >
+            <li>
+              <a
+                class="link underline-hover menu-link"
+                href="/about-us"
+                rel=""
+                target=""
+              >
+                About Us
+              </a>
+            </li>
+            <li>
+              <a
+                class="link underline-hover menu-link"
+                href="/our-tech"
+                rel=""
+                target=""
+              >
+                Our Tech
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;

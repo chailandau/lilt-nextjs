@@ -1,7 +1,7 @@
 name: Storybook Visual Regression Testing
 on:
     pull_request:
-        branches: "main"
+        branches: 'main'
 
 permissions:
     pages: write
@@ -17,7 +17,7 @@ jobs:
             - name: Setup node from node version file
               uses: actions/setup-node@v3
               with:
-                  node-version: "16"
+                  node-version: '16'
 
             - name: Install reg-cli
               run: yarn global add reg-cli
@@ -57,7 +57,7 @@ jobs:
                       | View report | https://chailandau.github.io/lilt-nextjs/ |
                       |---|---|
 
-                      <em>If visual regressions are as expected, run <code>yarn loki:update</code> on local and push up.</em>
+                      <em>If visual regressions are as expected, run <code>yarn loki:update</code> and then <code>yarn reg-cli:update</code> twice on local and push up.</em>
 
             - name: VRT no errors - Deploy Success Comment
               uses: mshick/add-pr-comment@v2

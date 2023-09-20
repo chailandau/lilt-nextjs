@@ -67,8 +67,8 @@ a {
     text-decoration: none;
     cursor: pointer;
 
-    &:hover {
-        color: #000;
+    @include hover {
+        color: unset;
         text-decoration: none;
     }
 }

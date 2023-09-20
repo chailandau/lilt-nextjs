@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Framer animations dropdownAnimations matches snapshot 1`] = `[Function]`;
+
+exports[`Framer animations iconFlip matches snapshot 1`] = `
+{
+  "closed": {
+    "rotate": 0,
+    "transition": {
+      "duration": 0.25,
+      "type": "spring",
+    },
+  },
+  "open": {
+    "rotate": 180,
+    "transition": {
+      "duration": 0.25,
+      "type": "spring",
+    },
+  },
+}
+`;
+
+exports[`Framer animations menuAnimations matches snapshot 1`] = `
+{
+  "closed": {
+    "height": 0,
+    "opacity": 0,
+    "transition": {
+      "delay": 0.15,
+      "length": 1,
+    },
+    "y": "-100%",
+  },
+  "open": {
+    "height": "100vh",
+    "opacity": 1,
+    "transition": {
+      "duration": 0.4,
+      "type": "spring",
+    },
+    "y": 0,
+  },
+}
+`;
+
+exports[`dropdownAnimations returns correct animation when laptop is false 1`] = `
+{
+  "closed": {
+    "opacity": 0,
+    "transition": {
+      "duration": 0.25,
+    },
+    "x": 0,
+    "y": "15%",
+  },
+  "open": {
+    "opacity": 1,
+    "transition": {
+      "duration": 0.25,
+      "type": "spring",
+    },
+    "x": 0,
+    "y": 0,
+  },
+}
+`;
+
+exports[`dropdownAnimations returns correct animation when laptop is true 1`] = `
+{
+  "closed": {
+    "opacity": 0,
+    "transition": {
+      "duration": 0.25,
+    },
+    "x": "calc(-50% - 6px)",
+    "y": "15%",
+  },
+  "open": {
+    "opacity": 1,
+    "transition": {
+      "duration": 0.25,
+      "type": "spring",
+    },
+    "x": "calc(-50% - 6px)",
+    "y": 0,
+  },
+}
+`;

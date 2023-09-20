@@ -1,0 +1,6 @@
+.desktop-nav {
+    display: none;
+    @include laptop {
+        display: block;
+    }
+}

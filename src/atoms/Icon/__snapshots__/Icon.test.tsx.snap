@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lg matches snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    class="gray lg"
+  >
+    <use
+      href="/icons/icon-sprites.svg#caret"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`md matches snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    class="gray md"
+  >
+    <use
+      href="/icons/icon-sprites.svg#caret"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`sm matches snapshot 1`] = `
+<DocumentFragment>
+  <svg
+    class="gray sm"
+  >
+    <use
+      href="/icons/icon-sprites.svg#caret"
+    />
+  </svg>
+</DocumentFragment>
+`;

@@ -9,17 +9,23 @@ const config: CodegenConfig = {
     documents: ['./src/**/*.{ts,tsx}'],
     ignoreNoDocuments: true,
     generates: {
-        './src/graphqlTypes.ts': {
+        './src/api/graphqlTypes.ts': {
             plugins: ['typescript', 'typescript-operations'],
             config: {
                 enumsAsTypes: true,
                 futureProofEnums: true
+            },
+            hooks: {
+                afterOneFileWrite: 'eslint --fix'
             }
         },
-    },
-    hooks: {
-        afterAllFileWrite: 'eslint --fix',
-    },
+        './src/api/graphqlSchema.gql': {
+            plugins: ['schema-ast'],
+            config: {
+                includeDirectives: true
+            }
+        }
+    }
 };
 
 export default config;

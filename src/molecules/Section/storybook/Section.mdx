@@ -1,0 +1,25 @@
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+
+import * as SectionStories from './Section.stories';
+
+<Meta of={SectionStories} />
+
+# Section Molecule
+
+The `Section` molecule is a `Flex` molecule that has uniform spacing. It is meant to wrap each section of the site to keep it consistent.
+
+<Canvas of={SectionStories.Default} />
+
+## as
+
+If the `as` prop is not specified, the tag will default to `section`.
+
+For more information, see [Flex molecule](?path=/docs/molecules-flex--docs) and [Container atom](?path=/docs/atoms-container--docs).
+
+<br />
+<br />
+<br />
+
+## Props Table
+
+<ArgTypes />

@@ -1,0 +1,159 @@
+.menu {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: rem(64);
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    @include laptop {
+        gap: rem(44);
+        flex-direction: row;
+    }
+    li {
+        display: flex;
+        position: relative;
+        width: 100%;
+        flex-direction: column;
+        @include laptop {
+            display: block;
+            width: auto;
+        }
+        &:before {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            top: unset;
+            bottom: rem(-30);
+            z-index: -1;
+            background-color: color(neutral, mdGray);
+            transform: unset;
+            @include laptop {
+                display: none;
+            }
+        }
+        &:last-child {
+            &:before {
+                display: none;
+            }
+        }
+        .menu-link,
+        .submenu-btn {
+            display: flex;
+            @include font(24, 28);
+            justify-content: space-between;
+            width: auto;
+            @include laptop {
+                @include font(16, 20);
+                justify-content: center;
+                text-align: center;
+                @include paddingX(20);
+            }
+            &:before {
+                display: none;
+                width: calc(100% - rem(40));
+                left: rem(20);
+                @include laptop {
+                    display: block;
+                }
+            }
+            ~ .submenu {
+                margin-top: rem(24);
+                padding: rem(24);
+                @include laptop {
+                    position: absolute;
+                    padding: rem(20);
+                    margin-top: rem(12);
+                    width: rem(160);
+                    left: calc(50% - 6px);
+                    transform: translateX(calc(-50% - 6px));
+                }
+                &:before {
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    background: color(dark, blue);
+                    border: 1px solid color(neon, blue);
+                    border-radius: rem(20);
+                    @include laptop {
+                        border-radius: rem(10);
+                    }
+                }
+                &:after {
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: rem(8);
+                    left: rem(8);
+                    z-index: -2;
+                    border: 1px solid color(neon, green);
+                    border-radius: rem(24);
+                    @include laptop {
+                        border-radius: rem(14);
+                        top: rem(6);
+                        left: rem(6);
+                    }
+                }
+                ul {
+                    display: block;
+                }
+                li {
+                    text-align: center;
+                    &:before {
+                        bottom: rem(-20);
+                    }
+                    & + li {
+                        margin-top: rem(42);
+                        @include laptop {
+                            margin-top: rem(20);
+                        }
+                    }
+                    @include laptop {
+                        &:before {
+                            display: block;
+                            bottom: rem(-4);
+                        }
+                        &:last-child {
+                            &:before {
+                                display: none;
+                            }
+                        }
+                    }
+                    .menu-link {
+                        @include laptop {
+                            @include marginX('auto');
+                            transition: color 0.25s ease-in-out;
+                        }
+                        @include hover {
+                            @include laptop {
+                                color: color(neon, green);
+                                &:before {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .submenu-btn {
+            border-radius: unset;
+            svg {
+                margin-left: rem(8);
+            }
+            &:hover:before {
+                display: none;
+            }
+        }
+    }
+}
