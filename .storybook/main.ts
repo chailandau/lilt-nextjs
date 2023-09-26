@@ -12,7 +12,8 @@ const config: StorybookConfig = {
   addons: [
     "@storybook/addon-essentials",
     "storybook-css-modules-preset",
-    '@storybook/addon-styling'
+    '@storybook/addon-styling',
+    '@storybook/addon-mdx-gfm'
   ],
   docs: {
     autodocs: 'tag',
