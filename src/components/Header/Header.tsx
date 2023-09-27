@@ -1,3 +1,5 @@
+'use client';
+
 import FocusTrap from 'focus-trap-react';
 import { FC, useEffect, useState } from 'react';
 

@@ -46,11 +46,14 @@ export type Access = {
     footer?: Maybe<FooterAccess>;
     header?: Maybe<HeaderAccess>;
     heroes?: Maybe<HeroesAccess>;
+    icon_tile_grids?: Maybe<Icon_Tile_GridsAccess>;
     icon_tiles?: Maybe<Icon_TilesAccess>;
     icons?: Maybe<IconsAccess>;
     images?: Maybe<ImagesAccess>;
     pages?: Maybe<PagesAccess>;
+    processes?: Maybe<ProcessesAccess>;
     switchbacks?: Maybe<SwitchbacksAccess>;
+    text_grids?: Maybe<Text_GridsAccess>;
     tile_grids?: Maybe<Tile_GridsAccess>;
     users?: Maybe<UsersAccess>;
     videos?: Maybe<VideosAccess>;
@@ -64,6 +67,14 @@ export type Accordion = {
     headingTag: Scalars['String']['output'];
     id?: Maybe<Scalars['String']['output']>;
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type AccordionBlock = {
+    __typename?: 'AccordionBlock';
+    accordion?: Maybe<Accordion>;
+    blockName?: Maybe<Scalars['String']['output']>;
+    blockType?: Maybe<Scalars['String']['output']>;
+    id?: Maybe<Scalars['String']['output']>;
 };
 
 export type Accordion_AccordionItems = {
@@ -1580,6 +1591,14 @@ export type ConversionPanelContentArgs = {
     depth?: InputMaybe<Scalars['Int']['input']>;
 };
 
+export type ConversionPanelBlock = {
+    __typename?: 'ConversionPanelBlock';
+    blockName?: Maybe<Scalars['String']['output']>;
+    blockType?: Maybe<Scalars['String']['output']>;
+    conversionPanel?: Maybe<ConversionPanel>;
+    id?: Maybe<Scalars['String']['output']>;
+};
+
 export type ConversionPanel_CallToAction_Operator = {
     all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     equals?: InputMaybe<Scalars['String']['input']>;
@@ -3012,15 +3031,19 @@ export type CtaTilesUpdateDocAccess = {
 export type FeatureGrid = {
     __typename?: 'FeatureGrid';
     createdAt?: Maybe<Scalars['DateTime']['output']>;
-    featureTiles?: Maybe<Array<FeatureGrid_FeatureTiles>>;
+    featureTiles: Array<FeatureTile>;
+    heading?: Maybe<Scalars['String']['output']>;
+    headingTag?: Maybe<Scalars['String']['output']>;
     id?: Maybe<Scalars['String']['output']>;
     internalName: Scalars['String']['output'];
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
-export type FeatureGrid_FeatureTiles = {
-    __typename?: 'FeatureGrid_FeatureTiles';
-    featureTile?: Maybe<FeatureTile>;
+export type FeatureGridBlock = {
+    __typename?: 'FeatureGridBlock';
+    blockName?: Maybe<Scalars['String']['output']>;
+    blockType?: Maybe<Scalars['String']['output']>;
+    featureGrid?: Maybe<FeatureGrid>;
     id?: Maybe<Scalars['String']['output']>;
 };
 
@@ -3035,7 +3058,7 @@ export type FeatureGrid_CreatedAt_Operator = {
     not_equals?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
-export type FeatureGrid_FeatureTiles__FeatureTile_Operator = {
+export type FeatureGrid_FeatureTiles_Operator = {
     all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     equals?: InputMaybe<Scalars['String']['input']>;
     in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -3043,7 +3066,18 @@ export type FeatureGrid_FeatureTiles__FeatureTile_Operator = {
     not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
-export type FeatureGrid_FeatureTiles__Id_Operator = {
+export type FeatureGrid_HeadingTag_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type FeatureGrid_Heading_Operator = {
     all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     contains?: InputMaybe<Scalars['String']['input']>;
     equals?: InputMaybe<Scalars['String']['input']>;
@@ -3090,8 +3124,9 @@ export type FeatureGrid_Where = {
     AND?: InputMaybe<Array<InputMaybe<FeatureGrid_Where_And>>>;
     OR?: InputMaybe<Array<InputMaybe<FeatureGrid_Where_Or>>>;
     createdAt?: InputMaybe<FeatureGrid_CreatedAt_Operator>;
-    featureTiles__featureTile?: InputMaybe<FeatureGrid_FeatureTiles__FeatureTile_Operator>;
-    featureTiles__id?: InputMaybe<FeatureGrid_FeatureTiles__Id_Operator>;
+    featureTiles?: InputMaybe<FeatureGrid_FeatureTiles_Operator>;
+    heading?: InputMaybe<FeatureGrid_Heading_Operator>;
+    headingTag?: InputMaybe<FeatureGrid_HeadingTag_Operator>;
     id?: InputMaybe<FeatureGrid_Id_Operator>;
     internalName?: InputMaybe<FeatureGrid_InternalName_Operator>;
     updatedAt?: InputMaybe<FeatureGrid_UpdatedAt_Operator>;
@@ -3099,8 +3134,9 @@ export type FeatureGrid_Where = {
 
 export type FeatureGrid_Where_And = {
     createdAt?: InputMaybe<FeatureGrid_CreatedAt_Operator>;
-    featureTiles__featureTile?: InputMaybe<FeatureGrid_FeatureTiles__FeatureTile_Operator>;
-    featureTiles__id?: InputMaybe<FeatureGrid_FeatureTiles__Id_Operator>;
+    featureTiles?: InputMaybe<FeatureGrid_FeatureTiles_Operator>;
+    heading?: InputMaybe<FeatureGrid_Heading_Operator>;
+    headingTag?: InputMaybe<FeatureGrid_HeadingTag_Operator>;
     id?: InputMaybe<FeatureGrid_Id_Operator>;
     internalName?: InputMaybe<FeatureGrid_InternalName_Operator>;
     updatedAt?: InputMaybe<FeatureGrid_UpdatedAt_Operator>;
@@ -3108,8 +3144,9 @@ export type FeatureGrid_Where_And = {
 
 export type FeatureGrid_Where_Or = {
     createdAt?: InputMaybe<FeatureGrid_CreatedAt_Operator>;
-    featureTiles__featureTile?: InputMaybe<FeatureGrid_FeatureTiles__FeatureTile_Operator>;
-    featureTiles__id?: InputMaybe<FeatureGrid_FeatureTiles__Id_Operator>;
+    featureTiles?: InputMaybe<FeatureGrid_FeatureTiles_Operator>;
+    heading?: InputMaybe<FeatureGrid_Heading_Operator>;
+    headingTag?: InputMaybe<FeatureGrid_HeadingTag_Operator>;
     id?: InputMaybe<FeatureGrid_Id_Operator>;
     internalName?: InputMaybe<FeatureGrid_InternalName_Operator>;
     updatedAt?: InputMaybe<FeatureGrid_UpdatedAt_Operator>;
@@ -3158,6 +3195,8 @@ export type FeatureGridsDocAccessFields = {
     __typename?: 'FeatureGridsDocAccessFields';
     createdAt?: Maybe<FeatureGridsDocAccessFields_CreatedAt>;
     featureTiles?: Maybe<FeatureGridsDocAccessFields_FeatureTiles>;
+    heading?: Maybe<FeatureGridsDocAccessFields_Heading>;
+    headingTag?: Maybe<FeatureGridsDocAccessFields_HeadingTag>;
     internalName?: Maybe<FeatureGridsDocAccessFields_InternalName>;
     updatedAt?: Maybe<FeatureGridsDocAccessFields_UpdatedAt>;
 };
@@ -3194,7 +3233,6 @@ export type FeatureGridsDocAccessFields_FeatureTiles = {
     __typename?: 'FeatureGridsDocAccessFields_featureTiles';
     create?: Maybe<FeatureGridsDocAccessFields_FeatureTiles_Create>;
     delete?: Maybe<FeatureGridsDocAccessFields_FeatureTiles_Delete>;
-    fields?: Maybe<FeatureGridsDocAccessFields_FeatureTiles_Fields>;
     read?: Maybe<FeatureGridsDocAccessFields_FeatureTiles_Read>;
     update?: Maybe<FeatureGridsDocAccessFields_FeatureTiles_Update>;
 };
@@ -3209,12 +3247,6 @@ export type FeatureGridsDocAccessFields_FeatureTiles_Delete = {
     permission: Scalars['Boolean']['output'];
 };
 
-export type FeatureGridsDocAccessFields_FeatureTiles_Fields = {
-    __typename?: 'FeatureGridsDocAccessFields_featureTiles_Fields';
-    featureTile?: Maybe<FeatureGridsDocAccessFields_FeatureTiles_FeatureTile>;
-    id?: Maybe<FeatureGridsDocAccessFields_FeatureTiles_Id>;
-};
-
 export type FeatureGridsDocAccessFields_FeatureTiles_Read = {
     __typename?: 'FeatureGridsDocAccessFields_featureTiles_Read';
     permission: Scalars['Boolean']['output'];
@@ -3225,59 +3257,59 @@ export type FeatureGridsDocAccessFields_FeatureTiles_Update = {
     permission: Scalars['Boolean']['output'];
 };
 
-export type FeatureGridsDocAccessFields_FeatureTiles_FeatureTile = {
-    __typename?: 'FeatureGridsDocAccessFields_featureTiles_featureTile';
-    create?: Maybe<FeatureGridsDocAccessFields_FeatureTiles_FeatureTile_Create>;
-    delete?: Maybe<FeatureGridsDocAccessFields_FeatureTiles_FeatureTile_Delete>;
-    read?: Maybe<FeatureGridsDocAccessFields_FeatureTiles_FeatureTile_Read>;
-    update?: Maybe<FeatureGridsDocAccessFields_FeatureTiles_FeatureTile_Update>;
+export type FeatureGridsDocAccessFields_Heading = {
+    __typename?: 'FeatureGridsDocAccessFields_heading';
+    create?: Maybe<FeatureGridsDocAccessFields_Heading_Create>;
+    delete?: Maybe<FeatureGridsDocAccessFields_Heading_Delete>;
+    read?: Maybe<FeatureGridsDocAccessFields_Heading_Read>;
+    update?: Maybe<FeatureGridsDocAccessFields_Heading_Update>;
 };
 
-export type FeatureGridsDocAccessFields_FeatureTiles_FeatureTile_Create = {
-    __typename?: 'FeatureGridsDocAccessFields_featureTiles_featureTile_Create';
+export type FeatureGridsDocAccessFields_HeadingTag = {
+    __typename?: 'FeatureGridsDocAccessFields_headingTag';
+    create?: Maybe<FeatureGridsDocAccessFields_HeadingTag_Create>;
+    delete?: Maybe<FeatureGridsDocAccessFields_HeadingTag_Delete>;
+    read?: Maybe<FeatureGridsDocAccessFields_HeadingTag_Read>;
+    update?: Maybe<FeatureGridsDocAccessFields_HeadingTag_Update>;
+};
+
+export type FeatureGridsDocAccessFields_HeadingTag_Create = {
+    __typename?: 'FeatureGridsDocAccessFields_headingTag_Create';
     permission: Scalars['Boolean']['output'];
 };
 
-export type FeatureGridsDocAccessFields_FeatureTiles_FeatureTile_Delete = {
-    __typename?: 'FeatureGridsDocAccessFields_featureTiles_featureTile_Delete';
+export type FeatureGridsDocAccessFields_HeadingTag_Delete = {
+    __typename?: 'FeatureGridsDocAccessFields_headingTag_Delete';
     permission: Scalars['Boolean']['output'];
 };
 
-export type FeatureGridsDocAccessFields_FeatureTiles_FeatureTile_Read = {
-    __typename?: 'FeatureGridsDocAccessFields_featureTiles_featureTile_Read';
+export type FeatureGridsDocAccessFields_HeadingTag_Read = {
+    __typename?: 'FeatureGridsDocAccessFields_headingTag_Read';
     permission: Scalars['Boolean']['output'];
 };
 
-export type FeatureGridsDocAccessFields_FeatureTiles_FeatureTile_Update = {
-    __typename?: 'FeatureGridsDocAccessFields_featureTiles_featureTile_Update';
+export type FeatureGridsDocAccessFields_HeadingTag_Update = {
+    __typename?: 'FeatureGridsDocAccessFields_headingTag_Update';
     permission: Scalars['Boolean']['output'];
 };
 
-export type FeatureGridsDocAccessFields_FeatureTiles_Id = {
-    __typename?: 'FeatureGridsDocAccessFields_featureTiles_id';
-    create?: Maybe<FeatureGridsDocAccessFields_FeatureTiles_Id_Create>;
-    delete?: Maybe<FeatureGridsDocAccessFields_FeatureTiles_Id_Delete>;
-    read?: Maybe<FeatureGridsDocAccessFields_FeatureTiles_Id_Read>;
-    update?: Maybe<FeatureGridsDocAccessFields_FeatureTiles_Id_Update>;
-};
-
-export type FeatureGridsDocAccessFields_FeatureTiles_Id_Create = {
-    __typename?: 'FeatureGridsDocAccessFields_featureTiles_id_Create';
+export type FeatureGridsDocAccessFields_Heading_Create = {
+    __typename?: 'FeatureGridsDocAccessFields_heading_Create';
     permission: Scalars['Boolean']['output'];
 };
 
-export type FeatureGridsDocAccessFields_FeatureTiles_Id_Delete = {
-    __typename?: 'FeatureGridsDocAccessFields_featureTiles_id_Delete';
+export type FeatureGridsDocAccessFields_Heading_Delete = {
+    __typename?: 'FeatureGridsDocAccessFields_heading_Delete';
     permission: Scalars['Boolean']['output'];
 };
 
-export type FeatureGridsDocAccessFields_FeatureTiles_Id_Read = {
-    __typename?: 'FeatureGridsDocAccessFields_featureTiles_id_Read';
+export type FeatureGridsDocAccessFields_Heading_Read = {
+    __typename?: 'FeatureGridsDocAccessFields_heading_Read';
     permission: Scalars['Boolean']['output'];
 };
 
-export type FeatureGridsDocAccessFields_FeatureTiles_Id_Update = {
-    __typename?: 'FeatureGridsDocAccessFields_featureTiles_id_Update';
+export type FeatureGridsDocAccessFields_Heading_Update = {
+    __typename?: 'FeatureGridsDocAccessFields_heading_Update';
     permission: Scalars['Boolean']['output'];
 };
 
@@ -3341,6 +3373,8 @@ export type FeatureGridsFields = {
     __typename?: 'FeatureGridsFields';
     createdAt?: Maybe<FeatureGridsFields_CreatedAt>;
     featureTiles?: Maybe<FeatureGridsFields_FeatureTiles>;
+    heading?: Maybe<FeatureGridsFields_Heading>;
+    headingTag?: Maybe<FeatureGridsFields_HeadingTag>;
     internalName?: Maybe<FeatureGridsFields_InternalName>;
     updatedAt?: Maybe<FeatureGridsFields_UpdatedAt>;
 };
@@ -3377,7 +3411,6 @@ export type FeatureGridsFields_FeatureTiles = {
     __typename?: 'FeatureGridsFields_featureTiles';
     create?: Maybe<FeatureGridsFields_FeatureTiles_Create>;
     delete?: Maybe<FeatureGridsFields_FeatureTiles_Delete>;
-    fields?: Maybe<FeatureGridsFields_FeatureTiles_Fields>;
     read?: Maybe<FeatureGridsFields_FeatureTiles_Read>;
     update?: Maybe<FeatureGridsFields_FeatureTiles_Update>;
 };
@@ -3392,12 +3425,6 @@ export type FeatureGridsFields_FeatureTiles_Delete = {
     permission: Scalars['Boolean']['output'];
 };
 
-export type FeatureGridsFields_FeatureTiles_Fields = {
-    __typename?: 'FeatureGridsFields_featureTiles_Fields';
-    featureTile?: Maybe<FeatureGridsFields_FeatureTiles_FeatureTile>;
-    id?: Maybe<FeatureGridsFields_FeatureTiles_Id>;
-};
-
 export type FeatureGridsFields_FeatureTiles_Read = {
     __typename?: 'FeatureGridsFields_featureTiles_Read';
     permission: Scalars['Boolean']['output'];
@@ -3408,59 +3435,59 @@ export type FeatureGridsFields_FeatureTiles_Update = {
     permission: Scalars['Boolean']['output'];
 };
 
-export type FeatureGridsFields_FeatureTiles_FeatureTile = {
-    __typename?: 'FeatureGridsFields_featureTiles_featureTile';
-    create?: Maybe<FeatureGridsFields_FeatureTiles_FeatureTile_Create>;
-    delete?: Maybe<FeatureGridsFields_FeatureTiles_FeatureTile_Delete>;
-    read?: Maybe<FeatureGridsFields_FeatureTiles_FeatureTile_Read>;
-    update?: Maybe<FeatureGridsFields_FeatureTiles_FeatureTile_Update>;
+export type FeatureGridsFields_Heading = {
+    __typename?: 'FeatureGridsFields_heading';
+    create?: Maybe<FeatureGridsFields_Heading_Create>;
+    delete?: Maybe<FeatureGridsFields_Heading_Delete>;
+    read?: Maybe<FeatureGridsFields_Heading_Read>;
+    update?: Maybe<FeatureGridsFields_Heading_Update>;
 };
 
-export type FeatureGridsFields_FeatureTiles_FeatureTile_Create = {
-    __typename?: 'FeatureGridsFields_featureTiles_featureTile_Create';
+export type FeatureGridsFields_HeadingTag = {
+    __typename?: 'FeatureGridsFields_headingTag';
+    create?: Maybe<FeatureGridsFields_HeadingTag_Create>;
+    delete?: Maybe<FeatureGridsFields_HeadingTag_Delete>;
+    read?: Maybe<FeatureGridsFields_HeadingTag_Read>;
+    update?: Maybe<FeatureGridsFields_HeadingTag_Update>;
+};
+
+export type FeatureGridsFields_HeadingTag_Create = {
+    __typename?: 'FeatureGridsFields_headingTag_Create';
     permission: Scalars['Boolean']['output'];
 };
 
-export type FeatureGridsFields_FeatureTiles_FeatureTile_Delete = {
-    __typename?: 'FeatureGridsFields_featureTiles_featureTile_Delete';
+export type FeatureGridsFields_HeadingTag_Delete = {
+    __typename?: 'FeatureGridsFields_headingTag_Delete';
     permission: Scalars['Boolean']['output'];
 };
 
-export type FeatureGridsFields_FeatureTiles_FeatureTile_Read = {
-    __typename?: 'FeatureGridsFields_featureTiles_featureTile_Read';
+export type FeatureGridsFields_HeadingTag_Read = {
+    __typename?: 'FeatureGridsFields_headingTag_Read';
     permission: Scalars['Boolean']['output'];
 };
 
-export type FeatureGridsFields_FeatureTiles_FeatureTile_Update = {
-    __typename?: 'FeatureGridsFields_featureTiles_featureTile_Update';
+export type FeatureGridsFields_HeadingTag_Update = {
+    __typename?: 'FeatureGridsFields_headingTag_Update';
     permission: Scalars['Boolean']['output'];
 };
 
-export type FeatureGridsFields_FeatureTiles_Id = {
-    __typename?: 'FeatureGridsFields_featureTiles_id';
-    create?: Maybe<FeatureGridsFields_FeatureTiles_Id_Create>;
-    delete?: Maybe<FeatureGridsFields_FeatureTiles_Id_Delete>;
-    read?: Maybe<FeatureGridsFields_FeatureTiles_Id_Read>;
-    update?: Maybe<FeatureGridsFields_FeatureTiles_Id_Update>;
-};
-
-export type FeatureGridsFields_FeatureTiles_Id_Create = {
-    __typename?: 'FeatureGridsFields_featureTiles_id_Create';
+export type FeatureGridsFields_Heading_Create = {
+    __typename?: 'FeatureGridsFields_heading_Create';
     permission: Scalars['Boolean']['output'];
 };
 
-export type FeatureGridsFields_FeatureTiles_Id_Delete = {
-    __typename?: 'FeatureGridsFields_featureTiles_id_Delete';
+export type FeatureGridsFields_Heading_Delete = {
+    __typename?: 'FeatureGridsFields_heading_Delete';
     permission: Scalars['Boolean']['output'];
 };
 
-export type FeatureGridsFields_FeatureTiles_Id_Read = {
-    __typename?: 'FeatureGridsFields_featureTiles_id_Read';
+export type FeatureGridsFields_Heading_Read = {
+    __typename?: 'FeatureGridsFields_heading_Read';
     permission: Scalars['Boolean']['output'];
 };
 
-export type FeatureGridsFields_FeatureTiles_Id_Update = {
-    __typename?: 'FeatureGridsFields_featureTiles_id_Update';
+export type FeatureGridsFields_Heading_Update = {
+    __typename?: 'FeatureGridsFields_heading_Update';
     permission: Scalars['Boolean']['output'];
 };
 
@@ -8199,6 +8226,14 @@ export type HeroContentArgs = {
     depth?: InputMaybe<Scalars['Int']['input']>;
 };
 
+export type HeroBlock = {
+    __typename?: 'HeroBlock';
+    blockName?: Maybe<Scalars['String']['output']>;
+    blockType?: Maybe<Scalars['String']['output']>;
+    hero?: Maybe<Hero>;
+    id?: Maybe<Scalars['String']['output']>;
+};
+
 export type Hero_Cta = {
     __typename?: 'Hero_Cta';
     ctaButtons?: Maybe<Array<Hero_Cta_CtaButtons>>;
@@ -9329,6 +9364,619 @@ export type IconTile = {
 
 export type IconTileIconArgs = {
     where?: InputMaybe<IconTile_Icon_Where>;
+};
+
+export type IconTileGrid = {
+    __typename?: 'IconTileGrid';
+    callToAction: Button;
+    content?: Maybe<Scalars['JSON']['output']>;
+    createdAt?: Maybe<Scalars['DateTime']['output']>;
+    heading: Scalars['String']['output'];
+    headingTag: Scalars['String']['output'];
+    iconTiles: Array<IconTile>;
+    id?: Maybe<Scalars['String']['output']>;
+    updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type IconTileGridContentArgs = {
+    depth?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type IconTileGridBlock = {
+    __typename?: 'IconTileGridBlock';
+    blockName?: Maybe<Scalars['String']['output']>;
+    blockType?: Maybe<Scalars['String']['output']>;
+    iconTileGrid?: Maybe<IconTileGrid>;
+    id?: Maybe<Scalars['String']['output']>;
+};
+
+export type IconTileGrid_CallToAction_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type IconTileGrid_Content_Operator = {
+    contains?: InputMaybe<Scalars['JSON']['input']>;
+    equals?: InputMaybe<Scalars['JSON']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    like?: InputMaybe<Scalars['JSON']['input']>;
+    not_equals?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type IconTileGrid_CreatedAt_Operator = {
+    equals?: InputMaybe<Scalars['DateTime']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    like?: InputMaybe<Scalars['DateTime']['input']>;
+    not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type IconTileGrid_HeadingTag_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type IconTileGrid_Heading_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type IconTileGrid_IconTiles_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type IconTileGrid_Id_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type IconTileGrid_UpdatedAt_Operator = {
+    equals?: InputMaybe<Scalars['DateTime']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    like?: InputMaybe<Scalars['DateTime']['input']>;
+    not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type IconTileGrid_Where = {
+    AND?: InputMaybe<Array<InputMaybe<IconTileGrid_Where_And>>>;
+    OR?: InputMaybe<Array<InputMaybe<IconTileGrid_Where_Or>>>;
+    callToAction?: InputMaybe<IconTileGrid_CallToAction_Operator>;
+    content?: InputMaybe<IconTileGrid_Content_Operator>;
+    createdAt?: InputMaybe<IconTileGrid_CreatedAt_Operator>;
+    heading?: InputMaybe<IconTileGrid_Heading_Operator>;
+    headingTag?: InputMaybe<IconTileGrid_HeadingTag_Operator>;
+    iconTiles?: InputMaybe<IconTileGrid_IconTiles_Operator>;
+    id?: InputMaybe<IconTileGrid_Id_Operator>;
+    updatedAt?: InputMaybe<IconTileGrid_UpdatedAt_Operator>;
+};
+
+export type IconTileGrid_Where_And = {
+    callToAction?: InputMaybe<IconTileGrid_CallToAction_Operator>;
+    content?: InputMaybe<IconTileGrid_Content_Operator>;
+    createdAt?: InputMaybe<IconTileGrid_CreatedAt_Operator>;
+    heading?: InputMaybe<IconTileGrid_Heading_Operator>;
+    headingTag?: InputMaybe<IconTileGrid_HeadingTag_Operator>;
+    iconTiles?: InputMaybe<IconTileGrid_IconTiles_Operator>;
+    id?: InputMaybe<IconTileGrid_Id_Operator>;
+    updatedAt?: InputMaybe<IconTileGrid_UpdatedAt_Operator>;
+};
+
+export type IconTileGrid_Where_Or = {
+    callToAction?: InputMaybe<IconTileGrid_CallToAction_Operator>;
+    content?: InputMaybe<IconTileGrid_Content_Operator>;
+    createdAt?: InputMaybe<IconTileGrid_CreatedAt_Operator>;
+    heading?: InputMaybe<IconTileGrid_Heading_Operator>;
+    headingTag?: InputMaybe<IconTileGrid_HeadingTag_Operator>;
+    iconTiles?: InputMaybe<IconTileGrid_IconTiles_Operator>;
+    id?: InputMaybe<IconTileGrid_Id_Operator>;
+    updatedAt?: InputMaybe<IconTileGrid_UpdatedAt_Operator>;
+};
+
+export type IconTileGrids = {
+    __typename?: 'IconTileGrids';
+    docs?: Maybe<Array<Maybe<IconTileGrid>>>;
+    hasNextPage?: Maybe<Scalars['Boolean']['output']>;
+    hasPrevPage?: Maybe<Scalars['Boolean']['output']>;
+    limit?: Maybe<Scalars['Int']['output']>;
+    nextPage?: Maybe<Scalars['Int']['output']>;
+    offset?: Maybe<Scalars['Int']['output']>;
+    page?: Maybe<Scalars['Int']['output']>;
+    pagingCounter?: Maybe<Scalars['Int']['output']>;
+    prevPage?: Maybe<Scalars['Int']['output']>;
+    totalDocs?: Maybe<Scalars['Int']['output']>;
+    totalPages?: Maybe<Scalars['Int']['output']>;
+};
+
+export type IconTileGridsCreateAccess = {
+    __typename?: 'IconTileGridsCreateAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type IconTileGridsCreateDocAccess = {
+    __typename?: 'IconTileGridsCreateDocAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type IconTileGridsDeleteAccess = {
+    __typename?: 'IconTileGridsDeleteAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type IconTileGridsDeleteDocAccess = {
+    __typename?: 'IconTileGridsDeleteDocAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type IconTileGridsDocAccessFields = {
+    __typename?: 'IconTileGridsDocAccessFields';
+    callToAction?: Maybe<IconTileGridsDocAccessFields_CallToAction>;
+    content?: Maybe<IconTileGridsDocAccessFields_Content>;
+    createdAt?: Maybe<IconTileGridsDocAccessFields_CreatedAt>;
+    heading?: Maybe<IconTileGridsDocAccessFields_Heading>;
+    headingTag?: Maybe<IconTileGridsDocAccessFields_HeadingTag>;
+    iconTiles?: Maybe<IconTileGridsDocAccessFields_IconTiles>;
+    updatedAt?: Maybe<IconTileGridsDocAccessFields_UpdatedAt>;
+};
+
+export type IconTileGridsDocAccessFields_CallToAction = {
+    __typename?: 'IconTileGridsDocAccessFields_callToAction';
+    create?: Maybe<IconTileGridsDocAccessFields_CallToAction_Create>;
+    delete?: Maybe<IconTileGridsDocAccessFields_CallToAction_Delete>;
+    read?: Maybe<IconTileGridsDocAccessFields_CallToAction_Read>;
+    update?: Maybe<IconTileGridsDocAccessFields_CallToAction_Update>;
+};
+
+export type IconTileGridsDocAccessFields_CallToAction_Create = {
+    __typename?: 'IconTileGridsDocAccessFields_callToAction_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_CallToAction_Delete = {
+    __typename?: 'IconTileGridsDocAccessFields_callToAction_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_CallToAction_Read = {
+    __typename?: 'IconTileGridsDocAccessFields_callToAction_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_CallToAction_Update = {
+    __typename?: 'IconTileGridsDocAccessFields_callToAction_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_Content = {
+    __typename?: 'IconTileGridsDocAccessFields_content';
+    create?: Maybe<IconTileGridsDocAccessFields_Content_Create>;
+    delete?: Maybe<IconTileGridsDocAccessFields_Content_Delete>;
+    read?: Maybe<IconTileGridsDocAccessFields_Content_Read>;
+    update?: Maybe<IconTileGridsDocAccessFields_Content_Update>;
+};
+
+export type IconTileGridsDocAccessFields_Content_Create = {
+    __typename?: 'IconTileGridsDocAccessFields_content_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_Content_Delete = {
+    __typename?: 'IconTileGridsDocAccessFields_content_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_Content_Read = {
+    __typename?: 'IconTileGridsDocAccessFields_content_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_Content_Update = {
+    __typename?: 'IconTileGridsDocAccessFields_content_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_CreatedAt = {
+    __typename?: 'IconTileGridsDocAccessFields_createdAt';
+    create?: Maybe<IconTileGridsDocAccessFields_CreatedAt_Create>;
+    delete?: Maybe<IconTileGridsDocAccessFields_CreatedAt_Delete>;
+    read?: Maybe<IconTileGridsDocAccessFields_CreatedAt_Read>;
+    update?: Maybe<IconTileGridsDocAccessFields_CreatedAt_Update>;
+};
+
+export type IconTileGridsDocAccessFields_CreatedAt_Create = {
+    __typename?: 'IconTileGridsDocAccessFields_createdAt_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_CreatedAt_Delete = {
+    __typename?: 'IconTileGridsDocAccessFields_createdAt_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_CreatedAt_Read = {
+    __typename?: 'IconTileGridsDocAccessFields_createdAt_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_CreatedAt_Update = {
+    __typename?: 'IconTileGridsDocAccessFields_createdAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_Heading = {
+    __typename?: 'IconTileGridsDocAccessFields_heading';
+    create?: Maybe<IconTileGridsDocAccessFields_Heading_Create>;
+    delete?: Maybe<IconTileGridsDocAccessFields_Heading_Delete>;
+    read?: Maybe<IconTileGridsDocAccessFields_Heading_Read>;
+    update?: Maybe<IconTileGridsDocAccessFields_Heading_Update>;
+};
+
+export type IconTileGridsDocAccessFields_HeadingTag = {
+    __typename?: 'IconTileGridsDocAccessFields_headingTag';
+    create?: Maybe<IconTileGridsDocAccessFields_HeadingTag_Create>;
+    delete?: Maybe<IconTileGridsDocAccessFields_HeadingTag_Delete>;
+    read?: Maybe<IconTileGridsDocAccessFields_HeadingTag_Read>;
+    update?: Maybe<IconTileGridsDocAccessFields_HeadingTag_Update>;
+};
+
+export type IconTileGridsDocAccessFields_HeadingTag_Create = {
+    __typename?: 'IconTileGridsDocAccessFields_headingTag_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_HeadingTag_Delete = {
+    __typename?: 'IconTileGridsDocAccessFields_headingTag_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_HeadingTag_Read = {
+    __typename?: 'IconTileGridsDocAccessFields_headingTag_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_HeadingTag_Update = {
+    __typename?: 'IconTileGridsDocAccessFields_headingTag_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_Heading_Create = {
+    __typename?: 'IconTileGridsDocAccessFields_heading_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_Heading_Delete = {
+    __typename?: 'IconTileGridsDocAccessFields_heading_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_Heading_Read = {
+    __typename?: 'IconTileGridsDocAccessFields_heading_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_Heading_Update = {
+    __typename?: 'IconTileGridsDocAccessFields_heading_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_IconTiles = {
+    __typename?: 'IconTileGridsDocAccessFields_iconTiles';
+    create?: Maybe<IconTileGridsDocAccessFields_IconTiles_Create>;
+    delete?: Maybe<IconTileGridsDocAccessFields_IconTiles_Delete>;
+    read?: Maybe<IconTileGridsDocAccessFields_IconTiles_Read>;
+    update?: Maybe<IconTileGridsDocAccessFields_IconTiles_Update>;
+};
+
+export type IconTileGridsDocAccessFields_IconTiles_Create = {
+    __typename?: 'IconTileGridsDocAccessFields_iconTiles_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_IconTiles_Delete = {
+    __typename?: 'IconTileGridsDocAccessFields_iconTiles_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_IconTiles_Read = {
+    __typename?: 'IconTileGridsDocAccessFields_iconTiles_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_IconTiles_Update = {
+    __typename?: 'IconTileGridsDocAccessFields_iconTiles_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_UpdatedAt = {
+    __typename?: 'IconTileGridsDocAccessFields_updatedAt';
+    create?: Maybe<IconTileGridsDocAccessFields_UpdatedAt_Create>;
+    delete?: Maybe<IconTileGridsDocAccessFields_UpdatedAt_Delete>;
+    read?: Maybe<IconTileGridsDocAccessFields_UpdatedAt_Read>;
+    update?: Maybe<IconTileGridsDocAccessFields_UpdatedAt_Update>;
+};
+
+export type IconTileGridsDocAccessFields_UpdatedAt_Create = {
+    __typename?: 'IconTileGridsDocAccessFields_updatedAt_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_UpdatedAt_Delete = {
+    __typename?: 'IconTileGridsDocAccessFields_updatedAt_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_UpdatedAt_Read = {
+    __typename?: 'IconTileGridsDocAccessFields_updatedAt_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsDocAccessFields_UpdatedAt_Update = {
+    __typename?: 'IconTileGridsDocAccessFields_updatedAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields = {
+    __typename?: 'IconTileGridsFields';
+    callToAction?: Maybe<IconTileGridsFields_CallToAction>;
+    content?: Maybe<IconTileGridsFields_Content>;
+    createdAt?: Maybe<IconTileGridsFields_CreatedAt>;
+    heading?: Maybe<IconTileGridsFields_Heading>;
+    headingTag?: Maybe<IconTileGridsFields_HeadingTag>;
+    iconTiles?: Maybe<IconTileGridsFields_IconTiles>;
+    updatedAt?: Maybe<IconTileGridsFields_UpdatedAt>;
+};
+
+export type IconTileGridsFields_CallToAction = {
+    __typename?: 'IconTileGridsFields_callToAction';
+    create?: Maybe<IconTileGridsFields_CallToAction_Create>;
+    delete?: Maybe<IconTileGridsFields_CallToAction_Delete>;
+    read?: Maybe<IconTileGridsFields_CallToAction_Read>;
+    update?: Maybe<IconTileGridsFields_CallToAction_Update>;
+};
+
+export type IconTileGridsFields_CallToAction_Create = {
+    __typename?: 'IconTileGridsFields_callToAction_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_CallToAction_Delete = {
+    __typename?: 'IconTileGridsFields_callToAction_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_CallToAction_Read = {
+    __typename?: 'IconTileGridsFields_callToAction_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_CallToAction_Update = {
+    __typename?: 'IconTileGridsFields_callToAction_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_Content = {
+    __typename?: 'IconTileGridsFields_content';
+    create?: Maybe<IconTileGridsFields_Content_Create>;
+    delete?: Maybe<IconTileGridsFields_Content_Delete>;
+    read?: Maybe<IconTileGridsFields_Content_Read>;
+    update?: Maybe<IconTileGridsFields_Content_Update>;
+};
+
+export type IconTileGridsFields_Content_Create = {
+    __typename?: 'IconTileGridsFields_content_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_Content_Delete = {
+    __typename?: 'IconTileGridsFields_content_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_Content_Read = {
+    __typename?: 'IconTileGridsFields_content_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_Content_Update = {
+    __typename?: 'IconTileGridsFields_content_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_CreatedAt = {
+    __typename?: 'IconTileGridsFields_createdAt';
+    create?: Maybe<IconTileGridsFields_CreatedAt_Create>;
+    delete?: Maybe<IconTileGridsFields_CreatedAt_Delete>;
+    read?: Maybe<IconTileGridsFields_CreatedAt_Read>;
+    update?: Maybe<IconTileGridsFields_CreatedAt_Update>;
+};
+
+export type IconTileGridsFields_CreatedAt_Create = {
+    __typename?: 'IconTileGridsFields_createdAt_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_CreatedAt_Delete = {
+    __typename?: 'IconTileGridsFields_createdAt_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_CreatedAt_Read = {
+    __typename?: 'IconTileGridsFields_createdAt_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_CreatedAt_Update = {
+    __typename?: 'IconTileGridsFields_createdAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_Heading = {
+    __typename?: 'IconTileGridsFields_heading';
+    create?: Maybe<IconTileGridsFields_Heading_Create>;
+    delete?: Maybe<IconTileGridsFields_Heading_Delete>;
+    read?: Maybe<IconTileGridsFields_Heading_Read>;
+    update?: Maybe<IconTileGridsFields_Heading_Update>;
+};
+
+export type IconTileGridsFields_HeadingTag = {
+    __typename?: 'IconTileGridsFields_headingTag';
+    create?: Maybe<IconTileGridsFields_HeadingTag_Create>;
+    delete?: Maybe<IconTileGridsFields_HeadingTag_Delete>;
+    read?: Maybe<IconTileGridsFields_HeadingTag_Read>;
+    update?: Maybe<IconTileGridsFields_HeadingTag_Update>;
+};
+
+export type IconTileGridsFields_HeadingTag_Create = {
+    __typename?: 'IconTileGridsFields_headingTag_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_HeadingTag_Delete = {
+    __typename?: 'IconTileGridsFields_headingTag_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_HeadingTag_Read = {
+    __typename?: 'IconTileGridsFields_headingTag_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_HeadingTag_Update = {
+    __typename?: 'IconTileGridsFields_headingTag_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_Heading_Create = {
+    __typename?: 'IconTileGridsFields_heading_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_Heading_Delete = {
+    __typename?: 'IconTileGridsFields_heading_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_Heading_Read = {
+    __typename?: 'IconTileGridsFields_heading_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_Heading_Update = {
+    __typename?: 'IconTileGridsFields_heading_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_IconTiles = {
+    __typename?: 'IconTileGridsFields_iconTiles';
+    create?: Maybe<IconTileGridsFields_IconTiles_Create>;
+    delete?: Maybe<IconTileGridsFields_IconTiles_Delete>;
+    read?: Maybe<IconTileGridsFields_IconTiles_Read>;
+    update?: Maybe<IconTileGridsFields_IconTiles_Update>;
+};
+
+export type IconTileGridsFields_IconTiles_Create = {
+    __typename?: 'IconTileGridsFields_iconTiles_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_IconTiles_Delete = {
+    __typename?: 'IconTileGridsFields_iconTiles_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_IconTiles_Read = {
+    __typename?: 'IconTileGridsFields_iconTiles_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_IconTiles_Update = {
+    __typename?: 'IconTileGridsFields_iconTiles_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_UpdatedAt = {
+    __typename?: 'IconTileGridsFields_updatedAt';
+    create?: Maybe<IconTileGridsFields_UpdatedAt_Create>;
+    delete?: Maybe<IconTileGridsFields_UpdatedAt_Delete>;
+    read?: Maybe<IconTileGridsFields_UpdatedAt_Read>;
+    update?: Maybe<IconTileGridsFields_UpdatedAt_Update>;
+};
+
+export type IconTileGridsFields_UpdatedAt_Create = {
+    __typename?: 'IconTileGridsFields_updatedAt_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_UpdatedAt_Delete = {
+    __typename?: 'IconTileGridsFields_updatedAt_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_UpdatedAt_Read = {
+    __typename?: 'IconTileGridsFields_updatedAt_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsFields_UpdatedAt_Update = {
+    __typename?: 'IconTileGridsFields_updatedAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconTileGridsReadAccess = {
+    __typename?: 'IconTileGridsReadAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type IconTileGridsReadDocAccess = {
+    __typename?: 'IconTileGridsReadDocAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type IconTileGridsUpdateAccess = {
+    __typename?: 'IconTileGridsUpdateAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type IconTileGridsUpdateDocAccess = {
+    __typename?: 'IconTileGridsUpdateDocAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
 };
 
 export type IconTile_Icon_Alt_Operator = {
@@ -12603,9 +13251,12 @@ export type Mutation = {
     createHero?: Maybe<Hero>;
     createIcon?: Maybe<Icon>;
     createIconTile?: Maybe<IconTile>;
+    createIconTileGrid?: Maybe<IconTileGrid>;
     createImage?: Maybe<Image>;
     createPage?: Maybe<Page>;
+    createProcess?: Maybe<Process>;
     createSwitchback?: Maybe<Switchback>;
+    createTextGrid?: Maybe<TextGrid>;
     createTileGrid?: Maybe<TileGrid>;
     createUser?: Maybe<User>;
     createVideo?: Maybe<Video>;
@@ -12619,10 +13270,13 @@ export type Mutation = {
     deleteHero?: Maybe<Hero>;
     deleteIcon?: Maybe<Icon>;
     deleteIconTile?: Maybe<IconTile>;
+    deleteIconTileGrid?: Maybe<IconTileGrid>;
     deleteImage?: Maybe<Image>;
     deletePage?: Maybe<Page>;
     deletePreference?: Maybe<Preference>;
+    deleteProcess?: Maybe<Process>;
     deleteSwitchback?: Maybe<Switchback>;
+    deleteTextGrid?: Maybe<TextGrid>;
     deleteTileGrid?: Maybe<TileGrid>;
     deleteUser?: Maybe<User>;
     deleteVideo?: Maybe<Video>;
@@ -12644,10 +13298,13 @@ export type Mutation = {
     updateHero?: Maybe<Hero>;
     updateIcon?: Maybe<Icon>;
     updateIconTile?: Maybe<IconTile>;
+    updateIconTileGrid?: Maybe<IconTileGrid>;
     updateImage?: Maybe<Image>;
     updatePage?: Maybe<Page>;
     updatePreference?: Maybe<Preference>;
+    updateProcess?: Maybe<Process>;
     updateSwitchback?: Maybe<Switchback>;
+    updateTextGrid?: Maybe<TextGrid>;
     updateTileGrid?: Maybe<TileGrid>;
     updateUser?: Maybe<User>;
     updateVideo?: Maybe<Video>;
@@ -12704,6 +13361,11 @@ export type MutationCreateIconTileArgs = {
     draft?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+export type MutationCreateIconTileGridArgs = {
+    data: MutationIconTileGridInput;
+    draft?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
 export type MutationCreateImageArgs = {
     data: MutationImageInput;
     draft?: InputMaybe<Scalars['Boolean']['input']>;
@@ -12714,8 +13376,18 @@ export type MutationCreatePageArgs = {
     draft?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+export type MutationCreateProcessArgs = {
+    data: MutationProcessInput;
+    draft?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
 export type MutationCreateSwitchbackArgs = {
     data: MutationSwitchbackInput;
+    draft?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type MutationCreateTextGridArgs = {
+    data: MutationTextGridInput;
     draft?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
@@ -12774,6 +13446,10 @@ export type MutationDeleteIconTileArgs = {
     id: Scalars['String']['input'];
 };
 
+export type MutationDeleteIconTileGridArgs = {
+    id: Scalars['String']['input'];
+};
+
 export type MutationDeleteImageArgs = {
     id: Scalars['String']['input'];
 };
@@ -12786,7 +13462,15 @@ export type MutationDeletePreferenceArgs = {
     key: Scalars['String']['input'];
 };
 
+export type MutationDeleteProcessArgs = {
+    id: Scalars['String']['input'];
+};
+
 export type MutationDeleteSwitchbackArgs = {
+    id: Scalars['String']['input'];
+};
+
+export type MutationDeleteTextGridArgs = {
     id: Scalars['String']['input'];
 };
 
@@ -12906,6 +13590,13 @@ export type MutationUpdateIconTileArgs = {
     id: Scalars['String']['input'];
 };
 
+export type MutationUpdateIconTileGridArgs = {
+    autosave?: InputMaybe<Scalars['Boolean']['input']>;
+    data: MutationIconTileGridUpdateInput;
+    draft?: InputMaybe<Scalars['Boolean']['input']>;
+    id: Scalars['String']['input'];
+};
+
 export type MutationUpdateImageArgs = {
     autosave?: InputMaybe<Scalars['Boolean']['input']>;
     data: MutationImageUpdateInput;
@@ -12925,9 +13616,23 @@ export type MutationUpdatePreferenceArgs = {
     value?: InputMaybe<Scalars['JSON']['input']>;
 };
 
+export type MutationUpdateProcessArgs = {
+    autosave?: InputMaybe<Scalars['Boolean']['input']>;
+    data: MutationProcessUpdateInput;
+    draft?: InputMaybe<Scalars['Boolean']['input']>;
+    id: Scalars['String']['input'];
+};
+
 export type MutationUpdateSwitchbackArgs = {
     autosave?: InputMaybe<Scalars['Boolean']['input']>;
     data: MutationSwitchbackUpdateInput;
+    draft?: InputMaybe<Scalars['Boolean']['input']>;
+    id: Scalars['String']['input'];
+};
+
+export type MutationUpdateTextGridArgs = {
+    autosave?: InputMaybe<Scalars['Boolean']['input']>;
+    data: MutationTextGridUpdateInput;
     draft?: InputMaybe<Scalars['Boolean']['input']>;
     id: Scalars['String']['input'];
 };
@@ -12961,10 +13666,22 @@ export type Page = {
     __typename?: 'Page';
     createdAt?: Maybe<Scalars['DateTime']['output']>;
     id?: Maybe<Scalars['String']['output']>;
+    pageSections?: Maybe<Array<Page_PageSections>>;
     slug?: Maybe<Scalars['String']['output']>;
     title?: Maybe<Scalars['String']['output']>;
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
+
+export type Page_PageSections =
+    | AccordionBlock
+    | ConversionPanelBlock
+    | FeatureGridBlock
+    | HeroBlock
+    | IconTileGridBlock
+    | ProcessBlock
+    | SwitchbackBlock
+    | TextGridBlock
+    | TileGridBlock;
 
 export type Page_CreatedAt_Operator = {
     equals?: InputMaybe<Scalars['DateTime']['input']>;
@@ -13089,6 +13806,7 @@ export type PagesDeleteDocAccess = {
 export type PagesDocAccessFields = {
     __typename?: 'PagesDocAccessFields';
     createdAt?: Maybe<PagesDocAccessFields_CreatedAt>;
+    pageSections?: Maybe<PagesDocAccessFields_PageSections>;
     slug?: Maybe<PagesDocAccessFields_Slug>;
     title?: Maybe<PagesDocAccessFields_Title>;
     updatedAt?: Maybe<PagesDocAccessFields_UpdatedAt>;
@@ -13119,6 +13837,34 @@ export type PagesDocAccessFields_CreatedAt_Read = {
 
 export type PagesDocAccessFields_CreatedAt_Update = {
     __typename?: 'PagesDocAccessFields_createdAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_PageSections = {
+    __typename?: 'PagesDocAccessFields_pageSections';
+    create?: Maybe<PagesDocAccessFields_PageSections_Create>;
+    delete?: Maybe<PagesDocAccessFields_PageSections_Delete>;
+    read?: Maybe<PagesDocAccessFields_PageSections_Read>;
+    update?: Maybe<PagesDocAccessFields_PageSections_Update>;
+};
+
+export type PagesDocAccessFields_PageSections_Create = {
+    __typename?: 'PagesDocAccessFields_pageSections_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_PageSections_Delete = {
+    __typename?: 'PagesDocAccessFields_pageSections_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_PageSections_Read = {
+    __typename?: 'PagesDocAccessFields_pageSections_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_PageSections_Update = {
+    __typename?: 'PagesDocAccessFields_pageSections_Update';
     permission: Scalars['Boolean']['output'];
 };
 
@@ -13209,6 +13955,7 @@ export type PagesDocAccessFields_UpdatedAt_Update = {
 export type PagesFields = {
     __typename?: 'PagesFields';
     createdAt?: Maybe<PagesFields_CreatedAt>;
+    pageSections?: Maybe<PagesFields_PageSections>;
     slug?: Maybe<PagesFields_Slug>;
     title?: Maybe<PagesFields_Title>;
     updatedAt?: Maybe<PagesFields_UpdatedAt>;
@@ -13239,6 +13986,34 @@ export type PagesFields_CreatedAt_Read = {
 
 export type PagesFields_CreatedAt_Update = {
     __typename?: 'PagesFields_createdAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_PageSections = {
+    __typename?: 'PagesFields_pageSections';
+    create?: Maybe<PagesFields_PageSections_Create>;
+    delete?: Maybe<PagesFields_PageSections_Delete>;
+    read?: Maybe<PagesFields_PageSections_Read>;
+    update?: Maybe<PagesFields_PageSections_Update>;
+};
+
+export type PagesFields_PageSections_Create = {
+    __typename?: 'PagesFields_pageSections_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_PageSections_Delete = {
+    __typename?: 'PagesFields_pageSections_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_PageSections_Read = {
+    __typename?: 'PagesFields_pageSections_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_PageSections_Update = {
+    __typename?: 'PagesFields_pageSections_Update';
     permission: Scalars['Boolean']['output'];
 };
 
@@ -13358,6 +14133,767 @@ export type Preference = {
     value?: Maybe<Scalars['JSON']['output']>;
 };
 
+export type Process = {
+    __typename?: 'Process';
+    callToAction: Button;
+    createdAt?: Maybe<Scalars['DateTime']['output']>;
+    id?: Maybe<Scalars['String']['output']>;
+    internalName: Scalars['String']['output'];
+    steps?: Maybe<Array<Process_Steps>>;
+    updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type ProcessBlock = {
+    __typename?: 'ProcessBlock';
+    blockName?: Maybe<Scalars['String']['output']>;
+    blockType?: Maybe<Scalars['String']['output']>;
+    id?: Maybe<Scalars['String']['output']>;
+    process?: Maybe<Process>;
+};
+
+export type Process_Steps = {
+    __typename?: 'Process_Steps';
+    content?: Maybe<Scalars['JSON']['output']>;
+    heading?: Maybe<Scalars['String']['output']>;
+    headingTag?: Maybe<Scalars['String']['output']>;
+    id?: Maybe<Scalars['String']['output']>;
+};
+
+export type Process_StepsContentArgs = {
+    depth?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type Process_CallToAction_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Process_CreatedAt_Operator = {
+    equals?: InputMaybe<Scalars['DateTime']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    like?: InputMaybe<Scalars['DateTime']['input']>;
+    not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type Process_Id_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Process_InternalName_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Process_Steps__Content_Operator = {
+    contains?: InputMaybe<Scalars['JSON']['input']>;
+    equals?: InputMaybe<Scalars['JSON']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    like?: InputMaybe<Scalars['JSON']['input']>;
+    not_equals?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type Process_Steps__HeadingTag_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Process_Steps__Heading_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Process_Steps__Id_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Process_UpdatedAt_Operator = {
+    equals?: InputMaybe<Scalars['DateTime']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    like?: InputMaybe<Scalars['DateTime']['input']>;
+    not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type Process_Where = {
+    AND?: InputMaybe<Array<InputMaybe<Process_Where_And>>>;
+    OR?: InputMaybe<Array<InputMaybe<Process_Where_Or>>>;
+    callToAction?: InputMaybe<Process_CallToAction_Operator>;
+    createdAt?: InputMaybe<Process_CreatedAt_Operator>;
+    id?: InputMaybe<Process_Id_Operator>;
+    internalName?: InputMaybe<Process_InternalName_Operator>;
+    steps__content?: InputMaybe<Process_Steps__Content_Operator>;
+    steps__heading?: InputMaybe<Process_Steps__Heading_Operator>;
+    steps__headingTag?: InputMaybe<Process_Steps__HeadingTag_Operator>;
+    steps__id?: InputMaybe<Process_Steps__Id_Operator>;
+    updatedAt?: InputMaybe<Process_UpdatedAt_Operator>;
+};
+
+export type Process_Where_And = {
+    callToAction?: InputMaybe<Process_CallToAction_Operator>;
+    createdAt?: InputMaybe<Process_CreatedAt_Operator>;
+    id?: InputMaybe<Process_Id_Operator>;
+    internalName?: InputMaybe<Process_InternalName_Operator>;
+    steps__content?: InputMaybe<Process_Steps__Content_Operator>;
+    steps__heading?: InputMaybe<Process_Steps__Heading_Operator>;
+    steps__headingTag?: InputMaybe<Process_Steps__HeadingTag_Operator>;
+    steps__id?: InputMaybe<Process_Steps__Id_Operator>;
+    updatedAt?: InputMaybe<Process_UpdatedAt_Operator>;
+};
+
+export type Process_Where_Or = {
+    callToAction?: InputMaybe<Process_CallToAction_Operator>;
+    createdAt?: InputMaybe<Process_CreatedAt_Operator>;
+    id?: InputMaybe<Process_Id_Operator>;
+    internalName?: InputMaybe<Process_InternalName_Operator>;
+    steps__content?: InputMaybe<Process_Steps__Content_Operator>;
+    steps__heading?: InputMaybe<Process_Steps__Heading_Operator>;
+    steps__headingTag?: InputMaybe<Process_Steps__HeadingTag_Operator>;
+    steps__id?: InputMaybe<Process_Steps__Id_Operator>;
+    updatedAt?: InputMaybe<Process_UpdatedAt_Operator>;
+};
+
+export type Processes = {
+    __typename?: 'Processes';
+    docs?: Maybe<Array<Maybe<Process>>>;
+    hasNextPage?: Maybe<Scalars['Boolean']['output']>;
+    hasPrevPage?: Maybe<Scalars['Boolean']['output']>;
+    limit?: Maybe<Scalars['Int']['output']>;
+    nextPage?: Maybe<Scalars['Int']['output']>;
+    offset?: Maybe<Scalars['Int']['output']>;
+    page?: Maybe<Scalars['Int']['output']>;
+    pagingCounter?: Maybe<Scalars['Int']['output']>;
+    prevPage?: Maybe<Scalars['Int']['output']>;
+    totalDocs?: Maybe<Scalars['Int']['output']>;
+    totalPages?: Maybe<Scalars['Int']['output']>;
+};
+
+export type ProcessesCreateAccess = {
+    __typename?: 'ProcessesCreateAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type ProcessesCreateDocAccess = {
+    __typename?: 'ProcessesCreateDocAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type ProcessesDeleteAccess = {
+    __typename?: 'ProcessesDeleteAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type ProcessesDeleteDocAccess = {
+    __typename?: 'ProcessesDeleteDocAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type ProcessesDocAccessFields = {
+    __typename?: 'ProcessesDocAccessFields';
+    callToAction?: Maybe<ProcessesDocAccessFields_CallToAction>;
+    createdAt?: Maybe<ProcessesDocAccessFields_CreatedAt>;
+    internalName?: Maybe<ProcessesDocAccessFields_InternalName>;
+    steps?: Maybe<ProcessesDocAccessFields_Steps>;
+    updatedAt?: Maybe<ProcessesDocAccessFields_UpdatedAt>;
+};
+
+export type ProcessesDocAccessFields_CallToAction = {
+    __typename?: 'ProcessesDocAccessFields_callToAction';
+    create?: Maybe<ProcessesDocAccessFields_CallToAction_Create>;
+    delete?: Maybe<ProcessesDocAccessFields_CallToAction_Delete>;
+    read?: Maybe<ProcessesDocAccessFields_CallToAction_Read>;
+    update?: Maybe<ProcessesDocAccessFields_CallToAction_Update>;
+};
+
+export type ProcessesDocAccessFields_CallToAction_Create = {
+    __typename?: 'ProcessesDocAccessFields_callToAction_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_CallToAction_Delete = {
+    __typename?: 'ProcessesDocAccessFields_callToAction_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_CallToAction_Read = {
+    __typename?: 'ProcessesDocAccessFields_callToAction_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_CallToAction_Update = {
+    __typename?: 'ProcessesDocAccessFields_callToAction_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_CreatedAt = {
+    __typename?: 'ProcessesDocAccessFields_createdAt';
+    create?: Maybe<ProcessesDocAccessFields_CreatedAt_Create>;
+    delete?: Maybe<ProcessesDocAccessFields_CreatedAt_Delete>;
+    read?: Maybe<ProcessesDocAccessFields_CreatedAt_Read>;
+    update?: Maybe<ProcessesDocAccessFields_CreatedAt_Update>;
+};
+
+export type ProcessesDocAccessFields_CreatedAt_Create = {
+    __typename?: 'ProcessesDocAccessFields_createdAt_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_CreatedAt_Delete = {
+    __typename?: 'ProcessesDocAccessFields_createdAt_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_CreatedAt_Read = {
+    __typename?: 'ProcessesDocAccessFields_createdAt_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_CreatedAt_Update = {
+    __typename?: 'ProcessesDocAccessFields_createdAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_InternalName = {
+    __typename?: 'ProcessesDocAccessFields_internalName';
+    create?: Maybe<ProcessesDocAccessFields_InternalName_Create>;
+    delete?: Maybe<ProcessesDocAccessFields_InternalName_Delete>;
+    read?: Maybe<ProcessesDocAccessFields_InternalName_Read>;
+    update?: Maybe<ProcessesDocAccessFields_InternalName_Update>;
+};
+
+export type ProcessesDocAccessFields_InternalName_Create = {
+    __typename?: 'ProcessesDocAccessFields_internalName_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_InternalName_Delete = {
+    __typename?: 'ProcessesDocAccessFields_internalName_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_InternalName_Read = {
+    __typename?: 'ProcessesDocAccessFields_internalName_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_InternalName_Update = {
+    __typename?: 'ProcessesDocAccessFields_internalName_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps = {
+    __typename?: 'ProcessesDocAccessFields_steps';
+    create?: Maybe<ProcessesDocAccessFields_Steps_Create>;
+    delete?: Maybe<ProcessesDocAccessFields_Steps_Delete>;
+    fields?: Maybe<ProcessesDocAccessFields_Steps_Fields>;
+    read?: Maybe<ProcessesDocAccessFields_Steps_Read>;
+    update?: Maybe<ProcessesDocAccessFields_Steps_Update>;
+};
+
+export type ProcessesDocAccessFields_Steps_Create = {
+    __typename?: 'ProcessesDocAccessFields_steps_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps_Delete = {
+    __typename?: 'ProcessesDocAccessFields_steps_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps_Fields = {
+    __typename?: 'ProcessesDocAccessFields_steps_Fields';
+    content?: Maybe<ProcessesDocAccessFields_Steps_Content>;
+    heading?: Maybe<ProcessesDocAccessFields_Steps_Heading>;
+    headingTag?: Maybe<ProcessesDocAccessFields_Steps_HeadingTag>;
+    id?: Maybe<ProcessesDocAccessFields_Steps_Id>;
+};
+
+export type ProcessesDocAccessFields_Steps_Read = {
+    __typename?: 'ProcessesDocAccessFields_steps_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps_Update = {
+    __typename?: 'ProcessesDocAccessFields_steps_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps_Content = {
+    __typename?: 'ProcessesDocAccessFields_steps_content';
+    create?: Maybe<ProcessesDocAccessFields_Steps_Content_Create>;
+    delete?: Maybe<ProcessesDocAccessFields_Steps_Content_Delete>;
+    read?: Maybe<ProcessesDocAccessFields_Steps_Content_Read>;
+    update?: Maybe<ProcessesDocAccessFields_Steps_Content_Update>;
+};
+
+export type ProcessesDocAccessFields_Steps_Content_Create = {
+    __typename?: 'ProcessesDocAccessFields_steps_content_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps_Content_Delete = {
+    __typename?: 'ProcessesDocAccessFields_steps_content_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps_Content_Read = {
+    __typename?: 'ProcessesDocAccessFields_steps_content_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps_Content_Update = {
+    __typename?: 'ProcessesDocAccessFields_steps_content_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps_Heading = {
+    __typename?: 'ProcessesDocAccessFields_steps_heading';
+    create?: Maybe<ProcessesDocAccessFields_Steps_Heading_Create>;
+    delete?: Maybe<ProcessesDocAccessFields_Steps_Heading_Delete>;
+    read?: Maybe<ProcessesDocAccessFields_Steps_Heading_Read>;
+    update?: Maybe<ProcessesDocAccessFields_Steps_Heading_Update>;
+};
+
+export type ProcessesDocAccessFields_Steps_HeadingTag = {
+    __typename?: 'ProcessesDocAccessFields_steps_headingTag';
+    create?: Maybe<ProcessesDocAccessFields_Steps_HeadingTag_Create>;
+    delete?: Maybe<ProcessesDocAccessFields_Steps_HeadingTag_Delete>;
+    read?: Maybe<ProcessesDocAccessFields_Steps_HeadingTag_Read>;
+    update?: Maybe<ProcessesDocAccessFields_Steps_HeadingTag_Update>;
+};
+
+export type ProcessesDocAccessFields_Steps_HeadingTag_Create = {
+    __typename?: 'ProcessesDocAccessFields_steps_headingTag_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps_HeadingTag_Delete = {
+    __typename?: 'ProcessesDocAccessFields_steps_headingTag_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps_HeadingTag_Read = {
+    __typename?: 'ProcessesDocAccessFields_steps_headingTag_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps_HeadingTag_Update = {
+    __typename?: 'ProcessesDocAccessFields_steps_headingTag_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps_Heading_Create = {
+    __typename?: 'ProcessesDocAccessFields_steps_heading_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps_Heading_Delete = {
+    __typename?: 'ProcessesDocAccessFields_steps_heading_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps_Heading_Read = {
+    __typename?: 'ProcessesDocAccessFields_steps_heading_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps_Heading_Update = {
+    __typename?: 'ProcessesDocAccessFields_steps_heading_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps_Id = {
+    __typename?: 'ProcessesDocAccessFields_steps_id';
+    create?: Maybe<ProcessesDocAccessFields_Steps_Id_Create>;
+    delete?: Maybe<ProcessesDocAccessFields_Steps_Id_Delete>;
+    read?: Maybe<ProcessesDocAccessFields_Steps_Id_Read>;
+    update?: Maybe<ProcessesDocAccessFields_Steps_Id_Update>;
+};
+
+export type ProcessesDocAccessFields_Steps_Id_Create = {
+    __typename?: 'ProcessesDocAccessFields_steps_id_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps_Id_Delete = {
+    __typename?: 'ProcessesDocAccessFields_steps_id_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps_Id_Read = {
+    __typename?: 'ProcessesDocAccessFields_steps_id_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_Steps_Id_Update = {
+    __typename?: 'ProcessesDocAccessFields_steps_id_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_UpdatedAt = {
+    __typename?: 'ProcessesDocAccessFields_updatedAt';
+    create?: Maybe<ProcessesDocAccessFields_UpdatedAt_Create>;
+    delete?: Maybe<ProcessesDocAccessFields_UpdatedAt_Delete>;
+    read?: Maybe<ProcessesDocAccessFields_UpdatedAt_Read>;
+    update?: Maybe<ProcessesDocAccessFields_UpdatedAt_Update>;
+};
+
+export type ProcessesDocAccessFields_UpdatedAt_Create = {
+    __typename?: 'ProcessesDocAccessFields_updatedAt_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_UpdatedAt_Delete = {
+    __typename?: 'ProcessesDocAccessFields_updatedAt_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_UpdatedAt_Read = {
+    __typename?: 'ProcessesDocAccessFields_updatedAt_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesDocAccessFields_UpdatedAt_Update = {
+    __typename?: 'ProcessesDocAccessFields_updatedAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields = {
+    __typename?: 'ProcessesFields';
+    callToAction?: Maybe<ProcessesFields_CallToAction>;
+    createdAt?: Maybe<ProcessesFields_CreatedAt>;
+    internalName?: Maybe<ProcessesFields_InternalName>;
+    steps?: Maybe<ProcessesFields_Steps>;
+    updatedAt?: Maybe<ProcessesFields_UpdatedAt>;
+};
+
+export type ProcessesFields_CallToAction = {
+    __typename?: 'ProcessesFields_callToAction';
+    create?: Maybe<ProcessesFields_CallToAction_Create>;
+    delete?: Maybe<ProcessesFields_CallToAction_Delete>;
+    read?: Maybe<ProcessesFields_CallToAction_Read>;
+    update?: Maybe<ProcessesFields_CallToAction_Update>;
+};
+
+export type ProcessesFields_CallToAction_Create = {
+    __typename?: 'ProcessesFields_callToAction_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_CallToAction_Delete = {
+    __typename?: 'ProcessesFields_callToAction_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_CallToAction_Read = {
+    __typename?: 'ProcessesFields_callToAction_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_CallToAction_Update = {
+    __typename?: 'ProcessesFields_callToAction_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_CreatedAt = {
+    __typename?: 'ProcessesFields_createdAt';
+    create?: Maybe<ProcessesFields_CreatedAt_Create>;
+    delete?: Maybe<ProcessesFields_CreatedAt_Delete>;
+    read?: Maybe<ProcessesFields_CreatedAt_Read>;
+    update?: Maybe<ProcessesFields_CreatedAt_Update>;
+};
+
+export type ProcessesFields_CreatedAt_Create = {
+    __typename?: 'ProcessesFields_createdAt_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_CreatedAt_Delete = {
+    __typename?: 'ProcessesFields_createdAt_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_CreatedAt_Read = {
+    __typename?: 'ProcessesFields_createdAt_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_CreatedAt_Update = {
+    __typename?: 'ProcessesFields_createdAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_InternalName = {
+    __typename?: 'ProcessesFields_internalName';
+    create?: Maybe<ProcessesFields_InternalName_Create>;
+    delete?: Maybe<ProcessesFields_InternalName_Delete>;
+    read?: Maybe<ProcessesFields_InternalName_Read>;
+    update?: Maybe<ProcessesFields_InternalName_Update>;
+};
+
+export type ProcessesFields_InternalName_Create = {
+    __typename?: 'ProcessesFields_internalName_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_InternalName_Delete = {
+    __typename?: 'ProcessesFields_internalName_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_InternalName_Read = {
+    __typename?: 'ProcessesFields_internalName_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_InternalName_Update = {
+    __typename?: 'ProcessesFields_internalName_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps = {
+    __typename?: 'ProcessesFields_steps';
+    create?: Maybe<ProcessesFields_Steps_Create>;
+    delete?: Maybe<ProcessesFields_Steps_Delete>;
+    fields?: Maybe<ProcessesFields_Steps_Fields>;
+    read?: Maybe<ProcessesFields_Steps_Read>;
+    update?: Maybe<ProcessesFields_Steps_Update>;
+};
+
+export type ProcessesFields_Steps_Create = {
+    __typename?: 'ProcessesFields_steps_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps_Delete = {
+    __typename?: 'ProcessesFields_steps_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps_Fields = {
+    __typename?: 'ProcessesFields_steps_Fields';
+    content?: Maybe<ProcessesFields_Steps_Content>;
+    heading?: Maybe<ProcessesFields_Steps_Heading>;
+    headingTag?: Maybe<ProcessesFields_Steps_HeadingTag>;
+    id?: Maybe<ProcessesFields_Steps_Id>;
+};
+
+export type ProcessesFields_Steps_Read = {
+    __typename?: 'ProcessesFields_steps_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps_Update = {
+    __typename?: 'ProcessesFields_steps_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps_Content = {
+    __typename?: 'ProcessesFields_steps_content';
+    create?: Maybe<ProcessesFields_Steps_Content_Create>;
+    delete?: Maybe<ProcessesFields_Steps_Content_Delete>;
+    read?: Maybe<ProcessesFields_Steps_Content_Read>;
+    update?: Maybe<ProcessesFields_Steps_Content_Update>;
+};
+
+export type ProcessesFields_Steps_Content_Create = {
+    __typename?: 'ProcessesFields_steps_content_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps_Content_Delete = {
+    __typename?: 'ProcessesFields_steps_content_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps_Content_Read = {
+    __typename?: 'ProcessesFields_steps_content_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps_Content_Update = {
+    __typename?: 'ProcessesFields_steps_content_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps_Heading = {
+    __typename?: 'ProcessesFields_steps_heading';
+    create?: Maybe<ProcessesFields_Steps_Heading_Create>;
+    delete?: Maybe<ProcessesFields_Steps_Heading_Delete>;
+    read?: Maybe<ProcessesFields_Steps_Heading_Read>;
+    update?: Maybe<ProcessesFields_Steps_Heading_Update>;
+};
+
+export type ProcessesFields_Steps_HeadingTag = {
+    __typename?: 'ProcessesFields_steps_headingTag';
+    create?: Maybe<ProcessesFields_Steps_HeadingTag_Create>;
+    delete?: Maybe<ProcessesFields_Steps_HeadingTag_Delete>;
+    read?: Maybe<ProcessesFields_Steps_HeadingTag_Read>;
+    update?: Maybe<ProcessesFields_Steps_HeadingTag_Update>;
+};
+
+export type ProcessesFields_Steps_HeadingTag_Create = {
+    __typename?: 'ProcessesFields_steps_headingTag_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps_HeadingTag_Delete = {
+    __typename?: 'ProcessesFields_steps_headingTag_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps_HeadingTag_Read = {
+    __typename?: 'ProcessesFields_steps_headingTag_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps_HeadingTag_Update = {
+    __typename?: 'ProcessesFields_steps_headingTag_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps_Heading_Create = {
+    __typename?: 'ProcessesFields_steps_heading_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps_Heading_Delete = {
+    __typename?: 'ProcessesFields_steps_heading_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps_Heading_Read = {
+    __typename?: 'ProcessesFields_steps_heading_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps_Heading_Update = {
+    __typename?: 'ProcessesFields_steps_heading_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps_Id = {
+    __typename?: 'ProcessesFields_steps_id';
+    create?: Maybe<ProcessesFields_Steps_Id_Create>;
+    delete?: Maybe<ProcessesFields_Steps_Id_Delete>;
+    read?: Maybe<ProcessesFields_Steps_Id_Read>;
+    update?: Maybe<ProcessesFields_Steps_Id_Update>;
+};
+
+export type ProcessesFields_Steps_Id_Create = {
+    __typename?: 'ProcessesFields_steps_id_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps_Id_Delete = {
+    __typename?: 'ProcessesFields_steps_id_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps_Id_Read = {
+    __typename?: 'ProcessesFields_steps_id_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_Steps_Id_Update = {
+    __typename?: 'ProcessesFields_steps_id_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_UpdatedAt = {
+    __typename?: 'ProcessesFields_updatedAt';
+    create?: Maybe<ProcessesFields_UpdatedAt_Create>;
+    delete?: Maybe<ProcessesFields_UpdatedAt_Delete>;
+    read?: Maybe<ProcessesFields_UpdatedAt_Read>;
+    update?: Maybe<ProcessesFields_UpdatedAt_Update>;
+};
+
+export type ProcessesFields_UpdatedAt_Create = {
+    __typename?: 'ProcessesFields_updatedAt_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_UpdatedAt_Delete = {
+    __typename?: 'ProcessesFields_updatedAt_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_UpdatedAt_Read = {
+    __typename?: 'ProcessesFields_updatedAt_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesFields_UpdatedAt_Update = {
+    __typename?: 'ProcessesFields_updatedAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ProcessesReadAccess = {
+    __typename?: 'ProcessesReadAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type ProcessesReadDocAccess = {
+    __typename?: 'ProcessesReadDocAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type ProcessesUpdateAccess = {
+    __typename?: 'ProcessesUpdateAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type ProcessesUpdateDocAccess = {
+    __typename?: 'ProcessesUpdateDocAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
 export type Query = {
     __typename?: 'Query';
     Access?: Maybe<Access>;
@@ -13381,6 +14917,8 @@ export type Query = {
     Heroes?: Maybe<Heroes>;
     Icon?: Maybe<Icon>;
     IconTile?: Maybe<IconTile>;
+    IconTileGrid?: Maybe<IconTileGrid>;
+    IconTileGrids?: Maybe<IconTileGrids>;
     IconTiles?: Maybe<IconTiles>;
     Icons?: Maybe<Icons>;
     Image?: Maybe<Image>;
@@ -13388,8 +14926,12 @@ export type Query = {
     Page?: Maybe<Page>;
     Pages?: Maybe<Pages>;
     Preference?: Maybe<Preference>;
+    Process?: Maybe<Process>;
+    Processes?: Maybe<Processes>;
     Switchback?: Maybe<Switchback>;
     Switchbacks?: Maybe<Switchbacks>;
+    TextGrid?: Maybe<TextGrid>;
+    TextGrids?: Maybe<TextGrids>;
     TileGrid?: Maybe<TileGrid>;
     TileGrids?: Maybe<TileGrids>;
     User?: Maybe<User>;
@@ -13408,9 +14950,12 @@ export type Query = {
     docAccessHero?: Maybe<HeroesDocAccess>;
     docAccessIcon?: Maybe<IconsDocAccess>;
     docAccessIconTile?: Maybe<Icon_TilesDocAccess>;
+    docAccessIconTileGrid?: Maybe<Icon_Tile_GridsDocAccess>;
     docAccessImage?: Maybe<ImagesDocAccess>;
     docAccessPage?: Maybe<PagesDocAccess>;
+    docAccessProcess?: Maybe<ProcessesDocAccess>;
     docAccessSwitchback?: Maybe<SwitchbacksDocAccess>;
+    docAccessTextGrid?: Maybe<Text_GridsDocAccess>;
     docAccessTileGrid?: Maybe<Tile_GridsDocAccess>;
     docAccessUser?: Maybe<UsersDocAccess>;
     docAccessVideo?: Maybe<VideosDocAccess>;
@@ -13540,6 +15085,19 @@ export type QueryIconTileArgs = {
     id: Scalars['String']['input'];
 };
 
+export type QueryIconTileGridArgs = {
+    draft?: InputMaybe<Scalars['Boolean']['input']>;
+    id: Scalars['String']['input'];
+};
+
+export type QueryIconTileGridsArgs = {
+    draft?: InputMaybe<Scalars['Boolean']['input']>;
+    limit?: InputMaybe<Scalars['Int']['input']>;
+    page?: InputMaybe<Scalars['Int']['input']>;
+    sort?: InputMaybe<Scalars['String']['input']>;
+    where?: InputMaybe<IconTileGrid_Where>;
+};
+
 export type QueryIconTilesArgs = {
     draft?: InputMaybe<Scalars['Boolean']['input']>;
     limit?: InputMaybe<Scalars['Int']['input']>;
@@ -13586,6 +15144,19 @@ export type QueryPreferenceArgs = {
     key?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type QueryProcessArgs = {
+    draft?: InputMaybe<Scalars['Boolean']['input']>;
+    id: Scalars['String']['input'];
+};
+
+export type QueryProcessesArgs = {
+    draft?: InputMaybe<Scalars['Boolean']['input']>;
+    limit?: InputMaybe<Scalars['Int']['input']>;
+    page?: InputMaybe<Scalars['Int']['input']>;
+    sort?: InputMaybe<Scalars['String']['input']>;
+    where?: InputMaybe<Process_Where>;
+};
+
 export type QuerySwitchbackArgs = {
     draft?: InputMaybe<Scalars['Boolean']['input']>;
     id: Scalars['String']['input'];
@@ -13597,6 +15168,19 @@ export type QuerySwitchbacksArgs = {
     page?: InputMaybe<Scalars['Int']['input']>;
     sort?: InputMaybe<Scalars['String']['input']>;
     where?: InputMaybe<Switchback_Where>;
+};
+
+export type QueryTextGridArgs = {
+    draft?: InputMaybe<Scalars['Boolean']['input']>;
+    id: Scalars['String']['input'];
+};
+
+export type QueryTextGridsArgs = {
+    draft?: InputMaybe<Scalars['Boolean']['input']>;
+    limit?: InputMaybe<Scalars['Int']['input']>;
+    page?: InputMaybe<Scalars['Int']['input']>;
+    sort?: InputMaybe<Scalars['String']['input']>;
+    where?: InputMaybe<TextGrid_Where>;
 };
 
 export type QueryTileGridArgs = {
@@ -13678,6 +15262,10 @@ export type QueryDocAccessIconTileArgs = {
     id: Scalars['String']['input'];
 };
 
+export type QueryDocAccessIconTileGridArgs = {
+    id: Scalars['String']['input'];
+};
+
 export type QueryDocAccessImageArgs = {
     id: Scalars['String']['input'];
 };
@@ -13686,7 +15274,15 @@ export type QueryDocAccessPageArgs = {
     id: Scalars['String']['input'];
 };
 
+export type QueryDocAccessProcessArgs = {
+    id: Scalars['String']['input'];
+};
+
 export type QueryDocAccessSwitchbackArgs = {
+    id: Scalars['String']['input'];
+};
+
+export type QueryDocAccessTextGridArgs = {
     id: Scalars['String']['input'];
 };
 
@@ -13721,6 +15317,14 @@ export type SwitchbackContentArgs = {
 
 export type SwitchbackImageArgs = {
     where?: InputMaybe<Switchback_Image_Where>;
+};
+
+export type SwitchbackBlock = {
+    __typename?: 'SwitchbackBlock';
+    blockName?: Maybe<Scalars['String']['output']>;
+    blockType?: Maybe<Scalars['String']['output']>;
+    id?: Maybe<Scalars['String']['output']>;
+    switchback?: Maybe<Switchback>;
 };
 
 export type Switchback_Image_Alt_Operator = {
@@ -14617,15 +16221,778 @@ export type SwitchbacksUpdateDocAccess = {
     where?: Maybe<Scalars['JSONObject']['output']>;
 };
 
-export type TileGrid = {
-    __typename?: 'TileGrid';
-    callToAction: Button;
+export type TextGrid = {
+    __typename?: 'TextGrid';
+    callToAction?: Maybe<Button>;
     content?: Maybe<Scalars['JSON']['output']>;
     createdAt?: Maybe<Scalars['DateTime']['output']>;
     heading: Scalars['String']['output'];
     headingTag: Scalars['String']['output'];
-    iconTiles?: Maybe<Array<TileGrid_IconTiles>>;
     id?: Maybe<Scalars['String']['output']>;
+    textTiles?: Maybe<Array<TextGrid_TextTiles>>;
+    updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type TextGridContentArgs = {
+    depth?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type TextGridBlock = {
+    __typename?: 'TextGridBlock';
+    blockName?: Maybe<Scalars['String']['output']>;
+    blockType?: Maybe<Scalars['String']['output']>;
+    id?: Maybe<Scalars['String']['output']>;
+    textGrid?: Maybe<TextGrid>;
+};
+
+export type TextGrid_TextTiles = {
+    __typename?: 'TextGrid_TextTiles';
+    id?: Maybe<Scalars['String']['output']>;
+    text?: Maybe<Scalars['String']['output']>;
+};
+
+export type TextGrid_CallToAction_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type TextGrid_Content_Operator = {
+    contains?: InputMaybe<Scalars['JSON']['input']>;
+    equals?: InputMaybe<Scalars['JSON']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    like?: InputMaybe<Scalars['JSON']['input']>;
+    not_equals?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type TextGrid_CreatedAt_Operator = {
+    equals?: InputMaybe<Scalars['DateTime']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    like?: InputMaybe<Scalars['DateTime']['input']>;
+    not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type TextGrid_HeadingTag_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type TextGrid_Heading_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type TextGrid_Id_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type TextGrid_TextTiles__Id_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type TextGrid_TextTiles__Text_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type TextGrid_UpdatedAt_Operator = {
+    equals?: InputMaybe<Scalars['DateTime']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    like?: InputMaybe<Scalars['DateTime']['input']>;
+    not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type TextGrid_Where = {
+    AND?: InputMaybe<Array<InputMaybe<TextGrid_Where_And>>>;
+    OR?: InputMaybe<Array<InputMaybe<TextGrid_Where_Or>>>;
+    callToAction?: InputMaybe<TextGrid_CallToAction_Operator>;
+    content?: InputMaybe<TextGrid_Content_Operator>;
+    createdAt?: InputMaybe<TextGrid_CreatedAt_Operator>;
+    heading?: InputMaybe<TextGrid_Heading_Operator>;
+    headingTag?: InputMaybe<TextGrid_HeadingTag_Operator>;
+    id?: InputMaybe<TextGrid_Id_Operator>;
+    textTiles__id?: InputMaybe<TextGrid_TextTiles__Id_Operator>;
+    textTiles__text?: InputMaybe<TextGrid_TextTiles__Text_Operator>;
+    updatedAt?: InputMaybe<TextGrid_UpdatedAt_Operator>;
+};
+
+export type TextGrid_Where_And = {
+    callToAction?: InputMaybe<TextGrid_CallToAction_Operator>;
+    content?: InputMaybe<TextGrid_Content_Operator>;
+    createdAt?: InputMaybe<TextGrid_CreatedAt_Operator>;
+    heading?: InputMaybe<TextGrid_Heading_Operator>;
+    headingTag?: InputMaybe<TextGrid_HeadingTag_Operator>;
+    id?: InputMaybe<TextGrid_Id_Operator>;
+    textTiles__id?: InputMaybe<TextGrid_TextTiles__Id_Operator>;
+    textTiles__text?: InputMaybe<TextGrid_TextTiles__Text_Operator>;
+    updatedAt?: InputMaybe<TextGrid_UpdatedAt_Operator>;
+};
+
+export type TextGrid_Where_Or = {
+    callToAction?: InputMaybe<TextGrid_CallToAction_Operator>;
+    content?: InputMaybe<TextGrid_Content_Operator>;
+    createdAt?: InputMaybe<TextGrid_CreatedAt_Operator>;
+    heading?: InputMaybe<TextGrid_Heading_Operator>;
+    headingTag?: InputMaybe<TextGrid_HeadingTag_Operator>;
+    id?: InputMaybe<TextGrid_Id_Operator>;
+    textTiles__id?: InputMaybe<TextGrid_TextTiles__Id_Operator>;
+    textTiles__text?: InputMaybe<TextGrid_TextTiles__Text_Operator>;
+    updatedAt?: InputMaybe<TextGrid_UpdatedAt_Operator>;
+};
+
+export type TextGrids = {
+    __typename?: 'TextGrids';
+    docs?: Maybe<Array<Maybe<TextGrid>>>;
+    hasNextPage?: Maybe<Scalars['Boolean']['output']>;
+    hasPrevPage?: Maybe<Scalars['Boolean']['output']>;
+    limit?: Maybe<Scalars['Int']['output']>;
+    nextPage?: Maybe<Scalars['Int']['output']>;
+    offset?: Maybe<Scalars['Int']['output']>;
+    page?: Maybe<Scalars['Int']['output']>;
+    pagingCounter?: Maybe<Scalars['Int']['output']>;
+    prevPage?: Maybe<Scalars['Int']['output']>;
+    totalDocs?: Maybe<Scalars['Int']['output']>;
+    totalPages?: Maybe<Scalars['Int']['output']>;
+};
+
+export type TextGridsCreateAccess = {
+    __typename?: 'TextGridsCreateAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TextGridsCreateDocAccess = {
+    __typename?: 'TextGridsCreateDocAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TextGridsDeleteAccess = {
+    __typename?: 'TextGridsDeleteAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TextGridsDeleteDocAccess = {
+    __typename?: 'TextGridsDeleteDocAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TextGridsDocAccessFields = {
+    __typename?: 'TextGridsDocAccessFields';
+    callToAction?: Maybe<TextGridsDocAccessFields_CallToAction>;
+    content?: Maybe<TextGridsDocAccessFields_Content>;
+    createdAt?: Maybe<TextGridsDocAccessFields_CreatedAt>;
+    heading?: Maybe<TextGridsDocAccessFields_Heading>;
+    headingTag?: Maybe<TextGridsDocAccessFields_HeadingTag>;
+    textTiles?: Maybe<TextGridsDocAccessFields_TextTiles>;
+    updatedAt?: Maybe<TextGridsDocAccessFields_UpdatedAt>;
+};
+
+export type TextGridsDocAccessFields_CallToAction = {
+    __typename?: 'TextGridsDocAccessFields_callToAction';
+    create?: Maybe<TextGridsDocAccessFields_CallToAction_Create>;
+    delete?: Maybe<TextGridsDocAccessFields_CallToAction_Delete>;
+    read?: Maybe<TextGridsDocAccessFields_CallToAction_Read>;
+    update?: Maybe<TextGridsDocAccessFields_CallToAction_Update>;
+};
+
+export type TextGridsDocAccessFields_CallToAction_Create = {
+    __typename?: 'TextGridsDocAccessFields_callToAction_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_CallToAction_Delete = {
+    __typename?: 'TextGridsDocAccessFields_callToAction_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_CallToAction_Read = {
+    __typename?: 'TextGridsDocAccessFields_callToAction_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_CallToAction_Update = {
+    __typename?: 'TextGridsDocAccessFields_callToAction_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_Content = {
+    __typename?: 'TextGridsDocAccessFields_content';
+    create?: Maybe<TextGridsDocAccessFields_Content_Create>;
+    delete?: Maybe<TextGridsDocAccessFields_Content_Delete>;
+    read?: Maybe<TextGridsDocAccessFields_Content_Read>;
+    update?: Maybe<TextGridsDocAccessFields_Content_Update>;
+};
+
+export type TextGridsDocAccessFields_Content_Create = {
+    __typename?: 'TextGridsDocAccessFields_content_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_Content_Delete = {
+    __typename?: 'TextGridsDocAccessFields_content_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_Content_Read = {
+    __typename?: 'TextGridsDocAccessFields_content_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_Content_Update = {
+    __typename?: 'TextGridsDocAccessFields_content_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_CreatedAt = {
+    __typename?: 'TextGridsDocAccessFields_createdAt';
+    create?: Maybe<TextGridsDocAccessFields_CreatedAt_Create>;
+    delete?: Maybe<TextGridsDocAccessFields_CreatedAt_Delete>;
+    read?: Maybe<TextGridsDocAccessFields_CreatedAt_Read>;
+    update?: Maybe<TextGridsDocAccessFields_CreatedAt_Update>;
+};
+
+export type TextGridsDocAccessFields_CreatedAt_Create = {
+    __typename?: 'TextGridsDocAccessFields_createdAt_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_CreatedAt_Delete = {
+    __typename?: 'TextGridsDocAccessFields_createdAt_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_CreatedAt_Read = {
+    __typename?: 'TextGridsDocAccessFields_createdAt_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_CreatedAt_Update = {
+    __typename?: 'TextGridsDocAccessFields_createdAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_Heading = {
+    __typename?: 'TextGridsDocAccessFields_heading';
+    create?: Maybe<TextGridsDocAccessFields_Heading_Create>;
+    delete?: Maybe<TextGridsDocAccessFields_Heading_Delete>;
+    read?: Maybe<TextGridsDocAccessFields_Heading_Read>;
+    update?: Maybe<TextGridsDocAccessFields_Heading_Update>;
+};
+
+export type TextGridsDocAccessFields_HeadingTag = {
+    __typename?: 'TextGridsDocAccessFields_headingTag';
+    create?: Maybe<TextGridsDocAccessFields_HeadingTag_Create>;
+    delete?: Maybe<TextGridsDocAccessFields_HeadingTag_Delete>;
+    read?: Maybe<TextGridsDocAccessFields_HeadingTag_Read>;
+    update?: Maybe<TextGridsDocAccessFields_HeadingTag_Update>;
+};
+
+export type TextGridsDocAccessFields_HeadingTag_Create = {
+    __typename?: 'TextGridsDocAccessFields_headingTag_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_HeadingTag_Delete = {
+    __typename?: 'TextGridsDocAccessFields_headingTag_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_HeadingTag_Read = {
+    __typename?: 'TextGridsDocAccessFields_headingTag_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_HeadingTag_Update = {
+    __typename?: 'TextGridsDocAccessFields_headingTag_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_Heading_Create = {
+    __typename?: 'TextGridsDocAccessFields_heading_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_Heading_Delete = {
+    __typename?: 'TextGridsDocAccessFields_heading_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_Heading_Read = {
+    __typename?: 'TextGridsDocAccessFields_heading_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_Heading_Update = {
+    __typename?: 'TextGridsDocAccessFields_heading_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_TextTiles = {
+    __typename?: 'TextGridsDocAccessFields_textTiles';
+    create?: Maybe<TextGridsDocAccessFields_TextTiles_Create>;
+    delete?: Maybe<TextGridsDocAccessFields_TextTiles_Delete>;
+    fields?: Maybe<TextGridsDocAccessFields_TextTiles_Fields>;
+    read?: Maybe<TextGridsDocAccessFields_TextTiles_Read>;
+    update?: Maybe<TextGridsDocAccessFields_TextTiles_Update>;
+};
+
+export type TextGridsDocAccessFields_TextTiles_Create = {
+    __typename?: 'TextGridsDocAccessFields_textTiles_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_TextTiles_Delete = {
+    __typename?: 'TextGridsDocAccessFields_textTiles_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_TextTiles_Fields = {
+    __typename?: 'TextGridsDocAccessFields_textTiles_Fields';
+    id?: Maybe<TextGridsDocAccessFields_TextTiles_Id>;
+    text?: Maybe<TextGridsDocAccessFields_TextTiles_Text>;
+};
+
+export type TextGridsDocAccessFields_TextTiles_Read = {
+    __typename?: 'TextGridsDocAccessFields_textTiles_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_TextTiles_Update = {
+    __typename?: 'TextGridsDocAccessFields_textTiles_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_TextTiles_Id = {
+    __typename?: 'TextGridsDocAccessFields_textTiles_id';
+    create?: Maybe<TextGridsDocAccessFields_TextTiles_Id_Create>;
+    delete?: Maybe<TextGridsDocAccessFields_TextTiles_Id_Delete>;
+    read?: Maybe<TextGridsDocAccessFields_TextTiles_Id_Read>;
+    update?: Maybe<TextGridsDocAccessFields_TextTiles_Id_Update>;
+};
+
+export type TextGridsDocAccessFields_TextTiles_Id_Create = {
+    __typename?: 'TextGridsDocAccessFields_textTiles_id_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_TextTiles_Id_Delete = {
+    __typename?: 'TextGridsDocAccessFields_textTiles_id_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_TextTiles_Id_Read = {
+    __typename?: 'TextGridsDocAccessFields_textTiles_id_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_TextTiles_Id_Update = {
+    __typename?: 'TextGridsDocAccessFields_textTiles_id_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_TextTiles_Text = {
+    __typename?: 'TextGridsDocAccessFields_textTiles_text';
+    create?: Maybe<TextGridsDocAccessFields_TextTiles_Text_Create>;
+    delete?: Maybe<TextGridsDocAccessFields_TextTiles_Text_Delete>;
+    read?: Maybe<TextGridsDocAccessFields_TextTiles_Text_Read>;
+    update?: Maybe<TextGridsDocAccessFields_TextTiles_Text_Update>;
+};
+
+export type TextGridsDocAccessFields_TextTiles_Text_Create = {
+    __typename?: 'TextGridsDocAccessFields_textTiles_text_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_TextTiles_Text_Delete = {
+    __typename?: 'TextGridsDocAccessFields_textTiles_text_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_TextTiles_Text_Read = {
+    __typename?: 'TextGridsDocAccessFields_textTiles_text_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_TextTiles_Text_Update = {
+    __typename?: 'TextGridsDocAccessFields_textTiles_text_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_UpdatedAt = {
+    __typename?: 'TextGridsDocAccessFields_updatedAt';
+    create?: Maybe<TextGridsDocAccessFields_UpdatedAt_Create>;
+    delete?: Maybe<TextGridsDocAccessFields_UpdatedAt_Delete>;
+    read?: Maybe<TextGridsDocAccessFields_UpdatedAt_Read>;
+    update?: Maybe<TextGridsDocAccessFields_UpdatedAt_Update>;
+};
+
+export type TextGridsDocAccessFields_UpdatedAt_Create = {
+    __typename?: 'TextGridsDocAccessFields_updatedAt_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_UpdatedAt_Delete = {
+    __typename?: 'TextGridsDocAccessFields_updatedAt_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_UpdatedAt_Read = {
+    __typename?: 'TextGridsDocAccessFields_updatedAt_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsDocAccessFields_UpdatedAt_Update = {
+    __typename?: 'TextGridsDocAccessFields_updatedAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields = {
+    __typename?: 'TextGridsFields';
+    callToAction?: Maybe<TextGridsFields_CallToAction>;
+    content?: Maybe<TextGridsFields_Content>;
+    createdAt?: Maybe<TextGridsFields_CreatedAt>;
+    heading?: Maybe<TextGridsFields_Heading>;
+    headingTag?: Maybe<TextGridsFields_HeadingTag>;
+    textTiles?: Maybe<TextGridsFields_TextTiles>;
+    updatedAt?: Maybe<TextGridsFields_UpdatedAt>;
+};
+
+export type TextGridsFields_CallToAction = {
+    __typename?: 'TextGridsFields_callToAction';
+    create?: Maybe<TextGridsFields_CallToAction_Create>;
+    delete?: Maybe<TextGridsFields_CallToAction_Delete>;
+    read?: Maybe<TextGridsFields_CallToAction_Read>;
+    update?: Maybe<TextGridsFields_CallToAction_Update>;
+};
+
+export type TextGridsFields_CallToAction_Create = {
+    __typename?: 'TextGridsFields_callToAction_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_CallToAction_Delete = {
+    __typename?: 'TextGridsFields_callToAction_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_CallToAction_Read = {
+    __typename?: 'TextGridsFields_callToAction_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_CallToAction_Update = {
+    __typename?: 'TextGridsFields_callToAction_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_Content = {
+    __typename?: 'TextGridsFields_content';
+    create?: Maybe<TextGridsFields_Content_Create>;
+    delete?: Maybe<TextGridsFields_Content_Delete>;
+    read?: Maybe<TextGridsFields_Content_Read>;
+    update?: Maybe<TextGridsFields_Content_Update>;
+};
+
+export type TextGridsFields_Content_Create = {
+    __typename?: 'TextGridsFields_content_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_Content_Delete = {
+    __typename?: 'TextGridsFields_content_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_Content_Read = {
+    __typename?: 'TextGridsFields_content_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_Content_Update = {
+    __typename?: 'TextGridsFields_content_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_CreatedAt = {
+    __typename?: 'TextGridsFields_createdAt';
+    create?: Maybe<TextGridsFields_CreatedAt_Create>;
+    delete?: Maybe<TextGridsFields_CreatedAt_Delete>;
+    read?: Maybe<TextGridsFields_CreatedAt_Read>;
+    update?: Maybe<TextGridsFields_CreatedAt_Update>;
+};
+
+export type TextGridsFields_CreatedAt_Create = {
+    __typename?: 'TextGridsFields_createdAt_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_CreatedAt_Delete = {
+    __typename?: 'TextGridsFields_createdAt_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_CreatedAt_Read = {
+    __typename?: 'TextGridsFields_createdAt_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_CreatedAt_Update = {
+    __typename?: 'TextGridsFields_createdAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_Heading = {
+    __typename?: 'TextGridsFields_heading';
+    create?: Maybe<TextGridsFields_Heading_Create>;
+    delete?: Maybe<TextGridsFields_Heading_Delete>;
+    read?: Maybe<TextGridsFields_Heading_Read>;
+    update?: Maybe<TextGridsFields_Heading_Update>;
+};
+
+export type TextGridsFields_HeadingTag = {
+    __typename?: 'TextGridsFields_headingTag';
+    create?: Maybe<TextGridsFields_HeadingTag_Create>;
+    delete?: Maybe<TextGridsFields_HeadingTag_Delete>;
+    read?: Maybe<TextGridsFields_HeadingTag_Read>;
+    update?: Maybe<TextGridsFields_HeadingTag_Update>;
+};
+
+export type TextGridsFields_HeadingTag_Create = {
+    __typename?: 'TextGridsFields_headingTag_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_HeadingTag_Delete = {
+    __typename?: 'TextGridsFields_headingTag_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_HeadingTag_Read = {
+    __typename?: 'TextGridsFields_headingTag_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_HeadingTag_Update = {
+    __typename?: 'TextGridsFields_headingTag_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_Heading_Create = {
+    __typename?: 'TextGridsFields_heading_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_Heading_Delete = {
+    __typename?: 'TextGridsFields_heading_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_Heading_Read = {
+    __typename?: 'TextGridsFields_heading_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_Heading_Update = {
+    __typename?: 'TextGridsFields_heading_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_TextTiles = {
+    __typename?: 'TextGridsFields_textTiles';
+    create?: Maybe<TextGridsFields_TextTiles_Create>;
+    delete?: Maybe<TextGridsFields_TextTiles_Delete>;
+    fields?: Maybe<TextGridsFields_TextTiles_Fields>;
+    read?: Maybe<TextGridsFields_TextTiles_Read>;
+    update?: Maybe<TextGridsFields_TextTiles_Update>;
+};
+
+export type TextGridsFields_TextTiles_Create = {
+    __typename?: 'TextGridsFields_textTiles_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_TextTiles_Delete = {
+    __typename?: 'TextGridsFields_textTiles_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_TextTiles_Fields = {
+    __typename?: 'TextGridsFields_textTiles_Fields';
+    id?: Maybe<TextGridsFields_TextTiles_Id>;
+    text?: Maybe<TextGridsFields_TextTiles_Text>;
+};
+
+export type TextGridsFields_TextTiles_Read = {
+    __typename?: 'TextGridsFields_textTiles_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_TextTiles_Update = {
+    __typename?: 'TextGridsFields_textTiles_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_TextTiles_Id = {
+    __typename?: 'TextGridsFields_textTiles_id';
+    create?: Maybe<TextGridsFields_TextTiles_Id_Create>;
+    delete?: Maybe<TextGridsFields_TextTiles_Id_Delete>;
+    read?: Maybe<TextGridsFields_TextTiles_Id_Read>;
+    update?: Maybe<TextGridsFields_TextTiles_Id_Update>;
+};
+
+export type TextGridsFields_TextTiles_Id_Create = {
+    __typename?: 'TextGridsFields_textTiles_id_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_TextTiles_Id_Delete = {
+    __typename?: 'TextGridsFields_textTiles_id_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_TextTiles_Id_Read = {
+    __typename?: 'TextGridsFields_textTiles_id_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_TextTiles_Id_Update = {
+    __typename?: 'TextGridsFields_textTiles_id_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_TextTiles_Text = {
+    __typename?: 'TextGridsFields_textTiles_text';
+    create?: Maybe<TextGridsFields_TextTiles_Text_Create>;
+    delete?: Maybe<TextGridsFields_TextTiles_Text_Delete>;
+    read?: Maybe<TextGridsFields_TextTiles_Text_Read>;
+    update?: Maybe<TextGridsFields_TextTiles_Text_Update>;
+};
+
+export type TextGridsFields_TextTiles_Text_Create = {
+    __typename?: 'TextGridsFields_textTiles_text_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_TextTiles_Text_Delete = {
+    __typename?: 'TextGridsFields_textTiles_text_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_TextTiles_Text_Read = {
+    __typename?: 'TextGridsFields_textTiles_text_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_TextTiles_Text_Update = {
+    __typename?: 'TextGridsFields_textTiles_text_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_UpdatedAt = {
+    __typename?: 'TextGridsFields_updatedAt';
+    create?: Maybe<TextGridsFields_UpdatedAt_Create>;
+    delete?: Maybe<TextGridsFields_UpdatedAt_Delete>;
+    read?: Maybe<TextGridsFields_UpdatedAt_Read>;
+    update?: Maybe<TextGridsFields_UpdatedAt_Update>;
+};
+
+export type TextGridsFields_UpdatedAt_Create = {
+    __typename?: 'TextGridsFields_updatedAt_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_UpdatedAt_Delete = {
+    __typename?: 'TextGridsFields_updatedAt_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_UpdatedAt_Read = {
+    __typename?: 'TextGridsFields_updatedAt_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsFields_UpdatedAt_Update = {
+    __typename?: 'TextGridsFields_updatedAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TextGridsReadAccess = {
+    __typename?: 'TextGridsReadAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TextGridsReadDocAccess = {
+    __typename?: 'TextGridsReadDocAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TextGridsUpdateAccess = {
+    __typename?: 'TextGridsUpdateAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TextGridsUpdateDocAccess = {
+    __typename?: 'TextGridsUpdateDocAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TileGrid = {
+    __typename?: 'TileGrid';
+    callToAction?: Maybe<Button>;
+    content?: Maybe<Scalars['JSON']['output']>;
+    createdAt?: Maybe<Scalars['DateTime']['output']>;
+    heading: Scalars['String']['output'];
+    headingTag: Scalars['String']['output'];
+    id?: Maybe<Scalars['String']['output']>;
+    tiles?: Maybe<Array<TileGrid_Tiles>>;
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
@@ -14633,15 +17000,30 @@ export type TileGridContentArgs = {
     depth?: InputMaybe<Scalars['Int']['input']>;
 };
 
-export type TileGrid_IconTiles = {
-    __typename?: 'TileGrid_IconTiles';
-    iconTile?: Maybe<IconTile>;
+export type TileGridBlock = {
+    __typename?: 'TileGridBlock';
+    blockName?: Maybe<Scalars['String']['output']>;
+    blockType?: Maybe<Scalars['String']['output']>;
     id?: Maybe<Scalars['String']['output']>;
+    tileGrid?: Maybe<TileGrid>;
+};
+
+export type TileGrid_Tiles = {
+    __typename?: 'TileGrid_Tiles';
+    content?: Maybe<Scalars['JSON']['output']>;
+    heading?: Maybe<Scalars['String']['output']>;
+    headingTag?: Maybe<Scalars['String']['output']>;
+    id?: Maybe<Scalars['String']['output']>;
+};
+
+export type TileGrid_TilesContentArgs = {
+    depth?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type TileGrid_CallToAction_Operator = {
     all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
     in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     not_equals?: InputMaybe<Scalars['String']['input']>;
     not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -14686,15 +17068,7 @@ export type TileGrid_Heading_Operator = {
     not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
-export type TileGrid_IconTiles__IconTile_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    equals?: InputMaybe<Scalars['String']['input']>;
-    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    not_equals?: InputMaybe<Scalars['String']['input']>;
-    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type TileGrid_IconTiles__Id_Operator = {
+export type TileGrid_Id_Operator = {
     all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     contains?: InputMaybe<Scalars['String']['input']>;
     equals?: InputMaybe<Scalars['String']['input']>;
@@ -14705,7 +17079,37 @@ export type TileGrid_IconTiles__Id_Operator = {
     not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
-export type TileGrid_Id_Operator = {
+export type TileGrid_Tiles__Content_Operator = {
+    contains?: InputMaybe<Scalars['JSON']['input']>;
+    equals?: InputMaybe<Scalars['JSON']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    like?: InputMaybe<Scalars['JSON']['input']>;
+    not_equals?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type TileGrid_Tiles__HeadingTag_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type TileGrid_Tiles__Heading_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type TileGrid_Tiles__Id_Operator = {
     all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     contains?: InputMaybe<Scalars['String']['input']>;
     equals?: InputMaybe<Scalars['String']['input']>;
@@ -14735,9 +17139,11 @@ export type TileGrid_Where = {
     createdAt?: InputMaybe<TileGrid_CreatedAt_Operator>;
     heading?: InputMaybe<TileGrid_Heading_Operator>;
     headingTag?: InputMaybe<TileGrid_HeadingTag_Operator>;
-    iconTiles__iconTile?: InputMaybe<TileGrid_IconTiles__IconTile_Operator>;
-    iconTiles__id?: InputMaybe<TileGrid_IconTiles__Id_Operator>;
     id?: InputMaybe<TileGrid_Id_Operator>;
+    tiles__content?: InputMaybe<TileGrid_Tiles__Content_Operator>;
+    tiles__heading?: InputMaybe<TileGrid_Tiles__Heading_Operator>;
+    tiles__headingTag?: InputMaybe<TileGrid_Tiles__HeadingTag_Operator>;
+    tiles__id?: InputMaybe<TileGrid_Tiles__Id_Operator>;
     updatedAt?: InputMaybe<TileGrid_UpdatedAt_Operator>;
 };
 
@@ -14747,9 +17153,11 @@ export type TileGrid_Where_And = {
     createdAt?: InputMaybe<TileGrid_CreatedAt_Operator>;
     heading?: InputMaybe<TileGrid_Heading_Operator>;
     headingTag?: InputMaybe<TileGrid_HeadingTag_Operator>;
-    iconTiles__iconTile?: InputMaybe<TileGrid_IconTiles__IconTile_Operator>;
-    iconTiles__id?: InputMaybe<TileGrid_IconTiles__Id_Operator>;
     id?: InputMaybe<TileGrid_Id_Operator>;
+    tiles__content?: InputMaybe<TileGrid_Tiles__Content_Operator>;
+    tiles__heading?: InputMaybe<TileGrid_Tiles__Heading_Operator>;
+    tiles__headingTag?: InputMaybe<TileGrid_Tiles__HeadingTag_Operator>;
+    tiles__id?: InputMaybe<TileGrid_Tiles__Id_Operator>;
     updatedAt?: InputMaybe<TileGrid_UpdatedAt_Operator>;
 };
 
@@ -14759,9 +17167,11 @@ export type TileGrid_Where_Or = {
     createdAt?: InputMaybe<TileGrid_CreatedAt_Operator>;
     heading?: InputMaybe<TileGrid_Heading_Operator>;
     headingTag?: InputMaybe<TileGrid_HeadingTag_Operator>;
-    iconTiles__iconTile?: InputMaybe<TileGrid_IconTiles__IconTile_Operator>;
-    iconTiles__id?: InputMaybe<TileGrid_IconTiles__Id_Operator>;
     id?: InputMaybe<TileGrid_Id_Operator>;
+    tiles__content?: InputMaybe<TileGrid_Tiles__Content_Operator>;
+    tiles__heading?: InputMaybe<TileGrid_Tiles__Heading_Operator>;
+    tiles__headingTag?: InputMaybe<TileGrid_Tiles__HeadingTag_Operator>;
+    tiles__id?: InputMaybe<TileGrid_Tiles__Id_Operator>;
     updatedAt?: InputMaybe<TileGrid_UpdatedAt_Operator>;
 };
 
@@ -14811,7 +17221,7 @@ export type TileGridsDocAccessFields = {
     createdAt?: Maybe<TileGridsDocAccessFields_CreatedAt>;
     heading?: Maybe<TileGridsDocAccessFields_Heading>;
     headingTag?: Maybe<TileGridsDocAccessFields_HeadingTag>;
-    iconTiles?: Maybe<TileGridsDocAccessFields_IconTiles>;
+    tiles?: Maybe<TileGridsDocAccessFields_Tiles>;
     updatedAt?: Maybe<TileGridsDocAccessFields_UpdatedAt>;
 };
 
@@ -14955,94 +17365,152 @@ export type TileGridsDocAccessFields_Heading_Update = {
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsDocAccessFields_IconTiles = {
-    __typename?: 'TileGridsDocAccessFields_iconTiles';
-    create?: Maybe<TileGridsDocAccessFields_IconTiles_Create>;
-    delete?: Maybe<TileGridsDocAccessFields_IconTiles_Delete>;
-    fields?: Maybe<TileGridsDocAccessFields_IconTiles_Fields>;
-    read?: Maybe<TileGridsDocAccessFields_IconTiles_Read>;
-    update?: Maybe<TileGridsDocAccessFields_IconTiles_Update>;
+export type TileGridsDocAccessFields_Tiles = {
+    __typename?: 'TileGridsDocAccessFields_tiles';
+    create?: Maybe<TileGridsDocAccessFields_Tiles_Create>;
+    delete?: Maybe<TileGridsDocAccessFields_Tiles_Delete>;
+    fields?: Maybe<TileGridsDocAccessFields_Tiles_Fields>;
+    read?: Maybe<TileGridsDocAccessFields_Tiles_Read>;
+    update?: Maybe<TileGridsDocAccessFields_Tiles_Update>;
 };
 
-export type TileGridsDocAccessFields_IconTiles_Create = {
-    __typename?: 'TileGridsDocAccessFields_iconTiles_Create';
+export type TileGridsDocAccessFields_Tiles_Create = {
+    __typename?: 'TileGridsDocAccessFields_tiles_Create';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsDocAccessFields_IconTiles_Delete = {
-    __typename?: 'TileGridsDocAccessFields_iconTiles_Delete';
+export type TileGridsDocAccessFields_Tiles_Delete = {
+    __typename?: 'TileGridsDocAccessFields_tiles_Delete';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsDocAccessFields_IconTiles_Fields = {
-    __typename?: 'TileGridsDocAccessFields_iconTiles_Fields';
-    iconTile?: Maybe<TileGridsDocAccessFields_IconTiles_IconTile>;
-    id?: Maybe<TileGridsDocAccessFields_IconTiles_Id>;
+export type TileGridsDocAccessFields_Tiles_Fields = {
+    __typename?: 'TileGridsDocAccessFields_tiles_Fields';
+    content?: Maybe<TileGridsDocAccessFields_Tiles_Content>;
+    heading?: Maybe<TileGridsDocAccessFields_Tiles_Heading>;
+    headingTag?: Maybe<TileGridsDocAccessFields_Tiles_HeadingTag>;
+    id?: Maybe<TileGridsDocAccessFields_Tiles_Id>;
 };
 
-export type TileGridsDocAccessFields_IconTiles_Read = {
-    __typename?: 'TileGridsDocAccessFields_iconTiles_Read';
+export type TileGridsDocAccessFields_Tiles_Read = {
+    __typename?: 'TileGridsDocAccessFields_tiles_Read';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsDocAccessFields_IconTiles_Update = {
-    __typename?: 'TileGridsDocAccessFields_iconTiles_Update';
+export type TileGridsDocAccessFields_Tiles_Update = {
+    __typename?: 'TileGridsDocAccessFields_tiles_Update';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsDocAccessFields_IconTiles_IconTile = {
-    __typename?: 'TileGridsDocAccessFields_iconTiles_iconTile';
-    create?: Maybe<TileGridsDocAccessFields_IconTiles_IconTile_Create>;
-    delete?: Maybe<TileGridsDocAccessFields_IconTiles_IconTile_Delete>;
-    read?: Maybe<TileGridsDocAccessFields_IconTiles_IconTile_Read>;
-    update?: Maybe<TileGridsDocAccessFields_IconTiles_IconTile_Update>;
+export type TileGridsDocAccessFields_Tiles_Content = {
+    __typename?: 'TileGridsDocAccessFields_tiles_content';
+    create?: Maybe<TileGridsDocAccessFields_Tiles_Content_Create>;
+    delete?: Maybe<TileGridsDocAccessFields_Tiles_Content_Delete>;
+    read?: Maybe<TileGridsDocAccessFields_Tiles_Content_Read>;
+    update?: Maybe<TileGridsDocAccessFields_Tiles_Content_Update>;
 };
 
-export type TileGridsDocAccessFields_IconTiles_IconTile_Create = {
-    __typename?: 'TileGridsDocAccessFields_iconTiles_iconTile_Create';
+export type TileGridsDocAccessFields_Tiles_Content_Create = {
+    __typename?: 'TileGridsDocAccessFields_tiles_content_Create';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsDocAccessFields_IconTiles_IconTile_Delete = {
-    __typename?: 'TileGridsDocAccessFields_iconTiles_iconTile_Delete';
+export type TileGridsDocAccessFields_Tiles_Content_Delete = {
+    __typename?: 'TileGridsDocAccessFields_tiles_content_Delete';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsDocAccessFields_IconTiles_IconTile_Read = {
-    __typename?: 'TileGridsDocAccessFields_iconTiles_iconTile_Read';
+export type TileGridsDocAccessFields_Tiles_Content_Read = {
+    __typename?: 'TileGridsDocAccessFields_tiles_content_Read';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsDocAccessFields_IconTiles_IconTile_Update = {
-    __typename?: 'TileGridsDocAccessFields_iconTiles_iconTile_Update';
+export type TileGridsDocAccessFields_Tiles_Content_Update = {
+    __typename?: 'TileGridsDocAccessFields_tiles_content_Update';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsDocAccessFields_IconTiles_Id = {
-    __typename?: 'TileGridsDocAccessFields_iconTiles_id';
-    create?: Maybe<TileGridsDocAccessFields_IconTiles_Id_Create>;
-    delete?: Maybe<TileGridsDocAccessFields_IconTiles_Id_Delete>;
-    read?: Maybe<TileGridsDocAccessFields_IconTiles_Id_Read>;
-    update?: Maybe<TileGridsDocAccessFields_IconTiles_Id_Update>;
+export type TileGridsDocAccessFields_Tiles_Heading = {
+    __typename?: 'TileGridsDocAccessFields_tiles_heading';
+    create?: Maybe<TileGridsDocAccessFields_Tiles_Heading_Create>;
+    delete?: Maybe<TileGridsDocAccessFields_Tiles_Heading_Delete>;
+    read?: Maybe<TileGridsDocAccessFields_Tiles_Heading_Read>;
+    update?: Maybe<TileGridsDocAccessFields_Tiles_Heading_Update>;
 };
 
-export type TileGridsDocAccessFields_IconTiles_Id_Create = {
-    __typename?: 'TileGridsDocAccessFields_iconTiles_id_Create';
+export type TileGridsDocAccessFields_Tiles_HeadingTag = {
+    __typename?: 'TileGridsDocAccessFields_tiles_headingTag';
+    create?: Maybe<TileGridsDocAccessFields_Tiles_HeadingTag_Create>;
+    delete?: Maybe<TileGridsDocAccessFields_Tiles_HeadingTag_Delete>;
+    read?: Maybe<TileGridsDocAccessFields_Tiles_HeadingTag_Read>;
+    update?: Maybe<TileGridsDocAccessFields_Tiles_HeadingTag_Update>;
+};
+
+export type TileGridsDocAccessFields_Tiles_HeadingTag_Create = {
+    __typename?: 'TileGridsDocAccessFields_tiles_headingTag_Create';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsDocAccessFields_IconTiles_Id_Delete = {
-    __typename?: 'TileGridsDocAccessFields_iconTiles_id_Delete';
+export type TileGridsDocAccessFields_Tiles_HeadingTag_Delete = {
+    __typename?: 'TileGridsDocAccessFields_tiles_headingTag_Delete';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsDocAccessFields_IconTiles_Id_Read = {
-    __typename?: 'TileGridsDocAccessFields_iconTiles_id_Read';
+export type TileGridsDocAccessFields_Tiles_HeadingTag_Read = {
+    __typename?: 'TileGridsDocAccessFields_tiles_headingTag_Read';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsDocAccessFields_IconTiles_Id_Update = {
-    __typename?: 'TileGridsDocAccessFields_iconTiles_id_Update';
+export type TileGridsDocAccessFields_Tiles_HeadingTag_Update = {
+    __typename?: 'TileGridsDocAccessFields_tiles_headingTag_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TileGridsDocAccessFields_Tiles_Heading_Create = {
+    __typename?: 'TileGridsDocAccessFields_tiles_heading_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TileGridsDocAccessFields_Tiles_Heading_Delete = {
+    __typename?: 'TileGridsDocAccessFields_tiles_heading_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TileGridsDocAccessFields_Tiles_Heading_Read = {
+    __typename?: 'TileGridsDocAccessFields_tiles_heading_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TileGridsDocAccessFields_Tiles_Heading_Update = {
+    __typename?: 'TileGridsDocAccessFields_tiles_heading_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TileGridsDocAccessFields_Tiles_Id = {
+    __typename?: 'TileGridsDocAccessFields_tiles_id';
+    create?: Maybe<TileGridsDocAccessFields_Tiles_Id_Create>;
+    delete?: Maybe<TileGridsDocAccessFields_Tiles_Id_Delete>;
+    read?: Maybe<TileGridsDocAccessFields_Tiles_Id_Read>;
+    update?: Maybe<TileGridsDocAccessFields_Tiles_Id_Update>;
+};
+
+export type TileGridsDocAccessFields_Tiles_Id_Create = {
+    __typename?: 'TileGridsDocAccessFields_tiles_id_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TileGridsDocAccessFields_Tiles_Id_Delete = {
+    __typename?: 'TileGridsDocAccessFields_tiles_id_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TileGridsDocAccessFields_Tiles_Id_Read = {
+    __typename?: 'TileGridsDocAccessFields_tiles_id_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TileGridsDocAccessFields_Tiles_Id_Update = {
+    __typename?: 'TileGridsDocAccessFields_tiles_id_Update';
     permission: Scalars['Boolean']['output'];
 };
 
@@ -15081,7 +17549,7 @@ export type TileGridsFields = {
     createdAt?: Maybe<TileGridsFields_CreatedAt>;
     heading?: Maybe<TileGridsFields_Heading>;
     headingTag?: Maybe<TileGridsFields_HeadingTag>;
-    iconTiles?: Maybe<TileGridsFields_IconTiles>;
+    tiles?: Maybe<TileGridsFields_Tiles>;
     updatedAt?: Maybe<TileGridsFields_UpdatedAt>;
 };
 
@@ -15225,94 +17693,152 @@ export type TileGridsFields_Heading_Update = {
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsFields_IconTiles = {
-    __typename?: 'TileGridsFields_iconTiles';
-    create?: Maybe<TileGridsFields_IconTiles_Create>;
-    delete?: Maybe<TileGridsFields_IconTiles_Delete>;
-    fields?: Maybe<TileGridsFields_IconTiles_Fields>;
-    read?: Maybe<TileGridsFields_IconTiles_Read>;
-    update?: Maybe<TileGridsFields_IconTiles_Update>;
+export type TileGridsFields_Tiles = {
+    __typename?: 'TileGridsFields_tiles';
+    create?: Maybe<TileGridsFields_Tiles_Create>;
+    delete?: Maybe<TileGridsFields_Tiles_Delete>;
+    fields?: Maybe<TileGridsFields_Tiles_Fields>;
+    read?: Maybe<TileGridsFields_Tiles_Read>;
+    update?: Maybe<TileGridsFields_Tiles_Update>;
 };
 
-export type TileGridsFields_IconTiles_Create = {
-    __typename?: 'TileGridsFields_iconTiles_Create';
+export type TileGridsFields_Tiles_Create = {
+    __typename?: 'TileGridsFields_tiles_Create';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsFields_IconTiles_Delete = {
-    __typename?: 'TileGridsFields_iconTiles_Delete';
+export type TileGridsFields_Tiles_Delete = {
+    __typename?: 'TileGridsFields_tiles_Delete';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsFields_IconTiles_Fields = {
-    __typename?: 'TileGridsFields_iconTiles_Fields';
-    iconTile?: Maybe<TileGridsFields_IconTiles_IconTile>;
-    id?: Maybe<TileGridsFields_IconTiles_Id>;
+export type TileGridsFields_Tiles_Fields = {
+    __typename?: 'TileGridsFields_tiles_Fields';
+    content?: Maybe<TileGridsFields_Tiles_Content>;
+    heading?: Maybe<TileGridsFields_Tiles_Heading>;
+    headingTag?: Maybe<TileGridsFields_Tiles_HeadingTag>;
+    id?: Maybe<TileGridsFields_Tiles_Id>;
 };
 
-export type TileGridsFields_IconTiles_Read = {
-    __typename?: 'TileGridsFields_iconTiles_Read';
+export type TileGridsFields_Tiles_Read = {
+    __typename?: 'TileGridsFields_tiles_Read';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsFields_IconTiles_Update = {
-    __typename?: 'TileGridsFields_iconTiles_Update';
+export type TileGridsFields_Tiles_Update = {
+    __typename?: 'TileGridsFields_tiles_Update';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsFields_IconTiles_IconTile = {
-    __typename?: 'TileGridsFields_iconTiles_iconTile';
-    create?: Maybe<TileGridsFields_IconTiles_IconTile_Create>;
-    delete?: Maybe<TileGridsFields_IconTiles_IconTile_Delete>;
-    read?: Maybe<TileGridsFields_IconTiles_IconTile_Read>;
-    update?: Maybe<TileGridsFields_IconTiles_IconTile_Update>;
+export type TileGridsFields_Tiles_Content = {
+    __typename?: 'TileGridsFields_tiles_content';
+    create?: Maybe<TileGridsFields_Tiles_Content_Create>;
+    delete?: Maybe<TileGridsFields_Tiles_Content_Delete>;
+    read?: Maybe<TileGridsFields_Tiles_Content_Read>;
+    update?: Maybe<TileGridsFields_Tiles_Content_Update>;
 };
 
-export type TileGridsFields_IconTiles_IconTile_Create = {
-    __typename?: 'TileGridsFields_iconTiles_iconTile_Create';
+export type TileGridsFields_Tiles_Content_Create = {
+    __typename?: 'TileGridsFields_tiles_content_Create';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsFields_IconTiles_IconTile_Delete = {
-    __typename?: 'TileGridsFields_iconTiles_iconTile_Delete';
+export type TileGridsFields_Tiles_Content_Delete = {
+    __typename?: 'TileGridsFields_tiles_content_Delete';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsFields_IconTiles_IconTile_Read = {
-    __typename?: 'TileGridsFields_iconTiles_iconTile_Read';
+export type TileGridsFields_Tiles_Content_Read = {
+    __typename?: 'TileGridsFields_tiles_content_Read';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsFields_IconTiles_IconTile_Update = {
-    __typename?: 'TileGridsFields_iconTiles_iconTile_Update';
+export type TileGridsFields_Tiles_Content_Update = {
+    __typename?: 'TileGridsFields_tiles_content_Update';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsFields_IconTiles_Id = {
-    __typename?: 'TileGridsFields_iconTiles_id';
-    create?: Maybe<TileGridsFields_IconTiles_Id_Create>;
-    delete?: Maybe<TileGridsFields_IconTiles_Id_Delete>;
-    read?: Maybe<TileGridsFields_IconTiles_Id_Read>;
-    update?: Maybe<TileGridsFields_IconTiles_Id_Update>;
+export type TileGridsFields_Tiles_Heading = {
+    __typename?: 'TileGridsFields_tiles_heading';
+    create?: Maybe<TileGridsFields_Tiles_Heading_Create>;
+    delete?: Maybe<TileGridsFields_Tiles_Heading_Delete>;
+    read?: Maybe<TileGridsFields_Tiles_Heading_Read>;
+    update?: Maybe<TileGridsFields_Tiles_Heading_Update>;
 };
 
-export type TileGridsFields_IconTiles_Id_Create = {
-    __typename?: 'TileGridsFields_iconTiles_id_Create';
+export type TileGridsFields_Tiles_HeadingTag = {
+    __typename?: 'TileGridsFields_tiles_headingTag';
+    create?: Maybe<TileGridsFields_Tiles_HeadingTag_Create>;
+    delete?: Maybe<TileGridsFields_Tiles_HeadingTag_Delete>;
+    read?: Maybe<TileGridsFields_Tiles_HeadingTag_Read>;
+    update?: Maybe<TileGridsFields_Tiles_HeadingTag_Update>;
+};
+
+export type TileGridsFields_Tiles_HeadingTag_Create = {
+    __typename?: 'TileGridsFields_tiles_headingTag_Create';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsFields_IconTiles_Id_Delete = {
-    __typename?: 'TileGridsFields_iconTiles_id_Delete';
+export type TileGridsFields_Tiles_HeadingTag_Delete = {
+    __typename?: 'TileGridsFields_tiles_headingTag_Delete';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsFields_IconTiles_Id_Read = {
-    __typename?: 'TileGridsFields_iconTiles_id_Read';
+export type TileGridsFields_Tiles_HeadingTag_Read = {
+    __typename?: 'TileGridsFields_tiles_headingTag_Read';
     permission: Scalars['Boolean']['output'];
 };
 
-export type TileGridsFields_IconTiles_Id_Update = {
-    __typename?: 'TileGridsFields_iconTiles_id_Update';
+export type TileGridsFields_Tiles_HeadingTag_Update = {
+    __typename?: 'TileGridsFields_tiles_headingTag_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TileGridsFields_Tiles_Heading_Create = {
+    __typename?: 'TileGridsFields_tiles_heading_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TileGridsFields_Tiles_Heading_Delete = {
+    __typename?: 'TileGridsFields_tiles_heading_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TileGridsFields_Tiles_Heading_Read = {
+    __typename?: 'TileGridsFields_tiles_heading_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TileGridsFields_Tiles_Heading_Update = {
+    __typename?: 'TileGridsFields_tiles_heading_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TileGridsFields_Tiles_Id = {
+    __typename?: 'TileGridsFields_tiles_id';
+    create?: Maybe<TileGridsFields_Tiles_Id_Create>;
+    delete?: Maybe<TileGridsFields_Tiles_Id_Delete>;
+    read?: Maybe<TileGridsFields_Tiles_Id_Read>;
+    update?: Maybe<TileGridsFields_Tiles_Id_Update>;
+};
+
+export type TileGridsFields_Tiles_Id_Create = {
+    __typename?: 'TileGridsFields_tiles_id_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TileGridsFields_Tiles_Id_Delete = {
+    __typename?: 'TileGridsFields_tiles_id_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TileGridsFields_Tiles_Id_Read = {
+    __typename?: 'TileGridsFields_tiles_id_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type TileGridsFields_Tiles_Id_Update = {
+    __typename?: 'TileGridsFields_tiles_id_Update';
     permission: Scalars['Boolean']['output'];
 };
 
@@ -16768,6 +19294,24 @@ export type HeroesDocAccess = {
     update?: Maybe<HeroesUpdateDocAccess>;
 };
 
+export type Icon_Tile_GridsAccess = {
+    __typename?: 'icon_tile_gridsAccess';
+    create?: Maybe<IconTileGridsCreateAccess>;
+    delete?: Maybe<IconTileGridsDeleteAccess>;
+    fields?: Maybe<IconTileGridsFields>;
+    read?: Maybe<IconTileGridsReadAccess>;
+    update?: Maybe<IconTileGridsUpdateAccess>;
+};
+
+export type Icon_Tile_GridsDocAccess = {
+    __typename?: 'icon_tile_gridsDocAccess';
+    create?: Maybe<IconTileGridsCreateDocAccess>;
+    delete?: Maybe<IconTileGridsDeleteDocAccess>;
+    fields?: Maybe<IconTileGridsDocAccessFields>;
+    read?: Maybe<IconTileGridsReadDocAccess>;
+    update?: Maybe<IconTileGridsUpdateDocAccess>;
+};
+
 export type Icon_TilesAccess = {
     __typename?: 'icon_tilesAccess';
     create?: Maybe<IconTilesCreateAccess>;
@@ -16920,30 +19464,20 @@ export type MutationCtaTileUpdateInput = {
 
 export type MutationFeatureGridInput = {
     createdAt?: InputMaybe<Scalars['String']['input']>;
-    featureTiles?: InputMaybe<
-        Array<InputMaybe<MutationFeatureGrid_FeatureTilesInput>>
-    >;
+    featureTiles?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    heading?: InputMaybe<Scalars['String']['input']>;
+    headingTag?: InputMaybe<Scalars['String']['input']>;
     internalName: Scalars['String']['input'];
     updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationFeatureGridUpdateInput = {
     createdAt?: InputMaybe<Scalars['String']['input']>;
-    featureTiles?: InputMaybe<
-        Array<InputMaybe<MutationFeatureGridUpdate_FeatureTilesInput>>
-    >;
+    featureTiles?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    heading?: InputMaybe<Scalars['String']['input']>;
+    headingTag?: InputMaybe<Scalars['String']['input']>;
     internalName?: InputMaybe<Scalars['String']['input']>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type MutationFeatureGridUpdate_FeatureTilesInput = {
-    featureTile?: InputMaybe<Scalars['String']['input']>;
-    id?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type MutationFeatureGrid_FeatureTilesInput = {
-    featureTile?: InputMaybe<Scalars['String']['input']>;
-    id?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationFeatureTileInput = {
@@ -17128,6 +19662,26 @@ export type MutationIconInput = {
     width?: InputMaybe<Scalars['Float']['input']>;
 };
 
+export type MutationIconTileGridInput = {
+    callToAction?: InputMaybe<Scalars['String']['input']>;
+    content?: InputMaybe<Scalars['JSON']['input']>;
+    createdAt?: InputMaybe<Scalars['String']['input']>;
+    heading: Scalars['String']['input'];
+    headingTag: Scalars['String']['input'];
+    iconTiles?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationIconTileGridUpdateInput = {
+    callToAction?: InputMaybe<Scalars['String']['input']>;
+    content?: InputMaybe<Scalars['JSON']['input']>;
+    createdAt?: InputMaybe<Scalars['String']['input']>;
+    heading?: InputMaybe<Scalars['String']['input']>;
+    headingTag?: InputMaybe<Scalars['String']['input']>;
+    iconTiles?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type MutationIconTileInput = {
     createdAt?: InputMaybe<Scalars['String']['input']>;
     icon: Scalars['String']['input'];
@@ -17235,6 +19789,7 @@ export type MutationImage_Sizes_ThumbnailInput = {
 
 export type MutationPageInput = {
     createdAt?: InputMaybe<Scalars['String']['input']>;
+    pageSections?: InputMaybe<Scalars['JSON']['input']>;
     slug?: InputMaybe<Scalars['String']['input']>;
     title?: InputMaybe<Scalars['String']['input']>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
@@ -17242,9 +19797,40 @@ export type MutationPageInput = {
 
 export type MutationPageUpdateInput = {
     createdAt?: InputMaybe<Scalars['String']['input']>;
+    pageSections?: InputMaybe<Scalars['JSON']['input']>;
     slug?: InputMaybe<Scalars['String']['input']>;
     title?: InputMaybe<Scalars['String']['input']>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationProcessInput = {
+    callToAction?: InputMaybe<Scalars['String']['input']>;
+    createdAt?: InputMaybe<Scalars['String']['input']>;
+    internalName: Scalars['String']['input'];
+    steps?: InputMaybe<Array<InputMaybe<MutationProcess_StepsInput>>>;
+    updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationProcessUpdateInput = {
+    callToAction?: InputMaybe<Scalars['String']['input']>;
+    createdAt?: InputMaybe<Scalars['String']['input']>;
+    internalName?: InputMaybe<Scalars['String']['input']>;
+    steps?: InputMaybe<Array<InputMaybe<MutationProcessUpdate_StepsInput>>>;
+    updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationProcessUpdate_StepsInput = {
+    content?: InputMaybe<Scalars['JSON']['input']>;
+    heading: Scalars['String']['input'];
+    headingTag: Scalars['String']['input'];
+    id?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationProcess_StepsInput = {
+    content?: InputMaybe<Scalars['JSON']['input']>;
+    heading: Scalars['String']['input'];
+    headingTag: Scalars['String']['input'];
+    id?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationSwitchbackInput = {
@@ -17269,13 +19855,45 @@ export type MutationSwitchbackUpdateInput = {
     updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type MutationTextGridInput = {
+    callToAction?: InputMaybe<Scalars['String']['input']>;
+    content?: InputMaybe<Scalars['JSON']['input']>;
+    createdAt?: InputMaybe<Scalars['String']['input']>;
+    heading: Scalars['String']['input'];
+    headingTag: Scalars['String']['input'];
+    textTiles?: InputMaybe<Array<InputMaybe<MutationTextGrid_TextTilesInput>>>;
+    updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationTextGridUpdateInput = {
+    callToAction?: InputMaybe<Scalars['String']['input']>;
+    content?: InputMaybe<Scalars['JSON']['input']>;
+    createdAt?: InputMaybe<Scalars['String']['input']>;
+    heading?: InputMaybe<Scalars['String']['input']>;
+    headingTag?: InputMaybe<Scalars['String']['input']>;
+    textTiles?: InputMaybe<
+        Array<InputMaybe<MutationTextGridUpdate_TextTilesInput>>
+    >;
+    updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationTextGridUpdate_TextTilesInput = {
+    id?: InputMaybe<Scalars['String']['input']>;
+    text?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationTextGrid_TextTilesInput = {
+    id?: InputMaybe<Scalars['String']['input']>;
+    text?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type MutationTileGridInput = {
     callToAction?: InputMaybe<Scalars['String']['input']>;
     content?: InputMaybe<Scalars['JSON']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading: Scalars['String']['input'];
     headingTag: Scalars['String']['input'];
-    iconTiles?: InputMaybe<Array<InputMaybe<MutationTileGrid_IconTilesInput>>>;
+    tiles?: InputMaybe<Array<InputMaybe<MutationTileGrid_TilesInput>>>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -17285,19 +19903,21 @@ export type MutationTileGridUpdateInput = {
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading?: InputMaybe<Scalars['String']['input']>;
     headingTag?: InputMaybe<Scalars['String']['input']>;
-    iconTiles?: InputMaybe<
-        Array<InputMaybe<MutationTileGridUpdate_IconTilesInput>>
-    >;
+    tiles?: InputMaybe<Array<InputMaybe<MutationTileGridUpdate_TilesInput>>>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type MutationTileGridUpdate_IconTilesInput = {
-    iconTile?: InputMaybe<Scalars['String']['input']>;
+export type MutationTileGridUpdate_TilesInput = {
+    content?: InputMaybe<Scalars['JSON']['input']>;
+    heading?: InputMaybe<Scalars['String']['input']>;
+    headingTag?: InputMaybe<Scalars['String']['input']>;
     id?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type MutationTileGrid_IconTilesInput = {
-    iconTile?: InputMaybe<Scalars['String']['input']>;
+export type MutationTileGrid_TilesInput = {
+    content?: InputMaybe<Scalars['JSON']['input']>;
+    heading?: InputMaybe<Scalars['String']['input']>;
+    headingTag?: InputMaybe<Scalars['String']['input']>;
     id?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -17367,6 +19987,24 @@ export type PagesDocAccess = {
     update?: Maybe<PagesUpdateDocAccess>;
 };
 
+export type ProcessesAccess = {
+    __typename?: 'processesAccess';
+    create?: Maybe<ProcessesCreateAccess>;
+    delete?: Maybe<ProcessesDeleteAccess>;
+    fields?: Maybe<ProcessesFields>;
+    read?: Maybe<ProcessesReadAccess>;
+    update?: Maybe<ProcessesUpdateAccess>;
+};
+
+export type ProcessesDocAccess = {
+    __typename?: 'processesDocAccess';
+    create?: Maybe<ProcessesCreateDocAccess>;
+    delete?: Maybe<ProcessesDeleteDocAccess>;
+    fields?: Maybe<ProcessesDocAccessFields>;
+    read?: Maybe<ProcessesReadDocAccess>;
+    update?: Maybe<ProcessesUpdateDocAccess>;
+};
+
 export type SwitchbacksAccess = {
     __typename?: 'switchbacksAccess';
     create?: Maybe<SwitchbacksCreateAccess>;
@@ -17383,6 +20021,24 @@ export type SwitchbacksDocAccess = {
     fields?: Maybe<SwitchbacksDocAccessFields>;
     read?: Maybe<SwitchbacksReadDocAccess>;
     update?: Maybe<SwitchbacksUpdateDocAccess>;
+};
+
+export type Text_GridsAccess = {
+    __typename?: 'text_gridsAccess';
+    create?: Maybe<TextGridsCreateAccess>;
+    delete?: Maybe<TextGridsDeleteAccess>;
+    fields?: Maybe<TextGridsFields>;
+    read?: Maybe<TextGridsReadAccess>;
+    update?: Maybe<TextGridsUpdateAccess>;
+};
+
+export type Text_GridsDocAccess = {
+    __typename?: 'text_gridsDocAccess';
+    create?: Maybe<TextGridsCreateDocAccess>;
+    delete?: Maybe<TextGridsDeleteDocAccess>;
+    fields?: Maybe<TextGridsDocAccessFields>;
+    read?: Maybe<TextGridsReadDocAccess>;
+    update?: Maybe<TextGridsUpdateDocAccess>;
 };
 
 export type Tile_GridsAccess = {

@@ -1,6 +1,18 @@
 import { gql } from 'graphql-request';
 
-import { BUTTON_FRAGMENT, MENU_ITEMS_FRAGMENT } from './graphqlFragments';
+import {
+    ACCORDION_FRAGMENT,
+    CONVERSION_PANEL_FRAGMENT,
+    CTA_FRAGMENT,
+    FEATURE_GRID_FRAGMENT,
+    HERO_FRAGMENT,
+    ICON_TILE__GRID_FRAGMENT,
+    MENU_ITEMS_FRAGMENT,
+    PROCESS_FRAGMENT,
+    SWITCHBACK_FRAGMENT,
+    TEXT_GRID_FRAGMENT,
+    TILE_GRID_FRAGMENT
+} from './graphqlFragments';
 
 export const PAGES_QUERY = gql`
     query PagesQuery {
@@ -9,6 +21,29 @@ export const PAGES_QUERY = gql`
                 id
                 slug
                 title
+            }
+        }
+    }
+`;
+
+export const PAGE_CONTENT_QUERY = gql`
+    query PageContentQuery($slug: String!) {
+        Pages(where:{ slug: { equals: $slug }}) {
+            docs {
+                id
+                slug
+                title
+                pageSections {
+                    ${HERO_FRAGMENT}
+                    ${ACCORDION_FRAGMENT}
+                    ${CONVERSION_PANEL_FRAGMENT}
+                    ${FEATURE_GRID_FRAGMENT}
+                    ${ICON_TILE__GRID_FRAGMENT}
+                    ${PROCESS_FRAGMENT}
+                    ${SWITCHBACK_FRAGMENT}
+                    ${TEXT_GRID_FRAGMENT}
+                    ${TILE_GRID_FRAGMENT}
+                }
             }
         }
     }
@@ -24,7 +59,7 @@ export const HEADER_QUERY = gql`
                     }
                 }
                 callToAction {
-                    ${BUTTON_FRAGMENT}
+                    ${CTA_FRAGMENT}
             }
         }
     }
