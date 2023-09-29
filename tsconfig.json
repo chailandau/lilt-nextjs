@@ -27,7 +27,12 @@
       "@storybookAssets/*": [
         "./.storybook/public/*"
       ]
-    }
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "declarations.d.ts",
@@ -39,6 +44,7 @@
     "**/*.tsx",
     "**/*.gql",
     "setupTests.js",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
