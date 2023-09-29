@@ -1,42 +1,355 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Fragments "BUTTON_FRAGMENT" matches snapshot: BUTTON_FRAGMENT 1`] = `
+exports[`Fragments "ACCORDION_FRAGMENT" matches snapshot: ACCORDION_FRAGMENT 1`] = `
 "
+...on AccordionBlock {
     id
-    label
-    linkType
-    internalLink {
-        
+    accordion {
+        id 
+        heading
+        headingTag
+        accordionItems {
+            id
+            heading
+            headingTag
+            content
+        }
+    }
+}
+"
+`;
+
+exports[`Fragments "CONVERSION_PANEL_FRAGMENT" matches snapshot: CONVERSION_PANEL_FRAGMENT 1`] = `
+"
+...on ConversionPanelBlock {
+    id
+    blockName
+    blockType
+    conversionPanel {
+        id
+        heading
+        headingTag
+        content
+        callToAction {
+            
+id
+label
+linkType
+
+internalLink {
     id
     title
     slug
+}
 
+externalLink
+color
+
+        }
     }
-    externalLink
-    color
+}
+"
+`;
+
+exports[`Fragments "CTA_FRAGMENT" matches snapshot: CTA_FRAGMENT 1`] = `
+"
+id
+label
+linkType
+
+internalLink {
+    id
+    title
+    slug
+}
+
+externalLink
+color
+"
+`;
+
+exports[`Fragments "FEATURE_GRID_FRAGMENT" matches snapshot: FEATURE_GRID_FRAGMENT 1`] = `
+"
+...on FeatureGridBlock {
+    id
+    featureGrid {
+        id 
+        heading
+        headingTag
+        featureTiles {
+            id
+            heading
+            headingTag
+            image {
+                
+id
+alt
+url
+width
+height
+
+            }
+            content
+        }
+    }
+}
+"
+`;
+
+exports[`Fragments "HERO_FRAGMENT" matches snapshot: HERO_FRAGMENT 1`] = `
+"
+...on HeroBlock {
+    __typename
+    id
+    hero {
+        id
+        heading
+        headingTag
+        subheading
+        content
+        cta {
+            ctaTiles {
+                id
+                callToActionTile {
+                    id
+                    linkType
+                    
+internalLink {
+    id
+    title
+    slug
+}
+
+                    externalLink
+                }
+                ctaButtons {
+                    id
+                    callToAction {
+                        
+id
+label
+linkType
+
+internalLink {
+    id
+    title
+    slug
+}
+
+externalLink
+color
+
+                    }
+                }
+            }
+        }
+    }
+}
+"
+`;
+
+exports[`Fragments "ICON_TILE__GRID_FRAGMENT" matches snapshot: ICON_TILE__GRID_FRAGMENT 1`] = `
+"
+...on IconTileGridBlock {
+    id
+    iconTileGrid {
+        id
+        heading
+        headingTag
+        content
+        iconTiles {
+            id
+            label
+            icon {
+                
+id
+alt
+url
+width
+height
+
+            }
+        }
+        callToAction {
+            
+id
+label
+linkType
+
+internalLink {
+    id
+    title
+    slug
+}
+
+externalLink
+color
+
+        }
+    }
+}
+"
+`;
+
+exports[`Fragments "IMAGE_FRAGMENT" matches snapshot: IMAGE_FRAGMENT 1`] = `
+"
+id
+alt
+url
+width
+height
 "
 `;
 
 exports[`Fragments "INTERNAL_LINK_FRAGMENT" matches snapshot: INTERNAL_LINK_FRAGMENT 1`] = `
 "
+internalLink {
     id
     title
     slug
+}
 "
 `;
 
 exports[`Fragments "MENU_ITEMS_FRAGMENT" matches snapshot: MENU_ITEMS_FRAGMENT 1`] = `
 "
-    id
-    label
-    linkType
-    internalLink {
-        
+id
+label
+linkType
+
+internalLink {
     id
     title
     slug
+}
 
+externalLink
+"
+`;
+
+exports[`Fragments "PROCESS_FRAGMENT" matches snapshot: PROCESS_FRAGMENT 1`] = `
+"
+...on ProcessBlock {
+    id
+    process {
+        id
+        steps {
+            id
+            heading
+            headingTag
+            content
+        }
+        callToAction {
+            
+id
+label
+linkType
+
+internalLink {
+    id
+    title
+    slug
+}
+
+externalLink
+color
+
+        }
     }
-    externalLink
+}
+"
+`;
+
+exports[`Fragments "SWITCHBACK_FRAGMENT" matches snapshot: SWITCHBACK_FRAGMENT 1`] = `
+"
+...on SwitchbackBlock {
+    id
+    switchback {
+        id
+        image {
+            
+id
+alt
+url
+width
+height
+
+        }
+        imageSide
+        heading
+        headingTag
+        content
+    }
+}
+"
+`;
+
+exports[`Fragments "TEXT_GRID_FRAGMENT" matches snapshot: TEXT_GRID_FRAGMENT 1`] = `
+"
+...on TextGridBlock {
+    id
+    textGrid {
+        id
+        heading
+        headingTag
+        content
+        textTiles {
+            id
+            text
+        }
+        callToAction {
+            
+id
+label
+linkType
+
+internalLink {
+    id
+    title
+    slug
+}
+
+externalLink
+color
+
+        }
+    }
+}
+"
+`;
+
+exports[`Fragments "TILE_GRID_FRAGMENT" matches snapshot: TILE_GRID_FRAGMENT 1`] = `
+"
+...on TileGridBlock {
+    id
+    tileGrid {
+        id
+        heading 
+        headingTag
+        content
+        tiles {
+            id
+            heading
+            headingTag
+            content
+        }
+        callToAction {
+            
+id
+label
+linkType
+
+internalLink {
+    id
+    title
+    slug
+}
+
+externalLink
+color
+
+        }
+    }
+}
 "
 `;

@@ -93,6 +93,14 @@ exports[`graphqlQueries mocks HEADER_QUERY successfully 1`] = `
 }
 `;
 
+exports[`graphqlQueries mocks PAGE_CONTENT_QUERY successfully 1`] = `
+{
+  "errors": [
+    [GraphQLError: Cannot query field "ctaButtons" on type "Hero_Cta_CtaTiles".],
+  ],
+}
+`;
+
 exports[`graphqlQueries mocks PAGES_QUERY successfully 1`] = `
 {
   "data": {
