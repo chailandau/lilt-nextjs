@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Link from '../Link';
 
-import Flex from '@/molecules/Flex/Flex';
+import Flex from '@/molecules/Flex';
 
 const meta: Meta<typeof Link> = {
     title: 'Atoms/Link',

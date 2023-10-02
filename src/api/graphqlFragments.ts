@@ -42,6 +42,12 @@ export const HERO_FRAGMENT = `
         subheading
         content
         cta {
+            ctaButtons {
+                id
+                callToAction {
+                    ${CTA_FRAGMENT}
+                }
+            }
             ctaTiles {
                 id
                 callToActionTile {
@@ -49,12 +55,6 @@ export const HERO_FRAGMENT = `
                     linkType
                     ${INTERNAL_LINK_FRAGMENT}
                     externalLink
-                }
-                ctaButtons {
-                    id
-                    callToAction {
-                        ${CTA_FRAGMENT}
-                    }
                 }
             }
         }

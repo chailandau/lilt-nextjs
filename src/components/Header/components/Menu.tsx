@@ -5,7 +5,7 @@ import { HeaderProps } from '../Header';
 import styles from './Menu.module.scss';
 import Submenu from './Submenu';
 
-import Link from '@/atoms/Link/Link';
+import Link from '@/atoms/Link';
 import useStore from '@/store/useStore';
 import { getLink } from '@/utils/getLink';
 

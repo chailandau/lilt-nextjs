@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Button as ButtonType } from '@/api/graphqlTypes';
+import { CallToAction } from '@/api/graphqlTypes';
 import ButtonMolecule, {
     ButtonMoleculeVariant
 } from '@/molecules/ButtonMolecule/ButtonMolecule';
@@ -10,7 +10,7 @@ export interface ButtonProps {
     /** Optional classname */
     className?: string;
     /** Button object */
-    buttonData: ButtonType | null;
+    buttonData: CallToAction | null;
 }
 
 const Button: FC<ButtonProps> = ({ buttonData, className }) => {
