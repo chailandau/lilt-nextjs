@@ -1,10 +1,13 @@
+import classNames from 'classnames';
 import { FC } from 'react';
 
 import styles from './Switchback.module.scss';
 
 import { Switchback as SwitchbackType } from '@/api/graphqlTypes';
+import Container from '@/atoms/Container';
 import Heading from '@/atoms/Heading';
 import Image from '@/atoms/Image';
+import Flex from '@/molecules/Flex';
 import RichText from '@/molecules/RichText';
 import Section from '@/molecules/Section';
 
@@ -25,28 +28,54 @@ const Switchback: FC<SwitchbackProps> = ({
     subheading,
     content,
     image,
-    imageSide
+    imageSide = 'left'
 }) => {
-    console.log('image', image);
+    const classList = classNames(
+        styles['switchback'],
+        styles[`image-${imageSide}`]
+    );
 
     return (
-        <Section className={styles['switchback']}>
-            {image && image?.url && (
-                <Image
-                    src={image.url}
-                    alt={image?.alt}
-                    className={styles['image']}
-                    width={image?.width || 1000}
-                    height={image?.height || 1000}
-                />
-            )}
-            {heading && <Heading>{heading}</Heading>}
-            {subheading && (
-                <Heading size='sm' color='blue'>
-                    {subheading}
-                </Heading>
-            )}
-            {content && <RichText richText={content} />}
+        <Section>
+            <Container className={classList}>
+                <Container className={styles['left-image']}>
+                    {image && image?.url && (
+                        <Image
+                            src={image.url}
+                            alt={image?.alt}
+                            className={styles['image']}
+                            width={image?.width || 1000}
+                            height={image?.height || 1000}
+                        />
+                    )}
+                </Container>
+                <Flex className={styles['content']}>
+                    {heading && <Heading size='md'>{heading}</Heading>}
+                    {subheading && (
+                        <Heading size='sm' color='blue'>
+                            {subheading}
+                        </Heading>
+                    )}
+                    {content && (
+                        <RichText
+                            richText={content}
+                            className={styles['content']}
+                        />
+                    )}
+                </Flex>
+
+                <Container className={styles['right-image']}>
+                    {image && image?.url && (
+                        <Image
+                            src={image.url}
+                            alt={image?.alt}
+                            className={styles['image']}
+                            width={image?.width || 1000}
+                            height={image?.height || 1000}
+                        />
+                    )}
+                </Container>
+            </Container>
         </Section>
     );
 };

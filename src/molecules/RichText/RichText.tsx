@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { FC } from 'react';
 
 import styles from './RichText.module.scss';
@@ -15,10 +16,12 @@ interface RichTextProps {
     className?: string;
 }
 
-const RichText: FC<RichTextProps> = ({ richText }) => (
-    <Container className={styles['rich-text']}>
-        {parseRichText(richText)}
-    </Container>
-);
+const RichText: FC<RichTextProps> = ({ richText, className }) => {
+    const classList = classNames(styles['rich-text'], className && className);
+
+    return (
+        <Container className={classList}>{parseRichText(richText)}</Container>
+    );
+};
 
 export default RichText;

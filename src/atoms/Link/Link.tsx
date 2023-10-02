@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from 'classnames';
 import NextLink from 'next/link';
 import { FC, KeyboardEvent, ReactNode } from 'react';

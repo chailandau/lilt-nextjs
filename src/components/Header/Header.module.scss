@@ -1,6 +1,6 @@
 .header {
     flex-direction: row !important;
-    @include paddingY(24);
+    padding-top: rem(24);
     justify-content: space-between;
     align-items: center;
     gap: rem(40);

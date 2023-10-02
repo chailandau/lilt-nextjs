@@ -30,7 +30,7 @@ const Image: FC<ImageProps> = ({
     className,
     width,
     height,
-    hasBorder,
+    hasBorder = true,
     priority
 }) => {
     const classList = classNames(
