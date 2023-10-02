@@ -19,33 +19,32 @@ export interface HeroProps {
     /** Hero CTA */
     cta?: HeroType['cta'];
 }
-const Hero: FC<HeroProps> = ({ heading, subheading, content, cta }) => (
-    <Section className={styles['hero']}>
-        {heading && (
-            <Heading centered as='h1' size='xl'>
-                {heading}
-            </Heading>
-        )}
+const Hero: FC<HeroProps> = ({ heading, subheading, content, cta }) => {
+    const hasContent = content[0].children[0].text !== '';
 
-        {subheading && (
-            <Heading centered size='sm' color='blue'>
-                {subheading}
-            </Heading>
-        )}
-        {content && <RichText richText={content} />}
+    return (
+        <Section className={styles['hero']}>
+            {heading && (
+                <Heading centered as='h1' size='xl'>
+                    {heading}
+                </Heading>
+            )}
 
-        {cta?.ctaButtons &&
-            cta.ctaButtons.map((ctaButton) => (
-                <Button
-                    key={ctaButton?.id}
-                    buttonData={ctaButton?.callToAction || null}
-                />
-            ))}
-        {/* {cta && (
-                <Link href={ctaLink} className={styles['cta']}>
-                    {cta?.label}
-                </Link>
-            )} */}
-    </Section>
-);
+            {subheading && (
+                <Heading centered size='sm' color='blue'>
+                    {subheading}
+                </Heading>
+            )}
+            {hasContent && <RichText richText={content} />}
+
+            {cta?.ctaButtons &&
+                cta.ctaButtons.map((ctaButton) => (
+                    <Button
+                        key={ctaButton?.id}
+                        buttonData={ctaButton?.callToAction || null}
+                    />
+                ))}
+        </Section>
+    );
+};
 export default Hero;

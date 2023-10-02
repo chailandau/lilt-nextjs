@@ -15,6 +15,7 @@ interface ChildSegment {
 }
 
 export interface RichTextProps {
+    text: string;
     url?: string | null | undefined;
     newTab?: boolean;
     type?: 'ul' | 'ol';
@@ -35,6 +36,9 @@ export const parseRichText = (richText: RichTextProps[]): RichText | null => {
         const listItems: JSX.Element[] = [];
 
         segment?.children?.forEach((child) => {
+            if (!child.text || child.text === '') {
+                return;
+            }
             if (child.type === 'link' && child.url) {
                 if (child.children && child.children.length > 0) {
                     const linkText = child.children[0].text;
@@ -122,14 +126,14 @@ export const parseRichText = (richText: RichTextProps[]): RichText | null => {
                 case 'ul':
                 case 'ol':
                     child.children?.forEach((listItem) => {
-                        listItem.text &&
-                            listItems.push(
-                                <li key={listItem.text}>
-                                    <Text key={listItem.text} as='span'>
-                                        {listItem.text}
-                                    </Text>
-                                </li>
-                            );
+                        listItem.text;
+                        listItems.push(
+                            <li key={listItem.text}>
+                                <Text key={listItem.text} as='span'>
+                                    {listItem.text}
+                                </Text>
+                            </li>
+                        );
                     });
                     break;
             }
