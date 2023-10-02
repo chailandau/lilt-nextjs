@@ -43,12 +43,22 @@ export const parseRichText = (richText: RichTextProps[]): RichText | null => {
                         currentParagraph = (
                             <Text key={`text-link-${child.url}`}>
                                 {currentParagraph.props.children}
-                                <Link href={child.url}>{linkText}</Link>
+                                <Link
+                                    key={`text-link-${child.url}`}
+                                    href={child.url}
+                                >
+                                    {linkText}
+                                </Link>
                             </Text>
                         );
                     } else {
                         currentParagraph = (
-                            <Link href={child.url}>{linkText}</Link>
+                            <Link
+                                key={`text-link-${child.url}`}
+                                href={child.url}
+                            >
+                                {linkText}
+                            </Link>
                         );
                     }
                 }
@@ -115,7 +125,9 @@ export const parseRichText = (richText: RichTextProps[]): RichText | null => {
                         listItem.text &&
                             listItems.push(
                                 <li key={listItem.text}>
-                                    <Text as='span'>{listItem.text}</Text>
+                                    <Text key={listItem.text} as='span'>
+                                        {listItem.text}
+                                    </Text>
                                 </li>
                             );
                     });
