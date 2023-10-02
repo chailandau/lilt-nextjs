@@ -1,13 +1,3 @@
 .hero {
     align-items: center;
-    padding-top: rem(32);
-    max-width: rem(1200);
-    margin: auto;
-    @include transition(padding-top);
-    @include tablet {
-        padding-top: rem(56);
-    }
-    @include desktop-sm {
-        padding-top: rem(64);
-    }
 }

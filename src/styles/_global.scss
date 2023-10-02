@@ -4,6 +4,19 @@ html {
     color: color(neutral, white);
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(56);
+    @include transition(gap);
+    @include tablet {
+        gap: rem(72);
+    }
+    @include laptop {
+        gap: rem(120);
+    }
+}
+
 .docs-story {
     background-color: color(dark, blue);
 }

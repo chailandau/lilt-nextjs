@@ -1,0 +1,49 @@
+.switchback {
+    display: flex;
+    flex-direction: column;
+    gap: rem(48);
+    @include laptop {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: rem(96);
+    }
+    &.image-left {
+        .right-image {
+            display: none;
+        }
+    }
+    &.image-right {
+        .right-image {
+            display: none;
+        }
+        @include laptop {
+            .left-image {
+                display: none;
+            }
+            .right-image {
+                display: block;
+            }
+        }
+    }
+    .content {
+        flex-direction: column;
+        gap: rem(16);
+
+        ul {
+            padding-left: unset;
+            li {
+                color: color(neon, green);
+                @include font(24, 34);
+                text-transform: uppercase;
+                padding-left: 0;
+                &:nth-child(even) {
+                    color: color(neon, blue);
+                }
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+}

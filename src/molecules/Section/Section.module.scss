@@ -2,4 +2,14 @@
     @include paddingX(24);
     flex-direction: column;
     gap: rem(24);
+    @include transition(padding, gap);
+    max-width: rem(1312);
+    width: 100%;
+    margin: auto;
+    @include mobile-lg {
+        @include paddingX(56);
+    }
+    @include tablet {
+        gap: rem(32);
+    }
 }

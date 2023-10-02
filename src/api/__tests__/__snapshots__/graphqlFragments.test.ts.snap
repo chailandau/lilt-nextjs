@@ -108,24 +108,10 @@ exports[`Fragments "HERO_FRAGMENT" matches snapshot: HERO_FRAGMENT 1`] = `
         subheading
         content
         cta {
-            ctaTiles {
+            ctaButtons {
                 id
-                callToActionTile {
-                    id
-                    linkType
+                callToAction {
                     
-internalLink {
-    id
-    title
-    slug
-}
-
-                    externalLink
-                }
-                ctaButtons {
-                    id
-                    callToAction {
-                        
 id
 label
 linkType
@@ -139,7 +125,21 @@ internalLink {
 externalLink
 color
 
-                    }
+                }
+            }
+            ctaTiles {
+                id
+                callToActionTile {
+                    id
+                    linkType
+                    
+internalLink {
+    id
+    title
+    slug
+}
+
+                    externalLink
                 }
             }
         }
@@ -263,6 +263,7 @@ color
 exports[`Fragments "SWITCHBACK_FRAGMENT" matches snapshot: SWITCHBACK_FRAGMENT 1`] = `
 "
 ...on SwitchbackBlock {
+    __typename
     id
     switchback {
         id

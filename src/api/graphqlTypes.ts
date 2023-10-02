@@ -11921,6 +11921,7 @@ export type IconsUpdateDocAccess = {
 };
 
 export type Image = {
+    src: string;
     __typename?: 'Image';
     alt: Scalars['String']['output'];
     createdAt?: Maybe<Scalars['DateTime']['output']>;

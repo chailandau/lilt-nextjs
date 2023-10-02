@@ -43,7 +43,12 @@ const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
                     href={process.env.NEXT_PUBLIC_BASE_URL as string}
                     className={styles['logo']}
                 >
-                    <Image src={Logo} alt='Long Island Laser Tag' priority />
+                    <Image
+                        src={Logo}
+                        alt='Long Island Laser Tag'
+                        hasBorder={false}
+                        priority
+                    />
                 </Link>
 
                 <Flex className={styles['right-content']}>

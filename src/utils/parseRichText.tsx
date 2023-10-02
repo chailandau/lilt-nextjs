@@ -1,9 +1,10 @@
-import { JSX } from 'react';
+import { Fragment, JSX } from 'react';
 
 import Link from '@/atoms/Link';
 import Text from '@/atoms/Text';
 
 interface ChildSegment {
+    strikethrough: boolean;
     underline: boolean;
     italic: boolean;
     bold: boolean;
@@ -11,7 +12,7 @@ interface ChildSegment {
     text?: string;
     url?: string | null | undefined;
     newTab?: boolean;
-    type?: 'link';
+    type?: 'link' | 'ul' | 'ol';
 }
 
 export interface RichTextProps {
@@ -24,135 +25,116 @@ export interface RichTextProps {
 
 type RichText = JSX.Element[] | null | undefined;
 
+const formatText = (
+    text: string,
+    format: string,
+    index: number
+): JSX.Element => {
+    switch (format) {
+        case 'bold':
+            return <b key={index}>{text}</b>;
+        case 'italic':
+            return <i key={index}>{text}</i>;
+        case 'underline':
+            return <u key={index}>{text}</u>;
+        case 'strikethrough':
+            return <s key={index}>{text}</s>;
+        default:
+            return <Fragment key={index}>{text}</Fragment>;
+    }
+};
+
+const processText = (child: ChildSegment, index: number): JSX.Element => {
+    if (child.text) {
+        if (child.bold) {
+            return formatText(child.text, 'bold', index);
+        }
+        if (child.italic) {
+            return formatText(child.text, 'italic', index);
+        }
+        if (child.underline) {
+            return formatText(child.text, 'underline', index);
+        }
+        if (child.strikethrough) {
+            return formatText(child.text, 'strikethrough', index);
+        }
+
+        return formatText(child.text, '', index);
+    }
+
+    return <Fragment key={index}></Fragment>;
+};
+
+const processLink = (
+    child: ChildSegment,
+    index: number
+): JSX.Element | null => {
+    if (child.type === 'link' && child.url && child.children?.[0]?.text) {
+        return (
+            <Link key={index} href={child.url}>
+                {child.children[0].text}
+            </Link>
+        );
+    }
+
+    return null;
+};
+
+const processList = (child: RichTextProps): JSX.Element | null => {
+    if (child?.type === 'ul' || child?.type === 'ol') {
+        const listItems = child?.children.map(
+            (item) =>
+                item?.children?.map((listItem, listItemIndex) => (
+                    <li key={listItemIndex}>
+                        {processText(listItem, listItemIndex)}
+                    </li>
+                ))
+        );
+
+        if (listItems?.length) {
+            return child?.type === 'ul' ? (
+                <ul>{listItems}</ul>
+            ) : (
+                <ol>{listItems}</ol>
+            );
+        }
+    }
+
+    return null;
+};
+
 export const parseRichText = (richText: RichTextProps[]): RichText | null => {
     if (!richText) {
         return null;
     }
 
     const results: JSX.Element[] = [];
-    let currentParagraph: JSX.Element | null = null;
 
     richText.forEach((segment, index) => {
-        const listItems: JSX.Element[] = [];
+        const content: JSX.Element[] = [];
 
-        segment?.children?.forEach((child) => {
-            if (!child.text || child.text === '') {
-                return;
-            }
-            if (child.type === 'link' && child.url) {
-                if (child.children && child.children.length > 0) {
-                    const linkText = child.children[0].text;
+        const list = processList(segment);
+        if (list) {
+            results.push(list);
+        }
 
-                    if (currentParagraph) {
-                        currentParagraph = (
-                            <Text key={`text-link-${child.url}`}>
-                                {currentParagraph.props.children}
-                                <Link
-                                    key={`text-link-${child.url}`}
-                                    href={child.url}
-                                >
-                                    {linkText}
-                                </Link>
-                            </Text>
-                        );
-                    } else {
-                        currentParagraph = (
-                            <Link
-                                key={`text-link-${child.url}`}
-                                href={child.url}
-                            >
-                                {linkText}
-                            </Link>
-                        );
-                    }
-                }
-            } else if (child.bold) {
-                if (currentParagraph) {
-                    currentParagraph = (
-                        <Text key={`text-link-${child.url}`}>
-                            {currentParagraph.props.children}
-                            <b>{child.text}</b>
-                        </Text>
-                    );
-                } else {
-                    currentParagraph = <b>{child.text}</b>;
-                }
-            } else if (child.underline) {
-                if (currentParagraph) {
-                    currentParagraph = (
-                        <Text key={`text-link-${child.url}`}>
-                            {currentParagraph.props.children}
-                            <u>{child.text}</u>
-                        </Text>
-                    );
-                } else {
-                    currentParagraph = <u>{child.text}</u>;
-                }
-            } else if (child.italic) {
-                if (currentParagraph) {
-                    currentParagraph = (
-                        <Text key={`text-link-${child.url}`}>
-                            {currentParagraph.props.children}
-                            <i>{child.text}</i>
-                        </Text>
-                    );
-                } else {
-                    currentParagraph = <i>{child.text}</i>;
-                }
-            } else if (child.text) {
-                const paragraphs = child.text
-                    .split('\n')
-                    .filter((paragraph) => paragraph.trim() !== '');
-
-                if (paragraphs) {
-                    paragraphs.forEach((par, parIndex) => {
-                        if (currentParagraph) {
-                            currentParagraph = (
-                                <Text key={`par-${parIndex}`}>
-                                    {currentParagraph.props.children}
-                                    {par}
-                                </Text>
-                            );
-                        } else {
-                            currentParagraph = (
-                                <Text key={`par-${parIndex}`}>{par}</Text>
-                            );
-                        }
-                    });
-                }
+        segment?.children?.forEach((child, segmentIndex) => {
+            if (child.text) {
+                content.push(processText(child, segmentIndex));
             }
 
-            switch (segment.type) {
-                case 'ul':
-                case 'ol':
-                    child.children?.forEach((listItem) => {
-                        listItem.text;
-                        listItems.push(
-                            <li key={listItem.text}>
-                                <Text key={listItem.text} as='span'>
-                                    {listItem.text}
-                                </Text>
-                            </li>
-                        );
-                    });
-                    break;
+            const link = processLink(child, segmentIndex);
+            if (link) {
+                content.push(link);
             }
         });
 
-        if (currentParagraph) {
-            results.push(currentParagraph);
-            currentParagraph = null;
-        }
-
-        if (listItems.length > 0) {
-            if (segment.type === 'ul') {
-                results.push(<ul key={`ul-${index}`}>{listItems}</ul>);
-            }
-            if (segment.type === 'ol') {
-                results.push(<ol key={`ol-${index}`}>{listItems}</ol>);
-            }
+        if (content.length > 0) {
+            results.push(<Text key={index}>{content}</Text>);
+        } else if (segment.text) {
+            results.push(<Text key={index}>{segment.text}</Text>);
         }
     });
 
-    return results;
+    return results.length > 0 ? results : null;
 };

@@ -13,7 +13,6 @@ interface PageProps {
 
 const Page: FC<PageProps> = async ({ slug }) => {
     const { Pages } = await getData(PAGE_CONTENT_QUERY, slug);
-
     const sections = Pages?.docs?.flatMap(
         (doc) => doc?.pageSections?.flatMap((section) => section?.blocks)
     ) as Page_PageSections_Blocks[];

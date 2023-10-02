@@ -156,6 +156,7 @@ export const PROCESS_FRAGMENT = `
 
 export const SWITCHBACK_FRAGMENT = `
 ...on SwitchbackBlock {
+    __typename
     id
     switchback {
         id

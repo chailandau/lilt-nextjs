@@ -1,4 +1,4 @@
-import { Button } from '@/api/graphqlTypes';
+import { CallToAction } from '@/api/graphqlTypes';
 
 export const buttonDataInternal = {
     label: 'Get in touch',
@@ -8,25 +8,25 @@ export const buttonDataInternal = {
         slug: 'events'
     },
     color: 'blue'
-} as Button;
+} as CallToAction;
 
 export const buttonDataExternal = {
     label: 'Get in touch',
     linkType: 'external',
     externalLink: 'https://www.google.com',
     color: 'blue'
-} as Button;
+} as CallToAction;
 
 export const buttonDataNoLabel = {
     label: '',
     linkType: 'external',
     externalLink: 'https://www.google.com',
     color: 'blue'
-} as Button;
+} as CallToAction;
 
 export const buttonDataNoLink = {
     label: 'Get in touch',
     linkType: 'external',
     externalLink: '',
     color: 'blue'
-} as Button;
+} as CallToAction;
