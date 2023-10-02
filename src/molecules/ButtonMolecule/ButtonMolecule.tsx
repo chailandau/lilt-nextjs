@@ -1,9 +1,11 @@
+'use client';
+
 import classNames from 'classnames';
 import { FC, KeyboardEvent, ReactNode } from 'react';
 
 import styles from './ButtonMolecule.module.scss';
 
-import Link from '@/atoms/Link/Link';
+import Link from '@/atoms/Link';
 
 export const buttonMoleculeVariants = [
     'blue',

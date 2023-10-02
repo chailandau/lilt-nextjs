@@ -18,18 +18,22 @@ interface HeadingProps {
     color?: (typeof headingColors)[number];
     /** Heading content */
     children: string;
+    /** If true, heading will be centered */
+    centered?: boolean;
 }
 
 const Heading: FC<HeadingProps> = ({
     as: HeadingTag = 'h2',
     size = 'md',
     color = 'green',
+    centered,
     children
 }) => {
     const classList = classNames(
         styles['heading'],
         styles[size],
-        styles[color]
+        styles[color],
+        centered && styles['centered']
     );
 
     return <HeadingTag className={classList}>{children}</HeadingTag>;

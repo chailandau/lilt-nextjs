@@ -2,7 +2,7 @@ import classNames from 'classnames';
 
 import styles from './MenuToggle.module.scss';
 
-import Container from '@/atoms/Container/Container';
+import Container from '@/atoms/Container';
 import useStore from '@/store/useStore';
 
 const MenuToggle = () => {

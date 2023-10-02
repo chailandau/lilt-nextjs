@@ -27,13 +27,14 @@ export const PAGES_QUERY = gql`
 `;
 
 export const PAGE_CONTENT_QUERY = gql`
-    query PageContentQuery($slug: String!) {
-        Pages(where:{ slug: { equals: $slug }}) {
-            docs {
-                id
-                slug
-                title
-                pageSections {
+query PageContentQuery($slug: String!) {
+    Pages(where:{ slug: { equals: $slug }}) {
+        docs {
+            id
+            slug
+            title
+            pageSections {
+                blocks {
                     ${HERO_FRAGMENT}
                     ${ACCORDION_FRAGMENT}
                     ${CONVERSION_PANEL_FRAGMENT}
@@ -45,22 +46,24 @@ export const PAGE_CONTENT_QUERY = gql`
                     ${TILE_GRID_FRAGMENT}
                 }
             }
+            
         }
     }
+}
 `;
 
 export const HEADER_QUERY = gql`
-    query HeaderQuery  {
-            Header {
-                menuItems {
-                    ${MENU_ITEMS_FRAGMENT}
-                    submenuItems {
-                        ${MENU_ITEMS_FRAGMENT}
-                    }
-                }
-                callToAction {
-                    ${CTA_FRAGMENT}
+query HeaderQuery  {
+    Header {
+        menuItems {
+            ${MENU_ITEMS_FRAGMENT}
+            submenuItems {
+                ${MENU_ITEMS_FRAGMENT}
             }
         }
+        callToAction {
+            ${CTA_FRAGMENT}
+        }
     }
+}
 `;

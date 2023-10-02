@@ -7,7 +7,7 @@ import { HeaderProps } from '../Header';
  * current styles for proper Storybook rendering
  */
 // eslint-disable-next-line import/order
-import Flex from '@/molecules/Flex/Flex';
+import Flex from '@/molecules/Flex';
 import styles from './DesktopNav.module.scss';
 import Menu from './Menu';
 

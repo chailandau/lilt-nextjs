@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 import styles from './Flex.module.scss';
 
-import Container, { ContainerProps } from '@/atoms/Container/Container';
+import Container, { ContainerProps } from '@/atoms/Container';
 
 const Flex: FC<ContainerProps> = ({
     children,

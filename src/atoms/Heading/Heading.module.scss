@@ -1,5 +1,8 @@
 .heading {
     text-transform: uppercase;
+    &.centered {
+        text-align: center;
+    }
     &.green {
         color: color(neon, green);
     }

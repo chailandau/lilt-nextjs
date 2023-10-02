@@ -5,7 +5,7 @@ schema {
 
 type Access {
   accordions: accordionsAccess
-  buttons: buttonsAccess
+  call_to_actions: call_to_actionsAccess
   canAccessAdmin: Boolean!
   conversion_panels: conversion_panelsAccess
   cta_tiles: cta_tilesAccess
@@ -21,6 +21,7 @@ type Access {
   images: imagesAccess
   pages: pagesAccess
   processes: processesAccess
+  specials: specialsAccess
   switchbacks: switchbacksAccess
   text_grids: text_gridsAccess
   tile_grids: tile_gridsAccess
@@ -683,40 +684,40 @@ type AccordionsUpdateDocAccess {
   where: JSONObject
 }
 
-type Button {
-  color: Button_color
+type CallToAction {
+  color: CallToAction_color
   createdAt: DateTime
   externalLink: String
   fullTitle: String
   id: String
   internalLink: Page
   label: String
-  linkType: Button_linkType
+  linkType: CallToAction_linkType
   updatedAt: DateTime
 }
 
-enum Button_color {
+enum CallToAction_color {
   blue
   green
   white
 }
 
-enum Button_color_Input {
+enum CallToAction_color_Input {
   blue
   green
   white
 }
 
-input Button_color_operator {
-  all: [Button_color_Input]
-  equals: Button_color_Input
+input CallToAction_color_operator {
+  all: [CallToAction_color_Input]
+  equals: CallToAction_color_Input
   exists: Boolean
-  in: [Button_color_Input]
-  not_equals: Button_color_Input
-  not_in: [Button_color_Input]
+  in: [CallToAction_color_Input]
+  not_equals: CallToAction_color_Input
+  not_in: [CallToAction_color_Input]
 }
 
-input Button_createdAt_operator {
+input CallToAction_createdAt_operator {
   equals: DateTime
   exists: Boolean
   greater_than: DateTime
@@ -727,7 +728,7 @@ input Button_createdAt_operator {
   not_equals: DateTime
 }
 
-input Button_externalLink_operator {
+input CallToAction_externalLink_operator {
   all: [String]
   contains: String
   equals: String
@@ -738,7 +739,7 @@ input Button_externalLink_operator {
   not_in: [String]
 }
 
-input Button_fullTitle_operator {
+input CallToAction_fullTitle_operator {
   all: [String]
   contains: String
   equals: String
@@ -749,7 +750,7 @@ input Button_fullTitle_operator {
   not_in: [String]
 }
 
-input Button_id_operator {
+input CallToAction_id_operator {
   all: [String]
   contains: String
   equals: String
@@ -760,7 +761,7 @@ input Button_id_operator {
   not_in: [String]
 }
 
-input Button_internalLink_operator {
+input CallToAction_internalLink_operator {
   all: [String]
   equals: String
   exists: Boolean
@@ -769,7 +770,7 @@ input Button_internalLink_operator {
   not_in: [String]
 }
 
-input Button_label_operator {
+input CallToAction_label_operator {
   all: [String]
   contains: String
   equals: String
@@ -780,26 +781,26 @@ input Button_label_operator {
   not_in: [String]
 }
 
-enum Button_linkType {
+enum CallToAction_linkType {
   external
   internal
 }
 
-enum Button_linkType_Input {
+enum CallToAction_linkType_Input {
   external
   internal
 }
 
-input Button_linkType_operator {
-  all: [Button_linkType_Input]
-  equals: Button_linkType_Input
+input CallToAction_linkType_operator {
+  all: [CallToAction_linkType_Input]
+  equals: CallToAction_linkType_Input
   exists: Boolean
-  in: [Button_linkType_Input]
-  not_equals: Button_linkType_Input
-  not_in: [Button_linkType_Input]
+  in: [CallToAction_linkType_Input]
+  not_equals: CallToAction_linkType_Input
+  not_in: [CallToAction_linkType_Input]
 }
 
-input Button_updatedAt_operator {
+input CallToAction_updatedAt_operator {
   equals: DateTime
   exists: Boolean
   greater_than: DateTime
@@ -810,46 +811,46 @@ input Button_updatedAt_operator {
   not_equals: DateTime
 }
 
-input Button_where {
-  AND: [Button_where_and]
-  OR: [Button_where_or]
-  color: Button_color_operator
-  createdAt: Button_createdAt_operator
-  externalLink: Button_externalLink_operator
-  fullTitle: Button_fullTitle_operator
-  id: Button_id_operator
-  internalLink: Button_internalLink_operator
-  label: Button_label_operator
-  linkType: Button_linkType_operator
-  updatedAt: Button_updatedAt_operator
+input CallToAction_where {
+  AND: [CallToAction_where_and]
+  OR: [CallToAction_where_or]
+  color: CallToAction_color_operator
+  createdAt: CallToAction_createdAt_operator
+  externalLink: CallToAction_externalLink_operator
+  fullTitle: CallToAction_fullTitle_operator
+  id: CallToAction_id_operator
+  internalLink: CallToAction_internalLink_operator
+  label: CallToAction_label_operator
+  linkType: CallToAction_linkType_operator
+  updatedAt: CallToAction_updatedAt_operator
 }
 
-input Button_where_and {
-  color: Button_color_operator
-  createdAt: Button_createdAt_operator
-  externalLink: Button_externalLink_operator
-  fullTitle: Button_fullTitle_operator
-  id: Button_id_operator
-  internalLink: Button_internalLink_operator
-  label: Button_label_operator
-  linkType: Button_linkType_operator
-  updatedAt: Button_updatedAt_operator
+input CallToAction_where_and {
+  color: CallToAction_color_operator
+  createdAt: CallToAction_createdAt_operator
+  externalLink: CallToAction_externalLink_operator
+  fullTitle: CallToAction_fullTitle_operator
+  id: CallToAction_id_operator
+  internalLink: CallToAction_internalLink_operator
+  label: CallToAction_label_operator
+  linkType: CallToAction_linkType_operator
+  updatedAt: CallToAction_updatedAt_operator
 }
 
-input Button_where_or {
-  color: Button_color_operator
-  createdAt: Button_createdAt_operator
-  externalLink: Button_externalLink_operator
-  fullTitle: Button_fullTitle_operator
-  id: Button_id_operator
-  internalLink: Button_internalLink_operator
-  label: Button_label_operator
-  linkType: Button_linkType_operator
-  updatedAt: Button_updatedAt_operator
+input CallToAction_where_or {
+  color: CallToAction_color_operator
+  createdAt: CallToAction_createdAt_operator
+  externalLink: CallToAction_externalLink_operator
+  fullTitle: CallToAction_fullTitle_operator
+  id: CallToAction_id_operator
+  internalLink: CallToAction_internalLink_operator
+  label: CallToAction_label_operator
+  linkType: CallToAction_linkType_operator
+  updatedAt: CallToAction_updatedAt_operator
 }
 
-type Buttons {
-  docs: [Button]
+type CallToActions {
+  docs: [CallToAction]
   hasNextPage: Boolean
   hasPrevPage: Boolean
   limit: Int
@@ -862,486 +863,486 @@ type Buttons {
   totalPages: Int
 }
 
-type ButtonsCreateAccess {
+type CallToActionsCreateAccess {
   permission: Boolean!
   where: JSONObject
 }
 
-type ButtonsCreateDocAccess {
+type CallToActionsCreateDocAccess {
   permission: Boolean!
   where: JSONObject
 }
 
-type ButtonsDeleteAccess {
+type CallToActionsDeleteAccess {
   permission: Boolean!
   where: JSONObject
 }
 
-type ButtonsDeleteDocAccess {
+type CallToActionsDeleteDocAccess {
   permission: Boolean!
   where: JSONObject
 }
 
-type ButtonsDocAccessFields {
-  color: ButtonsDocAccessFields_color
-  createdAt: ButtonsDocAccessFields_createdAt
-  externalLink: ButtonsDocAccessFields_externalLink
-  fullTitle: ButtonsDocAccessFields_fullTitle
-  internalLink: ButtonsDocAccessFields_internalLink
-  label: ButtonsDocAccessFields_label
-  linkType: ButtonsDocAccessFields_linkType
-  linksTo: ButtonsDocAccessFields_linksTo
-  updatedAt: ButtonsDocAccessFields_updatedAt
+type CallToActionsDocAccessFields {
+  color: CallToActionsDocAccessFields_color
+  createdAt: CallToActionsDocAccessFields_createdAt
+  externalLink: CallToActionsDocAccessFields_externalLink
+  fullTitle: CallToActionsDocAccessFields_fullTitle
+  internalLink: CallToActionsDocAccessFields_internalLink
+  label: CallToActionsDocAccessFields_label
+  linkType: CallToActionsDocAccessFields_linkType
+  linksTo: CallToActionsDocAccessFields_linksTo
+  updatedAt: CallToActionsDocAccessFields_updatedAt
 }
 
-type ButtonsDocAccessFields_color {
-  create: ButtonsDocAccessFields_color_Create
-  delete: ButtonsDocAccessFields_color_Delete
-  read: ButtonsDocAccessFields_color_Read
-  update: ButtonsDocAccessFields_color_Update
+type CallToActionsDocAccessFields_color {
+  create: CallToActionsDocAccessFields_color_Create
+  delete: CallToActionsDocAccessFields_color_Delete
+  read: CallToActionsDocAccessFields_color_Read
+  update: CallToActionsDocAccessFields_color_Update
 }
 
-type ButtonsDocAccessFields_color_Create {
+type CallToActionsDocAccessFields_color_Create {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_color_Delete {
+type CallToActionsDocAccessFields_color_Delete {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_color_Read {
+type CallToActionsDocAccessFields_color_Read {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_color_Update {
+type CallToActionsDocAccessFields_color_Update {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_createdAt {
-  create: ButtonsDocAccessFields_createdAt_Create
-  delete: ButtonsDocAccessFields_createdAt_Delete
-  read: ButtonsDocAccessFields_createdAt_Read
-  update: ButtonsDocAccessFields_createdAt_Update
+type CallToActionsDocAccessFields_createdAt {
+  create: CallToActionsDocAccessFields_createdAt_Create
+  delete: CallToActionsDocAccessFields_createdAt_Delete
+  read: CallToActionsDocAccessFields_createdAt_Read
+  update: CallToActionsDocAccessFields_createdAt_Update
 }
 
-type ButtonsDocAccessFields_createdAt_Create {
+type CallToActionsDocAccessFields_createdAt_Create {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_createdAt_Delete {
+type CallToActionsDocAccessFields_createdAt_Delete {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_createdAt_Read {
+type CallToActionsDocAccessFields_createdAt_Read {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_createdAt_Update {
+type CallToActionsDocAccessFields_createdAt_Update {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_externalLink {
-  create: ButtonsDocAccessFields_externalLink_Create
-  delete: ButtonsDocAccessFields_externalLink_Delete
-  read: ButtonsDocAccessFields_externalLink_Read
-  update: ButtonsDocAccessFields_externalLink_Update
+type CallToActionsDocAccessFields_externalLink {
+  create: CallToActionsDocAccessFields_externalLink_Create
+  delete: CallToActionsDocAccessFields_externalLink_Delete
+  read: CallToActionsDocAccessFields_externalLink_Read
+  update: CallToActionsDocAccessFields_externalLink_Update
 }
 
-type ButtonsDocAccessFields_externalLink_Create {
+type CallToActionsDocAccessFields_externalLink_Create {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_externalLink_Delete {
+type CallToActionsDocAccessFields_externalLink_Delete {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_externalLink_Read {
+type CallToActionsDocAccessFields_externalLink_Read {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_externalLink_Update {
+type CallToActionsDocAccessFields_externalLink_Update {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_fullTitle {
-  create: ButtonsDocAccessFields_fullTitle_Create
-  delete: ButtonsDocAccessFields_fullTitle_Delete
-  read: ButtonsDocAccessFields_fullTitle_Read
-  update: ButtonsDocAccessFields_fullTitle_Update
+type CallToActionsDocAccessFields_fullTitle {
+  create: CallToActionsDocAccessFields_fullTitle_Create
+  delete: CallToActionsDocAccessFields_fullTitle_Delete
+  read: CallToActionsDocAccessFields_fullTitle_Read
+  update: CallToActionsDocAccessFields_fullTitle_Update
 }
 
-type ButtonsDocAccessFields_fullTitle_Create {
+type CallToActionsDocAccessFields_fullTitle_Create {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_fullTitle_Delete {
+type CallToActionsDocAccessFields_fullTitle_Delete {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_fullTitle_Read {
+type CallToActionsDocAccessFields_fullTitle_Read {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_fullTitle_Update {
+type CallToActionsDocAccessFields_fullTitle_Update {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_internalLink {
-  create: ButtonsDocAccessFields_internalLink_Create
-  delete: ButtonsDocAccessFields_internalLink_Delete
-  read: ButtonsDocAccessFields_internalLink_Read
-  update: ButtonsDocAccessFields_internalLink_Update
+type CallToActionsDocAccessFields_internalLink {
+  create: CallToActionsDocAccessFields_internalLink_Create
+  delete: CallToActionsDocAccessFields_internalLink_Delete
+  read: CallToActionsDocAccessFields_internalLink_Read
+  update: CallToActionsDocAccessFields_internalLink_Update
 }
 
-type ButtonsDocAccessFields_internalLink_Create {
+type CallToActionsDocAccessFields_internalLink_Create {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_internalLink_Delete {
+type CallToActionsDocAccessFields_internalLink_Delete {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_internalLink_Read {
+type CallToActionsDocAccessFields_internalLink_Read {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_internalLink_Update {
+type CallToActionsDocAccessFields_internalLink_Update {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_label {
-  create: ButtonsDocAccessFields_label_Create
-  delete: ButtonsDocAccessFields_label_Delete
-  read: ButtonsDocAccessFields_label_Read
-  update: ButtonsDocAccessFields_label_Update
+type CallToActionsDocAccessFields_label {
+  create: CallToActionsDocAccessFields_label_Create
+  delete: CallToActionsDocAccessFields_label_Delete
+  read: CallToActionsDocAccessFields_label_Read
+  update: CallToActionsDocAccessFields_label_Update
 }
 
-type ButtonsDocAccessFields_label_Create {
+type CallToActionsDocAccessFields_label_Create {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_label_Delete {
+type CallToActionsDocAccessFields_label_Delete {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_label_Read {
+type CallToActionsDocAccessFields_label_Read {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_label_Update {
+type CallToActionsDocAccessFields_label_Update {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_linkType {
-  create: ButtonsDocAccessFields_linkType_Create
-  delete: ButtonsDocAccessFields_linkType_Delete
-  read: ButtonsDocAccessFields_linkType_Read
-  update: ButtonsDocAccessFields_linkType_Update
+type CallToActionsDocAccessFields_linkType {
+  create: CallToActionsDocAccessFields_linkType_Create
+  delete: CallToActionsDocAccessFields_linkType_Delete
+  read: CallToActionsDocAccessFields_linkType_Read
+  update: CallToActionsDocAccessFields_linkType_Update
 }
 
-type ButtonsDocAccessFields_linkType_Create {
+type CallToActionsDocAccessFields_linkType_Create {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_linkType_Delete {
+type CallToActionsDocAccessFields_linkType_Delete {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_linkType_Read {
+type CallToActionsDocAccessFields_linkType_Read {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_linkType_Update {
+type CallToActionsDocAccessFields_linkType_Update {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_linksTo {
-  create: ButtonsDocAccessFields_linksTo_Create
-  delete: ButtonsDocAccessFields_linksTo_Delete
-  read: ButtonsDocAccessFields_linksTo_Read
-  update: ButtonsDocAccessFields_linksTo_Update
+type CallToActionsDocAccessFields_linksTo {
+  create: CallToActionsDocAccessFields_linksTo_Create
+  delete: CallToActionsDocAccessFields_linksTo_Delete
+  read: CallToActionsDocAccessFields_linksTo_Read
+  update: CallToActionsDocAccessFields_linksTo_Update
 }
 
-type ButtonsDocAccessFields_linksTo_Create {
+type CallToActionsDocAccessFields_linksTo_Create {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_linksTo_Delete {
+type CallToActionsDocAccessFields_linksTo_Delete {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_linksTo_Read {
+type CallToActionsDocAccessFields_linksTo_Read {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_linksTo_Update {
+type CallToActionsDocAccessFields_linksTo_Update {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_updatedAt {
-  create: ButtonsDocAccessFields_updatedAt_Create
-  delete: ButtonsDocAccessFields_updatedAt_Delete
-  read: ButtonsDocAccessFields_updatedAt_Read
-  update: ButtonsDocAccessFields_updatedAt_Update
+type CallToActionsDocAccessFields_updatedAt {
+  create: CallToActionsDocAccessFields_updatedAt_Create
+  delete: CallToActionsDocAccessFields_updatedAt_Delete
+  read: CallToActionsDocAccessFields_updatedAt_Read
+  update: CallToActionsDocAccessFields_updatedAt_Update
 }
 
-type ButtonsDocAccessFields_updatedAt_Create {
+type CallToActionsDocAccessFields_updatedAt_Create {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_updatedAt_Delete {
+type CallToActionsDocAccessFields_updatedAt_Delete {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_updatedAt_Read {
+type CallToActionsDocAccessFields_updatedAt_Read {
   permission: Boolean!
 }
 
-type ButtonsDocAccessFields_updatedAt_Update {
+type CallToActionsDocAccessFields_updatedAt_Update {
   permission: Boolean!
 }
 
-type ButtonsFields {
-  color: ButtonsFields_color
-  createdAt: ButtonsFields_createdAt
-  externalLink: ButtonsFields_externalLink
-  fullTitle: ButtonsFields_fullTitle
-  internalLink: ButtonsFields_internalLink
-  label: ButtonsFields_label
-  linkType: ButtonsFields_linkType
-  linksTo: ButtonsFields_linksTo
-  updatedAt: ButtonsFields_updatedAt
+type CallToActionsFields {
+  color: CallToActionsFields_color
+  createdAt: CallToActionsFields_createdAt
+  externalLink: CallToActionsFields_externalLink
+  fullTitle: CallToActionsFields_fullTitle
+  internalLink: CallToActionsFields_internalLink
+  label: CallToActionsFields_label
+  linkType: CallToActionsFields_linkType
+  linksTo: CallToActionsFields_linksTo
+  updatedAt: CallToActionsFields_updatedAt
 }
 
-type ButtonsFields_color {
-  create: ButtonsFields_color_Create
-  delete: ButtonsFields_color_Delete
-  read: ButtonsFields_color_Read
-  update: ButtonsFields_color_Update
+type CallToActionsFields_color {
+  create: CallToActionsFields_color_Create
+  delete: CallToActionsFields_color_Delete
+  read: CallToActionsFields_color_Read
+  update: CallToActionsFields_color_Update
 }
 
-type ButtonsFields_color_Create {
+type CallToActionsFields_color_Create {
   permission: Boolean!
 }
 
-type ButtonsFields_color_Delete {
+type CallToActionsFields_color_Delete {
   permission: Boolean!
 }
 
-type ButtonsFields_color_Read {
+type CallToActionsFields_color_Read {
   permission: Boolean!
 }
 
-type ButtonsFields_color_Update {
+type CallToActionsFields_color_Update {
   permission: Boolean!
 }
 
-type ButtonsFields_createdAt {
-  create: ButtonsFields_createdAt_Create
-  delete: ButtonsFields_createdAt_Delete
-  read: ButtonsFields_createdAt_Read
-  update: ButtonsFields_createdAt_Update
+type CallToActionsFields_createdAt {
+  create: CallToActionsFields_createdAt_Create
+  delete: CallToActionsFields_createdAt_Delete
+  read: CallToActionsFields_createdAt_Read
+  update: CallToActionsFields_createdAt_Update
 }
 
-type ButtonsFields_createdAt_Create {
+type CallToActionsFields_createdAt_Create {
   permission: Boolean!
 }
 
-type ButtonsFields_createdAt_Delete {
+type CallToActionsFields_createdAt_Delete {
   permission: Boolean!
 }
 
-type ButtonsFields_createdAt_Read {
+type CallToActionsFields_createdAt_Read {
   permission: Boolean!
 }
 
-type ButtonsFields_createdAt_Update {
+type CallToActionsFields_createdAt_Update {
   permission: Boolean!
 }
 
-type ButtonsFields_externalLink {
-  create: ButtonsFields_externalLink_Create
-  delete: ButtonsFields_externalLink_Delete
-  read: ButtonsFields_externalLink_Read
-  update: ButtonsFields_externalLink_Update
+type CallToActionsFields_externalLink {
+  create: CallToActionsFields_externalLink_Create
+  delete: CallToActionsFields_externalLink_Delete
+  read: CallToActionsFields_externalLink_Read
+  update: CallToActionsFields_externalLink_Update
 }
 
-type ButtonsFields_externalLink_Create {
+type CallToActionsFields_externalLink_Create {
   permission: Boolean!
 }
 
-type ButtonsFields_externalLink_Delete {
+type CallToActionsFields_externalLink_Delete {
   permission: Boolean!
 }
 
-type ButtonsFields_externalLink_Read {
+type CallToActionsFields_externalLink_Read {
   permission: Boolean!
 }
 
-type ButtonsFields_externalLink_Update {
+type CallToActionsFields_externalLink_Update {
   permission: Boolean!
 }
 
-type ButtonsFields_fullTitle {
-  create: ButtonsFields_fullTitle_Create
-  delete: ButtonsFields_fullTitle_Delete
-  read: ButtonsFields_fullTitle_Read
-  update: ButtonsFields_fullTitle_Update
+type CallToActionsFields_fullTitle {
+  create: CallToActionsFields_fullTitle_Create
+  delete: CallToActionsFields_fullTitle_Delete
+  read: CallToActionsFields_fullTitle_Read
+  update: CallToActionsFields_fullTitle_Update
 }
 
-type ButtonsFields_fullTitle_Create {
+type CallToActionsFields_fullTitle_Create {
   permission: Boolean!
 }
 
-type ButtonsFields_fullTitle_Delete {
+type CallToActionsFields_fullTitle_Delete {
   permission: Boolean!
 }
 
-type ButtonsFields_fullTitle_Read {
+type CallToActionsFields_fullTitle_Read {
   permission: Boolean!
 }
 
-type ButtonsFields_fullTitle_Update {
+type CallToActionsFields_fullTitle_Update {
   permission: Boolean!
 }
 
-type ButtonsFields_internalLink {
-  create: ButtonsFields_internalLink_Create
-  delete: ButtonsFields_internalLink_Delete
-  read: ButtonsFields_internalLink_Read
-  update: ButtonsFields_internalLink_Update
+type CallToActionsFields_internalLink {
+  create: CallToActionsFields_internalLink_Create
+  delete: CallToActionsFields_internalLink_Delete
+  read: CallToActionsFields_internalLink_Read
+  update: CallToActionsFields_internalLink_Update
 }
 
-type ButtonsFields_internalLink_Create {
+type CallToActionsFields_internalLink_Create {
   permission: Boolean!
 }
 
-type ButtonsFields_internalLink_Delete {
+type CallToActionsFields_internalLink_Delete {
   permission: Boolean!
 }
 
-type ButtonsFields_internalLink_Read {
+type CallToActionsFields_internalLink_Read {
   permission: Boolean!
 }
 
-type ButtonsFields_internalLink_Update {
+type CallToActionsFields_internalLink_Update {
   permission: Boolean!
 }
 
-type ButtonsFields_label {
-  create: ButtonsFields_label_Create
-  delete: ButtonsFields_label_Delete
-  read: ButtonsFields_label_Read
-  update: ButtonsFields_label_Update
+type CallToActionsFields_label {
+  create: CallToActionsFields_label_Create
+  delete: CallToActionsFields_label_Delete
+  read: CallToActionsFields_label_Read
+  update: CallToActionsFields_label_Update
 }
 
-type ButtonsFields_label_Create {
+type CallToActionsFields_label_Create {
   permission: Boolean!
 }
 
-type ButtonsFields_label_Delete {
+type CallToActionsFields_label_Delete {
   permission: Boolean!
 }
 
-type ButtonsFields_label_Read {
+type CallToActionsFields_label_Read {
   permission: Boolean!
 }
 
-type ButtonsFields_label_Update {
+type CallToActionsFields_label_Update {
   permission: Boolean!
 }
 
-type ButtonsFields_linkType {
-  create: ButtonsFields_linkType_Create
-  delete: ButtonsFields_linkType_Delete
-  read: ButtonsFields_linkType_Read
-  update: ButtonsFields_linkType_Update
+type CallToActionsFields_linkType {
+  create: CallToActionsFields_linkType_Create
+  delete: CallToActionsFields_linkType_Delete
+  read: CallToActionsFields_linkType_Read
+  update: CallToActionsFields_linkType_Update
 }
 
-type ButtonsFields_linkType_Create {
+type CallToActionsFields_linkType_Create {
   permission: Boolean!
 }
 
-type ButtonsFields_linkType_Delete {
+type CallToActionsFields_linkType_Delete {
   permission: Boolean!
 }
 
-type ButtonsFields_linkType_Read {
+type CallToActionsFields_linkType_Read {
   permission: Boolean!
 }
 
-type ButtonsFields_linkType_Update {
+type CallToActionsFields_linkType_Update {
   permission: Boolean!
 }
 
-type ButtonsFields_linksTo {
-  create: ButtonsFields_linksTo_Create
-  delete: ButtonsFields_linksTo_Delete
-  read: ButtonsFields_linksTo_Read
-  update: ButtonsFields_linksTo_Update
+type CallToActionsFields_linksTo {
+  create: CallToActionsFields_linksTo_Create
+  delete: CallToActionsFields_linksTo_Delete
+  read: CallToActionsFields_linksTo_Read
+  update: CallToActionsFields_linksTo_Update
 }
 
-type ButtonsFields_linksTo_Create {
+type CallToActionsFields_linksTo_Create {
   permission: Boolean!
 }
 
-type ButtonsFields_linksTo_Delete {
+type CallToActionsFields_linksTo_Delete {
   permission: Boolean!
 }
 
-type ButtonsFields_linksTo_Read {
+type CallToActionsFields_linksTo_Read {
   permission: Boolean!
 }
 
-type ButtonsFields_linksTo_Update {
+type CallToActionsFields_linksTo_Update {
   permission: Boolean!
 }
 
-type ButtonsFields_updatedAt {
-  create: ButtonsFields_updatedAt_Create
-  delete: ButtonsFields_updatedAt_Delete
-  read: ButtonsFields_updatedAt_Read
-  update: ButtonsFields_updatedAt_Update
+type CallToActionsFields_updatedAt {
+  create: CallToActionsFields_updatedAt_Create
+  delete: CallToActionsFields_updatedAt_Delete
+  read: CallToActionsFields_updatedAt_Read
+  update: CallToActionsFields_updatedAt_Update
 }
 
-type ButtonsFields_updatedAt_Create {
+type CallToActionsFields_updatedAt_Create {
   permission: Boolean!
 }
 
-type ButtonsFields_updatedAt_Delete {
+type CallToActionsFields_updatedAt_Delete {
   permission: Boolean!
 }
 
-type ButtonsFields_updatedAt_Read {
+type CallToActionsFields_updatedAt_Read {
   permission: Boolean!
 }
 
-type ButtonsFields_updatedAt_Update {
+type CallToActionsFields_updatedAt_Update {
   permission: Boolean!
 }
 
-type ButtonsReadAccess {
+type CallToActionsReadAccess {
   permission: Boolean!
   where: JSONObject
 }
 
-type ButtonsReadDocAccess {
+type CallToActionsReadDocAccess {
   permission: Boolean!
   where: JSONObject
 }
 
-type ButtonsUpdateAccess {
+type CallToActionsUpdateAccess {
   permission: Boolean!
   where: JSONObject
 }
 
-type ButtonsUpdateDocAccess {
+type CallToActionsUpdateDocAccess {
   permission: Boolean!
   where: JSONObject
 }
 
 type ConversionPanel {
-  callToAction: Button!
+  callToAction: CallToAction!
   content(depth: Int): JSON
   createdAt: DateTime
   heading: String!
@@ -3788,7 +3789,7 @@ type FeatureTilesUpdateDocAccess {
 
 type FeaturedMedia {
   assetType: FeaturedMedia_assetType
-  callToAction: Button
+  callToAction: CallToAction
   content(depth: Int): JSON
   createdAt: DateTime
   heading: String!
@@ -3797,6 +3798,13 @@ type FeaturedMedia {
   image(where: FeaturedMedia_Image_where): Image
   updatedAt: DateTime
   video: Video
+}
+
+type FeaturedMediaBlock {
+  blockName: String
+  blockType: String
+  featuredMedia: FeaturedMedia
+  id: String
 }
 
 type FeaturedMediaCreateAccess {
@@ -6093,7 +6101,7 @@ input Footer_SocialLinks_Icon_width_operator {
 }
 
 type Header {
-  callToAction: Button
+  callToAction: CallToAction
   createdAt: DateTime
   menuItems: [Header_MenuItems!]
   updatedAt: DateTime
@@ -7110,7 +7118,7 @@ type Hero_Cta {
 }
 
 type Hero_Cta_CtaButtons {
-  callToAction: Button
+  callToAction: CallToAction
   id: String
 }
 
@@ -8076,7 +8084,7 @@ type IconTile {
 }
 
 type IconTileGrid {
-  callToAction: Button!
+  callToAction: CallToAction!
   content(depth: Int): JSON
   createdAt: DateTime
   heading: String!
@@ -11447,7 +11455,7 @@ scalar JSONObject
 
 type Mutation {
   createAccordion(data: mutationAccordionInput!, draft: Boolean): Accordion
-  createButton(data: mutationButtonInput!, draft: Boolean): Button
+  createCallToAction(data: mutationCallToActionInput!, draft: Boolean): CallToAction
   createConversionPanel(data: mutationConversionPanelInput!, draft: Boolean): ConversionPanel
   createCtaTile(data: mutationCtaTileInput!, draft: Boolean): CtaTile
   createFeatureGrid(data: mutationFeatureGridInput!, draft: Boolean): FeatureGrid
@@ -11460,13 +11468,14 @@ type Mutation {
   createImage(data: mutationImageInput!, draft: Boolean): Image
   createPage(data: mutationPageInput!, draft: Boolean): Page
   createProcess(data: mutationProcessInput!, draft: Boolean): Process
+  createSpecial(data: mutationSpecialInput!, draft: Boolean): Special
   createSwitchback(data: mutationSwitchbackInput!, draft: Boolean): Switchback
   createTextGrid(data: mutationTextGridInput!, draft: Boolean): TextGrid
   createTileGrid(data: mutationTileGridInput!, draft: Boolean): TileGrid
   createUser(data: mutationUserInput!, draft: Boolean): User
   createVideo(data: mutationVideoInput!, draft: Boolean): Video
   deleteAccordion(id: String!): Accordion
-  deleteButton(id: String!): Button
+  deleteCallToAction(id: String!): CallToAction
   deleteConversionPanel(id: String!): ConversionPanel
   deleteCtaTile(id: String!): CtaTile
   deleteFeatureGrid(id: String!): FeatureGrid
@@ -11480,6 +11489,7 @@ type Mutation {
   deletePage(id: String!): Page
   deletePreference(key: String!): Preference
   deleteProcess(id: String!): Process
+  deleteSpecial(id: String!): Special
   deleteSwitchback(id: String!): Switchback
   deleteTextGrid(id: String!): TextGrid
   deleteTileGrid(id: String!): TileGrid
@@ -11492,7 +11502,7 @@ type Mutation {
   resetPasswordUser(password: String, token: String): usersResetPassword
   unlockUser(email: String!): Boolean!
   updateAccordion(autosave: Boolean, data: mutationAccordionUpdateInput!, draft: Boolean, id: String!): Accordion
-  updateButton(autosave: Boolean, data: mutationButtonUpdateInput!, draft: Boolean, id: String!): Button
+  updateCallToAction(autosave: Boolean, data: mutationCallToActionUpdateInput!, draft: Boolean, id: String!): CallToAction
   updateConversionPanel(autosave: Boolean, data: mutationConversionPanelUpdateInput!, draft: Boolean, id: String!): ConversionPanel
   updateCtaTile(autosave: Boolean, data: mutationCtaTileUpdateInput!, draft: Boolean, id: String!): CtaTile
   updateFeatureGrid(autosave: Boolean, data: mutationFeatureGridUpdateInput!, draft: Boolean, id: String!): FeatureGrid
@@ -11508,6 +11518,7 @@ type Mutation {
   updatePage(autosave: Boolean, data: mutationPageUpdateInput!, draft: Boolean, id: String!): Page
   updatePreference(key: String!, value: JSON): Preference
   updateProcess(autosave: Boolean, data: mutationProcessUpdateInput!, draft: Boolean, id: String!): Process
+  updateSpecial(autosave: Boolean, data: mutationSpecialUpdateInput!, draft: Boolean, id: String!): Special
   updateSwitchback(autosave: Boolean, data: mutationSwitchbackUpdateInput!, draft: Boolean, id: String!): Switchback
   updateTextGrid(autosave: Boolean, data: mutationTextGridUpdateInput!, draft: Boolean, id: String!): TextGrid
   updateTileGrid(autosave: Boolean, data: mutationTileGridUpdateInput!, draft: Boolean, id: String!): TileGrid
@@ -11525,7 +11536,42 @@ type Page {
   updatedAt: DateTime
 }
 
-union Page_PageSections = AccordionBlock | ConversionPanelBlock | FeatureGridBlock | HeroBlock | IconTileGridBlock | ProcessBlock | SwitchbackBlock | TextGridBlock | TileGridBlock
+type Page_PageSections {
+  blocks: [Page_PageSections_Blocks!]
+  enableGrid: Boolean
+  enableShapes: Boolean
+  gridColor: Page_PageSections_gridColor
+  id: String
+  internalName: String
+  shapes: [Page_PageSections_Shapes!]
+}
+
+union Page_PageSections_Blocks = AccordionBlock | ConversionPanelBlock | FeatureGridBlock | FeaturedMediaBlock | HeroBlock | IconTileGridBlock | ProcessBlock | SpecialBlock | SwitchbackBlock | TextGridBlock | TileGridBlock
+
+type Page_PageSections_Shapes {
+  id: String
+  location: Page_PageSections_Shapes_location
+  shape: Page_PageSections_Shapes_shape
+}
+
+enum Page_PageSections_Shapes_location {
+  bottom_left
+  bottom_right
+  center_left
+  center_right
+  top_left
+  top_right
+}
+
+enum Page_PageSections_Shapes_shape {
+  dots
+  pluses
+}
+
+enum Page_PageSections_gridColor {
+  green
+  purple
+}
 
 input Page_createdAt_operator {
   equals: DateTime
@@ -11547,6 +11593,96 @@ input Page_id_operator {
   like: String
   not_equals: String
   not_in: [String]
+}
+
+input Page_pageSections__enableGrid_operator {
+  equals: Boolean
+  exists: Boolean
+  not_equals: Boolean
+}
+
+input Page_pageSections__enableShapes_operator {
+  equals: Boolean
+  exists: Boolean
+  not_equals: Boolean
+}
+
+enum Page_pageSections__gridColor_Input {
+  green
+  purple
+}
+
+input Page_pageSections__gridColor_operator {
+  all: [Page_pageSections__gridColor_Input]
+  equals: Page_pageSections__gridColor_Input
+  exists: Boolean
+  in: [Page_pageSections__gridColor_Input]
+  not_equals: Page_pageSections__gridColor_Input
+  not_in: [Page_pageSections__gridColor_Input]
+}
+
+input Page_pageSections__id_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input Page_pageSections__internalName_operator {
+  all: [String]
+  contains: String
+  equals: String
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input Page_pageSections__shapes__id_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+enum Page_pageSections__shapes__location_Input {
+  bottom_left
+  bottom_right
+  center_left
+  center_right
+  top_left
+  top_right
+}
+
+input Page_pageSections__shapes__location_operator {
+  all: [Page_pageSections__shapes__location_Input]
+  equals: Page_pageSections__shapes__location_Input
+  exists: Boolean
+  in: [Page_pageSections__shapes__location_Input]
+  not_equals: Page_pageSections__shapes__location_Input
+  not_in: [Page_pageSections__shapes__location_Input]
+}
+
+enum Page_pageSections__shapes__shape_Input {
+  dots
+  pluses
+}
+
+input Page_pageSections__shapes__shape_operator {
+  all: [Page_pageSections__shapes__shape_Input]
+  equals: Page_pageSections__shapes__shape_Input
+  exists: Boolean
+  in: [Page_pageSections__shapes__shape_Input]
+  not_equals: Page_pageSections__shapes__shape_Input
+  not_in: [Page_pageSections__shapes__shape_Input]
 }
 
 input Page_slug_operator {
@@ -11587,6 +11723,14 @@ input Page_where {
   OR: [Page_where_or]
   createdAt: Page_createdAt_operator
   id: Page_id_operator
+  pageSections__enableGrid: Page_pageSections__enableGrid_operator
+  pageSections__enableShapes: Page_pageSections__enableShapes_operator
+  pageSections__gridColor: Page_pageSections__gridColor_operator
+  pageSections__id: Page_pageSections__id_operator
+  pageSections__internalName: Page_pageSections__internalName_operator
+  pageSections__shapes__id: Page_pageSections__shapes__id_operator
+  pageSections__shapes__location: Page_pageSections__shapes__location_operator
+  pageSections__shapes__shape: Page_pageSections__shapes__shape_operator
   slug: Page_slug_operator
   title: Page_title_operator
   updatedAt: Page_updatedAt_operator
@@ -11595,6 +11739,14 @@ input Page_where {
 input Page_where_and {
   createdAt: Page_createdAt_operator
   id: Page_id_operator
+  pageSections__enableGrid: Page_pageSections__enableGrid_operator
+  pageSections__enableShapes: Page_pageSections__enableShapes_operator
+  pageSections__gridColor: Page_pageSections__gridColor_operator
+  pageSections__id: Page_pageSections__id_operator
+  pageSections__internalName: Page_pageSections__internalName_operator
+  pageSections__shapes__id: Page_pageSections__shapes__id_operator
+  pageSections__shapes__location: Page_pageSections__shapes__location_operator
+  pageSections__shapes__shape: Page_pageSections__shapes__shape_operator
   slug: Page_slug_operator
   title: Page_title_operator
   updatedAt: Page_updatedAt_operator
@@ -11603,6 +11755,14 @@ input Page_where_and {
 input Page_where_or {
   createdAt: Page_createdAt_operator
   id: Page_id_operator
+  pageSections__enableGrid: Page_pageSections__enableGrid_operator
+  pageSections__enableShapes: Page_pageSections__enableShapes_operator
+  pageSections__gridColor: Page_pageSections__gridColor_operator
+  pageSections__id: Page_pageSections__id_operator
+  pageSections__internalName: Page_pageSections__internalName_operator
+  pageSections__shapes__id: Page_pageSections__shapes__id_operator
+  pageSections__shapes__location: Page_pageSections__shapes__location_operator
+  pageSections__shapes__shape: Page_pageSections__shapes__shape_operator
   slug: Page_slug_operator
   title: Page_title_operator
   updatedAt: Page_updatedAt_operator
@@ -11676,6 +11836,7 @@ type PagesDocAccessFields_createdAt_Update {
 type PagesDocAccessFields_pageSections {
   create: PagesDocAccessFields_pageSections_Create
   delete: PagesDocAccessFields_pageSections_Delete
+  fields: PagesDocAccessFields_pageSections_Fields
   read: PagesDocAccessFields_pageSections_Read
   update: PagesDocAccessFields_pageSections_Update
 }
@@ -11688,11 +11849,258 @@ type PagesDocAccessFields_pageSections_Delete {
   permission: Boolean!
 }
 
+type PagesDocAccessFields_pageSections_Fields {
+  blocks: PagesDocAccessFields_pageSections_blocks
+  enableGrid: PagesDocAccessFields_pageSections_enableGrid
+  enableShapes: PagesDocAccessFields_pageSections_enableShapes
+  gridColor: PagesDocAccessFields_pageSections_gridColor
+  id: PagesDocAccessFields_pageSections_id
+  internalName: PagesDocAccessFields_pageSections_internalName
+  shapes: PagesDocAccessFields_pageSections_shapes
+}
+
 type PagesDocAccessFields_pageSections_Read {
   permission: Boolean!
 }
 
 type PagesDocAccessFields_pageSections_Update {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_blocks {
+  create: PagesDocAccessFields_pageSections_blocks_Create
+  delete: PagesDocAccessFields_pageSections_blocks_Delete
+  read: PagesDocAccessFields_pageSections_blocks_Read
+  update: PagesDocAccessFields_pageSections_blocks_Update
+}
+
+type PagesDocAccessFields_pageSections_blocks_Create {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_blocks_Delete {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_blocks_Read {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_blocks_Update {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_enableGrid {
+  create: PagesDocAccessFields_pageSections_enableGrid_Create
+  delete: PagesDocAccessFields_pageSections_enableGrid_Delete
+  read: PagesDocAccessFields_pageSections_enableGrid_Read
+  update: PagesDocAccessFields_pageSections_enableGrid_Update
+}
+
+type PagesDocAccessFields_pageSections_enableGrid_Create {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_enableGrid_Delete {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_enableGrid_Read {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_enableGrid_Update {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_enableShapes {
+  create: PagesDocAccessFields_pageSections_enableShapes_Create
+  delete: PagesDocAccessFields_pageSections_enableShapes_Delete
+  read: PagesDocAccessFields_pageSections_enableShapes_Read
+  update: PagesDocAccessFields_pageSections_enableShapes_Update
+}
+
+type PagesDocAccessFields_pageSections_enableShapes_Create {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_enableShapes_Delete {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_enableShapes_Read {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_enableShapes_Update {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_gridColor {
+  create: PagesDocAccessFields_pageSections_gridColor_Create
+  delete: PagesDocAccessFields_pageSections_gridColor_Delete
+  read: PagesDocAccessFields_pageSections_gridColor_Read
+  update: PagesDocAccessFields_pageSections_gridColor_Update
+}
+
+type PagesDocAccessFields_pageSections_gridColor_Create {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_gridColor_Delete {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_gridColor_Read {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_gridColor_Update {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_id {
+  create: PagesDocAccessFields_pageSections_id_Create
+  delete: PagesDocAccessFields_pageSections_id_Delete
+  read: PagesDocAccessFields_pageSections_id_Read
+  update: PagesDocAccessFields_pageSections_id_Update
+}
+
+type PagesDocAccessFields_pageSections_id_Create {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_id_Delete {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_id_Read {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_id_Update {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_internalName {
+  create: PagesDocAccessFields_pageSections_internalName_Create
+  delete: PagesDocAccessFields_pageSections_internalName_Delete
+  read: PagesDocAccessFields_pageSections_internalName_Read
+  update: PagesDocAccessFields_pageSections_internalName_Update
+}
+
+type PagesDocAccessFields_pageSections_internalName_Create {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_internalName_Delete {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_internalName_Read {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_internalName_Update {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_shapes {
+  create: PagesDocAccessFields_pageSections_shapes_Create
+  delete: PagesDocAccessFields_pageSections_shapes_Delete
+  fields: PagesDocAccessFields_pageSections_shapes_Fields
+  read: PagesDocAccessFields_pageSections_shapes_Read
+  update: PagesDocAccessFields_pageSections_shapes_Update
+}
+
+type PagesDocAccessFields_pageSections_shapes_Create {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_shapes_Delete {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_shapes_Fields {
+  id: PagesDocAccessFields_pageSections_shapes_id
+  location: PagesDocAccessFields_pageSections_shapes_location
+  shape: PagesDocAccessFields_pageSections_shapes_shape
+}
+
+type PagesDocAccessFields_pageSections_shapes_Read {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_shapes_Update {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_shapes_id {
+  create: PagesDocAccessFields_pageSections_shapes_id_Create
+  delete: PagesDocAccessFields_pageSections_shapes_id_Delete
+  read: PagesDocAccessFields_pageSections_shapes_id_Read
+  update: PagesDocAccessFields_pageSections_shapes_id_Update
+}
+
+type PagesDocAccessFields_pageSections_shapes_id_Create {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_shapes_id_Delete {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_shapes_id_Read {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_shapes_id_Update {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_shapes_location {
+  create: PagesDocAccessFields_pageSections_shapes_location_Create
+  delete: PagesDocAccessFields_pageSections_shapes_location_Delete
+  read: PagesDocAccessFields_pageSections_shapes_location_Read
+  update: PagesDocAccessFields_pageSections_shapes_location_Update
+}
+
+type PagesDocAccessFields_pageSections_shapes_location_Create {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_shapes_location_Delete {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_shapes_location_Read {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_shapes_location_Update {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_shapes_shape {
+  create: PagesDocAccessFields_pageSections_shapes_shape_Create
+  delete: PagesDocAccessFields_pageSections_shapes_shape_Delete
+  read: PagesDocAccessFields_pageSections_shapes_shape_Read
+  update: PagesDocAccessFields_pageSections_shapes_shape_Update
+}
+
+type PagesDocAccessFields_pageSections_shapes_shape_Create {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_shapes_shape_Delete {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_shapes_shape_Read {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_pageSections_shapes_shape_Update {
   permission: Boolean!
 }
 
@@ -11799,6 +12207,7 @@ type PagesFields_createdAt_Update {
 type PagesFields_pageSections {
   create: PagesFields_pageSections_Create
   delete: PagesFields_pageSections_Delete
+  fields: PagesFields_pageSections_Fields
   read: PagesFields_pageSections_Read
   update: PagesFields_pageSections_Update
 }
@@ -11811,11 +12220,258 @@ type PagesFields_pageSections_Delete {
   permission: Boolean!
 }
 
+type PagesFields_pageSections_Fields {
+  blocks: PagesFields_pageSections_blocks
+  enableGrid: PagesFields_pageSections_enableGrid
+  enableShapes: PagesFields_pageSections_enableShapes
+  gridColor: PagesFields_pageSections_gridColor
+  id: PagesFields_pageSections_id
+  internalName: PagesFields_pageSections_internalName
+  shapes: PagesFields_pageSections_shapes
+}
+
 type PagesFields_pageSections_Read {
   permission: Boolean!
 }
 
 type PagesFields_pageSections_Update {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_blocks {
+  create: PagesFields_pageSections_blocks_Create
+  delete: PagesFields_pageSections_blocks_Delete
+  read: PagesFields_pageSections_blocks_Read
+  update: PagesFields_pageSections_blocks_Update
+}
+
+type PagesFields_pageSections_blocks_Create {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_blocks_Delete {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_blocks_Read {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_blocks_Update {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_enableGrid {
+  create: PagesFields_pageSections_enableGrid_Create
+  delete: PagesFields_pageSections_enableGrid_Delete
+  read: PagesFields_pageSections_enableGrid_Read
+  update: PagesFields_pageSections_enableGrid_Update
+}
+
+type PagesFields_pageSections_enableGrid_Create {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_enableGrid_Delete {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_enableGrid_Read {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_enableGrid_Update {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_enableShapes {
+  create: PagesFields_pageSections_enableShapes_Create
+  delete: PagesFields_pageSections_enableShapes_Delete
+  read: PagesFields_pageSections_enableShapes_Read
+  update: PagesFields_pageSections_enableShapes_Update
+}
+
+type PagesFields_pageSections_enableShapes_Create {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_enableShapes_Delete {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_enableShapes_Read {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_enableShapes_Update {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_gridColor {
+  create: PagesFields_pageSections_gridColor_Create
+  delete: PagesFields_pageSections_gridColor_Delete
+  read: PagesFields_pageSections_gridColor_Read
+  update: PagesFields_pageSections_gridColor_Update
+}
+
+type PagesFields_pageSections_gridColor_Create {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_gridColor_Delete {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_gridColor_Read {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_gridColor_Update {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_id {
+  create: PagesFields_pageSections_id_Create
+  delete: PagesFields_pageSections_id_Delete
+  read: PagesFields_pageSections_id_Read
+  update: PagesFields_pageSections_id_Update
+}
+
+type PagesFields_pageSections_id_Create {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_id_Delete {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_id_Read {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_id_Update {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_internalName {
+  create: PagesFields_pageSections_internalName_Create
+  delete: PagesFields_pageSections_internalName_Delete
+  read: PagesFields_pageSections_internalName_Read
+  update: PagesFields_pageSections_internalName_Update
+}
+
+type PagesFields_pageSections_internalName_Create {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_internalName_Delete {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_internalName_Read {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_internalName_Update {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_shapes {
+  create: PagesFields_pageSections_shapes_Create
+  delete: PagesFields_pageSections_shapes_Delete
+  fields: PagesFields_pageSections_shapes_Fields
+  read: PagesFields_pageSections_shapes_Read
+  update: PagesFields_pageSections_shapes_Update
+}
+
+type PagesFields_pageSections_shapes_Create {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_shapes_Delete {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_shapes_Fields {
+  id: PagesFields_pageSections_shapes_id
+  location: PagesFields_pageSections_shapes_location
+  shape: PagesFields_pageSections_shapes_shape
+}
+
+type PagesFields_pageSections_shapes_Read {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_shapes_Update {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_shapes_id {
+  create: PagesFields_pageSections_shapes_id_Create
+  delete: PagesFields_pageSections_shapes_id_Delete
+  read: PagesFields_pageSections_shapes_id_Read
+  update: PagesFields_pageSections_shapes_id_Update
+}
+
+type PagesFields_pageSections_shapes_id_Create {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_shapes_id_Delete {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_shapes_id_Read {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_shapes_id_Update {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_shapes_location {
+  create: PagesFields_pageSections_shapes_location_Create
+  delete: PagesFields_pageSections_shapes_location_Delete
+  read: PagesFields_pageSections_shapes_location_Read
+  update: PagesFields_pageSections_shapes_location_Update
+}
+
+type PagesFields_pageSections_shapes_location_Create {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_shapes_location_Delete {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_shapes_location_Read {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_shapes_location_Update {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_shapes_shape {
+  create: PagesFields_pageSections_shapes_shape_Create
+  delete: PagesFields_pageSections_shapes_shape_Delete
+  read: PagesFields_pageSections_shapes_shape_Read
+  update: PagesFields_pageSections_shapes_shape_Update
+}
+
+type PagesFields_pageSections_shapes_shape_Create {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_shapes_shape_Delete {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_shapes_shape_Read {
+  permission: Boolean!
+}
+
+type PagesFields_pageSections_shapes_shape_Update {
   permission: Boolean!
 }
 
@@ -11916,7 +12572,7 @@ type Preference {
 }
 
 type Process {
-  callToAction: Button!
+  callToAction: CallToAction!
   createdAt: DateTime
   id: String
   internalName: String!
@@ -12570,8 +13226,8 @@ type Query {
   Access: Access
   Accordion(draft: Boolean, id: String!): Accordion
   Accordions(draft: Boolean, limit: Int, page: Int, sort: String, where: Accordion_where): Accordions
-  Button(draft: Boolean, id: String!): Button
-  Buttons(draft: Boolean, limit: Int, page: Int, sort: String, where: Button_where): Buttons
+  CallToAction(draft: Boolean, id: String!): CallToAction
+  CallToActions(draft: Boolean, limit: Int, page: Int, sort: String, where: CallToAction_where): CallToActions
   ConversionPanel(draft: Boolean, id: String!): ConversionPanel
   ConversionPanels(draft: Boolean, limit: Int, page: Int, sort: String, where: ConversionPanel_where): ConversionPanels
   CtaTile(draft: Boolean, id: String!): CtaTile
@@ -12599,6 +13255,8 @@ type Query {
   Preference(key: String): Preference
   Process(draft: Boolean, id: String!): Process
   Processes(draft: Boolean, limit: Int, page: Int, sort: String, where: Process_where): Processes
+  Special(draft: Boolean, id: String!): Special
+  Specials(draft: Boolean, limit: Int, page: Int, sort: String, where: Special_where): Specials
   Switchback(draft: Boolean, id: String!): Switchback
   Switchbacks(draft: Boolean, limit: Int, page: Int, sort: String, where: Switchback_where): Switchbacks
   TextGrid(draft: Boolean, id: String!): TextGrid
@@ -12610,7 +13268,7 @@ type Query {
   Video(draft: Boolean, id: String!): Video
   Videos(draft: Boolean, limit: Int, page: Int, sort: String, where: Video_where): Videos
   docAccessAccordion(id: String!): accordionsDocAccess
-  docAccessButton(id: String!): buttonsDocAccess
+  docAccessCallToAction(id: String!): call_to_actionsDocAccess
   docAccessConversionPanel(id: String!): conversion_panelsDocAccess
   docAccessCtaTile(id: String!): cta_tilesDocAccess
   docAccessFeatureGrid(id: String!): feature_gridsDocAccess
@@ -12625,6 +13283,7 @@ type Query {
   docAccessImage(id: String!): imagesDocAccess
   docAccessPage(id: String!): pagesDocAccess
   docAccessProcess(id: String!): processesDocAccess
+  docAccessSpecial(id: String!): specialsDocAccess
   docAccessSwitchback(id: String!): switchbacksDocAccess
   docAccessTextGrid(id: String!): text_gridsDocAccess
   docAccessTileGrid(id: String!): tile_gridsDocAccess
@@ -12634,7 +13293,597 @@ type Query {
   meUser: usersMe
 }
 
+type Special {
+  content(depth: Int): JSON
+  createdAt: DateTime
+  heading: String!
+  headingTag: String!
+  id: String
+  sideBox(depth: Int): JSON
+  subheading: String
+  textGrid: TextGrid!
+  updatedAt: DateTime
+}
+
+type SpecialBlock {
+  blockName: String
+  blockType: String
+  id: String
+  special: Special
+}
+
+input Special_content_operator {
+  contains: JSON
+  equals: JSON
+  exists: Boolean
+  like: JSON
+  not_equals: JSON
+}
+
+input Special_createdAt_operator {
+  equals: DateTime
+  exists: Boolean
+  greater_than: DateTime
+  greater_than_equal: DateTime
+  less_than: DateTime
+  less_than_equal: DateTime
+  like: DateTime
+  not_equals: DateTime
+}
+
+input Special_headingTag_operator {
+  all: [String]
+  contains: String
+  equals: String
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input Special_heading_operator {
+  all: [String]
+  contains: String
+  equals: String
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input Special_id_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input Special_sideBox_operator {
+  contains: JSON
+  equals: JSON
+  exists: Boolean
+  like: JSON
+  not_equals: JSON
+}
+
+input Special_subheading_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input Special_textGrid_operator {
+  all: [String]
+  equals: String
+  in: [String]
+  not_equals: String
+  not_in: [String]
+}
+
+input Special_updatedAt_operator {
+  equals: DateTime
+  exists: Boolean
+  greater_than: DateTime
+  greater_than_equal: DateTime
+  less_than: DateTime
+  less_than_equal: DateTime
+  like: DateTime
+  not_equals: DateTime
+}
+
+input Special_where {
+  AND: [Special_where_and]
+  OR: [Special_where_or]
+  content: Special_content_operator
+  createdAt: Special_createdAt_operator
+  heading: Special_heading_operator
+  headingTag: Special_headingTag_operator
+  id: Special_id_operator
+  sideBox: Special_sideBox_operator
+  subheading: Special_subheading_operator
+  textGrid: Special_textGrid_operator
+  updatedAt: Special_updatedAt_operator
+}
+
+input Special_where_and {
+  content: Special_content_operator
+  createdAt: Special_createdAt_operator
+  heading: Special_heading_operator
+  headingTag: Special_headingTag_operator
+  id: Special_id_operator
+  sideBox: Special_sideBox_operator
+  subheading: Special_subheading_operator
+  textGrid: Special_textGrid_operator
+  updatedAt: Special_updatedAt_operator
+}
+
+input Special_where_or {
+  content: Special_content_operator
+  createdAt: Special_createdAt_operator
+  heading: Special_heading_operator
+  headingTag: Special_headingTag_operator
+  id: Special_id_operator
+  sideBox: Special_sideBox_operator
+  subheading: Special_subheading_operator
+  textGrid: Special_textGrid_operator
+  updatedAt: Special_updatedAt_operator
+}
+
+type Specials {
+  docs: [Special]
+  hasNextPage: Boolean
+  hasPrevPage: Boolean
+  limit: Int
+  nextPage: Int
+  offset: Int
+  page: Int
+  pagingCounter: Int
+  prevPage: Int
+  totalDocs: Int
+  totalPages: Int
+}
+
+type SpecialsCreateAccess {
+  permission: Boolean!
+  where: JSONObject
+}
+
+type SpecialsCreateDocAccess {
+  permission: Boolean!
+  where: JSONObject
+}
+
+type SpecialsDeleteAccess {
+  permission: Boolean!
+  where: JSONObject
+}
+
+type SpecialsDeleteDocAccess {
+  permission: Boolean!
+  where: JSONObject
+}
+
+type SpecialsDocAccessFields {
+  content: SpecialsDocAccessFields_content
+  createdAt: SpecialsDocAccessFields_createdAt
+  heading: SpecialsDocAccessFields_heading
+  headingTag: SpecialsDocAccessFields_headingTag
+  sideBox: SpecialsDocAccessFields_sideBox
+  subheading: SpecialsDocAccessFields_subheading
+  textGrid: SpecialsDocAccessFields_textGrid
+  updatedAt: SpecialsDocAccessFields_updatedAt
+}
+
+type SpecialsDocAccessFields_content {
+  create: SpecialsDocAccessFields_content_Create
+  delete: SpecialsDocAccessFields_content_Delete
+  read: SpecialsDocAccessFields_content_Read
+  update: SpecialsDocAccessFields_content_Update
+}
+
+type SpecialsDocAccessFields_content_Create {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_content_Delete {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_content_Read {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_content_Update {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_createdAt {
+  create: SpecialsDocAccessFields_createdAt_Create
+  delete: SpecialsDocAccessFields_createdAt_Delete
+  read: SpecialsDocAccessFields_createdAt_Read
+  update: SpecialsDocAccessFields_createdAt_Update
+}
+
+type SpecialsDocAccessFields_createdAt_Create {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_createdAt_Delete {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_createdAt_Read {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_createdAt_Update {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_heading {
+  create: SpecialsDocAccessFields_heading_Create
+  delete: SpecialsDocAccessFields_heading_Delete
+  read: SpecialsDocAccessFields_heading_Read
+  update: SpecialsDocAccessFields_heading_Update
+}
+
+type SpecialsDocAccessFields_headingTag {
+  create: SpecialsDocAccessFields_headingTag_Create
+  delete: SpecialsDocAccessFields_headingTag_Delete
+  read: SpecialsDocAccessFields_headingTag_Read
+  update: SpecialsDocAccessFields_headingTag_Update
+}
+
+type SpecialsDocAccessFields_headingTag_Create {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_headingTag_Delete {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_headingTag_Read {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_headingTag_Update {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_heading_Create {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_heading_Delete {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_heading_Read {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_heading_Update {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_sideBox {
+  create: SpecialsDocAccessFields_sideBox_Create
+  delete: SpecialsDocAccessFields_sideBox_Delete
+  read: SpecialsDocAccessFields_sideBox_Read
+  update: SpecialsDocAccessFields_sideBox_Update
+}
+
+type SpecialsDocAccessFields_sideBox_Create {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_sideBox_Delete {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_sideBox_Read {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_sideBox_Update {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_subheading {
+  create: SpecialsDocAccessFields_subheading_Create
+  delete: SpecialsDocAccessFields_subheading_Delete
+  read: SpecialsDocAccessFields_subheading_Read
+  update: SpecialsDocAccessFields_subheading_Update
+}
+
+type SpecialsDocAccessFields_subheading_Create {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_subheading_Delete {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_subheading_Read {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_subheading_Update {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_textGrid {
+  create: SpecialsDocAccessFields_textGrid_Create
+  delete: SpecialsDocAccessFields_textGrid_Delete
+  read: SpecialsDocAccessFields_textGrid_Read
+  update: SpecialsDocAccessFields_textGrid_Update
+}
+
+type SpecialsDocAccessFields_textGrid_Create {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_textGrid_Delete {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_textGrid_Read {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_textGrid_Update {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_updatedAt {
+  create: SpecialsDocAccessFields_updatedAt_Create
+  delete: SpecialsDocAccessFields_updatedAt_Delete
+  read: SpecialsDocAccessFields_updatedAt_Read
+  update: SpecialsDocAccessFields_updatedAt_Update
+}
+
+type SpecialsDocAccessFields_updatedAt_Create {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_updatedAt_Delete {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_updatedAt_Read {
+  permission: Boolean!
+}
+
+type SpecialsDocAccessFields_updatedAt_Update {
+  permission: Boolean!
+}
+
+type SpecialsFields {
+  content: SpecialsFields_content
+  createdAt: SpecialsFields_createdAt
+  heading: SpecialsFields_heading
+  headingTag: SpecialsFields_headingTag
+  sideBox: SpecialsFields_sideBox
+  subheading: SpecialsFields_subheading
+  textGrid: SpecialsFields_textGrid
+  updatedAt: SpecialsFields_updatedAt
+}
+
+type SpecialsFields_content {
+  create: SpecialsFields_content_Create
+  delete: SpecialsFields_content_Delete
+  read: SpecialsFields_content_Read
+  update: SpecialsFields_content_Update
+}
+
+type SpecialsFields_content_Create {
+  permission: Boolean!
+}
+
+type SpecialsFields_content_Delete {
+  permission: Boolean!
+}
+
+type SpecialsFields_content_Read {
+  permission: Boolean!
+}
+
+type SpecialsFields_content_Update {
+  permission: Boolean!
+}
+
+type SpecialsFields_createdAt {
+  create: SpecialsFields_createdAt_Create
+  delete: SpecialsFields_createdAt_Delete
+  read: SpecialsFields_createdAt_Read
+  update: SpecialsFields_createdAt_Update
+}
+
+type SpecialsFields_createdAt_Create {
+  permission: Boolean!
+}
+
+type SpecialsFields_createdAt_Delete {
+  permission: Boolean!
+}
+
+type SpecialsFields_createdAt_Read {
+  permission: Boolean!
+}
+
+type SpecialsFields_createdAt_Update {
+  permission: Boolean!
+}
+
+type SpecialsFields_heading {
+  create: SpecialsFields_heading_Create
+  delete: SpecialsFields_heading_Delete
+  read: SpecialsFields_heading_Read
+  update: SpecialsFields_heading_Update
+}
+
+type SpecialsFields_headingTag {
+  create: SpecialsFields_headingTag_Create
+  delete: SpecialsFields_headingTag_Delete
+  read: SpecialsFields_headingTag_Read
+  update: SpecialsFields_headingTag_Update
+}
+
+type SpecialsFields_headingTag_Create {
+  permission: Boolean!
+}
+
+type SpecialsFields_headingTag_Delete {
+  permission: Boolean!
+}
+
+type SpecialsFields_headingTag_Read {
+  permission: Boolean!
+}
+
+type SpecialsFields_headingTag_Update {
+  permission: Boolean!
+}
+
+type SpecialsFields_heading_Create {
+  permission: Boolean!
+}
+
+type SpecialsFields_heading_Delete {
+  permission: Boolean!
+}
+
+type SpecialsFields_heading_Read {
+  permission: Boolean!
+}
+
+type SpecialsFields_heading_Update {
+  permission: Boolean!
+}
+
+type SpecialsFields_sideBox {
+  create: SpecialsFields_sideBox_Create
+  delete: SpecialsFields_sideBox_Delete
+  read: SpecialsFields_sideBox_Read
+  update: SpecialsFields_sideBox_Update
+}
+
+type SpecialsFields_sideBox_Create {
+  permission: Boolean!
+}
+
+type SpecialsFields_sideBox_Delete {
+  permission: Boolean!
+}
+
+type SpecialsFields_sideBox_Read {
+  permission: Boolean!
+}
+
+type SpecialsFields_sideBox_Update {
+  permission: Boolean!
+}
+
+type SpecialsFields_subheading {
+  create: SpecialsFields_subheading_Create
+  delete: SpecialsFields_subheading_Delete
+  read: SpecialsFields_subheading_Read
+  update: SpecialsFields_subheading_Update
+}
+
+type SpecialsFields_subheading_Create {
+  permission: Boolean!
+}
+
+type SpecialsFields_subheading_Delete {
+  permission: Boolean!
+}
+
+type SpecialsFields_subheading_Read {
+  permission: Boolean!
+}
+
+type SpecialsFields_subheading_Update {
+  permission: Boolean!
+}
+
+type SpecialsFields_textGrid {
+  create: SpecialsFields_textGrid_Create
+  delete: SpecialsFields_textGrid_Delete
+  read: SpecialsFields_textGrid_Read
+  update: SpecialsFields_textGrid_Update
+}
+
+type SpecialsFields_textGrid_Create {
+  permission: Boolean!
+}
+
+type SpecialsFields_textGrid_Delete {
+  permission: Boolean!
+}
+
+type SpecialsFields_textGrid_Read {
+  permission: Boolean!
+}
+
+type SpecialsFields_textGrid_Update {
+  permission: Boolean!
+}
+
+type SpecialsFields_updatedAt {
+  create: SpecialsFields_updatedAt_Create
+  delete: SpecialsFields_updatedAt_Delete
+  read: SpecialsFields_updatedAt_Read
+  update: SpecialsFields_updatedAt_Update
+}
+
+type SpecialsFields_updatedAt_Create {
+  permission: Boolean!
+}
+
+type SpecialsFields_updatedAt_Delete {
+  permission: Boolean!
+}
+
+type SpecialsFields_updatedAt_Read {
+  permission: Boolean!
+}
+
+type SpecialsFields_updatedAt_Update {
+  permission: Boolean!
+}
+
+type SpecialsReadAccess {
+  permission: Boolean!
+  where: JSONObject
+}
+
+type SpecialsReadDocAccess {
+  permission: Boolean!
+  where: JSONObject
+}
+
+type SpecialsUpdateAccess {
+  permission: Boolean!
+  where: JSONObject
+}
+
+type SpecialsUpdateDocAccess {
+  permission: Boolean!
+  where: JSONObject
+}
+
 type Switchback {
+  callToAction: CallToAction
   content(depth: Int): JSON
   createdAt: DateTime
   heading: String
@@ -12881,6 +14130,15 @@ input Switchback_Image_width_operator {
   not_equals: Int
 }
 
+input Switchback_callToAction_operator {
+  all: [String]
+  equals: String
+  exists: Boolean
+  in: [String]
+  not_equals: String
+  not_in: [String]
+}
+
 input Switchback_content_operator {
   contains: JSON
   equals: JSON
@@ -12980,6 +14238,7 @@ input Switchback_updatedAt_operator {
 input Switchback_where {
   AND: [Switchback_where_and]
   OR: [Switchback_where_or]
+  callToAction: Switchback_callToAction_operator
   content: Switchback_content_operator
   createdAt: Switchback_createdAt_operator
   heading: Switchback_heading_operator
@@ -12992,6 +14251,7 @@ input Switchback_where {
 }
 
 input Switchback_where_and {
+  callToAction: Switchback_callToAction_operator
   content: Switchback_content_operator
   createdAt: Switchback_createdAt_operator
   heading: Switchback_heading_operator
@@ -13004,6 +14264,7 @@ input Switchback_where_and {
 }
 
 input Switchback_where_or {
+  callToAction: Switchback_callToAction_operator
   content: Switchback_content_operator
   createdAt: Switchback_createdAt_operator
   heading: Switchback_heading_operator
@@ -13050,6 +14311,7 @@ type SwitchbacksDeleteDocAccess {
 }
 
 type SwitchbacksDocAccessFields {
+  callToAction: SwitchbacksDocAccessFields_callToAction
   content: SwitchbacksDocAccessFields_content
   createdAt: SwitchbacksDocAccessFields_createdAt
   heading: SwitchbacksDocAccessFields_heading
@@ -13058,6 +14320,29 @@ type SwitchbacksDocAccessFields {
   imageSide: SwitchbacksDocAccessFields_imageSide
   internalName: SwitchbacksDocAccessFields_internalName
   updatedAt: SwitchbacksDocAccessFields_updatedAt
+}
+
+type SwitchbacksDocAccessFields_callToAction {
+  create: SwitchbacksDocAccessFields_callToAction_Create
+  delete: SwitchbacksDocAccessFields_callToAction_Delete
+  read: SwitchbacksDocAccessFields_callToAction_Read
+  update: SwitchbacksDocAccessFields_callToAction_Update
+}
+
+type SwitchbacksDocAccessFields_callToAction_Create {
+  permission: Boolean!
+}
+
+type SwitchbacksDocAccessFields_callToAction_Delete {
+  permission: Boolean!
+}
+
+type SwitchbacksDocAccessFields_callToAction_Read {
+  permission: Boolean!
+}
+
+type SwitchbacksDocAccessFields_callToAction_Update {
+  permission: Boolean!
 }
 
 type SwitchbacksDocAccessFields_content {
@@ -13245,6 +14530,7 @@ type SwitchbacksDocAccessFields_updatedAt_Update {
 }
 
 type SwitchbacksFields {
+  callToAction: SwitchbacksFields_callToAction
   content: SwitchbacksFields_content
   createdAt: SwitchbacksFields_createdAt
   heading: SwitchbacksFields_heading
@@ -13253,6 +14539,29 @@ type SwitchbacksFields {
   imageSide: SwitchbacksFields_imageSide
   internalName: SwitchbacksFields_internalName
   updatedAt: SwitchbacksFields_updatedAt
+}
+
+type SwitchbacksFields_callToAction {
+  create: SwitchbacksFields_callToAction_Create
+  delete: SwitchbacksFields_callToAction_Delete
+  read: SwitchbacksFields_callToAction_Read
+  update: SwitchbacksFields_callToAction_Update
+}
+
+type SwitchbacksFields_callToAction_Create {
+  permission: Boolean!
+}
+
+type SwitchbacksFields_callToAction_Delete {
+  permission: Boolean!
+}
+
+type SwitchbacksFields_callToAction_Read {
+  permission: Boolean!
+}
+
+type SwitchbacksFields_callToAction_Update {
+  permission: Boolean!
 }
 
 type SwitchbacksFields_content {
@@ -13460,12 +14769,13 @@ type SwitchbacksUpdateDocAccess {
 }
 
 type TextGrid {
-  callToAction: Button
+  callToAction: CallToAction
   content(depth: Int): JSON
   createdAt: DateTime
-  heading: String!
-  headingTag: String!
+  heading: String
+  headingTag: String
   id: String
+  internalName: String!
   textTiles: [TextGrid_TextTiles!]
   updatedAt: DateTime
 }
@@ -13514,6 +14824,7 @@ input TextGrid_headingTag_operator {
   all: [String]
   contains: String
   equals: String
+  exists: Boolean
   in: [String]
   like: String
   not_equals: String
@@ -13524,6 +14835,7 @@ input TextGrid_heading_operator {
   all: [String]
   contains: String
   equals: String
+  exists: Boolean
   in: [String]
   like: String
   not_equals: String
@@ -13535,6 +14847,16 @@ input TextGrid_id_operator {
   contains: String
   equals: String
   exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input TextGrid_internalName_operator {
+  all: [String]
+  contains: String
+  equals: String
   in: [String]
   like: String
   not_equals: String
@@ -13583,6 +14905,7 @@ input TextGrid_where {
   heading: TextGrid_heading_operator
   headingTag: TextGrid_headingTag_operator
   id: TextGrid_id_operator
+  internalName: TextGrid_internalName_operator
   textTiles__id: TextGrid_textTiles__id_operator
   textTiles__text: TextGrid_textTiles__text_operator
   updatedAt: TextGrid_updatedAt_operator
@@ -13595,6 +14918,7 @@ input TextGrid_where_and {
   heading: TextGrid_heading_operator
   headingTag: TextGrid_headingTag_operator
   id: TextGrid_id_operator
+  internalName: TextGrid_internalName_operator
   textTiles__id: TextGrid_textTiles__id_operator
   textTiles__text: TextGrid_textTiles__text_operator
   updatedAt: TextGrid_updatedAt_operator
@@ -13607,6 +14931,7 @@ input TextGrid_where_or {
   heading: TextGrid_heading_operator
   headingTag: TextGrid_headingTag_operator
   id: TextGrid_id_operator
+  internalName: TextGrid_internalName_operator
   textTiles__id: TextGrid_textTiles__id_operator
   textTiles__text: TextGrid_textTiles__text_operator
   updatedAt: TextGrid_updatedAt_operator
@@ -13652,6 +14977,7 @@ type TextGridsDocAccessFields {
   createdAt: TextGridsDocAccessFields_createdAt
   heading: TextGridsDocAccessFields_heading
   headingTag: TextGridsDocAccessFields_headingTag
+  internalName: TextGridsDocAccessFields_internalName
   textTiles: TextGridsDocAccessFields_textTiles
   updatedAt: TextGridsDocAccessFields_updatedAt
 }
@@ -13771,6 +15097,29 @@ type TextGridsDocAccessFields_heading_Update {
   permission: Boolean!
 }
 
+type TextGridsDocAccessFields_internalName {
+  create: TextGridsDocAccessFields_internalName_Create
+  delete: TextGridsDocAccessFields_internalName_Delete
+  read: TextGridsDocAccessFields_internalName_Read
+  update: TextGridsDocAccessFields_internalName_Update
+}
+
+type TextGridsDocAccessFields_internalName_Create {
+  permission: Boolean!
+}
+
+type TextGridsDocAccessFields_internalName_Delete {
+  permission: Boolean!
+}
+
+type TextGridsDocAccessFields_internalName_Read {
+  permission: Boolean!
+}
+
+type TextGridsDocAccessFields_internalName_Update {
+  permission: Boolean!
+}
+
 type TextGridsDocAccessFields_textTiles {
   create: TextGridsDocAccessFields_textTiles_Create
   delete: TextGridsDocAccessFields_textTiles_Delete
@@ -13875,6 +15224,7 @@ type TextGridsFields {
   createdAt: TextGridsFields_createdAt
   heading: TextGridsFields_heading
   headingTag: TextGridsFields_headingTag
+  internalName: TextGridsFields_internalName
   textTiles: TextGridsFields_textTiles
   updatedAt: TextGridsFields_updatedAt
 }
@@ -13991,6 +15341,29 @@ type TextGridsFields_heading_Read {
 }
 
 type TextGridsFields_heading_Update {
+  permission: Boolean!
+}
+
+type TextGridsFields_internalName {
+  create: TextGridsFields_internalName_Create
+  delete: TextGridsFields_internalName_Delete
+  read: TextGridsFields_internalName_Read
+  update: TextGridsFields_internalName_Update
+}
+
+type TextGridsFields_internalName_Create {
+  permission: Boolean!
+}
+
+type TextGridsFields_internalName_Delete {
+  permission: Boolean!
+}
+
+type TextGridsFields_internalName_Read {
+  permission: Boolean!
+}
+
+type TextGridsFields_internalName_Update {
   permission: Boolean!
 }
 
@@ -14113,7 +15486,7 @@ type TextGridsUpdateDocAccess {
 }
 
 type TileGrid {
-  callToAction: Button
+  callToAction: CallToAction
   content(depth: Int): JSON
   createdAt: DateTime
   heading: String!
@@ -15992,20 +17365,20 @@ type accordionsDocAccess {
   update: AccordionsUpdateDocAccess
 }
 
-type buttonsAccess {
-  create: ButtonsCreateAccess
-  delete: ButtonsDeleteAccess
-  fields: ButtonsFields
-  read: ButtonsReadAccess
-  update: ButtonsUpdateAccess
+type call_to_actionsAccess {
+  create: CallToActionsCreateAccess
+  delete: CallToActionsDeleteAccess
+  fields: CallToActionsFields
+  read: CallToActionsReadAccess
+  update: CallToActionsUpdateAccess
 }
 
-type buttonsDocAccess {
-  create: ButtonsCreateDocAccess
-  delete: ButtonsDeleteDocAccess
-  fields: ButtonsDocAccessFields
-  read: ButtonsReadDocAccess
-  update: ButtonsUpdateDocAccess
+type call_to_actionsDocAccess {
+  create: CallToActionsCreateDocAccess
+  delete: CallToActionsDeleteDocAccess
+  fields: CallToActionsDocAccessFields
+  read: CallToActionsReadDocAccess
+  update: CallToActionsUpdateDocAccess
 }
 
 type conversion_panelsAccess {
@@ -16222,7 +17595,7 @@ input mutationAccordion_AccordionItemsInput {
   id: String
 }
 
-input mutationButtonInput {
+input mutationCallToActionInput {
   color: String
   createdAt: String
   externalLink: String
@@ -16233,7 +17606,7 @@ input mutationButtonInput {
   updatedAt: String
 }
 
-input mutationButtonUpdateInput {
+input mutationCallToActionUpdateInput {
   color: String
   createdAt: String
   externalLink: String
@@ -16599,7 +17972,7 @@ input mutationImage_Sizes_ThumbnailInput {
 
 input mutationPageInput {
   createdAt: String
-  pageSections: JSON
+  pageSections: [mutationPage_PageSectionsInput]
   slug: String
   title: String
   updatedAt: String
@@ -16607,10 +17980,42 @@ input mutationPageInput {
 
 input mutationPageUpdateInput {
   createdAt: String
-  pageSections: JSON
+  pageSections: [mutationPageUpdate_PageSectionsInput]
   slug: String
   title: String
   updatedAt: String
+}
+
+input mutationPageUpdate_PageSectionsInput {
+  blocks: JSON
+  enableGrid: Boolean
+  enableShapes: Boolean
+  gridColor: String
+  id: String
+  internalName: String!
+  shapes: [mutationPageUpdate_PageSections_ShapesInput]
+}
+
+input mutationPageUpdate_PageSections_ShapesInput {
+  id: String
+  location: String
+  shape: String
+}
+
+input mutationPage_PageSectionsInput {
+  blocks: JSON
+  enableGrid: Boolean
+  enableShapes: Boolean
+  gridColor: String
+  id: String
+  internalName: String!
+  shapes: [mutationPage_PageSections_ShapesInput]
+}
+
+input mutationPage_PageSections_ShapesInput {
+  id: String
+  location: String
+  shape: String
 }
 
 input mutationProcessInput {
@@ -16643,7 +18048,30 @@ input mutationProcess_StepsInput {
   id: String
 }
 
+input mutationSpecialInput {
+  content: JSON
+  createdAt: String
+  heading: String!
+  headingTag: String!
+  sideBox: JSON
+  subheading: String
+  textGrid: String
+  updatedAt: String
+}
+
+input mutationSpecialUpdateInput {
+  content: JSON
+  createdAt: String
+  heading: String
+  headingTag: String
+  sideBox: JSON
+  subheading: String
+  textGrid: String
+  updatedAt: String
+}
+
 input mutationSwitchbackInput {
+  callToAction: String
   content: JSON
   createdAt: String
   heading: String
@@ -16655,6 +18083,7 @@ input mutationSwitchbackInput {
 }
 
 input mutationSwitchbackUpdateInput {
+  callToAction: String
   content: JSON
   createdAt: String
   heading: String
@@ -16669,8 +18098,9 @@ input mutationTextGridInput {
   callToAction: String
   content: JSON
   createdAt: String
-  heading: String!
-  headingTag: String!
+  heading: String
+  headingTag: String
+  internalName: String!
   textTiles: [mutationTextGrid_TextTilesInput]
   updatedAt: String
 }
@@ -16681,6 +18111,7 @@ input mutationTextGridUpdateInput {
   createdAt: String
   heading: String
   headingTag: String
+  internalName: String
   textTiles: [mutationTextGridUpdate_TextTilesInput]
   updatedAt: String
 }
@@ -16807,6 +18238,22 @@ type processesDocAccess {
   fields: ProcessesDocAccessFields
   read: ProcessesReadDocAccess
   update: ProcessesUpdateDocAccess
+}
+
+type specialsAccess {
+  create: SpecialsCreateAccess
+  delete: SpecialsDeleteAccess
+  fields: SpecialsFields
+  read: SpecialsReadAccess
+  update: SpecialsUpdateAccess
+}
+
+type specialsDocAccess {
+  create: SpecialsCreateDocAccess
+  delete: SpecialsDeleteDocAccess
+  fields: SpecialsDocAccessFields
+  read: SpecialsReadDocAccess
+  update: SpecialsUpdateDocAccess
 }
 
 type switchbacksAccess {

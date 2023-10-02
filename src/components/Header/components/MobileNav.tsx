@@ -7,7 +7,7 @@ import Menu from './Menu';
 import styles from './MobileNav.module.scss';
 
 import Button from '@/components/Button/Button';
-import Flex from '@/molecules/Flex/Flex';
+import Flex from '@/molecules/Flex';
 import useStore from '@/store/useStore';
 import { menuAnimations } from '@/utils/framer/animations';
 import LazyAnimatePresence from '@/utils/framer/LazyAnimatePresence';

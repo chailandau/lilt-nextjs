@@ -3,8 +3,8 @@ import { FC } from 'react';
 
 import styles from './Section.module.scss';
 
-import { ContainerProps } from '@/atoms/Container/Container';
-import Flex from '@/molecules/Flex/Flex';
+import { ContainerProps } from '@/atoms/Container';
+import Flex from '@/molecules/Flex';
 
 const Section: FC<ContainerProps> = ({
     children,

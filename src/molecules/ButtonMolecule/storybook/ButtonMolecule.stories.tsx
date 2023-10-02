@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import ButtonMolecule, { buttonMoleculeVariants } from '../ButtonMolecule';
 
-import Flex from '@/molecules/Flex/Flex';
+import Flex from '@/molecules/Flex';
 
 const meta: Meta<typeof ButtonMolecule> = {
     title: 'Molecules/Button',

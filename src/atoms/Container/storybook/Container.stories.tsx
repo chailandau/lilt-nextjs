@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Container from '../Container';
 
-import Text from '@/atoms/Text/Text';
+import Text from '@/atoms/Text';
 
 const textAtom = <Text>This text is in a container.</Text>;
 
