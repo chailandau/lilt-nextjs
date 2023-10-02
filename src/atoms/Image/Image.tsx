@@ -1,21 +1,23 @@
 import classNames from 'classnames';
-import NextImage, { ImageProps as NextImageProps } from 'next/image';
+import { ImageProps as NextImageProps } from 'next/image';
 
 import type { FC } from 'react';
 
-import Flex from '../../molecules/Flex';
-
+import ExternalImage from './components/ExternalImage';
+import InternalImage from './components/InternalImage';
 import styles from './Image.module.scss';
 
-import { getPlaceholder, isSvg } from '@/utils/functions';
-
-interface ImageProps {
+export interface ImageProps {
     /** `next/image` object  */
-    src: Omit<NextImageProps, 'alt'>;
+    src: Omit<NextImageProps, 'alt'> | string;
     /** Image alt text */
     alt: string;
     /** CSS class */
     className?: string | undefined;
+    /** Image width */
+    width?: number;
+    /** Image height */
+    height?: number;
     /** If true, image will be rounded and have a double border */
     hasBorder?: boolean;
     /** If true, `next/image` will be set to priority (https://nextjs.org/docs/app/api-reference/components/image#priority) */
@@ -23,35 +25,39 @@ interface ImageProps {
 }
 
 const Image: FC<ImageProps> = ({
-    src: nextImage,
+    src,
     alt,
     className,
+    width,
+    height,
     hasBorder,
     priority
 }) => {
-    const { src, width, height, blurDataURL } = nextImage;
-
     const classList = classNames(
         styles['container'],
         hasBorder && styles['border'],
         className && className
     );
 
-    const svgImg = isSvg(nextImage.src.toString());
+    const imageProps = {
+        alt,
+        hasBorder,
+        priority,
+        className: classList
+    };
 
-    return (
-        <Flex className={classList}>
-            <NextImage
+    if (typeof src === 'string') {
+        return (
+            <ExternalImage
                 src={src}
-                alt={alt}
                 width={width}
                 height={height}
-                priority={priority}
-                placeholder={getPlaceholder(svgImg)}
-                blurDataURL={blurDataURL}
+                {...imageProps}
             />
-        </Flex>
-    );
+        );
+    }
+
+    return <InternalImage src={src} {...imageProps} />;
 };
 
 export default Image;

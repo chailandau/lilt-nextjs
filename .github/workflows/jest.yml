@@ -1,7 +1,11 @@
 name: Jest Tests and Coverage
 on:
     pull_request:
-        branches: "main"
+        branches: 'main'
+
+env:
+    NEXT_PUBLIC_BASE_PAYLOAD_URL: '${{ secrets.NEXT_PUBLIC_BASE_PAYLOAD_URL }}'
+    NEXT_PUBLIC_BASE_URL: '${{ secrets.NEXT_PUBLIC_BASE_URL }}'
 
 permissions:
     pull-requests: write
@@ -23,7 +27,7 @@ jobs:
               uses: im-open/process-jest-test-results@v2
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }}
-                  results-file: "jest-results.json"
+                  results-file: 'jest-results.json'
                   create-status-check: false
 
             - name: Generate coverage report

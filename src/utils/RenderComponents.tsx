@@ -2,6 +2,7 @@ import { FC, Fragment } from 'react';
 
 import { Page_PageSections_Blocks } from '@/api/graphqlTypes';
 import Hero from '@/components/Hero';
+import Switchback from '@/components/Switchback';
 
 interface Sections {
     /** Sections to render */
@@ -16,7 +17,13 @@ const RenderComponents: FC<Sections> = ({ components }) => {
         switch (component?.__typename) {
             case 'HeroBlock':
                 return <Hero {...component?.hero} key={component?.id} />;
-
+            case 'SwitchbackBlock':
+                return (
+                    <Switchback
+                        {...component?.switchback}
+                        key={component?.id}
+                    />
+                );
             default:
                 return null;
         }
