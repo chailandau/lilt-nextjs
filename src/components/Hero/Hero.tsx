@@ -16,8 +16,6 @@ export interface HeroProps {
     subheading?: HeroType['subheading'];
     /** Hero text content */
     content?: HeroType['content'];
-    /** Indicates if hero is on homepage */
-    homepage?: HeroType['homepage'];
     /** Hero CTA */
     cta?: HeroType['cta'];
 }
@@ -37,9 +35,9 @@ const Hero: FC<HeroProps> = ({ heading, subheading, content, cta }) => (
         {content && <RichText richText={content} />}
 
         {cta?.ctaButtons &&
-            cta.ctaButtons.map((ctaButton, index) => (
+            cta.ctaButtons.map((ctaButton) => (
                 <Button
-                    key={index}
+                    key={ctaButton?.id}
                     buttonData={ctaButton?.callToAction || null}
                 />
             ))}

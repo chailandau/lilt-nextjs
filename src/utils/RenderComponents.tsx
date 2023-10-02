@@ -15,7 +15,7 @@ const RenderComponents: FC<Sections> = ({ components }) => {
     const renderComponent = (component: Page_PageSections_Blocks) => {
         switch (component?.__typename) {
             case 'HeroBlock':
-                return <Hero {...component?.hero} />;
+                return <Hero {...component?.hero} key={component?.id} />;
 
             default:
                 return null;

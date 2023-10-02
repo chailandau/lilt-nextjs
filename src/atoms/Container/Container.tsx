@@ -1,4 +1,4 @@
-import { FC, ReactNode, Ref } from 'react';
+import { FC, ReactNode, Ref, forwardRef } from 'react';
 
 export const semanticTags = [
     'button',
@@ -19,26 +19,26 @@ export interface ContainerProps {
     className?: string | undefined;
     /** `onClick` event */
     onClick?: () => void;
-    /** `ref */
-    ref?: Ref<HTMLElement>;
+    /** `Forwarded ref */
+    ref?: Ref<never>;
     /** Aria label */
     ariaLabel?: string;
 }
 
-const Container: FC<ContainerProps> = ({
-    children,
-    as: ContainerTag = 'div',
-    className,
-    onClick,
-    ariaLabel
-}) => (
-    <ContainerTag
-        className={className}
-        onClick={onClick}
-        aria-label={ariaLabel}
-    >
-        {children}
-    </ContainerTag>
+const Container: FC<ContainerProps> = forwardRef(
+    (
+        { children, as: ContainerTag = 'div', className, onClick, ariaLabel },
+        ref
+    ) => (
+        <ContainerTag
+            className={className}
+            onClick={onClick}
+            aria-label={ariaLabel}
+            ref={ref}
+        >
+            {children}
+        </ContainerTag>
+    )
 );
 
 export default Container;

@@ -1,7 +1,7 @@
 'use client';
 
 import FocusTrap from 'focus-trap-react';
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect } from 'react';
 
 import Button from '../Button/Button';
 
@@ -29,12 +29,6 @@ const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
     const isLaptop = useMediaQuery(laptopQuery);
 
     const { menuOpen, setMenuOpen } = useStore();
-    const [headerEl, setHeaderEl] = useState<HTMLElement | null>(null);
-    useEffect(() => {
-        setHeaderEl(
-            document.querySelector(`.${styles['header']}`) as HTMLElement
-        );
-    }, []);
 
     useEffect(() => {
         if (isLaptop) {
@@ -43,11 +37,7 @@ const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
     }, [isLaptop]);
 
     return (
-        <>
-            <FocusTrap
-                active={menuOpen}
-                containerElements={headerEl ? [headerEl] : []}
-            />
+        <FocusTrap active={menuOpen}>
             <Section as='header' className={styles['header']}>
                 <Link
                     href={process.env.NEXT_PUBLIC_BASE_URL as string}
@@ -78,7 +68,7 @@ const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
                     />
                 )}
             </Section>
-        </>
+        </FocusTrap>
     );
 };
 
