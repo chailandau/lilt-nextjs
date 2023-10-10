@@ -7,6 +7,7 @@ import {
     FEATURE_GRID_FRAGMENT,
     HERO_FRAGMENT,
     ICON_TILE__GRID_FRAGMENT,
+    IMAGE_FRAGMENT,
     MENU_ITEMS_FRAGMENT,
     PROCESS_FRAGMENT,
     SWITCHBACK_FRAGMENT,
@@ -66,4 +67,22 @@ query HeaderQuery  {
         }
     }
 }
+`;
+
+export const FOOTER_QUERY = gql`
+    query FooterQuery {
+        Footer {
+            socialLinks {
+                icon {
+                ${IMAGE_FRAGMENT}
+            }
+                url
+                id
+            }
+            menuItems {
+                ${MENU_ITEMS_FRAGMENT}
+            }
+            copyrightText
+        }
+    }
 `;

@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 
-import { HEADER_QUERY } from '@/api/graphqlQueries';
+import { FOOTER_QUERY, HEADER_QUERY } from '@/api/graphqlQueries';
+import Footer from '@/components/Footer';
 import Header from '@/components/Header/Header';
 import { getData } from '@/utils/getData';
 import '@/assets/fonts/fonts.css';
@@ -19,6 +20,8 @@ export default async function RootLayout({
 }) {
     const { Header: HeaderData } = await getData(HEADER_QUERY);
 
+    const { Footer: FooterData } = await getData(FOOTER_QUERY);
+
     return (
         <html lang='en'>
             <body>
@@ -27,6 +30,11 @@ export default async function RootLayout({
                     callToAction={HeaderData?.callToAction || null}
                 />
                 {children}
+                <Footer
+                    menuItems={FooterData?.menuItems}
+                    socialLinks={FooterData?.socialLinks}
+                    copyrightText={FooterData?.copyrightText}
+                />
             </body>
         </html>
     );

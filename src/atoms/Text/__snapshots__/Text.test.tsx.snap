@@ -3,7 +3,7 @@
 exports[`Text matches snapshot 1`] = `
 <DocumentFragment>
   <p
-    class="text"
+    class="text md"
   >
     This is text.
   </p>

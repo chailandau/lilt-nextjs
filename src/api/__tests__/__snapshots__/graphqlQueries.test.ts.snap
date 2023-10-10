@@ -1,11 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`graphqlQueries mocks FOOTER_QUERY successfully 1`] = `
+{
+  "data": {
+    "Footer": {
+      "copyrightText": "Hello World",
+      "menuItems": [
+        {
+          "externalLink": "Hello World",
+          "id": "Hello World",
+          "internalLink": {
+            "id": "Hello World",
+            "slug": "Hello World",
+            "title": "Hello World",
+          },
+          "label": "Hello World",
+          "linkType": "external",
+        },
+        {
+          "externalLink": "Hello World",
+          "id": "Hello World",
+          "internalLink": {
+            "id": "Hello World",
+            "slug": "Hello World",
+            "title": "Hello World",
+          },
+          "label": "Hello World",
+          "linkType": "external",
+        },
+      ],
+      "socialLinks": [
+        {
+          "icon": {
+            "alt": "Hello World",
+            "height": 37.85915419238353,
+            "id": "Hello World",
+            "url": "Hello World",
+            "width": -3.1851877272857934,
+          },
+          "id": "Hello World",
+          "url": "Hello World",
+        },
+        {
+          "icon": {
+            "alt": "Hello World",
+            "height": 37.85915419238353,
+            "id": "Hello World",
+            "url": "Hello World",
+            "width": -3.1851877272857934,
+          },
+          "id": "Hello World",
+          "url": "Hello World",
+        },
+      ],
+    },
+  },
+}
+`;
+
 exports[`graphqlQueries mocks HEADER_QUERY successfully 1`] = `
 {
   "data": {
     "Header": {
       "callToAction": {
-        "color": "blue",
+        "color": "green",
         "externalLink": "Hello World",
         "id": "Hello World",
         "internalLink": {
