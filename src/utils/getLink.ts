@@ -1,13 +1,13 @@
 import {
-    Button,
-    Button_LinkType,
+    CallToAction,
+    CallToAction_LinkType,
     Header_MenuItems_LinkType
 } from '@/api/graphqlTypes';
 
 interface GetLink {
-    linkType?: Button_LinkType | Header_MenuItems_LinkType | null;
-    externalLink?: Button['externalLink'];
-    internalLink?: Button['internalLink'];
+    linkType?: CallToAction_LinkType | Header_MenuItems_LinkType | null;
+    externalLink?: CallToAction['externalLink'];
+    internalLink?: CallToAction['internalLink'];
 }
 
 /**
