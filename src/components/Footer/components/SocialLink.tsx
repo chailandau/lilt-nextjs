@@ -18,6 +18,7 @@ const SocialLink: FC<SocialLinkProps> = ({ socialLink }) => (
             width={socialLink?.icon?.width || 20}
             height={socialLink?.icon?.height || 20}
             hasBorder={false}
+            base64={socialLink?.icon?.base64}
         />
     </Link>
 );

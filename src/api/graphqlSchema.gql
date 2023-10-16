@@ -33,7 +33,6 @@ type Accordion {
   accordionItems: [Accordion_AccordionItems!]
   createdAt: DateTime
   heading: String!
-  headingTag: String!
   id: String
   updatedAt: DateTime
 }
@@ -48,7 +47,6 @@ type AccordionBlock {
 type Accordion_AccordionItems {
   content(depth: Int): JSON
   heading: String
-  headingTag: String
   id: String
 }
 
@@ -58,17 +56,6 @@ input Accordion_accordionItems__content_operator {
   exists: Boolean
   like: JSON
   not_equals: JSON
-}
-
-input Accordion_accordionItems__headingTag_operator {
-  all: [String]
-  contains: String
-  equals: String
-  exists: Boolean
-  in: [String]
-  like: String
-  not_equals: String
-  not_in: [String]
 }
 
 input Accordion_accordionItems__heading_operator {
@@ -102,16 +89,6 @@ input Accordion_createdAt_operator {
   less_than_equal: DateTime
   like: DateTime
   not_equals: DateTime
-}
-
-input Accordion_headingTag_operator {
-  all: [String]
-  contains: String
-  equals: String
-  in: [String]
-  like: String
-  not_equals: String
-  not_in: [String]
 }
 
 input Accordion_heading_operator {
@@ -151,11 +128,9 @@ input Accordion_where {
   OR: [Accordion_where_or]
   accordionItems__content: Accordion_accordionItems__content_operator
   accordionItems__heading: Accordion_accordionItems__heading_operator
-  accordionItems__headingTag: Accordion_accordionItems__headingTag_operator
   accordionItems__id: Accordion_accordionItems__id_operator
   createdAt: Accordion_createdAt_operator
   heading: Accordion_heading_operator
-  headingTag: Accordion_headingTag_operator
   id: Accordion_id_operator
   updatedAt: Accordion_updatedAt_operator
 }
@@ -163,11 +138,9 @@ input Accordion_where {
 input Accordion_where_and {
   accordionItems__content: Accordion_accordionItems__content_operator
   accordionItems__heading: Accordion_accordionItems__heading_operator
-  accordionItems__headingTag: Accordion_accordionItems__headingTag_operator
   accordionItems__id: Accordion_accordionItems__id_operator
   createdAt: Accordion_createdAt_operator
   heading: Accordion_heading_operator
-  headingTag: Accordion_headingTag_operator
   id: Accordion_id_operator
   updatedAt: Accordion_updatedAt_operator
 }
@@ -175,11 +148,9 @@ input Accordion_where_and {
 input Accordion_where_or {
   accordionItems__content: Accordion_accordionItems__content_operator
   accordionItems__heading: Accordion_accordionItems__heading_operator
-  accordionItems__headingTag: Accordion_accordionItems__headingTag_operator
   accordionItems__id: Accordion_accordionItems__id_operator
   createdAt: Accordion_createdAt_operator
   heading: Accordion_heading_operator
-  headingTag: Accordion_headingTag_operator
   id: Accordion_id_operator
   updatedAt: Accordion_updatedAt_operator
 }
@@ -222,7 +193,6 @@ type AccordionsDocAccessFields {
   accordionItems: AccordionsDocAccessFields_accordionItems
   createdAt: AccordionsDocAccessFields_createdAt
   heading: AccordionsDocAccessFields_heading
-  headingTag: AccordionsDocAccessFields_headingTag
   updatedAt: AccordionsDocAccessFields_updatedAt
 }
 
@@ -245,7 +215,6 @@ type AccordionsDocAccessFields_accordionItems_Delete {
 type AccordionsDocAccessFields_accordionItems_Fields {
   content: AccordionsDocAccessFields_accordionItems_content
   heading: AccordionsDocAccessFields_accordionItems_heading
-  headingTag: AccordionsDocAccessFields_accordionItems_headingTag
   id: AccordionsDocAccessFields_accordionItems_id
 }
 
@@ -285,29 +254,6 @@ type AccordionsDocAccessFields_accordionItems_heading {
   delete: AccordionsDocAccessFields_accordionItems_heading_Delete
   read: AccordionsDocAccessFields_accordionItems_heading_Read
   update: AccordionsDocAccessFields_accordionItems_heading_Update
-}
-
-type AccordionsDocAccessFields_accordionItems_headingTag {
-  create: AccordionsDocAccessFields_accordionItems_headingTag_Create
-  delete: AccordionsDocAccessFields_accordionItems_headingTag_Delete
-  read: AccordionsDocAccessFields_accordionItems_headingTag_Read
-  update: AccordionsDocAccessFields_accordionItems_headingTag_Update
-}
-
-type AccordionsDocAccessFields_accordionItems_headingTag_Create {
-  permission: Boolean!
-}
-
-type AccordionsDocAccessFields_accordionItems_headingTag_Delete {
-  permission: Boolean!
-}
-
-type AccordionsDocAccessFields_accordionItems_headingTag_Read {
-  permission: Boolean!
-}
-
-type AccordionsDocAccessFields_accordionItems_headingTag_Update {
-  permission: Boolean!
 }
 
 type AccordionsDocAccessFields_accordionItems_heading_Create {
@@ -379,29 +325,6 @@ type AccordionsDocAccessFields_heading {
   update: AccordionsDocAccessFields_heading_Update
 }
 
-type AccordionsDocAccessFields_headingTag {
-  create: AccordionsDocAccessFields_headingTag_Create
-  delete: AccordionsDocAccessFields_headingTag_Delete
-  read: AccordionsDocAccessFields_headingTag_Read
-  update: AccordionsDocAccessFields_headingTag_Update
-}
-
-type AccordionsDocAccessFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type AccordionsDocAccessFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type AccordionsDocAccessFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type AccordionsDocAccessFields_headingTag_Update {
-  permission: Boolean!
-}
-
 type AccordionsDocAccessFields_heading_Create {
   permission: Boolean!
 }
@@ -445,7 +368,6 @@ type AccordionsFields {
   accordionItems: AccordionsFields_accordionItems
   createdAt: AccordionsFields_createdAt
   heading: AccordionsFields_heading
-  headingTag: AccordionsFields_headingTag
   updatedAt: AccordionsFields_updatedAt
 }
 
@@ -468,7 +390,6 @@ type AccordionsFields_accordionItems_Delete {
 type AccordionsFields_accordionItems_Fields {
   content: AccordionsFields_accordionItems_content
   heading: AccordionsFields_accordionItems_heading
-  headingTag: AccordionsFields_accordionItems_headingTag
   id: AccordionsFields_accordionItems_id
 }
 
@@ -508,29 +429,6 @@ type AccordionsFields_accordionItems_heading {
   delete: AccordionsFields_accordionItems_heading_Delete
   read: AccordionsFields_accordionItems_heading_Read
   update: AccordionsFields_accordionItems_heading_Update
-}
-
-type AccordionsFields_accordionItems_headingTag {
-  create: AccordionsFields_accordionItems_headingTag_Create
-  delete: AccordionsFields_accordionItems_headingTag_Delete
-  read: AccordionsFields_accordionItems_headingTag_Read
-  update: AccordionsFields_accordionItems_headingTag_Update
-}
-
-type AccordionsFields_accordionItems_headingTag_Create {
-  permission: Boolean!
-}
-
-type AccordionsFields_accordionItems_headingTag_Delete {
-  permission: Boolean!
-}
-
-type AccordionsFields_accordionItems_headingTag_Read {
-  permission: Boolean!
-}
-
-type AccordionsFields_accordionItems_headingTag_Update {
-  permission: Boolean!
 }
 
 type AccordionsFields_accordionItems_heading_Create {
@@ -600,29 +498,6 @@ type AccordionsFields_heading {
   delete: AccordionsFields_heading_Delete
   read: AccordionsFields_heading_Read
   update: AccordionsFields_heading_Update
-}
-
-type AccordionsFields_headingTag {
-  create: AccordionsFields_headingTag_Create
-  delete: AccordionsFields_headingTag_Delete
-  read: AccordionsFields_headingTag_Read
-  update: AccordionsFields_headingTag_Update
-}
-
-type AccordionsFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type AccordionsFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type AccordionsFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type AccordionsFields_headingTag_Update {
-  permission: Boolean!
 }
 
 type AccordionsFields_heading_Create {
@@ -709,12 +584,11 @@ enum CallToAction_color_Input {
 }
 
 input CallToAction_color_operator {
-  all: [CallToAction_color_Input]
+  contains: CallToAction_color_Input
   equals: CallToAction_color_Input
   exists: Boolean
-  in: [CallToAction_color_Input]
+  like: CallToAction_color_Input
   not_equals: CallToAction_color_Input
-  not_in: [CallToAction_color_Input]
 }
 
 input CallToAction_createdAt_operator {
@@ -792,12 +666,11 @@ enum CallToAction_linkType_Input {
 }
 
 input CallToAction_linkType_operator {
-  all: [CallToAction_linkType_Input]
+  contains: CallToAction_linkType_Input
   equals: CallToAction_linkType_Input
   exists: Boolean
-  in: [CallToAction_linkType_Input]
+  like: CallToAction_linkType_Input
   not_equals: CallToAction_linkType_Input
-  not_in: [CallToAction_linkType_Input]
 }
 
 input CallToAction_updatedAt_operator {
@@ -1346,7 +1219,6 @@ type ConversionPanel {
   content(depth: Int): JSON
   createdAt: DateTime
   heading: String!
-  headingTag: String!
   id: String
   updatedAt: DateTime
 }
@@ -1383,16 +1255,6 @@ input ConversionPanel_createdAt_operator {
   less_than_equal: DateTime
   like: DateTime
   not_equals: DateTime
-}
-
-input ConversionPanel_headingTag_operator {
-  all: [String]
-  contains: String
-  equals: String
-  in: [String]
-  like: String
-  not_equals: String
-  not_in: [String]
 }
 
 input ConversionPanel_heading_operator {
@@ -1434,7 +1296,6 @@ input ConversionPanel_where {
   content: ConversionPanel_content_operator
   createdAt: ConversionPanel_createdAt_operator
   heading: ConversionPanel_heading_operator
-  headingTag: ConversionPanel_headingTag_operator
   id: ConversionPanel_id_operator
   updatedAt: ConversionPanel_updatedAt_operator
 }
@@ -1444,7 +1305,6 @@ input ConversionPanel_where_and {
   content: ConversionPanel_content_operator
   createdAt: ConversionPanel_createdAt_operator
   heading: ConversionPanel_heading_operator
-  headingTag: ConversionPanel_headingTag_operator
   id: ConversionPanel_id_operator
   updatedAt: ConversionPanel_updatedAt_operator
 }
@@ -1454,7 +1314,6 @@ input ConversionPanel_where_or {
   content: ConversionPanel_content_operator
   createdAt: ConversionPanel_createdAt_operator
   heading: ConversionPanel_heading_operator
-  headingTag: ConversionPanel_headingTag_operator
   id: ConversionPanel_id_operator
   updatedAt: ConversionPanel_updatedAt_operator
 }
@@ -1498,7 +1357,6 @@ type ConversionPanelsDocAccessFields {
   content: ConversionPanelsDocAccessFields_content
   createdAt: ConversionPanelsDocAccessFields_createdAt
   heading: ConversionPanelsDocAccessFields_heading
-  headingTag: ConversionPanelsDocAccessFields_headingTag
   updatedAt: ConversionPanelsDocAccessFields_updatedAt
 }
 
@@ -1578,29 +1436,6 @@ type ConversionPanelsDocAccessFields_heading {
   update: ConversionPanelsDocAccessFields_heading_Update
 }
 
-type ConversionPanelsDocAccessFields_headingTag {
-  create: ConversionPanelsDocAccessFields_headingTag_Create
-  delete: ConversionPanelsDocAccessFields_headingTag_Delete
-  read: ConversionPanelsDocAccessFields_headingTag_Read
-  update: ConversionPanelsDocAccessFields_headingTag_Update
-}
-
-type ConversionPanelsDocAccessFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type ConversionPanelsDocAccessFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type ConversionPanelsDocAccessFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type ConversionPanelsDocAccessFields_headingTag_Update {
-  permission: Boolean!
-}
-
 type ConversionPanelsDocAccessFields_heading_Create {
   permission: Boolean!
 }
@@ -1645,7 +1480,6 @@ type ConversionPanelsFields {
   content: ConversionPanelsFields_content
   createdAt: ConversionPanelsFields_createdAt
   heading: ConversionPanelsFields_heading
-  headingTag: ConversionPanelsFields_headingTag
   updatedAt: ConversionPanelsFields_updatedAt
 }
 
@@ -1723,29 +1557,6 @@ type ConversionPanelsFields_heading {
   delete: ConversionPanelsFields_heading_Delete
   read: ConversionPanelsFields_heading_Read
   update: ConversionPanelsFields_heading_Update
-}
-
-type ConversionPanelsFields_headingTag {
-  create: ConversionPanelsFields_headingTag_Create
-  delete: ConversionPanelsFields_headingTag_Delete
-  read: ConversionPanelsFields_headingTag_Read
-  update: ConversionPanelsFields_headingTag_Update
-}
-
-type ConversionPanelsFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type ConversionPanelsFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type ConversionPanelsFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type ConversionPanelsFields_headingTag_Update {
-  permission: Boolean!
 }
 
 type ConversionPanelsFields_heading_Create {
@@ -1829,6 +1640,17 @@ input CtaTile_Icon_alt_operator {
   not_in: [String]
 }
 
+input CtaTile_Icon_base64_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
 input CtaTile_Icon_createdAt_operator {
   equals: DateTime
   exists: Boolean
@@ -1852,23 +1674,23 @@ input CtaTile_Icon_filename_operator {
 }
 
 input CtaTile_Icon_filesize_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input CtaTile_Icon_height_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input CtaTile_Icon_id_operator {
@@ -1905,23 +1727,23 @@ input CtaTile_Icon_sizes__thumbnail__filename_operator {
 }
 
 input CtaTile_Icon_sizes__thumbnail__filesize_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input CtaTile_Icon_sizes__thumbnail__height_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input CtaTile_Icon_sizes__thumbnail__mimeType_operator {
@@ -1947,13 +1769,13 @@ input CtaTile_Icon_sizes__thumbnail__url_operator {
 }
 
 input CtaTile_Icon_sizes__thumbnail__width_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input CtaTile_Icon_updatedAt_operator {
@@ -1982,6 +1804,7 @@ input CtaTile_Icon_where {
   AND: [CtaTile_Icon_where_and]
   OR: [CtaTile_Icon_where_or]
   alt: CtaTile_Icon_alt_operator
+  base64: CtaTile_Icon_base64_operator
   createdAt: CtaTile_Icon_createdAt_operator
   filename: CtaTile_Icon_filename_operator
   filesize: CtaTile_Icon_filesize_operator
@@ -2001,6 +1824,7 @@ input CtaTile_Icon_where {
 
 input CtaTile_Icon_where_and {
   alt: CtaTile_Icon_alt_operator
+  base64: CtaTile_Icon_base64_operator
   createdAt: CtaTile_Icon_createdAt_operator
   filename: CtaTile_Icon_filename_operator
   filesize: CtaTile_Icon_filesize_operator
@@ -2020,6 +1844,7 @@ input CtaTile_Icon_where_and {
 
 input CtaTile_Icon_where_or {
   alt: CtaTile_Icon_alt_operator
+  base64: CtaTile_Icon_base64_operator
   createdAt: CtaTile_Icon_createdAt_operator
   filename: CtaTile_Icon_filename_operator
   filesize: CtaTile_Icon_filesize_operator
@@ -2038,13 +1863,13 @@ input CtaTile_Icon_where_or {
 }
 
 input CtaTile_Icon_width_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input CtaTile_createdAt_operator {
@@ -2123,11 +1948,10 @@ enum CtaTile_linkType_Input {
 }
 
 input CtaTile_linkType_operator {
-  all: [CtaTile_linkType_Input]
+  contains: CtaTile_linkType_Input
   equals: CtaTile_linkType_Input
-  in: [CtaTile_linkType_Input]
+  like: CtaTile_linkType_Input
   not_equals: CtaTile_linkType_Input
-  not_in: [CtaTile_linkType_Input]
 }
 
 input CtaTile_updatedAt_operator {
@@ -2637,7 +2461,6 @@ type FeatureGrid {
   createdAt: DateTime
   featureTiles: [FeatureTile!]!
   heading: String
-  headingTag: String
   id: String
   internalName: String!
   updatedAt: DateTime
@@ -2665,17 +2488,6 @@ input FeatureGrid_featureTiles_operator {
   all: [String]
   equals: String
   in: [String]
-  not_equals: String
-  not_in: [String]
-}
-
-input FeatureGrid_headingTag_operator {
-  all: [String]
-  contains: String
-  equals: String
-  exists: Boolean
-  in: [String]
-  like: String
   not_equals: String
   not_in: [String]
 }
@@ -2729,7 +2541,6 @@ input FeatureGrid_where {
   createdAt: FeatureGrid_createdAt_operator
   featureTiles: FeatureGrid_featureTiles_operator
   heading: FeatureGrid_heading_operator
-  headingTag: FeatureGrid_headingTag_operator
   id: FeatureGrid_id_operator
   internalName: FeatureGrid_internalName_operator
   updatedAt: FeatureGrid_updatedAt_operator
@@ -2739,7 +2550,6 @@ input FeatureGrid_where_and {
   createdAt: FeatureGrid_createdAt_operator
   featureTiles: FeatureGrid_featureTiles_operator
   heading: FeatureGrid_heading_operator
-  headingTag: FeatureGrid_headingTag_operator
   id: FeatureGrid_id_operator
   internalName: FeatureGrid_internalName_operator
   updatedAt: FeatureGrid_updatedAt_operator
@@ -2749,7 +2559,6 @@ input FeatureGrid_where_or {
   createdAt: FeatureGrid_createdAt_operator
   featureTiles: FeatureGrid_featureTiles_operator
   heading: FeatureGrid_heading_operator
-  headingTag: FeatureGrid_headingTag_operator
   id: FeatureGrid_id_operator
   internalName: FeatureGrid_internalName_operator
   updatedAt: FeatureGrid_updatedAt_operator
@@ -2793,7 +2602,6 @@ type FeatureGridsDocAccessFields {
   createdAt: FeatureGridsDocAccessFields_createdAt
   featureTiles: FeatureGridsDocAccessFields_featureTiles
   heading: FeatureGridsDocAccessFields_heading
-  headingTag: FeatureGridsDocAccessFields_headingTag
   internalName: FeatureGridsDocAccessFields_internalName
   updatedAt: FeatureGridsDocAccessFields_updatedAt
 }
@@ -2849,29 +2657,6 @@ type FeatureGridsDocAccessFields_heading {
   delete: FeatureGridsDocAccessFields_heading_Delete
   read: FeatureGridsDocAccessFields_heading_Read
   update: FeatureGridsDocAccessFields_heading_Update
-}
-
-type FeatureGridsDocAccessFields_headingTag {
-  create: FeatureGridsDocAccessFields_headingTag_Create
-  delete: FeatureGridsDocAccessFields_headingTag_Delete
-  read: FeatureGridsDocAccessFields_headingTag_Read
-  update: FeatureGridsDocAccessFields_headingTag_Update
-}
-
-type FeatureGridsDocAccessFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type FeatureGridsDocAccessFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type FeatureGridsDocAccessFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type FeatureGridsDocAccessFields_headingTag_Update {
-  permission: Boolean!
 }
 
 type FeatureGridsDocAccessFields_heading_Create {
@@ -2940,7 +2725,6 @@ type FeatureGridsFields {
   createdAt: FeatureGridsFields_createdAt
   featureTiles: FeatureGridsFields_featureTiles
   heading: FeatureGridsFields_heading
-  headingTag: FeatureGridsFields_headingTag
   internalName: FeatureGridsFields_internalName
   updatedAt: FeatureGridsFields_updatedAt
 }
@@ -2996,29 +2780,6 @@ type FeatureGridsFields_heading {
   delete: FeatureGridsFields_heading_Delete
   read: FeatureGridsFields_heading_Read
   update: FeatureGridsFields_heading_Update
-}
-
-type FeatureGridsFields_headingTag {
-  create: FeatureGridsFields_headingTag_Create
-  delete: FeatureGridsFields_headingTag_Delete
-  read: FeatureGridsFields_headingTag_Read
-  update: FeatureGridsFields_headingTag_Update
-}
-
-type FeatureGridsFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type FeatureGridsFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type FeatureGridsFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type FeatureGridsFields_headingTag_Update {
-  permission: Boolean!
 }
 
 type FeatureGridsFields_heading_Create {
@@ -3107,7 +2868,6 @@ type FeatureTile {
   content(depth: Int): JSON
   createdAt: DateTime
   heading: String!
-  headingTag: String!
   id: String
   image(where: FeatureTile_Image_where): Image!
   updatedAt: DateTime
@@ -3117,6 +2877,17 @@ input FeatureTile_Image_alt_operator {
   all: [String]
   contains: String
   equals: String
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input FeatureTile_Image_base64_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
   in: [String]
   like: String
   not_equals: String
@@ -3146,23 +2917,23 @@ input FeatureTile_Image_filename_operator {
 }
 
 input FeatureTile_Image_filesize_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input FeatureTile_Image_height_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input FeatureTile_Image_id_operator {
@@ -3199,23 +2970,23 @@ input FeatureTile_Image_sizes__thumbnail__filename_operator {
 }
 
 input FeatureTile_Image_sizes__thumbnail__filesize_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input FeatureTile_Image_sizes__thumbnail__height_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input FeatureTile_Image_sizes__thumbnail__mimeType_operator {
@@ -3241,13 +3012,13 @@ input FeatureTile_Image_sizes__thumbnail__url_operator {
 }
 
 input FeatureTile_Image_sizes__thumbnail__width_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input FeatureTile_Image_updatedAt_operator {
@@ -3276,6 +3047,7 @@ input FeatureTile_Image_where {
   AND: [FeatureTile_Image_where_and]
   OR: [FeatureTile_Image_where_or]
   alt: FeatureTile_Image_alt_operator
+  base64: FeatureTile_Image_base64_operator
   createdAt: FeatureTile_Image_createdAt_operator
   filename: FeatureTile_Image_filename_operator
   filesize: FeatureTile_Image_filesize_operator
@@ -3295,6 +3067,7 @@ input FeatureTile_Image_where {
 
 input FeatureTile_Image_where_and {
   alt: FeatureTile_Image_alt_operator
+  base64: FeatureTile_Image_base64_operator
   createdAt: FeatureTile_Image_createdAt_operator
   filename: FeatureTile_Image_filename_operator
   filesize: FeatureTile_Image_filesize_operator
@@ -3314,6 +3087,7 @@ input FeatureTile_Image_where_and {
 
 input FeatureTile_Image_where_or {
   alt: FeatureTile_Image_alt_operator
+  base64: FeatureTile_Image_base64_operator
   createdAt: FeatureTile_Image_createdAt_operator
   filename: FeatureTile_Image_filename_operator
   filesize: FeatureTile_Image_filesize_operator
@@ -3332,13 +3106,13 @@ input FeatureTile_Image_where_or {
 }
 
 input FeatureTile_Image_width_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input FeatureTile_content_operator {
@@ -3358,16 +3132,6 @@ input FeatureTile_createdAt_operator {
   less_than_equal: DateTime
   like: DateTime
   not_equals: DateTime
-}
-
-input FeatureTile_headingTag_operator {
-  all: [String]
-  contains: String
-  equals: String
-  in: [String]
-  like: String
-  not_equals: String
-  not_in: [String]
 }
 
 input FeatureTile_heading_operator {
@@ -3413,7 +3177,6 @@ input FeatureTile_where {
   content: FeatureTile_content_operator
   createdAt: FeatureTile_createdAt_operator
   heading: FeatureTile_heading_operator
-  headingTag: FeatureTile_headingTag_operator
   id: FeatureTile_id_operator
   image: FeatureTile_image_operator
   updatedAt: FeatureTile_updatedAt_operator
@@ -3423,7 +3186,6 @@ input FeatureTile_where_and {
   content: FeatureTile_content_operator
   createdAt: FeatureTile_createdAt_operator
   heading: FeatureTile_heading_operator
-  headingTag: FeatureTile_headingTag_operator
   id: FeatureTile_id_operator
   image: FeatureTile_image_operator
   updatedAt: FeatureTile_updatedAt_operator
@@ -3433,7 +3195,6 @@ input FeatureTile_where_or {
   content: FeatureTile_content_operator
   createdAt: FeatureTile_createdAt_operator
   heading: FeatureTile_heading_operator
-  headingTag: FeatureTile_headingTag_operator
   id: FeatureTile_id_operator
   image: FeatureTile_image_operator
   updatedAt: FeatureTile_updatedAt_operator
@@ -3477,7 +3238,6 @@ type FeatureTilesDocAccessFields {
   content: FeatureTilesDocAccessFields_content
   createdAt: FeatureTilesDocAccessFields_createdAt
   heading: FeatureTilesDocAccessFields_heading
-  headingTag: FeatureTilesDocAccessFields_headingTag
   image: FeatureTilesDocAccessFields_image
   updatedAt: FeatureTilesDocAccessFields_updatedAt
 }
@@ -3533,29 +3293,6 @@ type FeatureTilesDocAccessFields_heading {
   delete: FeatureTilesDocAccessFields_heading_Delete
   read: FeatureTilesDocAccessFields_heading_Read
   update: FeatureTilesDocAccessFields_heading_Update
-}
-
-type FeatureTilesDocAccessFields_headingTag {
-  create: FeatureTilesDocAccessFields_headingTag_Create
-  delete: FeatureTilesDocAccessFields_headingTag_Delete
-  read: FeatureTilesDocAccessFields_headingTag_Read
-  update: FeatureTilesDocAccessFields_headingTag_Update
-}
-
-type FeatureTilesDocAccessFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type FeatureTilesDocAccessFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type FeatureTilesDocAccessFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type FeatureTilesDocAccessFields_headingTag_Update {
-  permission: Boolean!
 }
 
 type FeatureTilesDocAccessFields_heading_Create {
@@ -3624,7 +3361,6 @@ type FeatureTilesFields {
   content: FeatureTilesFields_content
   createdAt: FeatureTilesFields_createdAt
   heading: FeatureTilesFields_heading
-  headingTag: FeatureTilesFields_headingTag
   image: FeatureTilesFields_image
   updatedAt: FeatureTilesFields_updatedAt
 }
@@ -3680,29 +3416,6 @@ type FeatureTilesFields_heading {
   delete: FeatureTilesFields_heading_Delete
   read: FeatureTilesFields_heading_Read
   update: FeatureTilesFields_heading_Update
-}
-
-type FeatureTilesFields_headingTag {
-  create: FeatureTilesFields_headingTag_Create
-  delete: FeatureTilesFields_headingTag_Delete
-  read: FeatureTilesFields_headingTag_Read
-  update: FeatureTilesFields_headingTag_Update
-}
-
-type FeatureTilesFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type FeatureTilesFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type FeatureTilesFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type FeatureTilesFields_headingTag_Update {
-  permission: Boolean!
 }
 
 type FeatureTilesFields_heading_Create {
@@ -3793,7 +3506,6 @@ type FeaturedMedia {
   content(depth: Int): JSON
   createdAt: DateTime
   heading: String!
-  headingTag: String!
   id: String
   image(where: FeaturedMedia_Image_where): Image
   updatedAt: DateTime
@@ -3833,7 +3545,6 @@ type FeaturedMediaDocAccessFields {
   content: FeaturedMediaDocAccessFields_content
   createdAt: FeaturedMediaDocAccessFields_createdAt
   heading: FeaturedMediaDocAccessFields_heading
-  headingTag: FeaturedMediaDocAccessFields_headingTag
   image: FeaturedMediaDocAccessFields_image
   updatedAt: FeaturedMediaDocAccessFields_updatedAt
   video: FeaturedMediaDocAccessFields_video
@@ -3938,29 +3649,6 @@ type FeaturedMediaDocAccessFields_heading {
   update: FeaturedMediaDocAccessFields_heading_Update
 }
 
-type FeaturedMediaDocAccessFields_headingTag {
-  create: FeaturedMediaDocAccessFields_headingTag_Create
-  delete: FeaturedMediaDocAccessFields_headingTag_Delete
-  read: FeaturedMediaDocAccessFields_headingTag_Read
-  update: FeaturedMediaDocAccessFields_headingTag_Update
-}
-
-type FeaturedMediaDocAccessFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type FeaturedMediaDocAccessFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type FeaturedMediaDocAccessFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type FeaturedMediaDocAccessFields_headingTag_Update {
-  permission: Boolean!
-}
-
 type FeaturedMediaDocAccessFields_heading_Create {
   permission: Boolean!
 }
@@ -4052,7 +3740,6 @@ type FeaturedMediaFields {
   content: FeaturedMediaFields_content
   createdAt: FeaturedMediaFields_createdAt
   heading: FeaturedMediaFields_heading
-  headingTag: FeaturedMediaFields_headingTag
   image: FeaturedMediaFields_image
   updatedAt: FeaturedMediaFields_updatedAt
   video: FeaturedMediaFields_video
@@ -4155,29 +3842,6 @@ type FeaturedMediaFields_heading {
   delete: FeaturedMediaFields_heading_Delete
   read: FeaturedMediaFields_heading_Read
   update: FeaturedMediaFields_heading_Update
-}
-
-type FeaturedMediaFields_headingTag {
-  create: FeaturedMediaFields_headingTag_Create
-  delete: FeaturedMediaFields_headingTag_Delete
-  read: FeaturedMediaFields_headingTag_Read
-  update: FeaturedMediaFields_headingTag_Update
-}
-
-type FeaturedMediaFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type FeaturedMediaFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type FeaturedMediaFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type FeaturedMediaFields_headingTag_Update {
-  permission: Boolean!
 }
 
 type FeaturedMediaFields_heading_Create {
@@ -4295,6 +3959,17 @@ input FeaturedMedia_Image_alt_operator {
   not_in: [String]
 }
 
+input FeaturedMedia_Image_base64_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
 input FeaturedMedia_Image_createdAt_operator {
   equals: DateTime
   exists: Boolean
@@ -4318,23 +3993,23 @@ input FeaturedMedia_Image_filename_operator {
 }
 
 input FeaturedMedia_Image_filesize_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input FeaturedMedia_Image_height_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input FeaturedMedia_Image_id_operator {
@@ -4371,23 +4046,23 @@ input FeaturedMedia_Image_sizes__thumbnail__filename_operator {
 }
 
 input FeaturedMedia_Image_sizes__thumbnail__filesize_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input FeaturedMedia_Image_sizes__thumbnail__height_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input FeaturedMedia_Image_sizes__thumbnail__mimeType_operator {
@@ -4413,13 +4088,13 @@ input FeaturedMedia_Image_sizes__thumbnail__url_operator {
 }
 
 input FeaturedMedia_Image_sizes__thumbnail__width_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input FeaturedMedia_Image_updatedAt_operator {
@@ -4448,6 +4123,7 @@ input FeaturedMedia_Image_where {
   AND: [FeaturedMedia_Image_where_and]
   OR: [FeaturedMedia_Image_where_or]
   alt: FeaturedMedia_Image_alt_operator
+  base64: FeaturedMedia_Image_base64_operator
   createdAt: FeaturedMedia_Image_createdAt_operator
   filename: FeaturedMedia_Image_filename_operator
   filesize: FeaturedMedia_Image_filesize_operator
@@ -4467,6 +4143,7 @@ input FeaturedMedia_Image_where {
 
 input FeaturedMedia_Image_where_and {
   alt: FeaturedMedia_Image_alt_operator
+  base64: FeaturedMedia_Image_base64_operator
   createdAt: FeaturedMedia_Image_createdAt_operator
   filename: FeaturedMedia_Image_filename_operator
   filesize: FeaturedMedia_Image_filesize_operator
@@ -4486,6 +4163,7 @@ input FeaturedMedia_Image_where_and {
 
 input FeaturedMedia_Image_where_or {
   alt: FeaturedMedia_Image_alt_operator
+  base64: FeaturedMedia_Image_base64_operator
   createdAt: FeaturedMedia_Image_createdAt_operator
   filename: FeaturedMedia_Image_filename_operator
   filesize: FeaturedMedia_Image_filesize_operator
@@ -4504,13 +4182,13 @@ input FeaturedMedia_Image_where_or {
 }
 
 input FeaturedMedia_Image_width_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 enum FeaturedMedia_assetType {
@@ -4524,12 +4202,11 @@ enum FeaturedMedia_assetType_Input {
 }
 
 input FeaturedMedia_assetType_operator {
-  all: [FeaturedMedia_assetType_Input]
+  contains: FeaturedMedia_assetType_Input
   equals: FeaturedMedia_assetType_Input
   exists: Boolean
-  in: [FeaturedMedia_assetType_Input]
+  like: FeaturedMedia_assetType_Input
   not_equals: FeaturedMedia_assetType_Input
-  not_in: [FeaturedMedia_assetType_Input]
 }
 
 input FeaturedMedia_callToAction_operator {
@@ -4558,16 +4235,6 @@ input FeaturedMedia_createdAt_operator {
   less_than_equal: DateTime
   like: DateTime
   not_equals: DateTime
-}
-
-input FeaturedMedia_headingTag_operator {
-  all: [String]
-  contains: String
-  equals: String
-  in: [String]
-  like: String
-  not_equals: String
-  not_in: [String]
 }
 
 input FeaturedMedia_heading_operator {
@@ -4625,7 +4292,6 @@ input FeaturedMedia_where {
   content: FeaturedMedia_content_operator
   createdAt: FeaturedMedia_createdAt_operator
   heading: FeaturedMedia_heading_operator
-  headingTag: FeaturedMedia_headingTag_operator
   id: FeaturedMedia_id_operator
   image: FeaturedMedia_image_operator
   updatedAt: FeaturedMedia_updatedAt_operator
@@ -4638,7 +4304,6 @@ input FeaturedMedia_where_and {
   content: FeaturedMedia_content_operator
   createdAt: FeaturedMedia_createdAt_operator
   heading: FeaturedMedia_heading_operator
-  headingTag: FeaturedMedia_headingTag_operator
   id: FeaturedMedia_id_operator
   image: FeaturedMedia_image_operator
   updatedAt: FeaturedMedia_updatedAt_operator
@@ -4651,7 +4316,6 @@ input FeaturedMedia_where_or {
   content: FeaturedMedia_content_operator
   createdAt: FeaturedMedia_createdAt_operator
   heading: FeaturedMedia_heading_operator
-  headingTag: FeaturedMedia_headingTag_operator
   id: FeaturedMedia_id_operator
   image: FeaturedMedia_image_operator
   updatedAt: FeaturedMedia_updatedAt_operator
@@ -5882,6 +5546,17 @@ input Footer_SocialLinks_Icon_alt_operator {
   not_in: [String]
 }
 
+input Footer_SocialLinks_Icon_base64_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
 input Footer_SocialLinks_Icon_createdAt_operator {
   equals: DateTime
   exists: Boolean
@@ -5905,23 +5580,23 @@ input Footer_SocialLinks_Icon_filename_operator {
 }
 
 input Footer_SocialLinks_Icon_filesize_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Footer_SocialLinks_Icon_height_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Footer_SocialLinks_Icon_id_operator {
@@ -5958,23 +5633,23 @@ input Footer_SocialLinks_Icon_sizes__thumbnail__filename_operator {
 }
 
 input Footer_SocialLinks_Icon_sizes__thumbnail__filesize_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Footer_SocialLinks_Icon_sizes__thumbnail__height_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Footer_SocialLinks_Icon_sizes__thumbnail__mimeType_operator {
@@ -6000,13 +5675,13 @@ input Footer_SocialLinks_Icon_sizes__thumbnail__url_operator {
 }
 
 input Footer_SocialLinks_Icon_sizes__thumbnail__width_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Footer_SocialLinks_Icon_updatedAt_operator {
@@ -6035,6 +5710,7 @@ input Footer_SocialLinks_Icon_where {
   AND: [Footer_SocialLinks_Icon_where_and]
   OR: [Footer_SocialLinks_Icon_where_or]
   alt: Footer_SocialLinks_Icon_alt_operator
+  base64: Footer_SocialLinks_Icon_base64_operator
   createdAt: Footer_SocialLinks_Icon_createdAt_operator
   filename: Footer_SocialLinks_Icon_filename_operator
   filesize: Footer_SocialLinks_Icon_filesize_operator
@@ -6054,6 +5730,7 @@ input Footer_SocialLinks_Icon_where {
 
 input Footer_SocialLinks_Icon_where_and {
   alt: Footer_SocialLinks_Icon_alt_operator
+  base64: Footer_SocialLinks_Icon_base64_operator
   createdAt: Footer_SocialLinks_Icon_createdAt_operator
   filename: Footer_SocialLinks_Icon_filename_operator
   filesize: Footer_SocialLinks_Icon_filesize_operator
@@ -6073,6 +5750,7 @@ input Footer_SocialLinks_Icon_where_and {
 
 input Footer_SocialLinks_Icon_where_or {
   alt: Footer_SocialLinks_Icon_alt_operator
+  base64: Footer_SocialLinks_Icon_base64_operator
   createdAt: Footer_SocialLinks_Icon_createdAt_operator
   filename: Footer_SocialLinks_Icon_filename_operator
   filesize: Footer_SocialLinks_Icon_filesize_operator
@@ -6091,13 +5769,13 @@ input Footer_SocialLinks_Icon_where_or {
 }
 
 input Footer_SocialLinks_Icon_width_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 type Header {
@@ -7098,7 +6776,6 @@ type Hero {
   createdAt: DateTime
   cta: Hero_Cta
   heading: String!
-  headingTag: String!
   id: String
   subheading: String
   updatedAt: DateTime
@@ -7197,22 +6874,11 @@ enum Hero_cta__type_Input {
 }
 
 input Hero_cta__type_operator {
-  all: [Hero_cta__type_Input]
+  contains: Hero_cta__type_Input
   equals: Hero_cta__type_Input
   exists: Boolean
-  in: [Hero_cta__type_Input]
+  like: Hero_cta__type_Input
   not_equals: Hero_cta__type_Input
-  not_in: [Hero_cta__type_Input]
-}
-
-input Hero_headingTag_operator {
-  all: [String]
-  contains: String
-  equals: String
-  in: [String]
-  like: String
-  not_equals: String
-  not_in: [String]
 }
 
 input Hero_heading_operator {
@@ -7269,7 +6935,6 @@ input Hero_where {
   cta__ctaTiles__id: Hero_cta__ctaTiles__id_operator
   cta__type: Hero_cta__type_operator
   heading: Hero_heading_operator
-  headingTag: Hero_headingTag_operator
   id: Hero_id_operator
   subheading: Hero_subheading_operator
   updatedAt: Hero_updatedAt_operator
@@ -7284,7 +6949,6 @@ input Hero_where_and {
   cta__ctaTiles__id: Hero_cta__ctaTiles__id_operator
   cta__type: Hero_cta__type_operator
   heading: Hero_heading_operator
-  headingTag: Hero_headingTag_operator
   id: Hero_id_operator
   subheading: Hero_subheading_operator
   updatedAt: Hero_updatedAt_operator
@@ -7299,7 +6963,6 @@ input Hero_where_or {
   cta__ctaTiles__id: Hero_cta__ctaTiles__id_operator
   cta__type: Hero_cta__type_operator
   heading: Hero_heading_operator
-  headingTag: Hero_headingTag_operator
   id: Hero_id_operator
   subheading: Hero_subheading_operator
   updatedAt: Hero_updatedAt_operator
@@ -7344,7 +7007,6 @@ type HeroesDocAccessFields {
   createdAt: HeroesDocAccessFields_createdAt
   cta: HeroesDocAccessFields_cta
   heading: HeroesDocAccessFields_heading
-  headingTag: HeroesDocAccessFields_headingTag
   subheading: HeroesDocAccessFields_subheading
   updatedAt: HeroesDocAccessFields_updatedAt
 }
@@ -7605,29 +7267,6 @@ type HeroesDocAccessFields_heading {
   update: HeroesDocAccessFields_heading_Update
 }
 
-type HeroesDocAccessFields_headingTag {
-  create: HeroesDocAccessFields_headingTag_Create
-  delete: HeroesDocAccessFields_headingTag_Delete
-  read: HeroesDocAccessFields_headingTag_Read
-  update: HeroesDocAccessFields_headingTag_Update
-}
-
-type HeroesDocAccessFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type HeroesDocAccessFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type HeroesDocAccessFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type HeroesDocAccessFields_headingTag_Update {
-  permission: Boolean!
-}
-
 type HeroesDocAccessFields_heading_Create {
   permission: Boolean!
 }
@@ -7695,7 +7334,6 @@ type HeroesFields {
   createdAt: HeroesFields_createdAt
   cta: HeroesFields_cta
   heading: HeroesFields_heading
-  headingTag: HeroesFields_headingTag
   subheading: HeroesFields_subheading
   updatedAt: HeroesFields_updatedAt
 }
@@ -7956,29 +7594,6 @@ type HeroesFields_heading {
   update: HeroesFields_heading_Update
 }
 
-type HeroesFields_headingTag {
-  create: HeroesFields_headingTag_Create
-  delete: HeroesFields_headingTag_Delete
-  read: HeroesFields_headingTag_Read
-  update: HeroesFields_headingTag_Update
-}
-
-type HeroesFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type HeroesFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type HeroesFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type HeroesFields_headingTag_Update {
-  permission: Boolean!
-}
-
 type HeroesFields_heading_Create {
   permission: Boolean!
 }
@@ -8063,6 +7678,7 @@ type HeroesUpdateDocAccess {
 
 type Icon {
   alt: String!
+  base64: String
   createdAt: DateTime
   filename: String
   filesize: Float
@@ -8088,7 +7704,6 @@ type IconTileGrid {
   content(depth: Int): JSON
   createdAt: DateTime
   heading: String!
-  headingTag: String!
   iconTiles: [IconTile!]!
   id: String
   updatedAt: DateTime
@@ -8126,16 +7741,6 @@ input IconTileGrid_createdAt_operator {
   less_than_equal: DateTime
   like: DateTime
   not_equals: DateTime
-}
-
-input IconTileGrid_headingTag_operator {
-  all: [String]
-  contains: String
-  equals: String
-  in: [String]
-  like: String
-  not_equals: String
-  not_in: [String]
 }
 
 input IconTileGrid_heading_operator {
@@ -8185,7 +7790,6 @@ input IconTileGrid_where {
   content: IconTileGrid_content_operator
   createdAt: IconTileGrid_createdAt_operator
   heading: IconTileGrid_heading_operator
-  headingTag: IconTileGrid_headingTag_operator
   iconTiles: IconTileGrid_iconTiles_operator
   id: IconTileGrid_id_operator
   updatedAt: IconTileGrid_updatedAt_operator
@@ -8196,7 +7800,6 @@ input IconTileGrid_where_and {
   content: IconTileGrid_content_operator
   createdAt: IconTileGrid_createdAt_operator
   heading: IconTileGrid_heading_operator
-  headingTag: IconTileGrid_headingTag_operator
   iconTiles: IconTileGrid_iconTiles_operator
   id: IconTileGrid_id_operator
   updatedAt: IconTileGrid_updatedAt_operator
@@ -8207,7 +7810,6 @@ input IconTileGrid_where_or {
   content: IconTileGrid_content_operator
   createdAt: IconTileGrid_createdAt_operator
   heading: IconTileGrid_heading_operator
-  headingTag: IconTileGrid_headingTag_operator
   iconTiles: IconTileGrid_iconTiles_operator
   id: IconTileGrid_id_operator
   updatedAt: IconTileGrid_updatedAt_operator
@@ -8252,7 +7854,6 @@ type IconTileGridsDocAccessFields {
   content: IconTileGridsDocAccessFields_content
   createdAt: IconTileGridsDocAccessFields_createdAt
   heading: IconTileGridsDocAccessFields_heading
-  headingTag: IconTileGridsDocAccessFields_headingTag
   iconTiles: IconTileGridsDocAccessFields_iconTiles
   updatedAt: IconTileGridsDocAccessFields_updatedAt
 }
@@ -8333,29 +7934,6 @@ type IconTileGridsDocAccessFields_heading {
   update: IconTileGridsDocAccessFields_heading_Update
 }
 
-type IconTileGridsDocAccessFields_headingTag {
-  create: IconTileGridsDocAccessFields_headingTag_Create
-  delete: IconTileGridsDocAccessFields_headingTag_Delete
-  read: IconTileGridsDocAccessFields_headingTag_Read
-  update: IconTileGridsDocAccessFields_headingTag_Update
-}
-
-type IconTileGridsDocAccessFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type IconTileGridsDocAccessFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type IconTileGridsDocAccessFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type IconTileGridsDocAccessFields_headingTag_Update {
-  permission: Boolean!
-}
-
 type IconTileGridsDocAccessFields_heading_Create {
   permission: Boolean!
 }
@@ -8423,7 +8001,6 @@ type IconTileGridsFields {
   content: IconTileGridsFields_content
   createdAt: IconTileGridsFields_createdAt
   heading: IconTileGridsFields_heading
-  headingTag: IconTileGridsFields_headingTag
   iconTiles: IconTileGridsFields_iconTiles
   updatedAt: IconTileGridsFields_updatedAt
 }
@@ -8502,29 +8079,6 @@ type IconTileGridsFields_heading {
   delete: IconTileGridsFields_heading_Delete
   read: IconTileGridsFields_heading_Read
   update: IconTileGridsFields_heading_Update
-}
-
-type IconTileGridsFields_headingTag {
-  create: IconTileGridsFields_headingTag_Create
-  delete: IconTileGridsFields_headingTag_Delete
-  read: IconTileGridsFields_headingTag_Read
-  update: IconTileGridsFields_headingTag_Update
-}
-
-type IconTileGridsFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type IconTileGridsFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type IconTileGridsFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type IconTileGridsFields_headingTag_Update {
-  permission: Boolean!
 }
 
 type IconTileGridsFields_heading_Create {
@@ -8619,6 +8173,17 @@ input IconTile_Icon_alt_operator {
   not_in: [String]
 }
 
+input IconTile_Icon_base64_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
 input IconTile_Icon_createdAt_operator {
   equals: DateTime
   exists: Boolean
@@ -8642,23 +8207,23 @@ input IconTile_Icon_filename_operator {
 }
 
 input IconTile_Icon_filesize_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input IconTile_Icon_height_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input IconTile_Icon_id_operator {
@@ -8695,23 +8260,23 @@ input IconTile_Icon_sizes__thumbnail__filename_operator {
 }
 
 input IconTile_Icon_sizes__thumbnail__filesize_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input IconTile_Icon_sizes__thumbnail__height_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input IconTile_Icon_sizes__thumbnail__mimeType_operator {
@@ -8737,13 +8302,13 @@ input IconTile_Icon_sizes__thumbnail__url_operator {
 }
 
 input IconTile_Icon_sizes__thumbnail__width_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input IconTile_Icon_updatedAt_operator {
@@ -8772,6 +8337,7 @@ input IconTile_Icon_where {
   AND: [IconTile_Icon_where_and]
   OR: [IconTile_Icon_where_or]
   alt: IconTile_Icon_alt_operator
+  base64: IconTile_Icon_base64_operator
   createdAt: IconTile_Icon_createdAt_operator
   filename: IconTile_Icon_filename_operator
   filesize: IconTile_Icon_filesize_operator
@@ -8791,6 +8357,7 @@ input IconTile_Icon_where {
 
 input IconTile_Icon_where_and {
   alt: IconTile_Icon_alt_operator
+  base64: IconTile_Icon_base64_operator
   createdAt: IconTile_Icon_createdAt_operator
   filename: IconTile_Icon_filename_operator
   filesize: IconTile_Icon_filesize_operator
@@ -8810,6 +8377,7 @@ input IconTile_Icon_where_and {
 
 input IconTile_Icon_where_or {
   alt: IconTile_Icon_alt_operator
+  base64: IconTile_Icon_base64_operator
   createdAt: IconTile_Icon_createdAt_operator
   filename: IconTile_Icon_filename_operator
   filesize: IconTile_Icon_filesize_operator
@@ -8828,13 +8396,13 @@ input IconTile_Icon_where_or {
 }
 
 input IconTile_Icon_width_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input IconTile_createdAt_operator {
@@ -9186,6 +8754,17 @@ input Icon_alt_operator {
   not_in: [String]
 }
 
+input Icon_base64_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
 input Icon_createdAt_operator {
   equals: DateTime
   exists: Boolean
@@ -9209,23 +8788,23 @@ input Icon_filename_operator {
 }
 
 input Icon_filesize_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Icon_height_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Icon_id_operator {
@@ -9262,23 +8841,23 @@ input Icon_sizes__thumbnail__filename_operator {
 }
 
 input Icon_sizes__thumbnail__filesize_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Icon_sizes__thumbnail__height_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Icon_sizes__thumbnail__mimeType_operator {
@@ -9304,13 +8883,13 @@ input Icon_sizes__thumbnail__url_operator {
 }
 
 input Icon_sizes__thumbnail__width_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Icon_updatedAt_operator {
@@ -9339,6 +8918,7 @@ input Icon_where {
   AND: [Icon_where_and]
   OR: [Icon_where_or]
   alt: Icon_alt_operator
+  base64: Icon_base64_operator
   createdAt: Icon_createdAt_operator
   filename: Icon_filename_operator
   filesize: Icon_filesize_operator
@@ -9358,6 +8938,7 @@ input Icon_where {
 
 input Icon_where_and {
   alt: Icon_alt_operator
+  base64: Icon_base64_operator
   createdAt: Icon_createdAt_operator
   filename: Icon_filename_operator
   filesize: Icon_filesize_operator
@@ -9377,6 +8958,7 @@ input Icon_where_and {
 
 input Icon_where_or {
   alt: Icon_alt_operator
+  base64: Icon_base64_operator
   createdAt: Icon_createdAt_operator
   filename: Icon_filename_operator
   filesize: Icon_filesize_operator
@@ -9395,13 +8977,13 @@ input Icon_where_or {
 }
 
 input Icon_width_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 type Icons {
@@ -9440,6 +9022,7 @@ type IconsDeleteDocAccess {
 
 type IconsDocAccessFields {
   alt: IconsDocAccessFields_alt
+  base64: IconsDocAccessFields_base64
   createdAt: IconsDocAccessFields_createdAt
   filename: IconsDocAccessFields_filename
   filesize: IconsDocAccessFields_filesize
@@ -9471,6 +9054,29 @@ type IconsDocAccessFields_alt_Read {
 }
 
 type IconsDocAccessFields_alt_Update {
+  permission: Boolean!
+}
+
+type IconsDocAccessFields_base64 {
+  create: IconsDocAccessFields_base64_Create
+  delete: IconsDocAccessFields_base64_Delete
+  read: IconsDocAccessFields_base64_Read
+  update: IconsDocAccessFields_base64_Update
+}
+
+type IconsDocAccessFields_base64_Create {
+  permission: Boolean!
+}
+
+type IconsDocAccessFields_base64_Delete {
+  permission: Boolean!
+}
+
+type IconsDocAccessFields_base64_Read {
+  permission: Boolean!
+}
+
+type IconsDocAccessFields_base64_Update {
   permission: Boolean!
 }
 
@@ -9859,6 +9465,7 @@ type IconsDocAccessFields_width_Update {
 
 type IconsFields {
   alt: IconsFields_alt
+  base64: IconsFields_base64
   createdAt: IconsFields_createdAt
   filename: IconsFields_filename
   filesize: IconsFields_filesize
@@ -9890,6 +9497,29 @@ type IconsFields_alt_Read {
 }
 
 type IconsFields_alt_Update {
+  permission: Boolean!
+}
+
+type IconsFields_base64 {
+  create: IconsFields_base64_Create
+  delete: IconsFields_base64_Delete
+  read: IconsFields_base64_Read
+  update: IconsFields_base64_Update
+}
+
+type IconsFields_base64_Create {
+  permission: Boolean!
+}
+
+type IconsFields_base64_Delete {
+  permission: Boolean!
+}
+
+type IconsFields_base64_Read {
+  permission: Boolean!
+}
+
+type IconsFields_base64_Update {
   permission: Boolean!
 }
 
@@ -10298,6 +9928,7 @@ type IconsUpdateDocAccess {
 
 type Image {
   alt: String!
+  base64: String
   createdAt: DateTime
   filename: String
   filesize: Float
@@ -10333,6 +9964,17 @@ input Image_alt_operator {
   not_in: [String]
 }
 
+input Image_base64_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
 input Image_createdAt_operator {
   equals: DateTime
   exists: Boolean
@@ -10356,23 +9998,23 @@ input Image_filename_operator {
 }
 
 input Image_filesize_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Image_height_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Image_id_operator {
@@ -10409,23 +10051,23 @@ input Image_sizes__thumbnail__filename_operator {
 }
 
 input Image_sizes__thumbnail__filesize_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Image_sizes__thumbnail__height_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Image_sizes__thumbnail__mimeType_operator {
@@ -10451,13 +10093,13 @@ input Image_sizes__thumbnail__url_operator {
 }
 
 input Image_sizes__thumbnail__width_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Image_updatedAt_operator {
@@ -10486,6 +10128,7 @@ input Image_where {
   AND: [Image_where_and]
   OR: [Image_where_or]
   alt: Image_alt_operator
+  base64: Image_base64_operator
   createdAt: Image_createdAt_operator
   filename: Image_filename_operator
   filesize: Image_filesize_operator
@@ -10505,6 +10148,7 @@ input Image_where {
 
 input Image_where_and {
   alt: Image_alt_operator
+  base64: Image_base64_operator
   createdAt: Image_createdAt_operator
   filename: Image_filename_operator
   filesize: Image_filesize_operator
@@ -10524,6 +10168,7 @@ input Image_where_and {
 
 input Image_where_or {
   alt: Image_alt_operator
+  base64: Image_base64_operator
   createdAt: Image_createdAt_operator
   filename: Image_filename_operator
   filesize: Image_filesize_operator
@@ -10542,13 +10187,13 @@ input Image_where_or {
 }
 
 input Image_width_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 type Images {
@@ -10587,6 +10232,7 @@ type ImagesDeleteDocAccess {
 
 type ImagesDocAccessFields {
   alt: ImagesDocAccessFields_alt
+  base64: ImagesDocAccessFields_base64
   createdAt: ImagesDocAccessFields_createdAt
   filename: ImagesDocAccessFields_filename
   filesize: ImagesDocAccessFields_filesize
@@ -10618,6 +10264,29 @@ type ImagesDocAccessFields_alt_Read {
 }
 
 type ImagesDocAccessFields_alt_Update {
+  permission: Boolean!
+}
+
+type ImagesDocAccessFields_base64 {
+  create: ImagesDocAccessFields_base64_Create
+  delete: ImagesDocAccessFields_base64_Delete
+  read: ImagesDocAccessFields_base64_Read
+  update: ImagesDocAccessFields_base64_Update
+}
+
+type ImagesDocAccessFields_base64_Create {
+  permission: Boolean!
+}
+
+type ImagesDocAccessFields_base64_Delete {
+  permission: Boolean!
+}
+
+type ImagesDocAccessFields_base64_Read {
+  permission: Boolean!
+}
+
+type ImagesDocAccessFields_base64_Update {
   permission: Boolean!
 }
 
@@ -11006,6 +10675,7 @@ type ImagesDocAccessFields_width_Update {
 
 type ImagesFields {
   alt: ImagesFields_alt
+  base64: ImagesFields_base64
   createdAt: ImagesFields_createdAt
   filename: ImagesFields_filename
   filesize: ImagesFields_filesize
@@ -11037,6 +10707,29 @@ type ImagesFields_alt_Read {
 }
 
 type ImagesFields_alt_Update {
+  permission: Boolean!
+}
+
+type ImagesFields_base64 {
+  create: ImagesFields_base64_Create
+  delete: ImagesFields_base64_Delete
+  read: ImagesFields_base64_Read
+  update: ImagesFields_base64_Update
+}
+
+type ImagesFields_base64_Create {
+  permission: Boolean!
+}
+
+type ImagesFields_base64_Delete {
+  permission: Boolean!
+}
+
+type ImagesFields_base64_Read {
+  permission: Boolean!
+}
+
+type ImagesFields_base64_Update {
   permission: Boolean!
 }
 
@@ -11613,12 +11306,11 @@ enum Page_pageSections__gridColor_Input {
 }
 
 input Page_pageSections__gridColor_operator {
-  all: [Page_pageSections__gridColor_Input]
+  contains: Page_pageSections__gridColor_Input
   equals: Page_pageSections__gridColor_Input
   exists: Boolean
-  in: [Page_pageSections__gridColor_Input]
+  like: Page_pageSections__gridColor_Input
   not_equals: Page_pageSections__gridColor_Input
-  not_in: [Page_pageSections__gridColor_Input]
 }
 
 input Page_pageSections__id_operator {
@@ -11663,12 +11355,11 @@ enum Page_pageSections__shapes__location_Input {
 }
 
 input Page_pageSections__shapes__location_operator {
-  all: [Page_pageSections__shapes__location_Input]
+  contains: Page_pageSections__shapes__location_Input
   equals: Page_pageSections__shapes__location_Input
   exists: Boolean
-  in: [Page_pageSections__shapes__location_Input]
+  like: Page_pageSections__shapes__location_Input
   not_equals: Page_pageSections__shapes__location_Input
-  not_in: [Page_pageSections__shapes__location_Input]
 }
 
 enum Page_pageSections__shapes__shape_Input {
@@ -11677,12 +11368,11 @@ enum Page_pageSections__shapes__shape_Input {
 }
 
 input Page_pageSections__shapes__shape_operator {
-  all: [Page_pageSections__shapes__shape_Input]
+  contains: Page_pageSections__shapes__shape_Input
   equals: Page_pageSections__shapes__shape_Input
   exists: Boolean
-  in: [Page_pageSections__shapes__shape_Input]
+  like: Page_pageSections__shapes__shape_Input
   not_equals: Page_pageSections__shapes__shape_Input
-  not_in: [Page_pageSections__shapes__shape_Input]
 }
 
 input Page_slug_operator {
@@ -12590,7 +12280,6 @@ type ProcessBlock {
 type Process_Steps {
   content(depth: Int): JSON
   heading: String
-  headingTag: String
   id: String
 }
 
@@ -12642,16 +12331,6 @@ input Process_steps__content_operator {
   not_equals: JSON
 }
 
-input Process_steps__headingTag_operator {
-  all: [String]
-  contains: String
-  equals: String
-  in: [String]
-  like: String
-  not_equals: String
-  not_in: [String]
-}
-
 input Process_steps__heading_operator {
   all: [String]
   contains: String
@@ -12693,7 +12372,6 @@ input Process_where {
   internalName: Process_internalName_operator
   steps__content: Process_steps__content_operator
   steps__heading: Process_steps__heading_operator
-  steps__headingTag: Process_steps__headingTag_operator
   steps__id: Process_steps__id_operator
   updatedAt: Process_updatedAt_operator
 }
@@ -12705,7 +12383,6 @@ input Process_where_and {
   internalName: Process_internalName_operator
   steps__content: Process_steps__content_operator
   steps__heading: Process_steps__heading_operator
-  steps__headingTag: Process_steps__headingTag_operator
   steps__id: Process_steps__id_operator
   updatedAt: Process_updatedAt_operator
 }
@@ -12717,7 +12394,6 @@ input Process_where_or {
   internalName: Process_internalName_operator
   steps__content: Process_steps__content_operator
   steps__heading: Process_steps__heading_operator
-  steps__headingTag: Process_steps__headingTag_operator
   steps__id: Process_steps__id_operator
   updatedAt: Process_updatedAt_operator
 }
@@ -12852,7 +12528,6 @@ type ProcessesDocAccessFields_steps_Delete {
 type ProcessesDocAccessFields_steps_Fields {
   content: ProcessesDocAccessFields_steps_content
   heading: ProcessesDocAccessFields_steps_heading
-  headingTag: ProcessesDocAccessFields_steps_headingTag
   id: ProcessesDocAccessFields_steps_id
 }
 
@@ -12892,29 +12567,6 @@ type ProcessesDocAccessFields_steps_heading {
   delete: ProcessesDocAccessFields_steps_heading_Delete
   read: ProcessesDocAccessFields_steps_heading_Read
   update: ProcessesDocAccessFields_steps_heading_Update
-}
-
-type ProcessesDocAccessFields_steps_headingTag {
-  create: ProcessesDocAccessFields_steps_headingTag_Create
-  delete: ProcessesDocAccessFields_steps_headingTag_Delete
-  read: ProcessesDocAccessFields_steps_headingTag_Read
-  update: ProcessesDocAccessFields_steps_headingTag_Update
-}
-
-type ProcessesDocAccessFields_steps_headingTag_Create {
-  permission: Boolean!
-}
-
-type ProcessesDocAccessFields_steps_headingTag_Delete {
-  permission: Boolean!
-}
-
-type ProcessesDocAccessFields_steps_headingTag_Read {
-  permission: Boolean!
-}
-
-type ProcessesDocAccessFields_steps_headingTag_Update {
-  permission: Boolean!
 }
 
 type ProcessesDocAccessFields_steps_heading_Create {
@@ -13075,7 +12727,6 @@ type ProcessesFields_steps_Delete {
 type ProcessesFields_steps_Fields {
   content: ProcessesFields_steps_content
   heading: ProcessesFields_steps_heading
-  headingTag: ProcessesFields_steps_headingTag
   id: ProcessesFields_steps_id
 }
 
@@ -13115,29 +12766,6 @@ type ProcessesFields_steps_heading {
   delete: ProcessesFields_steps_heading_Delete
   read: ProcessesFields_steps_heading_Read
   update: ProcessesFields_steps_heading_Update
-}
-
-type ProcessesFields_steps_headingTag {
-  create: ProcessesFields_steps_headingTag_Create
-  delete: ProcessesFields_steps_headingTag_Delete
-  read: ProcessesFields_steps_headingTag_Read
-  update: ProcessesFields_steps_headingTag_Update
-}
-
-type ProcessesFields_steps_headingTag_Create {
-  permission: Boolean!
-}
-
-type ProcessesFields_steps_headingTag_Delete {
-  permission: Boolean!
-}
-
-type ProcessesFields_steps_headingTag_Read {
-  permission: Boolean!
-}
-
-type ProcessesFields_steps_headingTag_Update {
-  permission: Boolean!
 }
 
 type ProcessesFields_steps_heading_Create {
@@ -13297,7 +12925,6 @@ type Special {
   content(depth: Int): JSON
   createdAt: DateTime
   heading: String!
-  headingTag: String!
   id: String
   sideBox(depth: Int): JSON
   subheading: String
@@ -13329,16 +12956,6 @@ input Special_createdAt_operator {
   less_than_equal: DateTime
   like: DateTime
   not_equals: DateTime
-}
-
-input Special_headingTag_operator {
-  all: [String]
-  contains: String
-  equals: String
-  in: [String]
-  like: String
-  not_equals: String
-  not_in: [String]
 }
 
 input Special_heading_operator {
@@ -13406,7 +13023,6 @@ input Special_where {
   content: Special_content_operator
   createdAt: Special_createdAt_operator
   heading: Special_heading_operator
-  headingTag: Special_headingTag_operator
   id: Special_id_operator
   sideBox: Special_sideBox_operator
   subheading: Special_subheading_operator
@@ -13418,7 +13034,6 @@ input Special_where_and {
   content: Special_content_operator
   createdAt: Special_createdAt_operator
   heading: Special_heading_operator
-  headingTag: Special_headingTag_operator
   id: Special_id_operator
   sideBox: Special_sideBox_operator
   subheading: Special_subheading_operator
@@ -13430,7 +13045,6 @@ input Special_where_or {
   content: Special_content_operator
   createdAt: Special_createdAt_operator
   heading: Special_heading_operator
-  headingTag: Special_headingTag_operator
   id: Special_id_operator
   sideBox: Special_sideBox_operator
   subheading: Special_subheading_operator
@@ -13476,7 +13090,6 @@ type SpecialsDocAccessFields {
   content: SpecialsDocAccessFields_content
   createdAt: SpecialsDocAccessFields_createdAt
   heading: SpecialsDocAccessFields_heading
-  headingTag: SpecialsDocAccessFields_headingTag
   sideBox: SpecialsDocAccessFields_sideBox
   subheading: SpecialsDocAccessFields_subheading
   textGrid: SpecialsDocAccessFields_textGrid
@@ -13534,29 +13147,6 @@ type SpecialsDocAccessFields_heading {
   delete: SpecialsDocAccessFields_heading_Delete
   read: SpecialsDocAccessFields_heading_Read
   update: SpecialsDocAccessFields_heading_Update
-}
-
-type SpecialsDocAccessFields_headingTag {
-  create: SpecialsDocAccessFields_headingTag_Create
-  delete: SpecialsDocAccessFields_headingTag_Delete
-  read: SpecialsDocAccessFields_headingTag_Read
-  update: SpecialsDocAccessFields_headingTag_Update
-}
-
-type SpecialsDocAccessFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type SpecialsDocAccessFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type SpecialsDocAccessFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type SpecialsDocAccessFields_headingTag_Update {
-  permission: Boolean!
 }
 
 type SpecialsDocAccessFields_heading_Create {
@@ -13671,7 +13261,6 @@ type SpecialsFields {
   content: SpecialsFields_content
   createdAt: SpecialsFields_createdAt
   heading: SpecialsFields_heading
-  headingTag: SpecialsFields_headingTag
   sideBox: SpecialsFields_sideBox
   subheading: SpecialsFields_subheading
   textGrid: SpecialsFields_textGrid
@@ -13729,29 +13318,6 @@ type SpecialsFields_heading {
   delete: SpecialsFields_heading_Delete
   read: SpecialsFields_heading_Read
   update: SpecialsFields_heading_Update
-}
-
-type SpecialsFields_headingTag {
-  create: SpecialsFields_headingTag_Create
-  delete: SpecialsFields_headingTag_Delete
-  read: SpecialsFields_headingTag_Read
-  update: SpecialsFields_headingTag_Update
-}
-
-type SpecialsFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type SpecialsFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type SpecialsFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type SpecialsFields_headingTag_Update {
-  permission: Boolean!
 }
 
 type SpecialsFields_heading_Create {
@@ -13887,7 +13453,6 @@ type Switchback {
   content(depth: Int): JSON
   createdAt: DateTime
   heading: String
-  headingTag: String
   id: String
   image(where: Switchback_Image_where): Image!
   imageSide: Switchback_imageSide!
@@ -13906,6 +13471,17 @@ input Switchback_Image_alt_operator {
   all: [String]
   contains: String
   equals: String
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input Switchback_Image_base64_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
   in: [String]
   like: String
   not_equals: String
@@ -13935,23 +13511,23 @@ input Switchback_Image_filename_operator {
 }
 
 input Switchback_Image_filesize_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Switchback_Image_height_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Switchback_Image_id_operator {
@@ -13988,23 +13564,23 @@ input Switchback_Image_sizes__thumbnail__filename_operator {
 }
 
 input Switchback_Image_sizes__thumbnail__filesize_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Switchback_Image_sizes__thumbnail__height_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Switchback_Image_sizes__thumbnail__mimeType_operator {
@@ -14030,13 +13606,13 @@ input Switchback_Image_sizes__thumbnail__url_operator {
 }
 
 input Switchback_Image_sizes__thumbnail__width_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Switchback_Image_updatedAt_operator {
@@ -14065,6 +13641,7 @@ input Switchback_Image_where {
   AND: [Switchback_Image_where_and]
   OR: [Switchback_Image_where_or]
   alt: Switchback_Image_alt_operator
+  base64: Switchback_Image_base64_operator
   createdAt: Switchback_Image_createdAt_operator
   filename: Switchback_Image_filename_operator
   filesize: Switchback_Image_filesize_operator
@@ -14084,6 +13661,7 @@ input Switchback_Image_where {
 
 input Switchback_Image_where_and {
   alt: Switchback_Image_alt_operator
+  base64: Switchback_Image_base64_operator
   createdAt: Switchback_Image_createdAt_operator
   filename: Switchback_Image_filename_operator
   filesize: Switchback_Image_filesize_operator
@@ -14103,6 +13681,7 @@ input Switchback_Image_where_and {
 
 input Switchback_Image_where_or {
   alt: Switchback_Image_alt_operator
+  base64: Switchback_Image_base64_operator
   createdAt: Switchback_Image_createdAt_operator
   filename: Switchback_Image_filename_operator
   filesize: Switchback_Image_filesize_operator
@@ -14121,13 +13700,13 @@ input Switchback_Image_where_or {
 }
 
 input Switchback_Image_width_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Switchback_callToAction_operator {
@@ -14156,17 +13735,6 @@ input Switchback_createdAt_operator {
   less_than_equal: DateTime
   like: DateTime
   not_equals: DateTime
-}
-
-input Switchback_headingTag_operator {
-  all: [String]
-  contains: String
-  equals: String
-  exists: Boolean
-  in: [String]
-  like: String
-  not_equals: String
-  not_in: [String]
 }
 
 input Switchback_heading_operator {
@@ -14202,11 +13770,10 @@ enum Switchback_imageSide_Input {
 }
 
 input Switchback_imageSide_operator {
-  all: [Switchback_imageSide_Input]
+  contains: Switchback_imageSide_Input
   equals: Switchback_imageSide_Input
-  in: [Switchback_imageSide_Input]
+  like: Switchback_imageSide_Input
   not_equals: Switchback_imageSide_Input
-  not_in: [Switchback_imageSide_Input]
 }
 
 input Switchback_image_operator {
@@ -14242,7 +13809,6 @@ input Switchback_where {
   content: Switchback_content_operator
   createdAt: Switchback_createdAt_operator
   heading: Switchback_heading_operator
-  headingTag: Switchback_headingTag_operator
   id: Switchback_id_operator
   image: Switchback_image_operator
   imageSide: Switchback_imageSide_operator
@@ -14255,7 +13821,6 @@ input Switchback_where_and {
   content: Switchback_content_operator
   createdAt: Switchback_createdAt_operator
   heading: Switchback_heading_operator
-  headingTag: Switchback_headingTag_operator
   id: Switchback_id_operator
   image: Switchback_image_operator
   imageSide: Switchback_imageSide_operator
@@ -14268,7 +13833,6 @@ input Switchback_where_or {
   content: Switchback_content_operator
   createdAt: Switchback_createdAt_operator
   heading: Switchback_heading_operator
-  headingTag: Switchback_headingTag_operator
   id: Switchback_id_operator
   image: Switchback_image_operator
   imageSide: Switchback_imageSide_operator
@@ -14315,7 +13879,6 @@ type SwitchbacksDocAccessFields {
   content: SwitchbacksDocAccessFields_content
   createdAt: SwitchbacksDocAccessFields_createdAt
   heading: SwitchbacksDocAccessFields_heading
-  headingTag: SwitchbacksDocAccessFields_headingTag
   image: SwitchbacksDocAccessFields_image
   imageSide: SwitchbacksDocAccessFields_imageSide
   internalName: SwitchbacksDocAccessFields_internalName
@@ -14396,29 +13959,6 @@ type SwitchbacksDocAccessFields_heading {
   delete: SwitchbacksDocAccessFields_heading_Delete
   read: SwitchbacksDocAccessFields_heading_Read
   update: SwitchbacksDocAccessFields_heading_Update
-}
-
-type SwitchbacksDocAccessFields_headingTag {
-  create: SwitchbacksDocAccessFields_headingTag_Create
-  delete: SwitchbacksDocAccessFields_headingTag_Delete
-  read: SwitchbacksDocAccessFields_headingTag_Read
-  update: SwitchbacksDocAccessFields_headingTag_Update
-}
-
-type SwitchbacksDocAccessFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type SwitchbacksDocAccessFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type SwitchbacksDocAccessFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type SwitchbacksDocAccessFields_headingTag_Update {
-  permission: Boolean!
 }
 
 type SwitchbacksDocAccessFields_heading_Create {
@@ -14534,7 +14074,6 @@ type SwitchbacksFields {
   content: SwitchbacksFields_content
   createdAt: SwitchbacksFields_createdAt
   heading: SwitchbacksFields_heading
-  headingTag: SwitchbacksFields_headingTag
   image: SwitchbacksFields_image
   imageSide: SwitchbacksFields_imageSide
   internalName: SwitchbacksFields_internalName
@@ -14615,29 +14154,6 @@ type SwitchbacksFields_heading {
   delete: SwitchbacksFields_heading_Delete
   read: SwitchbacksFields_heading_Read
   update: SwitchbacksFields_heading_Update
-}
-
-type SwitchbacksFields_headingTag {
-  create: SwitchbacksFields_headingTag_Create
-  delete: SwitchbacksFields_headingTag_Delete
-  read: SwitchbacksFields_headingTag_Read
-  update: SwitchbacksFields_headingTag_Update
-}
-
-type SwitchbacksFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type SwitchbacksFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type SwitchbacksFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type SwitchbacksFields_headingTag_Update {
-  permission: Boolean!
 }
 
 type SwitchbacksFields_heading_Create {
@@ -14773,7 +14289,6 @@ type TextGrid {
   content(depth: Int): JSON
   createdAt: DateTime
   heading: String
-  headingTag: String
   id: String
   internalName: String!
   textTiles: [TextGrid_TextTiles!]
@@ -14818,17 +14333,6 @@ input TextGrid_createdAt_operator {
   less_than_equal: DateTime
   like: DateTime
   not_equals: DateTime
-}
-
-input TextGrid_headingTag_operator {
-  all: [String]
-  contains: String
-  equals: String
-  exists: Boolean
-  in: [String]
-  like: String
-  not_equals: String
-  not_in: [String]
 }
 
 input TextGrid_heading_operator {
@@ -14903,7 +14407,6 @@ input TextGrid_where {
   content: TextGrid_content_operator
   createdAt: TextGrid_createdAt_operator
   heading: TextGrid_heading_operator
-  headingTag: TextGrid_headingTag_operator
   id: TextGrid_id_operator
   internalName: TextGrid_internalName_operator
   textTiles__id: TextGrid_textTiles__id_operator
@@ -14916,7 +14419,6 @@ input TextGrid_where_and {
   content: TextGrid_content_operator
   createdAt: TextGrid_createdAt_operator
   heading: TextGrid_heading_operator
-  headingTag: TextGrid_headingTag_operator
   id: TextGrid_id_operator
   internalName: TextGrid_internalName_operator
   textTiles__id: TextGrid_textTiles__id_operator
@@ -14929,7 +14431,6 @@ input TextGrid_where_or {
   content: TextGrid_content_operator
   createdAt: TextGrid_createdAt_operator
   heading: TextGrid_heading_operator
-  headingTag: TextGrid_headingTag_operator
   id: TextGrid_id_operator
   internalName: TextGrid_internalName_operator
   textTiles__id: TextGrid_textTiles__id_operator
@@ -14976,7 +14477,6 @@ type TextGridsDocAccessFields {
   content: TextGridsDocAccessFields_content
   createdAt: TextGridsDocAccessFields_createdAt
   heading: TextGridsDocAccessFields_heading
-  headingTag: TextGridsDocAccessFields_headingTag
   internalName: TextGridsDocAccessFields_internalName
   textTiles: TextGridsDocAccessFields_textTiles
   updatedAt: TextGridsDocAccessFields_updatedAt
@@ -15056,29 +14556,6 @@ type TextGridsDocAccessFields_heading {
   delete: TextGridsDocAccessFields_heading_Delete
   read: TextGridsDocAccessFields_heading_Read
   update: TextGridsDocAccessFields_heading_Update
-}
-
-type TextGridsDocAccessFields_headingTag {
-  create: TextGridsDocAccessFields_headingTag_Create
-  delete: TextGridsDocAccessFields_headingTag_Delete
-  read: TextGridsDocAccessFields_headingTag_Read
-  update: TextGridsDocAccessFields_headingTag_Update
-}
-
-type TextGridsDocAccessFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type TextGridsDocAccessFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type TextGridsDocAccessFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type TextGridsDocAccessFields_headingTag_Update {
-  permission: Boolean!
 }
 
 type TextGridsDocAccessFields_heading_Create {
@@ -15223,7 +14700,6 @@ type TextGridsFields {
   content: TextGridsFields_content
   createdAt: TextGridsFields_createdAt
   heading: TextGridsFields_heading
-  headingTag: TextGridsFields_headingTag
   internalName: TextGridsFields_internalName
   textTiles: TextGridsFields_textTiles
   updatedAt: TextGridsFields_updatedAt
@@ -15303,29 +14779,6 @@ type TextGridsFields_heading {
   delete: TextGridsFields_heading_Delete
   read: TextGridsFields_heading_Read
   update: TextGridsFields_heading_Update
-}
-
-type TextGridsFields_headingTag {
-  create: TextGridsFields_headingTag_Create
-  delete: TextGridsFields_headingTag_Delete
-  read: TextGridsFields_headingTag_Read
-  update: TextGridsFields_headingTag_Update
-}
-
-type TextGridsFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type TextGridsFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type TextGridsFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type TextGridsFields_headingTag_Update {
-  permission: Boolean!
 }
 
 type TextGridsFields_heading_Create {
@@ -15490,7 +14943,6 @@ type TileGrid {
   content(depth: Int): JSON
   createdAt: DateTime
   heading: String!
-  headingTag: String!
   id: String
   tiles: [TileGrid_Tiles!]
   updatedAt: DateTime
@@ -15506,7 +14958,6 @@ type TileGridBlock {
 type TileGrid_Tiles {
   content(depth: Int): JSON
   heading: String
-  headingTag: String
   id: String
 }
 
@@ -15538,16 +14989,6 @@ input TileGrid_createdAt_operator {
   not_equals: DateTime
 }
 
-input TileGrid_headingTag_operator {
-  all: [String]
-  contains: String
-  equals: String
-  in: [String]
-  like: String
-  not_equals: String
-  not_in: [String]
-}
-
 input TileGrid_heading_operator {
   all: [String]
   contains: String
@@ -15575,17 +15016,6 @@ input TileGrid_tiles__content_operator {
   exists: Boolean
   like: JSON
   not_equals: JSON
-}
-
-input TileGrid_tiles__headingTag_operator {
-  all: [String]
-  contains: String
-  equals: String
-  exists: Boolean
-  in: [String]
-  like: String
-  not_equals: String
-  not_in: [String]
 }
 
 input TileGrid_tiles__heading_operator {
@@ -15628,11 +15058,9 @@ input TileGrid_where {
   content: TileGrid_content_operator
   createdAt: TileGrid_createdAt_operator
   heading: TileGrid_heading_operator
-  headingTag: TileGrid_headingTag_operator
   id: TileGrid_id_operator
   tiles__content: TileGrid_tiles__content_operator
   tiles__heading: TileGrid_tiles__heading_operator
-  tiles__headingTag: TileGrid_tiles__headingTag_operator
   tiles__id: TileGrid_tiles__id_operator
   updatedAt: TileGrid_updatedAt_operator
 }
@@ -15642,11 +15070,9 @@ input TileGrid_where_and {
   content: TileGrid_content_operator
   createdAt: TileGrid_createdAt_operator
   heading: TileGrid_heading_operator
-  headingTag: TileGrid_headingTag_operator
   id: TileGrid_id_operator
   tiles__content: TileGrid_tiles__content_operator
   tiles__heading: TileGrid_tiles__heading_operator
-  tiles__headingTag: TileGrid_tiles__headingTag_operator
   tiles__id: TileGrid_tiles__id_operator
   updatedAt: TileGrid_updatedAt_operator
 }
@@ -15656,11 +15082,9 @@ input TileGrid_where_or {
   content: TileGrid_content_operator
   createdAt: TileGrid_createdAt_operator
   heading: TileGrid_heading_operator
-  headingTag: TileGrid_headingTag_operator
   id: TileGrid_id_operator
   tiles__content: TileGrid_tiles__content_operator
   tiles__heading: TileGrid_tiles__heading_operator
-  tiles__headingTag: TileGrid_tiles__headingTag_operator
   tiles__id: TileGrid_tiles__id_operator
   updatedAt: TileGrid_updatedAt_operator
 }
@@ -15704,7 +15128,6 @@ type TileGridsDocAccessFields {
   content: TileGridsDocAccessFields_content
   createdAt: TileGridsDocAccessFields_createdAt
   heading: TileGridsDocAccessFields_heading
-  headingTag: TileGridsDocAccessFields_headingTag
   tiles: TileGridsDocAccessFields_tiles
   updatedAt: TileGridsDocAccessFields_updatedAt
 }
@@ -15785,29 +15208,6 @@ type TileGridsDocAccessFields_heading {
   update: TileGridsDocAccessFields_heading_Update
 }
 
-type TileGridsDocAccessFields_headingTag {
-  create: TileGridsDocAccessFields_headingTag_Create
-  delete: TileGridsDocAccessFields_headingTag_Delete
-  read: TileGridsDocAccessFields_headingTag_Read
-  update: TileGridsDocAccessFields_headingTag_Update
-}
-
-type TileGridsDocAccessFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type TileGridsDocAccessFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type TileGridsDocAccessFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type TileGridsDocAccessFields_headingTag_Update {
-  permission: Boolean!
-}
-
 type TileGridsDocAccessFields_heading_Create {
   permission: Boolean!
 }
@@ -15843,7 +15243,6 @@ type TileGridsDocAccessFields_tiles_Delete {
 type TileGridsDocAccessFields_tiles_Fields {
   content: TileGridsDocAccessFields_tiles_content
   heading: TileGridsDocAccessFields_tiles_heading
-  headingTag: TileGridsDocAccessFields_tiles_headingTag
   id: TileGridsDocAccessFields_tiles_id
 }
 
@@ -15883,29 +15282,6 @@ type TileGridsDocAccessFields_tiles_heading {
   delete: TileGridsDocAccessFields_tiles_heading_Delete
   read: TileGridsDocAccessFields_tiles_heading_Read
   update: TileGridsDocAccessFields_tiles_heading_Update
-}
-
-type TileGridsDocAccessFields_tiles_headingTag {
-  create: TileGridsDocAccessFields_tiles_headingTag_Create
-  delete: TileGridsDocAccessFields_tiles_headingTag_Delete
-  read: TileGridsDocAccessFields_tiles_headingTag_Read
-  update: TileGridsDocAccessFields_tiles_headingTag_Update
-}
-
-type TileGridsDocAccessFields_tiles_headingTag_Create {
-  permission: Boolean!
-}
-
-type TileGridsDocAccessFields_tiles_headingTag_Delete {
-  permission: Boolean!
-}
-
-type TileGridsDocAccessFields_tiles_headingTag_Read {
-  permission: Boolean!
-}
-
-type TileGridsDocAccessFields_tiles_headingTag_Update {
-  permission: Boolean!
 }
 
 type TileGridsDocAccessFields_tiles_heading_Create {
@@ -15975,7 +15351,6 @@ type TileGridsFields {
   content: TileGridsFields_content
   createdAt: TileGridsFields_createdAt
   heading: TileGridsFields_heading
-  headingTag: TileGridsFields_headingTag
   tiles: TileGridsFields_tiles
   updatedAt: TileGridsFields_updatedAt
 }
@@ -16056,29 +15431,6 @@ type TileGridsFields_heading {
   update: TileGridsFields_heading_Update
 }
 
-type TileGridsFields_headingTag {
-  create: TileGridsFields_headingTag_Create
-  delete: TileGridsFields_headingTag_Delete
-  read: TileGridsFields_headingTag_Read
-  update: TileGridsFields_headingTag_Update
-}
-
-type TileGridsFields_headingTag_Create {
-  permission: Boolean!
-}
-
-type TileGridsFields_headingTag_Delete {
-  permission: Boolean!
-}
-
-type TileGridsFields_headingTag_Read {
-  permission: Boolean!
-}
-
-type TileGridsFields_headingTag_Update {
-  permission: Boolean!
-}
-
 type TileGridsFields_heading_Create {
   permission: Boolean!
 }
@@ -16114,7 +15466,6 @@ type TileGridsFields_tiles_Delete {
 type TileGridsFields_tiles_Fields {
   content: TileGridsFields_tiles_content
   heading: TileGridsFields_tiles_heading
-  headingTag: TileGridsFields_tiles_headingTag
   id: TileGridsFields_tiles_id
 }
 
@@ -16154,29 +15505,6 @@ type TileGridsFields_tiles_heading {
   delete: TileGridsFields_tiles_heading_Delete
   read: TileGridsFields_tiles_heading_Read
   update: TileGridsFields_tiles_heading_Update
-}
-
-type TileGridsFields_tiles_headingTag {
-  create: TileGridsFields_tiles_headingTag_Create
-  delete: TileGridsFields_tiles_headingTag_Delete
-  read: TileGridsFields_tiles_headingTag_Read
-  update: TileGridsFields_tiles_headingTag_Update
-}
-
-type TileGridsFields_tiles_headingTag_Create {
-  permission: Boolean!
-}
-
-type TileGridsFields_tiles_headingTag_Delete {
-  permission: Boolean!
-}
-
-type TileGridsFields_tiles_headingTag_Read {
-  permission: Boolean!
-}
-
-type TileGridsFields_tiles_headingTag_Update {
-  permission: Boolean!
 }
 
 type TileGridsFields_tiles_heading_Create {
@@ -16744,6 +16072,17 @@ input Video_PlaceholderImage_alt_operator {
   not_in: [String]
 }
 
+input Video_PlaceholderImage_base64_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
 input Video_PlaceholderImage_createdAt_operator {
   equals: DateTime
   exists: Boolean
@@ -16767,23 +16106,23 @@ input Video_PlaceholderImage_filename_operator {
 }
 
 input Video_PlaceholderImage_filesize_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Video_PlaceholderImage_height_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Video_PlaceholderImage_id_operator {
@@ -16820,23 +16159,23 @@ input Video_PlaceholderImage_sizes__thumbnail__filename_operator {
 }
 
 input Video_PlaceholderImage_sizes__thumbnail__filesize_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Video_PlaceholderImage_sizes__thumbnail__height_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Video_PlaceholderImage_sizes__thumbnail__mimeType_operator {
@@ -16862,13 +16201,13 @@ input Video_PlaceholderImage_sizes__thumbnail__url_operator {
 }
 
 input Video_PlaceholderImage_sizes__thumbnail__width_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Video_PlaceholderImage_updatedAt_operator {
@@ -16897,6 +16236,7 @@ input Video_PlaceholderImage_where {
   AND: [Video_PlaceholderImage_where_and]
   OR: [Video_PlaceholderImage_where_or]
   alt: Video_PlaceholderImage_alt_operator
+  base64: Video_PlaceholderImage_base64_operator
   createdAt: Video_PlaceholderImage_createdAt_operator
   filename: Video_PlaceholderImage_filename_operator
   filesize: Video_PlaceholderImage_filesize_operator
@@ -16916,6 +16256,7 @@ input Video_PlaceholderImage_where {
 
 input Video_PlaceholderImage_where_and {
   alt: Video_PlaceholderImage_alt_operator
+  base64: Video_PlaceholderImage_base64_operator
   createdAt: Video_PlaceholderImage_createdAt_operator
   filename: Video_PlaceholderImage_filename_operator
   filesize: Video_PlaceholderImage_filesize_operator
@@ -16935,6 +16276,7 @@ input Video_PlaceholderImage_where_and {
 
 input Video_PlaceholderImage_where_or {
   alt: Video_PlaceholderImage_alt_operator
+  base64: Video_PlaceholderImage_base64_operator
   createdAt: Video_PlaceholderImage_createdAt_operator
   filename: Video_PlaceholderImage_filename_operator
   filesize: Video_PlaceholderImage_filesize_operator
@@ -16953,13 +16295,13 @@ input Video_PlaceholderImage_where_or {
 }
 
 input Video_PlaceholderImage_width_operator {
-  equals: Int
+  equals: Float
   exists: Boolean
-  greater_than: Int
-  greater_than_equal: Int
-  less_than: Int
-  less_than_equal: Int
-  not_equals: Int
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 input Video_createdAt_operator {
@@ -17569,7 +16911,6 @@ input mutationAccordionInput {
   accordionItems: [mutationAccordion_AccordionItemsInput]
   createdAt: String
   heading: String!
-  headingTag: String!
   updatedAt: String
 }
 
@@ -17577,21 +16918,18 @@ input mutationAccordionUpdateInput {
   accordionItems: [mutationAccordionUpdate_AccordionItemsInput]
   createdAt: String
   heading: String
-  headingTag: String
   updatedAt: String
 }
 
 input mutationAccordionUpdate_AccordionItemsInput {
   content: JSON
   heading: String
-  headingTag: String
   id: String
 }
 
 input mutationAccordion_AccordionItemsInput {
   content: JSON
   heading: String
-  headingTag: String
   id: String
 }
 
@@ -17622,7 +16960,6 @@ input mutationConversionPanelInput {
   content: JSON
   createdAt: String
   heading: String!
-  headingTag: String!
   updatedAt: String
 }
 
@@ -17631,7 +16968,6 @@ input mutationConversionPanelUpdateInput {
   content: JSON
   createdAt: String
   heading: String
-  headingTag: String
   updatedAt: String
 }
 
@@ -17661,7 +16997,6 @@ input mutationFeatureGridInput {
   createdAt: String
   featureTiles: [String]
   heading: String
-  headingTag: String
   internalName: String!
   updatedAt: String
 }
@@ -17670,7 +17005,6 @@ input mutationFeatureGridUpdateInput {
   createdAt: String
   featureTiles: [String]
   heading: String
-  headingTag: String
   internalName: String
   updatedAt: String
 }
@@ -17679,7 +17013,6 @@ input mutationFeatureTileInput {
   content: JSON
   createdAt: String
   heading: String!
-  headingTag: String!
   image: String!
   updatedAt: String
 }
@@ -17688,7 +17021,6 @@ input mutationFeatureTileUpdateInput {
   content: JSON
   createdAt: String
   heading: String
-  headingTag: String
   image: String
   updatedAt: String
 }
@@ -17699,7 +17031,6 @@ input mutationFeaturedMediaInput {
   content: JSON
   createdAt: String
   heading: String!
-  headingTag: String!
   image: String
   updatedAt: String
   video: String
@@ -17711,7 +17042,6 @@ input mutationFeaturedMediaUpdateInput {
   content: JSON
   createdAt: String
   heading: String
-  headingTag: String
   image: String
   updatedAt: String
   video: String
@@ -17785,7 +17115,6 @@ input mutationHeroInput {
   createdAt: String
   cta: mutationHero_CtaInput
   heading: String!
-  headingTag: String!
   subheading: String
   updatedAt: String
 }
@@ -17795,7 +17124,6 @@ input mutationHeroUpdateInput {
   createdAt: String
   cta: mutationHeroUpdate_CtaInput
   heading: String
-  headingTag: String
   subheading: String
   updatedAt: String
 }
@@ -17834,6 +17162,7 @@ input mutationHero_Cta_CtaTilesInput {
 
 input mutationIconInput {
   alt: String!
+  base64: String
   createdAt: String
   filename: String
   filesize: Float
@@ -17850,7 +17179,6 @@ input mutationIconTileGridInput {
   content: JSON
   createdAt: String
   heading: String!
-  headingTag: String!
   iconTiles: [String]
   updatedAt: String
 }
@@ -17860,7 +17188,6 @@ input mutationIconTileGridUpdateInput {
   content: JSON
   createdAt: String
   heading: String
-  headingTag: String
   iconTiles: [String]
   updatedAt: String
 }
@@ -17881,6 +17208,7 @@ input mutationIconTileUpdateInput {
 
 input mutationIconUpdateInput {
   alt: String
+  base64: String
   createdAt: String
   filename: String
   filesize: Float
@@ -17920,6 +17248,7 @@ input mutationIcon_Sizes_ThumbnailInput {
 
 input mutationImageInput {
   alt: String!
+  base64: String
   createdAt: String
   filename: String
   filesize: Float
@@ -17933,6 +17262,7 @@ input mutationImageInput {
 
 input mutationImageUpdateInput {
   alt: String
+  base64: String
   createdAt: String
   filename: String
   filesize: Float
@@ -18037,14 +17367,12 @@ input mutationProcessUpdateInput {
 input mutationProcessUpdate_StepsInput {
   content: JSON
   heading: String!
-  headingTag: String!
   id: String
 }
 
 input mutationProcess_StepsInput {
   content: JSON
   heading: String!
-  headingTag: String!
   id: String
 }
 
@@ -18052,7 +17380,6 @@ input mutationSpecialInput {
   content: JSON
   createdAt: String
   heading: String!
-  headingTag: String!
   sideBox: JSON
   subheading: String
   textGrid: String
@@ -18063,7 +17390,6 @@ input mutationSpecialUpdateInput {
   content: JSON
   createdAt: String
   heading: String
-  headingTag: String
   sideBox: JSON
   subheading: String
   textGrid: String
@@ -18075,7 +17401,6 @@ input mutationSwitchbackInput {
   content: JSON
   createdAt: String
   heading: String
-  headingTag: String
   image: String!
   imageSide: String!
   internalName: String!
@@ -18087,7 +17412,6 @@ input mutationSwitchbackUpdateInput {
   content: JSON
   createdAt: String
   heading: String
-  headingTag: String
   image: String
   imageSide: String
   internalName: String
@@ -18099,7 +17423,6 @@ input mutationTextGridInput {
   content: JSON
   createdAt: String
   heading: String
-  headingTag: String
   internalName: String!
   textTiles: [mutationTextGrid_TextTilesInput]
   updatedAt: String
@@ -18110,7 +17433,6 @@ input mutationTextGridUpdateInput {
   content: JSON
   createdAt: String
   heading: String
-  headingTag: String
   internalName: String
   textTiles: [mutationTextGridUpdate_TextTilesInput]
   updatedAt: String
@@ -18131,7 +17453,6 @@ input mutationTileGridInput {
   content: JSON
   createdAt: String
   heading: String!
-  headingTag: String!
   tiles: [mutationTileGrid_TilesInput]
   updatedAt: String
 }
@@ -18141,7 +17462,6 @@ input mutationTileGridUpdateInput {
   content: JSON
   createdAt: String
   heading: String
-  headingTag: String
   tiles: [mutationTileGridUpdate_TilesInput]
   updatedAt: String
 }
@@ -18149,14 +17469,12 @@ input mutationTileGridUpdateInput {
 input mutationTileGridUpdate_TilesInput {
   content: JSON
   heading: String
-  headingTag: String
   id: String
 }
 
 input mutationTileGrid_TilesInput {
   content: JSON
   heading: String
-  headingTag: String
   id: String
 }
 

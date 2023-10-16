@@ -65,7 +65,6 @@ export type Accordion = {
     accordionItems?: Maybe<Array<Accordion_AccordionItems>>;
     createdAt?: Maybe<Scalars['DateTime']['output']>;
     heading: Scalars['String']['output'];
-    headingTag: Scalars['String']['output'];
     id?: Maybe<Scalars['String']['output']>;
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
@@ -82,7 +81,6 @@ export type Accordion_AccordionItems = {
     __typename?: 'Accordion_AccordionItems';
     content?: Maybe<Scalars['JSON']['output']>;
     heading?: Maybe<Scalars['String']['output']>;
-    headingTag?: Maybe<Scalars['String']['output']>;
     id?: Maybe<Scalars['String']['output']>;
 };
 
@@ -96,17 +94,6 @@ export type Accordion_AccordionItems__Content_Operator = {
     exists?: InputMaybe<Scalars['Boolean']['input']>;
     like?: InputMaybe<Scalars['JSON']['input']>;
     not_equals?: InputMaybe<Scalars['JSON']['input']>;
-};
-
-export type Accordion_AccordionItems__HeadingTag_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    contains?: InputMaybe<Scalars['String']['input']>;
-    equals?: InputMaybe<Scalars['String']['input']>;
-    exists?: InputMaybe<Scalars['Boolean']['input']>;
-    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    like?: InputMaybe<Scalars['String']['input']>;
-    not_equals?: InputMaybe<Scalars['String']['input']>;
-    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Accordion_AccordionItems__Heading_Operator = {
@@ -140,16 +127,6 @@ export type Accordion_CreatedAt_Operator = {
     less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
     like?: InputMaybe<Scalars['DateTime']['input']>;
     not_equals?: InputMaybe<Scalars['DateTime']['input']>;
-};
-
-export type Accordion_HeadingTag_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    contains?: InputMaybe<Scalars['String']['input']>;
-    equals?: InputMaybe<Scalars['String']['input']>;
-    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    like?: InputMaybe<Scalars['String']['input']>;
-    not_equals?: InputMaybe<Scalars['String']['input']>;
-    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Accordion_Heading_Operator = {
@@ -189,11 +166,9 @@ export type Accordion_Where = {
     OR?: InputMaybe<Array<InputMaybe<Accordion_Where_Or>>>;
     accordionItems__content?: InputMaybe<Accordion_AccordionItems__Content_Operator>;
     accordionItems__heading?: InputMaybe<Accordion_AccordionItems__Heading_Operator>;
-    accordionItems__headingTag?: InputMaybe<Accordion_AccordionItems__HeadingTag_Operator>;
     accordionItems__id?: InputMaybe<Accordion_AccordionItems__Id_Operator>;
     createdAt?: InputMaybe<Accordion_CreatedAt_Operator>;
     heading?: InputMaybe<Accordion_Heading_Operator>;
-    headingTag?: InputMaybe<Accordion_HeadingTag_Operator>;
     id?: InputMaybe<Accordion_Id_Operator>;
     updatedAt?: InputMaybe<Accordion_UpdatedAt_Operator>;
 };
@@ -201,11 +176,9 @@ export type Accordion_Where = {
 export type Accordion_Where_And = {
     accordionItems__content?: InputMaybe<Accordion_AccordionItems__Content_Operator>;
     accordionItems__heading?: InputMaybe<Accordion_AccordionItems__Heading_Operator>;
-    accordionItems__headingTag?: InputMaybe<Accordion_AccordionItems__HeadingTag_Operator>;
     accordionItems__id?: InputMaybe<Accordion_AccordionItems__Id_Operator>;
     createdAt?: InputMaybe<Accordion_CreatedAt_Operator>;
     heading?: InputMaybe<Accordion_Heading_Operator>;
-    headingTag?: InputMaybe<Accordion_HeadingTag_Operator>;
     id?: InputMaybe<Accordion_Id_Operator>;
     updatedAt?: InputMaybe<Accordion_UpdatedAt_Operator>;
 };
@@ -213,11 +186,9 @@ export type Accordion_Where_And = {
 export type Accordion_Where_Or = {
     accordionItems__content?: InputMaybe<Accordion_AccordionItems__Content_Operator>;
     accordionItems__heading?: InputMaybe<Accordion_AccordionItems__Heading_Operator>;
-    accordionItems__headingTag?: InputMaybe<Accordion_AccordionItems__HeadingTag_Operator>;
     accordionItems__id?: InputMaybe<Accordion_AccordionItems__Id_Operator>;
     createdAt?: InputMaybe<Accordion_CreatedAt_Operator>;
     heading?: InputMaybe<Accordion_Heading_Operator>;
-    headingTag?: InputMaybe<Accordion_HeadingTag_Operator>;
     id?: InputMaybe<Accordion_Id_Operator>;
     updatedAt?: InputMaybe<Accordion_UpdatedAt_Operator>;
 };
@@ -266,7 +237,6 @@ export type AccordionsDocAccessFields = {
     accordionItems?: Maybe<AccordionsDocAccessFields_AccordionItems>;
     createdAt?: Maybe<AccordionsDocAccessFields_CreatedAt>;
     heading?: Maybe<AccordionsDocAccessFields_Heading>;
-    headingTag?: Maybe<AccordionsDocAccessFields_HeadingTag>;
     updatedAt?: Maybe<AccordionsDocAccessFields_UpdatedAt>;
 };
 
@@ -293,7 +263,6 @@ export type AccordionsDocAccessFields_AccordionItems_Fields = {
     __typename?: 'AccordionsDocAccessFields_accordionItems_Fields';
     content?: Maybe<AccordionsDocAccessFields_AccordionItems_Content>;
     heading?: Maybe<AccordionsDocAccessFields_AccordionItems_Heading>;
-    headingTag?: Maybe<AccordionsDocAccessFields_AccordionItems_HeadingTag>;
     id?: Maybe<AccordionsDocAccessFields_AccordionItems_Id>;
 };
 
@@ -341,34 +310,6 @@ export type AccordionsDocAccessFields_AccordionItems_Heading = {
     delete?: Maybe<AccordionsDocAccessFields_AccordionItems_Heading_Delete>;
     read?: Maybe<AccordionsDocAccessFields_AccordionItems_Heading_Read>;
     update?: Maybe<AccordionsDocAccessFields_AccordionItems_Heading_Update>;
-};
-
-export type AccordionsDocAccessFields_AccordionItems_HeadingTag = {
-    __typename?: 'AccordionsDocAccessFields_accordionItems_headingTag';
-    create?: Maybe<AccordionsDocAccessFields_AccordionItems_HeadingTag_Create>;
-    delete?: Maybe<AccordionsDocAccessFields_AccordionItems_HeadingTag_Delete>;
-    read?: Maybe<AccordionsDocAccessFields_AccordionItems_HeadingTag_Read>;
-    update?: Maybe<AccordionsDocAccessFields_AccordionItems_HeadingTag_Update>;
-};
-
-export type AccordionsDocAccessFields_AccordionItems_HeadingTag_Create = {
-    __typename?: 'AccordionsDocAccessFields_accordionItems_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type AccordionsDocAccessFields_AccordionItems_HeadingTag_Delete = {
-    __typename?: 'AccordionsDocAccessFields_accordionItems_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type AccordionsDocAccessFields_AccordionItems_HeadingTag_Read = {
-    __typename?: 'AccordionsDocAccessFields_accordionItems_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type AccordionsDocAccessFields_AccordionItems_HeadingTag_Update = {
-    __typename?: 'AccordionsDocAccessFields_accordionItems_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type AccordionsDocAccessFields_AccordionItems_Heading_Create = {
@@ -455,34 +396,6 @@ export type AccordionsDocAccessFields_Heading = {
     update?: Maybe<AccordionsDocAccessFields_Heading_Update>;
 };
 
-export type AccordionsDocAccessFields_HeadingTag = {
-    __typename?: 'AccordionsDocAccessFields_headingTag';
-    create?: Maybe<AccordionsDocAccessFields_HeadingTag_Create>;
-    delete?: Maybe<AccordionsDocAccessFields_HeadingTag_Delete>;
-    read?: Maybe<AccordionsDocAccessFields_HeadingTag_Read>;
-    update?: Maybe<AccordionsDocAccessFields_HeadingTag_Update>;
-};
-
-export type AccordionsDocAccessFields_HeadingTag_Create = {
-    __typename?: 'AccordionsDocAccessFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type AccordionsDocAccessFields_HeadingTag_Delete = {
-    __typename?: 'AccordionsDocAccessFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type AccordionsDocAccessFields_HeadingTag_Read = {
-    __typename?: 'AccordionsDocAccessFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type AccordionsDocAccessFields_HeadingTag_Update = {
-    __typename?: 'AccordionsDocAccessFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
-};
-
 export type AccordionsDocAccessFields_Heading_Create = {
     __typename?: 'AccordionsDocAccessFields_heading_Create';
     permission: Scalars['Boolean']['output'];
@@ -536,7 +449,6 @@ export type AccordionsFields = {
     accordionItems?: Maybe<AccordionsFields_AccordionItems>;
     createdAt?: Maybe<AccordionsFields_CreatedAt>;
     heading?: Maybe<AccordionsFields_Heading>;
-    headingTag?: Maybe<AccordionsFields_HeadingTag>;
     updatedAt?: Maybe<AccordionsFields_UpdatedAt>;
 };
 
@@ -563,7 +475,6 @@ export type AccordionsFields_AccordionItems_Fields = {
     __typename?: 'AccordionsFields_accordionItems_Fields';
     content?: Maybe<AccordionsFields_AccordionItems_Content>;
     heading?: Maybe<AccordionsFields_AccordionItems_Heading>;
-    headingTag?: Maybe<AccordionsFields_AccordionItems_HeadingTag>;
     id?: Maybe<AccordionsFields_AccordionItems_Id>;
 };
 
@@ -611,34 +522,6 @@ export type AccordionsFields_AccordionItems_Heading = {
     delete?: Maybe<AccordionsFields_AccordionItems_Heading_Delete>;
     read?: Maybe<AccordionsFields_AccordionItems_Heading_Read>;
     update?: Maybe<AccordionsFields_AccordionItems_Heading_Update>;
-};
-
-export type AccordionsFields_AccordionItems_HeadingTag = {
-    __typename?: 'AccordionsFields_accordionItems_headingTag';
-    create?: Maybe<AccordionsFields_AccordionItems_HeadingTag_Create>;
-    delete?: Maybe<AccordionsFields_AccordionItems_HeadingTag_Delete>;
-    read?: Maybe<AccordionsFields_AccordionItems_HeadingTag_Read>;
-    update?: Maybe<AccordionsFields_AccordionItems_HeadingTag_Update>;
-};
-
-export type AccordionsFields_AccordionItems_HeadingTag_Create = {
-    __typename?: 'AccordionsFields_accordionItems_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type AccordionsFields_AccordionItems_HeadingTag_Delete = {
-    __typename?: 'AccordionsFields_accordionItems_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type AccordionsFields_AccordionItems_HeadingTag_Read = {
-    __typename?: 'AccordionsFields_accordionItems_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type AccordionsFields_AccordionItems_HeadingTag_Update = {
-    __typename?: 'AccordionsFields_accordionItems_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type AccordionsFields_AccordionItems_Heading_Create = {
@@ -723,34 +606,6 @@ export type AccordionsFields_Heading = {
     delete?: Maybe<AccordionsFields_Heading_Delete>;
     read?: Maybe<AccordionsFields_Heading_Read>;
     update?: Maybe<AccordionsFields_Heading_Update>;
-};
-
-export type AccordionsFields_HeadingTag = {
-    __typename?: 'AccordionsFields_headingTag';
-    create?: Maybe<AccordionsFields_HeadingTag_Create>;
-    delete?: Maybe<AccordionsFields_HeadingTag_Delete>;
-    read?: Maybe<AccordionsFields_HeadingTag_Read>;
-    update?: Maybe<AccordionsFields_HeadingTag_Update>;
-};
-
-export type AccordionsFields_HeadingTag_Create = {
-    __typename?: 'AccordionsFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type AccordionsFields_HeadingTag_Delete = {
-    __typename?: 'AccordionsFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type AccordionsFields_HeadingTag_Read = {
-    __typename?: 'AccordionsFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type AccordionsFields_HeadingTag_Update = {
-    __typename?: 'AccordionsFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type AccordionsFields_Heading_Create = {
@@ -851,12 +706,11 @@ export type CallToAction_Color_Input =
     | '%future added value';
 
 export type CallToAction_Color_Operator = {
-    all?: InputMaybe<Array<InputMaybe<CallToAction_Color_Input>>>;
+    contains?: InputMaybe<CallToAction_Color_Input>;
     equals?: InputMaybe<CallToAction_Color_Input>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    in?: InputMaybe<Array<InputMaybe<CallToAction_Color_Input>>>;
+    like?: InputMaybe<CallToAction_Color_Input>;
     not_equals?: InputMaybe<CallToAction_Color_Input>;
-    not_in?: InputMaybe<Array<InputMaybe<CallToAction_Color_Input>>>;
 };
 
 export type CallToAction_CreatedAt_Operator = {
@@ -934,12 +788,11 @@ export type CallToAction_LinkType_Input =
     | '%future added value';
 
 export type CallToAction_LinkType_Operator = {
-    all?: InputMaybe<Array<InputMaybe<CallToAction_LinkType_Input>>>;
+    contains?: InputMaybe<CallToAction_LinkType_Input>;
     equals?: InputMaybe<CallToAction_LinkType_Input>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    in?: InputMaybe<Array<InputMaybe<CallToAction_LinkType_Input>>>;
+    like?: InputMaybe<CallToAction_LinkType_Input>;
     not_equals?: InputMaybe<CallToAction_LinkType_Input>;
-    not_in?: InputMaybe<Array<InputMaybe<CallToAction_LinkType_Input>>>;
 };
 
 export type CallToAction_UpdatedAt_Operator = {
@@ -1590,7 +1443,6 @@ export type ConversionPanel = {
     content?: Maybe<Scalars['JSON']['output']>;
     createdAt?: Maybe<Scalars['DateTime']['output']>;
     heading: Scalars['String']['output'];
-    headingTag: Scalars['String']['output'];
     id?: Maybe<Scalars['String']['output']>;
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
@@ -1634,16 +1486,6 @@ export type ConversionPanel_CreatedAt_Operator = {
     not_equals?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
-export type ConversionPanel_HeadingTag_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    contains?: InputMaybe<Scalars['String']['input']>;
-    equals?: InputMaybe<Scalars['String']['input']>;
-    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    like?: InputMaybe<Scalars['String']['input']>;
-    not_equals?: InputMaybe<Scalars['String']['input']>;
-    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
 export type ConversionPanel_Heading_Operator = {
     all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     contains?: InputMaybe<Scalars['String']['input']>;
@@ -1683,7 +1525,6 @@ export type ConversionPanel_Where = {
     content?: InputMaybe<ConversionPanel_Content_Operator>;
     createdAt?: InputMaybe<ConversionPanel_CreatedAt_Operator>;
     heading?: InputMaybe<ConversionPanel_Heading_Operator>;
-    headingTag?: InputMaybe<ConversionPanel_HeadingTag_Operator>;
     id?: InputMaybe<ConversionPanel_Id_Operator>;
     updatedAt?: InputMaybe<ConversionPanel_UpdatedAt_Operator>;
 };
@@ -1693,7 +1534,6 @@ export type ConversionPanel_Where_And = {
     content?: InputMaybe<ConversionPanel_Content_Operator>;
     createdAt?: InputMaybe<ConversionPanel_CreatedAt_Operator>;
     heading?: InputMaybe<ConversionPanel_Heading_Operator>;
-    headingTag?: InputMaybe<ConversionPanel_HeadingTag_Operator>;
     id?: InputMaybe<ConversionPanel_Id_Operator>;
     updatedAt?: InputMaybe<ConversionPanel_UpdatedAt_Operator>;
 };
@@ -1703,7 +1543,6 @@ export type ConversionPanel_Where_Or = {
     content?: InputMaybe<ConversionPanel_Content_Operator>;
     createdAt?: InputMaybe<ConversionPanel_CreatedAt_Operator>;
     heading?: InputMaybe<ConversionPanel_Heading_Operator>;
-    headingTag?: InputMaybe<ConversionPanel_HeadingTag_Operator>;
     id?: InputMaybe<ConversionPanel_Id_Operator>;
     updatedAt?: InputMaybe<ConversionPanel_UpdatedAt_Operator>;
 };
@@ -1753,7 +1592,6 @@ export type ConversionPanelsDocAccessFields = {
     content?: Maybe<ConversionPanelsDocAccessFields_Content>;
     createdAt?: Maybe<ConversionPanelsDocAccessFields_CreatedAt>;
     heading?: Maybe<ConversionPanelsDocAccessFields_Heading>;
-    headingTag?: Maybe<ConversionPanelsDocAccessFields_HeadingTag>;
     updatedAt?: Maybe<ConversionPanelsDocAccessFields_UpdatedAt>;
 };
 
@@ -1849,34 +1687,6 @@ export type ConversionPanelsDocAccessFields_Heading = {
     update?: Maybe<ConversionPanelsDocAccessFields_Heading_Update>;
 };
 
-export type ConversionPanelsDocAccessFields_HeadingTag = {
-    __typename?: 'ConversionPanelsDocAccessFields_headingTag';
-    create?: Maybe<ConversionPanelsDocAccessFields_HeadingTag_Create>;
-    delete?: Maybe<ConversionPanelsDocAccessFields_HeadingTag_Delete>;
-    read?: Maybe<ConversionPanelsDocAccessFields_HeadingTag_Read>;
-    update?: Maybe<ConversionPanelsDocAccessFields_HeadingTag_Update>;
-};
-
-export type ConversionPanelsDocAccessFields_HeadingTag_Create = {
-    __typename?: 'ConversionPanelsDocAccessFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ConversionPanelsDocAccessFields_HeadingTag_Delete = {
-    __typename?: 'ConversionPanelsDocAccessFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ConversionPanelsDocAccessFields_HeadingTag_Read = {
-    __typename?: 'ConversionPanelsDocAccessFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ConversionPanelsDocAccessFields_HeadingTag_Update = {
-    __typename?: 'ConversionPanelsDocAccessFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
-};
-
 export type ConversionPanelsDocAccessFields_Heading_Create = {
     __typename?: 'ConversionPanelsDocAccessFields_heading_Create';
     permission: Scalars['Boolean']['output'];
@@ -1931,7 +1741,6 @@ export type ConversionPanelsFields = {
     content?: Maybe<ConversionPanelsFields_Content>;
     createdAt?: Maybe<ConversionPanelsFields_CreatedAt>;
     heading?: Maybe<ConversionPanelsFields_Heading>;
-    headingTag?: Maybe<ConversionPanelsFields_HeadingTag>;
     updatedAt?: Maybe<ConversionPanelsFields_UpdatedAt>;
 };
 
@@ -2025,34 +1834,6 @@ export type ConversionPanelsFields_Heading = {
     delete?: Maybe<ConversionPanelsFields_Heading_Delete>;
     read?: Maybe<ConversionPanelsFields_Heading_Read>;
     update?: Maybe<ConversionPanelsFields_Heading_Update>;
-};
-
-export type ConversionPanelsFields_HeadingTag = {
-    __typename?: 'ConversionPanelsFields_headingTag';
-    create?: Maybe<ConversionPanelsFields_HeadingTag_Create>;
-    delete?: Maybe<ConversionPanelsFields_HeadingTag_Delete>;
-    read?: Maybe<ConversionPanelsFields_HeadingTag_Read>;
-    update?: Maybe<ConversionPanelsFields_HeadingTag_Update>;
-};
-
-export type ConversionPanelsFields_HeadingTag_Create = {
-    __typename?: 'ConversionPanelsFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ConversionPanelsFields_HeadingTag_Delete = {
-    __typename?: 'ConversionPanelsFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ConversionPanelsFields_HeadingTag_Read = {
-    __typename?: 'ConversionPanelsFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ConversionPanelsFields_HeadingTag_Update = {
-    __typename?: 'ConversionPanelsFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type ConversionPanelsFields_Heading_Create = {
@@ -2154,6 +1935,17 @@ export type CtaTile_Icon_Alt_Operator = {
     not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export type CtaTile_Icon_Base64_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
 export type CtaTile_Icon_CreatedAt_Operator = {
     equals?: InputMaybe<Scalars['DateTime']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -2177,23 +1969,23 @@ export type CtaTile_Icon_Filename_Operator = {
 };
 
 export type CtaTile_Icon_Filesize_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type CtaTile_Icon_Height_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type CtaTile_Icon_Id_Operator = {
@@ -2230,23 +2022,23 @@ export type CtaTile_Icon_Sizes__Thumbnail__Filename_Operator = {
 };
 
 export type CtaTile_Icon_Sizes__Thumbnail__Filesize_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type CtaTile_Icon_Sizes__Thumbnail__Height_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type CtaTile_Icon_Sizes__Thumbnail__MimeType_Operator = {
@@ -2272,13 +2064,13 @@ export type CtaTile_Icon_Sizes__Thumbnail__Url_Operator = {
 };
 
 export type CtaTile_Icon_Sizes__Thumbnail__Width_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type CtaTile_Icon_UpdatedAt_Operator = {
@@ -2307,6 +2099,7 @@ export type CtaTile_Icon_Where = {
     AND?: InputMaybe<Array<InputMaybe<CtaTile_Icon_Where_And>>>;
     OR?: InputMaybe<Array<InputMaybe<CtaTile_Icon_Where_Or>>>;
     alt?: InputMaybe<CtaTile_Icon_Alt_Operator>;
+    base64?: InputMaybe<CtaTile_Icon_Base64_Operator>;
     createdAt?: InputMaybe<CtaTile_Icon_CreatedAt_Operator>;
     filename?: InputMaybe<CtaTile_Icon_Filename_Operator>;
     filesize?: InputMaybe<CtaTile_Icon_Filesize_Operator>;
@@ -2326,6 +2119,7 @@ export type CtaTile_Icon_Where = {
 
 export type CtaTile_Icon_Where_And = {
     alt?: InputMaybe<CtaTile_Icon_Alt_Operator>;
+    base64?: InputMaybe<CtaTile_Icon_Base64_Operator>;
     createdAt?: InputMaybe<CtaTile_Icon_CreatedAt_Operator>;
     filename?: InputMaybe<CtaTile_Icon_Filename_Operator>;
     filesize?: InputMaybe<CtaTile_Icon_Filesize_Operator>;
@@ -2345,6 +2139,7 @@ export type CtaTile_Icon_Where_And = {
 
 export type CtaTile_Icon_Where_Or = {
     alt?: InputMaybe<CtaTile_Icon_Alt_Operator>;
+    base64?: InputMaybe<CtaTile_Icon_Base64_Operator>;
     createdAt?: InputMaybe<CtaTile_Icon_CreatedAt_Operator>;
     filename?: InputMaybe<CtaTile_Icon_Filename_Operator>;
     filesize?: InputMaybe<CtaTile_Icon_Filesize_Operator>;
@@ -2363,13 +2158,13 @@ export type CtaTile_Icon_Where_Or = {
 };
 
 export type CtaTile_Icon_Width_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type CtaTile_CreatedAt_Operator = {
@@ -2445,11 +2240,10 @@ export type CtaTile_LinkType_Input =
     | '%future added value';
 
 export type CtaTile_LinkType_Operator = {
-    all?: InputMaybe<Array<InputMaybe<CtaTile_LinkType_Input>>>;
+    contains?: InputMaybe<CtaTile_LinkType_Input>;
     equals?: InputMaybe<CtaTile_LinkType_Input>;
-    in?: InputMaybe<Array<InputMaybe<CtaTile_LinkType_Input>>>;
+    like?: InputMaybe<CtaTile_LinkType_Input>;
     not_equals?: InputMaybe<CtaTile_LinkType_Input>;
-    not_in?: InputMaybe<Array<InputMaybe<CtaTile_LinkType_Input>>>;
 };
 
 export type CtaTile_UpdatedAt_Operator = {
@@ -3041,7 +2835,6 @@ export type FeatureGrid = {
     createdAt?: Maybe<Scalars['DateTime']['output']>;
     featureTiles: Array<FeatureTile>;
     heading?: Maybe<Scalars['String']['output']>;
-    headingTag?: Maybe<Scalars['String']['output']>;
     id?: Maybe<Scalars['String']['output']>;
     internalName: Scalars['String']['output'];
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -3070,17 +2863,6 @@ export type FeatureGrid_FeatureTiles_Operator = {
     all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     equals?: InputMaybe<Scalars['String']['input']>;
     in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    not_equals?: InputMaybe<Scalars['String']['input']>;
-    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type FeatureGrid_HeadingTag_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    contains?: InputMaybe<Scalars['String']['input']>;
-    equals?: InputMaybe<Scalars['String']['input']>;
-    exists?: InputMaybe<Scalars['Boolean']['input']>;
-    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    like?: InputMaybe<Scalars['String']['input']>;
     not_equals?: InputMaybe<Scalars['String']['input']>;
     not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
@@ -3134,7 +2916,6 @@ export type FeatureGrid_Where = {
     createdAt?: InputMaybe<FeatureGrid_CreatedAt_Operator>;
     featureTiles?: InputMaybe<FeatureGrid_FeatureTiles_Operator>;
     heading?: InputMaybe<FeatureGrid_Heading_Operator>;
-    headingTag?: InputMaybe<FeatureGrid_HeadingTag_Operator>;
     id?: InputMaybe<FeatureGrid_Id_Operator>;
     internalName?: InputMaybe<FeatureGrid_InternalName_Operator>;
     updatedAt?: InputMaybe<FeatureGrid_UpdatedAt_Operator>;
@@ -3144,7 +2925,6 @@ export type FeatureGrid_Where_And = {
     createdAt?: InputMaybe<FeatureGrid_CreatedAt_Operator>;
     featureTiles?: InputMaybe<FeatureGrid_FeatureTiles_Operator>;
     heading?: InputMaybe<FeatureGrid_Heading_Operator>;
-    headingTag?: InputMaybe<FeatureGrid_HeadingTag_Operator>;
     id?: InputMaybe<FeatureGrid_Id_Operator>;
     internalName?: InputMaybe<FeatureGrid_InternalName_Operator>;
     updatedAt?: InputMaybe<FeatureGrid_UpdatedAt_Operator>;
@@ -3154,7 +2934,6 @@ export type FeatureGrid_Where_Or = {
     createdAt?: InputMaybe<FeatureGrid_CreatedAt_Operator>;
     featureTiles?: InputMaybe<FeatureGrid_FeatureTiles_Operator>;
     heading?: InputMaybe<FeatureGrid_Heading_Operator>;
-    headingTag?: InputMaybe<FeatureGrid_HeadingTag_Operator>;
     id?: InputMaybe<FeatureGrid_Id_Operator>;
     internalName?: InputMaybe<FeatureGrid_InternalName_Operator>;
     updatedAt?: InputMaybe<FeatureGrid_UpdatedAt_Operator>;
@@ -3204,7 +2983,6 @@ export type FeatureGridsDocAccessFields = {
     createdAt?: Maybe<FeatureGridsDocAccessFields_CreatedAt>;
     featureTiles?: Maybe<FeatureGridsDocAccessFields_FeatureTiles>;
     heading?: Maybe<FeatureGridsDocAccessFields_Heading>;
-    headingTag?: Maybe<FeatureGridsDocAccessFields_HeadingTag>;
     internalName?: Maybe<FeatureGridsDocAccessFields_InternalName>;
     updatedAt?: Maybe<FeatureGridsDocAccessFields_UpdatedAt>;
 };
@@ -3271,34 +3049,6 @@ export type FeatureGridsDocAccessFields_Heading = {
     delete?: Maybe<FeatureGridsDocAccessFields_Heading_Delete>;
     read?: Maybe<FeatureGridsDocAccessFields_Heading_Read>;
     update?: Maybe<FeatureGridsDocAccessFields_Heading_Update>;
-};
-
-export type FeatureGridsDocAccessFields_HeadingTag = {
-    __typename?: 'FeatureGridsDocAccessFields_headingTag';
-    create?: Maybe<FeatureGridsDocAccessFields_HeadingTag_Create>;
-    delete?: Maybe<FeatureGridsDocAccessFields_HeadingTag_Delete>;
-    read?: Maybe<FeatureGridsDocAccessFields_HeadingTag_Read>;
-    update?: Maybe<FeatureGridsDocAccessFields_HeadingTag_Update>;
-};
-
-export type FeatureGridsDocAccessFields_HeadingTag_Create = {
-    __typename?: 'FeatureGridsDocAccessFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type FeatureGridsDocAccessFields_HeadingTag_Delete = {
-    __typename?: 'FeatureGridsDocAccessFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type FeatureGridsDocAccessFields_HeadingTag_Read = {
-    __typename?: 'FeatureGridsDocAccessFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type FeatureGridsDocAccessFields_HeadingTag_Update = {
-    __typename?: 'FeatureGridsDocAccessFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type FeatureGridsDocAccessFields_Heading_Create = {
@@ -3382,7 +3132,6 @@ export type FeatureGridsFields = {
     createdAt?: Maybe<FeatureGridsFields_CreatedAt>;
     featureTiles?: Maybe<FeatureGridsFields_FeatureTiles>;
     heading?: Maybe<FeatureGridsFields_Heading>;
-    headingTag?: Maybe<FeatureGridsFields_HeadingTag>;
     internalName?: Maybe<FeatureGridsFields_InternalName>;
     updatedAt?: Maybe<FeatureGridsFields_UpdatedAt>;
 };
@@ -3449,34 +3198,6 @@ export type FeatureGridsFields_Heading = {
     delete?: Maybe<FeatureGridsFields_Heading_Delete>;
     read?: Maybe<FeatureGridsFields_Heading_Read>;
     update?: Maybe<FeatureGridsFields_Heading_Update>;
-};
-
-export type FeatureGridsFields_HeadingTag = {
-    __typename?: 'FeatureGridsFields_headingTag';
-    create?: Maybe<FeatureGridsFields_HeadingTag_Create>;
-    delete?: Maybe<FeatureGridsFields_HeadingTag_Delete>;
-    read?: Maybe<FeatureGridsFields_HeadingTag_Read>;
-    update?: Maybe<FeatureGridsFields_HeadingTag_Update>;
-};
-
-export type FeatureGridsFields_HeadingTag_Create = {
-    __typename?: 'FeatureGridsFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type FeatureGridsFields_HeadingTag_Delete = {
-    __typename?: 'FeatureGridsFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type FeatureGridsFields_HeadingTag_Read = {
-    __typename?: 'FeatureGridsFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type FeatureGridsFields_HeadingTag_Update = {
-    __typename?: 'FeatureGridsFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type FeatureGridsFields_Heading_Create = {
@@ -3584,7 +3305,6 @@ export type FeatureTile = {
     content?: Maybe<Scalars['JSON']['output']>;
     createdAt?: Maybe<Scalars['DateTime']['output']>;
     heading: Scalars['String']['output'];
-    headingTag: Scalars['String']['output'];
     id?: Maybe<Scalars['String']['output']>;
     image: Image;
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -3602,6 +3322,17 @@ export type FeatureTile_Image_Alt_Operator = {
     all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     contains?: InputMaybe<Scalars['String']['input']>;
     equals?: InputMaybe<Scalars['String']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type FeatureTile_Image_Base64_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
     in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     like?: InputMaybe<Scalars['String']['input']>;
     not_equals?: InputMaybe<Scalars['String']['input']>;
@@ -3631,23 +3362,23 @@ export type FeatureTile_Image_Filename_Operator = {
 };
 
 export type FeatureTile_Image_Filesize_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type FeatureTile_Image_Height_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type FeatureTile_Image_Id_Operator = {
@@ -3684,23 +3415,23 @@ export type FeatureTile_Image_Sizes__Thumbnail__Filename_Operator = {
 };
 
 export type FeatureTile_Image_Sizes__Thumbnail__Filesize_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type FeatureTile_Image_Sizes__Thumbnail__Height_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type FeatureTile_Image_Sizes__Thumbnail__MimeType_Operator = {
@@ -3726,13 +3457,13 @@ export type FeatureTile_Image_Sizes__Thumbnail__Url_Operator = {
 };
 
 export type FeatureTile_Image_Sizes__Thumbnail__Width_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type FeatureTile_Image_UpdatedAt_Operator = {
@@ -3761,6 +3492,7 @@ export type FeatureTile_Image_Where = {
     AND?: InputMaybe<Array<InputMaybe<FeatureTile_Image_Where_And>>>;
     OR?: InputMaybe<Array<InputMaybe<FeatureTile_Image_Where_Or>>>;
     alt?: InputMaybe<FeatureTile_Image_Alt_Operator>;
+    base64?: InputMaybe<FeatureTile_Image_Base64_Operator>;
     createdAt?: InputMaybe<FeatureTile_Image_CreatedAt_Operator>;
     filename?: InputMaybe<FeatureTile_Image_Filename_Operator>;
     filesize?: InputMaybe<FeatureTile_Image_Filesize_Operator>;
@@ -3780,6 +3512,7 @@ export type FeatureTile_Image_Where = {
 
 export type FeatureTile_Image_Where_And = {
     alt?: InputMaybe<FeatureTile_Image_Alt_Operator>;
+    base64?: InputMaybe<FeatureTile_Image_Base64_Operator>;
     createdAt?: InputMaybe<FeatureTile_Image_CreatedAt_Operator>;
     filename?: InputMaybe<FeatureTile_Image_Filename_Operator>;
     filesize?: InputMaybe<FeatureTile_Image_Filesize_Operator>;
@@ -3799,6 +3532,7 @@ export type FeatureTile_Image_Where_And = {
 
 export type FeatureTile_Image_Where_Or = {
     alt?: InputMaybe<FeatureTile_Image_Alt_Operator>;
+    base64?: InputMaybe<FeatureTile_Image_Base64_Operator>;
     createdAt?: InputMaybe<FeatureTile_Image_CreatedAt_Operator>;
     filename?: InputMaybe<FeatureTile_Image_Filename_Operator>;
     filesize?: InputMaybe<FeatureTile_Image_Filesize_Operator>;
@@ -3817,13 +3551,13 @@ export type FeatureTile_Image_Where_Or = {
 };
 
 export type FeatureTile_Image_Width_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type FeatureTile_Content_Operator = {
@@ -3843,16 +3577,6 @@ export type FeatureTile_CreatedAt_Operator = {
     less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
     like?: InputMaybe<Scalars['DateTime']['input']>;
     not_equals?: InputMaybe<Scalars['DateTime']['input']>;
-};
-
-export type FeatureTile_HeadingTag_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    contains?: InputMaybe<Scalars['String']['input']>;
-    equals?: InputMaybe<Scalars['String']['input']>;
-    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    like?: InputMaybe<Scalars['String']['input']>;
-    not_equals?: InputMaybe<Scalars['String']['input']>;
-    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeatureTile_Heading_Operator = {
@@ -3898,7 +3622,6 @@ export type FeatureTile_Where = {
     content?: InputMaybe<FeatureTile_Content_Operator>;
     createdAt?: InputMaybe<FeatureTile_CreatedAt_Operator>;
     heading?: InputMaybe<FeatureTile_Heading_Operator>;
-    headingTag?: InputMaybe<FeatureTile_HeadingTag_Operator>;
     id?: InputMaybe<FeatureTile_Id_Operator>;
     image?: InputMaybe<FeatureTile_Image_Operator>;
     updatedAt?: InputMaybe<FeatureTile_UpdatedAt_Operator>;
@@ -3908,7 +3631,6 @@ export type FeatureTile_Where_And = {
     content?: InputMaybe<FeatureTile_Content_Operator>;
     createdAt?: InputMaybe<FeatureTile_CreatedAt_Operator>;
     heading?: InputMaybe<FeatureTile_Heading_Operator>;
-    headingTag?: InputMaybe<FeatureTile_HeadingTag_Operator>;
     id?: InputMaybe<FeatureTile_Id_Operator>;
     image?: InputMaybe<FeatureTile_Image_Operator>;
     updatedAt?: InputMaybe<FeatureTile_UpdatedAt_Operator>;
@@ -3918,7 +3640,6 @@ export type FeatureTile_Where_Or = {
     content?: InputMaybe<FeatureTile_Content_Operator>;
     createdAt?: InputMaybe<FeatureTile_CreatedAt_Operator>;
     heading?: InputMaybe<FeatureTile_Heading_Operator>;
-    headingTag?: InputMaybe<FeatureTile_HeadingTag_Operator>;
     id?: InputMaybe<FeatureTile_Id_Operator>;
     image?: InputMaybe<FeatureTile_Image_Operator>;
     updatedAt?: InputMaybe<FeatureTile_UpdatedAt_Operator>;
@@ -3968,7 +3689,6 @@ export type FeatureTilesDocAccessFields = {
     content?: Maybe<FeatureTilesDocAccessFields_Content>;
     createdAt?: Maybe<FeatureTilesDocAccessFields_CreatedAt>;
     heading?: Maybe<FeatureTilesDocAccessFields_Heading>;
-    headingTag?: Maybe<FeatureTilesDocAccessFields_HeadingTag>;
     image?: Maybe<FeatureTilesDocAccessFields_Image>;
     updatedAt?: Maybe<FeatureTilesDocAccessFields_UpdatedAt>;
 };
@@ -4035,34 +3755,6 @@ export type FeatureTilesDocAccessFields_Heading = {
     delete?: Maybe<FeatureTilesDocAccessFields_Heading_Delete>;
     read?: Maybe<FeatureTilesDocAccessFields_Heading_Read>;
     update?: Maybe<FeatureTilesDocAccessFields_Heading_Update>;
-};
-
-export type FeatureTilesDocAccessFields_HeadingTag = {
-    __typename?: 'FeatureTilesDocAccessFields_headingTag';
-    create?: Maybe<FeatureTilesDocAccessFields_HeadingTag_Create>;
-    delete?: Maybe<FeatureTilesDocAccessFields_HeadingTag_Delete>;
-    read?: Maybe<FeatureTilesDocAccessFields_HeadingTag_Read>;
-    update?: Maybe<FeatureTilesDocAccessFields_HeadingTag_Update>;
-};
-
-export type FeatureTilesDocAccessFields_HeadingTag_Create = {
-    __typename?: 'FeatureTilesDocAccessFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type FeatureTilesDocAccessFields_HeadingTag_Delete = {
-    __typename?: 'FeatureTilesDocAccessFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type FeatureTilesDocAccessFields_HeadingTag_Read = {
-    __typename?: 'FeatureTilesDocAccessFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type FeatureTilesDocAccessFields_HeadingTag_Update = {
-    __typename?: 'FeatureTilesDocAccessFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type FeatureTilesDocAccessFields_Heading_Create = {
@@ -4146,7 +3838,6 @@ export type FeatureTilesFields = {
     content?: Maybe<FeatureTilesFields_Content>;
     createdAt?: Maybe<FeatureTilesFields_CreatedAt>;
     heading?: Maybe<FeatureTilesFields_Heading>;
-    headingTag?: Maybe<FeatureTilesFields_HeadingTag>;
     image?: Maybe<FeatureTilesFields_Image>;
     updatedAt?: Maybe<FeatureTilesFields_UpdatedAt>;
 };
@@ -4213,34 +3904,6 @@ export type FeatureTilesFields_Heading = {
     delete?: Maybe<FeatureTilesFields_Heading_Delete>;
     read?: Maybe<FeatureTilesFields_Heading_Read>;
     update?: Maybe<FeatureTilesFields_Heading_Update>;
-};
-
-export type FeatureTilesFields_HeadingTag = {
-    __typename?: 'FeatureTilesFields_headingTag';
-    create?: Maybe<FeatureTilesFields_HeadingTag_Create>;
-    delete?: Maybe<FeatureTilesFields_HeadingTag_Delete>;
-    read?: Maybe<FeatureTilesFields_HeadingTag_Read>;
-    update?: Maybe<FeatureTilesFields_HeadingTag_Update>;
-};
-
-export type FeatureTilesFields_HeadingTag_Create = {
-    __typename?: 'FeatureTilesFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type FeatureTilesFields_HeadingTag_Delete = {
-    __typename?: 'FeatureTilesFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type FeatureTilesFields_HeadingTag_Read = {
-    __typename?: 'FeatureTilesFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type FeatureTilesFields_HeadingTag_Update = {
-    __typename?: 'FeatureTilesFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type FeatureTilesFields_Heading_Create = {
@@ -4350,7 +4013,6 @@ export type FeaturedMedia = {
     content?: Maybe<Scalars['JSON']['output']>;
     createdAt?: Maybe<Scalars['DateTime']['output']>;
     heading: Scalars['String']['output'];
-    headingTag: Scalars['String']['output'];
     id?: Maybe<Scalars['String']['output']>;
     image?: Maybe<Image>;
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -4404,7 +4066,6 @@ export type FeaturedMediaDocAccessFields = {
     content?: Maybe<FeaturedMediaDocAccessFields_Content>;
     createdAt?: Maybe<FeaturedMediaDocAccessFields_CreatedAt>;
     heading?: Maybe<FeaturedMediaDocAccessFields_Heading>;
-    headingTag?: Maybe<FeaturedMediaDocAccessFields_HeadingTag>;
     image?: Maybe<FeaturedMediaDocAccessFields_Image>;
     updatedAt?: Maybe<FeaturedMediaDocAccessFields_UpdatedAt>;
     video?: Maybe<FeaturedMediaDocAccessFields_Video>;
@@ -4530,34 +4191,6 @@ export type FeaturedMediaDocAccessFields_Heading = {
     update?: Maybe<FeaturedMediaDocAccessFields_Heading_Update>;
 };
 
-export type FeaturedMediaDocAccessFields_HeadingTag = {
-    __typename?: 'FeaturedMediaDocAccessFields_headingTag';
-    create?: Maybe<FeaturedMediaDocAccessFields_HeadingTag_Create>;
-    delete?: Maybe<FeaturedMediaDocAccessFields_HeadingTag_Delete>;
-    read?: Maybe<FeaturedMediaDocAccessFields_HeadingTag_Read>;
-    update?: Maybe<FeaturedMediaDocAccessFields_HeadingTag_Update>;
-};
-
-export type FeaturedMediaDocAccessFields_HeadingTag_Create = {
-    __typename?: 'FeaturedMediaDocAccessFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type FeaturedMediaDocAccessFields_HeadingTag_Delete = {
-    __typename?: 'FeaturedMediaDocAccessFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type FeaturedMediaDocAccessFields_HeadingTag_Read = {
-    __typename?: 'FeaturedMediaDocAccessFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type FeaturedMediaDocAccessFields_HeadingTag_Update = {
-    __typename?: 'FeaturedMediaDocAccessFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
-};
-
 export type FeaturedMediaDocAccessFields_Heading_Create = {
     __typename?: 'FeaturedMediaDocAccessFields_heading_Create';
     permission: Scalars['Boolean']['output'];
@@ -4669,7 +4302,6 @@ export type FeaturedMediaFields = {
     content?: Maybe<FeaturedMediaFields_Content>;
     createdAt?: Maybe<FeaturedMediaFields_CreatedAt>;
     heading?: Maybe<FeaturedMediaFields_Heading>;
-    headingTag?: Maybe<FeaturedMediaFields_HeadingTag>;
     image?: Maybe<FeaturedMediaFields_Image>;
     updatedAt?: Maybe<FeaturedMediaFields_UpdatedAt>;
     video?: Maybe<FeaturedMediaFields_Video>;
@@ -4793,34 +4425,6 @@ export type FeaturedMediaFields_Heading = {
     delete?: Maybe<FeaturedMediaFields_Heading_Delete>;
     read?: Maybe<FeaturedMediaFields_Heading_Read>;
     update?: Maybe<FeaturedMediaFields_Heading_Update>;
-};
-
-export type FeaturedMediaFields_HeadingTag = {
-    __typename?: 'FeaturedMediaFields_headingTag';
-    create?: Maybe<FeaturedMediaFields_HeadingTag_Create>;
-    delete?: Maybe<FeaturedMediaFields_HeadingTag_Delete>;
-    read?: Maybe<FeaturedMediaFields_HeadingTag_Read>;
-    update?: Maybe<FeaturedMediaFields_HeadingTag_Update>;
-};
-
-export type FeaturedMediaFields_HeadingTag_Create = {
-    __typename?: 'FeaturedMediaFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type FeaturedMediaFields_HeadingTag_Delete = {
-    __typename?: 'FeaturedMediaFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type FeaturedMediaFields_HeadingTag_Read = {
-    __typename?: 'FeaturedMediaFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type FeaturedMediaFields_HeadingTag_Update = {
-    __typename?: 'FeaturedMediaFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type FeaturedMediaFields_Heading_Create = {
@@ -4961,6 +4565,17 @@ export type FeaturedMedia_Image_Alt_Operator = {
     not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export type FeaturedMedia_Image_Base64_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
 export type FeaturedMedia_Image_CreatedAt_Operator = {
     equals?: InputMaybe<Scalars['DateTime']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -4984,23 +4599,23 @@ export type FeaturedMedia_Image_Filename_Operator = {
 };
 
 export type FeaturedMedia_Image_Filesize_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type FeaturedMedia_Image_Height_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type FeaturedMedia_Image_Id_Operator = {
@@ -5037,23 +4652,23 @@ export type FeaturedMedia_Image_Sizes__Thumbnail__Filename_Operator = {
 };
 
 export type FeaturedMedia_Image_Sizes__Thumbnail__Filesize_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type FeaturedMedia_Image_Sizes__Thumbnail__Height_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type FeaturedMedia_Image_Sizes__Thumbnail__MimeType_Operator = {
@@ -5079,13 +4694,13 @@ export type FeaturedMedia_Image_Sizes__Thumbnail__Url_Operator = {
 };
 
 export type FeaturedMedia_Image_Sizes__Thumbnail__Width_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type FeaturedMedia_Image_UpdatedAt_Operator = {
@@ -5114,6 +4729,7 @@ export type FeaturedMedia_Image_Where = {
     AND?: InputMaybe<Array<InputMaybe<FeaturedMedia_Image_Where_And>>>;
     OR?: InputMaybe<Array<InputMaybe<FeaturedMedia_Image_Where_Or>>>;
     alt?: InputMaybe<FeaturedMedia_Image_Alt_Operator>;
+    base64?: InputMaybe<FeaturedMedia_Image_Base64_Operator>;
     createdAt?: InputMaybe<FeaturedMedia_Image_CreatedAt_Operator>;
     filename?: InputMaybe<FeaturedMedia_Image_Filename_Operator>;
     filesize?: InputMaybe<FeaturedMedia_Image_Filesize_Operator>;
@@ -5133,6 +4749,7 @@ export type FeaturedMedia_Image_Where = {
 
 export type FeaturedMedia_Image_Where_And = {
     alt?: InputMaybe<FeaturedMedia_Image_Alt_Operator>;
+    base64?: InputMaybe<FeaturedMedia_Image_Base64_Operator>;
     createdAt?: InputMaybe<FeaturedMedia_Image_CreatedAt_Operator>;
     filename?: InputMaybe<FeaturedMedia_Image_Filename_Operator>;
     filesize?: InputMaybe<FeaturedMedia_Image_Filesize_Operator>;
@@ -5152,6 +4769,7 @@ export type FeaturedMedia_Image_Where_And = {
 
 export type FeaturedMedia_Image_Where_Or = {
     alt?: InputMaybe<FeaturedMedia_Image_Alt_Operator>;
+    base64?: InputMaybe<FeaturedMedia_Image_Base64_Operator>;
     createdAt?: InputMaybe<FeaturedMedia_Image_CreatedAt_Operator>;
     filename?: InputMaybe<FeaturedMedia_Image_Filename_Operator>;
     filesize?: InputMaybe<FeaturedMedia_Image_Filesize_Operator>;
@@ -5170,13 +4788,13 @@ export type FeaturedMedia_Image_Where_Or = {
 };
 
 export type FeaturedMedia_Image_Width_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type FeaturedMedia_AssetType = 'image' | 'video' | '%future added value';
@@ -5187,12 +4805,11 @@ export type FeaturedMedia_AssetType_Input =
     | '%future added value';
 
 export type FeaturedMedia_AssetType_Operator = {
-    all?: InputMaybe<Array<InputMaybe<FeaturedMedia_AssetType_Input>>>;
+    contains?: InputMaybe<FeaturedMedia_AssetType_Input>;
     equals?: InputMaybe<FeaturedMedia_AssetType_Input>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    in?: InputMaybe<Array<InputMaybe<FeaturedMedia_AssetType_Input>>>;
+    like?: InputMaybe<FeaturedMedia_AssetType_Input>;
     not_equals?: InputMaybe<FeaturedMedia_AssetType_Input>;
-    not_in?: InputMaybe<Array<InputMaybe<FeaturedMedia_AssetType_Input>>>;
 };
 
 export type FeaturedMedia_CallToAction_Operator = {
@@ -5221,16 +4838,6 @@ export type FeaturedMedia_CreatedAt_Operator = {
     less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
     like?: InputMaybe<Scalars['DateTime']['input']>;
     not_equals?: InputMaybe<Scalars['DateTime']['input']>;
-};
-
-export type FeaturedMedia_HeadingTag_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    contains?: InputMaybe<Scalars['String']['input']>;
-    equals?: InputMaybe<Scalars['String']['input']>;
-    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    like?: InputMaybe<Scalars['String']['input']>;
-    not_equals?: InputMaybe<Scalars['String']['input']>;
-    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type FeaturedMedia_Heading_Operator = {
@@ -5288,7 +4895,6 @@ export type FeaturedMedia_Where = {
     content?: InputMaybe<FeaturedMedia_Content_Operator>;
     createdAt?: InputMaybe<FeaturedMedia_CreatedAt_Operator>;
     heading?: InputMaybe<FeaturedMedia_Heading_Operator>;
-    headingTag?: InputMaybe<FeaturedMedia_HeadingTag_Operator>;
     id?: InputMaybe<FeaturedMedia_Id_Operator>;
     image?: InputMaybe<FeaturedMedia_Image_Operator>;
     updatedAt?: InputMaybe<FeaturedMedia_UpdatedAt_Operator>;
@@ -5301,7 +4907,6 @@ export type FeaturedMedia_Where_And = {
     content?: InputMaybe<FeaturedMedia_Content_Operator>;
     createdAt?: InputMaybe<FeaturedMedia_CreatedAt_Operator>;
     heading?: InputMaybe<FeaturedMedia_Heading_Operator>;
-    headingTag?: InputMaybe<FeaturedMedia_HeadingTag_Operator>;
     id?: InputMaybe<FeaturedMedia_Id_Operator>;
     image?: InputMaybe<FeaturedMedia_Image_Operator>;
     updatedAt?: InputMaybe<FeaturedMedia_UpdatedAt_Operator>;
@@ -5314,7 +4919,6 @@ export type FeaturedMedia_Where_Or = {
     content?: InputMaybe<FeaturedMedia_Content_Operator>;
     createdAt?: InputMaybe<FeaturedMedia_CreatedAt_Operator>;
     heading?: InputMaybe<FeaturedMedia_Heading_Operator>;
-    headingTag?: InputMaybe<FeaturedMedia_HeadingTag_Operator>;
     id?: InputMaybe<FeaturedMedia_Id_Operator>;
     image?: InputMaybe<FeaturedMedia_Image_Operator>;
     updatedAt?: InputMaybe<FeaturedMedia_UpdatedAt_Operator>;
@@ -6804,6 +6408,17 @@ export type Footer_SocialLinks_Icon_Alt_Operator = {
     not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export type Footer_SocialLinks_Icon_Base64_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
 export type Footer_SocialLinks_Icon_CreatedAt_Operator = {
     equals?: InputMaybe<Scalars['DateTime']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -6827,23 +6442,23 @@ export type Footer_SocialLinks_Icon_Filename_Operator = {
 };
 
 export type Footer_SocialLinks_Icon_Filesize_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Footer_SocialLinks_Icon_Height_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Footer_SocialLinks_Icon_Id_Operator = {
@@ -6880,23 +6495,23 @@ export type Footer_SocialLinks_Icon_Sizes__Thumbnail__Filename_Operator = {
 };
 
 export type Footer_SocialLinks_Icon_Sizes__Thumbnail__Filesize_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Footer_SocialLinks_Icon_Sizes__Thumbnail__Height_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Footer_SocialLinks_Icon_Sizes__Thumbnail__MimeType_Operator = {
@@ -6922,13 +6537,13 @@ export type Footer_SocialLinks_Icon_Sizes__Thumbnail__Url_Operator = {
 };
 
 export type Footer_SocialLinks_Icon_Sizes__Thumbnail__Width_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Footer_SocialLinks_Icon_UpdatedAt_Operator = {
@@ -6957,6 +6572,7 @@ export type Footer_SocialLinks_Icon_Where = {
     AND?: InputMaybe<Array<InputMaybe<Footer_SocialLinks_Icon_Where_And>>>;
     OR?: InputMaybe<Array<InputMaybe<Footer_SocialLinks_Icon_Where_Or>>>;
     alt?: InputMaybe<Footer_SocialLinks_Icon_Alt_Operator>;
+    base64?: InputMaybe<Footer_SocialLinks_Icon_Base64_Operator>;
     createdAt?: InputMaybe<Footer_SocialLinks_Icon_CreatedAt_Operator>;
     filename?: InputMaybe<Footer_SocialLinks_Icon_Filename_Operator>;
     filesize?: InputMaybe<Footer_SocialLinks_Icon_Filesize_Operator>;
@@ -6976,6 +6592,7 @@ export type Footer_SocialLinks_Icon_Where = {
 
 export type Footer_SocialLinks_Icon_Where_And = {
     alt?: InputMaybe<Footer_SocialLinks_Icon_Alt_Operator>;
+    base64?: InputMaybe<Footer_SocialLinks_Icon_Base64_Operator>;
     createdAt?: InputMaybe<Footer_SocialLinks_Icon_CreatedAt_Operator>;
     filename?: InputMaybe<Footer_SocialLinks_Icon_Filename_Operator>;
     filesize?: InputMaybe<Footer_SocialLinks_Icon_Filesize_Operator>;
@@ -6995,6 +6612,7 @@ export type Footer_SocialLinks_Icon_Where_And = {
 
 export type Footer_SocialLinks_Icon_Where_Or = {
     alt?: InputMaybe<Footer_SocialLinks_Icon_Alt_Operator>;
+    base64?: InputMaybe<Footer_SocialLinks_Icon_Base64_Operator>;
     createdAt?: InputMaybe<Footer_SocialLinks_Icon_CreatedAt_Operator>;
     filename?: InputMaybe<Footer_SocialLinks_Icon_Filename_Operator>;
     filesize?: InputMaybe<Footer_SocialLinks_Icon_Filesize_Operator>;
@@ -7013,13 +6631,13 @@ export type Footer_SocialLinks_Icon_Where_Or = {
 };
 
 export type Footer_SocialLinks_Icon_Width_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Header = {
@@ -8232,7 +7850,6 @@ export type Hero = {
     createdAt?: Maybe<Scalars['DateTime']['output']>;
     cta?: Maybe<Hero_Cta>;
     heading: Scalars['String']['output'];
-    headingTag: Scalars['String']['output'];
     id?: Maybe<Scalars['String']['output']>;
     subheading?: Maybe<Scalars['String']['output']>;
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -8333,22 +7950,11 @@ export type Hero_Cta__CtaTiles__Id_Operator = {
 export type Hero_Cta__Type_Input = 'button' | 'tile' | '%future added value';
 
 export type Hero_Cta__Type_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Hero_Cta__Type_Input>>>;
+    contains?: InputMaybe<Hero_Cta__Type_Input>;
     equals?: InputMaybe<Hero_Cta__Type_Input>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    in?: InputMaybe<Array<InputMaybe<Hero_Cta__Type_Input>>>;
+    like?: InputMaybe<Hero_Cta__Type_Input>;
     not_equals?: InputMaybe<Hero_Cta__Type_Input>;
-    not_in?: InputMaybe<Array<InputMaybe<Hero_Cta__Type_Input>>>;
-};
-
-export type Hero_HeadingTag_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    contains?: InputMaybe<Scalars['String']['input']>;
-    equals?: InputMaybe<Scalars['String']['input']>;
-    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    like?: InputMaybe<Scalars['String']['input']>;
-    not_equals?: InputMaybe<Scalars['String']['input']>;
-    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Hero_Heading_Operator = {
@@ -8405,7 +8011,6 @@ export type Hero_Where = {
     cta__ctaTiles__id?: InputMaybe<Hero_Cta__CtaTiles__Id_Operator>;
     cta__type?: InputMaybe<Hero_Cta__Type_Operator>;
     heading?: InputMaybe<Hero_Heading_Operator>;
-    headingTag?: InputMaybe<Hero_HeadingTag_Operator>;
     id?: InputMaybe<Hero_Id_Operator>;
     subheading?: InputMaybe<Hero_Subheading_Operator>;
     updatedAt?: InputMaybe<Hero_UpdatedAt_Operator>;
@@ -8420,7 +8025,6 @@ export type Hero_Where_And = {
     cta__ctaTiles__id?: InputMaybe<Hero_Cta__CtaTiles__Id_Operator>;
     cta__type?: InputMaybe<Hero_Cta__Type_Operator>;
     heading?: InputMaybe<Hero_Heading_Operator>;
-    headingTag?: InputMaybe<Hero_HeadingTag_Operator>;
     id?: InputMaybe<Hero_Id_Operator>;
     subheading?: InputMaybe<Hero_Subheading_Operator>;
     updatedAt?: InputMaybe<Hero_UpdatedAt_Operator>;
@@ -8435,7 +8039,6 @@ export type Hero_Where_Or = {
     cta__ctaTiles__id?: InputMaybe<Hero_Cta__CtaTiles__Id_Operator>;
     cta__type?: InputMaybe<Hero_Cta__Type_Operator>;
     heading?: InputMaybe<Hero_Heading_Operator>;
-    headingTag?: InputMaybe<Hero_HeadingTag_Operator>;
     id?: InputMaybe<Hero_Id_Operator>;
     subheading?: InputMaybe<Hero_Subheading_Operator>;
     updatedAt?: InputMaybe<Hero_UpdatedAt_Operator>;
@@ -8486,7 +8089,6 @@ export type HeroesDocAccessFields = {
     createdAt?: Maybe<HeroesDocAccessFields_CreatedAt>;
     cta?: Maybe<HeroesDocAccessFields_Cta>;
     heading?: Maybe<HeroesDocAccessFields_Heading>;
-    headingTag?: Maybe<HeroesDocAccessFields_HeadingTag>;
     subheading?: Maybe<HeroesDocAccessFields_Subheading>;
     updatedAt?: Maybe<HeroesDocAccessFields_UpdatedAt>;
 };
@@ -8801,34 +8403,6 @@ export type HeroesDocAccessFields_Heading = {
     update?: Maybe<HeroesDocAccessFields_Heading_Update>;
 };
 
-export type HeroesDocAccessFields_HeadingTag = {
-    __typename?: 'HeroesDocAccessFields_headingTag';
-    create?: Maybe<HeroesDocAccessFields_HeadingTag_Create>;
-    delete?: Maybe<HeroesDocAccessFields_HeadingTag_Delete>;
-    read?: Maybe<HeroesDocAccessFields_HeadingTag_Read>;
-    update?: Maybe<HeroesDocAccessFields_HeadingTag_Update>;
-};
-
-export type HeroesDocAccessFields_HeadingTag_Create = {
-    __typename?: 'HeroesDocAccessFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type HeroesDocAccessFields_HeadingTag_Delete = {
-    __typename?: 'HeroesDocAccessFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type HeroesDocAccessFields_HeadingTag_Read = {
-    __typename?: 'HeroesDocAccessFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type HeroesDocAccessFields_HeadingTag_Update = {
-    __typename?: 'HeroesDocAccessFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
-};
-
 export type HeroesDocAccessFields_Heading_Create = {
     __typename?: 'HeroesDocAccessFields_heading_Create';
     permission: Scalars['Boolean']['output'];
@@ -8911,7 +8485,6 @@ export type HeroesFields = {
     createdAt?: Maybe<HeroesFields_CreatedAt>;
     cta?: Maybe<HeroesFields_Cta>;
     heading?: Maybe<HeroesFields_Heading>;
-    headingTag?: Maybe<HeroesFields_HeadingTag>;
     subheading?: Maybe<HeroesFields_Subheading>;
     updatedAt?: Maybe<HeroesFields_UpdatedAt>;
 };
@@ -9226,34 +8799,6 @@ export type HeroesFields_Heading = {
     update?: Maybe<HeroesFields_Heading_Update>;
 };
 
-export type HeroesFields_HeadingTag = {
-    __typename?: 'HeroesFields_headingTag';
-    create?: Maybe<HeroesFields_HeadingTag_Create>;
-    delete?: Maybe<HeroesFields_HeadingTag_Delete>;
-    read?: Maybe<HeroesFields_HeadingTag_Read>;
-    update?: Maybe<HeroesFields_HeadingTag_Update>;
-};
-
-export type HeroesFields_HeadingTag_Create = {
-    __typename?: 'HeroesFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type HeroesFields_HeadingTag_Delete = {
-    __typename?: 'HeroesFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type HeroesFields_HeadingTag_Read = {
-    __typename?: 'HeroesFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type HeroesFields_HeadingTag_Update = {
-    __typename?: 'HeroesFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
-};
-
 export type HeroesFields_Heading_Create = {
     __typename?: 'HeroesFields_heading_Create';
     permission: Scalars['Boolean']['output'];
@@ -9357,6 +8902,7 @@ export type HeroesUpdateDocAccess = {
 export type Icon = {
     __typename?: 'Icon';
     alt: Scalars['String']['output'];
+    base64?: Maybe<Scalars['String']['output']>;
     createdAt?: Maybe<Scalars['DateTime']['output']>;
     filename?: Maybe<Scalars['String']['output']>;
     filesize?: Maybe<Scalars['Float']['output']>;
@@ -9388,7 +8934,6 @@ export type IconTileGrid = {
     content?: Maybe<Scalars['JSON']['output']>;
     createdAt?: Maybe<Scalars['DateTime']['output']>;
     heading: Scalars['String']['output'];
-    headingTag: Scalars['String']['output'];
     iconTiles: Array<IconTile>;
     id?: Maybe<Scalars['String']['output']>;
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -9431,16 +8976,6 @@ export type IconTileGrid_CreatedAt_Operator = {
     less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
     like?: InputMaybe<Scalars['DateTime']['input']>;
     not_equals?: InputMaybe<Scalars['DateTime']['input']>;
-};
-
-export type IconTileGrid_HeadingTag_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    contains?: InputMaybe<Scalars['String']['input']>;
-    equals?: InputMaybe<Scalars['String']['input']>;
-    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    like?: InputMaybe<Scalars['String']['input']>;
-    not_equals?: InputMaybe<Scalars['String']['input']>;
-    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type IconTileGrid_Heading_Operator = {
@@ -9490,7 +9025,6 @@ export type IconTileGrid_Where = {
     content?: InputMaybe<IconTileGrid_Content_Operator>;
     createdAt?: InputMaybe<IconTileGrid_CreatedAt_Operator>;
     heading?: InputMaybe<IconTileGrid_Heading_Operator>;
-    headingTag?: InputMaybe<IconTileGrid_HeadingTag_Operator>;
     iconTiles?: InputMaybe<IconTileGrid_IconTiles_Operator>;
     id?: InputMaybe<IconTileGrid_Id_Operator>;
     updatedAt?: InputMaybe<IconTileGrid_UpdatedAt_Operator>;
@@ -9501,7 +9035,6 @@ export type IconTileGrid_Where_And = {
     content?: InputMaybe<IconTileGrid_Content_Operator>;
     createdAt?: InputMaybe<IconTileGrid_CreatedAt_Operator>;
     heading?: InputMaybe<IconTileGrid_Heading_Operator>;
-    headingTag?: InputMaybe<IconTileGrid_HeadingTag_Operator>;
     iconTiles?: InputMaybe<IconTileGrid_IconTiles_Operator>;
     id?: InputMaybe<IconTileGrid_Id_Operator>;
     updatedAt?: InputMaybe<IconTileGrid_UpdatedAt_Operator>;
@@ -9512,7 +9045,6 @@ export type IconTileGrid_Where_Or = {
     content?: InputMaybe<IconTileGrid_Content_Operator>;
     createdAt?: InputMaybe<IconTileGrid_CreatedAt_Operator>;
     heading?: InputMaybe<IconTileGrid_Heading_Operator>;
-    headingTag?: InputMaybe<IconTileGrid_HeadingTag_Operator>;
     iconTiles?: InputMaybe<IconTileGrid_IconTiles_Operator>;
     id?: InputMaybe<IconTileGrid_Id_Operator>;
     updatedAt?: InputMaybe<IconTileGrid_UpdatedAt_Operator>;
@@ -9563,7 +9095,6 @@ export type IconTileGridsDocAccessFields = {
     content?: Maybe<IconTileGridsDocAccessFields_Content>;
     createdAt?: Maybe<IconTileGridsDocAccessFields_CreatedAt>;
     heading?: Maybe<IconTileGridsDocAccessFields_Heading>;
-    headingTag?: Maybe<IconTileGridsDocAccessFields_HeadingTag>;
     iconTiles?: Maybe<IconTileGridsDocAccessFields_IconTiles>;
     updatedAt?: Maybe<IconTileGridsDocAccessFields_UpdatedAt>;
 };
@@ -9660,34 +9191,6 @@ export type IconTileGridsDocAccessFields_Heading = {
     update?: Maybe<IconTileGridsDocAccessFields_Heading_Update>;
 };
 
-export type IconTileGridsDocAccessFields_HeadingTag = {
-    __typename?: 'IconTileGridsDocAccessFields_headingTag';
-    create?: Maybe<IconTileGridsDocAccessFields_HeadingTag_Create>;
-    delete?: Maybe<IconTileGridsDocAccessFields_HeadingTag_Delete>;
-    read?: Maybe<IconTileGridsDocAccessFields_HeadingTag_Read>;
-    update?: Maybe<IconTileGridsDocAccessFields_HeadingTag_Update>;
-};
-
-export type IconTileGridsDocAccessFields_HeadingTag_Create = {
-    __typename?: 'IconTileGridsDocAccessFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type IconTileGridsDocAccessFields_HeadingTag_Delete = {
-    __typename?: 'IconTileGridsDocAccessFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type IconTileGridsDocAccessFields_HeadingTag_Read = {
-    __typename?: 'IconTileGridsDocAccessFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type IconTileGridsDocAccessFields_HeadingTag_Update = {
-    __typename?: 'IconTileGridsDocAccessFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
-};
-
 export type IconTileGridsDocAccessFields_Heading_Create = {
     __typename?: 'IconTileGridsDocAccessFields_heading_Create';
     permission: Scalars['Boolean']['output'];
@@ -9770,7 +9273,6 @@ export type IconTileGridsFields = {
     content?: Maybe<IconTileGridsFields_Content>;
     createdAt?: Maybe<IconTileGridsFields_CreatedAt>;
     heading?: Maybe<IconTileGridsFields_Heading>;
-    headingTag?: Maybe<IconTileGridsFields_HeadingTag>;
     iconTiles?: Maybe<IconTileGridsFields_IconTiles>;
     updatedAt?: Maybe<IconTileGridsFields_UpdatedAt>;
 };
@@ -9865,34 +9367,6 @@ export type IconTileGridsFields_Heading = {
     delete?: Maybe<IconTileGridsFields_Heading_Delete>;
     read?: Maybe<IconTileGridsFields_Heading_Read>;
     update?: Maybe<IconTileGridsFields_Heading_Update>;
-};
-
-export type IconTileGridsFields_HeadingTag = {
-    __typename?: 'IconTileGridsFields_headingTag';
-    create?: Maybe<IconTileGridsFields_HeadingTag_Create>;
-    delete?: Maybe<IconTileGridsFields_HeadingTag_Delete>;
-    read?: Maybe<IconTileGridsFields_HeadingTag_Read>;
-    update?: Maybe<IconTileGridsFields_HeadingTag_Update>;
-};
-
-export type IconTileGridsFields_HeadingTag_Create = {
-    __typename?: 'IconTileGridsFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type IconTileGridsFields_HeadingTag_Delete = {
-    __typename?: 'IconTileGridsFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type IconTileGridsFields_HeadingTag_Read = {
-    __typename?: 'IconTileGridsFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type IconTileGridsFields_HeadingTag_Update = {
-    __typename?: 'IconTileGridsFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type IconTileGridsFields_Heading_Create = {
@@ -10005,6 +9479,17 @@ export type IconTile_Icon_Alt_Operator = {
     not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export type IconTile_Icon_Base64_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
 export type IconTile_Icon_CreatedAt_Operator = {
     equals?: InputMaybe<Scalars['DateTime']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -10028,23 +9513,23 @@ export type IconTile_Icon_Filename_Operator = {
 };
 
 export type IconTile_Icon_Filesize_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type IconTile_Icon_Height_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type IconTile_Icon_Id_Operator = {
@@ -10081,23 +9566,23 @@ export type IconTile_Icon_Sizes__Thumbnail__Filename_Operator = {
 };
 
 export type IconTile_Icon_Sizes__Thumbnail__Filesize_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type IconTile_Icon_Sizes__Thumbnail__Height_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type IconTile_Icon_Sizes__Thumbnail__MimeType_Operator = {
@@ -10123,13 +9608,13 @@ export type IconTile_Icon_Sizes__Thumbnail__Url_Operator = {
 };
 
 export type IconTile_Icon_Sizes__Thumbnail__Width_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type IconTile_Icon_UpdatedAt_Operator = {
@@ -10158,6 +9643,7 @@ export type IconTile_Icon_Where = {
     AND?: InputMaybe<Array<InputMaybe<IconTile_Icon_Where_And>>>;
     OR?: InputMaybe<Array<InputMaybe<IconTile_Icon_Where_Or>>>;
     alt?: InputMaybe<IconTile_Icon_Alt_Operator>;
+    base64?: InputMaybe<IconTile_Icon_Base64_Operator>;
     createdAt?: InputMaybe<IconTile_Icon_CreatedAt_Operator>;
     filename?: InputMaybe<IconTile_Icon_Filename_Operator>;
     filesize?: InputMaybe<IconTile_Icon_Filesize_Operator>;
@@ -10177,6 +9663,7 @@ export type IconTile_Icon_Where = {
 
 export type IconTile_Icon_Where_And = {
     alt?: InputMaybe<IconTile_Icon_Alt_Operator>;
+    base64?: InputMaybe<IconTile_Icon_Base64_Operator>;
     createdAt?: InputMaybe<IconTile_Icon_CreatedAt_Operator>;
     filename?: InputMaybe<IconTile_Icon_Filename_Operator>;
     filesize?: InputMaybe<IconTile_Icon_Filesize_Operator>;
@@ -10196,6 +9683,7 @@ export type IconTile_Icon_Where_And = {
 
 export type IconTile_Icon_Where_Or = {
     alt?: InputMaybe<IconTile_Icon_Alt_Operator>;
+    base64?: InputMaybe<IconTile_Icon_Base64_Operator>;
     createdAt?: InputMaybe<IconTile_Icon_CreatedAt_Operator>;
     filename?: InputMaybe<IconTile_Icon_Filename_Operator>;
     filesize?: InputMaybe<IconTile_Icon_Filesize_Operator>;
@@ -10214,13 +9702,13 @@ export type IconTile_Icon_Where_Or = {
 };
 
 export type IconTile_Icon_Width_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type IconTile_CreatedAt_Operator = {
@@ -10625,6 +10113,17 @@ export type Icon_Alt_Operator = {
     not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export type Icon_Base64_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
 export type Icon_CreatedAt_Operator = {
     equals?: InputMaybe<Scalars['DateTime']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -10648,23 +10147,23 @@ export type Icon_Filename_Operator = {
 };
 
 export type Icon_Filesize_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Icon_Height_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Icon_Id_Operator = {
@@ -10701,23 +10200,23 @@ export type Icon_Sizes__Thumbnail__Filename_Operator = {
 };
 
 export type Icon_Sizes__Thumbnail__Filesize_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Icon_Sizes__Thumbnail__Height_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Icon_Sizes__Thumbnail__MimeType_Operator = {
@@ -10743,13 +10242,13 @@ export type Icon_Sizes__Thumbnail__Url_Operator = {
 };
 
 export type Icon_Sizes__Thumbnail__Width_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Icon_UpdatedAt_Operator = {
@@ -10778,6 +10277,7 @@ export type Icon_Where = {
     AND?: InputMaybe<Array<InputMaybe<Icon_Where_And>>>;
     OR?: InputMaybe<Array<InputMaybe<Icon_Where_Or>>>;
     alt?: InputMaybe<Icon_Alt_Operator>;
+    base64?: InputMaybe<Icon_Base64_Operator>;
     createdAt?: InputMaybe<Icon_CreatedAt_Operator>;
     filename?: InputMaybe<Icon_Filename_Operator>;
     filesize?: InputMaybe<Icon_Filesize_Operator>;
@@ -10797,6 +10297,7 @@ export type Icon_Where = {
 
 export type Icon_Where_And = {
     alt?: InputMaybe<Icon_Alt_Operator>;
+    base64?: InputMaybe<Icon_Base64_Operator>;
     createdAt?: InputMaybe<Icon_CreatedAt_Operator>;
     filename?: InputMaybe<Icon_Filename_Operator>;
     filesize?: InputMaybe<Icon_Filesize_Operator>;
@@ -10816,6 +10317,7 @@ export type Icon_Where_And = {
 
 export type Icon_Where_Or = {
     alt?: InputMaybe<Icon_Alt_Operator>;
+    base64?: InputMaybe<Icon_Base64_Operator>;
     createdAt?: InputMaybe<Icon_CreatedAt_Operator>;
     filename?: InputMaybe<Icon_Filename_Operator>;
     filesize?: InputMaybe<Icon_Filesize_Operator>;
@@ -10834,13 +10336,13 @@ export type Icon_Where_Or = {
 };
 
 export type Icon_Width_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Icons = {
@@ -10885,6 +10387,7 @@ export type IconsDeleteDocAccess = {
 export type IconsDocAccessFields = {
     __typename?: 'IconsDocAccessFields';
     alt?: Maybe<IconsDocAccessFields_Alt>;
+    base64?: Maybe<IconsDocAccessFields_Base64>;
     createdAt?: Maybe<IconsDocAccessFields_CreatedAt>;
     filename?: Maybe<IconsDocAccessFields_Filename>;
     filesize?: Maybe<IconsDocAccessFields_Filesize>;
@@ -10921,6 +10424,34 @@ export type IconsDocAccessFields_Alt_Read = {
 
 export type IconsDocAccessFields_Alt_Update = {
     __typename?: 'IconsDocAccessFields_alt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconsDocAccessFields_Base64 = {
+    __typename?: 'IconsDocAccessFields_base64';
+    create?: Maybe<IconsDocAccessFields_Base64_Create>;
+    delete?: Maybe<IconsDocAccessFields_Base64_Delete>;
+    read?: Maybe<IconsDocAccessFields_Base64_Read>;
+    update?: Maybe<IconsDocAccessFields_Base64_Update>;
+};
+
+export type IconsDocAccessFields_Base64_Create = {
+    __typename?: 'IconsDocAccessFields_base64_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconsDocAccessFields_Base64_Delete = {
+    __typename?: 'IconsDocAccessFields_base64_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconsDocAccessFields_Base64_Read = {
+    __typename?: 'IconsDocAccessFields_base64_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconsDocAccessFields_Base64_Update = {
+    __typename?: 'IconsDocAccessFields_base64_Update';
     permission: Scalars['Boolean']['output'];
 };
 
@@ -11392,6 +10923,7 @@ export type IconsDocAccessFields_Width_Update = {
 export type IconsFields = {
     __typename?: 'IconsFields';
     alt?: Maybe<IconsFields_Alt>;
+    base64?: Maybe<IconsFields_Base64>;
     createdAt?: Maybe<IconsFields_CreatedAt>;
     filename?: Maybe<IconsFields_Filename>;
     filesize?: Maybe<IconsFields_Filesize>;
@@ -11428,6 +10960,34 @@ export type IconsFields_Alt_Read = {
 
 export type IconsFields_Alt_Update = {
     __typename?: 'IconsFields_alt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconsFields_Base64 = {
+    __typename?: 'IconsFields_base64';
+    create?: Maybe<IconsFields_Base64_Create>;
+    delete?: Maybe<IconsFields_Base64_Delete>;
+    read?: Maybe<IconsFields_Base64_Read>;
+    update?: Maybe<IconsFields_Base64_Update>;
+};
+
+export type IconsFields_Base64_Create = {
+    __typename?: 'IconsFields_base64_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconsFields_Base64_Delete = {
+    __typename?: 'IconsFields_base64_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconsFields_Base64_Read = {
+    __typename?: 'IconsFields_base64_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type IconsFields_Base64_Update = {
+    __typename?: 'IconsFields_base64_Update';
     permission: Scalars['Boolean']['output'];
 };
 
@@ -11921,9 +11481,9 @@ export type IconsUpdateDocAccess = {
 };
 
 export type Image = {
-    src: string;
     __typename?: 'Image';
     alt: Scalars['String']['output'];
+    base64?: Maybe<Scalars['String']['output']>;
     createdAt?: Maybe<Scalars['DateTime']['output']>;
     filename?: Maybe<Scalars['String']['output']>;
     filesize?: Maybe<Scalars['Float']['output']>;
@@ -11961,6 +11521,17 @@ export type Image_Alt_Operator = {
     not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export type Image_Base64_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
 export type Image_CreatedAt_Operator = {
     equals?: InputMaybe<Scalars['DateTime']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -11984,23 +11555,23 @@ export type Image_Filename_Operator = {
 };
 
 export type Image_Filesize_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Image_Height_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Image_Id_Operator = {
@@ -12037,23 +11608,23 @@ export type Image_Sizes__Thumbnail__Filename_Operator = {
 };
 
 export type Image_Sizes__Thumbnail__Filesize_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Image_Sizes__Thumbnail__Height_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Image_Sizes__Thumbnail__MimeType_Operator = {
@@ -12079,13 +11650,13 @@ export type Image_Sizes__Thumbnail__Url_Operator = {
 };
 
 export type Image_Sizes__Thumbnail__Width_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Image_UpdatedAt_Operator = {
@@ -12114,6 +11685,7 @@ export type Image_Where = {
     AND?: InputMaybe<Array<InputMaybe<Image_Where_And>>>;
     OR?: InputMaybe<Array<InputMaybe<Image_Where_Or>>>;
     alt?: InputMaybe<Image_Alt_Operator>;
+    base64?: InputMaybe<Image_Base64_Operator>;
     createdAt?: InputMaybe<Image_CreatedAt_Operator>;
     filename?: InputMaybe<Image_Filename_Operator>;
     filesize?: InputMaybe<Image_Filesize_Operator>;
@@ -12133,6 +11705,7 @@ export type Image_Where = {
 
 export type Image_Where_And = {
     alt?: InputMaybe<Image_Alt_Operator>;
+    base64?: InputMaybe<Image_Base64_Operator>;
     createdAt?: InputMaybe<Image_CreatedAt_Operator>;
     filename?: InputMaybe<Image_Filename_Operator>;
     filesize?: InputMaybe<Image_Filesize_Operator>;
@@ -12152,6 +11725,7 @@ export type Image_Where_And = {
 
 export type Image_Where_Or = {
     alt?: InputMaybe<Image_Alt_Operator>;
+    base64?: InputMaybe<Image_Base64_Operator>;
     createdAt?: InputMaybe<Image_CreatedAt_Operator>;
     filename?: InputMaybe<Image_Filename_Operator>;
     filesize?: InputMaybe<Image_Filesize_Operator>;
@@ -12170,13 +11744,13 @@ export type Image_Where_Or = {
 };
 
 export type Image_Width_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Images = {
@@ -12221,6 +11795,7 @@ export type ImagesDeleteDocAccess = {
 export type ImagesDocAccessFields = {
     __typename?: 'ImagesDocAccessFields';
     alt?: Maybe<ImagesDocAccessFields_Alt>;
+    base64?: Maybe<ImagesDocAccessFields_Base64>;
     createdAt?: Maybe<ImagesDocAccessFields_CreatedAt>;
     filename?: Maybe<ImagesDocAccessFields_Filename>;
     filesize?: Maybe<ImagesDocAccessFields_Filesize>;
@@ -12257,6 +11832,34 @@ export type ImagesDocAccessFields_Alt_Read = {
 
 export type ImagesDocAccessFields_Alt_Update = {
     __typename?: 'ImagesDocAccessFields_alt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ImagesDocAccessFields_Base64 = {
+    __typename?: 'ImagesDocAccessFields_base64';
+    create?: Maybe<ImagesDocAccessFields_Base64_Create>;
+    delete?: Maybe<ImagesDocAccessFields_Base64_Delete>;
+    read?: Maybe<ImagesDocAccessFields_Base64_Read>;
+    update?: Maybe<ImagesDocAccessFields_Base64_Update>;
+};
+
+export type ImagesDocAccessFields_Base64_Create = {
+    __typename?: 'ImagesDocAccessFields_base64_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ImagesDocAccessFields_Base64_Delete = {
+    __typename?: 'ImagesDocAccessFields_base64_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ImagesDocAccessFields_Base64_Read = {
+    __typename?: 'ImagesDocAccessFields_base64_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ImagesDocAccessFields_Base64_Update = {
+    __typename?: 'ImagesDocAccessFields_base64_Update';
     permission: Scalars['Boolean']['output'];
 };
 
@@ -12728,6 +12331,7 @@ export type ImagesDocAccessFields_Width_Update = {
 export type ImagesFields = {
     __typename?: 'ImagesFields';
     alt?: Maybe<ImagesFields_Alt>;
+    base64?: Maybe<ImagesFields_Base64>;
     createdAt?: Maybe<ImagesFields_CreatedAt>;
     filename?: Maybe<ImagesFields_Filename>;
     filesize?: Maybe<ImagesFields_Filesize>;
@@ -12764,6 +12368,34 @@ export type ImagesFields_Alt_Read = {
 
 export type ImagesFields_Alt_Update = {
     __typename?: 'ImagesFields_alt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ImagesFields_Base64 = {
+    __typename?: 'ImagesFields_base64';
+    create?: Maybe<ImagesFields_Base64_Create>;
+    delete?: Maybe<ImagesFields_Base64_Delete>;
+    read?: Maybe<ImagesFields_Base64_Read>;
+    update?: Maybe<ImagesFields_Base64_Update>;
+};
+
+export type ImagesFields_Base64_Create = {
+    __typename?: 'ImagesFields_base64_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ImagesFields_Base64_Delete = {
+    __typename?: 'ImagesFields_base64_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ImagesFields_Base64_Read = {
+    __typename?: 'ImagesFields_base64_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type ImagesFields_Base64_Update = {
+    __typename?: 'ImagesFields_base64_Update';
     permission: Scalars['Boolean']['output'];
 };
 
@@ -13798,12 +13430,11 @@ export type Page_PageSections__GridColor_Input =
     | '%future added value';
 
 export type Page_PageSections__GridColor_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Page_PageSections__GridColor_Input>>>;
+    contains?: InputMaybe<Page_PageSections__GridColor_Input>;
     equals?: InputMaybe<Page_PageSections__GridColor_Input>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    in?: InputMaybe<Array<InputMaybe<Page_PageSections__GridColor_Input>>>;
+    like?: InputMaybe<Page_PageSections__GridColor_Input>;
     not_equals?: InputMaybe<Page_PageSections__GridColor_Input>;
-    not_in?: InputMaybe<Array<InputMaybe<Page_PageSections__GridColor_Input>>>;
 };
 
 export type Page_PageSections__Id_Operator = {
@@ -13848,18 +13479,11 @@ export type Page_PageSections__Shapes__Location_Input =
     | '%future added value';
 
 export type Page_PageSections__Shapes__Location_Operator = {
-    all?: InputMaybe<
-        Array<InputMaybe<Page_PageSections__Shapes__Location_Input>>
-    >;
+    contains?: InputMaybe<Page_PageSections__Shapes__Location_Input>;
     equals?: InputMaybe<Page_PageSections__Shapes__Location_Input>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    in?: InputMaybe<
-        Array<InputMaybe<Page_PageSections__Shapes__Location_Input>>
-    >;
+    like?: InputMaybe<Page_PageSections__Shapes__Location_Input>;
     not_equals?: InputMaybe<Page_PageSections__Shapes__Location_Input>;
-    not_in?: InputMaybe<
-        Array<InputMaybe<Page_PageSections__Shapes__Location_Input>>
-    >;
 };
 
 export type Page_PageSections__Shapes__Shape_Input =
@@ -13868,14 +13492,11 @@ export type Page_PageSections__Shapes__Shape_Input =
     | '%future added value';
 
 export type Page_PageSections__Shapes__Shape_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Page_PageSections__Shapes__Shape_Input>>>;
+    contains?: InputMaybe<Page_PageSections__Shapes__Shape_Input>;
     equals?: InputMaybe<Page_PageSections__Shapes__Shape_Input>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    in?: InputMaybe<Array<InputMaybe<Page_PageSections__Shapes__Shape_Input>>>;
+    like?: InputMaybe<Page_PageSections__Shapes__Shape_Input>;
     not_equals?: InputMaybe<Page_PageSections__Shapes__Shape_Input>;
-    not_in?: InputMaybe<
-        Array<InputMaybe<Page_PageSections__Shapes__Shape_Input>>
-    >;
 };
 
 export type Page_Slug_Operator = {
@@ -14952,7 +14573,6 @@ export type Process_Steps = {
     __typename?: 'Process_Steps';
     content?: Maybe<Scalars['JSON']['output']>;
     heading?: Maybe<Scalars['String']['output']>;
-    headingTag?: Maybe<Scalars['String']['output']>;
     id?: Maybe<Scalars['String']['output']>;
 };
 
@@ -15008,16 +14628,6 @@ export type Process_Steps__Content_Operator = {
     not_equals?: InputMaybe<Scalars['JSON']['input']>;
 };
 
-export type Process_Steps__HeadingTag_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    contains?: InputMaybe<Scalars['String']['input']>;
-    equals?: InputMaybe<Scalars['String']['input']>;
-    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    like?: InputMaybe<Scalars['String']['input']>;
-    not_equals?: InputMaybe<Scalars['String']['input']>;
-    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
 export type Process_Steps__Heading_Operator = {
     all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     contains?: InputMaybe<Scalars['String']['input']>;
@@ -15059,7 +14669,6 @@ export type Process_Where = {
     internalName?: InputMaybe<Process_InternalName_Operator>;
     steps__content?: InputMaybe<Process_Steps__Content_Operator>;
     steps__heading?: InputMaybe<Process_Steps__Heading_Operator>;
-    steps__headingTag?: InputMaybe<Process_Steps__HeadingTag_Operator>;
     steps__id?: InputMaybe<Process_Steps__Id_Operator>;
     updatedAt?: InputMaybe<Process_UpdatedAt_Operator>;
 };
@@ -15071,7 +14680,6 @@ export type Process_Where_And = {
     internalName?: InputMaybe<Process_InternalName_Operator>;
     steps__content?: InputMaybe<Process_Steps__Content_Operator>;
     steps__heading?: InputMaybe<Process_Steps__Heading_Operator>;
-    steps__headingTag?: InputMaybe<Process_Steps__HeadingTag_Operator>;
     steps__id?: InputMaybe<Process_Steps__Id_Operator>;
     updatedAt?: InputMaybe<Process_UpdatedAt_Operator>;
 };
@@ -15083,7 +14691,6 @@ export type Process_Where_Or = {
     internalName?: InputMaybe<Process_InternalName_Operator>;
     steps__content?: InputMaybe<Process_Steps__Content_Operator>;
     steps__heading?: InputMaybe<Process_Steps__Heading_Operator>;
-    steps__headingTag?: InputMaybe<Process_Steps__HeadingTag_Operator>;
     steps__id?: InputMaybe<Process_Steps__Id_Operator>;
     updatedAt?: InputMaybe<Process_UpdatedAt_Operator>;
 };
@@ -15243,7 +14850,6 @@ export type ProcessesDocAccessFields_Steps_Fields = {
     __typename?: 'ProcessesDocAccessFields_steps_Fields';
     content?: Maybe<ProcessesDocAccessFields_Steps_Content>;
     heading?: Maybe<ProcessesDocAccessFields_Steps_Heading>;
-    headingTag?: Maybe<ProcessesDocAccessFields_Steps_HeadingTag>;
     id?: Maybe<ProcessesDocAccessFields_Steps_Id>;
 };
 
@@ -15291,34 +14897,6 @@ export type ProcessesDocAccessFields_Steps_Heading = {
     delete?: Maybe<ProcessesDocAccessFields_Steps_Heading_Delete>;
     read?: Maybe<ProcessesDocAccessFields_Steps_Heading_Read>;
     update?: Maybe<ProcessesDocAccessFields_Steps_Heading_Update>;
-};
-
-export type ProcessesDocAccessFields_Steps_HeadingTag = {
-    __typename?: 'ProcessesDocAccessFields_steps_headingTag';
-    create?: Maybe<ProcessesDocAccessFields_Steps_HeadingTag_Create>;
-    delete?: Maybe<ProcessesDocAccessFields_Steps_HeadingTag_Delete>;
-    read?: Maybe<ProcessesDocAccessFields_Steps_HeadingTag_Read>;
-    update?: Maybe<ProcessesDocAccessFields_Steps_HeadingTag_Update>;
-};
-
-export type ProcessesDocAccessFields_Steps_HeadingTag_Create = {
-    __typename?: 'ProcessesDocAccessFields_steps_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ProcessesDocAccessFields_Steps_HeadingTag_Delete = {
-    __typename?: 'ProcessesDocAccessFields_steps_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ProcessesDocAccessFields_Steps_HeadingTag_Read = {
-    __typename?: 'ProcessesDocAccessFields_steps_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ProcessesDocAccessFields_Steps_HeadingTag_Update = {
-    __typename?: 'ProcessesDocAccessFields_steps_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type ProcessesDocAccessFields_Steps_Heading_Create = {
@@ -15513,7 +15091,6 @@ export type ProcessesFields_Steps_Fields = {
     __typename?: 'ProcessesFields_steps_Fields';
     content?: Maybe<ProcessesFields_Steps_Content>;
     heading?: Maybe<ProcessesFields_Steps_Heading>;
-    headingTag?: Maybe<ProcessesFields_Steps_HeadingTag>;
     id?: Maybe<ProcessesFields_Steps_Id>;
 };
 
@@ -15561,34 +15138,6 @@ export type ProcessesFields_Steps_Heading = {
     delete?: Maybe<ProcessesFields_Steps_Heading_Delete>;
     read?: Maybe<ProcessesFields_Steps_Heading_Read>;
     update?: Maybe<ProcessesFields_Steps_Heading_Update>;
-};
-
-export type ProcessesFields_Steps_HeadingTag = {
-    __typename?: 'ProcessesFields_steps_headingTag';
-    create?: Maybe<ProcessesFields_Steps_HeadingTag_Create>;
-    delete?: Maybe<ProcessesFields_Steps_HeadingTag_Delete>;
-    read?: Maybe<ProcessesFields_Steps_HeadingTag_Read>;
-    update?: Maybe<ProcessesFields_Steps_HeadingTag_Update>;
-};
-
-export type ProcessesFields_Steps_HeadingTag_Create = {
-    __typename?: 'ProcessesFields_steps_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ProcessesFields_Steps_HeadingTag_Delete = {
-    __typename?: 'ProcessesFields_steps_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ProcessesFields_Steps_HeadingTag_Read = {
-    __typename?: 'ProcessesFields_steps_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type ProcessesFields_Steps_HeadingTag_Update = {
-    __typename?: 'ProcessesFields_steps_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type ProcessesFields_Steps_Heading_Create = {
@@ -16120,7 +15669,6 @@ export type Special = {
     content?: Maybe<Scalars['JSON']['output']>;
     createdAt?: Maybe<Scalars['DateTime']['output']>;
     heading: Scalars['String']['output'];
-    headingTag: Scalars['String']['output'];
     id?: Maybe<Scalars['String']['output']>;
     sideBox?: Maybe<Scalars['JSON']['output']>;
     subheading?: Maybe<Scalars['String']['output']>;
@@ -16161,16 +15709,6 @@ export type Special_CreatedAt_Operator = {
     less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
     like?: InputMaybe<Scalars['DateTime']['input']>;
     not_equals?: InputMaybe<Scalars['DateTime']['input']>;
-};
-
-export type Special_HeadingTag_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    contains?: InputMaybe<Scalars['String']['input']>;
-    equals?: InputMaybe<Scalars['String']['input']>;
-    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    like?: InputMaybe<Scalars['String']['input']>;
-    not_equals?: InputMaybe<Scalars['String']['input']>;
-    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Special_Heading_Operator = {
@@ -16238,7 +15776,6 @@ export type Special_Where = {
     content?: InputMaybe<Special_Content_Operator>;
     createdAt?: InputMaybe<Special_CreatedAt_Operator>;
     heading?: InputMaybe<Special_Heading_Operator>;
-    headingTag?: InputMaybe<Special_HeadingTag_Operator>;
     id?: InputMaybe<Special_Id_Operator>;
     sideBox?: InputMaybe<Special_SideBox_Operator>;
     subheading?: InputMaybe<Special_Subheading_Operator>;
@@ -16250,7 +15787,6 @@ export type Special_Where_And = {
     content?: InputMaybe<Special_Content_Operator>;
     createdAt?: InputMaybe<Special_CreatedAt_Operator>;
     heading?: InputMaybe<Special_Heading_Operator>;
-    headingTag?: InputMaybe<Special_HeadingTag_Operator>;
     id?: InputMaybe<Special_Id_Operator>;
     sideBox?: InputMaybe<Special_SideBox_Operator>;
     subheading?: InputMaybe<Special_Subheading_Operator>;
@@ -16262,7 +15798,6 @@ export type Special_Where_Or = {
     content?: InputMaybe<Special_Content_Operator>;
     createdAt?: InputMaybe<Special_CreatedAt_Operator>;
     heading?: InputMaybe<Special_Heading_Operator>;
-    headingTag?: InputMaybe<Special_HeadingTag_Operator>;
     id?: InputMaybe<Special_Id_Operator>;
     sideBox?: InputMaybe<Special_SideBox_Operator>;
     subheading?: InputMaybe<Special_Subheading_Operator>;
@@ -16314,7 +15849,6 @@ export type SpecialsDocAccessFields = {
     content?: Maybe<SpecialsDocAccessFields_Content>;
     createdAt?: Maybe<SpecialsDocAccessFields_CreatedAt>;
     heading?: Maybe<SpecialsDocAccessFields_Heading>;
-    headingTag?: Maybe<SpecialsDocAccessFields_HeadingTag>;
     sideBox?: Maybe<SpecialsDocAccessFields_SideBox>;
     subheading?: Maybe<SpecialsDocAccessFields_Subheading>;
     textGrid?: Maybe<SpecialsDocAccessFields_TextGrid>;
@@ -16383,34 +15917,6 @@ export type SpecialsDocAccessFields_Heading = {
     delete?: Maybe<SpecialsDocAccessFields_Heading_Delete>;
     read?: Maybe<SpecialsDocAccessFields_Heading_Read>;
     update?: Maybe<SpecialsDocAccessFields_Heading_Update>;
-};
-
-export type SpecialsDocAccessFields_HeadingTag = {
-    __typename?: 'SpecialsDocAccessFields_headingTag';
-    create?: Maybe<SpecialsDocAccessFields_HeadingTag_Create>;
-    delete?: Maybe<SpecialsDocAccessFields_HeadingTag_Delete>;
-    read?: Maybe<SpecialsDocAccessFields_HeadingTag_Read>;
-    update?: Maybe<SpecialsDocAccessFields_HeadingTag_Update>;
-};
-
-export type SpecialsDocAccessFields_HeadingTag_Create = {
-    __typename?: 'SpecialsDocAccessFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type SpecialsDocAccessFields_HeadingTag_Delete = {
-    __typename?: 'SpecialsDocAccessFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type SpecialsDocAccessFields_HeadingTag_Read = {
-    __typename?: 'SpecialsDocAccessFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type SpecialsDocAccessFields_HeadingTag_Update = {
-    __typename?: 'SpecialsDocAccessFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type SpecialsDocAccessFields_Heading_Create = {
@@ -16550,7 +16056,6 @@ export type SpecialsFields = {
     content?: Maybe<SpecialsFields_Content>;
     createdAt?: Maybe<SpecialsFields_CreatedAt>;
     heading?: Maybe<SpecialsFields_Heading>;
-    headingTag?: Maybe<SpecialsFields_HeadingTag>;
     sideBox?: Maybe<SpecialsFields_SideBox>;
     subheading?: Maybe<SpecialsFields_Subheading>;
     textGrid?: Maybe<SpecialsFields_TextGrid>;
@@ -16619,34 +16124,6 @@ export type SpecialsFields_Heading = {
     delete?: Maybe<SpecialsFields_Heading_Delete>;
     read?: Maybe<SpecialsFields_Heading_Read>;
     update?: Maybe<SpecialsFields_Heading_Update>;
-};
-
-export type SpecialsFields_HeadingTag = {
-    __typename?: 'SpecialsFields_headingTag';
-    create?: Maybe<SpecialsFields_HeadingTag_Create>;
-    delete?: Maybe<SpecialsFields_HeadingTag_Delete>;
-    read?: Maybe<SpecialsFields_HeadingTag_Read>;
-    update?: Maybe<SpecialsFields_HeadingTag_Update>;
-};
-
-export type SpecialsFields_HeadingTag_Create = {
-    __typename?: 'SpecialsFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type SpecialsFields_HeadingTag_Delete = {
-    __typename?: 'SpecialsFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type SpecialsFields_HeadingTag_Read = {
-    __typename?: 'SpecialsFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type SpecialsFields_HeadingTag_Update = {
-    __typename?: 'SpecialsFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type SpecialsFields_Heading_Create = {
@@ -16811,7 +16288,6 @@ export type Switchback = {
     content?: Maybe<Scalars['JSON']['output']>;
     createdAt?: Maybe<Scalars['DateTime']['output']>;
     heading?: Maybe<Scalars['String']['output']>;
-    headingTag?: Maybe<Scalars['String']['output']>;
     id?: Maybe<Scalars['String']['output']>;
     image: Image;
     imageSide: Switchback_ImageSide;
@@ -16845,6 +16321,17 @@ export type Switchback_Image_Alt_Operator = {
     not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export type Switchback_Image_Base64_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
 export type Switchback_Image_CreatedAt_Operator = {
     equals?: InputMaybe<Scalars['DateTime']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -16868,23 +16355,23 @@ export type Switchback_Image_Filename_Operator = {
 };
 
 export type Switchback_Image_Filesize_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Switchback_Image_Height_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Switchback_Image_Id_Operator = {
@@ -16921,23 +16408,23 @@ export type Switchback_Image_Sizes__Thumbnail__Filename_Operator = {
 };
 
 export type Switchback_Image_Sizes__Thumbnail__Filesize_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Switchback_Image_Sizes__Thumbnail__Height_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Switchback_Image_Sizes__Thumbnail__MimeType_Operator = {
@@ -16963,13 +16450,13 @@ export type Switchback_Image_Sizes__Thumbnail__Url_Operator = {
 };
 
 export type Switchback_Image_Sizes__Thumbnail__Width_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Switchback_Image_UpdatedAt_Operator = {
@@ -16998,6 +16485,7 @@ export type Switchback_Image_Where = {
     AND?: InputMaybe<Array<InputMaybe<Switchback_Image_Where_And>>>;
     OR?: InputMaybe<Array<InputMaybe<Switchback_Image_Where_Or>>>;
     alt?: InputMaybe<Switchback_Image_Alt_Operator>;
+    base64?: InputMaybe<Switchback_Image_Base64_Operator>;
     createdAt?: InputMaybe<Switchback_Image_CreatedAt_Operator>;
     filename?: InputMaybe<Switchback_Image_Filename_Operator>;
     filesize?: InputMaybe<Switchback_Image_Filesize_Operator>;
@@ -17017,6 +16505,7 @@ export type Switchback_Image_Where = {
 
 export type Switchback_Image_Where_And = {
     alt?: InputMaybe<Switchback_Image_Alt_Operator>;
+    base64?: InputMaybe<Switchback_Image_Base64_Operator>;
     createdAt?: InputMaybe<Switchback_Image_CreatedAt_Operator>;
     filename?: InputMaybe<Switchback_Image_Filename_Operator>;
     filesize?: InputMaybe<Switchback_Image_Filesize_Operator>;
@@ -17036,6 +16525,7 @@ export type Switchback_Image_Where_And = {
 
 export type Switchback_Image_Where_Or = {
     alt?: InputMaybe<Switchback_Image_Alt_Operator>;
+    base64?: InputMaybe<Switchback_Image_Base64_Operator>;
     createdAt?: InputMaybe<Switchback_Image_CreatedAt_Operator>;
     filename?: InputMaybe<Switchback_Image_Filename_Operator>;
     filesize?: InputMaybe<Switchback_Image_Filesize_Operator>;
@@ -17054,13 +16544,13 @@ export type Switchback_Image_Where_Or = {
 };
 
 export type Switchback_Image_Width_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Switchback_CallToAction_Operator = {
@@ -17089,17 +16579,6 @@ export type Switchback_CreatedAt_Operator = {
     less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
     like?: InputMaybe<Scalars['DateTime']['input']>;
     not_equals?: InputMaybe<Scalars['DateTime']['input']>;
-};
-
-export type Switchback_HeadingTag_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    contains?: InputMaybe<Scalars['String']['input']>;
-    equals?: InputMaybe<Scalars['String']['input']>;
-    exists?: InputMaybe<Scalars['Boolean']['input']>;
-    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    like?: InputMaybe<Scalars['String']['input']>;
-    not_equals?: InputMaybe<Scalars['String']['input']>;
-    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Switchback_Heading_Operator = {
@@ -17132,11 +16611,10 @@ export type Switchback_ImageSide_Input =
     | '%future added value';
 
 export type Switchback_ImageSide_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Switchback_ImageSide_Input>>>;
+    contains?: InputMaybe<Switchback_ImageSide_Input>;
     equals?: InputMaybe<Switchback_ImageSide_Input>;
-    in?: InputMaybe<Array<InputMaybe<Switchback_ImageSide_Input>>>;
+    like?: InputMaybe<Switchback_ImageSide_Input>;
     not_equals?: InputMaybe<Switchback_ImageSide_Input>;
-    not_in?: InputMaybe<Array<InputMaybe<Switchback_ImageSide_Input>>>;
 };
 
 export type Switchback_Image_Operator = {
@@ -17172,7 +16650,6 @@ export type Switchback_Where = {
     content?: InputMaybe<Switchback_Content_Operator>;
     createdAt?: InputMaybe<Switchback_CreatedAt_Operator>;
     heading?: InputMaybe<Switchback_Heading_Operator>;
-    headingTag?: InputMaybe<Switchback_HeadingTag_Operator>;
     id?: InputMaybe<Switchback_Id_Operator>;
     image?: InputMaybe<Switchback_Image_Operator>;
     imageSide?: InputMaybe<Switchback_ImageSide_Operator>;
@@ -17185,7 +16662,6 @@ export type Switchback_Where_And = {
     content?: InputMaybe<Switchback_Content_Operator>;
     createdAt?: InputMaybe<Switchback_CreatedAt_Operator>;
     heading?: InputMaybe<Switchback_Heading_Operator>;
-    headingTag?: InputMaybe<Switchback_HeadingTag_Operator>;
     id?: InputMaybe<Switchback_Id_Operator>;
     image?: InputMaybe<Switchback_Image_Operator>;
     imageSide?: InputMaybe<Switchback_ImageSide_Operator>;
@@ -17198,7 +16674,6 @@ export type Switchback_Where_Or = {
     content?: InputMaybe<Switchback_Content_Operator>;
     createdAt?: InputMaybe<Switchback_CreatedAt_Operator>;
     heading?: InputMaybe<Switchback_Heading_Operator>;
-    headingTag?: InputMaybe<Switchback_HeadingTag_Operator>;
     id?: InputMaybe<Switchback_Id_Operator>;
     image?: InputMaybe<Switchback_Image_Operator>;
     imageSide?: InputMaybe<Switchback_ImageSide_Operator>;
@@ -17251,7 +16726,6 @@ export type SwitchbacksDocAccessFields = {
     content?: Maybe<SwitchbacksDocAccessFields_Content>;
     createdAt?: Maybe<SwitchbacksDocAccessFields_CreatedAt>;
     heading?: Maybe<SwitchbacksDocAccessFields_Heading>;
-    headingTag?: Maybe<SwitchbacksDocAccessFields_HeadingTag>;
     image?: Maybe<SwitchbacksDocAccessFields_Image>;
     imageSide?: Maybe<SwitchbacksDocAccessFields_ImageSide>;
     internalName?: Maybe<SwitchbacksDocAccessFields_InternalName>;
@@ -17348,34 +16822,6 @@ export type SwitchbacksDocAccessFields_Heading = {
     delete?: Maybe<SwitchbacksDocAccessFields_Heading_Delete>;
     read?: Maybe<SwitchbacksDocAccessFields_Heading_Read>;
     update?: Maybe<SwitchbacksDocAccessFields_Heading_Update>;
-};
-
-export type SwitchbacksDocAccessFields_HeadingTag = {
-    __typename?: 'SwitchbacksDocAccessFields_headingTag';
-    create?: Maybe<SwitchbacksDocAccessFields_HeadingTag_Create>;
-    delete?: Maybe<SwitchbacksDocAccessFields_HeadingTag_Delete>;
-    read?: Maybe<SwitchbacksDocAccessFields_HeadingTag_Read>;
-    update?: Maybe<SwitchbacksDocAccessFields_HeadingTag_Update>;
-};
-
-export type SwitchbacksDocAccessFields_HeadingTag_Create = {
-    __typename?: 'SwitchbacksDocAccessFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type SwitchbacksDocAccessFields_HeadingTag_Delete = {
-    __typename?: 'SwitchbacksDocAccessFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type SwitchbacksDocAccessFields_HeadingTag_Read = {
-    __typename?: 'SwitchbacksDocAccessFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type SwitchbacksDocAccessFields_HeadingTag_Update = {
-    __typename?: 'SwitchbacksDocAccessFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type SwitchbacksDocAccessFields_Heading_Create = {
@@ -17516,7 +16962,6 @@ export type SwitchbacksFields = {
     content?: Maybe<SwitchbacksFields_Content>;
     createdAt?: Maybe<SwitchbacksFields_CreatedAt>;
     heading?: Maybe<SwitchbacksFields_Heading>;
-    headingTag?: Maybe<SwitchbacksFields_HeadingTag>;
     image?: Maybe<SwitchbacksFields_Image>;
     imageSide?: Maybe<SwitchbacksFields_ImageSide>;
     internalName?: Maybe<SwitchbacksFields_InternalName>;
@@ -17613,34 +17058,6 @@ export type SwitchbacksFields_Heading = {
     delete?: Maybe<SwitchbacksFields_Heading_Delete>;
     read?: Maybe<SwitchbacksFields_Heading_Read>;
     update?: Maybe<SwitchbacksFields_Heading_Update>;
-};
-
-export type SwitchbacksFields_HeadingTag = {
-    __typename?: 'SwitchbacksFields_headingTag';
-    create?: Maybe<SwitchbacksFields_HeadingTag_Create>;
-    delete?: Maybe<SwitchbacksFields_HeadingTag_Delete>;
-    read?: Maybe<SwitchbacksFields_HeadingTag_Read>;
-    update?: Maybe<SwitchbacksFields_HeadingTag_Update>;
-};
-
-export type SwitchbacksFields_HeadingTag_Create = {
-    __typename?: 'SwitchbacksFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type SwitchbacksFields_HeadingTag_Delete = {
-    __typename?: 'SwitchbacksFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type SwitchbacksFields_HeadingTag_Read = {
-    __typename?: 'SwitchbacksFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type SwitchbacksFields_HeadingTag_Update = {
-    __typename?: 'SwitchbacksFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type SwitchbacksFields_Heading_Create = {
@@ -17805,7 +17222,6 @@ export type TextGrid = {
     content?: Maybe<Scalars['JSON']['output']>;
     createdAt?: Maybe<Scalars['DateTime']['output']>;
     heading?: Maybe<Scalars['String']['output']>;
-    headingTag?: Maybe<Scalars['String']['output']>;
     id?: Maybe<Scalars['String']['output']>;
     internalName: Scalars['String']['output'];
     textTiles?: Maybe<Array<TextGrid_TextTiles>>;
@@ -17856,17 +17272,6 @@ export type TextGrid_CreatedAt_Operator = {
     less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
     like?: InputMaybe<Scalars['DateTime']['input']>;
     not_equals?: InputMaybe<Scalars['DateTime']['input']>;
-};
-
-export type TextGrid_HeadingTag_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    contains?: InputMaybe<Scalars['String']['input']>;
-    equals?: InputMaybe<Scalars['String']['input']>;
-    exists?: InputMaybe<Scalars['Boolean']['input']>;
-    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    like?: InputMaybe<Scalars['String']['input']>;
-    not_equals?: InputMaybe<Scalars['String']['input']>;
-    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type TextGrid_Heading_Operator = {
@@ -17941,7 +17346,6 @@ export type TextGrid_Where = {
     content?: InputMaybe<TextGrid_Content_Operator>;
     createdAt?: InputMaybe<TextGrid_CreatedAt_Operator>;
     heading?: InputMaybe<TextGrid_Heading_Operator>;
-    headingTag?: InputMaybe<TextGrid_HeadingTag_Operator>;
     id?: InputMaybe<TextGrid_Id_Operator>;
     internalName?: InputMaybe<TextGrid_InternalName_Operator>;
     textTiles__id?: InputMaybe<TextGrid_TextTiles__Id_Operator>;
@@ -17954,7 +17358,6 @@ export type TextGrid_Where_And = {
     content?: InputMaybe<TextGrid_Content_Operator>;
     createdAt?: InputMaybe<TextGrid_CreatedAt_Operator>;
     heading?: InputMaybe<TextGrid_Heading_Operator>;
-    headingTag?: InputMaybe<TextGrid_HeadingTag_Operator>;
     id?: InputMaybe<TextGrid_Id_Operator>;
     internalName?: InputMaybe<TextGrid_InternalName_Operator>;
     textTiles__id?: InputMaybe<TextGrid_TextTiles__Id_Operator>;
@@ -17967,7 +17370,6 @@ export type TextGrid_Where_Or = {
     content?: InputMaybe<TextGrid_Content_Operator>;
     createdAt?: InputMaybe<TextGrid_CreatedAt_Operator>;
     heading?: InputMaybe<TextGrid_Heading_Operator>;
-    headingTag?: InputMaybe<TextGrid_HeadingTag_Operator>;
     id?: InputMaybe<TextGrid_Id_Operator>;
     internalName?: InputMaybe<TextGrid_InternalName_Operator>;
     textTiles__id?: InputMaybe<TextGrid_TextTiles__Id_Operator>;
@@ -18020,7 +17422,6 @@ export type TextGridsDocAccessFields = {
     content?: Maybe<TextGridsDocAccessFields_Content>;
     createdAt?: Maybe<TextGridsDocAccessFields_CreatedAt>;
     heading?: Maybe<TextGridsDocAccessFields_Heading>;
-    headingTag?: Maybe<TextGridsDocAccessFields_HeadingTag>;
     internalName?: Maybe<TextGridsDocAccessFields_InternalName>;
     textTiles?: Maybe<TextGridsDocAccessFields_TextTiles>;
     updatedAt?: Maybe<TextGridsDocAccessFields_UpdatedAt>;
@@ -18116,34 +17517,6 @@ export type TextGridsDocAccessFields_Heading = {
     delete?: Maybe<TextGridsDocAccessFields_Heading_Delete>;
     read?: Maybe<TextGridsDocAccessFields_Heading_Read>;
     update?: Maybe<TextGridsDocAccessFields_Heading_Update>;
-};
-
-export type TextGridsDocAccessFields_HeadingTag = {
-    __typename?: 'TextGridsDocAccessFields_headingTag';
-    create?: Maybe<TextGridsDocAccessFields_HeadingTag_Create>;
-    delete?: Maybe<TextGridsDocAccessFields_HeadingTag_Delete>;
-    read?: Maybe<TextGridsDocAccessFields_HeadingTag_Read>;
-    update?: Maybe<TextGridsDocAccessFields_HeadingTag_Update>;
-};
-
-export type TextGridsDocAccessFields_HeadingTag_Create = {
-    __typename?: 'TextGridsDocAccessFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type TextGridsDocAccessFields_HeadingTag_Delete = {
-    __typename?: 'TextGridsDocAccessFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type TextGridsDocAccessFields_HeadingTag_Read = {
-    __typename?: 'TextGridsDocAccessFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type TextGridsDocAccessFields_HeadingTag_Update = {
-    __typename?: 'TextGridsDocAccessFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type TextGridsDocAccessFields_Heading_Create = {
@@ -18319,7 +17692,6 @@ export type TextGridsFields = {
     content?: Maybe<TextGridsFields_Content>;
     createdAt?: Maybe<TextGridsFields_CreatedAt>;
     heading?: Maybe<TextGridsFields_Heading>;
-    headingTag?: Maybe<TextGridsFields_HeadingTag>;
     internalName?: Maybe<TextGridsFields_InternalName>;
     textTiles?: Maybe<TextGridsFields_TextTiles>;
     updatedAt?: Maybe<TextGridsFields_UpdatedAt>;
@@ -18415,34 +17787,6 @@ export type TextGridsFields_Heading = {
     delete?: Maybe<TextGridsFields_Heading_Delete>;
     read?: Maybe<TextGridsFields_Heading_Read>;
     update?: Maybe<TextGridsFields_Heading_Update>;
-};
-
-export type TextGridsFields_HeadingTag = {
-    __typename?: 'TextGridsFields_headingTag';
-    create?: Maybe<TextGridsFields_HeadingTag_Create>;
-    delete?: Maybe<TextGridsFields_HeadingTag_Delete>;
-    read?: Maybe<TextGridsFields_HeadingTag_Read>;
-    update?: Maybe<TextGridsFields_HeadingTag_Update>;
-};
-
-export type TextGridsFields_HeadingTag_Create = {
-    __typename?: 'TextGridsFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type TextGridsFields_HeadingTag_Delete = {
-    __typename?: 'TextGridsFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type TextGridsFields_HeadingTag_Read = {
-    __typename?: 'TextGridsFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type TextGridsFields_HeadingTag_Update = {
-    __typename?: 'TextGridsFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type TextGridsFields_Heading_Create = {
@@ -18642,7 +17986,6 @@ export type TileGrid = {
     content?: Maybe<Scalars['JSON']['output']>;
     createdAt?: Maybe<Scalars['DateTime']['output']>;
     heading: Scalars['String']['output'];
-    headingTag: Scalars['String']['output'];
     id?: Maybe<Scalars['String']['output']>;
     tiles?: Maybe<Array<TileGrid_Tiles>>;
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -18664,7 +18007,6 @@ export type TileGrid_Tiles = {
     __typename?: 'TileGrid_Tiles';
     content?: Maybe<Scalars['JSON']['output']>;
     heading?: Maybe<Scalars['String']['output']>;
-    headingTag?: Maybe<Scalars['String']['output']>;
     id?: Maybe<Scalars['String']['output']>;
 };
 
@@ -18700,16 +18042,6 @@ export type TileGrid_CreatedAt_Operator = {
     not_equals?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
-export type TileGrid_HeadingTag_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    contains?: InputMaybe<Scalars['String']['input']>;
-    equals?: InputMaybe<Scalars['String']['input']>;
-    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    like?: InputMaybe<Scalars['String']['input']>;
-    not_equals?: InputMaybe<Scalars['String']['input']>;
-    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
 export type TileGrid_Heading_Operator = {
     all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     contains?: InputMaybe<Scalars['String']['input']>;
@@ -18737,17 +18069,6 @@ export type TileGrid_Tiles__Content_Operator = {
     exists?: InputMaybe<Scalars['Boolean']['input']>;
     like?: InputMaybe<Scalars['JSON']['input']>;
     not_equals?: InputMaybe<Scalars['JSON']['input']>;
-};
-
-export type TileGrid_Tiles__HeadingTag_Operator = {
-    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    contains?: InputMaybe<Scalars['String']['input']>;
-    equals?: InputMaybe<Scalars['String']['input']>;
-    exists?: InputMaybe<Scalars['Boolean']['input']>;
-    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-    like?: InputMaybe<Scalars['String']['input']>;
-    not_equals?: InputMaybe<Scalars['String']['input']>;
-    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type TileGrid_Tiles__Heading_Operator = {
@@ -18790,11 +18111,9 @@ export type TileGrid_Where = {
     content?: InputMaybe<TileGrid_Content_Operator>;
     createdAt?: InputMaybe<TileGrid_CreatedAt_Operator>;
     heading?: InputMaybe<TileGrid_Heading_Operator>;
-    headingTag?: InputMaybe<TileGrid_HeadingTag_Operator>;
     id?: InputMaybe<TileGrid_Id_Operator>;
     tiles__content?: InputMaybe<TileGrid_Tiles__Content_Operator>;
     tiles__heading?: InputMaybe<TileGrid_Tiles__Heading_Operator>;
-    tiles__headingTag?: InputMaybe<TileGrid_Tiles__HeadingTag_Operator>;
     tiles__id?: InputMaybe<TileGrid_Tiles__Id_Operator>;
     updatedAt?: InputMaybe<TileGrid_UpdatedAt_Operator>;
 };
@@ -18804,11 +18123,9 @@ export type TileGrid_Where_And = {
     content?: InputMaybe<TileGrid_Content_Operator>;
     createdAt?: InputMaybe<TileGrid_CreatedAt_Operator>;
     heading?: InputMaybe<TileGrid_Heading_Operator>;
-    headingTag?: InputMaybe<TileGrid_HeadingTag_Operator>;
     id?: InputMaybe<TileGrid_Id_Operator>;
     tiles__content?: InputMaybe<TileGrid_Tiles__Content_Operator>;
     tiles__heading?: InputMaybe<TileGrid_Tiles__Heading_Operator>;
-    tiles__headingTag?: InputMaybe<TileGrid_Tiles__HeadingTag_Operator>;
     tiles__id?: InputMaybe<TileGrid_Tiles__Id_Operator>;
     updatedAt?: InputMaybe<TileGrid_UpdatedAt_Operator>;
 };
@@ -18818,11 +18135,9 @@ export type TileGrid_Where_Or = {
     content?: InputMaybe<TileGrid_Content_Operator>;
     createdAt?: InputMaybe<TileGrid_CreatedAt_Operator>;
     heading?: InputMaybe<TileGrid_Heading_Operator>;
-    headingTag?: InputMaybe<TileGrid_HeadingTag_Operator>;
     id?: InputMaybe<TileGrid_Id_Operator>;
     tiles__content?: InputMaybe<TileGrid_Tiles__Content_Operator>;
     tiles__heading?: InputMaybe<TileGrid_Tiles__Heading_Operator>;
-    tiles__headingTag?: InputMaybe<TileGrid_Tiles__HeadingTag_Operator>;
     tiles__id?: InputMaybe<TileGrid_Tiles__Id_Operator>;
     updatedAt?: InputMaybe<TileGrid_UpdatedAt_Operator>;
 };
@@ -18872,7 +18187,6 @@ export type TileGridsDocAccessFields = {
     content?: Maybe<TileGridsDocAccessFields_Content>;
     createdAt?: Maybe<TileGridsDocAccessFields_CreatedAt>;
     heading?: Maybe<TileGridsDocAccessFields_Heading>;
-    headingTag?: Maybe<TileGridsDocAccessFields_HeadingTag>;
     tiles?: Maybe<TileGridsDocAccessFields_Tiles>;
     updatedAt?: Maybe<TileGridsDocAccessFields_UpdatedAt>;
 };
@@ -18969,34 +18283,6 @@ export type TileGridsDocAccessFields_Heading = {
     update?: Maybe<TileGridsDocAccessFields_Heading_Update>;
 };
 
-export type TileGridsDocAccessFields_HeadingTag = {
-    __typename?: 'TileGridsDocAccessFields_headingTag';
-    create?: Maybe<TileGridsDocAccessFields_HeadingTag_Create>;
-    delete?: Maybe<TileGridsDocAccessFields_HeadingTag_Delete>;
-    read?: Maybe<TileGridsDocAccessFields_HeadingTag_Read>;
-    update?: Maybe<TileGridsDocAccessFields_HeadingTag_Update>;
-};
-
-export type TileGridsDocAccessFields_HeadingTag_Create = {
-    __typename?: 'TileGridsDocAccessFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type TileGridsDocAccessFields_HeadingTag_Delete = {
-    __typename?: 'TileGridsDocAccessFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type TileGridsDocAccessFields_HeadingTag_Read = {
-    __typename?: 'TileGridsDocAccessFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type TileGridsDocAccessFields_HeadingTag_Update = {
-    __typename?: 'TileGridsDocAccessFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
-};
-
 export type TileGridsDocAccessFields_Heading_Create = {
     __typename?: 'TileGridsDocAccessFields_heading_Create';
     permission: Scalars['Boolean']['output'];
@@ -19040,7 +18326,6 @@ export type TileGridsDocAccessFields_Tiles_Fields = {
     __typename?: 'TileGridsDocAccessFields_tiles_Fields';
     content?: Maybe<TileGridsDocAccessFields_Tiles_Content>;
     heading?: Maybe<TileGridsDocAccessFields_Tiles_Heading>;
-    headingTag?: Maybe<TileGridsDocAccessFields_Tiles_HeadingTag>;
     id?: Maybe<TileGridsDocAccessFields_Tiles_Id>;
 };
 
@@ -19088,34 +18373,6 @@ export type TileGridsDocAccessFields_Tiles_Heading = {
     delete?: Maybe<TileGridsDocAccessFields_Tiles_Heading_Delete>;
     read?: Maybe<TileGridsDocAccessFields_Tiles_Heading_Read>;
     update?: Maybe<TileGridsDocAccessFields_Tiles_Heading_Update>;
-};
-
-export type TileGridsDocAccessFields_Tiles_HeadingTag = {
-    __typename?: 'TileGridsDocAccessFields_tiles_headingTag';
-    create?: Maybe<TileGridsDocAccessFields_Tiles_HeadingTag_Create>;
-    delete?: Maybe<TileGridsDocAccessFields_Tiles_HeadingTag_Delete>;
-    read?: Maybe<TileGridsDocAccessFields_Tiles_HeadingTag_Read>;
-    update?: Maybe<TileGridsDocAccessFields_Tiles_HeadingTag_Update>;
-};
-
-export type TileGridsDocAccessFields_Tiles_HeadingTag_Create = {
-    __typename?: 'TileGridsDocAccessFields_tiles_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type TileGridsDocAccessFields_Tiles_HeadingTag_Delete = {
-    __typename?: 'TileGridsDocAccessFields_tiles_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type TileGridsDocAccessFields_Tiles_HeadingTag_Read = {
-    __typename?: 'TileGridsDocAccessFields_tiles_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type TileGridsDocAccessFields_Tiles_HeadingTag_Update = {
-    __typename?: 'TileGridsDocAccessFields_tiles_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type TileGridsDocAccessFields_Tiles_Heading_Create = {
@@ -19200,7 +18457,6 @@ export type TileGridsFields = {
     content?: Maybe<TileGridsFields_Content>;
     createdAt?: Maybe<TileGridsFields_CreatedAt>;
     heading?: Maybe<TileGridsFields_Heading>;
-    headingTag?: Maybe<TileGridsFields_HeadingTag>;
     tiles?: Maybe<TileGridsFields_Tiles>;
     updatedAt?: Maybe<TileGridsFields_UpdatedAt>;
 };
@@ -19297,34 +18553,6 @@ export type TileGridsFields_Heading = {
     update?: Maybe<TileGridsFields_Heading_Update>;
 };
 
-export type TileGridsFields_HeadingTag = {
-    __typename?: 'TileGridsFields_headingTag';
-    create?: Maybe<TileGridsFields_HeadingTag_Create>;
-    delete?: Maybe<TileGridsFields_HeadingTag_Delete>;
-    read?: Maybe<TileGridsFields_HeadingTag_Read>;
-    update?: Maybe<TileGridsFields_HeadingTag_Update>;
-};
-
-export type TileGridsFields_HeadingTag_Create = {
-    __typename?: 'TileGridsFields_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type TileGridsFields_HeadingTag_Delete = {
-    __typename?: 'TileGridsFields_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type TileGridsFields_HeadingTag_Read = {
-    __typename?: 'TileGridsFields_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type TileGridsFields_HeadingTag_Update = {
-    __typename?: 'TileGridsFields_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
-};
-
 export type TileGridsFields_Heading_Create = {
     __typename?: 'TileGridsFields_heading_Create';
     permission: Scalars['Boolean']['output'];
@@ -19368,7 +18596,6 @@ export type TileGridsFields_Tiles_Fields = {
     __typename?: 'TileGridsFields_tiles_Fields';
     content?: Maybe<TileGridsFields_Tiles_Content>;
     heading?: Maybe<TileGridsFields_Tiles_Heading>;
-    headingTag?: Maybe<TileGridsFields_Tiles_HeadingTag>;
     id?: Maybe<TileGridsFields_Tiles_Id>;
 };
 
@@ -19416,34 +18643,6 @@ export type TileGridsFields_Tiles_Heading = {
     delete?: Maybe<TileGridsFields_Tiles_Heading_Delete>;
     read?: Maybe<TileGridsFields_Tiles_Heading_Read>;
     update?: Maybe<TileGridsFields_Tiles_Heading_Update>;
-};
-
-export type TileGridsFields_Tiles_HeadingTag = {
-    __typename?: 'TileGridsFields_tiles_headingTag';
-    create?: Maybe<TileGridsFields_Tiles_HeadingTag_Create>;
-    delete?: Maybe<TileGridsFields_Tiles_HeadingTag_Delete>;
-    read?: Maybe<TileGridsFields_Tiles_HeadingTag_Read>;
-    update?: Maybe<TileGridsFields_Tiles_HeadingTag_Update>;
-};
-
-export type TileGridsFields_Tiles_HeadingTag_Create = {
-    __typename?: 'TileGridsFields_tiles_headingTag_Create';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type TileGridsFields_Tiles_HeadingTag_Delete = {
-    __typename?: 'TileGridsFields_tiles_headingTag_Delete';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type TileGridsFields_Tiles_HeadingTag_Read = {
-    __typename?: 'TileGridsFields_tiles_headingTag_Read';
-    permission: Scalars['Boolean']['output'];
-};
-
-export type TileGridsFields_Tiles_HeadingTag_Update = {
-    __typename?: 'TileGridsFields_tiles_headingTag_Update';
-    permission: Scalars['Boolean']['output'];
 };
 
 export type TileGridsFields_Tiles_Heading_Create = {
@@ -20108,6 +19307,17 @@ export type Video_PlaceholderImage_Alt_Operator = {
     not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export type Video_PlaceholderImage_Base64_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
 export type Video_PlaceholderImage_CreatedAt_Operator = {
     equals?: InputMaybe<Scalars['DateTime']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -20131,23 +19341,23 @@ export type Video_PlaceholderImage_Filename_Operator = {
 };
 
 export type Video_PlaceholderImage_Filesize_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Video_PlaceholderImage_Height_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Video_PlaceholderImage_Id_Operator = {
@@ -20184,23 +19394,23 @@ export type Video_PlaceholderImage_Sizes__Thumbnail__Filename_Operator = {
 };
 
 export type Video_PlaceholderImage_Sizes__Thumbnail__Filesize_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Video_PlaceholderImage_Sizes__Thumbnail__Height_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Video_PlaceholderImage_Sizes__Thumbnail__MimeType_Operator = {
@@ -20226,13 +19436,13 @@ export type Video_PlaceholderImage_Sizes__Thumbnail__Url_Operator = {
 };
 
 export type Video_PlaceholderImage_Sizes__Thumbnail__Width_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Video_PlaceholderImage_UpdatedAt_Operator = {
@@ -20261,6 +19471,7 @@ export type Video_PlaceholderImage_Where = {
     AND?: InputMaybe<Array<InputMaybe<Video_PlaceholderImage_Where_And>>>;
     OR?: InputMaybe<Array<InputMaybe<Video_PlaceholderImage_Where_Or>>>;
     alt?: InputMaybe<Video_PlaceholderImage_Alt_Operator>;
+    base64?: InputMaybe<Video_PlaceholderImage_Base64_Operator>;
     createdAt?: InputMaybe<Video_PlaceholderImage_CreatedAt_Operator>;
     filename?: InputMaybe<Video_PlaceholderImage_Filename_Operator>;
     filesize?: InputMaybe<Video_PlaceholderImage_Filesize_Operator>;
@@ -20280,6 +19491,7 @@ export type Video_PlaceholderImage_Where = {
 
 export type Video_PlaceholderImage_Where_And = {
     alt?: InputMaybe<Video_PlaceholderImage_Alt_Operator>;
+    base64?: InputMaybe<Video_PlaceholderImage_Base64_Operator>;
     createdAt?: InputMaybe<Video_PlaceholderImage_CreatedAt_Operator>;
     filename?: InputMaybe<Video_PlaceholderImage_Filename_Operator>;
     filesize?: InputMaybe<Video_PlaceholderImage_Filesize_Operator>;
@@ -20299,6 +19511,7 @@ export type Video_PlaceholderImage_Where_And = {
 
 export type Video_PlaceholderImage_Where_Or = {
     alt?: InputMaybe<Video_PlaceholderImage_Alt_Operator>;
+    base64?: InputMaybe<Video_PlaceholderImage_Base64_Operator>;
     createdAt?: InputMaybe<Video_PlaceholderImage_CreatedAt_Operator>;
     filename?: InputMaybe<Video_PlaceholderImage_Filename_Operator>;
     filesize?: InputMaybe<Video_PlaceholderImage_Filesize_Operator>;
@@ -20317,13 +19530,13 @@ export type Video_PlaceholderImage_Where_Or = {
 };
 
 export type Video_PlaceholderImage_Width_Operator = {
-    equals?: InputMaybe<Scalars['Int']['input']>;
+    equals?: InputMaybe<Scalars['Float']['input']>;
     exists?: InputMaybe<Scalars['Boolean']['input']>;
-    greater_than?: InputMaybe<Scalars['Int']['input']>;
-    greater_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    less_than?: InputMaybe<Scalars['Int']['input']>;
-    less_than_equal?: InputMaybe<Scalars['Int']['input']>;
-    not_equals?: InputMaybe<Scalars['Int']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Video_CreatedAt_Operator = {
@@ -21024,7 +20237,6 @@ export type MutationAccordionInput = {
     >;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading: Scalars['String']['input'];
-    headingTag: Scalars['String']['input'];
     updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -21034,21 +20246,18 @@ export type MutationAccordionUpdateInput = {
     >;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading?: InputMaybe<Scalars['String']['input']>;
-    headingTag?: InputMaybe<Scalars['String']['input']>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationAccordionUpdate_AccordionItemsInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     heading?: InputMaybe<Scalars['String']['input']>;
-    headingTag?: InputMaybe<Scalars['String']['input']>;
     id?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationAccordion_AccordionItemsInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     heading?: InputMaybe<Scalars['String']['input']>;
-    headingTag?: InputMaybe<Scalars['String']['input']>;
     id?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -21079,7 +20288,6 @@ export type MutationConversionPanelInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading: Scalars['String']['input'];
-    headingTag: Scalars['String']['input'];
     updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -21088,7 +20296,6 @@ export type MutationConversionPanelUpdateInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading?: InputMaybe<Scalars['String']['input']>;
-    headingTag?: InputMaybe<Scalars['String']['input']>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -21118,7 +20325,6 @@ export type MutationFeatureGridInput = {
     createdAt?: InputMaybe<Scalars['String']['input']>;
     featureTiles?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     heading?: InputMaybe<Scalars['String']['input']>;
-    headingTag?: InputMaybe<Scalars['String']['input']>;
     internalName: Scalars['String']['input'];
     updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
@@ -21127,7 +20333,6 @@ export type MutationFeatureGridUpdateInput = {
     createdAt?: InputMaybe<Scalars['String']['input']>;
     featureTiles?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     heading?: InputMaybe<Scalars['String']['input']>;
-    headingTag?: InputMaybe<Scalars['String']['input']>;
     internalName?: InputMaybe<Scalars['String']['input']>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
@@ -21136,7 +20341,6 @@ export type MutationFeatureTileInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading: Scalars['String']['input'];
-    headingTag: Scalars['String']['input'];
     image: Scalars['String']['input'];
     updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
@@ -21145,7 +20349,6 @@ export type MutationFeatureTileUpdateInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading?: InputMaybe<Scalars['String']['input']>;
-    headingTag?: InputMaybe<Scalars['String']['input']>;
     image?: InputMaybe<Scalars['String']['input']>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
@@ -21156,7 +20359,6 @@ export type MutationFeaturedMediaInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading: Scalars['String']['input'];
-    headingTag: Scalars['String']['input'];
     image?: InputMaybe<Scalars['String']['input']>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
     video?: InputMaybe<Scalars['String']['input']>;
@@ -21168,7 +20370,6 @@ export type MutationFeaturedMediaUpdateInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading?: InputMaybe<Scalars['String']['input']>;
-    headingTag?: InputMaybe<Scalars['String']['input']>;
     image?: InputMaybe<Scalars['String']['input']>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
     video?: InputMaybe<Scalars['String']['input']>;
@@ -21248,7 +20449,6 @@ export type MutationHeroInput = {
     createdAt?: InputMaybe<Scalars['String']['input']>;
     cta?: InputMaybe<MutationHero_CtaInput>;
     heading: Scalars['String']['input'];
-    headingTag: Scalars['String']['input'];
     subheading?: InputMaybe<Scalars['String']['input']>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
@@ -21258,7 +20458,6 @@ export type MutationHeroUpdateInput = {
     createdAt?: InputMaybe<Scalars['String']['input']>;
     cta?: InputMaybe<MutationHeroUpdate_CtaInput>;
     heading?: InputMaybe<Scalars['String']['input']>;
-    headingTag?: InputMaybe<Scalars['String']['input']>;
     subheading?: InputMaybe<Scalars['String']['input']>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
@@ -21303,6 +20502,7 @@ export type MutationHero_Cta_CtaTilesInput = {
 
 export type MutationIconInput = {
     alt: Scalars['String']['input'];
+    base64?: InputMaybe<Scalars['String']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     filename?: InputMaybe<Scalars['String']['input']>;
     filesize?: InputMaybe<Scalars['Float']['input']>;
@@ -21319,7 +20519,6 @@ export type MutationIconTileGridInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading: Scalars['String']['input'];
-    headingTag: Scalars['String']['input'];
     iconTiles?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
@@ -21329,7 +20528,6 @@ export type MutationIconTileGridUpdateInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading?: InputMaybe<Scalars['String']['input']>;
-    headingTag?: InputMaybe<Scalars['String']['input']>;
     iconTiles?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
@@ -21350,6 +20548,7 @@ export type MutationIconTileUpdateInput = {
 
 export type MutationIconUpdateInput = {
     alt?: InputMaybe<Scalars['String']['input']>;
+    base64?: InputMaybe<Scalars['String']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     filename?: InputMaybe<Scalars['String']['input']>;
     filesize?: InputMaybe<Scalars['Float']['input']>;
@@ -21389,6 +20588,7 @@ export type MutationIcon_Sizes_ThumbnailInput = {
 
 export type MutationImageInput = {
     alt: Scalars['String']['input'];
+    base64?: InputMaybe<Scalars['String']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     filename?: InputMaybe<Scalars['String']['input']>;
     filesize?: InputMaybe<Scalars['Float']['input']>;
@@ -21402,6 +20602,7 @@ export type MutationImageInput = {
 
 export type MutationImageUpdateInput = {
     alt?: InputMaybe<Scalars['String']['input']>;
+    base64?: InputMaybe<Scalars['String']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     filename?: InputMaybe<Scalars['String']['input']>;
     filesize?: InputMaybe<Scalars['Float']['input']>;
@@ -21514,14 +20715,12 @@ export type MutationProcessUpdateInput = {
 export type MutationProcessUpdate_StepsInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     heading: Scalars['String']['input'];
-    headingTag: Scalars['String']['input'];
     id?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationProcess_StepsInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     heading: Scalars['String']['input'];
-    headingTag: Scalars['String']['input'];
     id?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -21529,7 +20728,6 @@ export type MutationSpecialInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading: Scalars['String']['input'];
-    headingTag: Scalars['String']['input'];
     sideBox?: InputMaybe<Scalars['JSON']['input']>;
     subheading?: InputMaybe<Scalars['String']['input']>;
     textGrid?: InputMaybe<Scalars['String']['input']>;
@@ -21540,7 +20738,6 @@ export type MutationSpecialUpdateInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading?: InputMaybe<Scalars['String']['input']>;
-    headingTag?: InputMaybe<Scalars['String']['input']>;
     sideBox?: InputMaybe<Scalars['JSON']['input']>;
     subheading?: InputMaybe<Scalars['String']['input']>;
     textGrid?: InputMaybe<Scalars['String']['input']>;
@@ -21552,7 +20749,6 @@ export type MutationSwitchbackInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading?: InputMaybe<Scalars['String']['input']>;
-    headingTag?: InputMaybe<Scalars['String']['input']>;
     image: Scalars['String']['input'];
     imageSide: Scalars['String']['input'];
     internalName: Scalars['String']['input'];
@@ -21564,7 +20760,6 @@ export type MutationSwitchbackUpdateInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading?: InputMaybe<Scalars['String']['input']>;
-    headingTag?: InputMaybe<Scalars['String']['input']>;
     image?: InputMaybe<Scalars['String']['input']>;
     imageSide?: InputMaybe<Scalars['String']['input']>;
     internalName?: InputMaybe<Scalars['String']['input']>;
@@ -21576,7 +20771,6 @@ export type MutationTextGridInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading?: InputMaybe<Scalars['String']['input']>;
-    headingTag?: InputMaybe<Scalars['String']['input']>;
     internalName: Scalars['String']['input'];
     textTiles?: InputMaybe<Array<InputMaybe<MutationTextGrid_TextTilesInput>>>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
@@ -21587,7 +20781,6 @@ export type MutationTextGridUpdateInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading?: InputMaybe<Scalars['String']['input']>;
-    headingTag?: InputMaybe<Scalars['String']['input']>;
     internalName?: InputMaybe<Scalars['String']['input']>;
     textTiles?: InputMaybe<
         Array<InputMaybe<MutationTextGridUpdate_TextTilesInput>>
@@ -21610,7 +20803,6 @@ export type MutationTileGridInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading: Scalars['String']['input'];
-    headingTag: Scalars['String']['input'];
     tiles?: InputMaybe<Array<InputMaybe<MutationTileGrid_TilesInput>>>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
@@ -21620,7 +20812,6 @@ export type MutationTileGridUpdateInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     createdAt?: InputMaybe<Scalars['String']['input']>;
     heading?: InputMaybe<Scalars['String']['input']>;
-    headingTag?: InputMaybe<Scalars['String']['input']>;
     tiles?: InputMaybe<Array<InputMaybe<MutationTileGridUpdate_TilesInput>>>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
@@ -21628,14 +20819,12 @@ export type MutationTileGridUpdateInput = {
 export type MutationTileGridUpdate_TilesInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     heading?: InputMaybe<Scalars['String']['input']>;
-    headingTag?: InputMaybe<Scalars['String']['input']>;
     id?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationTileGrid_TilesInput = {
     content?: InputMaybe<Scalars['JSON']['input']>;
     heading?: InputMaybe<Scalars['String']['input']>;
-    headingTag?: InputMaybe<Scalars['String']['input']>;
     id?: InputMaybe<Scalars['String']['input']>;
 };
 

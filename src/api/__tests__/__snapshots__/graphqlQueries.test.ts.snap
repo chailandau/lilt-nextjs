@@ -33,6 +33,7 @@ exports[`graphqlQueries mocks FOOTER_QUERY successfully 1`] = `
         {
           "icon": {
             "alt": "Hello World",
+            "base64": "Hello World",
             "height": 100,
             "id": "Hello World",
             "url": "Hello World",

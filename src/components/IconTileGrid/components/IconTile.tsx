@@ -16,6 +16,7 @@ const IconTile: FC<IconTileType> = ({ label, icon }) => (
             width={icon?.width || 100}
             height={icon?.height || 100}
             hasBorder={false}
+            base64={icon?.base64}
         />
         <Text size='md' className={styles['icon-tile__label']}>
             {label}
