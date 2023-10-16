@@ -16,8 +16,6 @@ import Section from '@/molecules/Section';
 export interface ConversionPanelProps {
     /** Heading */
     heading?: string;
-    /** Heading tag */
-    headingTag?: string;
     /** Rich text content */
     content?: ConversionPanelType['content'];
     /** Call to action */
