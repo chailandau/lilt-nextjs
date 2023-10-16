@@ -31,7 +31,7 @@ const ConversionPanel: FC<ConversionPanelProps> = ({
     <Section>
         <Flex className={styles['conversion-panel']}>
             <Flex className={styles['conversion-panel__content']}>
-                {heading && <Heading size='md'>{heading}</Heading>}
+                {heading && <Heading>{heading}</Heading>}
                 {content && <RichText richText={content} />}
             </Flex>
             {callToAction && (

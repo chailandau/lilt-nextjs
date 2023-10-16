@@ -115,6 +115,7 @@ export const FEATURE_GRID_FRAGMENT = `
 export const ICON_TILE__GRID_FRAGMENT = `
 ...on IconTileGridBlock {
     id
+    __typename
     iconTileGrid {
         id
         heading

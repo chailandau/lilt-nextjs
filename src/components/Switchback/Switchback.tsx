@@ -50,7 +50,7 @@ const Switchback: FC<SwitchbackProps> = ({
                     )}
                 </Container>
                 <Flex className={styles['content']}>
-                    {heading && <Heading size='md'>{heading}</Heading>}
+                    {heading && <Heading>{heading}</Heading>}
                     {subheading && (
                         <Heading size='sm' color='blue'>
                             {subheading}

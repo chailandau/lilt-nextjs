@@ -150,6 +150,7 @@ exports[`Fragments "ICON_TILE__GRID_FRAGMENT" matches snapshot: ICON_TILE__GRID_
 "
 ...on IconTileGridBlock {
     id
+    __typename
     iconTileGrid {
         id
         heading
