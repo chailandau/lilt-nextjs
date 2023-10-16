@@ -14,5 +14,15 @@ export const mockDefaults = {
     Hero_Cta_type: () => 'button',
     Hero_cta__type_Input: () => 'button',
     Switchback_imageSide: () => 'left',
-    Switchback_imageSide_Input: () => 'left'
+    Switchback_imageSide_Input: () => 'left',
+    Footer: () => ({
+        socialLinks: [
+            {
+                icon: {
+                    width: 100,
+                    height: 100
+                }
+            }
+        ]
+    })
 };

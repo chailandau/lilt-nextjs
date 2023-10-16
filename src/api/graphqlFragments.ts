@@ -81,12 +81,10 @@ export const ACCORDION_FRAGMENT = `
 export const CONVERSION_PANEL_FRAGMENT = `
 ...on ConversionPanelBlock {
     id
-    blockName
-    blockType
+    __typename
     conversionPanel {
         id
         heading
-        headingTag
         content
         callToAction {
             ${CTA_FRAGMENT}

@@ -1,0 +1,33 @@
+.conversion-panel {
+    flex-direction: column;
+    gap: rem(40);
+    border: 2px solid color(neon, blue);
+    border-radius: rem(20);
+    padding: rem(32);
+    @include transition(gap, padding);
+    @include tablet {
+        gap: rem(32);
+        padding: rem(40) rem(50);
+    }
+    @include laptop {
+        flex-direction: row;
+        gap: rem(64);
+        padding: rem(48) rem(60);
+    }
+    @include desktop-sm {
+        gap: rem(128);
+        padding: rem(48) rem(80);
+    }
+
+    &__content {
+        flex-direction: column;
+        gap: rem(24);
+        @include tablet {
+            gap: rem(16);
+        }
+    }
+    &__btn {
+        flex-shrink: 0;
+        @include marginY('auto');
+    }
+}

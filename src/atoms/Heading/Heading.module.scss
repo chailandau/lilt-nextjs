@@ -35,9 +35,12 @@
     }
 
     &.md {
-        @include font(22, 26, 0.4);
+        @include font(22, 30, 0.4);
         @include tablet {
-            @include font(38, 55, 0.75);
+            @include font(28, 36, 0.65);
+        }
+        @include desktop-sm {
+            @include font(32, 40, 0.75);
         }
     }
 
