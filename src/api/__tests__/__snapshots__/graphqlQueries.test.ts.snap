@@ -33,10 +33,10 @@ exports[`graphqlQueries mocks FOOTER_QUERY successfully 1`] = `
         {
           "icon": {
             "alt": "Hello World",
-            "height": 37.85915419238353,
+            "height": 29.804004943573318,
             "id": "Hello World",
             "url": "Hello World",
-            "width": -3.1851877272857934,
+            "width": 74.25979714606336,
           },
           "id": "Hello World",
           "url": "Hello World",
@@ -44,10 +44,10 @@ exports[`graphqlQueries mocks FOOTER_QUERY successfully 1`] = `
         {
           "icon": {
             "alt": "Hello World",
-            "height": 37.85915419238353,
+            "height": 29.804004943573318,
             "id": "Hello World",
             "url": "Hello World",
-            "width": -3.1851877272857934,
+            "width": 74.25979714606336,
           },
           "id": "Hello World",
           "url": "Hello World",
