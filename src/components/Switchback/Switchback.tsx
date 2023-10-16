@@ -46,6 +46,7 @@ const Switchback: FC<SwitchbackProps> = ({
                             className={styles['image']}
                             width={image?.width || 1000}
                             height={image?.height || 1000}
+                            base64={image?.base64}
                         />
                     )}
                 </Container>
@@ -72,6 +73,7 @@ const Switchback: FC<SwitchbackProps> = ({
                             className={styles['image']}
                             width={image?.width || 1000}
                             height={image?.height || 1000}
+                            base64={image?.base64}
                         />
                     )}
                 </Container>

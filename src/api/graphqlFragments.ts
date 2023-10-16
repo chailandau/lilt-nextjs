@@ -39,7 +39,6 @@ export const HERO_FRAGMENT = `
     hero {
         id
         heading
-        headingTag
         subheading
         content
         cta {
@@ -68,11 +67,9 @@ export const ACCORDION_FRAGMENT = `
     accordion {
         id 
         heading
-        headingTag
         accordionItems {
             id
             heading
-            headingTag
             content
         }
     }
@@ -100,11 +97,9 @@ export const FEATURE_GRID_FRAGMENT = `
     featureGrid {
         id 
         heading
-        headingTag
         featureTiles {
             id
             heading
-            headingTag
             image {
                 ${IMAGE_FRAGMENT}
             }
@@ -120,7 +115,6 @@ export const ICON_TILE__GRID_FRAGMENT = `
     iconTileGrid {
         id
         heading
-        headingTag
         content
         iconTiles {
             id
@@ -144,7 +138,6 @@ export const PROCESS_FRAGMENT = `
         steps {
             id
             heading
-            headingTag
             content
         }
         callToAction {
@@ -165,7 +158,6 @@ export const SWITCHBACK_FRAGMENT = `
         }
         imageSide
         heading
-        headingTag
         content
     }
 }
@@ -177,7 +169,6 @@ export const TEXT_GRID_FRAGMENT = `
     textGrid {
         id
         heading
-        headingTag
         content
         textTiles {
             id
@@ -196,12 +187,10 @@ export const TILE_GRID_FRAGMENT = `
     tileGrid {
         id
         heading 
-        headingTag
         content
         tiles {
             id
             heading
-            headingTag
             content
         }
         callToAction {

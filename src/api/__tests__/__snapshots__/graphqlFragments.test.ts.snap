@@ -7,11 +7,9 @@ exports[`Fragments "ACCORDION_FRAGMENT" matches snapshot: ACCORDION_FRAGMENT 1`]
     accordion {
         id 
         heading
-        headingTag
         accordionItems {
             id
             heading
-            headingTag
             content
         }
     }
@@ -73,11 +71,9 @@ exports[`Fragments "FEATURE_GRID_FRAGMENT" matches snapshot: FEATURE_GRID_FRAGME
     featureGrid {
         id 
         heading
-        headingTag
         featureTiles {
             id
             heading
-            headingTag
             image {
                 
 id
@@ -85,6 +81,7 @@ alt
 url
 width
 height
+base64
 
             }
             content
@@ -102,7 +99,6 @@ exports[`Fragments "HERO_FRAGMENT" matches snapshot: HERO_FRAGMENT 1`] = `
     hero {
         id
         heading
-        headingTag
         subheading
         content
         cta {
@@ -154,7 +150,6 @@ exports[`Fragments "ICON_TILE__GRID_FRAGMENT" matches snapshot: ICON_TILE__GRID_
     iconTileGrid {
         id
         heading
-        headingTag
         content
         iconTiles {
             id
@@ -166,6 +161,7 @@ alt
 url
 width
 height
+base64
 
             }
         }
@@ -197,6 +193,7 @@ alt
 url
 width
 height
+base64
 "
 `;
 
@@ -235,7 +232,6 @@ exports[`Fragments "PROCESS_FRAGMENT" matches snapshot: PROCESS_FRAGMENT 1`] = `
         steps {
             id
             heading
-            headingTag
             content
         }
         callToAction {
@@ -273,11 +269,11 @@ alt
 url
 width
 height
+base64
 
         }
         imageSide
         heading
-        headingTag
         content
     }
 }
@@ -291,7 +287,6 @@ exports[`Fragments "TEXT_GRID_FRAGMENT" matches snapshot: TEXT_GRID_FRAGMENT 1`]
     textGrid {
         id
         heading
-        headingTag
         content
         textTiles {
             id
@@ -325,12 +320,10 @@ exports[`Fragments "TILE_GRID_FRAGMENT" matches snapshot: TILE_GRID_FRAGMENT 1`]
     tileGrid {
         id
         heading 
-        headingTag
         content
         tiles {
             id
             heading
-            headingTag
             content
         }
         callToAction {

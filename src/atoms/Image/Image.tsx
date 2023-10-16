@@ -12,6 +12,8 @@ export interface ImageProps {
     src: Omit<NextImageProps, 'alt'> | string;
     /** Image alt text */
     alt: string;
+    /** BlurDataURL for external images */
+    base64?: string | null;
     /** CSS class */
     className?: string | undefined;
     /** Image width */
@@ -31,7 +33,8 @@ const Image: FC<ImageProps> = ({
     width,
     height,
     hasBorder = true,
-    priority
+    priority,
+    base64
 }) => {
     const classList = classNames(
         styles['container'],
@@ -52,6 +55,7 @@ const Image: FC<ImageProps> = ({
                 src={src}
                 width={width}
                 height={height}
+                base64={base64}
                 {...imageProps}
             />
         );
