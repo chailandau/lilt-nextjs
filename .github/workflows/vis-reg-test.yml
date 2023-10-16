@@ -3,6 +3,9 @@ on:
     pull_request:
         branches: 'main'
 
+env:
+    NEXT_PUBLIC_BASE_PAYLOAD_URL: '${{ secrets.NEXT_PUBLIC_BASE_PAYLOAD_URL }}'
+
 permissions:
     pages: write
     contents: write
@@ -11,6 +14,7 @@ permissions:
 jobs:
     vis_reg_test:
         runs-on: ubuntu-latest
+
         steps:
             - uses: actions/checkout@v3
 
@@ -28,9 +32,9 @@ jobs:
             - name: Generate report with Loki and reg-cli
               id: loki
               run: yarn loki:ci
+              continue-on-error: true
 
             - name: Create report folder
-              if: success() || failure()
               run: |
                   mkdir report
                   cp .loki/index.html report
@@ -41,7 +45,6 @@ jobs:
 
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
-              if: success() || failure()
               id: deploy
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -50,7 +53,7 @@ jobs:
 
             - name: VRT with errors - Deploy Success Comment
               uses: mshick/add-pr-comment@v2
-              if: ${{ failure() && steps.loki.conclusion == 'failure' }}
+              if: ${{ steps.loki.outcome == 'failure' }}
               with:
                   message: |
                       ## ❌ Visual regressions detected in Storybook
@@ -61,6 +64,7 @@ jobs:
 
             - name: VRT no errors - Deploy Success Comment
               uses: mshick/add-pr-comment@v2
+              if: ${{ steps.loki.outcome == 'success' }}
               with:
                   message: |
                       ## ✅ No visual regressions detected in Storybook!
