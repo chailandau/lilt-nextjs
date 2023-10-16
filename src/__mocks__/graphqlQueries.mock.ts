@@ -24,5 +24,11 @@ export const mockDefaults = {
                 }
             }
         ]
+    }),
+    Header: () => ({
+        callToAction: {
+            color: 'blue',
+            linkType: 'internal'
+        }
     })
 };

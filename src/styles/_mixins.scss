@@ -47,6 +47,11 @@
     @return map-get($shadows, $color);
 }
 
+@mixin border($color: color(neon, blue)) {
+    border: 2px solid $color;
+    border-radius: rem(20);
+}
+
 // spacing
 @mixin paddingX($padding) {
     padding-left: rem($padding);

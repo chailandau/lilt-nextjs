@@ -1,0 +1,25 @@
+.icon-tile {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    @include border;
+    padding: rem(48) rem(24);
+    @include transition(width);
+    @include tablet {
+        width: 47%;
+    }
+    @include laptop {
+        width: 30%;
+    }
+    @include desktop-sm {
+        width: 22.5%;
+    }
+    &__icon {
+        height: rem(40);
+    }
+    &__label {
+        text-transform: uppercase;
+    }
+}

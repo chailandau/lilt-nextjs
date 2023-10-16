@@ -1,8 +1,7 @@
 .conversion-panel {
     flex-direction: column;
     gap: rem(40);
-    border: 2px solid color(neon, blue);
-    border-radius: rem(20);
+    @include border;
     padding: rem(32);
     @include transition(gap, padding);
     @include tablet {

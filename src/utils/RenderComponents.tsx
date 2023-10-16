@@ -3,6 +3,7 @@ import { FC, Fragment } from 'react';
 import { Page_PageSections_Blocks } from '@/api/graphqlTypes';
 import ConversionPanel from '@/components/ConversionPanel';
 import Hero from '@/components/Hero';
+import IconTileGrid from '@/components/IconTileGrid';
 import Switchback from '@/components/Switchback';
 
 interface Sections {
@@ -17,19 +18,26 @@ const RenderComponents: FC<Sections> = ({ components }) => {
     const renderComponent = (component: Page_PageSections_Blocks) => {
         switch (component?.__typename) {
             case 'HeroBlock':
-                return <Hero {...component?.hero} key={component?.id} />;
+                return <Hero key={component?.id} {...component?.hero} />;
             case 'SwitchbackBlock':
                 return (
                     <Switchback
-                        {...component?.switchback}
                         key={component?.id}
+                        {...component?.switchback}
                     />
                 );
             case 'ConversionPanelBlock':
                 return (
                     <ConversionPanel
-                        {...component?.conversionPanel}
                         key={component?.id}
+                        {...component?.conversionPanel}
+                    />
+                );
+            case 'IconTileGridBlock':
+                return (
+                    <IconTileGrid
+                        key={component?.id}
+                        {...component?.iconTileGrid}
                     />
                 );
             default:
