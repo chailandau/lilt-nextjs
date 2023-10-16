@@ -20,7 +20,7 @@ export interface HeroProps {
     cta?: HeroType['cta'];
 }
 const Hero: FC<HeroProps> = ({ heading, subheading, content, cta }) => {
-    const hasContent = content[0].children[0].text !== '';
+    const hasContent = content && content[0]?.children[0]?.text !== '';
 
     return (
         <Section className={styles['hero']}>
