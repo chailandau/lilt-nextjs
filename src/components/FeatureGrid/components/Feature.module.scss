@@ -1,0 +1,11 @@
+.feature {
+    flex-direction: column;
+    gap: rem(16);
+    &__image {
+        margin-bottom: rem(24);
+        @include transition(margin-bottom);
+        @include tablet {
+            margin-bottom: rem(40);
+        }
+    }
+}

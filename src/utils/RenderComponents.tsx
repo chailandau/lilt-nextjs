@@ -2,6 +2,7 @@ import { FC, Fragment } from 'react';
 
 import { Page_PageSections_Blocks } from '@/api/graphqlTypes';
 import ConversionPanel from '@/components/ConversionPanel';
+import FeatureGrid from '@/components/FeatureGrid';
 import Hero from '@/components/Hero';
 import IconTileGrid from '@/components/IconTileGrid';
 import Switchback from '@/components/Switchback';
@@ -17,15 +18,6 @@ const RenderComponents: FC<Sections> = ({ components }) => {
     }
     const renderComponent = (component: Page_PageSections_Blocks) => {
         switch (component?.__typename) {
-            case 'HeroBlock':
-                return <Hero key={component?.id} {...component?.hero} />;
-            case 'SwitchbackBlock':
-                return (
-                    <Switchback
-                        key={component?.id}
-                        {...component?.switchback}
-                    />
-                );
             case 'ConversionPanelBlock':
                 return (
                     <ConversionPanel
@@ -33,6 +25,15 @@ const RenderComponents: FC<Sections> = ({ components }) => {
                         {...component?.conversionPanel}
                     />
                 );
+            case 'FeatureGridBlock':
+                return (
+                    <FeatureGrid
+                        key={component?.id}
+                        {...component?.featureGrid}
+                    />
+                );
+            case 'HeroBlock':
+                return <Hero key={component?.id} {...component?.hero} />;
             case 'IconTileGridBlock':
                 return (
                     <IconTileGrid
@@ -40,6 +41,14 @@ const RenderComponents: FC<Sections> = ({ components }) => {
                         {...component?.iconTileGrid}
                     />
                 );
+            case 'SwitchbackBlock':
+                return (
+                    <Switchback
+                        key={component?.id}
+                        {...component?.switchback}
+                    />
+                );
+
             default:
                 return null;
         }

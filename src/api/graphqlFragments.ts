@@ -94,6 +94,7 @@ export const CONVERSION_PANEL_FRAGMENT = `
 export const FEATURE_GRID_FRAGMENT = `
 ...on FeatureGridBlock {
     id
+    __typename
     featureGrid {
         id 
         heading
