@@ -12,6 +12,7 @@ alt
 url
 width
 height
+base64
 `;
 
 export const MENU_ITEMS_FRAGMENT = `
