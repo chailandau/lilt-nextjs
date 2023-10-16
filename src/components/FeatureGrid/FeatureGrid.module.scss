@@ -1,0 +1,10 @@
+.feature-grid {
+    gap: rem(64);
+    @include tablet {
+        gap: rem(96);
+    }
+    @include laptop {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
