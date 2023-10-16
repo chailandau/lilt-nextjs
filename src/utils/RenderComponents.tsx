@@ -1,6 +1,7 @@
 import { FC, Fragment } from 'react';
 
 import { Page_PageSections_Blocks } from '@/api/graphqlTypes';
+import ConversionPanel from '@/components/ConversionPanel';
 import Hero from '@/components/Hero';
 import Switchback from '@/components/Switchback';
 
@@ -21,6 +22,13 @@ const RenderComponents: FC<Sections> = ({ components }) => {
                 return (
                     <Switchback
                         {...component?.switchback}
+                        key={component?.id}
+                    />
+                );
+            case 'ConversionPanelBlock':
+                return (
+                    <ConversionPanel
+                        {...component?.conversionPanel}
                         key={component?.id}
                     />
                 );
