@@ -24,5 +24,10 @@ export const mockDefaults = {
                 }
             }
         ]
+    }),
+    Header: () => ({
+        callToAction: {
+            color: 'blue'
+        }
     })
 };

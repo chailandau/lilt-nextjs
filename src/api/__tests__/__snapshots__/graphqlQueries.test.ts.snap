@@ -52,7 +52,7 @@ exports[`graphqlQueries mocks HEADER_QUERY successfully 1`] = `
   "data": {
     "Header": {
       "callToAction": {
-        "color": "white",
+        "color": "blue",
         "externalLink": "Hello World",
         "id": "Hello World",
         "internalLink": {
