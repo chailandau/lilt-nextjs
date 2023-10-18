@@ -15,6 +15,14 @@ height
 base64
 `;
 
+export const VIDEO_FRAGMENT = `
+id
+url
+placeholderImage {
+    ${IMAGE_FRAGMENT}
+}
+`;
+
 export const MENU_ITEMS_FRAGMENT = `
 id
 label
@@ -193,6 +201,27 @@ export const TILE_GRID_FRAGMENT = `
             id
             heading
             content
+        }
+        callToAction {
+            ${CTA_FRAGMENT}
+        }
+    }
+}
+`;
+export const FEATURED_MEDIA_FRAGMENT = `
+...on FeaturedMediaBlock {
+    id
+    __typename
+    featuredMedia {
+        id
+        heading 
+        content
+        assetType
+        image {
+            ${IMAGE_FRAGMENT}
+        }
+        video {
+            ${VIDEO_FRAGMENT}
         }
         callToAction {
             ${CTA_FRAGMENT}

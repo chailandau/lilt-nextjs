@@ -1,0 +1,25 @@
+.featured-media {
+    text-align: center;
+    flex-direction: column;
+    gap: rem(40);
+
+    @include tablet {
+        gap: rem(56);
+    }
+    &__wrapper {
+        @include paddingY(64);
+        max-width: rem(1030);
+    }
+    &__content {
+        flex-direction: column;
+        gap: rem(24);
+        max-width: rem(790);
+        margin: auto;
+        @include tablet {
+            gap: rem(40);
+        }
+    }
+    &__btn {
+        margin: auto;
+    }
+}

@@ -1,0 +1,42 @@
+.video-player {
+    position: relative;
+    &,
+    &__placeholder {
+        height: 0;
+        padding-bottom: 57%;
+    }
+    @include doubleBorder;
+    &__video {
+        & > div:first-child {
+            opacity: 0;
+            @include transition(opacity);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+            -o-object-fit: cover;
+            object-fit: cover;
+            -o-object-position: center;
+            object-position: center;
+            z-index: 2;
+            overflow: hidden;
+            border-radius: rem(20);
+        }
+        &-loaded {
+            & > div:first-child {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__placeholder {
+        img {
+            z-index: 1;
+            position: absolute !important;
+            object-fit: cover;
+            height: 100%;
+            border-radius: rem(20);
+        }
+    }
+}

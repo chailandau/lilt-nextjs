@@ -4,6 +4,7 @@ import {
     ACCORDION_FRAGMENT,
     CONVERSION_PANEL_FRAGMENT,
     CTA_FRAGMENT,
+    FEATURED_MEDIA_FRAGMENT,
     FEATURE_GRID_FRAGMENT,
     HERO_FRAGMENT,
     ICON_TILE__GRID_FRAGMENT,
@@ -40,6 +41,7 @@ query PageContentQuery($slug: String!) {
                     ${ACCORDION_FRAGMENT}
                     ${CONVERSION_PANEL_FRAGMENT}
                     ${FEATURE_GRID_FRAGMENT}
+                    ${FEATURED_MEDIA_FRAGMENT}
                     ${ICON_TILE__GRID_FRAGMENT}
                     ${PROCESS_FRAGMENT}
                     ${SWITCHBACK_FRAGMENT}

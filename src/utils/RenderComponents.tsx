@@ -2,6 +2,7 @@ import { FC, Fragment } from 'react';
 
 import { Page_PageSections_Blocks } from '@/api/graphqlTypes';
 import ConversionPanel from '@/components/ConversionPanel';
+import FeaturedMedia from '@/components/FeaturedMedia';
 import FeatureGrid from '@/components/FeatureGrid';
 import Hero from '@/components/Hero';
 import IconTileGrid from '@/components/IconTileGrid';
@@ -46,6 +47,13 @@ const RenderComponents: FC<Sections> = ({ components }) => {
                     <Switchback
                         key={component?.id}
                         {...component?.switchback}
+                    />
+                );
+            case 'FeaturedMediaBlock':
+                return (
+                    <FeaturedMedia
+                        key={component?.id}
+                        {...component?.featuredMedia}
                     />
                 );
 

@@ -52,6 +52,29 @@
     border-radius: rem(20);
 }
 
+@mixin doubleBorder {
+    position: relative;
+    border: 2px solid color(neon, blue);
+    border-radius: rem(20);
+    &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: rem(12);
+        left: rem(12);
+        z-index: -1;
+        border-radius: rem(26);
+        border: 2px solid color(neon, green);
+        @include transition(top, left);
+        @include mobile-lg {
+            top: rem(20);
+            left: rem(20);
+        }
+    }
+}
+
 // spacing
 @mixin paddingX($padding) {
     padding-left: rem($padding);
