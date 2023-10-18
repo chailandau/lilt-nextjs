@@ -17,7 +17,7 @@
         width: 22.5%;
     }
     &__icon {
-        height: rem(40);
+        height: rem(40) !important;
     }
     &__label {
         text-transform: uppercase;
