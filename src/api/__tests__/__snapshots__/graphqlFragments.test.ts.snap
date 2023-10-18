@@ -68,6 +68,7 @@ exports[`Fragments "FEATURE_GRID_FRAGMENT" matches snapshot: FEATURE_GRID_FRAGME
 "
 ...on FeatureGridBlock {
     id
+    __typename
     featureGrid {
         id 
         heading
@@ -85,6 +86,63 @@ base64
 
             }
             content
+        }
+    }
+}
+"
+`;
+
+exports[`Fragments "FEATURED_MEDIA_FRAGMENT" matches snapshot: FEATURED_MEDIA_FRAGMENT 1`] = `
+"
+...on FeaturedMediaBlock {
+    id
+    __typename
+    featuredMedia {
+        id
+        heading 
+        content
+        assetType
+        image {
+            
+id
+alt
+url
+width
+height
+base64
+
+        }
+        video {
+            
+id
+url
+placeholderImage {
+    
+id
+alt
+url
+width
+height
+base64
+
+}
+
+        }
+        callToAction {
+            
+id
+label
+linkType
+
+internalLink {
+    id
+    title
+    slug
+}
+
+externalLink
+color
+
         }
     }
 }
@@ -343,6 +401,23 @@ color
 
         }
     }
+}
+"
+`;
+
+exports[`Fragments "VIDEO_FRAGMENT" matches snapshot: VIDEO_FRAGMENT 1`] = `
+"
+id
+url
+placeholderImage {
+    
+id
+alt
+url
+width
+height
+base64
+
 }
 "
 `;
