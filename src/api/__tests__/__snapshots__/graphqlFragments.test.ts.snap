@@ -160,6 +160,7 @@ exports[`Fragments "HERO_FRAGMENT" matches snapshot: HERO_FRAGMENT 1`] = `
         subheading
         content
         cta {
+            type
             ctaButtons {
                 id
                 callToAction {
@@ -184,6 +185,7 @@ color
                 callToActionTile {
                     id
                     linkType
+                    label
                     
 internalLink {
     id
@@ -192,6 +194,16 @@ internalLink {
 }
 
                     externalLink
+                    icon {
+                        
+id
+alt
+url
+width
+height
+base64
+
+                    }
                 }
             }
         }
