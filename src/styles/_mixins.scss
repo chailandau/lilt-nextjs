@@ -47,6 +47,10 @@
     @return map-get($shadows, $color);
 }
 
+@function filter-overlay($color) {
+    @return map-get($filter-overlays, $color);
+}
+
 @mixin border($color: color(neon, blue)) {
     border: 2px solid $color;
     border-radius: rem(20);

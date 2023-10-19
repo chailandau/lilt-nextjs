@@ -48,11 +48,11 @@ const Footer: FC<FooterProps> = ({ socialLinks, menuItems, copyrightText }) => (
         </Flex>
 
         <Flex className={styles['bottom-content']}>
-            <Text size='sm' className={styles['copyright-desktop']}>
+            <Text size='xs' className={styles['copyright-desktop']}>
                 {getCopyrightText(copyrightText)}
             </Text>
             {menuItems && <Menu menuItems={menuItems} />}
-            <Text size='sm' className={styles['copyright-mobile']}>
+            <Text size='xs' className={styles['copyright-mobile']}>
                 {getCopyrightText(copyrightText)}
             </Text>
         </Flex>

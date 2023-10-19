@@ -1,6 +1,12 @@
 .text {
+    &.xs {
+        @include font(14, 22);
+    }
     &.sm {
         @include font(14, 22);
+        @include laptop {
+            @include font(20, 26);
+        }
     }
     &.md {
         @include font(18, 24, 0.35);

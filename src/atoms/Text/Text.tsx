@@ -5,7 +5,7 @@ import styles from './Text.module.scss';
 
 export const textTags = ['p', 'span'] as const;
 
-export const textSizes = ['sm', 'md', 'lg'] as const;
+export const textSizes = ['xs', 'sm', 'md', 'lg'] as const;
 
 interface TextProps {
     /** Semantic tag text is wrapped in */
