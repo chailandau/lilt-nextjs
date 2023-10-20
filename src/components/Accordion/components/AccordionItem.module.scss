@@ -1,0 +1,44 @@
+.accordion-item {
+    flex-direction: column;
+    @include border;
+    padding: rem(24);
+
+    @include hover {
+        border-color: color(neon, green);
+    }
+    &.expanded {
+        @include hover {
+            border-color: color(neon, blue);
+        }
+        .accordion-item__icon {
+            width: rem(18);
+            margin-top: rem(4);
+        }
+    }
+
+    &__header {
+        @include addTargetArea(24);
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        gap: rem(24);
+    }
+    &__icon {
+        width: rem(25);
+        flex-shrink: 0;
+    }
+    &__content {
+        display: none;
+        margin-top: rem(24);
+        &.expanded {
+            display: block;
+        }
+    }
+    &:nth-child(odd) {
+        .accordion-item__header {
+            h3 {
+                color: color(neon, blue);
+            }
+        }
+    }
+}

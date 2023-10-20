@@ -76,6 +76,7 @@ export const HERO_FRAGMENT = `
 `;
 export const ACCORDION_FRAGMENT = `
 ...on AccordionBlock {
+    __typename
     id
     accordion {
         id 
