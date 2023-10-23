@@ -17,6 +17,8 @@ export interface ContainerProps {
     as?: (typeof semanticTags)[number];
     /** CSS class */
     className?: string | undefined;
+    /** CSS id */
+    id?: string | undefined;
     /** `onClick` event */
     onClick?: () => void;
     /** `Forwarded ref */
@@ -27,11 +29,19 @@ export interface ContainerProps {
 
 const Container: FC<ContainerProps> = forwardRef(
     (
-        { children, as: ContainerTag = 'div', className, onClick, ariaLabel },
+        {
+            children,
+            as: ContainerTag = 'div',
+            className,
+            id,
+            onClick,
+            ariaLabel
+        },
         ref
     ) => (
         <ContainerTag
             className={className}
+            id={id}
             onClick={onClick}
             aria-label={ariaLabel}
             ref={ref}

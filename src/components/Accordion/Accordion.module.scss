@@ -1,0 +1,13 @@
+.accordion {
+    h2 {
+        text-align: center;
+        margin-bottom: rem(12);
+        @include transition(margin);
+        @include tablet {
+            margin-bottom: rem(32);
+        }
+    }
+    @include tablet {
+        gap: rem(32);
+    }
+}

@@ -1,6 +1,7 @@
 import { FC, Fragment } from 'react';
 
 import { Page_PageSections_Blocks } from '@/api/graphqlTypes';
+import Accordion from '@/components/Accordion';
 import ConversionPanel from '@/components/ConversionPanel';
 import FeaturedMedia from '@/components/FeaturedMedia';
 import FeatureGrid from '@/components/FeatureGrid';
@@ -55,6 +56,10 @@ const RenderComponents: FC<Sections> = ({ components }) => {
                         key={component?.id}
                         {...component?.featuredMedia}
                     />
+                );
+            case 'AccordionBlock':
+                return (
+                    <Accordion key={component?.id} {...component?.accordion} />
                 );
 
             default:
