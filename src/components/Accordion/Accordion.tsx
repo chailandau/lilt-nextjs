@@ -12,22 +12,18 @@ interface AccordionProps extends Omit<AccordionType, 'heading'> {
     heading?: string;
 }
 
-const Accordion: FC<AccordionProps> = ({ heading, accordionItems }) => {
-    console.log('hjeading', heading, 'acc', accordionItems);
-
-    return (
-        <Section className={styles['accordion']}>
-            {heading && <Heading>{heading}</Heading>}
-            {accordionItems &&
-                accordionItems?.map((item) => (
-                    <AccordionItem
-                        key={item?.id}
-                        heading={item?.heading}
-                        content={item?.content}
-                    />
-                ))}
-        </Section>
-    );
-};
+const Accordion: FC<AccordionProps> = ({ heading, accordionItems }) => (
+    <Section className={styles['accordion']}>
+        {heading && <Heading>{heading}</Heading>}
+        {accordionItems &&
+            accordionItems?.map((item) => (
+                <AccordionItem
+                    key={item?.id}
+                    heading={item?.heading}
+                    content={item?.content}
+                />
+            ))}
+    </Section>
+);
 
 export default Accordion;
