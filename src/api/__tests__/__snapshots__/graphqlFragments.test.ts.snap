@@ -3,6 +3,7 @@
 exports[`Fragments "ACCORDION_FRAGMENT" matches snapshot: ACCORDION_FRAGMENT 1`] = `
 "
 ...on AccordionBlock {
+    __typename
     id
     accordion {
         id 
