@@ -11,6 +11,7 @@ import {
     IMAGE_FRAGMENT,
     MENU_ITEMS_FRAGMENT,
     PROCESS_FRAGMENT,
+    SPECIALS_FRAGMENT,
     SWITCHBACK_FRAGMENT,
     TEXT_GRID_FRAGMENT,
     TILE_GRID_FRAGMENT
@@ -44,6 +45,7 @@ query PageContentQuery($slug: String!) {
                     ${FEATURED_MEDIA_FRAGMENT}
                     ${ICON_TILE__GRID_FRAGMENT}
                     ${PROCESS_FRAGMENT}
+                    ${SPECIALS_FRAGMENT}
                     ${SWITCHBACK_FRAGMENT}
                     ${TEXT_GRID_FRAGMENT}
                     ${TILE_GRID_FRAGMENT}
