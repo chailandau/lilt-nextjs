@@ -8,6 +8,7 @@ import FeatureGrid from '@/components/FeatureGrid';
 import Hero from '@/components/Hero';
 import IconTileGrid from '@/components/IconTileGrid';
 import Switchback from '@/components/Switchback';
+import TextGrid from '@/components/TextGrid';
 
 interface Sections {
     /** Sections to render */
@@ -20,11 +21,22 @@ const RenderComponents: FC<Sections> = ({ components }) => {
     }
     const renderComponent = (component: Page_PageSections_Blocks) => {
         switch (component?.__typename) {
+            case 'AccordionBlock':
+                return (
+                    <Accordion key={component?.id} {...component?.accordion} />
+                );
             case 'ConversionPanelBlock':
                 return (
                     <ConversionPanel
                         key={component?.id}
                         {...component?.conversionPanel}
+                    />
+                );
+            case 'FeaturedMediaBlock':
+                return (
+                    <FeaturedMedia
+                        key={component?.id}
+                        {...component?.featuredMedia}
                     />
                 );
             case 'FeatureGridBlock':
@@ -34,6 +46,7 @@ const RenderComponents: FC<Sections> = ({ components }) => {
                         {...component?.featureGrid}
                     />
                 );
+
             case 'HeroBlock':
                 return <Hero key={component?.id} {...component?.hero} />;
             case 'IconTileGridBlock':
@@ -50,18 +63,10 @@ const RenderComponents: FC<Sections> = ({ components }) => {
                         {...component?.switchback}
                     />
                 );
-            case 'FeaturedMediaBlock':
+            case 'TextGridBlock':
                 return (
-                    <FeaturedMedia
-                        key={component?.id}
-                        {...component?.featuredMedia}
-                    />
+                    <TextGrid key={component?.id} {...component?.textGrid} />
                 );
-            case 'AccordionBlock':
-                return (
-                    <Accordion key={component?.id} {...component?.accordion} />
-                );
-
             default:
                 return null;
         }

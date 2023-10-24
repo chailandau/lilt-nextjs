@@ -7,13 +7,13 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    gap: rem(56);
+    gap: rem(100);
     @include transition(gap);
     @include tablet {
-        gap: rem(72);
+        gap: rem(120);
     }
     @include laptop {
-        gap: rem(120);
+        gap: rem(160);
     }
 }
 

@@ -1,6 +1,8 @@
 .footer {
-    padding-top: rem(64);
     padding-bottom: rem(32);
+    @include tablet {
+        padding-top: rem(32);
+    }
     @include laptop {
         @include paddingX(48);
     }

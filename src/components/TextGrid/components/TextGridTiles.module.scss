@@ -1,0 +1,233 @@
+.text-grid-tiles {
+    @include paddingY(80);
+    display: flex;
+    flex-direction: column;
+    gap: rem(80);
+    justify-content: center;
+    position: relative;
+    &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        width: calc(100% + rem(48));
+        height: 1px;
+        bottom: rem(40);
+        left: rem(-24);
+        z-index: -1;
+        background: linear-gradient(
+            to right,
+            rgba(159, 50, 244, 0) 0%,
+            rgba(159, 50, 244, 0.5) 5%,
+            rgba(159, 50, 244, 1) 25%,
+            rgba(159, 50, 244, 1) 75%,
+            rgba(159, 50, 244, 0.5) 95%,
+            rgba(159, 50, 244, 0) 100%
+        );
+    }
+    &:before {
+        display: none;
+        content: '';
+        position: absolute;
+        height: calc(100% + rem(40));
+        width: 1px;
+        top: rem(-20);
+        left: 50%;
+        z-index: -1;
+        background: linear-gradient(
+            to bottom,
+            rgba(159, 50, 244, 0) 0%,
+            rgba(159, 50, 244, 0.5) 5%,
+            rgba(159, 50, 244, 1) 25%,
+            rgba(159, 50, 244, 1) 75%,
+            rgba(159, 50, 244, 0.5) 95%,
+            rgba(159, 50, 244, 0) 100%
+        );
+        @include tablet {
+            display: block;
+        }
+        @include desktop-sm {
+            display: none;
+        }
+    }
+    @include tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 1fr;
+    }
+    @include desktop-sm {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .text-grid-tile {
+        position: relative;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        @include tablet {
+            @include paddingX(40);
+        }
+        p {
+            text-align: center;
+        }
+        &:before {
+            display: block;
+            content: '';
+            position: absolute;
+            width: calc(100% + rem(48));
+            left: rem(-24);
+            z-index: -1;
+            height: rem(1);
+            top: rem(-40);
+            background: linear-gradient(
+                to right,
+                rgba(159, 50, 244, 0) 0%,
+                rgba(159, 50, 244, 0.5) 10%,
+                rgba(159, 50, 244, 1) 25%,
+                rgba(159, 50, 244, 1) 75%,
+                rgba(159, 50, 244, 0.5) 90%,
+                rgba(159, 50, 244, 0) 100%
+            );
+            @include tablet {
+                width: calc(100% + rem(80));
+            }
+        }
+
+        @include tablet {
+            &:nth-child(odd):before {
+                background: linear-gradient(
+                    to right,
+                    rgba(159, 50, 244, 0) 0%,
+                    rgba(159, 50, 244, 0.5) 10%,
+                    rgba(159, 50, 244, 1) 25%
+                );
+                right: rem(-64);
+            }
+            &:nth-child(even):before {
+                background: linear-gradient(
+                    to right,
+                    rgba(159, 50, 244, 1) 0%,
+                    rgba(159, 50, 244, 0.5) 90%,
+                    rgba(159, 50, 244, 0) 100%
+                );
+                left: rem(-64);
+            }
+        }
+        @include desktop-sm {
+            // column divider for 1st & 2nd cols (targets 1st tile in each row)
+            &:nth-child(3n - 2) {
+                &:before {
+                    background: linear-gradient(
+                        to right,
+                        rgba(159, 50, 244, 0) 0%,
+                        rgba(159, 50, 244, 0.5) 10%,
+                        rgba(159, 50, 244, 1) 25%
+                    );
+                    left: unset;
+                    right: rem(-40);
+                }
+                &:after {
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    width: 1px;
+                    height: calc(100% + rem(80));
+                    right: 0;
+                    z-index: -1;
+                    top: rem(-40);
+                    background: color(dark, purple);
+                    left: unset;
+                    right: rem(-40);
+                }
+            }
+            // 1st fade divider on top row
+            &:first-child {
+                &:after {
+                    height: calc(100% + rem(120));
+                    top: rem(-80);
+                    background: linear-gradient(
+                        to bottom,
+                        rgba(159, 50, 244, 0) 0%,
+                        rgba(159, 50, 244, 0.5) 5%,
+                        rgba(159, 50, 244, 1) 25%,
+                        rgba(159, 50, 244, 1) 75%
+                    );
+                }
+            }
+            // 1st fade divider on bottom row
+            &:nth-last-child(3) {
+                &:after {
+                    height: calc(100% + rem(120));
+                    top: unset;
+                    bottom: rem(-80);
+                    background: linear-gradient(
+                        to bottom,
+                        rgba(159, 50, 244, 1) 0%,
+                        rgba(159, 50, 244, 1) 75%,
+                        rgba(159, 50, 244, 0.5) 95%,
+                        rgba(159, 50, 244, 0) 100%
+                    );
+                }
+            }
+            // column divider for 2nd & 3rd cols (targets 2nd tile in each row)
+            &:nth-child(3n - 1) {
+                &:before {
+                    background: color(dark, purple);
+                    left: unset;
+                    right: rem(-40);
+                }
+                &:after {
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    width: 1px;
+                    height: calc(100% + rem(80));
+                    right: 0;
+                    z-index: -1;
+                    top: rem(-40);
+                    background: color(dark, purple);
+                    left: unset;
+                    right: rem(-40);
+                }
+            }
+            // 2nd fade divider on top row
+            &:nth-child(2) {
+                &:after {
+                    height: calc(100% + rem(120));
+                    top: rem(-80);
+                    background: linear-gradient(
+                        to bottom,
+                        rgba(159, 50, 244, 0) 0%,
+                        rgba(159, 50, 244, 0.5) 5%,
+                        rgba(159, 50, 244, 1) 25%,
+                        rgba(159, 50, 244, 1) 75%
+                    );
+                }
+            }
+            // 2nd fade divider on bottom row
+            &:nth-last-child(2) {
+                &:after {
+                    height: calc(100% + rem(120));
+                    top: unset;
+                    bottom: rem(-80);
+                    background: linear-gradient(
+                        to bottom,
+                        rgba(159, 50, 244, 1) 0%,
+                        rgba(159, 50, 244, 1) 75%,
+                        rgba(159, 50, 244, 0.5) 95%,
+                        rgba(159, 50, 244, 0) 100%
+                    );
+                }
+            }
+            // 3rd column top borders
+            &:nth-child(3n):before {
+                background: linear-gradient(
+                    to right,
+                    rgba(159, 50, 244, 1) 0%,
+                    rgba(159, 50, 244, 0.5) 90%,
+                    rgba(159, 50, 244, 0) 100%
+                );
+                right: unset;
+                left: rem(-40);
+            }
+        }
+    }
+}
