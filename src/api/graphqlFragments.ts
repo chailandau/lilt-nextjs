@@ -178,22 +178,26 @@ export const SWITCHBACK_FRAGMENT = `
 }
 `;
 
+const TEXT_GRID = `
+ textGrid {
+    id
+    heading
+    content
+    textTiles {
+        id
+        text
+    }
+    callToAction {
+        ${CTA_FRAGMENT}
+    }
+}
+`;
+
 export const TEXT_GRID_FRAGMENT = `
 ...on TextGridBlock {
     __typename
     id
-    textGrid {
-        id
-        heading
-        content
-        textTiles {
-            id
-            text
-        }
-        callToAction {
-            ${CTA_FRAGMENT}
-        }
-    }
+    ${TEXT_GRID}
 }
 `;
 
@@ -235,4 +239,19 @@ export const FEATURED_MEDIA_FRAGMENT = `
         }
     }
 }
+`;
+
+export const SPECIALS_FRAGMENT = `
+...on SpecialBlock {
+    id
+    __typename
+    special {
+      id
+      heading
+      subheading
+      content
+      sideBox
+      ${TEXT_GRID}
+    }
+  }
 `;

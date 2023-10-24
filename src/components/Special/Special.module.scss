@@ -1,0 +1,63 @@
+.special {
+    display: flex;
+    flex-direction: column;
+    gap: rem(32);
+    text-align: center;
+    @include laptop {
+        display: grid;
+        grid-template-columns: 2fr 1.5fr;
+        gap: rem(72);
+        text-align: left;
+    }
+    @include desktop-sm {
+        gap: rem(100);
+    }
+
+    &__content {
+        flex-direction: column;
+        & > h2 {
+            @include font-recharge-bold;
+        }
+        & > p {
+            margin-top: 0;
+        }
+        &-text {
+            padding-top: rem(32);
+        }
+    }
+    &__side-box {
+        justify-content: center;
+        align-items: center;
+        @include border;
+        padding: rem(24);
+        text-transform: uppercase;
+        text-align: center;
+        @include desktop-sm {
+            padding: rem(32);
+        }
+        u {
+            color: color(neon, green);
+            text-decoration: none;
+        }
+        i {
+            text-transform: none;
+            margin-top: rem(-16);
+            display: block;
+            color: color(neutral, mdGray);
+        }
+        b {
+            @include font-recharge-bold;
+            color: color(neon, blue);
+        }
+    }
+    &__text-grid {
+        flex-direction: column;
+        @include tablet {
+            padding-top: rem(64);
+            gap: rem(64);
+        }
+    }
+    &__cta {
+        margin: auto;
+    }
+}

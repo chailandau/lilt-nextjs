@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 import styles from './Heading.module.scss';
 
-export const headingTags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const;
+export const headingTags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'] as const;
 
 export const headingSizes = ['xs', 'sm', 'md', 'lg', 'xl'] as const;
 

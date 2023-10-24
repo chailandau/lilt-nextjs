@@ -7,6 +7,7 @@ import FeaturedMedia from '@/components/FeaturedMedia';
 import FeatureGrid from '@/components/FeatureGrid';
 import Hero from '@/components/Hero';
 import IconTileGrid from '@/components/IconTileGrid';
+import Special from '@/components/Special';
 import Switchback from '@/components/Switchback';
 import TextGrid from '@/components/TextGrid';
 
@@ -56,6 +57,8 @@ const RenderComponents: FC<Sections> = ({ components }) => {
                         {...component?.iconTileGrid}
                     />
                 );
+            case 'SpecialBlock':
+                return <Special key={component?.id} {...component?.special} />;
             case 'SwitchbackBlock':
                 return (
                     <Switchback
