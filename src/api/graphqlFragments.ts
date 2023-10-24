@@ -180,6 +180,7 @@ export const SWITCHBACK_FRAGMENT = `
 
 export const TEXT_GRID_FRAGMENT = `
 ...on TextGridBlock {
+    __typename
     id
     textGrid {
         id
