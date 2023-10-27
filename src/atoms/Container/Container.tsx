@@ -7,7 +7,8 @@ export const semanticTags = [
     'header',
     'nav',
     'section',
-    'span'
+    'span',
+    'li'
 ] as const;
 
 export interface ContainerProps {
