@@ -43,10 +43,17 @@ const Menu: FC<MenuProps> = ({ menuItems, className = styles['menu'] }) => {
             internalLink: menuItem?.internalLink
         });
 
+        const overridePageName =
+            menuItem?.overridePageName && menuItem?.internalCustomLabel;
+
+        const internalMenuLabel = overridePageName
+            ? menuItem?.internalCustomLabel
+            : menuItem?.internalLink?.title;
+
         const menuLabel =
             menuItem?.linkType === 'external'
                 ? menuItem?.label
-                : menuItem?.internalLink?.title;
+                : internalMenuLabel;
 
         if (menuItem?.linkType === 'submenu') {
             return (

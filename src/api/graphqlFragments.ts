@@ -29,6 +29,8 @@ label
 linkType
 ${INTERNAL_LINK_FRAGMENT}
 externalLink
+overridePageName
+internalCustomLabel
 `;
 
 export const CTA_FRAGMENT = `
