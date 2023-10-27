@@ -31,7 +31,11 @@
     .right-content {
         align-items: center;
         gap: rem(24);
-        @include laptop {
+        @include transition(gap);
+        @include laptop-lg {
+            gap: rem(32);
+        }
+        @include desktop-sm {
             gap: rem(44);
         }
         .tablet-btn {

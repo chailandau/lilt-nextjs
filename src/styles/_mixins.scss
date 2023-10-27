@@ -194,6 +194,12 @@
     }
 }
 
+@mixin laptop-lg {
+    @media screen and (min-width: 1050px) {
+        @content;
+    }
+}
+
 @mixin desktop-sm {
     @media screen and (min-width: 1200px) {
         @content;
