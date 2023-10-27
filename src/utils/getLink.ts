@@ -21,10 +21,14 @@ interface GetLink {
 export const getLink = ({ linkType, externalLink, internalLink }: GetLink) => {
     const isExternal = linkType === 'external';
 
+    const isHome = linkType === 'internal' && internalLink?.slug === 'home';
+
     if (isExternal && externalLink) {
         return `${externalLink}`;
     } else if (internalLink?.slug) {
-        return `${process.env.NEXT_PUBLIC_BASE_URL}/${internalLink.slug}`;
+        return isHome
+            ? `${process.env.NEXT_PUBLIC_BASE_URL}`
+            : `${process.env.NEXT_PUBLIC_BASE_URL}/${internalLink.slug}`;
     } else {
         return '';
     }

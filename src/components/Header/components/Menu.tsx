@@ -61,7 +61,7 @@ const Menu: FC<MenuProps> = ({ menuItems, className = styles['menu'] }) => {
                 <li key={menuItem?.id}>
                     <Link
                         key={menuItem?.id}
-                        href={menuLink}
+                        href={menuLink || ''}
                         className={styles['menu-link']}
                         onKeyDown={(e) => handleKeyDown(e)}
                     >
