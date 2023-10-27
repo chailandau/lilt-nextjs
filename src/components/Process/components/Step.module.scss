@@ -1,0 +1,101 @@
+.step {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+    position: relative;
+    @include tablet {
+        display: grid;
+        grid-template-columns: rem(70) 1fr;
+        gap: rem(40);
+    }
+    @include laptop {
+        gap: rem(80);
+    }
+    &:after {
+        display: none;
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: calc(100% + rem(2));
+        top: rem(70);
+        left: rem(35);
+        z-index: -1;
+        background: color(dark, purple);
+        @include transition(top, left, height);
+        @include tablet {
+            display: block;
+        }
+        @include laptop {
+            top: rem(100);
+            left: rem(50);
+            height: calc(100% - rem(50));
+        }
+    }
+    &:last-of-type {
+        &:after {
+            display: none;
+        }
+    }
+    &__number {
+        @include font-recharge-bold;
+        @include font(24, 30);
+        color: color(neon, green);
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        @include transition(font-size, line-height);
+        @include laptop {
+            @include font(28, 34);
+        }
+        &,
+        &:before {
+            width: rem(70);
+            height: rem(70);
+            @include transition(width, height);
+            @include laptop {
+                width: rem(100);
+                height: rem(100);
+            }
+        }
+        &:before {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: rgba(color(dark, blue), 0.75);
+            border: 1px solid color(dark, purple);
+            border-radius: 50%;
+            box-shadow: shadow(purple);
+        }
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: rem(12);
+        @include tablet {
+            margin-top: rem(16);
+        }
+        @include laptop {
+            margin-top: rem(32);
+        }
+    }
+    & + .step {
+        position: relative;
+        &:before {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            top: rem(-48);
+            left: 0;
+            z-index: -1;
+            background: color(neutral, mdGray);
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+}

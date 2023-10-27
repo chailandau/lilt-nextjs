@@ -150,6 +150,7 @@ export const ICON_TILE__GRID_FRAGMENT = `
 export const PROCESS_FRAGMENT = `
 ...on ProcessBlock {
     id
+    __typename
     process {
         id
         steps {

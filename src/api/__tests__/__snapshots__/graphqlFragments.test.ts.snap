@@ -291,6 +291,8 @@ internalLink {
 }
 
 externalLink
+overridePageName
+internalCustomLabel
 "
 `;
 
@@ -298,6 +300,7 @@ exports[`Fragments "PROCESS_FRAGMENT" matches snapshot: PROCESS_FRAGMENT 1`] = `
 "
 ...on ProcessBlock {
     id
+    __typename
     process {
         id
         steps {
@@ -323,6 +326,49 @@ color
         }
     }
 }
+"
+`;
+
+exports[`Fragments "SPECIALS_FRAGMENT" matches snapshot: SPECIALS_FRAGMENT 1`] = `
+"
+...on SpecialBlock {
+    id
+    __typename
+    special {
+      id
+      heading
+      subheading
+      content
+      sideBox
+      
+ textGrid {
+    id
+    heading
+    content
+    textTiles {
+        id
+        text
+    }
+    callToAction {
+        
+id
+label
+linkType
+
+internalLink {
+    id
+    title
+    slug
+}
+
+externalLink
+color
+
+    }
+}
+
+    }
+  }
 "
 `;
 
@@ -354,17 +400,19 @@ base64
 exports[`Fragments "TEXT_GRID_FRAGMENT" matches snapshot: TEXT_GRID_FRAGMENT 1`] = `
 "
 ...on TextGridBlock {
+    __typename
     id
-    textGrid {
+    
+ textGrid {
+    id
+    heading
+    content
+    textTiles {
         id
-        heading
-        content
-        textTiles {
-            id
-            text
-        }
-        callToAction {
-            
+        text
+    }
+    callToAction {
+        
 id
 label
 linkType
@@ -378,8 +426,9 @@ internalLink {
 externalLink
 color
 
-        }
     }
+}
+
 }
 "
 `;
@@ -388,6 +437,7 @@ exports[`Fragments "TILE_GRID_FRAGMENT" matches snapshot: TILE_GRID_FRAGMENT 1`]
 "
 ...on TileGridBlock {
     id
+    __typename
     tileGrid {
         id
         heading 
