@@ -20,7 +20,7 @@ interface SpecialProps {
     /** Side box content */
     sideBox?: SpecialType['sideBox'];
     /** Special subheading */
-    subheading?: string;
+    subheading?: string | null;
     /** Text grid content */
     textGrid?: TextGrid;
 }

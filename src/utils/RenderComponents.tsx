@@ -10,6 +10,7 @@ import IconTileGrid from '@/components/IconTileGrid';
 import Special from '@/components/Special';
 import Switchback from '@/components/Switchback';
 import TextGrid from '@/components/TextGrid';
+import TileGrid from '@/components/TileGrid';
 
 interface Sections {
     /** Sections to render */
@@ -69,6 +70,15 @@ const RenderComponents: FC<Sections> = ({ components }) => {
             case 'TextGridBlock':
                 return (
                     <TextGrid key={component?.id} {...component?.textGrid} />
+                );
+            case 'TileGridBlock':
+                return (
+                    component?.tileGrid && (
+                        <TileGrid
+                            key={component?.id}
+                            {...component?.tileGrid}
+                        />
+                    )
                 );
             default:
                 return null;
