@@ -22,7 +22,7 @@ describe('parseUrl', () => {
             isInternal: true,
             rel: '',
             target: '',
-            href: '/slug',
+            href: '/slug'
         };
 
         expect(result).toEqual(expected);
@@ -36,7 +36,7 @@ describe('parseUrl', () => {
             isInternal: false,
             rel: 'noreferrer noopener',
             target: '_blank',
-            href: 'https://www.external.com',
+            href: 'https://www.external.com'
         };
         expect(result).toEqual(expected);
     });

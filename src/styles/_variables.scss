@@ -21,7 +21,8 @@ $colors: (
 );
 
 $shadows: (
-    fuchsia: 0px 0px 20px rgba(map-get($colors, neon, fuchsia), 0.3)
+    fuchsia: 0px 0px 20px rgba(map-get($colors, neon, fuchsia), 0.3),
+    purple: 0px 0px 20px 5px rgba(map-get($colors, dark, purple), 0.2)
 );
 
 $filter-overlays: (

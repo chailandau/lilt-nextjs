@@ -204,6 +204,7 @@ export const TEXT_GRID_FRAGMENT = `
 export const TILE_GRID_FRAGMENT = `
 ...on TileGridBlock {
     id
+    __typename
     tileGrid {
         id
         heading 

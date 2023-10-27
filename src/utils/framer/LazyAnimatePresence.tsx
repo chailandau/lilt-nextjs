@@ -9,9 +9,7 @@ interface LazyAnimatePresenceProps {
 
 const LazyAnimatePresence: FC<LazyAnimatePresenceProps> = ({ children }) => (
     <LazyMotionDom>
-        <AnimatePresence>
-            {children}
-        </AnimatePresence>
+        <AnimatePresence>{children}</AnimatePresence>
     </LazyMotionDom>
 );
 

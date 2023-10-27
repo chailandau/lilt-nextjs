@@ -1,0 +1,16 @@
+.tile-grid {
+    gap: rem(40);
+    @include tablet {
+        gap: rem(48);
+    }
+    &__content {
+        text-align: center;
+        flex-direction: column;
+        gap: rem(24);
+        max-width: rem(790);
+        margin: auto;
+        @include tablet {
+            gap: rem(40);
+        }
+    }
+}

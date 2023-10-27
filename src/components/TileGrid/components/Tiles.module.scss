@@ -1,0 +1,59 @@
+.tiles {
+    max-width: rem(430);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+    @include laptop {
+        max-width: rem(920);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(80);
+    }
+
+    .tile {
+        flex-direction: column;
+        gap: rem(24);
+        padding: rem(32);
+        @include border;
+        @include transition(padding);
+        h2 {
+            @include font-recharge-bold;
+        }
+        @include laptop {
+            padding: rem(48);
+        }
+        &__text {
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            @include font(20, 28);
+            @include tablet {
+                @include font(24, 30);
+            }
+            @include laptop {
+                @include font(24, 30);
+            }
+            i {
+                text-transform: none;
+            }
+            ul {
+                padding-left: rem(14);
+            }
+            li {
+                @include transition(padding-left);
+                padding-left: rem(24);
+                @include tablet {
+                    padding-left: rem(28);
+                }
+
+                &:before {
+                    font-size: rem(20);
+                    @include tablet {
+                        font-size: rem(24);
+                    }
+                }
+            }
+        }
+    }
+}
