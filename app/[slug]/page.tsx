@@ -8,6 +8,7 @@ interface Params {
     };
 }
 
+export const revalidate = 1;
 export const generateStaticParams = async () => {
     const { Pages } = await getData(PAGES_QUERY);
 

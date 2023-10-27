@@ -7,12 +7,11 @@ import { getData } from '@/utils/getData';
 import '@/assets/fonts/fonts.css';
 import '@/styles/main.scss';
 
+export const revalidate = 1;
+
 export const metadata: Metadata = {
     title: 'Long Island Laser Tag'
 };
-
-export const revalidate = 60;
-
 export default async function RootLayout({
     children
 }: {
