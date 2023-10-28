@@ -25,7 +25,12 @@ const Menu: FC<MenuProps> = ({ menuItems, className = styles['menu'] }) => {
         ) {
             return null;
         }
-        const { setOpenSubmenu } = useStore();
+        const { setMenuOpen, setOpenSubmenu } = useStore();
+
+        const handleClick = () => {
+            setMenuOpen(false);
+            setOpenSubmenu(null);
+        };
 
         const handleKeyDown = (
             e: KeyboardEvent<HTMLAnchorElement | HTMLButtonElement>
@@ -71,6 +76,7 @@ const Menu: FC<MenuProps> = ({ menuItems, className = styles['menu'] }) => {
                         href={menuLink || ''}
                         className={styles['menu-link']}
                         onKeyDown={(e) => handleKeyDown(e)}
+                        onClick={handleClick}
                     >
                         {menuLabel}
                     </Link>

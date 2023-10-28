@@ -19,6 +19,8 @@ interface LinkProps {
     underlineHover?: boolean;
     /** `onKeyDown` event */
     onKeyDown?: (e: KeyboardEvent<HTMLAnchorElement>) => void;
+    /** `onClick` event */
+    onClick?: () => void;
 }
 
 const Link: FC<LinkProps> = ({
@@ -26,7 +28,8 @@ const Link: FC<LinkProps> = ({
     children,
     className,
     underlineHover = true,
-    onKeyDown
+    onKeyDown,
+    onClick
 }) => {
     const classList = classNames(
         styles['link'],
@@ -47,6 +50,7 @@ const Link: FC<LinkProps> = ({
             rel={rel}
             target={target}
             onKeyDown={(e) => onKeyDown && onKeyDown(e)}
+            onClick={onClick}
         >
             {children}
         </NextLink>
