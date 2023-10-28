@@ -1,11 +1,7 @@
 .hero {
     align-items: center;
     text-align: center;
-    @include marginY(-48);
-    @include transition(margin);
-    @include laptop {
-        @include marginY(-64);
-    }
+
     .cta-tiles {
         flex-direction: column;
         gap: rem(32);

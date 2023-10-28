@@ -47,6 +47,10 @@
     @return map-get($shadows, $color);
 }
 
+@function gradient($color) {
+    @return map-get($gradients, $color);
+}
+
 @function filter-overlay($color) {
     @return map-get($filter-overlays, $color);
 }
