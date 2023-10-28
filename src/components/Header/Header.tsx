@@ -18,6 +18,7 @@ import Flex from '@/molecules/Flex';
 import Section from '@/molecules/Section';
 import useStore from '@/store/useStore';
 import { laptopQuery, useMediaQuery } from '@/utils/hooks/useMediaQuery';
+import { setNoScroll } from '@/utils/setNoScroll';
 
 export interface HeaderProps {
     /* Menu items to display */
@@ -35,6 +36,10 @@ const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
             setMenuOpen(false);
         }
     }, [isLaptop]);
+
+    useEffect(() => {
+        setNoScroll(menuOpen);
+    }, [menuOpen]);
 
     return (
         <FocusTrap active={menuOpen}>
