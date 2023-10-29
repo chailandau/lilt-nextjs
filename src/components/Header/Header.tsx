@@ -29,7 +29,7 @@ export interface HeaderProps {
 const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
     const isLaptop = useMediaQuery(laptopQuery);
 
-    const { menuOpen, setMenuOpen } = useStore();
+    const { menuOpen, setMenuOpen, setOpenSubmenu } = useStore();
 
     useEffect(() => {
         if (isLaptop) {
@@ -41,12 +41,18 @@ const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
         setNoScroll(menuOpen);
     }, [menuOpen]);
 
+    const handleLogoClick = () => {
+        setMenuOpen(false);
+        setOpenSubmenu(null);
+    };
+
     return (
         <FocusTrap active={menuOpen}>
             <Section as='header' className={styles['header']}>
                 <Link
                     href={process.env.NEXT_PUBLIC_BASE_URL as string}
                     className={styles['logo']}
+                    onClick={handleLogoClick}
                 >
                     <Image
                         src={Logo}

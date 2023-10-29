@@ -13,7 +13,12 @@ import { menuAnimations } from '@/utils/framer/animations';
 import LazyAnimatePresence from '@/utils/framer/LazyAnimatePresence';
 
 const MobileNav: FC<HeaderProps> = ({ menuItems, callToAction }) => {
-    const { menuOpen } = useStore();
+    const { setMenuOpen, menuOpen, setOpenSubmenu } = useStore();
+
+    const handleClick = () => {
+        setMenuOpen(false);
+        setOpenSubmenu(null);
+    };
 
     return (
         <LazyAnimatePresence>
@@ -27,7 +32,10 @@ const MobileNav: FC<HeaderProps> = ({ menuItems, callToAction }) => {
                 <Menu menuItems={menuItems} />
                 {callToAction && (
                     <Flex className={styles['mobile-btn']}>
-                        <Button buttonData={callToAction} />
+                        <Button
+                            onClick={handleClick}
+                            buttonData={callToAction}
+                        />
                     </Flex>
                 )}
             </m.nav>

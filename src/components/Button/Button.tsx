@@ -11,9 +11,11 @@ export interface ButtonProps {
     className?: string;
     /** Button object */
     buttonData: CallToAction | null;
+    /** Optional `onClick` event */
+    onClick?: () => void;
 }
 
-const Button: FC<ButtonProps> = ({ buttonData, className }) => {
+const Button: FC<ButtonProps> = ({ buttonData, className, onClick }) => {
     const { linkType, color, label, externalLink, internalLink } =
         buttonData || {};
 
@@ -30,7 +32,11 @@ const Button: FC<ButtonProps> = ({ buttonData, className }) => {
 
     return (
         label && (
-            <ButtonMolecule link={buttonLink} {...buttonProps}>
+            <ButtonMolecule
+                link={buttonLink}
+                onClick={onClick}
+                {...buttonProps}
+            >
                 {label}
             </ButtonMolecule>
         )

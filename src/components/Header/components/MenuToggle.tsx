@@ -6,7 +6,12 @@ import Container from '@/atoms/Container';
 import useStore from '@/store/useStore';
 
 const MenuToggle = () => {
-    const { menuOpen, setMenuOpen } = useStore();
+    const { menuOpen, setMenuOpen, setOpenSubmenu } = useStore();
+
+    const handleClick = () => {
+        setMenuOpen(!menuOpen);
+        setOpenSubmenu(null);
+    };
 
     const classList = classNames(
         styles['menu-toggle'],
@@ -17,7 +22,7 @@ const MenuToggle = () => {
         <Container
             as='button'
             className={classList}
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={handleClick}
             ariaLabel={'menu toggle'}
         >
             <Container className={styles['menu-toggle-container']}>
