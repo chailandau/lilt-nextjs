@@ -110,8 +110,10 @@
                     top: rem(8);
                     left: rem(8);
                     z-index: -2;
+                    background-color: color(dark, blue);
                     border: 1px solid color(neon, green);
                     border-radius: rem(24);
+                    box-shadow: shadow(purple);
                     @include laptop {
                         border-radius: rem(14);
                         top: rem(6);
