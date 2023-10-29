@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import { FOOTER_QUERY, HEADER_QUERY } from '@/api/graphqlQueries';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header/Header';
+import BackToTop from '@/molecules/BackToTop';
 import { getData } from '@/utils/getData';
 import '@/assets/fonts/fonts.css';
 import '@/styles/main.scss';
@@ -32,6 +33,7 @@ export default async function RootLayout({
                     socialLinks={FooterData?.socialLinks}
                     copyrightText={FooterData?.copyrightText}
                 />
+                <BackToTop />
             </body>
         </html>
     );
