@@ -1,0 +1,53 @@
+.back-to-top {
+    position: fixed;
+    bottom: rem(24);
+    right: rem(24);
+    width: rem(50);
+    height: rem(50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__icon {
+        width: rem(30) !important;
+        img {
+            margin-top: rem(-3);
+        }
+    }
+    @include transition(bottom, right);
+    @include laptop {
+        bottom: rem(24);
+        right: rem(24);
+    }
+    @include desktop-sm {
+        bottom: rem(40);
+        right: rem(40);
+    }
+    &,
+    &:before,
+    &:after {
+        border-radius: 50%;
+    }
+    &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background: color(dark, blue);
+    }
+    &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border: 2px solid color(neon, blue);
+        box-shadow: shadow(purple);
+    }
+}

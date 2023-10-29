@@ -11,13 +11,12 @@
     background-color: color(dark, blue);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     padding-top: rem(144);
-    padding-bottom: rem(44);
+    padding-bottom: rem(64);
     .mobile-btn {
         display: flex;
         width: 100%;
-        margin-top: rem(64);
+        margin-top: rem(56);
         @include tablet {
             display: none;
         }

@@ -182,7 +182,7 @@ export const SWITCHBACK_FRAGMENT = `
 `;
 
 const TEXT_GRID = `
- textGrid {
+textGrid {
     id
     heading
     content
@@ -250,12 +250,22 @@ export const SPECIALS_FRAGMENT = `
     id
     __typename
     special {
-      id
-      heading
-      subheading
-      content
-      sideBox
-      ${TEXT_GRID}
+        id
+        heading
+        subheading
+        content
+        sideBox
+        ${TEXT_GRID}
     }
-  }
+}
+`;
+
+export const META_FRAGMENT = `
+meta {
+    title
+    description
+    image {
+        ${IMAGE_FRAGMENT}
+    }
+}
 `;

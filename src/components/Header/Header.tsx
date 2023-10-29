@@ -18,6 +18,7 @@ import Flex from '@/molecules/Flex';
 import Section from '@/molecules/Section';
 import useStore from '@/store/useStore';
 import { laptopQuery, useMediaQuery } from '@/utils/hooks/useMediaQuery';
+import { setNoScroll } from '@/utils/setNoScroll';
 
 export interface HeaderProps {
     /* Menu items to display */
@@ -28,7 +29,7 @@ export interface HeaderProps {
 const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
     const isLaptop = useMediaQuery(laptopQuery);
 
-    const { menuOpen, setMenuOpen } = useStore();
+    const { menuOpen, setMenuOpen, setOpenSubmenu } = useStore();
 
     useEffect(() => {
         if (isLaptop) {
@@ -36,12 +37,22 @@ const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
         }
     }, [isLaptop]);
 
+    useEffect(() => {
+        setNoScroll(menuOpen);
+    }, [menuOpen]);
+
+    const handleLogoClick = () => {
+        setMenuOpen(false);
+        setOpenSubmenu(null);
+    };
+
     return (
         <FocusTrap active={menuOpen}>
             <Section as='header' className={styles['header']}>
                 <Link
                     href={process.env.NEXT_PUBLIC_BASE_URL as string}
                     className={styles['logo']}
+                    onClick={handleLogoClick}
                 >
                     <Image
                         src={Logo}

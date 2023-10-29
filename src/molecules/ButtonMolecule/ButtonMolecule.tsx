@@ -48,7 +48,12 @@ const ButtonMolecule: FC<ButtonMoleculeProps> = ({
     const isLink = link && link.trim() !== '';
 
     return isLink ? (
-        <Link href={link} className={classList} underlineHover={false}>
+        <Link
+            href={link}
+            className={classList}
+            underlineHover={false}
+            onClick={onClick}
+        >
             {children}
         </Link>
     ) : (
