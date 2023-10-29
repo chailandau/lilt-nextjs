@@ -181,35 +181,6 @@ exports[`Header Mobile Nav matches snapshot 1`] = `
             />
           </svg>
         </button>
-        <div
-          class="submenu"
-          style="opacity: 0; transform: translateX(0px) translateY(15%) translateZ(0);"
-        >
-          <ul
-            class="menu"
-          >
-            <li>
-              <a
-                class="link underline-hover menu-link"
-                href="/about-us"
-                rel=""
-                target=""
-              >
-                About Us
-              </a>
-            </li>
-            <li>
-              <a
-                class="link underline-hover menu-link"
-                href="/our-tech"
-                rel=""
-                target=""
-              >
-                Our Tech
-              </a>
-            </li>
-          </ul>
-        </div>
       </li>
     </ul>
   </nav>
