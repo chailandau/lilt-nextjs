@@ -13334,10 +13334,265 @@ export type Page = {
     __typename?: 'Page';
     createdAt?: Maybe<Scalars['DateTime']['output']>;
     id?: Maybe<Scalars['String']['output']>;
+    meta?: Maybe<Page_Meta>;
     pageSections?: Maybe<Array<Page_PageSections>>;
     slug?: Maybe<Scalars['String']['output']>;
     title?: Maybe<Scalars['String']['output']>;
     updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type Page_Meta = {
+    __typename?: 'Page_Meta';
+    description?: Maybe<Scalars['String']['output']>;
+    image?: Maybe<Image>;
+    noIndex?: Maybe<Scalars['Boolean']['output']>;
+    title?: Maybe<Scalars['String']['output']>;
+};
+
+export type Page_MetaImageArgs = {
+    where?: InputMaybe<Page_Meta_Image_Where>;
+};
+
+export type Page_Meta_Image_Alt_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Page_Meta_Image_Base64_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Page_Meta_Image_CreatedAt_Operator = {
+    equals?: InputMaybe<Scalars['DateTime']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    like?: InputMaybe<Scalars['DateTime']['input']>;
+    not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type Page_Meta_Image_Filename_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Page_Meta_Image_Filesize_Operator = {
+    equals?: InputMaybe<Scalars['Float']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Page_Meta_Image_Height_Operator = {
+    equals?: InputMaybe<Scalars['Float']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Page_Meta_Image_Id_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Page_Meta_Image_MimeType_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Page_Meta_Image_Sizes__Thumbnail__Filename_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Page_Meta_Image_Sizes__Thumbnail__Filesize_Operator = {
+    equals?: InputMaybe<Scalars['Float']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Page_Meta_Image_Sizes__Thumbnail__Height_Operator = {
+    equals?: InputMaybe<Scalars['Float']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Page_Meta_Image_Sizes__Thumbnail__MimeType_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Page_Meta_Image_Sizes__Thumbnail__Url_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Page_Meta_Image_Sizes__Thumbnail__Width_Operator = {
+    equals?: InputMaybe<Scalars['Float']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Page_Meta_Image_UpdatedAt_Operator = {
+    equals?: InputMaybe<Scalars['DateTime']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    like?: InputMaybe<Scalars['DateTime']['input']>;
+    not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type Page_Meta_Image_Url_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Page_Meta_Image_Where = {
+    AND?: InputMaybe<Array<InputMaybe<Page_Meta_Image_Where_And>>>;
+    OR?: InputMaybe<Array<InputMaybe<Page_Meta_Image_Where_Or>>>;
+    alt?: InputMaybe<Page_Meta_Image_Alt_Operator>;
+    base64?: InputMaybe<Page_Meta_Image_Base64_Operator>;
+    createdAt?: InputMaybe<Page_Meta_Image_CreatedAt_Operator>;
+    filename?: InputMaybe<Page_Meta_Image_Filename_Operator>;
+    filesize?: InputMaybe<Page_Meta_Image_Filesize_Operator>;
+    height?: InputMaybe<Page_Meta_Image_Height_Operator>;
+    id?: InputMaybe<Page_Meta_Image_Id_Operator>;
+    mimeType?: InputMaybe<Page_Meta_Image_MimeType_Operator>;
+    sizes__thumbnail__filename?: InputMaybe<Page_Meta_Image_Sizes__Thumbnail__Filename_Operator>;
+    sizes__thumbnail__filesize?: InputMaybe<Page_Meta_Image_Sizes__Thumbnail__Filesize_Operator>;
+    sizes__thumbnail__height?: InputMaybe<Page_Meta_Image_Sizes__Thumbnail__Height_Operator>;
+    sizes__thumbnail__mimeType?: InputMaybe<Page_Meta_Image_Sizes__Thumbnail__MimeType_Operator>;
+    sizes__thumbnail__url?: InputMaybe<Page_Meta_Image_Sizes__Thumbnail__Url_Operator>;
+    sizes__thumbnail__width?: InputMaybe<Page_Meta_Image_Sizes__Thumbnail__Width_Operator>;
+    updatedAt?: InputMaybe<Page_Meta_Image_UpdatedAt_Operator>;
+    url?: InputMaybe<Page_Meta_Image_Url_Operator>;
+    width?: InputMaybe<Page_Meta_Image_Width_Operator>;
+};
+
+export type Page_Meta_Image_Where_And = {
+    alt?: InputMaybe<Page_Meta_Image_Alt_Operator>;
+    base64?: InputMaybe<Page_Meta_Image_Base64_Operator>;
+    createdAt?: InputMaybe<Page_Meta_Image_CreatedAt_Operator>;
+    filename?: InputMaybe<Page_Meta_Image_Filename_Operator>;
+    filesize?: InputMaybe<Page_Meta_Image_Filesize_Operator>;
+    height?: InputMaybe<Page_Meta_Image_Height_Operator>;
+    id?: InputMaybe<Page_Meta_Image_Id_Operator>;
+    mimeType?: InputMaybe<Page_Meta_Image_MimeType_Operator>;
+    sizes__thumbnail__filename?: InputMaybe<Page_Meta_Image_Sizes__Thumbnail__Filename_Operator>;
+    sizes__thumbnail__filesize?: InputMaybe<Page_Meta_Image_Sizes__Thumbnail__Filesize_Operator>;
+    sizes__thumbnail__height?: InputMaybe<Page_Meta_Image_Sizes__Thumbnail__Height_Operator>;
+    sizes__thumbnail__mimeType?: InputMaybe<Page_Meta_Image_Sizes__Thumbnail__MimeType_Operator>;
+    sizes__thumbnail__url?: InputMaybe<Page_Meta_Image_Sizes__Thumbnail__Url_Operator>;
+    sizes__thumbnail__width?: InputMaybe<Page_Meta_Image_Sizes__Thumbnail__Width_Operator>;
+    updatedAt?: InputMaybe<Page_Meta_Image_UpdatedAt_Operator>;
+    url?: InputMaybe<Page_Meta_Image_Url_Operator>;
+    width?: InputMaybe<Page_Meta_Image_Width_Operator>;
+};
+
+export type Page_Meta_Image_Where_Or = {
+    alt?: InputMaybe<Page_Meta_Image_Alt_Operator>;
+    base64?: InputMaybe<Page_Meta_Image_Base64_Operator>;
+    createdAt?: InputMaybe<Page_Meta_Image_CreatedAt_Operator>;
+    filename?: InputMaybe<Page_Meta_Image_Filename_Operator>;
+    filesize?: InputMaybe<Page_Meta_Image_Filesize_Operator>;
+    height?: InputMaybe<Page_Meta_Image_Height_Operator>;
+    id?: InputMaybe<Page_Meta_Image_Id_Operator>;
+    mimeType?: InputMaybe<Page_Meta_Image_MimeType_Operator>;
+    sizes__thumbnail__filename?: InputMaybe<Page_Meta_Image_Sizes__Thumbnail__Filename_Operator>;
+    sizes__thumbnail__filesize?: InputMaybe<Page_Meta_Image_Sizes__Thumbnail__Filesize_Operator>;
+    sizes__thumbnail__height?: InputMaybe<Page_Meta_Image_Sizes__Thumbnail__Height_Operator>;
+    sizes__thumbnail__mimeType?: InputMaybe<Page_Meta_Image_Sizes__Thumbnail__MimeType_Operator>;
+    sizes__thumbnail__url?: InputMaybe<Page_Meta_Image_Sizes__Thumbnail__Url_Operator>;
+    sizes__thumbnail__width?: InputMaybe<Page_Meta_Image_Sizes__Thumbnail__Width_Operator>;
+    updatedAt?: InputMaybe<Page_Meta_Image_UpdatedAt_Operator>;
+    url?: InputMaybe<Page_Meta_Image_Url_Operator>;
+    width?: InputMaybe<Page_Meta_Image_Width_Operator>;
+};
+
+export type Page_Meta_Image_Width_Operator = {
+    equals?: InputMaybe<Scalars['Float']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    greater_than?: InputMaybe<Scalars['Float']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    less_than?: InputMaybe<Scalars['Float']['input']>;
+    less_than_equal?: InputMaybe<Scalars['Float']['input']>;
+    not_equals?: InputMaybe<Scalars['Float']['input']>;
 };
 
 export type Page_PageSections = {
@@ -13402,6 +13657,37 @@ export type Page_CreatedAt_Operator = {
 };
 
 export type Page_Id_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Page_Meta__Description_Operator = {
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Page_Meta__Image_Operator = {
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Page_Meta__NoIndex_Operator = {
+    equals?: InputMaybe<Scalars['Boolean']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    not_equals?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type Page_Meta__Title_Operator = {
     all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
     contains?: InputMaybe<Scalars['String']['input']>;
     equals?: InputMaybe<Scalars['String']['input']>;
@@ -13537,6 +13823,10 @@ export type Page_Where = {
     OR?: InputMaybe<Array<InputMaybe<Page_Where_Or>>>;
     createdAt?: InputMaybe<Page_CreatedAt_Operator>;
     id?: InputMaybe<Page_Id_Operator>;
+    meta__description?: InputMaybe<Page_Meta__Description_Operator>;
+    meta__image?: InputMaybe<Page_Meta__Image_Operator>;
+    meta__noIndex?: InputMaybe<Page_Meta__NoIndex_Operator>;
+    meta__title?: InputMaybe<Page_Meta__Title_Operator>;
     pageSections__enableGrid?: InputMaybe<Page_PageSections__EnableGrid_Operator>;
     pageSections__enableShapes?: InputMaybe<Page_PageSections__EnableShapes_Operator>;
     pageSections__gridColor?: InputMaybe<Page_PageSections__GridColor_Operator>;
@@ -13553,6 +13843,10 @@ export type Page_Where = {
 export type Page_Where_And = {
     createdAt?: InputMaybe<Page_CreatedAt_Operator>;
     id?: InputMaybe<Page_Id_Operator>;
+    meta__description?: InputMaybe<Page_Meta__Description_Operator>;
+    meta__image?: InputMaybe<Page_Meta__Image_Operator>;
+    meta__noIndex?: InputMaybe<Page_Meta__NoIndex_Operator>;
+    meta__title?: InputMaybe<Page_Meta__Title_Operator>;
     pageSections__enableGrid?: InputMaybe<Page_PageSections__EnableGrid_Operator>;
     pageSections__enableShapes?: InputMaybe<Page_PageSections__EnableShapes_Operator>;
     pageSections__gridColor?: InputMaybe<Page_PageSections__GridColor_Operator>;
@@ -13569,6 +13863,10 @@ export type Page_Where_And = {
 export type Page_Where_Or = {
     createdAt?: InputMaybe<Page_CreatedAt_Operator>;
     id?: InputMaybe<Page_Id_Operator>;
+    meta__description?: InputMaybe<Page_Meta__Description_Operator>;
+    meta__image?: InputMaybe<Page_Meta__Image_Operator>;
+    meta__noIndex?: InputMaybe<Page_Meta__NoIndex_Operator>;
+    meta__title?: InputMaybe<Page_Meta__Title_Operator>;
     pageSections__enableGrid?: InputMaybe<Page_PageSections__EnableGrid_Operator>;
     pageSections__enableShapes?: InputMaybe<Page_PageSections__EnableShapes_Operator>;
     pageSections__gridColor?: InputMaybe<Page_PageSections__GridColor_Operator>;
@@ -13624,6 +13922,7 @@ export type PagesDeleteDocAccess = {
 export type PagesDocAccessFields = {
     __typename?: 'PagesDocAccessFields';
     createdAt?: Maybe<PagesDocAccessFields_CreatedAt>;
+    meta?: Maybe<PagesDocAccessFields_Meta>;
     pageSections?: Maybe<PagesDocAccessFields_PageSections>;
     slug?: Maybe<PagesDocAccessFields_Slug>;
     title?: Maybe<PagesDocAccessFields_Title>;
@@ -13655,6 +13954,213 @@ export type PagesDocAccessFields_CreatedAt_Read = {
 
 export type PagesDocAccessFields_CreatedAt_Update = {
     __typename?: 'PagesDocAccessFields_createdAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta = {
+    __typename?: 'PagesDocAccessFields_meta';
+    create?: Maybe<PagesDocAccessFields_Meta_Create>;
+    delete?: Maybe<PagesDocAccessFields_Meta_Delete>;
+    fields?: Maybe<PagesDocAccessFields_Meta_Fields>;
+    read?: Maybe<PagesDocAccessFields_Meta_Read>;
+    update?: Maybe<PagesDocAccessFields_Meta_Update>;
+};
+
+export type PagesDocAccessFields_Meta_Create = {
+    __typename?: 'PagesDocAccessFields_meta_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Delete = {
+    __typename?: 'PagesDocAccessFields_meta_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Fields = {
+    __typename?: 'PagesDocAccessFields_meta_Fields';
+    description?: Maybe<PagesDocAccessFields_Meta_Description>;
+    image?: Maybe<PagesDocAccessFields_Meta_Image>;
+    noIndex?: Maybe<PagesDocAccessFields_Meta_NoIndex>;
+    overview?: Maybe<PagesDocAccessFields_Meta_Overview>;
+    preview?: Maybe<PagesDocAccessFields_Meta_Preview>;
+    title?: Maybe<PagesDocAccessFields_Meta_Title>;
+};
+
+export type PagesDocAccessFields_Meta_Read = {
+    __typename?: 'PagesDocAccessFields_meta_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Update = {
+    __typename?: 'PagesDocAccessFields_meta_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Description = {
+    __typename?: 'PagesDocAccessFields_meta_description';
+    create?: Maybe<PagesDocAccessFields_Meta_Description_Create>;
+    delete?: Maybe<PagesDocAccessFields_Meta_Description_Delete>;
+    read?: Maybe<PagesDocAccessFields_Meta_Description_Read>;
+    update?: Maybe<PagesDocAccessFields_Meta_Description_Update>;
+};
+
+export type PagesDocAccessFields_Meta_Description_Create = {
+    __typename?: 'PagesDocAccessFields_meta_description_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Description_Delete = {
+    __typename?: 'PagesDocAccessFields_meta_description_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Description_Read = {
+    __typename?: 'PagesDocAccessFields_meta_description_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Description_Update = {
+    __typename?: 'PagesDocAccessFields_meta_description_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Image = {
+    __typename?: 'PagesDocAccessFields_meta_image';
+    create?: Maybe<PagesDocAccessFields_Meta_Image_Create>;
+    delete?: Maybe<PagesDocAccessFields_Meta_Image_Delete>;
+    read?: Maybe<PagesDocAccessFields_Meta_Image_Read>;
+    update?: Maybe<PagesDocAccessFields_Meta_Image_Update>;
+};
+
+export type PagesDocAccessFields_Meta_Image_Create = {
+    __typename?: 'PagesDocAccessFields_meta_image_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Image_Delete = {
+    __typename?: 'PagesDocAccessFields_meta_image_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Image_Read = {
+    __typename?: 'PagesDocAccessFields_meta_image_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Image_Update = {
+    __typename?: 'PagesDocAccessFields_meta_image_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_NoIndex = {
+    __typename?: 'PagesDocAccessFields_meta_noIndex';
+    create?: Maybe<PagesDocAccessFields_Meta_NoIndex_Create>;
+    delete?: Maybe<PagesDocAccessFields_Meta_NoIndex_Delete>;
+    read?: Maybe<PagesDocAccessFields_Meta_NoIndex_Read>;
+    update?: Maybe<PagesDocAccessFields_Meta_NoIndex_Update>;
+};
+
+export type PagesDocAccessFields_Meta_NoIndex_Create = {
+    __typename?: 'PagesDocAccessFields_meta_noIndex_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_NoIndex_Delete = {
+    __typename?: 'PagesDocAccessFields_meta_noIndex_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_NoIndex_Read = {
+    __typename?: 'PagesDocAccessFields_meta_noIndex_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_NoIndex_Update = {
+    __typename?: 'PagesDocAccessFields_meta_noIndex_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Overview = {
+    __typename?: 'PagesDocAccessFields_meta_overview';
+    create?: Maybe<PagesDocAccessFields_Meta_Overview_Create>;
+    delete?: Maybe<PagesDocAccessFields_Meta_Overview_Delete>;
+    read?: Maybe<PagesDocAccessFields_Meta_Overview_Read>;
+    update?: Maybe<PagesDocAccessFields_Meta_Overview_Update>;
+};
+
+export type PagesDocAccessFields_Meta_Overview_Create = {
+    __typename?: 'PagesDocAccessFields_meta_overview_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Overview_Delete = {
+    __typename?: 'PagesDocAccessFields_meta_overview_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Overview_Read = {
+    __typename?: 'PagesDocAccessFields_meta_overview_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Overview_Update = {
+    __typename?: 'PagesDocAccessFields_meta_overview_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Preview = {
+    __typename?: 'PagesDocAccessFields_meta_preview';
+    create?: Maybe<PagesDocAccessFields_Meta_Preview_Create>;
+    delete?: Maybe<PagesDocAccessFields_Meta_Preview_Delete>;
+    read?: Maybe<PagesDocAccessFields_Meta_Preview_Read>;
+    update?: Maybe<PagesDocAccessFields_Meta_Preview_Update>;
+};
+
+export type PagesDocAccessFields_Meta_Preview_Create = {
+    __typename?: 'PagesDocAccessFields_meta_preview_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Preview_Delete = {
+    __typename?: 'PagesDocAccessFields_meta_preview_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Preview_Read = {
+    __typename?: 'PagesDocAccessFields_meta_preview_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Preview_Update = {
+    __typename?: 'PagesDocAccessFields_meta_preview_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Title = {
+    __typename?: 'PagesDocAccessFields_meta_title';
+    create?: Maybe<PagesDocAccessFields_Meta_Title_Create>;
+    delete?: Maybe<PagesDocAccessFields_Meta_Title_Delete>;
+    read?: Maybe<PagesDocAccessFields_Meta_Title_Read>;
+    update?: Maybe<PagesDocAccessFields_Meta_Title_Update>;
+};
+
+export type PagesDocAccessFields_Meta_Title_Create = {
+    __typename?: 'PagesDocAccessFields_meta_title_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Title_Delete = {
+    __typename?: 'PagesDocAccessFields_meta_title_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Title_Read = {
+    __typename?: 'PagesDocAccessFields_meta_title_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesDocAccessFields_Meta_Title_Update = {
+    __typename?: 'PagesDocAccessFields_meta_title_Update';
     permission: Scalars['Boolean']['output'];
 };
 
@@ -14073,6 +14579,7 @@ export type PagesDocAccessFields_UpdatedAt_Update = {
 export type PagesFields = {
     __typename?: 'PagesFields';
     createdAt?: Maybe<PagesFields_CreatedAt>;
+    meta?: Maybe<PagesFields_Meta>;
     pageSections?: Maybe<PagesFields_PageSections>;
     slug?: Maybe<PagesFields_Slug>;
     title?: Maybe<PagesFields_Title>;
@@ -14104,6 +14611,213 @@ export type PagesFields_CreatedAt_Read = {
 
 export type PagesFields_CreatedAt_Update = {
     __typename?: 'PagesFields_createdAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta = {
+    __typename?: 'PagesFields_meta';
+    create?: Maybe<PagesFields_Meta_Create>;
+    delete?: Maybe<PagesFields_Meta_Delete>;
+    fields?: Maybe<PagesFields_Meta_Fields>;
+    read?: Maybe<PagesFields_Meta_Read>;
+    update?: Maybe<PagesFields_Meta_Update>;
+};
+
+export type PagesFields_Meta_Create = {
+    __typename?: 'PagesFields_meta_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Delete = {
+    __typename?: 'PagesFields_meta_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Fields = {
+    __typename?: 'PagesFields_meta_Fields';
+    description?: Maybe<PagesFields_Meta_Description>;
+    image?: Maybe<PagesFields_Meta_Image>;
+    noIndex?: Maybe<PagesFields_Meta_NoIndex>;
+    overview?: Maybe<PagesFields_Meta_Overview>;
+    preview?: Maybe<PagesFields_Meta_Preview>;
+    title?: Maybe<PagesFields_Meta_Title>;
+};
+
+export type PagesFields_Meta_Read = {
+    __typename?: 'PagesFields_meta_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Update = {
+    __typename?: 'PagesFields_meta_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Description = {
+    __typename?: 'PagesFields_meta_description';
+    create?: Maybe<PagesFields_Meta_Description_Create>;
+    delete?: Maybe<PagesFields_Meta_Description_Delete>;
+    read?: Maybe<PagesFields_Meta_Description_Read>;
+    update?: Maybe<PagesFields_Meta_Description_Update>;
+};
+
+export type PagesFields_Meta_Description_Create = {
+    __typename?: 'PagesFields_meta_description_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Description_Delete = {
+    __typename?: 'PagesFields_meta_description_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Description_Read = {
+    __typename?: 'PagesFields_meta_description_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Description_Update = {
+    __typename?: 'PagesFields_meta_description_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Image = {
+    __typename?: 'PagesFields_meta_image';
+    create?: Maybe<PagesFields_Meta_Image_Create>;
+    delete?: Maybe<PagesFields_Meta_Image_Delete>;
+    read?: Maybe<PagesFields_Meta_Image_Read>;
+    update?: Maybe<PagesFields_Meta_Image_Update>;
+};
+
+export type PagesFields_Meta_Image_Create = {
+    __typename?: 'PagesFields_meta_image_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Image_Delete = {
+    __typename?: 'PagesFields_meta_image_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Image_Read = {
+    __typename?: 'PagesFields_meta_image_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Image_Update = {
+    __typename?: 'PagesFields_meta_image_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_NoIndex = {
+    __typename?: 'PagesFields_meta_noIndex';
+    create?: Maybe<PagesFields_Meta_NoIndex_Create>;
+    delete?: Maybe<PagesFields_Meta_NoIndex_Delete>;
+    read?: Maybe<PagesFields_Meta_NoIndex_Read>;
+    update?: Maybe<PagesFields_Meta_NoIndex_Update>;
+};
+
+export type PagesFields_Meta_NoIndex_Create = {
+    __typename?: 'PagesFields_meta_noIndex_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_NoIndex_Delete = {
+    __typename?: 'PagesFields_meta_noIndex_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_NoIndex_Read = {
+    __typename?: 'PagesFields_meta_noIndex_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_NoIndex_Update = {
+    __typename?: 'PagesFields_meta_noIndex_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Overview = {
+    __typename?: 'PagesFields_meta_overview';
+    create?: Maybe<PagesFields_Meta_Overview_Create>;
+    delete?: Maybe<PagesFields_Meta_Overview_Delete>;
+    read?: Maybe<PagesFields_Meta_Overview_Read>;
+    update?: Maybe<PagesFields_Meta_Overview_Update>;
+};
+
+export type PagesFields_Meta_Overview_Create = {
+    __typename?: 'PagesFields_meta_overview_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Overview_Delete = {
+    __typename?: 'PagesFields_meta_overview_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Overview_Read = {
+    __typename?: 'PagesFields_meta_overview_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Overview_Update = {
+    __typename?: 'PagesFields_meta_overview_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Preview = {
+    __typename?: 'PagesFields_meta_preview';
+    create?: Maybe<PagesFields_Meta_Preview_Create>;
+    delete?: Maybe<PagesFields_Meta_Preview_Delete>;
+    read?: Maybe<PagesFields_Meta_Preview_Read>;
+    update?: Maybe<PagesFields_Meta_Preview_Update>;
+};
+
+export type PagesFields_Meta_Preview_Create = {
+    __typename?: 'PagesFields_meta_preview_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Preview_Delete = {
+    __typename?: 'PagesFields_meta_preview_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Preview_Read = {
+    __typename?: 'PagesFields_meta_preview_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Preview_Update = {
+    __typename?: 'PagesFields_meta_preview_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Title = {
+    __typename?: 'PagesFields_meta_title';
+    create?: Maybe<PagesFields_Meta_Title_Create>;
+    delete?: Maybe<PagesFields_Meta_Title_Delete>;
+    read?: Maybe<PagesFields_Meta_Title_Read>;
+    update?: Maybe<PagesFields_Meta_Title_Update>;
+};
+
+export type PagesFields_Meta_Title_Create = {
+    __typename?: 'PagesFields_meta_title_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Title_Delete = {
+    __typename?: 'PagesFields_meta_title_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Title_Read = {
+    __typename?: 'PagesFields_meta_title_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type PagesFields_Meta_Title_Update = {
+    __typename?: 'PagesFields_meta_title_Update';
     permission: Scalars['Boolean']['output'];
 };
 
@@ -20642,6 +21356,7 @@ export type MutationImage_Sizes_ThumbnailInput = {
 
 export type MutationPageInput = {
     createdAt?: InputMaybe<Scalars['String']['input']>;
+    meta?: InputMaybe<MutationPage_MetaInput>;
     pageSections?: InputMaybe<
         Array<InputMaybe<MutationPage_PageSectionsInput>>
     >;
@@ -20652,12 +21367,20 @@ export type MutationPageInput = {
 
 export type MutationPageUpdateInput = {
     createdAt?: InputMaybe<Scalars['String']['input']>;
+    meta?: InputMaybe<MutationPageUpdate_MetaInput>;
     pageSections?: InputMaybe<
         Array<InputMaybe<MutationPageUpdate_PageSectionsInput>>
     >;
     slug?: InputMaybe<Scalars['String']['input']>;
     title?: InputMaybe<Scalars['String']['input']>;
     updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationPageUpdate_MetaInput = {
+    description?: InputMaybe<Scalars['String']['input']>;
+    image?: InputMaybe<Scalars['String']['input']>;
+    noIndex?: InputMaybe<Scalars['Boolean']['input']>;
+    title?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationPageUpdate_PageSectionsInput = {
@@ -20676,6 +21399,13 @@ export type MutationPageUpdate_PageSections_ShapesInput = {
     id?: InputMaybe<Scalars['String']['input']>;
     location?: InputMaybe<Scalars['String']['input']>;
     shape?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationPage_MetaInput = {
+    description?: InputMaybe<Scalars['String']['input']>;
+    image?: InputMaybe<Scalars['String']['input']>;
+    noIndex?: InputMaybe<Scalars['Boolean']['input']>;
+    title?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationPage_PageSectionsInput = {

@@ -80,7 +80,7 @@ exports[`graphqlQueries mocks HEADER_QUERY successfully 1`] = `
           },
           "label": "Hello World",
           "linkType": "external",
-          "overridePageName": true,
+          "overridePageName": false,
           "submenuItems": [
             {
               "externalLink": "Hello World",
@@ -121,7 +121,7 @@ exports[`graphqlQueries mocks HEADER_QUERY successfully 1`] = `
           },
           "label": "Hello World",
           "linkType": "external",
-          "overridePageName": true,
+          "overridePageName": false,
           "submenuItems": [
             {
               "externalLink": "Hello World",
