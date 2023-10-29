@@ -11223,10 +11223,260 @@ type Mutation {
 type Page {
   createdAt: DateTime
   id: String
+  meta: Page_Meta
   pageSections: [Page_PageSections!]
   slug: String
   title: String
   updatedAt: DateTime
+}
+
+type Page_Meta {
+  description: String
+  image(where: Page_Meta_Image_where): Image
+  noIndex: Boolean
+  title: String
+}
+
+input Page_Meta_Image_alt_operator {
+  all: [String]
+  contains: String
+  equals: String
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input Page_Meta_Image_base64_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input Page_Meta_Image_createdAt_operator {
+  equals: DateTime
+  exists: Boolean
+  greater_than: DateTime
+  greater_than_equal: DateTime
+  less_than: DateTime
+  less_than_equal: DateTime
+  like: DateTime
+  not_equals: DateTime
+}
+
+input Page_Meta_Image_filename_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input Page_Meta_Image_filesize_operator {
+  equals: Float
+  exists: Boolean
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
+}
+
+input Page_Meta_Image_height_operator {
+  equals: Float
+  exists: Boolean
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
+}
+
+input Page_Meta_Image_id_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input Page_Meta_Image_mimeType_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input Page_Meta_Image_sizes__thumbnail__filename_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input Page_Meta_Image_sizes__thumbnail__filesize_operator {
+  equals: Float
+  exists: Boolean
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
+}
+
+input Page_Meta_Image_sizes__thumbnail__height_operator {
+  equals: Float
+  exists: Boolean
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
+}
+
+input Page_Meta_Image_sizes__thumbnail__mimeType_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input Page_Meta_Image_sizes__thumbnail__url_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input Page_Meta_Image_sizes__thumbnail__width_operator {
+  equals: Float
+  exists: Boolean
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
+}
+
+input Page_Meta_Image_updatedAt_operator {
+  equals: DateTime
+  exists: Boolean
+  greater_than: DateTime
+  greater_than_equal: DateTime
+  less_than: DateTime
+  less_than_equal: DateTime
+  like: DateTime
+  not_equals: DateTime
+}
+
+input Page_Meta_Image_url_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input Page_Meta_Image_where {
+  AND: [Page_Meta_Image_where_and]
+  OR: [Page_Meta_Image_where_or]
+  alt: Page_Meta_Image_alt_operator
+  base64: Page_Meta_Image_base64_operator
+  createdAt: Page_Meta_Image_createdAt_operator
+  filename: Page_Meta_Image_filename_operator
+  filesize: Page_Meta_Image_filesize_operator
+  height: Page_Meta_Image_height_operator
+  id: Page_Meta_Image_id_operator
+  mimeType: Page_Meta_Image_mimeType_operator
+  sizes__thumbnail__filename: Page_Meta_Image_sizes__thumbnail__filename_operator
+  sizes__thumbnail__filesize: Page_Meta_Image_sizes__thumbnail__filesize_operator
+  sizes__thumbnail__height: Page_Meta_Image_sizes__thumbnail__height_operator
+  sizes__thumbnail__mimeType: Page_Meta_Image_sizes__thumbnail__mimeType_operator
+  sizes__thumbnail__url: Page_Meta_Image_sizes__thumbnail__url_operator
+  sizes__thumbnail__width: Page_Meta_Image_sizes__thumbnail__width_operator
+  updatedAt: Page_Meta_Image_updatedAt_operator
+  url: Page_Meta_Image_url_operator
+  width: Page_Meta_Image_width_operator
+}
+
+input Page_Meta_Image_where_and {
+  alt: Page_Meta_Image_alt_operator
+  base64: Page_Meta_Image_base64_operator
+  createdAt: Page_Meta_Image_createdAt_operator
+  filename: Page_Meta_Image_filename_operator
+  filesize: Page_Meta_Image_filesize_operator
+  height: Page_Meta_Image_height_operator
+  id: Page_Meta_Image_id_operator
+  mimeType: Page_Meta_Image_mimeType_operator
+  sizes__thumbnail__filename: Page_Meta_Image_sizes__thumbnail__filename_operator
+  sizes__thumbnail__filesize: Page_Meta_Image_sizes__thumbnail__filesize_operator
+  sizes__thumbnail__height: Page_Meta_Image_sizes__thumbnail__height_operator
+  sizes__thumbnail__mimeType: Page_Meta_Image_sizes__thumbnail__mimeType_operator
+  sizes__thumbnail__url: Page_Meta_Image_sizes__thumbnail__url_operator
+  sizes__thumbnail__width: Page_Meta_Image_sizes__thumbnail__width_operator
+  updatedAt: Page_Meta_Image_updatedAt_operator
+  url: Page_Meta_Image_url_operator
+  width: Page_Meta_Image_width_operator
+}
+
+input Page_Meta_Image_where_or {
+  alt: Page_Meta_Image_alt_operator
+  base64: Page_Meta_Image_base64_operator
+  createdAt: Page_Meta_Image_createdAt_operator
+  filename: Page_Meta_Image_filename_operator
+  filesize: Page_Meta_Image_filesize_operator
+  height: Page_Meta_Image_height_operator
+  id: Page_Meta_Image_id_operator
+  mimeType: Page_Meta_Image_mimeType_operator
+  sizes__thumbnail__filename: Page_Meta_Image_sizes__thumbnail__filename_operator
+  sizes__thumbnail__filesize: Page_Meta_Image_sizes__thumbnail__filesize_operator
+  sizes__thumbnail__height: Page_Meta_Image_sizes__thumbnail__height_operator
+  sizes__thumbnail__mimeType: Page_Meta_Image_sizes__thumbnail__mimeType_operator
+  sizes__thumbnail__url: Page_Meta_Image_sizes__thumbnail__url_operator
+  sizes__thumbnail__width: Page_Meta_Image_sizes__thumbnail__width_operator
+  updatedAt: Page_Meta_Image_updatedAt_operator
+  url: Page_Meta_Image_url_operator
+  width: Page_Meta_Image_width_operator
+}
+
+input Page_Meta_Image_width_operator {
+  equals: Float
+  exists: Boolean
+  greater_than: Float
+  greater_than_equal: Float
+  less_than: Float
+  less_than_equal: Float
+  not_equals: Float
 }
 
 type Page_PageSections {
@@ -11278,6 +11528,37 @@ input Page_createdAt_operator {
 }
 
 input Page_id_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input Page_meta__description_operator {
+  contains: String
+  equals: String
+  exists: Boolean
+  like: String
+  not_equals: String
+}
+
+input Page_meta__image_operator {
+  equals: String
+  exists: Boolean
+  not_equals: String
+}
+
+input Page_meta__noIndex_operator {
+  equals: Boolean
+  exists: Boolean
+  not_equals: Boolean
+}
+
+input Page_meta__title_operator {
   all: [String]
   contains: String
   equals: String
@@ -11413,6 +11694,10 @@ input Page_where {
   OR: [Page_where_or]
   createdAt: Page_createdAt_operator
   id: Page_id_operator
+  meta__description: Page_meta__description_operator
+  meta__image: Page_meta__image_operator
+  meta__noIndex: Page_meta__noIndex_operator
+  meta__title: Page_meta__title_operator
   pageSections__enableGrid: Page_pageSections__enableGrid_operator
   pageSections__enableShapes: Page_pageSections__enableShapes_operator
   pageSections__gridColor: Page_pageSections__gridColor_operator
@@ -11429,6 +11714,10 @@ input Page_where {
 input Page_where_and {
   createdAt: Page_createdAt_operator
   id: Page_id_operator
+  meta__description: Page_meta__description_operator
+  meta__image: Page_meta__image_operator
+  meta__noIndex: Page_meta__noIndex_operator
+  meta__title: Page_meta__title_operator
   pageSections__enableGrid: Page_pageSections__enableGrid_operator
   pageSections__enableShapes: Page_pageSections__enableShapes_operator
   pageSections__gridColor: Page_pageSections__gridColor_operator
@@ -11445,6 +11734,10 @@ input Page_where_and {
 input Page_where_or {
   createdAt: Page_createdAt_operator
   id: Page_id_operator
+  meta__description: Page_meta__description_operator
+  meta__image: Page_meta__image_operator
+  meta__noIndex: Page_meta__noIndex_operator
+  meta__title: Page_meta__title_operator
   pageSections__enableGrid: Page_pageSections__enableGrid_operator
   pageSections__enableShapes: Page_pageSections__enableShapes_operator
   pageSections__gridColor: Page_pageSections__gridColor_operator
@@ -11494,6 +11787,7 @@ type PagesDeleteDocAccess {
 
 type PagesDocAccessFields {
   createdAt: PagesDocAccessFields_createdAt
+  meta: PagesDocAccessFields_meta
   pageSections: PagesDocAccessFields_pageSections
   slug: PagesDocAccessFields_slug
   title: PagesDocAccessFields_title
@@ -11520,6 +11814,177 @@ type PagesDocAccessFields_createdAt_Read {
 }
 
 type PagesDocAccessFields_createdAt_Update {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta {
+  create: PagesDocAccessFields_meta_Create
+  delete: PagesDocAccessFields_meta_Delete
+  fields: PagesDocAccessFields_meta_Fields
+  read: PagesDocAccessFields_meta_Read
+  update: PagesDocAccessFields_meta_Update
+}
+
+type PagesDocAccessFields_meta_Create {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_Delete {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_Fields {
+  description: PagesDocAccessFields_meta_description
+  image: PagesDocAccessFields_meta_image
+  noIndex: PagesDocAccessFields_meta_noIndex
+  overview: PagesDocAccessFields_meta_overview
+  preview: PagesDocAccessFields_meta_preview
+  title: PagesDocAccessFields_meta_title
+}
+
+type PagesDocAccessFields_meta_Read {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_Update {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_description {
+  create: PagesDocAccessFields_meta_description_Create
+  delete: PagesDocAccessFields_meta_description_Delete
+  read: PagesDocAccessFields_meta_description_Read
+  update: PagesDocAccessFields_meta_description_Update
+}
+
+type PagesDocAccessFields_meta_description_Create {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_description_Delete {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_description_Read {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_description_Update {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_image {
+  create: PagesDocAccessFields_meta_image_Create
+  delete: PagesDocAccessFields_meta_image_Delete
+  read: PagesDocAccessFields_meta_image_Read
+  update: PagesDocAccessFields_meta_image_Update
+}
+
+type PagesDocAccessFields_meta_image_Create {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_image_Delete {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_image_Read {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_image_Update {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_noIndex {
+  create: PagesDocAccessFields_meta_noIndex_Create
+  delete: PagesDocAccessFields_meta_noIndex_Delete
+  read: PagesDocAccessFields_meta_noIndex_Read
+  update: PagesDocAccessFields_meta_noIndex_Update
+}
+
+type PagesDocAccessFields_meta_noIndex_Create {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_noIndex_Delete {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_noIndex_Read {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_noIndex_Update {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_overview {
+  create: PagesDocAccessFields_meta_overview_Create
+  delete: PagesDocAccessFields_meta_overview_Delete
+  read: PagesDocAccessFields_meta_overview_Read
+  update: PagesDocAccessFields_meta_overview_Update
+}
+
+type PagesDocAccessFields_meta_overview_Create {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_overview_Delete {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_overview_Read {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_overview_Update {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_preview {
+  create: PagesDocAccessFields_meta_preview_Create
+  delete: PagesDocAccessFields_meta_preview_Delete
+  read: PagesDocAccessFields_meta_preview_Read
+  update: PagesDocAccessFields_meta_preview_Update
+}
+
+type PagesDocAccessFields_meta_preview_Create {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_preview_Delete {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_preview_Read {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_preview_Update {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_title {
+  create: PagesDocAccessFields_meta_title_Create
+  delete: PagesDocAccessFields_meta_title_Delete
+  read: PagesDocAccessFields_meta_title_Read
+  update: PagesDocAccessFields_meta_title_Update
+}
+
+type PagesDocAccessFields_meta_title_Create {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_title_Delete {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_title_Read {
+  permission: Boolean!
+}
+
+type PagesDocAccessFields_meta_title_Update {
   permission: Boolean!
 }
 
@@ -11865,6 +12330,7 @@ type PagesDocAccessFields_updatedAt_Update {
 
 type PagesFields {
   createdAt: PagesFields_createdAt
+  meta: PagesFields_meta
   pageSections: PagesFields_pageSections
   slug: PagesFields_slug
   title: PagesFields_title
@@ -11891,6 +12357,177 @@ type PagesFields_createdAt_Read {
 }
 
 type PagesFields_createdAt_Update {
+  permission: Boolean!
+}
+
+type PagesFields_meta {
+  create: PagesFields_meta_Create
+  delete: PagesFields_meta_Delete
+  fields: PagesFields_meta_Fields
+  read: PagesFields_meta_Read
+  update: PagesFields_meta_Update
+}
+
+type PagesFields_meta_Create {
+  permission: Boolean!
+}
+
+type PagesFields_meta_Delete {
+  permission: Boolean!
+}
+
+type PagesFields_meta_Fields {
+  description: PagesFields_meta_description
+  image: PagesFields_meta_image
+  noIndex: PagesFields_meta_noIndex
+  overview: PagesFields_meta_overview
+  preview: PagesFields_meta_preview
+  title: PagesFields_meta_title
+}
+
+type PagesFields_meta_Read {
+  permission: Boolean!
+}
+
+type PagesFields_meta_Update {
+  permission: Boolean!
+}
+
+type PagesFields_meta_description {
+  create: PagesFields_meta_description_Create
+  delete: PagesFields_meta_description_Delete
+  read: PagesFields_meta_description_Read
+  update: PagesFields_meta_description_Update
+}
+
+type PagesFields_meta_description_Create {
+  permission: Boolean!
+}
+
+type PagesFields_meta_description_Delete {
+  permission: Boolean!
+}
+
+type PagesFields_meta_description_Read {
+  permission: Boolean!
+}
+
+type PagesFields_meta_description_Update {
+  permission: Boolean!
+}
+
+type PagesFields_meta_image {
+  create: PagesFields_meta_image_Create
+  delete: PagesFields_meta_image_Delete
+  read: PagesFields_meta_image_Read
+  update: PagesFields_meta_image_Update
+}
+
+type PagesFields_meta_image_Create {
+  permission: Boolean!
+}
+
+type PagesFields_meta_image_Delete {
+  permission: Boolean!
+}
+
+type PagesFields_meta_image_Read {
+  permission: Boolean!
+}
+
+type PagesFields_meta_image_Update {
+  permission: Boolean!
+}
+
+type PagesFields_meta_noIndex {
+  create: PagesFields_meta_noIndex_Create
+  delete: PagesFields_meta_noIndex_Delete
+  read: PagesFields_meta_noIndex_Read
+  update: PagesFields_meta_noIndex_Update
+}
+
+type PagesFields_meta_noIndex_Create {
+  permission: Boolean!
+}
+
+type PagesFields_meta_noIndex_Delete {
+  permission: Boolean!
+}
+
+type PagesFields_meta_noIndex_Read {
+  permission: Boolean!
+}
+
+type PagesFields_meta_noIndex_Update {
+  permission: Boolean!
+}
+
+type PagesFields_meta_overview {
+  create: PagesFields_meta_overview_Create
+  delete: PagesFields_meta_overview_Delete
+  read: PagesFields_meta_overview_Read
+  update: PagesFields_meta_overview_Update
+}
+
+type PagesFields_meta_overview_Create {
+  permission: Boolean!
+}
+
+type PagesFields_meta_overview_Delete {
+  permission: Boolean!
+}
+
+type PagesFields_meta_overview_Read {
+  permission: Boolean!
+}
+
+type PagesFields_meta_overview_Update {
+  permission: Boolean!
+}
+
+type PagesFields_meta_preview {
+  create: PagesFields_meta_preview_Create
+  delete: PagesFields_meta_preview_Delete
+  read: PagesFields_meta_preview_Read
+  update: PagesFields_meta_preview_Update
+}
+
+type PagesFields_meta_preview_Create {
+  permission: Boolean!
+}
+
+type PagesFields_meta_preview_Delete {
+  permission: Boolean!
+}
+
+type PagesFields_meta_preview_Read {
+  permission: Boolean!
+}
+
+type PagesFields_meta_preview_Update {
+  permission: Boolean!
+}
+
+type PagesFields_meta_title {
+  create: PagesFields_meta_title_Create
+  delete: PagesFields_meta_title_Delete
+  read: PagesFields_meta_title_Read
+  update: PagesFields_meta_title_Update
+}
+
+type PagesFields_meta_title_Create {
+  permission: Boolean!
+}
+
+type PagesFields_meta_title_Delete {
+  permission: Boolean!
+}
+
+type PagesFields_meta_title_Read {
+  permission: Boolean!
+}
+
+type PagesFields_meta_title_Update {
   permission: Boolean!
 }
 
@@ -17302,6 +17939,7 @@ input mutationImage_Sizes_ThumbnailInput {
 
 input mutationPageInput {
   createdAt: String
+  meta: mutationPage_MetaInput
   pageSections: [mutationPage_PageSectionsInput]
   slug: String
   title: String
@@ -17310,10 +17948,18 @@ input mutationPageInput {
 
 input mutationPageUpdateInput {
   createdAt: String
+  meta: mutationPageUpdate_MetaInput
   pageSections: [mutationPageUpdate_PageSectionsInput]
   slug: String
   title: String
   updatedAt: String
+}
+
+input mutationPageUpdate_MetaInput {
+  description: String
+  image: String
+  noIndex: Boolean
+  title: String
 }
 
 input mutationPageUpdate_PageSectionsInput {
@@ -17330,6 +17976,13 @@ input mutationPageUpdate_PageSections_ShapesInput {
   id: String
   location: String
   shape: String
+}
+
+input mutationPage_MetaInput {
+  description: String
+  image: String
+  noIndex: Boolean
+  title: String
 }
 
 input mutationPage_PageSectionsInput {

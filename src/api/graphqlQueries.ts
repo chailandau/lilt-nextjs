@@ -10,6 +10,7 @@ import {
     ICON_TILE__GRID_FRAGMENT,
     IMAGE_FRAGMENT,
     MENU_ITEMS_FRAGMENT,
+    META_FRAGMENT,
     PROCESS_FRAGMENT,
     SPECIALS_FRAGMENT,
     SWITCHBACK_FRAGMENT,
@@ -36,6 +37,7 @@ query PageContentQuery($slug: String!) {
             id
             slug
             title
+            ${META_FRAGMENT}
             pageSections {
                 blocks {
                     ${HERO_FRAGMENT}

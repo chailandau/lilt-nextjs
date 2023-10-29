@@ -21,6 +21,8 @@ exports[`Framer animations accordionContent matches snapshot 1`] = `
 }
 `;
 
+exports[`Framer animations backToTop matches snapshot 1`] = `[Function]`;
+
 exports[`Framer animations dropdownAnimations matches snapshot 1`] = `[Function]`;
 
 exports[`Framer animations iconFlip matches snapshot 1`] = `

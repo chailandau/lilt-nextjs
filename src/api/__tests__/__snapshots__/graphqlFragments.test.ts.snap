@@ -296,6 +296,25 @@ internalCustomLabel
 "
 `;
 
+exports[`Fragments "META_FRAGMENT" matches snapshot: META_FRAGMENT 1`] = `
+"
+meta {
+    title
+    description
+    image {
+        
+id
+alt
+url
+width
+height
+base64
+
+    }
+}
+"
+`;
+
 exports[`Fragments "PROCESS_FRAGMENT" matches snapshot: PROCESS_FRAGMENT 1`] = `
 "
 ...on ProcessBlock {
@@ -335,13 +354,13 @@ exports[`Fragments "SPECIALS_FRAGMENT" matches snapshot: SPECIALS_FRAGMENT 1`] =
     id
     __typename
     special {
-      id
-      heading
-      subheading
-      content
-      sideBox
-      
- textGrid {
+        id
+        heading
+        subheading
+        content
+        sideBox
+        
+textGrid {
     id
     heading
     content
@@ -368,7 +387,7 @@ color
 }
 
     }
-  }
+}
 "
 `;
 
@@ -403,7 +422,7 @@ exports[`Fragments "TEXT_GRID_FRAGMENT" matches snapshot: TEXT_GRID_FRAGMENT 1`]
     __typename
     id
     
- textGrid {
+textGrid {
     id
     heading
     content
