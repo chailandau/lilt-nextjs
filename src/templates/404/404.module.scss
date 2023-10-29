@@ -1,0 +1,12 @@
+.not-found {
+    align-items: center;
+    h2 {
+        text-align: center;
+    }
+    p {
+        margin-top: rem(-10);
+    }
+    &__image {
+        width: rem(150);
+    }
+}
