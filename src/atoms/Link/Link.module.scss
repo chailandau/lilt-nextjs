@@ -5,4 +5,17 @@
         margin: rem(-14);
         @include underlineSlideHover;
     }
+    &__rich-text {
+        color: color(neon, green);
+        text-transform: none;
+        text-decoration: underline;
+        @include transition(color);
+        @include hover {
+            color: color(neon, fuchsia);
+            text-decoration: underline;
+        }
+        &:before {
+            display: none;
+        }
+    }
 }

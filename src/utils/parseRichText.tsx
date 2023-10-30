@@ -1,5 +1,7 @@
 import { Fragment, JSX } from 'react';
 
+import linkStyles from '../atoms/Link/Link.module.scss';
+
 import Link from '@/atoms/Link';
 import Text from '@/atoms/Text';
 
@@ -71,7 +73,11 @@ const processLink = (
 ): JSX.Element | null => {
     if (child.type === 'link' && child.url && child.children?.[0]?.text) {
         return (
-            <Link key={index} href={child.url}>
+            <Link
+                key={index}
+                href={child.url}
+                className={linkStyles['link__rich-text']}
+            >
                 {child.children[0].text}
             </Link>
         );
