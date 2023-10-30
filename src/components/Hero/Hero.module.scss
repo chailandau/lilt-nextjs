@@ -1,7 +1,9 @@
 .hero {
     align-items: center;
     text-align: center;
-
+    p {
+        max-width: rem(790);
+    }
     .cta-tiles {
         flex-direction: column;
         gap: rem(32);
