@@ -1,7 +1,8 @@
 'use client';
 
+import classNames from 'classnames';
 import FocusTrap from 'focus-trap-react';
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import Button from '../Button/Button';
 
@@ -27,6 +28,8 @@ export interface HeaderProps {
     callToAction?: CallToAction | null;
 }
 const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
+    const [isSticky, setIsSticky] = useState(false);
+
     const isLaptop = useMediaQuery(laptopQuery);
 
     const { menuOpen, setMenuOpen, setOpenSubmenu } = useStore();
@@ -46,9 +49,30 @@ const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
         setOpenSubmenu(null);
     };
 
+    useEffect(() => {
+        const toggleSticky = () => {
+            if (window.scrollY > 50) {
+                setIsSticky(true);
+            } else {
+                setIsSticky(false);
+            }
+        };
+        window.addEventListener('scroll', toggleSticky, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', toggleSticky);
+        };
+    }, []);
+
+    const classList = classNames(
+        styles['header'],
+        isSticky && styles['header__sticky'],
+        menuOpen && styles['header__menu-open']
+    );
+
     return (
         <FocusTrap active={menuOpen}>
-            <Section as='header' className={styles['header']}>
+            <Section as='header' className={classList}>
                 <Link
                     href={process.env.NEXT_PUBLIC_BASE_URL as string}
                     className={styles['logo']}
