@@ -12,6 +12,9 @@
         @include paddingX(40);
     }
     @include laptop {
+        @include paddingX(0);
+    }
+    @include laptop {
         gap: rem(24);
         flex-direction: row;
     }
