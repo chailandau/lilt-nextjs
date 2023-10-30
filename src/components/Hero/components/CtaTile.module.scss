@@ -11,6 +11,7 @@
         align-items: center;
         padding: rem(32);
         gap: rem(16);
+        background: background(dark-blue);
         @include border;
         @include transition(gap, padding);
         @include tablet-lg {

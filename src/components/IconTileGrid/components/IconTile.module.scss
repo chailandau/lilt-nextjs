@@ -7,6 +7,7 @@
     @include border;
     padding: rem(48) rem(24);
     @include transition(width);
+    background-color: background(dark-blue);
     @include tablet {
         width: 47%;
     }

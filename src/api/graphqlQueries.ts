@@ -39,6 +39,14 @@ query PageContentQuery($slug: String!) {
             title
             ${META_FRAGMENT}
             pageSections {
+                enableGrid
+                gridColor
+                enableShapes
+                shapes {
+                    id
+                    shape
+                    location
+                }
                 blocks {
                     ${HERO_FRAGMENT}
                     ${ACCORDION_FRAGMENT}
@@ -76,19 +84,19 @@ query HeaderQuery  {
 `;
 
 export const FOOTER_QUERY = gql`
-    query FooterQuery {
-        Footer {
-            socialLinks {
-                icon {
+query FooterQuery {
+    Footer {
+        socialLinks {
+            icon {
                 ${IMAGE_FRAGMENT}
             }
-                url
-                id
-            }
-            menuItems {
-                ${MENU_ITEMS_FRAGMENT}
-            }
-            copyrightText
+            url
+            id
         }
+        menuItems {
+            ${MENU_ITEMS_FRAGMENT}
+        }
+        copyrightText
     }
+}
 `;

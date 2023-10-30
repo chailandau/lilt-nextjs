@@ -25,6 +25,16 @@ $shadows: (
     purple: 0px 0px 20px 5px rgba(map-get($colors, dark, purple), 0.2)
 );
 
+$gradients: (
+    blue:
+        radial-gradient(
+            rgba(map-get($colors, dark, blue), 0) 0%,
+            rgba(map-get($colors, dark, blue), 0.3) 45%,
+            rgba(map-get($colors, dark, blue), 0.9) 75%,
+            rgba(map-get($colors, dark, blue), 1) 85%
+        )
+);
+
 $filter-overlays: (
     white: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(1%)
         hue-rotate(139deg) brightness(104%) contrast(101%),
@@ -32,4 +42,8 @@ $filter-overlays: (
         hue-rotate(33deg) brightness(93%) contrast(86%),
     blue: brightness(0) saturate(100%) invert(61%) sepia(43%) saturate(786%)
         hue-rotate(154deg) brightness(103%) contrast(91%)
+);
+
+$backgrounds: (
+    dark-blue: rgba(map-get($colors, dark, blue), 0.75)
 );

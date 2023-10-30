@@ -1,5 +1,8 @@
 .not-found {
     align-items: center;
+    padding-bottom: rem(150);
+    margin-bottom: rem(-150);
+    margin-top: rem(-50);
     h2 {
         text-align: center;
     }
@@ -7,6 +10,13 @@
         margin-top: rem(-10);
     }
     &__image {
-        width: rem(150);
+        width: rem(75);
+        @include transition(width);
+        @include tablet {
+            width: rem(100);
+        }
+        @include laptop {
+            width: rem(150);
+        }
     }
 }

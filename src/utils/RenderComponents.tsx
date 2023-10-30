@@ -49,7 +49,6 @@ const RenderComponents: FC<Sections> = ({ components }) => {
                         {...component?.featureGrid}
                     />
                 );
-
             case 'HeroBlock':
                 return <Hero key={component?.id} {...component?.hero} />;
             case 'IconTileGridBlock':

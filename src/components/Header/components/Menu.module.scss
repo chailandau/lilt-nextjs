@@ -97,6 +97,7 @@
                     background: color(dark, blue);
                     border: 1px solid color(neon, blue);
                     border-radius: rem(20);
+                    box-shadow: shadow(fuschia);
                     @include laptop {
                         border-radius: rem(10);
                     }
