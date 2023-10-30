@@ -1,14 +1,22 @@
 .section {
     position: relative;
     &__hero {
-        margin-top: rem(-128);
-        margin-bottom: rem(-384);
-        padding-top: rem(40);
-        padding-bottom: rem(320);
-        @include transition(margin);
-        // @include laptop {
-        //     @include marginY(-64);
-        // }
+        margin-top: rem(-64);
+        margin-bottom: rem(-192);
+        padding-top: rem(20);
+        padding-bottom: rem(160);
+        @include transition(
+            margin-top,
+            margin-bottom,
+            padding-top,
+            padding-bottom
+        );
+        @include laptop {
+            margin-top: rem(-128);
+            margin-bottom: rem(-384);
+            padding-top: rem(40);
+            padding-bottom: rem(320);
+        }
     }
 
     &__grid {
