@@ -1,20 +1,26 @@
+html,
+body {
+    overflow-x: hidden;
+}
+
 html {
     @include font-rubik-regular;
     background-color: color(dark, blue);
     color: color(neutral, white);
-    overflow-x: hidden;
 }
-
 body {
     display: flex;
     flex-direction: column;
     gap: rem(100);
-    @include transition(gap);
+    padding-top: rem(170);
+    @include transition(gap, padding-top);
     @include tablet {
         gap: rem(120);
+        padding-top: rem(200);
     }
     @include laptop {
         gap: rem(160);
+        padding-top: rem(270);
     }
 }
 

@@ -51,7 +51,7 @@ const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
 
     useEffect(() => {
         const toggleSticky = () => {
-            if (window.scrollY > 50) {
+            if (window.scrollY > 0) {
                 setIsSticky(true);
             } else {
                 setIsSticky(false);
@@ -72,42 +72,44 @@ const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
 
     return (
         <FocusTrap active={menuOpen}>
-            <Section as='header' className={classList}>
-                <Link
-                    href={process.env.NEXT_PUBLIC_BASE_URL as string}
-                    className={styles['logo']}
-                    onClick={handleLogoClick}
-                >
-                    <Image
-                        src={Logo}
-                        alt='Long Island Laser Tag'
-                        hasBorder={false}
-                        priority
-                    />
-                </Link>
+            <Flex as='header' className={classList}>
+                <Section className={styles['header__content']}>
+                    <Link
+                        href={process.env.NEXT_PUBLIC_BASE_URL as string}
+                        className={styles['logo']}
+                        onClick={handleLogoClick}
+                    >
+                        <Image
+                            src={Logo}
+                            alt='Long Island Laser Tag'
+                            hasBorder={false}
+                            priority
+                        />
+                    </Link>
 
-                <Flex className={styles['right-content']}>
-                    {isLaptop && (
-                        <DesktopNav
+                    <Flex className={styles['right-content']}>
+                        {isLaptop && (
+                            <DesktopNav
+                                menuItems={menuItems}
+                                callToAction={callToAction}
+                            />
+                        )}
+                        {callToAction && (
+                            <Button
+                                buttonData={callToAction}
+                                className={styles['tablet-btn']}
+                            />
+                        )}
+                        <MenuToggle />
+                    </Flex>
+                    {!isLaptop && menuOpen && (
+                        <MobileNav
                             menuItems={menuItems}
                             callToAction={callToAction}
                         />
                     )}
-                    {callToAction && (
-                        <Button
-                            buttonData={callToAction}
-                            className={styles['tablet-btn']}
-                        />
-                    )}
-                    <MenuToggle />
-                </Flex>
-                {!isLaptop && menuOpen && (
-                    <MobileNav
-                        menuItems={menuItems}
-                        callToAction={callToAction}
-                    />
-                )}
-            </Section>
+                </Section>
+            </Flex>
         </FocusTrap>
     );
 };
