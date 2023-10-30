@@ -2,6 +2,7 @@ html {
     @include font-rubik-regular;
     background-color: color(dark, blue);
     color: color(neutral, white);
+    overflow-x: hidden;
 }
 
 body {
