@@ -177,6 +177,9 @@ export const SWITCHBACK_FRAGMENT = `
         imageSide
         heading
         content
+        callToAction {
+            ${CTA_FRAGMENT}
+        }
     }
 }
 `;
