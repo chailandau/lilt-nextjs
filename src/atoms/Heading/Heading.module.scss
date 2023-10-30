@@ -1,5 +1,7 @@
 .heading {
     text-transform: uppercase;
+    text-shadow: shadow(fuchsia);
+
     &.centered {
         text-align: center;
     }
@@ -14,7 +16,6 @@
     &.md,
     &.xl {
         @include font-recharge-bold;
-        text-shadow: shadow(fuchsia);
     }
 
     &.xs {
