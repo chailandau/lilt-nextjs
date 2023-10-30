@@ -47,6 +47,10 @@
     @return map-get($shadows, $color);
 }
 
+@function background($color) {
+    @return map-get($backgrounds, $color);
+}
+
 @function gradient($color) {
     @return map-get($gradients, $color);
 }
@@ -76,6 +80,7 @@
         z-index: -1;
         border-radius: rem(26);
         border: 2px solid color(neon, green);
+        background-color: rgba(color(dark, blue), 0.65);
         @include transition(top, left);
         @include mobile-lg {
             top: rem(20);

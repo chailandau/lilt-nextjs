@@ -43,3 +43,7 @@ $filter-overlays: (
     blue: brightness(0) saturate(100%) invert(61%) sepia(43%) saturate(786%)
         hue-rotate(154deg) brightness(103%) contrast(91%)
 );
+
+$backgrounds: (
+    dark-blue: rgba(map-get($colors, dark, blue), 0.75)
+);
