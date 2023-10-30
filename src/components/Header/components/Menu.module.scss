@@ -61,7 +61,6 @@
             justify-content: space-between;
             width: auto;
             @include transition(font-size, padding);
-
             @include laptop {
                 @include font(14, 18);
                 justify-content: center;
@@ -155,6 +154,9 @@
                         }
                     }
                     .menu-link {
+                        &:before {
+                            display: none;
+                        }
                         @include laptop {
                             @include marginX('auto');
                             transition: color 0.25s ease-in-out;
@@ -176,7 +178,7 @@
             svg {
                 margin-left: rem(8);
             }
-            &:hover:before {
+            &:before {
                 display: none;
             }
         }
