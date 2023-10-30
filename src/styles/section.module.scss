@@ -1,6 +1,9 @@
 .section {
     position: relative;
     &__hero {
+        &:before {
+            background-position-y: 0 !important;
+        }
         margin-top: rem(-64);
         margin-bottom: rem(-192);
         padding-top: rem(20);
@@ -32,7 +35,7 @@
                 top: 0;
                 left: 0;
                 z-index: -2;
-                background-position-y: 0;
+                background-position-y: bottom;
                 background-position-x: center;
                 background-repeat: no-repeat;
                 background-size: 320vw;
@@ -58,12 +61,142 @@
         }
         &-purple {
             &:before {
-                background-image: url('/purple-grid.svg');
+                background-image: url('/svg/purple-grid.svg');
             }
         }
         &-green {
             &:before {
-                background-image: url('/green-grid.svg');
+                background-image: url('/svg/green-grid.svg');
+            }
+        }
+    }
+
+    &__shapes {
+        position: relative;
+        &:before,
+        &:after {
+            position: absolute;
+            display: block;
+            content: '';
+            z-index: -1;
+            background-repeat: no-repeat;
+            width: rem(150);
+            height: rem(250);
+            @include transition(width, height);
+            @include tablet-lg {
+                width: rem(200);
+                height: rem(300);
+            }
+        }
+        &.shape__pluses {
+            &__top_left,
+            &__center_left,
+            &__bottom_left,
+            &__top_right,
+            &__center_right,
+            &__bottom_right {
+                &:before {
+                    background-image: url('/svg/pluses-shape.svg');
+                }
+            }
+            &__top_left,
+            &__top_right {
+                &:before {
+                    top: rem(-120);
+                }
+                &.section__hero {
+                    &:before {
+                        top: 0;
+                    }
+                }
+            }
+            &__center_left,
+            &__center_right {
+                &:before {
+                    top: 40%;
+                }
+                &.section__hero {
+                    &:before {
+                        top: 20%;
+                    }
+                }
+            }
+            &__bottom_left,
+            &__bottom_right {
+                &:before {
+                    bottom: rem(-120);
+                }
+            }
+            &__top_left,
+            &__center_left,
+            &__bottom_left {
+                &:before {
+                    left: 0;
+                }
+            }
+            &__top_right,
+            &__center_right,
+            &__bottom_right {
+                &:before {
+                    right: 0;
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        &.shape__dots {
+            &__top_left,
+            &__center_left,
+            &__bottom_left,
+            &__top_right,
+            &__center_right,
+            &__bottom_right {
+                &:after {
+                    background-image: url('/svg/dots-shape.svg');
+                }
+            }
+            &__top_left,
+            &__top_right {
+                &:after {
+                    top: rem(-120);
+                }
+                &.section__hero {
+                    &:after {
+                        top: 0;
+                    }
+                }
+            }
+
+            &__center_left,
+            &__center_right {
+                &:after {
+                    top: 40%;
+                }
+                &.section__hero {
+                    &:after {
+                        top: 20%;
+                    }
+                }
+            }
+            &__bottom_left,
+            &__bottom_right {
+                &:after {
+                    bottom: rem(-120);
+                }
+            }
+            &__top_left,
+            &__center_left,
+            &__bottom_left {
+                &:after {
+                    left: 0;
+                }
+            }
+            &__top_right,
+            &__center_right,
+            &__bottom_right {
+                &:after {
+                    right: 0;
+                    transform: rotate(180deg);
+                }
             }
         }
     }

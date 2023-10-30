@@ -63,6 +63,7 @@
     border: 2px solid $color;
     border-radius: rem(20);
     box-shadow: shadow(purple);
+    background-color: background(dark-blue);
 }
 
 @mixin doubleBorder {
