@@ -7,7 +7,7 @@
     top: 0;
     z-index: 99999;
     width: 100vw;
-    @include transition(padding-top, padding-bottom);
+    transition: padding 0.25s ease-in-out;
     @include paddingX(0);
     &:before {
         display: block;
@@ -33,7 +33,7 @@
     .logo {
         width: rem(250);
         padding: unset;
-        @include transition(width);
+        transition: width 0.25s ease-in-out;
         &:before {
             display: none;
         }
@@ -51,7 +51,9 @@
         .tablet-btn {
             display: none;
             text-align: center;
-            @include transition(padding, background-position);
+            transition:
+                padding 0.25s ease-in-out,
+                background-position 0.5s ease-in-out;
 
             @include tablet {
                 display: block;
