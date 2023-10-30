@@ -8,6 +8,9 @@
     margin-block-end: 0;
     padding-inline-start: 0;
     @include transition(gap);
+    @include mobile-lg {
+        @include paddingX(40);
+    }
     @include laptop {
         gap: rem(24);
         flex-direction: row;
@@ -37,6 +40,7 @@
             bottom: rem(-30);
             z-index: -1;
             background-color: color(neutral, mdGray);
+            opacity: 0.3;
             transform: unset;
             @include laptop {
                 display: none;
@@ -54,6 +58,7 @@
             justify-content: space-between;
             width: auto;
             @include transition(font-size, padding);
+
             @include laptop {
                 @include font(14, 18);
                 justify-content: center;
@@ -81,7 +86,7 @@
                     position: absolute;
                     padding: rem(20);
                     margin-top: rem(12);
-                    width: rem(210);
+                    width: rem(230);
                     left: calc(50% - 6px);
                     transform: translateX(calc(-50% - 6px));
                 }
