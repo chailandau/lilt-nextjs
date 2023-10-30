@@ -80,7 +80,7 @@
         z-index: -1;
         border-radius: rem(26);
         border: 2px solid color(neon, green);
-        background-color: rgba(color(dark, blue), 0.65);
+        background-color: background(dark-blue);
         @include transition(top, left);
         @include mobile-lg {
             top: rem(20);
