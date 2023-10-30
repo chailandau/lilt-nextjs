@@ -411,6 +411,22 @@ base64
         imageSide
         heading
         content
+        callToAction {
+            
+id
+label
+linkType
+
+internalLink {
+    id
+    title
+    slug
+}
+
+externalLink
+color
+
+        }
     }
 }
 "

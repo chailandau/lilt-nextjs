@@ -30,7 +30,6 @@
     .content {
         flex-direction: column;
         gap: rem(16);
-
         ul {
             padding-left: unset;
             li {
@@ -46,5 +45,8 @@
                 }
             }
         }
+    }
+    &__btn {
+        margin-top: rem(12);
     }
 }

@@ -1,6 +1,8 @@
 import classNames from 'classnames';
 import { FC } from 'react';
 
+import Button from '../Button/Button';
+
 import styles from './Switchback.module.scss';
 
 import { Switchback as SwitchbackType } from '@/api/graphqlTypes';
@@ -22,13 +24,16 @@ export interface SwitchbackProps {
     image?: SwitchbackType['image'];
     /** Image side */
     imageSide?: SwitchbackType['imageSide'];
+    /** Switchback call to action */
+    callToAction?: SwitchbackType['callToAction'];
 }
 const Switchback: FC<SwitchbackProps> = ({
     heading,
     subheading,
     content,
     image,
-    imageSide = 'left'
+    imageSide = 'left',
+    callToAction
 }) => {
     const classList = classNames(
         styles['switchback'],
@@ -62,6 +67,11 @@ const Switchback: FC<SwitchbackProps> = ({
                             richText={content}
                             className={styles['content']}
                         />
+                    )}
+                    {callToAction && (
+                        <Flex className={styles['switchback__btn']}>
+                            <Button buttonData={callToAction} />
+                        </Flex>
                     )}
                 </Flex>
 
