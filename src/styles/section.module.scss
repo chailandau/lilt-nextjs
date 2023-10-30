@@ -1,5 +1,11 @@
 .section {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: rem(48);
+    @include tablet {
+        gap: rem(88);
+    }
     &__hero {
         &:before {
             background-position-y: 0 !important;
