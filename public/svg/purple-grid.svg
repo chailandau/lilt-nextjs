@@ -2,7 +2,7 @@
       <path fill="none" stroke="#9f32f4" stroke-width="2"
             d="M24.3 0 0 8.2M87.4 0 0 31.6M147.4 1 0 60.8M275.5-.1 0 142.5M210.7-.4.4 96.9m337.1-97L0 202.9M397.6-.1 0 281.8M460.7-.2 0 397.2M524.8-.3 22.3 550M587.8-.4 225.8 550M649.9-.6l-224 550.5M711-.8l-82 550.5M774-1l55 550.5m7.9-550.8 192.9 552.1M896.9-1.4l336 550.5M961.8-1.6l470 550.5M1023.7-1.7l476.3 431M1086.6-.8 1500 304.1M1149.6-.8 1500 220.8M1210.5-1.8 1500 157.6M1276.4-.9 1500 106.3M1339.4-.9 1500 68.5M0 422.2h1500M0 331.1h1500M0 261.5h1500M0 206.7h1500M0 162.6h1500M0 126.4h1500M0 96h1500M0 70.5h1500M0 49h1500M0 29.4h1500M0 11.8h1500M1401.7 0l98.3 40.6M1458 0l42 18.2"
             opacity=".3" />
-      <linearGradient id="a" x1="964.1801" x2="1516.7802" y1="936.0572" y2="936.0572"
+      <linearGradient id="purple-grid-mask" x1="964.1801" x2="1516.7802" y1="936.0572" y2="936.0572"
                       gradientTransform="matrix(0 -1 -1.0414 0 1724.6099 1515.4801)" gradientUnits="userSpaceOnUse">
             <stop offset="0" stop-color="#000d3f" />
             <stop offset=".05" stop-color="#000d3f" stop-opacity=".25" />
@@ -11,5 +11,5 @@
             <stop offset=".95" stop-color="#000d3f" stop-opacity=".25" />
             <stop offset="1" stop-color="#000d3f" />
       </linearGradient>
-      <path fill="url(#a)" d="M1500-1.3v552.6H-.4V-1.3z" />
+      <path fill="url(#purple-grid-mask)" d="M1500-1.3v552.6H-.4V-1.3z" />
 </svg>

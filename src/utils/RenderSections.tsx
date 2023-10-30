@@ -20,13 +20,17 @@ const RenderSections: FC<Sections> = ({ sections }) => {
     const renderSection = (section: Page_PageSections) => {
         const isHero =
             section?.blocks && section.blocks[0]?.__typename === 'HeroBlock';
-
+        const shapeClasses = section?.shapes?.map(
+            (shape) => styles[`shape__${shape?.shape}__${shape?.location}`]
+        );
         const classList = classNames(
             styles['section'],
             section?.enableGrid &&
                 section?.gridColor &&
                 styles[`section__grid-${section?.gridColor}`],
-            isHero && styles['section__hero']
+            isHero && styles['section__hero'],
+            section?.enableShapes && styles['section__shapes'],
+            section?.enableShapes && shapeClasses
         );
 
         return (

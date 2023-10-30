@@ -17,7 +17,7 @@ exports[`graphqlQueries mocks FOOTER_QUERY successfully 1`] = `
           },
           "label": "Hello World",
           "linkType": "external",
-          "overridePageName": true,
+          "overridePageName": false,
         },
         {
           "externalLink": "Hello World",
@@ -30,7 +30,7 @@ exports[`graphqlQueries mocks FOOTER_QUERY successfully 1`] = `
           },
           "label": "Hello World",
           "linkType": "external",
-          "overridePageName": true,
+          "overridePageName": false,
         },
       ],
       "socialLinks": [
@@ -93,7 +93,7 @@ exports[`graphqlQueries mocks HEADER_QUERY successfully 1`] = `
               },
               "label": "Hello World",
               "linkType": "external",
-              "overridePageName": true,
+              "overridePageName": false,
             },
             {
               "externalLink": "Hello World",
@@ -106,7 +106,7 @@ exports[`graphqlQueries mocks HEADER_QUERY successfully 1`] = `
               },
               "label": "Hello World",
               "linkType": "external",
-              "overridePageName": true,
+              "overridePageName": false,
             },
           ],
         },
@@ -134,7 +134,7 @@ exports[`graphqlQueries mocks HEADER_QUERY successfully 1`] = `
               },
               "label": "Hello World",
               "linkType": "external",
-              "overridePageName": true,
+              "overridePageName": false,
             },
             {
               "externalLink": "Hello World",
@@ -147,7 +147,7 @@ exports[`graphqlQueries mocks HEADER_QUERY successfully 1`] = `
               },
               "label": "Hello World",
               "linkType": "external",
-              "overridePageName": true,
+              "overridePageName": false,
             },
           ],
         },
