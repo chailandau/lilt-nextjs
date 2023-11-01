@@ -130,6 +130,10 @@
                 }
                 ul {
                     display: block;
+                    @include paddingX(8);
+                    @include laptop {
+                        @include paddingX(0);
+                    }
                 }
                 li {
                     text-align: center;
@@ -160,6 +164,9 @@
                         @include laptop {
                             @include marginX('auto');
                             transition: color 0.25s ease-in-out;
+                            @media (prefers-reduced-motion) {
+                                transition: none;
+                            }
                         }
                         @include hover {
                             @include laptop {

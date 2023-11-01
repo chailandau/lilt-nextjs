@@ -1,11 +1,11 @@
-export const menuAnimations = {
+export const menuAnimations = (prefersReducedMotion?: boolean) => ({
     closed: {
         y: '-100%',
         opacity: 0,
         height: 0,
         transition: {
-            delay: 0.15,
-            length: 1
+            delay: prefersReducedMotion ? 0 : 0.15,
+            length: prefersReducedMotion ? 0 : 1
         }
     },
     open: {
@@ -14,18 +14,21 @@ export const menuAnimations = {
         height: '100vh',
         transition: {
             type: 'spring',
-            duration: 0.4
+            duration: prefersReducedMotion ? 0 : 0.4
         }
     }
-};
+});
 
-export const dropdownAnimations = (isLaptop: boolean | null) => ({
+export const dropdownAnimations = (
+    isLaptop: boolean | null,
+    prefersReducedMotion?: boolean
+) => ({
     closed: {
         y: '15%',
         x: isLaptop ? 'calc(-50% - 6px)' : 0,
         opacity: 0,
         transition: {
-            duration: 0.25
+            duration: prefersReducedMotion ? 0 : 0.25
         }
     },
     open: {
@@ -34,29 +37,35 @@ export const dropdownAnimations = (isLaptop: boolean | null) => ({
         opacity: 1,
         transition: {
             type: 'spring',
-            duration: 0.25
+            duration: prefersReducedMotion ? 0 : 0.25
         }
     }
 });
 
-export const iconFlip = {
-    closed: { rotate: 0, transition: { type: 'spring', duration: 0.25 } },
+export const iconFlip = (prefersReducedMotion?: boolean) => ({
+    closed: {
+        rotate: 0,
+        transition: {
+            type: 'spring',
+            duration: prefersReducedMotion ? 0 : 0.25
+        }
+    },
     open: {
         rotate: 180,
         transition: {
             type: 'spring',
-            duration: 0.25
+            duration: prefersReducedMotion ? 0 : 0.25
         }
     }
-};
+});
 
-export const accordionContent = {
+export const accordionContent = (prefersReducedMotion?: boolean) => ({
     closed: {
         y: '20%',
         opacity: 0,
         transition: {
-            delay: 0.15,
-            length: 1
+            delay: prefersReducedMotion ? 0 : 0.15,
+            length: prefersReducedMotion ? 0 : 1
         }
     },
     open: {
@@ -64,10 +73,10 @@ export const accordionContent = {
         opacity: 1,
         transition: {
             type: 'spring',
-            duration: 0.4
+            duration: prefersReducedMotion ? 0 : 0.4
         }
     }
-};
+});
 export const backToTop = (prefersReducedMotion?: boolean) => ({
     visible: {
         y: 0,

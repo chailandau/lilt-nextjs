@@ -8,6 +8,9 @@
     z-index: 99999;
     width: 100vw;
     transition: padding 0.25s ease-in-out;
+    @media (prefers-reduced-motion) {
+        transition: none;
+    }
     @include paddingX(0);
     &:before {
         display: block;
@@ -34,6 +37,9 @@
         width: rem(250);
         padding: unset;
         transition: width 0.25s ease-in-out;
+        @media (prefers-reduced-motion) {
+            transition: none;
+        }
         &:before {
             display: none;
         }
@@ -54,7 +60,9 @@
             transition:
                 padding 0.25s ease-in-out,
                 background-position 0.5s ease-in-out;
-
+            @media (prefers-reduced-motion) {
+                transition: none;
+            }
             @include tablet {
                 display: block;
             }
