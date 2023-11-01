@@ -1,4 +1,4 @@
-import { m } from 'framer-motion';
+import { m, useReducedMotion } from 'framer-motion';
 import { FC, KeyboardEvent, useEffect, useState } from 'react';
 
 import Menu from './Menu';
@@ -19,6 +19,8 @@ interface SubmenuProps {
 
 const Submenu: FC<SubmenuProps> = ({ menuItem }) => {
     const isLaptop = useMediaQuery(laptopQuery);
+
+    const prefersReducedMotion = useReducedMotion() || false;
 
     const { openSubmenu, setOpenSubmenu } = useStore();
 
@@ -84,7 +86,7 @@ const Submenu: FC<SubmenuProps> = ({ menuItem }) => {
                 {menuItem.label}
                 <MotionIcon
                     id='caret'
-                    variants={iconFlip}
+                    variants={iconFlip(prefersReducedMotion)}
                     animate={isSubmenuOpen ? 'open' : 'closed'}
                     initial='closed'
                     exit='closed'
@@ -94,7 +96,10 @@ const Submenu: FC<SubmenuProps> = ({ menuItem }) => {
                 {isSubmenuOpen && (
                     <m.div
                         className={styles['submenu']}
-                        variants={dropdownAnimations(isLaptop)}
+                        variants={dropdownAnimations(
+                            isLaptop,
+                            prefersReducedMotion
+                        )}
                         animate={isSubmenuOpen ? 'open' : 'closed'}
                         initial='closed'
                         exit='closed'

@@ -1,7 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
-import { m } from 'framer-motion';
+import { m, useReducedMotion } from 'framer-motion';
 import { FC, useState } from 'react';
 
 import styles from './AccordionItem.module.scss';
@@ -19,6 +19,7 @@ import LazyAnimatePresence from '@/utils/framer/LazyAnimatePresence';
 const AccordionItem: FC<Accordion_AccordionItems> = ({ heading, content }) => {
     const [isOpen, setIsOpen] = useState(false);
 
+    const prefersReducedMotion = useReducedMotion() || false;
     const handleClick = () => {
         setIsOpen((prev) => !prev);
     };
@@ -57,10 +58,16 @@ const AccordionItem: FC<Accordion_AccordionItems> = ({ heading, content }) => {
                                 <m.div
                                     id={heading}
                                     className={contentClassList}
-                                    variants={accordionContent}
+                                    variants={accordionContent(
+                                        prefersReducedMotion
+                                    )}
                                     animate={isOpen ? 'open' : 'closed'}
                                     initial='closed'
-                                    exit='closed'
+                                    exit={
+                                        prefersReducedMotion
+                                            ? undefined
+                                            : 'closed'
+                                    }
                                 >
                                     <RichText richText={content} />
                                 </m.div>

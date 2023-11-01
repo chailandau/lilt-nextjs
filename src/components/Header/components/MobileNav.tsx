@@ -1,4 +1,4 @@
-import { m } from 'framer-motion';
+import { m, useReducedMotion } from 'framer-motion';
 import { FC } from 'react';
 
 import { HeaderProps } from '../Header';
@@ -14,6 +14,7 @@ import LazyAnimatePresence from '@/utils/framer/LazyAnimatePresence';
 
 const MobileNav: FC<HeaderProps> = ({ menuItems, callToAction }) => {
     const { setMenuOpen, menuOpen, setOpenSubmenu } = useStore();
+    const prefersReducedMotion = useReducedMotion() || false;
 
     const handleClick = () => {
         setMenuOpen(false);
@@ -24,7 +25,7 @@ const MobileNav: FC<HeaderProps> = ({ menuItems, callToAction }) => {
         <LazyAnimatePresence>
             <m.nav
                 className={styles['mobile-nav']}
-                variants={menuAnimations}
+                variants={menuAnimations(prefersReducedMotion)}
                 animate={menuOpen ? 'open' : 'closed'}
                 initial='closed'
                 exit='closed'
