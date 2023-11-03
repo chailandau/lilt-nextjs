@@ -281,16 +281,12 @@ meta {
 }
 `;
 
-export const HEADING_FRAGMENT = `
-...on HeadingBlock {
+export const TEXT_CONTENT_FRAGMENT = `
+...on TextContentBlock {
     id
     __typename
-    heading
-}`;
-
-export const RICH_TEXT_FRAGMENT = `
-... on RichTextBlock {
-    id
-    __typename
-    content
+    textContent {
+        heading
+        content
+    }
 }`;

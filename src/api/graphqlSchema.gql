@@ -11892,7 +11892,7 @@ type Page_PageSections {
   shapes: [Page_PageSections_Shapes!]
 }
 
-union Page_PageSections_Blocks = AccordionBlock | ConversionPanelBlock | FeatureGridBlock | FeaturedMediaBlock | HeroBlock | IconTileGridBlock | ProcessBlock | SpecialBlock | SwitchbackBlock | TextGridBlock | TileGridBlock
+union Page_PageSections_Blocks = AccordionBlock | ConversionPanelBlock | FeatureGridBlock | FeaturedMediaBlock | HeroBlock | IconTileGridBlock | ProcessBlock | SpecialBlock | SwitchbackBlock | TextContentBlock | TextGridBlock | TileGridBlock
 
 type Page_PageSections_Shapes {
   id: String
@@ -15332,6 +15332,19 @@ type SwitchbacksUpdateAccess {
 type SwitchbacksUpdateDocAccess {
   permission: Boolean!
   where: JSONObject
+}
+
+type TextContentBlock {
+  blockName: String
+  blockType: String
+  id: String
+  textContent: [TextContentBlock_TextContent!]!
+}
+
+type TextContentBlock_TextContent {
+  content(depth: Int): JSON
+  heading: String
+  id: String
 }
 
 type TextGrid {
