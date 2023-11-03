@@ -19,7 +19,9 @@ interface GetLink {
  * @return Appropriate link based on link type. Returns empty string if no link is found.
  */
 export const getLink = ({ linkType, externalLink, internalLink }: GetLink) => {
-    const isExternal = linkType === 'external';
+    const isExternal =
+        linkType === 'external' &&
+        !externalLink?.includes('longislandlasertag.com');
 
     const isHome = linkType === 'internal' && internalLink?.slug === 'home';
 
