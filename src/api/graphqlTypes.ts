@@ -50,6 +50,7 @@ export type Access = {
     icon_tiles?: Maybe<Icon_TilesAccess>;
     icons?: Maybe<IconsAccess>;
     images?: Maybe<ImagesAccess>;
+    legal_page?: Maybe<Legal_PageAccess>;
     pages?: Maybe<PagesAccess>;
     processes?: Maybe<ProcessesAccess>;
     specials?: Maybe<SpecialsAccess>;
@@ -7844,6 +7845,14 @@ export type Header_MenuItems_LinkType =
     | 'submenu'
     | '%future added value';
 
+export type HeadingBlock = {
+    __typename?: 'HeadingBlock';
+    blockName?: Maybe<Scalars['String']['output']>;
+    blockType?: Maybe<Scalars['String']['output']>;
+    heading?: Maybe<Scalars['String']['output']>;
+    id?: Maybe<Scalars['String']['output']>;
+};
+
 export type Hero = {
     __typename?: 'Hero';
     content?: Maybe<Scalars['JSON']['output']>;
@@ -12888,6 +12897,460 @@ export type ImagesUpdateDocAccess = {
     where?: Maybe<Scalars['JSONObject']['output']>;
 };
 
+export type LegalPage = {
+    __typename?: 'LegalPage';
+    createdAt?: Maybe<Scalars['DateTime']['output']>;
+    id?: Maybe<Scalars['String']['output']>;
+    legalBlocks?: Maybe<Array<LegalPage_LegalBlocks>>;
+    slug?: Maybe<Scalars['String']['output']>;
+    title?: Maybe<Scalars['String']['output']>;
+    updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type LegalPageCreateAccess = {
+    __typename?: 'LegalPageCreateAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type LegalPageCreateDocAccess = {
+    __typename?: 'LegalPageCreateDocAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type LegalPageDeleteAccess = {
+    __typename?: 'LegalPageDeleteAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type LegalPageDeleteDocAccess = {
+    __typename?: 'LegalPageDeleteDocAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type LegalPageDocAccessFields = {
+    __typename?: 'LegalPageDocAccessFields';
+    createdAt?: Maybe<LegalPageDocAccessFields_CreatedAt>;
+    legalBlocks?: Maybe<LegalPageDocAccessFields_LegalBlocks>;
+    slug?: Maybe<LegalPageDocAccessFields_Slug>;
+    title?: Maybe<LegalPageDocAccessFields_Title>;
+    updatedAt?: Maybe<LegalPageDocAccessFields_UpdatedAt>;
+};
+
+export type LegalPageDocAccessFields_CreatedAt = {
+    __typename?: 'LegalPageDocAccessFields_createdAt';
+    create?: Maybe<LegalPageDocAccessFields_CreatedAt_Create>;
+    delete?: Maybe<LegalPageDocAccessFields_CreatedAt_Delete>;
+    read?: Maybe<LegalPageDocAccessFields_CreatedAt_Read>;
+    update?: Maybe<LegalPageDocAccessFields_CreatedAt_Update>;
+};
+
+export type LegalPageDocAccessFields_CreatedAt_Create = {
+    __typename?: 'LegalPageDocAccessFields_createdAt_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageDocAccessFields_CreatedAt_Delete = {
+    __typename?: 'LegalPageDocAccessFields_createdAt_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageDocAccessFields_CreatedAt_Read = {
+    __typename?: 'LegalPageDocAccessFields_createdAt_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageDocAccessFields_CreatedAt_Update = {
+    __typename?: 'LegalPageDocAccessFields_createdAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageDocAccessFields_LegalBlocks = {
+    __typename?: 'LegalPageDocAccessFields_legalBlocks';
+    create?: Maybe<LegalPageDocAccessFields_LegalBlocks_Create>;
+    delete?: Maybe<LegalPageDocAccessFields_LegalBlocks_Delete>;
+    read?: Maybe<LegalPageDocAccessFields_LegalBlocks_Read>;
+    update?: Maybe<LegalPageDocAccessFields_LegalBlocks_Update>;
+};
+
+export type LegalPageDocAccessFields_LegalBlocks_Create = {
+    __typename?: 'LegalPageDocAccessFields_legalBlocks_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageDocAccessFields_LegalBlocks_Delete = {
+    __typename?: 'LegalPageDocAccessFields_legalBlocks_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageDocAccessFields_LegalBlocks_Read = {
+    __typename?: 'LegalPageDocAccessFields_legalBlocks_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageDocAccessFields_LegalBlocks_Update = {
+    __typename?: 'LegalPageDocAccessFields_legalBlocks_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageDocAccessFields_Slug = {
+    __typename?: 'LegalPageDocAccessFields_slug';
+    create?: Maybe<LegalPageDocAccessFields_Slug_Create>;
+    delete?: Maybe<LegalPageDocAccessFields_Slug_Delete>;
+    read?: Maybe<LegalPageDocAccessFields_Slug_Read>;
+    update?: Maybe<LegalPageDocAccessFields_Slug_Update>;
+};
+
+export type LegalPageDocAccessFields_Slug_Create = {
+    __typename?: 'LegalPageDocAccessFields_slug_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageDocAccessFields_Slug_Delete = {
+    __typename?: 'LegalPageDocAccessFields_slug_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageDocAccessFields_Slug_Read = {
+    __typename?: 'LegalPageDocAccessFields_slug_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageDocAccessFields_Slug_Update = {
+    __typename?: 'LegalPageDocAccessFields_slug_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageDocAccessFields_Title = {
+    __typename?: 'LegalPageDocAccessFields_title';
+    create?: Maybe<LegalPageDocAccessFields_Title_Create>;
+    delete?: Maybe<LegalPageDocAccessFields_Title_Delete>;
+    read?: Maybe<LegalPageDocAccessFields_Title_Read>;
+    update?: Maybe<LegalPageDocAccessFields_Title_Update>;
+};
+
+export type LegalPageDocAccessFields_Title_Create = {
+    __typename?: 'LegalPageDocAccessFields_title_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageDocAccessFields_Title_Delete = {
+    __typename?: 'LegalPageDocAccessFields_title_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageDocAccessFields_Title_Read = {
+    __typename?: 'LegalPageDocAccessFields_title_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageDocAccessFields_Title_Update = {
+    __typename?: 'LegalPageDocAccessFields_title_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageDocAccessFields_UpdatedAt = {
+    __typename?: 'LegalPageDocAccessFields_updatedAt';
+    create?: Maybe<LegalPageDocAccessFields_UpdatedAt_Create>;
+    delete?: Maybe<LegalPageDocAccessFields_UpdatedAt_Delete>;
+    read?: Maybe<LegalPageDocAccessFields_UpdatedAt_Read>;
+    update?: Maybe<LegalPageDocAccessFields_UpdatedAt_Update>;
+};
+
+export type LegalPageDocAccessFields_UpdatedAt_Create = {
+    __typename?: 'LegalPageDocAccessFields_updatedAt_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageDocAccessFields_UpdatedAt_Delete = {
+    __typename?: 'LegalPageDocAccessFields_updatedAt_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageDocAccessFields_UpdatedAt_Read = {
+    __typename?: 'LegalPageDocAccessFields_updatedAt_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageDocAccessFields_UpdatedAt_Update = {
+    __typename?: 'LegalPageDocAccessFields_updatedAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields = {
+    __typename?: 'LegalPageFields';
+    createdAt?: Maybe<LegalPageFields_CreatedAt>;
+    legalBlocks?: Maybe<LegalPageFields_LegalBlocks>;
+    slug?: Maybe<LegalPageFields_Slug>;
+    title?: Maybe<LegalPageFields_Title>;
+    updatedAt?: Maybe<LegalPageFields_UpdatedAt>;
+};
+
+export type LegalPageFields_CreatedAt = {
+    __typename?: 'LegalPageFields_createdAt';
+    create?: Maybe<LegalPageFields_CreatedAt_Create>;
+    delete?: Maybe<LegalPageFields_CreatedAt_Delete>;
+    read?: Maybe<LegalPageFields_CreatedAt_Read>;
+    update?: Maybe<LegalPageFields_CreatedAt_Update>;
+};
+
+export type LegalPageFields_CreatedAt_Create = {
+    __typename?: 'LegalPageFields_createdAt_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields_CreatedAt_Delete = {
+    __typename?: 'LegalPageFields_createdAt_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields_CreatedAt_Read = {
+    __typename?: 'LegalPageFields_createdAt_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields_CreatedAt_Update = {
+    __typename?: 'LegalPageFields_createdAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields_LegalBlocks = {
+    __typename?: 'LegalPageFields_legalBlocks';
+    create?: Maybe<LegalPageFields_LegalBlocks_Create>;
+    delete?: Maybe<LegalPageFields_LegalBlocks_Delete>;
+    read?: Maybe<LegalPageFields_LegalBlocks_Read>;
+    update?: Maybe<LegalPageFields_LegalBlocks_Update>;
+};
+
+export type LegalPageFields_LegalBlocks_Create = {
+    __typename?: 'LegalPageFields_legalBlocks_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields_LegalBlocks_Delete = {
+    __typename?: 'LegalPageFields_legalBlocks_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields_LegalBlocks_Read = {
+    __typename?: 'LegalPageFields_legalBlocks_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields_LegalBlocks_Update = {
+    __typename?: 'LegalPageFields_legalBlocks_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields_Slug = {
+    __typename?: 'LegalPageFields_slug';
+    create?: Maybe<LegalPageFields_Slug_Create>;
+    delete?: Maybe<LegalPageFields_Slug_Delete>;
+    read?: Maybe<LegalPageFields_Slug_Read>;
+    update?: Maybe<LegalPageFields_Slug_Update>;
+};
+
+export type LegalPageFields_Slug_Create = {
+    __typename?: 'LegalPageFields_slug_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields_Slug_Delete = {
+    __typename?: 'LegalPageFields_slug_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields_Slug_Read = {
+    __typename?: 'LegalPageFields_slug_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields_Slug_Update = {
+    __typename?: 'LegalPageFields_slug_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields_Title = {
+    __typename?: 'LegalPageFields_title';
+    create?: Maybe<LegalPageFields_Title_Create>;
+    delete?: Maybe<LegalPageFields_Title_Delete>;
+    read?: Maybe<LegalPageFields_Title_Read>;
+    update?: Maybe<LegalPageFields_Title_Update>;
+};
+
+export type LegalPageFields_Title_Create = {
+    __typename?: 'LegalPageFields_title_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields_Title_Delete = {
+    __typename?: 'LegalPageFields_title_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields_Title_Read = {
+    __typename?: 'LegalPageFields_title_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields_Title_Update = {
+    __typename?: 'LegalPageFields_title_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields_UpdatedAt = {
+    __typename?: 'LegalPageFields_updatedAt';
+    create?: Maybe<LegalPageFields_UpdatedAt_Create>;
+    delete?: Maybe<LegalPageFields_UpdatedAt_Delete>;
+    read?: Maybe<LegalPageFields_UpdatedAt_Read>;
+    update?: Maybe<LegalPageFields_UpdatedAt_Update>;
+};
+
+export type LegalPageFields_UpdatedAt_Create = {
+    __typename?: 'LegalPageFields_updatedAt_Create';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields_UpdatedAt_Delete = {
+    __typename?: 'LegalPageFields_updatedAt_Delete';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields_UpdatedAt_Read = {
+    __typename?: 'LegalPageFields_updatedAt_Read';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageFields_UpdatedAt_Update = {
+    __typename?: 'LegalPageFields_updatedAt_Update';
+    permission: Scalars['Boolean']['output'];
+};
+
+export type LegalPageReadAccess = {
+    __typename?: 'LegalPageReadAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type LegalPageReadDocAccess = {
+    __typename?: 'LegalPageReadDocAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type LegalPageUpdateAccess = {
+    __typename?: 'LegalPageUpdateAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type LegalPageUpdateDocAccess = {
+    __typename?: 'LegalPageUpdateDocAccess';
+    permission: Scalars['Boolean']['output'];
+    where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type LegalPage_LegalBlocks = HeadingBlock | RichTextBlock;
+
+export type LegalPage_CreatedAt_Operator = {
+    equals?: InputMaybe<Scalars['DateTime']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    like?: InputMaybe<Scalars['DateTime']['input']>;
+    not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type LegalPage_Id_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type LegalPage_Slug_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type LegalPage_Title_Operator = {
+    all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    contains?: InputMaybe<Scalars['String']['input']>;
+    equals?: InputMaybe<Scalars['String']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+    like?: InputMaybe<Scalars['String']['input']>;
+    not_equals?: InputMaybe<Scalars['String']['input']>;
+    not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type LegalPage_UpdatedAt_Operator = {
+    equals?: InputMaybe<Scalars['DateTime']['input']>;
+    exists?: InputMaybe<Scalars['Boolean']['input']>;
+    greater_than?: InputMaybe<Scalars['DateTime']['input']>;
+    greater_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than?: InputMaybe<Scalars['DateTime']['input']>;
+    less_than_equal?: InputMaybe<Scalars['DateTime']['input']>;
+    like?: InputMaybe<Scalars['DateTime']['input']>;
+    not_equals?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type LegalPage_Where = {
+    AND?: InputMaybe<Array<InputMaybe<LegalPage_Where_And>>>;
+    OR?: InputMaybe<Array<InputMaybe<LegalPage_Where_Or>>>;
+    createdAt?: InputMaybe<LegalPage_CreatedAt_Operator>;
+    id?: InputMaybe<LegalPage_Id_Operator>;
+    slug?: InputMaybe<LegalPage_Slug_Operator>;
+    title?: InputMaybe<LegalPage_Title_Operator>;
+    updatedAt?: InputMaybe<LegalPage_UpdatedAt_Operator>;
+};
+
+export type LegalPage_Where_And = {
+    createdAt?: InputMaybe<LegalPage_CreatedAt_Operator>;
+    id?: InputMaybe<LegalPage_Id_Operator>;
+    slug?: InputMaybe<LegalPage_Slug_Operator>;
+    title?: InputMaybe<LegalPage_Title_Operator>;
+    updatedAt?: InputMaybe<LegalPage_UpdatedAt_Operator>;
+};
+
+export type LegalPage_Where_Or = {
+    createdAt?: InputMaybe<LegalPage_CreatedAt_Operator>;
+    id?: InputMaybe<LegalPage_Id_Operator>;
+    slug?: InputMaybe<LegalPage_Slug_Operator>;
+    title?: InputMaybe<LegalPage_Title_Operator>;
+    updatedAt?: InputMaybe<LegalPage_UpdatedAt_Operator>;
+};
+
+export type LegalPages = {
+    __typename?: 'LegalPages';
+    docs?: Maybe<Array<Maybe<LegalPage>>>;
+    hasNextPage?: Maybe<Scalars['Boolean']['output']>;
+    hasPrevPage?: Maybe<Scalars['Boolean']['output']>;
+    limit?: Maybe<Scalars['Int']['output']>;
+    nextPage?: Maybe<Scalars['Int']['output']>;
+    offset?: Maybe<Scalars['Int']['output']>;
+    page?: Maybe<Scalars['Int']['output']>;
+    pagingCounter?: Maybe<Scalars['Int']['output']>;
+    prevPage?: Maybe<Scalars['Int']['output']>;
+    totalDocs?: Maybe<Scalars['Int']['output']>;
+    totalPages?: Maybe<Scalars['Int']['output']>;
+};
+
 export type Mutation = {
     __typename?: 'Mutation';
     createAccordion?: Maybe<Accordion>;
@@ -12902,6 +13365,7 @@ export type Mutation = {
     createIconTile?: Maybe<IconTile>;
     createIconTileGrid?: Maybe<IconTileGrid>;
     createImage?: Maybe<Image>;
+    createLegalPage?: Maybe<LegalPage>;
     createPage?: Maybe<Page>;
     createProcess?: Maybe<Process>;
     createSpecial?: Maybe<Special>;
@@ -12922,6 +13386,7 @@ export type Mutation = {
     deleteIconTile?: Maybe<IconTile>;
     deleteIconTileGrid?: Maybe<IconTileGrid>;
     deleteImage?: Maybe<Image>;
+    deleteLegalPage?: Maybe<LegalPage>;
     deletePage?: Maybe<Page>;
     deletePreference?: Maybe<Preference>;
     deleteProcess?: Maybe<Process>;
@@ -12951,6 +13416,7 @@ export type Mutation = {
     updateIconTile?: Maybe<IconTile>;
     updateIconTileGrid?: Maybe<IconTileGrid>;
     updateImage?: Maybe<Image>;
+    updateLegalPage?: Maybe<LegalPage>;
     updatePage?: Maybe<Page>;
     updatePreference?: Maybe<Preference>;
     updateProcess?: Maybe<Process>;
@@ -13020,6 +13486,11 @@ export type MutationCreateIconTileGridArgs = {
 
 export type MutationCreateImageArgs = {
     data: MutationImageInput;
+    draft?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type MutationCreateLegalPageArgs = {
+    data: MutationLegalPageInput;
     draft?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
@@ -13108,6 +13579,10 @@ export type MutationDeleteIconTileGridArgs = {
 };
 
 export type MutationDeleteImageArgs = {
+    id: Scalars['String']['input'];
+};
+
+export type MutationDeleteLegalPageArgs = {
     id: Scalars['String']['input'];
 };
 
@@ -13261,6 +13736,13 @@ export type MutationUpdateIconTileGridArgs = {
 export type MutationUpdateImageArgs = {
     autosave?: InputMaybe<Scalars['Boolean']['input']>;
     data: MutationImageUpdateInput;
+    draft?: InputMaybe<Scalars['Boolean']['input']>;
+    id: Scalars['String']['input'];
+};
+
+export type MutationUpdateLegalPageArgs = {
+    autosave?: InputMaybe<Scalars['Boolean']['input']>;
+    data: MutationLegalPageUpdateInput;
     draft?: InputMaybe<Scalars['Boolean']['input']>;
     id: Scalars['String']['input'];
 };
@@ -15983,6 +16465,8 @@ export type Query = {
     Icons?: Maybe<Icons>;
     Image?: Maybe<Image>;
     Images?: Maybe<Images>;
+    LegalPage?: Maybe<LegalPage>;
+    LegalPages?: Maybe<LegalPages>;
     Page?: Maybe<Page>;
     Pages?: Maybe<Pages>;
     Preference?: Maybe<Preference>;
@@ -16014,6 +16498,7 @@ export type Query = {
     docAccessIconTile?: Maybe<Icon_TilesDocAccess>;
     docAccessIconTileGrid?: Maybe<Icon_Tile_GridsDocAccess>;
     docAccessImage?: Maybe<ImagesDocAccess>;
+    docAccessLegalPage?: Maybe<Legal_PageDocAccess>;
     docAccessPage?: Maybe<PagesDocAccess>;
     docAccessProcess?: Maybe<ProcessesDocAccess>;
     docAccessSpecial?: Maybe<SpecialsDocAccess>;
@@ -16190,6 +16675,19 @@ export type QueryImagesArgs = {
     where?: InputMaybe<Image_Where>;
 };
 
+export type QueryLegalPageArgs = {
+    draft?: InputMaybe<Scalars['Boolean']['input']>;
+    id: Scalars['String']['input'];
+};
+
+export type QueryLegalPagesArgs = {
+    draft?: InputMaybe<Scalars['Boolean']['input']>;
+    limit?: InputMaybe<Scalars['Int']['input']>;
+    page?: InputMaybe<Scalars['Int']['input']>;
+    sort?: InputMaybe<Scalars['String']['input']>;
+    where?: InputMaybe<LegalPage_Where>;
+};
+
 export type QueryPageArgs = {
     draft?: InputMaybe<Scalars['Boolean']['input']>;
     id: Scalars['String']['input'];
@@ -16346,6 +16844,10 @@ export type QueryDocAccessImageArgs = {
     id: Scalars['String']['input'];
 };
 
+export type QueryDocAccessLegalPageArgs = {
+    id: Scalars['String']['input'];
+};
+
 export type QueryDocAccessPageArgs = {
     id: Scalars['String']['input'];
 };
@@ -16376,6 +16878,18 @@ export type QueryDocAccessUserArgs = {
 
 export type QueryDocAccessVideoArgs = {
     id: Scalars['String']['input'];
+};
+
+export type RichTextBlock = {
+    __typename?: 'RichTextBlock';
+    blockName?: Maybe<Scalars['String']['output']>;
+    blockType?: Maybe<Scalars['String']['output']>;
+    content?: Maybe<Scalars['JSON']['output']>;
+    id?: Maybe<Scalars['String']['output']>;
+};
+
+export type RichTextBlockContentArgs = {
+    depth?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Special = {
@@ -20945,6 +21459,24 @@ export type ImagesDocAccess = {
     update?: Maybe<ImagesUpdateDocAccess>;
 };
 
+export type Legal_PageAccess = {
+    __typename?: 'legal_pageAccess';
+    create?: Maybe<LegalPageCreateAccess>;
+    delete?: Maybe<LegalPageDeleteAccess>;
+    fields?: Maybe<LegalPageFields>;
+    read?: Maybe<LegalPageReadAccess>;
+    update?: Maybe<LegalPageUpdateAccess>;
+};
+
+export type Legal_PageDocAccess = {
+    __typename?: 'legal_pageDocAccess';
+    create?: Maybe<LegalPageCreateDocAccess>;
+    delete?: Maybe<LegalPageDeleteDocAccess>;
+    fields?: Maybe<LegalPageDocAccessFields>;
+    read?: Maybe<LegalPageReadDocAccess>;
+    update?: Maybe<LegalPageUpdateDocAccess>;
+};
+
 export type MutationAccordionInput = {
     accordionItems?: InputMaybe<
         Array<InputMaybe<MutationAccordion_AccordionItemsInput>>
@@ -21352,6 +21884,22 @@ export type MutationImage_Sizes_ThumbnailInput = {
     mimeType?: InputMaybe<Scalars['String']['input']>;
     url?: InputMaybe<Scalars['String']['input']>;
     width?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type MutationLegalPageInput = {
+    createdAt?: InputMaybe<Scalars['String']['input']>;
+    legalBlocks?: InputMaybe<Scalars['JSON']['input']>;
+    slug?: InputMaybe<Scalars['String']['input']>;
+    title?: InputMaybe<Scalars['String']['input']>;
+    updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MutationLegalPageUpdateInput = {
+    createdAt?: InputMaybe<Scalars['String']['input']>;
+    legalBlocks?: InputMaybe<Scalars['JSON']['input']>;
+    slug?: InputMaybe<Scalars['String']['input']>;
+    title?: InputMaybe<Scalars['String']['input']>;
+    updatedAt?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationPageInput = {
