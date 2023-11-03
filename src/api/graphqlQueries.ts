@@ -6,12 +6,15 @@ import {
     CTA_FRAGMENT,
     FEATURED_MEDIA_FRAGMENT,
     FEATURE_GRID_FRAGMENT,
+    HEADING_FRAGMENT,
     HERO_FRAGMENT,
     ICON_TILE__GRID_FRAGMENT,
     IMAGE_FRAGMENT,
     MENU_ITEMS_FRAGMENT,
     META_FRAGMENT,
     PROCESS_FRAGMENT,
+    RICH_TEXT_FRAGMENT,
+    SLUG_FRAGMENT,
     SPECIALS_FRAGMENT,
     SWITCHBACK_FRAGMENT,
     TEXT_GRID_FRAGMENT,
@@ -19,15 +22,19 @@ import {
 } from './graphqlFragments';
 
 export const PAGES_QUERY = gql`
-    query PagesQuery {
-        Pages {
-            docs {
-                id
-                slug
-                title
-            }
-        }
+query PagesQuery {
+    Pages {
+        ${SLUG_FRAGMENT}
     }
+}
+`;
+
+export const LEGAL_PAGES_QUERY = gql`
+query PagesQuery {
+    LegalPages {
+        ${SLUG_FRAGMENT}
+    }
+}
 `;
 
 export const PAGE_CONTENT_QUERY = gql`
@@ -62,6 +69,23 @@ query PageContentQuery($slug: String!) {
                 }
             }
             
+        }
+    }
+}
+`;
+
+export const LEGAL_PAGE_CONTENT_QUERY = gql`
+query LegalPageContentQuery($slug: String!) {
+    LegalPages(where:{ slug: { equals: $slug }}) {
+        docs {
+            id
+            title
+            slug
+            updatedAt
+            legalBlocks {
+                ${HEADING_FRAGMENT}
+                ${RICH_TEXT_FRAGMENT}
+            }
         }
     }
 }

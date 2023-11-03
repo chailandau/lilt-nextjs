@@ -1,3 +1,11 @@
+export const SLUG_FRAGMENT = `
+docs {
+    id
+    slug
+    title
+}
+`;
+
 export const INTERNAL_LINK_FRAGMENT = `
 internalLink {
     id
@@ -272,3 +280,17 @@ meta {
     }
 }
 `;
+
+export const HEADING_FRAGMENT = `
+...on HeadingBlock {
+    id
+    __typename
+    heading
+}`;
+
+export const RICH_TEXT_FRAGMENT = `
+... on RichTextBlock {
+    id
+    __typename
+    content
+}`;
