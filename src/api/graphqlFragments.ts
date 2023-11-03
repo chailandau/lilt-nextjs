@@ -1,3 +1,11 @@
+export const SLUG_FRAGMENT = `
+docs {
+    id
+    slug
+    title
+}
+`;
+
 export const INTERNAL_LINK_FRAGMENT = `
 internalLink {
     id

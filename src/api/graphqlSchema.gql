@@ -19,6 +19,7 @@ type Access {
   icon_tiles: icon_tilesAccess
   icons: iconsAccess
   images: imagesAccess
+  legal_page: legal_pageAccess
   pages: pagesAccess
   processes: processesAccess
   specials: specialsAccess
@@ -6771,6 +6772,13 @@ enum Header_MenuItems_linkType {
   submenu
 }
 
+type HeadingBlock {
+  blockName: String
+  blockType: String
+  heading: String
+  id: String
+}
+
 type Hero {
   content(depth: Int): JSON
   createdAt: DateTime
@@ -11146,6 +11154,398 @@ The `JSONObject` scalar type represents JSON objects as specified by [ECMA-404](
 """
 scalar JSONObject
 
+type LegalPage {
+  createdAt: DateTime
+  id: String
+  legalBlocks: [LegalPage_LegalBlocks!]
+  slug: String
+  title: String
+  updatedAt: DateTime
+}
+
+type LegalPageCreateAccess {
+  permission: Boolean!
+  where: JSONObject
+}
+
+type LegalPageCreateDocAccess {
+  permission: Boolean!
+  where: JSONObject
+}
+
+type LegalPageDeleteAccess {
+  permission: Boolean!
+  where: JSONObject
+}
+
+type LegalPageDeleteDocAccess {
+  permission: Boolean!
+  where: JSONObject
+}
+
+type LegalPageDocAccessFields {
+  createdAt: LegalPageDocAccessFields_createdAt
+  legalBlocks: LegalPageDocAccessFields_legalBlocks
+  slug: LegalPageDocAccessFields_slug
+  title: LegalPageDocAccessFields_title
+  updatedAt: LegalPageDocAccessFields_updatedAt
+}
+
+type LegalPageDocAccessFields_createdAt {
+  create: LegalPageDocAccessFields_createdAt_Create
+  delete: LegalPageDocAccessFields_createdAt_Delete
+  read: LegalPageDocAccessFields_createdAt_Read
+  update: LegalPageDocAccessFields_createdAt_Update
+}
+
+type LegalPageDocAccessFields_createdAt_Create {
+  permission: Boolean!
+}
+
+type LegalPageDocAccessFields_createdAt_Delete {
+  permission: Boolean!
+}
+
+type LegalPageDocAccessFields_createdAt_Read {
+  permission: Boolean!
+}
+
+type LegalPageDocAccessFields_createdAt_Update {
+  permission: Boolean!
+}
+
+type LegalPageDocAccessFields_legalBlocks {
+  create: LegalPageDocAccessFields_legalBlocks_Create
+  delete: LegalPageDocAccessFields_legalBlocks_Delete
+  read: LegalPageDocAccessFields_legalBlocks_Read
+  update: LegalPageDocAccessFields_legalBlocks_Update
+}
+
+type LegalPageDocAccessFields_legalBlocks_Create {
+  permission: Boolean!
+}
+
+type LegalPageDocAccessFields_legalBlocks_Delete {
+  permission: Boolean!
+}
+
+type LegalPageDocAccessFields_legalBlocks_Read {
+  permission: Boolean!
+}
+
+type LegalPageDocAccessFields_legalBlocks_Update {
+  permission: Boolean!
+}
+
+type LegalPageDocAccessFields_slug {
+  create: LegalPageDocAccessFields_slug_Create
+  delete: LegalPageDocAccessFields_slug_Delete
+  read: LegalPageDocAccessFields_slug_Read
+  update: LegalPageDocAccessFields_slug_Update
+}
+
+type LegalPageDocAccessFields_slug_Create {
+  permission: Boolean!
+}
+
+type LegalPageDocAccessFields_slug_Delete {
+  permission: Boolean!
+}
+
+type LegalPageDocAccessFields_slug_Read {
+  permission: Boolean!
+}
+
+type LegalPageDocAccessFields_slug_Update {
+  permission: Boolean!
+}
+
+type LegalPageDocAccessFields_title {
+  create: LegalPageDocAccessFields_title_Create
+  delete: LegalPageDocAccessFields_title_Delete
+  read: LegalPageDocAccessFields_title_Read
+  update: LegalPageDocAccessFields_title_Update
+}
+
+type LegalPageDocAccessFields_title_Create {
+  permission: Boolean!
+}
+
+type LegalPageDocAccessFields_title_Delete {
+  permission: Boolean!
+}
+
+type LegalPageDocAccessFields_title_Read {
+  permission: Boolean!
+}
+
+type LegalPageDocAccessFields_title_Update {
+  permission: Boolean!
+}
+
+type LegalPageDocAccessFields_updatedAt {
+  create: LegalPageDocAccessFields_updatedAt_Create
+  delete: LegalPageDocAccessFields_updatedAt_Delete
+  read: LegalPageDocAccessFields_updatedAt_Read
+  update: LegalPageDocAccessFields_updatedAt_Update
+}
+
+type LegalPageDocAccessFields_updatedAt_Create {
+  permission: Boolean!
+}
+
+type LegalPageDocAccessFields_updatedAt_Delete {
+  permission: Boolean!
+}
+
+type LegalPageDocAccessFields_updatedAt_Read {
+  permission: Boolean!
+}
+
+type LegalPageDocAccessFields_updatedAt_Update {
+  permission: Boolean!
+}
+
+type LegalPageFields {
+  createdAt: LegalPageFields_createdAt
+  legalBlocks: LegalPageFields_legalBlocks
+  slug: LegalPageFields_slug
+  title: LegalPageFields_title
+  updatedAt: LegalPageFields_updatedAt
+}
+
+type LegalPageFields_createdAt {
+  create: LegalPageFields_createdAt_Create
+  delete: LegalPageFields_createdAt_Delete
+  read: LegalPageFields_createdAt_Read
+  update: LegalPageFields_createdAt_Update
+}
+
+type LegalPageFields_createdAt_Create {
+  permission: Boolean!
+}
+
+type LegalPageFields_createdAt_Delete {
+  permission: Boolean!
+}
+
+type LegalPageFields_createdAt_Read {
+  permission: Boolean!
+}
+
+type LegalPageFields_createdAt_Update {
+  permission: Boolean!
+}
+
+type LegalPageFields_legalBlocks {
+  create: LegalPageFields_legalBlocks_Create
+  delete: LegalPageFields_legalBlocks_Delete
+  read: LegalPageFields_legalBlocks_Read
+  update: LegalPageFields_legalBlocks_Update
+}
+
+type LegalPageFields_legalBlocks_Create {
+  permission: Boolean!
+}
+
+type LegalPageFields_legalBlocks_Delete {
+  permission: Boolean!
+}
+
+type LegalPageFields_legalBlocks_Read {
+  permission: Boolean!
+}
+
+type LegalPageFields_legalBlocks_Update {
+  permission: Boolean!
+}
+
+type LegalPageFields_slug {
+  create: LegalPageFields_slug_Create
+  delete: LegalPageFields_slug_Delete
+  read: LegalPageFields_slug_Read
+  update: LegalPageFields_slug_Update
+}
+
+type LegalPageFields_slug_Create {
+  permission: Boolean!
+}
+
+type LegalPageFields_slug_Delete {
+  permission: Boolean!
+}
+
+type LegalPageFields_slug_Read {
+  permission: Boolean!
+}
+
+type LegalPageFields_slug_Update {
+  permission: Boolean!
+}
+
+type LegalPageFields_title {
+  create: LegalPageFields_title_Create
+  delete: LegalPageFields_title_Delete
+  read: LegalPageFields_title_Read
+  update: LegalPageFields_title_Update
+}
+
+type LegalPageFields_title_Create {
+  permission: Boolean!
+}
+
+type LegalPageFields_title_Delete {
+  permission: Boolean!
+}
+
+type LegalPageFields_title_Read {
+  permission: Boolean!
+}
+
+type LegalPageFields_title_Update {
+  permission: Boolean!
+}
+
+type LegalPageFields_updatedAt {
+  create: LegalPageFields_updatedAt_Create
+  delete: LegalPageFields_updatedAt_Delete
+  read: LegalPageFields_updatedAt_Read
+  update: LegalPageFields_updatedAt_Update
+}
+
+type LegalPageFields_updatedAt_Create {
+  permission: Boolean!
+}
+
+type LegalPageFields_updatedAt_Delete {
+  permission: Boolean!
+}
+
+type LegalPageFields_updatedAt_Read {
+  permission: Boolean!
+}
+
+type LegalPageFields_updatedAt_Update {
+  permission: Boolean!
+}
+
+type LegalPageReadAccess {
+  permission: Boolean!
+  where: JSONObject
+}
+
+type LegalPageReadDocAccess {
+  permission: Boolean!
+  where: JSONObject
+}
+
+type LegalPageUpdateAccess {
+  permission: Boolean!
+  where: JSONObject
+}
+
+type LegalPageUpdateDocAccess {
+  permission: Boolean!
+  where: JSONObject
+}
+
+union LegalPage_LegalBlocks = HeadingBlock | RichTextBlock
+
+input LegalPage_createdAt_operator {
+  equals: DateTime
+  exists: Boolean
+  greater_than: DateTime
+  greater_than_equal: DateTime
+  less_than: DateTime
+  less_than_equal: DateTime
+  like: DateTime
+  not_equals: DateTime
+}
+
+input LegalPage_id_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input LegalPage_slug_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input LegalPage_title_operator {
+  all: [String]
+  contains: String
+  equals: String
+  exists: Boolean
+  in: [String]
+  like: String
+  not_equals: String
+  not_in: [String]
+}
+
+input LegalPage_updatedAt_operator {
+  equals: DateTime
+  exists: Boolean
+  greater_than: DateTime
+  greater_than_equal: DateTime
+  less_than: DateTime
+  less_than_equal: DateTime
+  like: DateTime
+  not_equals: DateTime
+}
+
+input LegalPage_where {
+  AND: [LegalPage_where_and]
+  OR: [LegalPage_where_or]
+  createdAt: LegalPage_createdAt_operator
+  id: LegalPage_id_operator
+  slug: LegalPage_slug_operator
+  title: LegalPage_title_operator
+  updatedAt: LegalPage_updatedAt_operator
+}
+
+input LegalPage_where_and {
+  createdAt: LegalPage_createdAt_operator
+  id: LegalPage_id_operator
+  slug: LegalPage_slug_operator
+  title: LegalPage_title_operator
+  updatedAt: LegalPage_updatedAt_operator
+}
+
+input LegalPage_where_or {
+  createdAt: LegalPage_createdAt_operator
+  id: LegalPage_id_operator
+  slug: LegalPage_slug_operator
+  title: LegalPage_title_operator
+  updatedAt: LegalPage_updatedAt_operator
+}
+
+type LegalPages {
+  docs: [LegalPage]
+  hasNextPage: Boolean
+  hasPrevPage: Boolean
+  limit: Int
+  nextPage: Int
+  offset: Int
+  page: Int
+  pagingCounter: Int
+  prevPage: Int
+  totalDocs: Int
+  totalPages: Int
+}
+
 type Mutation {
   createAccordion(data: mutationAccordionInput!, draft: Boolean): Accordion
   createCallToAction(data: mutationCallToActionInput!, draft: Boolean): CallToAction
@@ -11159,6 +11559,7 @@ type Mutation {
   createIconTile(data: mutationIconTileInput!, draft: Boolean): IconTile
   createIconTileGrid(data: mutationIconTileGridInput!, draft: Boolean): IconTileGrid
   createImage(data: mutationImageInput!, draft: Boolean): Image
+  createLegalPage(data: mutationLegalPageInput!, draft: Boolean): LegalPage
   createPage(data: mutationPageInput!, draft: Boolean): Page
   createProcess(data: mutationProcessInput!, draft: Boolean): Process
   createSpecial(data: mutationSpecialInput!, draft: Boolean): Special
@@ -11179,6 +11580,7 @@ type Mutation {
   deleteIconTile(id: String!): IconTile
   deleteIconTileGrid(id: String!): IconTileGrid
   deleteImage(id: String!): Image
+  deleteLegalPage(id: String!): LegalPage
   deletePage(id: String!): Page
   deletePreference(key: String!): Preference
   deleteProcess(id: String!): Process
@@ -11208,6 +11610,7 @@ type Mutation {
   updateIconTile(autosave: Boolean, data: mutationIconTileUpdateInput!, draft: Boolean, id: String!): IconTile
   updateIconTileGrid(autosave: Boolean, data: mutationIconTileGridUpdateInput!, draft: Boolean, id: String!): IconTileGrid
   updateImage(autosave: Boolean, data: mutationImageUpdateInput!, draft: Boolean, id: String!): Image
+  updateLegalPage(autosave: Boolean, data: mutationLegalPageUpdateInput!, draft: Boolean, id: String!): LegalPage
   updatePage(autosave: Boolean, data: mutationPageUpdateInput!, draft: Boolean, id: String!): Page
   updatePreference(key: String!, value: JSON): Preference
   updateProcess(autosave: Boolean, data: mutationProcessUpdateInput!, draft: Boolean, id: String!): Process
@@ -13515,6 +13918,8 @@ type Query {
   Icons(draft: Boolean, limit: Int, page: Int, sort: String, where: Icon_where): Icons
   Image(draft: Boolean, id: String!): Image
   Images(draft: Boolean, limit: Int, page: Int, sort: String, where: Image_where): Images
+  LegalPage(draft: Boolean, id: String!): LegalPage
+  LegalPages(draft: Boolean, limit: Int, page: Int, sort: String, where: LegalPage_where): LegalPages
   Page(draft: Boolean, id: String!): Page
   Pages(draft: Boolean, limit: Int, page: Int, sort: String, where: Page_where): Pages
   Preference(key: String): Preference
@@ -13546,6 +13951,7 @@ type Query {
   docAccessIconTile(id: String!): icon_tilesDocAccess
   docAccessIconTileGrid(id: String!): icon_tile_gridsDocAccess
   docAccessImage(id: String!): imagesDocAccess
+  docAccessLegalPage(id: String!): legal_pageDocAccess
   docAccessPage(id: String!): pagesDocAccess
   docAccessProcess(id: String!): processesDocAccess
   docAccessSpecial(id: String!): specialsDocAccess
@@ -13556,6 +13962,13 @@ type Query {
   docAccessVideo(id: String!): videosDocAccess
   initializedUser: Boolean
   meUser: usersMe
+}
+
+type RichTextBlock {
+  blockName: String
+  blockType: String
+  content(depth: Int): JSON
+  id: String
 }
 
 type Special {
@@ -17557,6 +17970,22 @@ type imagesDocAccess {
   update: ImagesUpdateDocAccess
 }
 
+type legal_pageAccess {
+  create: LegalPageCreateAccess
+  delete: LegalPageDeleteAccess
+  fields: LegalPageFields
+  read: LegalPageReadAccess
+  update: LegalPageUpdateAccess
+}
+
+type legal_pageDocAccess {
+  create: LegalPageCreateDocAccess
+  delete: LegalPageDeleteDocAccess
+  fields: LegalPageDocAccessFields
+  read: LegalPageReadDocAccess
+  update: LegalPageUpdateDocAccess
+}
+
 input mutationAccordionInput {
   accordionItems: [mutationAccordion_AccordionItemsInput]
   createdAt: String
@@ -17948,6 +18377,22 @@ input mutationImage_Sizes_ThumbnailInput {
   mimeType: String
   url: String
   width: Float
+}
+
+input mutationLegalPageInput {
+  createdAt: String
+  legalBlocks: JSON
+  slug: String
+  title: String
+  updatedAt: String
+}
+
+input mutationLegalPageUpdateInput {
+  createdAt: String
+  legalBlocks: JSON
+  slug: String
+  title: String
+  updatedAt: String
 }
 
 input mutationPageInput {
