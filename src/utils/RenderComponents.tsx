@@ -1,10 +1,6 @@
 import { FC, Fragment } from 'react';
 
-import {
-    LegalPage_LegalBlocks,
-    Page_PageSections_Blocks
-} from '@/api/graphqlTypes';
-import Heading from '@/atoms/Heading';
+import { Page_PageSections_Blocks } from '@/api/graphqlTypes';
 import Accordion from '@/components/Accordion';
 import ConversionPanel from '@/components/ConversionPanel';
 import FeaturedMedia from '@/components/FeaturedMedia';
@@ -17,19 +13,16 @@ import Switchback from '@/components/Switchback';
 import TextContent from '@/components/TextContent';
 import TextGrid from '@/components/TextGrid';
 import TileGrid from '@/components/TileGrid';
-import RichText from '@/molecules/RichText';
 
 interface Sections {
     /** Sections to render */
-    components?: Page_PageSections_Blocks[] | LegalPage_LegalBlocks[];
+    components?: Page_PageSections_Blocks[];
 }
 const RenderComponents: FC<Sections> = ({ components }) => {
     if (!components || !components.length) {
         return null;
     }
-    const renderComponent = (
-        component: Page_PageSections_Blocks | LegalPage_LegalBlocks
-    ) => {
+    const renderComponent = (component: Page_PageSections_Blocks) => {
         switch (component?.__typename) {
             case 'AccordionBlock':
                 return (
@@ -56,14 +49,7 @@ const RenderComponents: FC<Sections> = ({ components }) => {
                         {...component?.featureGrid}
                     />
                 );
-            case 'HeadingBlock':
-                return (
-                    component?.heading && (
-                        <Heading key={component?.id} size='xs' color='blue'>
-                            {component?.heading}
-                        </Heading>
-                    )
-                );
+
             case 'HeroBlock':
                 return <Hero key={component?.id} {...component?.hero} />;
             case 'IconTileGridBlock':
@@ -75,13 +61,7 @@ const RenderComponents: FC<Sections> = ({ components }) => {
                 );
             case 'ProcessBlock':
                 return <Process key={component?.id} {...component?.process} />;
-            case 'RichTextBlock':
-                return (
-                    <RichText
-                        key={component?.id}
-                        richText={component?.content}
-                    />
-                );
+
             case 'SpecialBlock':
                 return <Special key={component?.id} {...component?.special} />;
             case 'SwitchbackBlock':

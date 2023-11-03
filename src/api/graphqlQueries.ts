@@ -29,15 +29,6 @@ query PagesQuery {
     }
 }
 `;
-
-export const LEGAL_PAGES_QUERY = gql`
-query PagesQuery {
-    LegalPages {
-        ${SLUG_FRAGMENT}
-    }
-}
-`;
-
 export const PAGE_CONTENT_QUERY = gql`
 query PageContentQuery($slug: String!) {
     Pages(where:{ slug: { equals: $slug }}) {
@@ -75,24 +66,6 @@ query PageContentQuery($slug: String!) {
     }
 }
 `;
-
-export const LEGAL_PAGE_CONTENT_QUERY = gql`
-query LegalPageContentQuery($slug: String!) {
-    LegalPages(where:{ slug: { equals: $slug }}) {
-        docs {
-            id
-            title
-            slug
-            updatedAt
-            legalBlocks {
-                ${HEADING_FRAGMENT}
-                ${RICH_TEXT_FRAGMENT}
-            }
-        }
-    }
-}
-`;
-
 export const HEADER_QUERY = gql`
 query HeaderQuery  {
     Header {
