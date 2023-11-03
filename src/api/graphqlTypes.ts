@@ -13616,6 +13616,7 @@ export type Page_PageSections_Blocks =
     | ProcessBlock
     | SpecialBlock
     | SwitchbackBlock
+    | TextContentBlock
     | TextGridBlock
     | TileGridBlock;
 
@@ -17928,6 +17929,25 @@ export type SwitchbacksUpdateDocAccess = {
     __typename?: 'SwitchbacksUpdateDocAccess';
     permission: Scalars['Boolean']['output'];
     where?: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TextContentBlock = {
+    __typename?: 'TextContentBlock';
+    blockName?: Maybe<Scalars['String']['output']>;
+    blockType?: Maybe<Scalars['String']['output']>;
+    id?: Maybe<Scalars['String']['output']>;
+    textContent: Array<TextContentBlock_TextContent>;
+};
+
+export type TextContentBlock_TextContent = {
+    __typename?: 'TextContentBlock_TextContent';
+    content?: Maybe<Scalars['JSON']['output']>;
+    heading?: Maybe<Scalars['String']['output']>;
+    id?: Maybe<Scalars['String']['output']>;
+};
+
+export type TextContentBlock_TextContentContentArgs = {
+    depth?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type TextGrid = {

@@ -10,6 +10,7 @@ import IconTileGrid from '@/components/IconTileGrid';
 import Process from '@/components/Process';
 import Special from '@/components/Special';
 import Switchback from '@/components/Switchback';
+import TextContent from '@/components/TextContent';
 import TextGrid from '@/components/TextGrid';
 import TileGrid from '@/components/TileGrid';
 
@@ -67,6 +68,13 @@ const RenderComponents: FC<Sections> = ({ components }) => {
                     <Switchback
                         key={component?.id}
                         {...component?.switchback}
+                    />
+                );
+            case 'TextContentBlock':
+                return (
+                    <TextContent
+                        key={component?.id}
+                        textContent={component?.textContent}
                     />
                 );
             case 'TextGridBlock':

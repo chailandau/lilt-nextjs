@@ -272,3 +272,13 @@ meta {
     }
 }
 `;
+
+export const TEXT_CONTENT_FRAGMENT = `
+...on TextContentBlock {
+    id
+    __typename
+    textContent {
+        heading
+        content
+    }
+}`;

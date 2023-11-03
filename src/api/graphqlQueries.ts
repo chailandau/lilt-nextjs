@@ -14,6 +14,7 @@ import {
     PROCESS_FRAGMENT,
     SPECIALS_FRAGMENT,
     SWITCHBACK_FRAGMENT,
+    TEXT_CONTENT_FRAGMENT,
     TEXT_GRID_FRAGMENT,
     TILE_GRID_FRAGMENT
 } from './graphqlFragments';
@@ -57,6 +58,7 @@ query PageContentQuery($slug: String!) {
                     ${PROCESS_FRAGMENT}
                     ${SPECIALS_FRAGMENT}
                     ${SWITCHBACK_FRAGMENT}
+                    ${TEXT_CONTENT_FRAGMENT}
                     ${TEXT_GRID_FRAGMENT}
                     ${TILE_GRID_FRAGMENT}
                 }
