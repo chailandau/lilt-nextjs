@@ -1,0 +1,28 @@
+.cookie-banner {
+    display: flex;
+    position: fixed;
+    left: rem(12);
+    bottom: rem(8);
+    z-index: 99999;
+    width: calc(100% - rem(24));
+    padding: rem(12) rem(24);
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid color(neon, green);
+    border-radius: rem(20);
+    box-shadow: shadow(darkBlue);
+    background-color: color(dark, blue);
+    gap: rem(32);
+    p + p {
+        margin-top: rem(10);
+    }
+    a {
+        margin: rem(-10) !important;
+    }
+    &__btns {
+        gap: rem(12);
+    }
+    &__text {
+        font-size: rem(18) !important;
+    }
+}

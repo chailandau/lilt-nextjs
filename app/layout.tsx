@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import Script from 'next/script';
 
 import { FOOTER_QUERY, HEADER_QUERY } from '@/api/graphqlQueries';
+import CookieBanner from '@/components/CookieBanner';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header/Header';
 import BackToTop from '@/molecules/BackToTop';
 import { getData } from '@/utils/getData';
-
 import '@/assets/fonts/fonts.css';
 import '@/styles/main.scss';
 
@@ -42,6 +42,7 @@ export default async function RootLayout({
                 }}
             />
             <body>
+                <CookieBanner />
                 <Header
                     menuItems={HeaderData?.menuItems || null}
                     callToAction={HeaderData?.callToAction || null}
