@@ -3,26 +3,65 @@
     position: fixed;
     left: rem(12);
     bottom: rem(8);
-    z-index: 99999;
+    z-index: 100001;
     width: calc(100% - rem(24));
-    padding: rem(12) rem(24);
-    align-items: center;
-    justify-content: space-between;
-    border: 2px solid color(neon, green);
-    border-radius: rem(20);
-    box-shadow: shadow(darkBlue);
-    background-color: color(dark, blue);
-    gap: rem(32);
     p + p {
         margin-top: rem(10);
     }
     a {
         margin: rem(-10) !important;
     }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: rem(8);
+        align-items: flex-start;
+        justify-content: space-between;
+        border: 2px solid color(neon, green);
+        border-radius: rem(20);
+        box-shadow: shadow(darkBlue);
+        background-color: color(dark, blue);
+        gap: rem(32);
+        flex-direction: column;
+        padding: rem(12) rem(24);
+        @include laptop {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
     &__btns {
         gap: rem(12);
+        margin-right: auto;
+        @include tablet {
+            margin-right: unset;
+        }
+        button {
+            &:last-child {
+                &:before {
+                    bottom: rem(16);
+                }
+            }
+        }
     }
     &__text {
         font-size: rem(18) !important;
+        &-sm {
+            font-size: rem(16) !important;
+        }
+        &-container {
+            flex-direction: column;
+            gap: rem(8);
+        }
+    }
+    &__overlay {
+        display: block;
+        content: '';
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 100000;
+        background: rgba(color(neutral, black), 0.5);
     }
 }

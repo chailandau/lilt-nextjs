@@ -2,7 +2,7 @@
 
 import { m, useReducedMotion } from 'framer-motion';
 import cookie from 'js-cookie';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 import linkStyles from '../../atoms/Link/Link.module.scss';
 
@@ -13,11 +13,14 @@ import Link from '@/atoms/Link';
 import Text from '@/atoms/Text';
 import ButtonMolecule from '@/molecules/ButtonMolecule/ButtonMolecule';
 import Flex from '@/molecules/Flex';
+import Section from '@/molecules/Section';
+import useStore from '@/store/useStore';
 import { backToTop } from '@/utils/framer/animations';
 import LazyAnimatePresence from '@/utils/framer/LazyAnimatePresence';
+import { setNoScroll } from '@/utils/setNoScroll';
 
 const CookieBanner = () => {
-    const [showBanner, setShowBanner] = useState(false);
+    const { showCookieBanner, setShowCookieBanner } = useStore();
 
     const prefersReducedMotion = useReducedMotion() || false;
 
@@ -25,66 +28,83 @@ const CookieBanner = () => {
         const consentCookie = cookie.get('cookieConsent');
 
         if (!consentCookie) {
-            setShowBanner(true);
+            setShowCookieBanner(true);
         }
     }, []);
+    useEffect(() => {
+        setNoScroll(showCookieBanner);
+    }, [showCookieBanner]);
 
     const handleAccept = () => {
-        setShowBanner(false);
+        setShowCookieBanner(false);
         cookie.set('cookieConsent', 'accepted', { expires: 365 });
     };
 
     const handleReject = () => {
-        setShowBanner(false);
+        setShowCookieBanner(false);
         cookie.set('cookieConsent', 'rejected', { expires: 365 });
     };
 
-    if (!showBanner) {
+    if (!showCookieBanner) {
         return null;
     }
 
     return (
         <LazyAnimatePresence>
-            {showBanner && (
+            {showCookieBanner && (
                 <m.div
                     className={styles['cookie-banner']}
                     variants={backToTop(prefersReducedMotion)}
                     initial='hidden'
-                    animate={showBanner ? 'visible' : 'hidden'}
+                    animate={showCookieBanner ? 'visible' : 'hidden'}
                     exit='hidden'
                 >
-                    <Container>
-                        <Text className={styles['cookie-banner__text']}>
-                            Long Island Laser Tag uses cookies to improve your
-                            browsing experience.
-                        </Text>
-                        <Text size='sm' as='span'>
-                            Read our
-                            <Link
-                                href={`${
-                                    process.env.NEXT_PUBLIC_BASE_URL as string
-                                }/privacy-policy`}
-                                className={linkStyles['link__rich-text']}
-                            >
-                                Privacy Policy
-                            </Link>
-                            to learn more.
-                        </Text>
-                    </Container>
-                    <Flex className={styles['cookie-banner__btns']}>
-                        <ButtonMolecule onClick={handleAccept}>
-                            Accept
-                        </ButtonMolecule>
-                        <ButtonMolecule
-                            variant='link'
-                            onClick={handleReject}
-                            className={styles['cookie-banner__reject']}
+                    <Section
+                        as='div'
+                        className={styles['cookie-banner__content']}
+                    >
+                        <Flex
+                            className={styles['cookie-banner__text-container']}
                         >
-                            Reject
-                        </ButtonMolecule>
-                    </Flex>
+                            <Text className={styles['cookie-banner__text']}>
+                                Long Island Laser Tag uses cookies to improve
+                                your browsing experience.
+                            </Text>
+                            <Text
+                                size='sm'
+                                as='span'
+                                className={styles['cookie-banner__text-sm']}
+                            >
+                                Read our
+                                <Link
+                                    href={`${
+                                        process.env
+                                            .NEXT_PUBLIC_BASE_URL as string
+                                    }/privacy-policy`}
+                                    className={linkStyles['link__rich-text']}
+                                >
+                                    Privacy Policy
+                                </Link>
+                                to learn more.
+                            </Text>
+                        </Flex>
+
+                        <Flex className={styles['cookie-banner__btns']}>
+                            <ButtonMolecule onClick={handleAccept}>
+                                Accept
+                            </ButtonMolecule>
+                            <ButtonMolecule
+                                variant='link'
+                                onClick={handleReject}
+                                className={styles['cookie-banner__reject']}
+                            >
+                                Reject
+                            </ButtonMolecule>
+                        </Flex>
+                    </Section>
                 </m.div>
             )}
+            <Container className={styles['cookie-banner__overlay']}></Container>
         </LazyAnimatePresence>
     );
 };
