@@ -24,7 +24,8 @@ $colors: (
 $shadows: (
     lightFuchsia: 0px 0px 20px rgba(map-get($colors, neon, fuchsia), 0.15),
     fuchsia: 0px 0px 20px rgba(map-get($colors, neon, fuchsia), 0.3),
-    purple: 0px 0px 20px 5px rgba(map-get($colors, dark, purple), 0.2)
+    purple: 0px 0px 20px 5px rgba(map-get($colors, dark, purple), 0.2),
+    darkBlue: 0px 20px 20px 18px rgba(map-get($colors, dark, blue), 0.8)
 );
 
 $gradients: (
