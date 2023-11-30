@@ -1,5 +1,6 @@
 'use client';
 
+import FocusTrap from 'focus-trap-react';
 import { m, useReducedMotion } from 'framer-motion';
 import cookie from 'js-cookie';
 import React, { useEffect } from 'react';
@@ -59,49 +60,60 @@ const CookieBanner = () => {
                     animate={showCookieBanner ? 'visible' : 'hidden'}
                     exit='hidden'
                 >
-                    <Section
-                        as='div'
-                        className={styles['cookie-banner__content']}
+                    <FocusTrap
+                        active={showCookieBanner}
+                        focusTrapOptions={{
+                            initialFocus: false
+                        }}
                     >
-                        <Flex
-                            className={styles['cookie-banner__text-container']}
+                        <Section
+                            as='div'
+                            className={styles['cookie-banner__content']}
                         >
-                            <Text className={styles['cookie-banner__text']}>
-                                Long Island Laser Tag uses cookies to improve
-                                your browsing experience.
-                            </Text>
-                            <Text
-                                size='sm'
-                                as='span'
-                                className={styles['cookie-banner__text-sm']}
+                            <Flex
+                                className={
+                                    styles['cookie-banner__text-container']
+                                }
                             >
-                                Read our
-                                <Link
-                                    href={`${
-                                        process.env
-                                            .NEXT_PUBLIC_BASE_URL as string
-                                    }/privacy-policy`}
-                                    className={linkStyles['link__rich-text']}
+                                <Text className={styles['cookie-banner__text']}>
+                                    Long Island Laser Tag uses cookies to
+                                    improve your browsing experience.
+                                </Text>
+                                <Text
+                                    size='sm'
+                                    as='span'
+                                    className={styles['cookie-banner__text-sm']}
                                 >
-                                    Privacy Policy
-                                </Link>
-                                to learn more.
-                            </Text>
-                        </Flex>
+                                    Read our
+                                    <Link
+                                        href={`${
+                                            process.env
+                                                .NEXT_PUBLIC_BASE_URL as string
+                                        }/privacy-policy`}
+                                        className={
+                                            linkStyles['link__rich-text']
+                                        }
+                                    >
+                                        Privacy Policy
+                                    </Link>
+                                    to learn more.
+                                </Text>
+                            </Flex>
 
-                        <Flex className={styles['cookie-banner__btns']}>
-                            <ButtonMolecule onClick={handleAccept}>
-                                Accept
-                            </ButtonMolecule>
-                            <ButtonMolecule
-                                variant='link'
-                                onClick={handleReject}
-                                className={styles['cookie-banner__reject']}
-                            >
-                                Reject
-                            </ButtonMolecule>
-                        </Flex>
-                    </Section>
+                            <Flex className={styles['cookie-banner__btns']}>
+                                <ButtonMolecule onClick={handleAccept}>
+                                    Accept
+                                </ButtonMolecule>
+                                <ButtonMolecule
+                                    variant='link'
+                                    onClick={handleReject}
+                                    className={styles['cookie-banner__reject']}
+                                >
+                                    Reject
+                                </ButtonMolecule>
+                            </Flex>
+                        </Section>
+                    </FocusTrap>
                 </m.div>
             )}
             <Container className={styles['cookie-banner__overlay']}></Container>
