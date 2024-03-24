@@ -21,6 +21,8 @@ import { backToTop } from '@/utils/framer/animations';
 import LazyAnimatePresence from '@/utils/framer/LazyAnimatePresence';
 import { setNoScroll } from '@/utils/setNoScroll';
 
+const isLimg = process.env.NEXT_PUBLIC_THEME === 'green-theme';
+
 const CookieBanner = () => {
     const { showCookieBanner, setShowCookieBanner } = useStore();
 
@@ -82,8 +84,11 @@ const CookieBanner = () => {
                                 }
                             >
                                 <Text className={styles['cookie-banner__text']}>
-                                    Long Island Laser Tag uses cookies to
-                                    improve your browsing experience.
+                                    {isLimg
+                                        ? 'Long Island Mini Golf'
+                                        : 'Long Island Laser Tag'}{' '}
+                                    uses cookies to improve your browsing
+                                    experience.
                                 </Text>
                                 <Text
                                     size='sm'

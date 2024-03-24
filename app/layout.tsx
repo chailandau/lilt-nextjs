@@ -10,8 +10,10 @@ import { getData } from '@/utils/getData';
 import '@/assets/fonts/fonts.css';
 import '@/styles/main.scss';
 
+const isLimg = process.env.NEXT_PUBLIC_THEME === 'green-theme';
+
 export const metadata: Metadata = {
-    title: 'Long Island Laser Tag'
+    title: isLimg ? 'Long Island Mini Golf' : 'Long Island Laser Tag'
 };
 export default async function RootLayout({
     children

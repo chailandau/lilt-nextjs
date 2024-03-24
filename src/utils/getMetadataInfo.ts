@@ -6,13 +6,17 @@ import { Page_Meta } from '@/api/graphqlTypes';
  * @param meta - An array of Page_Meta objects containing the metadata information.
  * @returns - An object containing the title, description, and openGraph properties.
  */
+
+const isLimg = process.env.NEXT_PUBLIC_THEME === 'green-theme';
+const defaultTitle = isLimg ? 'Long Island Mini Golf' : 'Long Island Laser Tag';
+
 export const getMetadataInfo = (meta: Page_Meta[]) => ({
-    title: meta[0]?.title || 'Long Island Laser Tag',
+    title: meta[0]?.title || defaultTitle,
     description: meta[0]?.description,
     openGraph: {
-        title: meta[0]?.title || 'Long Island Laser Tag',
+        title: meta[0]?.title || defaultTitle,
         description: meta[0]?.description,
-        siteName: 'Long Island Laser Tag',
+        siteName: defaultTitle,
         images: [
             {
                 url: meta[0]?.image?.url,
