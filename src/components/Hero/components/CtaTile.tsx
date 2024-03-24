@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { FC } from 'react';
 
 import styles from './CtaTile.module.scss';
@@ -23,8 +24,13 @@ const CtaTile: FC<CtaTileProps> = ({ tileData }) => {
         internalLink
     });
 
+    const classList = classNames(
+        styles['cta-tile'],
+        styles[process.env.NEXT_PUBLIC_THEME as string]
+    );
+
     return (
-        <Flex className={styles['cta-tile']}>
+        <Flex className={classList}>
             <Link
                 href={tileLink}
                 underlineHover={false}

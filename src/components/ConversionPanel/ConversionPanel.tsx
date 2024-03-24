@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { FC } from 'react';
 
 import Button from '../Button/Button';
@@ -21,13 +22,19 @@ export interface ConversionPanelProps {
     /** Call to action */
     callToAction?: CallToAction;
 }
+
+const classList = classNames(
+    styles['conversion-panel'],
+    styles[process.env.NEXT_PUBLIC_THEME as string]
+);
+
 const ConversionPanel: FC<ConversionPanelProps> = ({
     heading,
     content,
     callToAction
 }) => (
     <Section>
-        <Flex className={styles['conversion-panel']}>
+        <Flex className={classList}>
             <Flex className={styles['conversion-panel__content']}>
                 {heading && <Heading>{heading}</Heading>}
                 {content && <RichText richText={content} />}

@@ -26,16 +26,27 @@ const Hero: FC<HeroProps> = ({ heading, subheading, content, cta }) => {
 
     const hasButtons = cta?.type === 'button';
 
+    const greenTheme = process.env.NEXT_PUBLIC_THEME === 'green-theme';
+
     return (
         <Section className={styles['hero']}>
             {heading && (
-                <Heading centered as='h1' size='xl'>
+                <Heading
+                    centered
+                    as='h1'
+                    size='xl'
+                    color={greenTheme ? 'blue' : 'green'}
+                >
                     {heading}
                 </Heading>
             )}
 
             {subheading && (
-                <Heading centered size='sm' color='blue'>
+                <Heading
+                    centered
+                    size='sm'
+                    color={greenTheme ? 'green' : 'blue'}
+                >
                     {subheading}
                 </Heading>
             )}

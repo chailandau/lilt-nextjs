@@ -59,16 +59,20 @@
     @return map-get($filter-overlays, $color);
 }
 
-@mixin border($color: color(neon, blue)) {
-    border: 2px solid $color;
+@mixin border($theme: blueTheme) {
+    border: 2px solid color($theme, neonBlue);
     border-radius: rem(20);
     box-shadow: shadow(purple);
-    background-color: background(dark-blue);
+    @if $theme == greenTheme {
+        background-color: background(dark-green);
+    } @else {
+        background-color: background(dark-blue);
+    }
 }
 
-@mixin doubleBorder {
+@mixin doubleBorder($theme: blueTheme) {
     position: relative;
-    border: 2px solid color(neon, blue);
+    border: 2px solid color($theme, neonBlue);
     border-radius: rem(20);
     &:after {
         display: block;
@@ -80,8 +84,12 @@
         left: rem(12);
         z-index: -1;
         border-radius: rem(26);
-        border: 2px solid color(neon, green);
-        background-color: background(dark-blue);
+        border: 2px solid color($theme, neonGreen);
+        @if $theme == greenTheme {
+            background-color: background(dark-green);
+        } @else {
+            background-color: background(dark-blue);
+        }
         @include transition(top, left);
         @include mobile-lg {
             top: rem(20);

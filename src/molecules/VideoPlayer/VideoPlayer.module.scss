@@ -39,4 +39,7 @@
             border-radius: rem(20);
         }
     }
+    &.green-theme {
+        @include doubleBorder(greenTheme);
+    }
 }

@@ -67,12 +67,12 @@
         }
         &-purple {
             &:before {
-                background-image: url('/svg/purple-grid.svg');
+                background-image: url('/svg/blue-theme/purple-grid.svg');
             }
         }
         &-green {
             &:before {
-                background-image: url('/svg/green-grid.svg');
+                background-image: url('/svg/blue-theme/green-grid.svg');
             }
         }
     }
@@ -102,7 +102,7 @@
             &__center_right,
             &__bottom_right {
                 &:before {
-                    background-image: url('/svg/pluses-shape.svg');
+                    background-image: url('/svg/blue-theme/pluses-shape.svg');
                 }
             }
             &__top_left,
@@ -157,7 +157,7 @@
             &__center_right,
             &__bottom_right {
                 &:after {
-                    background-image: url('/svg/dots-shape.svg');
+                    background-image: url('/svg/blue-theme/dots-shape.svg');
                 }
             }
             &__top_left,
@@ -202,6 +202,53 @@
                 &:after {
                     right: 0;
                     transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}
+.green-theme {
+    &.section__grid {
+        &-purple,
+        &-green {
+            &:after {
+                background-image: gradient(green);
+            }
+        }
+        &-purple {
+            &:before {
+                background-image: url('/svg/green-theme/purple-grid.svg');
+            }
+        }
+        &-green {
+            &:before {
+                background-image: url('/svg/green-theme/green-grid.svg');
+            }
+        }
+    }
+
+    &.section__shapes {
+        &.shape__pluses {
+            &__top_left,
+            &__center_left,
+            &__bottom_left,
+            &__top_right,
+            &__center_right,
+            &__bottom_right {
+                &:before {
+                    background-image: url('/svg/green-theme/pluses-shape.svg');
+                }
+            }
+        }
+        &.shape__dots {
+            &__top_left,
+            &__center_left,
+            &__bottom_left,
+            &__top_right,
+            &__center_right,
+            &__bottom_right {
+                &:after {
+                    background-image: url('/svg/green-theme/dots-shape.svg');
                 }
             }
         }

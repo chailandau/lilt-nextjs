@@ -1,40 +1,53 @@
 $base-font-size: 16;
 
 $colors: (
+    blueTheme: (
+        neonRed: #ed2124,
+        neonBlue: #31c6f4,
+        neonGreen: #9add5b,
+        neonFuchsia: #cc00ff,
+        darkBlue: #000f3c,
+        darkPurple: #9f32f4,
+        darkRed: #b60e11
+    ),
+    greenTheme: (
+        darkGreen: #183203,
+        neonGreen: #99ff39,
+        neonBlue: #40e7c9,
+        darkPurple: #885fff
+    ),
     neutral: (
         white: #f5f5f5,
         black: #000000,
         mdGray: #8c8e8e,
         lightGray: #dcdcdc,
         grayBlue: #1e253a
-    ),
-    neon: (
-        red: #ed2124,
-        blue: #31c6f4,
-        green: #9add5b,
-        fuchsia: #cc00ff
-    ),
-    dark: (
-        blue: #000f3c,
-        purple: #9f32f4,
-        red: #b60e11
     )
 );
 
 $shadows: (
-    lightFuchsia: 0px 0px 20px rgba(map-get($colors, neon, fuchsia), 0.15),
-    fuchsia: 0px 0px 20px rgba(map-get($colors, neon, fuchsia), 0.3),
-    purple: 0px 0px 20px 5px rgba(map-get($colors, dark, purple), 0.2),
-    darkBlue: 0px 20px 20px 18px rgba(map-get($colors, dark, blue), 0.8)
+    lightFuchsia: 0px 0px 20px
+        rgba(map-get($colors, blueTheme, neonFuchsia), 0.15),
+    fuchsia: 0px 0px 20px rgba(map-get($colors, blueTheme, neonFuchsia), 0.3),
+    purple: 0px 0px 20px 5px rgba(map-get($colors, blueTheme, darkPurple), 0.2),
+    darkBlue: 0px 20px 20px 18px
+        rgba(map-get($colors, blueTheme, darkBlue), 0.8)
 );
 
 $gradients: (
     blue:
         radial-gradient(
-            rgba(map-get($colors, dark, blue), 0) 0%,
-            rgba(map-get($colors, dark, blue), 0.3) 45%,
-            rgba(map-get($colors, dark, blue), 0.9) 75%,
-            rgba(map-get($colors, dark, blue), 1) 85%
+            rgba(map-get($colors, blueTheme, darkBlue), 0) 0%,
+            rgba(map-get($colors, blueTheme, darkBlue), 0.3) 45%,
+            rgba(map-get($colors, blueTheme, darkBlue), 0.9) 75%,
+            rgba(map-get($colors, blueTheme, darkBlue), 1) 85%
+        ),
+    green:
+        radial-gradient(
+            rgba(map-get($colors, greenTheme, darkGreen), 0) 0%,
+            rgba(map-get($colors, greenTheme, darkGreen), 0.3) 45%,
+            rgba(map-get($colors, greenTheme, darkGreen), 0.9) 75%,
+            rgba(map-get($colors, greenTheme, darkGreen), 1) 85%
         )
 );
 
@@ -44,9 +57,14 @@ $filter-overlays: (
     green: brightness(0) saturate(100%) invert(92%) sepia(17%) saturate(1455%)
         hue-rotate(33deg) brightness(93%) contrast(86%),
     blue: brightness(0) saturate(100%) invert(61%) sepia(43%) saturate(786%)
-        hue-rotate(154deg) brightness(103%) contrast(91%)
+        hue-rotate(154deg) brightness(103%) contrast(91%),
+    purple: brightness(0) saturate(100%) invert(37%) sepia(61%) saturate(926%)
+        hue-rotate(220deg) brightness(106%) contrast(108%),
+    teal: brightness(0) saturate(100%) invert(86%) sepia(9%) saturate(2960%)
+        hue-rotate(108deg) brightness(96%) contrast(89%)
 );
 
 $backgrounds: (
-    dark-blue: rgba(map-get($colors, dark, blue), 0.75)
+    dark-blue: rgba(map-get($colors, blueTheme, darkBlue), 0.75),
+    dark-green: rgba(map-get($colors, greenTheme, darkGreen), 0.75)
 );

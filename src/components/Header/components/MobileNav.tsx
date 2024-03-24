@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { m, useReducedMotion } from 'framer-motion';
 import { FC } from 'react';
 
@@ -21,10 +22,15 @@ const MobileNav: FC<HeaderProps> = ({ menuItems, callToAction }) => {
         setOpenSubmenu(null);
     };
 
+    const classList = classNames(
+        styles['mobile-nav'],
+        styles[process.env.NEXT_PUBLIC_THEME as string]
+    );
+
     return (
         <LazyAnimatePresence>
             <m.nav
-                className={styles['mobile-nav']}
+                className={classList}
                 variants={menuAnimations(prefersReducedMotion)}
                 animate={menuOpen ? 'open' : 'closed'}
                 initial='closed'

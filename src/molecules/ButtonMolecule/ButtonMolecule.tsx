@@ -42,7 +42,8 @@ const ButtonMolecule: FC<ButtonMoleculeProps> = ({
     const classList = classNames(
         styles['button'],
         styles[variant],
-        className && className
+        className && className,
+        styles[process.env.NEXT_PUBLIC_THEME as string]
     );
 
     const isLink = link && link.trim() !== '';

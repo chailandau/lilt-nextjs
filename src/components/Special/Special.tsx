@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { FC } from 'react';
 
 import Button from '../Button/Button';
@@ -25,6 +26,11 @@ interface SpecialProps {
     textGrid?: TextGrid;
 }
 
+const classList = classNames(
+    styles['special'],
+    styles[process.env.NEXT_PUBLIC_THEME as string]
+);
+
 const Special: FC<SpecialProps> = ({
     content,
     heading,
@@ -33,7 +39,7 @@ const Special: FC<SpecialProps> = ({
     textGrid
 }) => (
     <Section className={styles['special__wrapper']}>
-        <Container className={styles['special']}>
+        <Container className={classList}>
             <Flex className={styles['special__content']}>
                 {heading && <Heading size='lg'>{heading}</Heading>}
                 {subheading && (

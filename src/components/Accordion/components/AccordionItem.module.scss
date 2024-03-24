@@ -4,11 +4,11 @@
     padding: rem(24);
 
     @include hover {
-        border-color: color(neon, green);
+        border-color: color(blueTheme, neonGreen);
     }
     &.expanded {
         @include hover {
-            border-color: color(neon, blue);
+            border-color: color(blueTheme, neonBlue);
         }
         .accordion-item__icon {
             width: rem(18);
@@ -38,8 +38,29 @@
     &:nth-child(odd) {
         .accordion-item__header {
             h3 {
-                color: color(neon, blue);
+                color: color(blueTheme, neonBlue);
             }
+        }
+    }
+    &.green-theme {
+        @include border(greenTheme);
+        @include hover {
+            border-color: color(greenTheme, neonGreen);
+        }
+        &.expanded {
+            @include hover {
+                border-color: color(greenTheme, neonBlue);
+            }
+        }
+        &:nth-child(odd) {
+            .accordion-item__header {
+                h3 {
+                    color: color(greenTheme, neonBlue);
+                }
+            }
+        }
+        button img {
+            filter: filter-overlay(purple);
         }
     }
 }

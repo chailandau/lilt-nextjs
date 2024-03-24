@@ -29,8 +29,14 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ placeholder, url }) => {
         ready && styles['video-player__video-loaded']
     );
 
+    const wrapperClassList = classNames(
+        styles['video-player'],
+
+        styles[process.env.NEXT_PUBLIC_THEME as string]
+    );
+
     return (
-        <div className={styles['video-player']}>
+        <div className={wrapperClassList}>
             <Container className={classList}>
                 <ReactPlayer
                     url={url}

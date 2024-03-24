@@ -12,7 +12,8 @@ import MobileNav from './components/MobileNav';
 import styles from './Header.module.scss';
 
 import { CallToAction, Header_MenuItems } from '@/api/graphqlTypes';
-import Logo from '@/assets/svg/Logo.svg';
+import liltLogo from '@/assets/svg/lilt/Logo.svg';
+import limgLogo from '@/assets/svg/limg/Logo.svg';
 import Image from '@/atoms/Image';
 import Link from '@/atoms/Link';
 import Flex from '@/molecules/Flex';
@@ -27,6 +28,9 @@ export interface HeaderProps {
     /* CTA object */
     callToAction?: CallToAction | null;
 }
+
+const greenTheme = process.env.NEXT_PUBLIC_THEME === 'green-theme';
+
 const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
     const [isSticky, setIsSticky] = useState(false);
 
@@ -67,7 +71,8 @@ const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
     const classList = classNames(
         styles['header'],
         isSticky && styles['header__sticky'],
-        menuOpen && styles['header__menu-open']
+        menuOpen && styles['header__menu-open'],
+        styles[process.env.NEXT_PUBLIC_THEME as string]
     );
 
     return (
@@ -80,8 +85,12 @@ const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
                         onClick={handleLogoClick}
                     >
                         <Image
-                            src={Logo}
-                            alt='Long Island Laser Tag'
+                            src={greenTheme ? limgLogo : liltLogo}
+                            alt={
+                                greenTheme
+                                    ? 'Long Island Mini Golf'
+                                    : 'Long Island Laser Tag'
+                            }
                             hasBorder={false}
                             priority
                         />

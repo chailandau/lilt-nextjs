@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { FC } from 'react';
 
 import styles from './Step.module.scss';
@@ -17,8 +18,13 @@ interface StepProps {
     content: Process_Steps['content'];
 }
 
+const classList = classNames(
+    styles['step'],
+    styles[process.env.NEXT_PUBLIC_THEME as string]
+);
+
 const Step: FC<StepProps> = ({ number, heading, content }) => (
-    <Container as='li' className={styles['step']}>
+    <Container as='li' className={classList}>
         <Flex className={styles['step__number']}>{number}</Flex>
         <Container className={styles['step__text']}>
             {heading && <Heading color='blue'>{heading}</Heading>}

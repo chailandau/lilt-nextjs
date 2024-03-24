@@ -1,5 +1,6 @@
 'use client';
 
+import classNames from 'classnames';
 import FocusTrap from 'focus-trap-react';
 import { m, useReducedMotion } from 'framer-motion';
 import cookie from 'js-cookie';
@@ -50,11 +51,16 @@ const CookieBanner = () => {
         return null;
     }
 
+    const classList = classNames(
+        styles['cookie-banner'],
+        styles[process.env.NEXT_PUBLIC_THEME as string]
+    );
+
     return (
         <LazyAnimatePresence>
             {showCookieBanner && (
                 <m.div
-                    className={styles['cookie-banner']}
+                    className={classList}
                     variants={backToTop(prefersReducedMotion)}
                     initial='hidden'
                     animate={showCookieBanner ? 'visible' : 'hidden'}

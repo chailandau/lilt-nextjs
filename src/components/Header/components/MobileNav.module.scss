@@ -8,7 +8,7 @@
     height: 100vh;
     overflow-y: auto;
     align-items: flex-start;
-    background-color: color(dark, blue);
+    background-color: color(blueTheme, darkBlue);
     display: flex;
     flex-direction: column;
     padding-top: rem(144);
@@ -23,5 +23,8 @@
         @include tablet {
             display: none;
         }
+    }
+    &.green-theme {
+        background-color: color(greenTheme, darkGreen);
     }
 }

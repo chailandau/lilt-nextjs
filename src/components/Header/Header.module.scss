@@ -21,7 +21,7 @@
         top: 0;
         left: 0;
         z-index: 101;
-        background: color(dark, blue);
+        background: color(blueTheme, darkBlue);
     }
     &__content {
         flex-direction: row;
@@ -92,6 +92,11 @@
             .logo {
                 width: rem(250);
             }
+        }
+    }
+    &.green-theme {
+        &:before {
+            background: color(greenTheme, darkGreen);
         }
     }
 }

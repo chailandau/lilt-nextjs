@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="Layer_1" x="0" y="0" version="1.1"
+     viewBox="0 0 216 219">
+    <style>
+        .st1 {
+            fill: #885FFF
+        }
+    </style>
+    <g opacity=".6">
+        <circle cx="10" cy="2" r="2" class="st1" />
+        <circle cx="10" cy="45" r="2" class="st1" />
+        <circle cx="10" cy="88" r="2" class="st1" />
+        <circle cx="10" cy="131" r="2" class="st1" />
+        <circle cx="10" cy="174" r="2" class="st1" />
+        <circle cx="10" cy="217" r="2" class="st1" />
+        <circle cx="44" cy="2" r="2" class="st1" />
+        <circle cx="44" cy="45" r="2" class="st1" />
+        <circle cx="44" cy="88" r="2" class="st1" />
+        <circle cx="44" cy="131" r="2" class="st1" />
+        <circle cx="44" cy="174" r="2" class="st1" />
+        <circle cx="44" cy="217" r="2" class="st1" />
+        <circle cx="78" cy="2" r="2" class="st1" />
+        <circle cx="78" cy="45" r="2" class="st1" />
+        <circle cx="78" cy="88" r="2" class="st1" />
+        <circle cx="78" cy="131" r="2" class="st1" />
+        <circle cx="78" cy="174" r="2" class="st1" />
+        <circle cx="78" cy="217" r="2" class="st1" />
+        <circle cx="112" cy="2" r="2" class="st1" />
+        <circle cx="112" cy="45" r="2" class="st1" />
+        <circle cx="112" cy="88" r="2" class="st1" />
+        <circle cx="112" cy="131" r="2" class="st1" />
+        <circle cx="112" cy="174" r="2" class="st1" />
+        <circle cx="112" cy="217" r="2" class="st1" />
+        <circle cx="146" cy="2" r="2" class="st1" />
+        <circle cx="146" cy="45" r="2" class="st1" />
+        <circle cx="146" cy="88" r="2" class="st1" />
+        <circle cx="146" cy="131" r="2" class="st1" />
+        <circle cx="146" cy="174" r="2" class="st1" />
+        <circle cx="146" cy="217" r="2" class="st1" />
+        <circle cx="180" cy="2" r="2" class="st1" />
+        <circle cx="180" cy="45" r="2" class="st1" />
+        <circle cx="180" cy="88" r="2" class="st1" />
+        <circle cx="180" cy="131" r="2" class="st1" />
+        <circle cx="180" cy="174" r="2" class="st1" />
+        <circle cx="180" cy="217" r="2" class="st1" />
+        <circle cx="214" cy="2" r="2" class="st1" />
+        <circle cx="214" cy="45" r="2" class="st1" />
+        <circle cx="214" cy="88" r="2" class="st1" />
+        <circle cx="214" cy="131" r="2" class="st1" />
+        <circle cx="214" cy="174" r="2" class="st1" />
+        <circle cx="214" cy="217" r="2" class="st1" />
+    </g>
+    <linearGradient id="dots-shape-mask" x1="821.5869" x2="1037.5867" y1="-842.1674" y2="-842.1674"
+                    gradientTransform="matrix(-1 0 0 -1.0414 1037.5868 -767.5329)" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#183203" stop-opacity="0" />
+        <stop offset=".65" stop-color="#183203" stop-opacity=".25" />
+        <stop offset=".9" stop-color="#183203" stop-opacity=".5" />
+        <stop offset="1" stop-color="#183203" />
+    </linearGradient>
+    <path fill="url(#dots-shape-mask)" d="M0 0h216v219H0z" />
+</svg>

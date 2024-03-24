@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { FC, KeyboardEvent } from 'react';
 
 import { HeaderProps } from '../Header';
@@ -85,7 +86,12 @@ const Menu: FC<MenuProps> = ({ menuItems, className = styles['menu'] }) => {
         }
     });
 
-    return <ul className={className}>{menuContent}</ul>;
+    const classList = classNames(
+        className && className,
+        styles[process.env.NEXT_PUBLIC_THEME as string]
+    );
+
+    return <ul className={classList}>{menuContent}</ul>;
 };
 
 export default Menu;

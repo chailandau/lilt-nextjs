@@ -9,7 +9,7 @@ import {
 
 import Button from './Button';
 
-import { Button as ButtonType } from '@/api/graphqlTypes';
+import { CallToAction as ButtonType } from '@/api/graphqlTypes';
 
 const renderButton = (buttonData: ButtonType | null) => {
     render(<Button buttonData={buttonData} />);

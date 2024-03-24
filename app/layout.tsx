@@ -23,7 +23,7 @@ export default async function RootLayout({
     const { Footer: FooterData } = await getData(FOOTER_QUERY);
 
     return (
-        <html lang='en'>
+        <html lang='en' className={process.env.NEXT_PUBLIC_THEME}>
             <GoogleScript />
             <body>
                 <CookieBanner />

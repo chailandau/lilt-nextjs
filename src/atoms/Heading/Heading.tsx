@@ -33,7 +33,8 @@ const Heading: FC<HeadingProps> = ({
         styles['heading'],
         styles[size],
         styles[color],
-        centered && styles['centered']
+        centered && styles['centered'],
+        styles[process.env.NEXT_PUBLIC_THEME as string]
     );
 
     return <HeadingTag className={classList}>{children}</HeadingTag>;

@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { FC } from 'react';
 
 import styles from './IconTile.module.scss';
@@ -7,8 +8,13 @@ import Image from '@/atoms/Image';
 import Text from '@/atoms/Text';
 import Flex from '@/molecules/Flex';
 
+const classList = classNames(
+    styles['icon-tile'],
+    styles[process.env.NEXT_PUBLIC_THEME as string]
+);
+
 const IconTile: FC<IconTileType> = ({ label, icon }) => (
-    <Flex className={styles['icon-tile']}>
+    <Flex className={classList}>
         <Image
             src={icon?.url || ''}
             alt={label}

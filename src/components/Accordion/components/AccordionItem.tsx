@@ -7,8 +7,9 @@ import { FC, useState } from 'react';
 import styles from './AccordionItem.module.scss';
 
 import { Accordion_AccordionItems } from '@/api/graphqlTypes';
-import Caret from '@/assets/svg/Caret.svg';
-import LaserTarget from '@/assets/svg/LaserTarget.svg';
+import Caret from '@/assets/svg/lilt/Caret.svg';
+import LaserTarget from '@/assets/svg/lilt/LaserTarget.svg';
+import GolfBall from '@/assets/svg/limg/GolfBall.svg';
 import Heading from '@/atoms/Heading';
 import Image from '@/atoms/Image';
 import Flex from '@/molecules/Flex';
@@ -25,13 +26,18 @@ const AccordionItem: FC<Accordion_AccordionItems> = ({ heading, content }) => {
     };
     const classList = classNames(
         styles['accordion-item'],
-        isOpen && styles['expanded']
+        isOpen && styles['expanded'],
+        styles[process.env.NEXT_PUBLIC_THEME as string]
     );
 
     const contentClassList = classNames(
         styles['accordion-item__content'],
         isOpen && styles['expanded']
     );
+
+    const isGreenTheme = process.env.NEXT_PUBLIC_THEME === 'green-theme';
+
+    const itemIcon = isGreenTheme ? GolfBall : LaserTarget;
 
     return (
         <Flex className={classList} onClick={handleClick}>
@@ -46,7 +52,7 @@ const AccordionItem: FC<Accordion_AccordionItems> = ({ heading, content }) => {
                             {heading}
                         </Heading>
                         <Image
-                            src={isOpen ? Caret : LaserTarget}
+                            src={isOpen ? Caret : itemIcon}
                             alt={`${isOpen ? 'Open' : 'Close'} Accordion`}
                             hasBorder={false}
                             className={styles['accordion-item__icon']}

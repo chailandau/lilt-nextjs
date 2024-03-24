@@ -17,10 +17,10 @@
         gap: rem(8);
         align-items: flex-start;
         justify-content: space-between;
-        border: 2px solid color(neon, green);
+        border: 2px solid color(blueTheme, neonGreen);
         border-radius: rem(20);
         box-shadow: shadow(darkBlue);
-        background-color: color(dark, blue);
+        background-color: color(blueTheme, darkBlue);
         gap: rem(32);
         flex-direction: column;
         padding: rem(12) rem(24);
@@ -63,5 +63,11 @@
         left: 0;
         z-index: 100000;
         background: rgba(color(neutral, black), 0.5);
+    }
+    &.green-theme {
+        .cookie-banner__content {
+            border-color: color(greenTheme, neonGreen);
+            background-color: color(greenTheme, darkGreen);
+        }
     }
 }
