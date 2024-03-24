@@ -12,8 +12,8 @@ import MobileNav from './components/MobileNav';
 import styles from './Header.module.scss';
 
 import { CallToAction, Header_MenuItems } from '@/api/graphqlTypes';
-import lilgLogo from '@/assets/svg/lilg/Logo.svg';
 import liltLogo from '@/assets/svg/lilt/Logo.svg';
+import limgLogo from '@/assets/svg/limg/Logo.svg';
 import Image from '@/atoms/Image';
 import Link from '@/atoms/Link';
 import Flex from '@/molecules/Flex';
@@ -85,7 +85,7 @@ const Header: FC<HeaderProps> = ({ menuItems, callToAction }) => {
                         onClick={handleLogoClick}
                     >
                         <Image
-                            src={greenTheme ? lilgLogo : liltLogo}
+                            src={greenTheme ? limgLogo : liltLogo}
                             alt={
                                 greenTheme
                                     ? 'Long Island Mini Golf'

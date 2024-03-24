@@ -5,8 +5,8 @@ import SocialLink from './components/SocialLink';
 import styles from './Footer.module.scss';
 
 import { Footer_MenuItems, Footer_SocialLinks } from '@/api/graphqlTypes';
-import lilgLogo from '@/assets/svg/lilg/Logo.svg';
 import liltLogo from '@/assets/svg/lilt/Logo.svg';
+import limgLogo from '@/assets/svg/limg/Logo.svg';
 import Image from '@/atoms/Image';
 import Link from '@/atoms/Link';
 import Text from '@/atoms/Text';
@@ -33,7 +33,7 @@ const Footer: FC<FooterProps> = ({ socialLinks, menuItems, copyrightText }) => (
                 className={styles['logo']}
             >
                 <Image
-                    src={greenTheme ? lilgLogo : liltLogo}
+                    src={greenTheme ? limgLogo : liltLogo}
                     alt={
                         greenTheme
                             ? 'Long Island Mini Golf'

@@ -7,9 +7,9 @@ import { FC, useState } from 'react';
 import styles from './AccordionItem.module.scss';
 
 import { Accordion_AccordionItems } from '@/api/graphqlTypes';
-import GolfBall from '@/assets/svg/lilg/GolfBall.svg';
 import Caret from '@/assets/svg/lilt/Caret.svg';
 import LaserTarget from '@/assets/svg/lilt/LaserTarget.svg';
+import GolfBall from '@/assets/svg/limg/GolfBall.svg';
 import Heading from '@/atoms/Heading';
 import Image from '@/atoms/Image';
 import Flex from '@/molecules/Flex';

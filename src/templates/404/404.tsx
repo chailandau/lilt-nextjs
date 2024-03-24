@@ -4,8 +4,8 @@ import sectionStyles from '../../styles/section.module.scss';
 
 import styles from './404.module.scss';
 
-import GolfBall from '@/assets/svg/lilg/GolfBall.svg';
 import LaserTarget from '@/assets/svg/lilt/LaserTarget.svg';
+import GolfBall from '@/assets/svg/limg/GolfBall.svg';
 import Heading from '@/atoms/Heading';
 import Image from '@/atoms/Image';
 import Button from '@/components/Button/Button';
