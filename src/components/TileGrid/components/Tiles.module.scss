@@ -56,4 +56,9 @@
             }
         }
     }
+    &.green-theme {
+        .tile {
+            @include border(greenTheme);
+        }
+    }
 }

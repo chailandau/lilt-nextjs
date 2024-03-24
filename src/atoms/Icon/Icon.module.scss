@@ -14,8 +14,17 @@
     fill: color(neutral, mdGray);
 }
 .green {
-    fill: color(neon, green);
+    fill: color(blueTheme, neonGreen);
 }
 .blue {
-    fill: color(neon, blue);
+    fill: color(blueTheme, neonBlue);
+}
+
+.green-theme {
+    &.green {
+        fill: color(greenTheme, neonGreen);
+    }
+    &.blue {
+        fill: color(greenTheme, neonBlue);
+    }
 }

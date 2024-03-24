@@ -37,7 +37,7 @@
         top: 0;
         left: 0;
         z-index: -1;
-        background: color(dark, blue);
+        background: color(blueTheme, darkBlue);
     }
     &:after {
         display: block;
@@ -48,7 +48,18 @@
         top: 0;
         left: 0;
         z-index: -1;
-        border: 2px solid color(neon, blue);
+        border: 2px solid color(blueTheme, neonBlue);
         box-shadow: shadow(purple);
+    }
+    &.green-theme {
+        &:before {
+            background: color(greenTheme, darkGreen);
+        }
+        &:after {
+            border: 2px solid color(greenTheme, neonBlue);
+        }
+        img {
+            filter: filter-overlay(purple);
+        }
     }
 }

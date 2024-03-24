@@ -39,7 +39,8 @@ const Image: FC<ImageProps> = ({
     const classList = classNames(
         styles['container'],
         hasBorder && styles['border'],
-        className && className
+        className && className,
+        styles[process.env.NEXT_PUBLIC_THEME as string]
     );
 
     const imageProps = {

@@ -20,13 +20,22 @@
         flex-grow: 0;
     }
     &.blue {
-        @include bgSlideHover(color(neon, blue), color(neutral, white));
+        @include bgSlideHover(
+            color(blueTheme, neonBlue),
+            color(neutral, white)
+        );
     }
     &.green {
-        @include bgSlideHover(color(neon, green), color(neutral, white));
+        @include bgSlideHover(
+            color(blueTheme, neonGreen),
+            color(neutral, white)
+        );
     }
     &.white {
-        @include bgSlideHover(color(neutral, white), color(neon, blue));
+        @include bgSlideHover(
+            color(neutral, white),
+            color(blueTheme, neonBlue)
+        );
     }
     &.link {
         @include font-rubik-regular;
@@ -36,5 +45,25 @@
         padding: rem(14);
         margin: rem(-14);
         @include underlineSlideHover;
+    }
+    &.green-theme {
+        &.blue {
+            @include bgSlideHover(
+                color(greenTheme, neonBlue),
+                color(neutral, white)
+            );
+        }
+        &.green {
+            @include bgSlideHover(
+                color(greenTheme, neonGreen),
+                color(neutral, white)
+            );
+        }
+        &.white {
+            @include bgSlideHover(
+                color(neutral, white),
+                color(greenTheme, neonBlue)
+            );
+        }
     }
 }

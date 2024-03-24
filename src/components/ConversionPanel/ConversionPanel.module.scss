@@ -29,4 +29,7 @@
         flex-shrink: 0;
         @include marginY('auto');
     }
+    &.green-theme {
+        @include border(greenTheme);
+    }
 }

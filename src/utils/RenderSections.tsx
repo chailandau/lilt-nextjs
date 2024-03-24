@@ -30,7 +30,8 @@ const RenderSections: FC<Sections> = ({ sections }) => {
                 styles[`section__grid-${section?.gridColor}`],
             isHero && styles['section__hero'],
             section?.enableShapes && styles['section__shapes'],
-            section?.enableShapes && shapeClasses
+            section?.enableShapes && shapeClasses,
+            styles[process.env.NEXT_PUBLIC_THEME as string]
         );
 
         return (

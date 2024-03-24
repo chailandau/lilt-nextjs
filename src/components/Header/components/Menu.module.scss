@@ -101,8 +101,8 @@
                     top: 0;
                     left: 0;
                     z-index: -1;
-                    background: color(dark, blue);
-                    border: 1px solid color(neon, blue);
+                    background: color(blueTheme, darkBlue);
+                    border: 1px solid color(blueTheme, neonBlue);
                     border-radius: rem(20);
                     box-shadow: shadow(fuschia);
                     @include laptop {
@@ -118,8 +118,8 @@
                     top: rem(8);
                     left: rem(8);
                     z-index: -2;
-                    background-color: color(dark, blue);
-                    border: 1px solid color(neon, green);
+                    background-color: color(blueTheme, darkBlue);
+                    border: 1px solid color(blueTheme, neonGreen);
                     border-radius: rem(24);
                     box-shadow: shadow(purple);
                     @include laptop {
@@ -170,7 +170,7 @@
                         }
                         @include hover {
                             @include laptop {
-                                color: color(neon, green);
+                                color: color(blueTheme, neonGreen);
                                 &:before {
                                     display: none;
                                 }
@@ -187,6 +187,34 @@
             }
             &:before {
                 display: none;
+            }
+        }
+    }
+    &.green-theme {
+        li {
+            .menu-link,
+            .submenu-btn {
+                ~ .submenu {
+                    &:before {
+                        background: color(greenTheme, darkGreen);
+                        border: 1px solid color(greenTheme, neonBlue);
+                        box-shadow: shadow(fuschia);
+                    }
+                    &:after {
+                        background-color: color(greenTheme, darkGreen);
+                        border: 1px solid color(greenTheme, neonGreen);
+                    }
+
+                    li {
+                        .menu-link {
+                            @include hover {
+                                @include laptop {
+                                    color: color(greenTheme, neonGreen);
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

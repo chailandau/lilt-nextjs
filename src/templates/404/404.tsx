@@ -4,7 +4,8 @@ import sectionStyles from '../../styles/section.module.scss';
 
 import styles from './404.module.scss';
 
-import LaserTarget from '@/assets/svg/LaserTarget.svg';
+import GolfBall from '@/assets/svg/lilg/GolfBall.svg';
+import LaserTarget from '@/assets/svg/lilt/LaserTarget.svg';
 import Heading from '@/atoms/Heading';
 import Image from '@/atoms/Image';
 import Button from '@/components/Button/Button';
@@ -12,18 +13,34 @@ import Section from '@/molecules/Section';
 
 const classList = classNames(
     styles['not-found'],
-    sectionStyles['section__grid-purple']
+    sectionStyles['section__grid-purple'],
+    sectionStyles[process.env.NEXT_PUBLIC_THEME as string]
 );
+
+const isGreenTheme = process.env.NEXT_PUBLIC_THEME === 'green-theme';
+
+const icon = isGreenTheme ? GolfBall : LaserTarget;
+
+const alt = isGreenTheme ? 'Golf ball' : 'Laser tag target';
+
+const message = isGreenTheme
+    ? "Looks like you've wandered off course"
+    : 'Target not found';
+
+const buttonLabel = isGreenTheme ? 'Restart course' : 'Return to base';
+
 const NotFound = () => (
     <Section className={classList}>
         <Image
-            src={LaserTarget}
-            alt='Laser tag target'
+            src={icon}
+            alt={alt}
             hasBorder={false}
             className={styles['not-found__image']}
         />
-        <Heading size='xl'>Target out of range</Heading>
-        <Heading color='blue' size='sm' as='p'>
+        <Heading size='xl' color={isGreenTheme ? 'blue' : 'green'}>
+            {message}
+        </Heading>
+        <Heading color={isGreenTheme ? 'green' : 'blue'} size='sm' as='p'>
             Page not found
         </Heading>
         <Button
@@ -31,7 +48,7 @@ const NotFound = () => (
                 color: 'white',
                 linkType: 'internal',
                 internalLink: { slug: 'home' },
-                label: 'Return to base'
+                label: buttonLabel
             }}
         />
     </Section>

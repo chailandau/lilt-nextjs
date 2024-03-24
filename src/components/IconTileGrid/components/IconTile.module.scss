@@ -23,4 +23,11 @@
     &__label {
         text-transform: uppercase;
     }
+    &.green-theme {
+        @include border(greenTheme);
+        background-color: background(dark-green);
+        img {
+            filter: filter-overlay(purple);
+        }
+    }
 }

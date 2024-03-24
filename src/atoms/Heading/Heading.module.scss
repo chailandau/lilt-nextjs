@@ -6,13 +6,12 @@
         text-align: center;
     }
     &.green {
-        color: color(neon, green);
+        color: color(blueTheme, neonGreen);
     }
 
     &.blue {
-        color: color(neon, blue);
+        color: color(blueTheme, neonBlue);
     }
-
     &.md,
     &.xl {
         @include font-recharge-bold;
@@ -65,6 +64,15 @@
         }
         @include desktop-sm {
             @include font(56, 72, 1.2);
+        }
+    }
+    &.green-theme {
+        &.green {
+            color: color(greenTheme, neonGreen);
+        }
+
+        &.blue {
+            color: color(greenTheme, neonBlue);
         }
     }
 }

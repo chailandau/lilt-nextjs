@@ -5,7 +5,8 @@ import SocialLink from './components/SocialLink';
 import styles from './Footer.module.scss';
 
 import { Footer_MenuItems, Footer_SocialLinks } from '@/api/graphqlTypes';
-import Logo from '@/assets/svg/Logo.svg';
+import lilgLogo from '@/assets/svg/lilg/Logo.svg';
+import liltLogo from '@/assets/svg/lilt/Logo.svg';
 import Image from '@/atoms/Image';
 import Link from '@/atoms/Link';
 import Text from '@/atoms/Text';
@@ -21,6 +22,9 @@ export interface FooterProps {
     /* Copyright text */
     copyrightText?: string | null;
 }
+
+const greenTheme = process.env.NEXT_PUBLIC_THEME === 'green-theme';
+
 const Footer: FC<FooterProps> = ({ socialLinks, menuItems, copyrightText }) => (
     <Section as='footer' className={styles['footer']}>
         <Flex className={styles['top-content']}>
@@ -29,8 +33,12 @@ const Footer: FC<FooterProps> = ({ socialLinks, menuItems, copyrightText }) => (
                 className={styles['logo']}
             >
                 <Image
-                    src={Logo}
-                    alt='Long Island Laser Tag'
+                    src={greenTheme ? lilgLogo : liltLogo}
+                    alt={
+                        greenTheme
+                            ? 'Long Island Mini Golf'
+                            : 'Long Island Laser Tag'
+                    }
                     hasBorder={false}
                     priority
                 />

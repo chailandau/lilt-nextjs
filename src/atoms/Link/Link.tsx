@@ -34,7 +34,8 @@ const Link: FC<LinkProps> = ({
     const classList = classNames(
         styles['link'],
         underlineHover && styles['underline-hover'],
-        className && className
+        className && className,
+        styles[process.env.NEXT_PUBLIC_THEME as string]
     );
 
     const {

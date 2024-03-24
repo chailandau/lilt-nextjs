@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { FC } from 'react';
 
 import styles from './Tiles.module.scss';
@@ -8,8 +9,13 @@ import Heading from '@/atoms/Heading';
 import Flex from '@/molecules/Flex';
 import RichText from '@/molecules/RichText';
 
+const classList = classNames(
+    styles['tiles'],
+    styles[process.env.NEXT_PUBLIC_THEME as string]
+);
+
 const Tiles: FC<Omit<TileGrid, 'heading'>> = ({ tiles }) => (
-    <Container className={styles['tiles']}>
+    <Container className={classList}>
         {tiles &&
             tiles?.length > 0 &&
             tiles?.map((tile) => (

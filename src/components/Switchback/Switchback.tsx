@@ -37,7 +37,8 @@ const Switchback: FC<SwitchbackProps> = ({
 }) => {
     const classList = classNames(
         styles['switchback'],
-        styles[`image-${imageSide}`]
+        styles[`image-${imageSide}`],
+        styles[process.env.NEXT_PUBLIC_THEME as string]
     );
 
     return (

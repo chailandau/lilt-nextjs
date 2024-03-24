@@ -24,8 +24,8 @@
         }
         @include hover {
             text-decoration: underline;
-            color: color(neon, green);
-            border-color: color(neon, green);
+            color: color(blueTheme, neonGreen);
+            border-color: color(blueTheme, neonGreen);
             box-shadow: shadow(fuchsia);
             .cta-tile__icon {
                 filter: filter-overlay(green);
@@ -34,5 +34,21 @@
     }
     &__icon {
         width: rem(60) !important;
+    }
+    &.green-theme {
+        .cta-tile__link {
+            background: background(dark-green);
+            @include border(greenTheme);
+            img {
+                filter: filter-overlay(purple);
+            }
+            @include hover {
+                color: color(greenTheme, neonBlue);
+                border-color: color(greenTheme, neonGreen);
+                .cta-tile__icon {
+                    filter: filter-overlay(teal);
+                }
+            }
+        }
     }
 }

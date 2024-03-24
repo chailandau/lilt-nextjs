@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 import styles from './BackToTop.module.scss';
 
-import Caret from '@/assets/svg/Caret.svg';
+import Caret from '@/assets/svg/lilt/Caret.svg';
 import Image from '@/atoms/Image';
 import { backToTop } from '@/utils/framer/animations';
 import LazyAnimatePresence from '@/utils/framer/LazyAnimatePresence';
@@ -43,7 +43,8 @@ const BackToTopButton = () => {
 
     const classList = classNames(
         styles['back-to-top'],
-        isVisible && styles['visible']
+        isVisible && styles['visible'],
+        styles[process.env.NEXT_PUBLIC_THEME as string]
     );
 
     return (

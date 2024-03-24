@@ -27,7 +27,11 @@ const Icon: FC<IconProps> = forwardRef(
         if (!iconValues.includes(id)) {
             return null;
         }
-        const classList = classNames(styles[color], styles[size]);
+        const classList = classNames(
+            styles[color],
+            styles[size],
+            styles[process.env.NEXT_PUBLIC_THEME as string]
+        );
 
         return (
             <svg className={classList} ref={ref}>

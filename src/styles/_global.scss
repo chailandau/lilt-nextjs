@@ -5,8 +5,12 @@ body {
 
 html {
     @include font-rubik-regular;
-    background-color: color(dark, blue);
+    background-color: color(blueTheme, darkBlue);
     color: color(neutral, white);
+    &.green-theme {
+        background-color: color(greenTheme, darkGreen);
+        color: color(neutral, white);
+    }
 }
 body {
     display: flex;
@@ -25,5 +29,5 @@ body {
 }
 
 .docs-story {
-    background-color: color(dark, blue);
+    background-color: color(blueTheme, darkBlue);
 }

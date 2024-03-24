@@ -20,7 +20,7 @@
         top: rem(70);
         left: rem(35);
         z-index: -1;
-        background: color(dark, purple);
+        background: color(blueTheme, darkPurple);
         @include transition(top, left, height);
         @include tablet {
             display: block;
@@ -39,7 +39,7 @@
     &__number {
         @include font-recharge-bold;
         @include font(24, 30);
-        color: color(neon, green);
+        color: color(blueTheme, neonGreen);
         position: relative;
         justify-content: center;
         align-items: center;
@@ -64,8 +64,8 @@
             top: 0;
             left: 0;
             z-index: -1;
-            background: rgba(color(dark, blue), 0.75);
-            border: 1px solid color(dark, purple);
+            background: rgba(color(blueTheme, darkBlue), 0.75);
+            border: 1px solid color(blueTheme, darkPurple);
             border-radius: 50%;
             box-shadow: shadow(purple);
         }
@@ -95,6 +95,18 @@
             background: color(neutral, mdGray);
             @include tablet {
                 display: none;
+            }
+        }
+    }
+    &.green-theme {
+        &:after {
+            background: color(greenTheme, darkPurple);
+        }
+        .step__number {
+            color: color(greenTheme, neonGreen);
+            &:before {
+                background: rgba(color(greenTheme, darkGreen), 0.75);
+                border: 1px solid color(greenTheme, darkPurple);
             }
         }
     }

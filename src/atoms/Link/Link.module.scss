@@ -7,16 +7,24 @@
         @include underlineSlideHover;
     }
     &__rich-text {
-        color: color(neon, green);
+        color: color(blueTheme, neonGreen);
         text-transform: none;
         text-decoration: underline;
         @include transition(color);
         @include hover {
-            color: color(neon, fuchsia);
+            color: color(blueTheme, neonFuchsia);
             text-decoration: underline;
         }
         &:before {
             display: none;
+        }
+    }
+    &.green-theme {
+        &.link__rich-text {
+            color: color(greenTheme, neonGreen);
+            @include hover {
+                color: color(greenTheme, neonBlue);
+            }
         }
     }
 }

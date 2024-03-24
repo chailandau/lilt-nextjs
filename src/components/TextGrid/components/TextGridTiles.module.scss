@@ -134,7 +134,7 @@
                     right: 0;
                     z-index: -1;
                     top: rem(-40);
-                    background: color(dark, purple);
+                    background: color(blueTheme, darkPurple);
                     left: unset;
                     right: rem(-40);
                 }
@@ -171,7 +171,7 @@
             // column divider for 2nd & 3rd cols (targets 2nd tile in each row)
             &:nth-child(3n - 1) {
                 &:before {
-                    background: color(dark, purple);
+                    background: color(blueTheme, darkPurple);
                     left: unset;
                     right: rem(-40);
                 }
@@ -184,7 +184,7 @@
                     right: 0;
                     z-index: -1;
                     top: rem(-40);
-                    background: color(dark, purple);
+                    background: color(blueTheme, darkPurple);
                     left: unset;
                     right: rem(-40);
                 }
@@ -228,6 +228,144 @@
                 );
                 right: unset;
                 left: rem(-40);
+            }
+        }
+    }
+    &.green-theme {
+        &:after {
+            background: linear-gradient(
+                to right,
+                rgba(64, 231, 201, 0) 0%,
+                rgba(64, 231, 201, 0.5) 5%,
+                rgba(64, 231, 201, 1) 25%,
+                rgba(64, 231, 201, 1) 75%,
+                rgba(64, 231, 201, 0.5) 95%,
+                rgba(64, 231, 201, 0) 100%
+            );
+        }
+        &:before {
+            background: linear-gradient(
+                to bottom,
+                rgba(64, 231, 201, 0) 0%,
+                rgba(64, 231, 201, 0.5) 5%,
+                rgba(64, 231, 201, 1) 25%,
+                rgba(64, 231, 201, 1) 75%,
+                rgba(64, 231, 201, 0.5) 95%,
+                rgba(64, 231, 201, 0) 100%
+            );
+        }
+        .text-grid-tile {
+            &:before {
+                background: linear-gradient(
+                    to right,
+                    rgba(64, 231, 201, 0) 0%,
+                    rgba(64, 231, 201, 0.5) 10%,
+                    rgba(64, 231, 201, 1) 25%,
+                    rgba(64, 231, 201, 1) 75%,
+                    rgba(64, 231, 201, 0.5) 90%,
+                    rgba(64, 231, 201, 0) 100%
+                );
+            }
+
+            @include tablet {
+                &:nth-child(odd):before {
+                    background: linear-gradient(
+                        to right,
+                        rgba(64, 231, 201, 0) 0%,
+                        rgba(64, 231, 201, 0.5) 10%,
+                        rgba(64, 231, 201, 1) 25%
+                    );
+                }
+                &:nth-child(even):before {
+                    background: linear-gradient(
+                        to right,
+                        rgba(64, 231, 201, 1) 0%,
+                        rgba(64, 231, 201, 0.5) 90%,
+                        rgba(64, 231, 201, 0) 100%
+                    );
+                }
+            }
+            @include desktop-sm {
+                // column divider for 1st & 2nd cols (targets 1st tile in each row)
+                &:nth-child(3n - 2) {
+                    &:before {
+                        background: linear-gradient(
+                            to right,
+                            rgba(64, 231, 201, 0) 0%,
+                            rgba(64, 231, 201, 0.5) 10%,
+                            rgba(64, 231, 201, 1) 25%
+                        );
+                    }
+                    &:after {
+                        background: color(greenTheme, neonBlue);
+                    }
+                }
+                // 1st fade divider on top row
+                &:first-child {
+                    &:after {
+                        background: linear-gradient(
+                            to bottom,
+                            rgba(64, 231, 201, 0) 0%,
+                            rgba(64, 231, 201, 0.5) 5%,
+                            rgba(64, 231, 201, 1) 25%,
+                            rgba(64, 231, 201, 1) 75%
+                        );
+                    }
+                }
+                // 1st fade divider on bottom row
+                &:nth-last-child(3) {
+                    &:after {
+                        background: linear-gradient(
+                            to bottom,
+                            rgba(64, 231, 201, 1) 0%,
+                            rgba(64, 231, 201, 1) 75%,
+                            rgba(64, 231, 201, 0.5) 95%,
+                            rgba(64, 231, 201, 0) 100%
+                        );
+                    }
+                }
+                // column divider for 2nd & 3rd cols (targets 2nd tile in each row)
+                &:nth-child(3n - 1) {
+                    &:before {
+                        background: color(greenTheme, neonBlue);
+                    }
+                    &:after {
+                        background: color(greenTheme, neonBlue);
+                    }
+                }
+                // 2nd fade divider on top row
+                &:nth-child(2) {
+                    &:after {
+                        background: linear-gradient(
+                            to bottom,
+                            rgba(64, 231, 201, 0) 0%,
+                            rgba(64, 231, 201, 0.5) 5%,
+                            rgba(64, 231, 201, 1) 25%,
+                            rgba(64, 231, 201, 1) 75%
+                        );
+                    }
+                }
+                // 2nd fade divider on bottom row
+                &:nth-last-child(2) {
+                    &:after {
+                        background: linear-gradient(
+                            to bottom,
+                            rgba(64, 231, 201, 1) 0%,
+                            rgba(64, 231, 201, 1) 75%,
+                            rgba(64, 231, 201, 0.5) 95%,
+                            rgba(64, 231, 201, 0) 100%
+                        );
+                    }
+                }
+                // 3rd column top borders
+                &:nth-child(3n):before {
+                    background: linear-gradient(
+                        to right,
+                        rgba(64, 231, 201, 1) 0%,
+                        rgba(64, 231, 201, 0.5) 90%,
+                        rgba(64, 231, 201, 0) 100%
+                    );
+                }
             }
         }
     }
